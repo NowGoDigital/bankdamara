@@ -1,1 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Perusahaan - Bank Nusantara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #0a1f44; --primary-light: #1a3a6b; --secondary: #c8a951; --secondary-light: #e0c76a; --accent: #1e88e5; --text-dark: #2c3e50; --text-light: #6c757d; --bg-light: #f8f9fa; --white: #ffffff; --shadow: 0 4px 20px rgba(0,0,0,0.1); --shadow-hover: 0 8px 30px rgba(0,0,0,0.15); --transition: all 0.3s ease; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: var(--text-dark); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .top-bar { background: var(--primary); color: var(--white); padding: 8px 0; font-size: 13px; }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; }
+        .top-bar a { color: var(--white); text-decoration: none; margin-left: 20px; }
+        .top-bar-left { display: flex; align-items: center; gap: 20px; }
+        .top-bar-left i { margin-right: 5px; color: var(--secondary); }
+        .header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+        .header .container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-icon { width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--secondary); font-size: 24px; font-weight: bold; }
+        .logo-text h1 { font-size: 22px; color: var(--primary); font-weight: 700; }
+        .logo-text span { font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
+        .nav-menu { display: flex; list-style: none; gap: 5px; align-items: center; }
+        .nav-menu li { position: relative; }
+        .nav-menu li a { text-decoration: none; color: var(--text-dark); font-weight: 500; padding: 10px 18px; border-radius: 8px; transition: var(--transition); font-size: 14px; display: block; }
+        .nav-menu li a:hover, .nav-menu li a.active { background: var(--primary); color: var(--white); }
+        .nav-menu li .dropdown { position: absolute; top: 100%; left: 0; background: var(--white); min-width: 220px; box-shadow: var(--shadow-hover); border-radius: 12px; padding: 10px; display: none; z-index: 100; }
+        .nav-menu li:hover .dropdown { display: block; }
+        .nav-menu li .dropdown a { padding: 10px 15px; border-radius: 6px; font-size: 13px; }
+        .btn-login { background: linear-gradient(135deg, var(--secondary), var(--secondary-light)) !important; color: var(--primary) !important; font-weight: 600 !important; border-radius: 25px !important; margin-left: 15px; }
+        .hamburger { display: none; font-size: 24px; cursor: pointer; color: var(--primary); }
 
+        .page-hero { background: linear-gradient(135deg, var(--primary), var(--primary-light)); padding: 80px 0 60px; color: var(--white); }
+        .page-hero h1 { font-size: 42px; font-weight: 700; margin-bottom: 15px; }
+        .page-hero p { font-size: 18px; opacity: 0.85; }
+        .breadcrumb { display: flex; gap: 10px; margin-top: 20px; font-size: 14px; align-items: center; }
+        .breadcrumb a { color: var(--secondary); text-decoration: none; }
+        .breadcrumb span { opacity: 0.7; }
+
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 36px; color: var(--primary); margin-bottom: 12px; }
+        .section-title p { color: var(--text-light); font-size: 16px; max-width: 600px; margin: 0 auto; }
+        .section-title .underline { width: 60px; height: 4px; background: linear-gradient(135deg, var(--secondary), var(--secondary-light)); margin: 15px auto 0; border-radius: 2px; }
+
+        .timeline-section { padding: 80px 0; }
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+        .timeline::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); width: 3px; height: 100%; background: linear-gradient(to bottom, var(--secondary), var(--primary)); border-radius: 3px; }
+        .timeline-item { display: flex; margin-bottom: 40px; position: relative; }
+        .timeline-item:nth-child(odd) { justify-content: flex-start; padding-right: 55%; }
+        .timeline-item:nth-child(even) { justify-content: flex-end; padding-left: 55%; }
+        .timeline-item .dot { position: absolute; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; background: var(--secondary); border-radius: 50%; border: 4px solid var(--white); box-shadow: var(--shadow); z-index: 2; top: 20px; }
+        .timeline-content { background: var(--white); padding: 25px; border-radius: 12px; box-shadow: var(--shadow); transition: var(--transition); }
+        .timeline-content:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+        .timeline-content .year { display: inline-block; background: var(--primary); color: var(--secondary); padding: 4px 14px; border-radius: 20px; font-size: 13px; font-weight: 700; margin-bottom: 10px; }
+        .timeline-content h4 { font-size: 16px; color: var(--primary); margin-bottom: 8px; }
+        .timeline-content p { font-size: 13px; color: var(--text-light); }
+
+        .milestone-section { padding: 60px 0; background: var(--bg-light); }
+        .milestone-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+        .milestone-card { background: var(--white); border-radius: 16px; padding: 30px; text-align: center; box-shadow: var(--shadow); transition: var(--transition); }
+        .milestone-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+        .milestone-card i { font-size: 35px; color: var(--secondary); margin-bottom: 15px; }
+        .milestone-card h3 { font-size: 32px; color: var(--primary); margin-bottom: 5px; }
+        .milestone-card p { font-size: 14px; color: var(--text-light); }
+
+        .footer { background: #050d1f; color: rgba(255,255,255,0.8); padding: 60px 0 0; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .footer-col h4 { color: var(--white); font-size: 16px; margin-bottom: 20px; }
+        .footer-col h4::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 30px; height: 3px; background: var(--secondary); border-radius: 2px; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul li a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; }
+        .footer-col ul li a:hover { color: var(--secondary); }
+        .footer-bottom { padding: 25px 0; text-align: center; font-size: 13px; color: rgba(255,255,255,0.5); }
+
+        @media (max-width: 768px) {
+            .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 20px; box-shadow: var(--shadow); }
+            .nav-menu.active { display: flex; }
+            .hamburger { display: block; }
+            .milestone-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; }
+            .top-bar { display: none; }
+            .page-hero h1 { font-size: 30px; }
+            .timeline::before { left: 20px; }
+            .timeline-item { padding-left: 50px !important; padding-right: 0 !important; justify-content: flex-start !important; }
+            .timeline-item .dot { left: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <span><i class="fas fa-phone"></i> 1500-888</span>
+                <span><i class="fas fa-envelope"></i> info@banknusantara.co.id</span>
+            </div>
+            <div class="top-bar-right"><a href="#">Bantuan</a></div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">BN</div>
+                <div class="logo-text"><h1>Bank Nusantara</h1><span>Trusted Since 1985</span></div>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="tentang-kami.html" class="active">Tentang Kami <i class="fas fa-chevron-down" style="font-size:10px"></i></a>
+                        <div class="dropdown"><a href="sejarah.html">Sejarah</a><a href="visi-misi.html">Visi & Misi</a><a href="manajemen.html">Manajemen</a><a href="karir.html">Karir</a></div>
+                    </li>
+                    <li><a href="tabungan.html">Produk <i class="fas fa-chevron-down" style="font-size:10px"></i></a>
+                        <div class="dropdown"><a href="tabungan.html">Tabungan</a><a href="deposito.html">Deposito</a><a href="kredit.html">Kredit</a><a href="kartu-kredit.html">Kartu Kredit</a></div>
+                    </li>
+                    <li><a href="internet-banking.html">Layanan <i class="fas fa-chevron-down" style="font-size:10px"></i></a>
+                        <div class="dropdown"><a href="internet-banking.html">Internet Banking</a><a href="mobile-banking.html">Mobile Banking</a><a href="atm.html">ATM</a><a href="e-channel.html">E-Channel</a></div>
+                    </li>
+                    <li><a href="promo.html">Promo</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                    <li><a href="#" class="btn-login"><i class="fas fa-lock"></i> e-Banking</a></li>
+                </ul>
+                <div class="hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('active')"><i class="fas fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Sejarah Perusahaan</h1>
+            <p>Perjalanan panjang Bank Nusantara dalam melayani bangsa</p>
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
+                <span>/</span>
+                <a href="tentang-kami.html">Tentang Kami</a>
+                <span>/</span>
+                <span>Sejarah</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perjalanan Kami</h2>
+                <p>Dari bank kecil hingga menjadi salah satu bank nasional terpercaya</p>
+                <div class="underline"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="timeline-content">
+                        <span class="year">1985</span>
+                        <h4>Pendirian Bank Nusantara</h4>
+                        <p>Didirikan di Jakarta dengan modal awal Rp 10 miliar dan 1 kantor cabang. Melayani nasabah ritel dan UMKM di wilayah Jabodetabek.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="timeline-content">
+                        <span class="year">1992</span>
+                        <h4>Ekspansi Nasional</h4>
+                        <p>Membuka 50 kantor cabang di 10 kota besar Indonesia. Mendapatkan izin sebagai bank devisa untuk melayani transaksi valuta asing.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="timeline-content">
+                        <span class="year">1998</span>
+                        <h4>Bertahan di Krisis Moneter</h4>
+                        <p>Menjadi salah satu bank yang tetap kokoh melewati krisis moneter 1998 berkat manajemen risiko yang prudent dan permodalan yang kuat.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="timeline-content">
+                        <span class="year">2005</span>
+                        <h4>Era Digital Banking</h4>
+                        <p>Meluncurkan layanan Internet Banking dan Mobile Banking, menjadi pionir perbankan digital di Indonesia.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="timeline-content">
+                        <span class="year">2012</span>
+                        <h4>Transformasi Total</h4>
+                        <p>Melakukan transformasi bisnis menyeluruh dengan rebranding, modernisasi IT, dan peluncuran produk-produk inovatif.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="timeline-content">
+                        <span class="year">2018</span>
+                        <h4>Super App Nusantara Mobile</h4>
+                        <p>Meluncurkan super app "Nusantara Mobile" dengan fitur lengkap: transfer, pembayaran, investasi, dan lifestyle banking dalam satu aplikasi.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="timeline-content">
+                        <span class="year">2024</span>
+                        <h4>5 Juta Nasabah</h4>
+                        <p>Mencapai milestone 5 juta nasabah aktif dengan jaringan 1.200+ cabang dan ATM di seluruh Indonesia. Raih penghargaan Best Digital Bank.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="timeline-content">
+                        <span class="year">2026</span>
+                        <h4>Menuju Bank Digital Terdepan</h4>
+                        <p>Fokus pada pengembangan AI banking, open banking API, dan ekosistem digital terintegrasi untuk masa depan perbankan Indonesia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="milestone-section">
+        <div class="container">
+            <div class="milestone-grid">
+                <div class="milestone-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>41+</h3>
+                    <p>Tahun Beroperasi</p>
+                </div>
+                <div class="milestone-card">
+                    <i class="fas fa-building"></i>
+                    <h3>1,200+</h3>
+                    <p>Kantor Cabang & ATM</p>
+                </div>
+                <div class="milestone-card">
+                    <i class="fas fa-users"></i>
+                    <h3>5 Juta+</h3>
+                    <p>Nasabah Aktif</p>
+                </div>
+                <div class="milestone-card">
+                    <i class="fas fa-award"></i>
+                    <h3>150+</h3>
+                    <p>Penghargaan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col"><h4>Bank Nusantara</h4><ul><li><a href="tentang-kami.html">Tentang Kami</a></li><li><a href="sejarah.html">Sejarah</a></li><li><a href="karir.html">Karir</a></li></ul></div>
+                <div class="footer-col"><h4>Produk</h4><ul><li><a href="tabungan.html">Tabungan</a></li><li><a href="deposito.html">Deposito</a></li><li><a href="kredit.html">Kredit</a></li></ul></div>
+                <div class="footer-col"><h4>Layanan</h4><ul><li><a href="internet-banking.html">Internet Banking</a></li><li><a href="mobile-banking.html">Mobile Banking</a></li><li><a href="atm.html">ATM</a></li></ul></div>
+                <div class="footer-col"><h4>Lainnya</h4><ul><li><a href="promo.html">Promo</a></li><li><a href="kontak.html">Kontak</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Bank Nusantara. Terdaftar dan diawasi oleh OJK.</p></div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() { document.querySelector('.nav-menu').classList.toggle('active'); }
+    </script>
+</body>
+</html>
