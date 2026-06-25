@@ -1,1 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk Tabungan - Bank Nusantara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #0a1f44; --primary-light: #1a3a6b; --secondary: #c8a951; --secondary-light: #e0c76a; --text-dark: #2c3e50; --text-light: #6c757d; --bg-light: #f8f9fa; --white: #ffffff; --shadow: 0 4px 20px rgba(0,0,0,0.1); --shadow-hover: 0 8px 30px rgba(0,0,0,0.15); --transition: all 0.3s ease; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: var(--text-dark); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .top-bar { background: var(--primary); color: var(--white); padding: 8px 0; font-size: 13px; }
+        .top-bar .container { display: flex; justify-content: space-between; }
+        .top-bar a { color: var(--white); text-decoration: none; margin-left: 20px; }
+        .top-bar-left { display: flex; gap: 20px; }
+        .top-bar-left i { margin-right: 5px; color: var(--secondary); }
+        .header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+        .header .container { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-icon { width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--secondary); font-size: 24px; font-weight: bold; }
+        .logo-text h1 { font-size: 22px; color: var(--primary); font-weight: 700; }
+        .logo-text span { font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
+        .nav-menu { display: flex; list-style: none; gap: 5px; }
+        .nav-menu li { position: relative; }
+        .nav-menu li a { text-decoration: none; color: var(--text-dark); font-weight: 500; padding: 10px 18px; border-radius: 8px; transition: var(--transition); font-size: 14px; display: block; }
+        .nav-menu li a:hover, .nav-menu li a.active { background: var(--primary); color: var(--white); }
+        .nav-menu li .dropdown { position: absolute; top: 100%; left: 0; background: var(--white); min-width: 220px; box-shadow: var(--shadow-hover); border-radius: 12px; padding: 10px; display: none; z-index: 100; }
+        .nav-menu li:hover .dropdown { display: block; }
+        .nav-menu li .dropdown a { padding: 10px 15px; font-size: 13px; }
+        .btn-login { background: linear-gradient(135deg, var(--secondary), var(--secondary-light)) !important; color: var(--primary) !important; font-weight: 600 !important; border-radius: 25px !important; margin-left: 15px; }
+        .hamburger { display: none; font-size: 24px; cursor: pointer; color: var(--primary); }
 
+        .page-hero { background: linear-gradient(135deg, var(--primary), var(--primary-light)); padding: 80px 0 60px; color: var(--white); }
+        .page-hero h1 { font-size: 42px; font-weight: 700; margin-bottom: 15px; }
+        .page-hero p { font-size: 18px; opacity: 0.85; }
+        .breadcrumb { display: flex; gap: 10px; margin-top: 20px; font-size: 14px; }
+        .breadcrumb a { color: var(--secondary); text-decoration: none; }
+        .breadcrumb span { opacity: 0.7; }
+
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 36px; color: var(--primary); margin-bottom: 12px; }
+        .section-title p { color: var(--text-light); font-size: 16px; max-width: 600px; margin: 0 auto; }
+        .section-title .underline { width: 60px; height: 4px; background: linear-gradient(135deg, var(--secondary), var(--secondary-light)); margin: 15px auto 0; border-radius: 2px; }
+
+        .products-section { padding: 80px 0; }
+        .product-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
+        .product-tab { padding: 12px 28px; border: 2px solid #e0e0e0; border-radius: 30px; background: var(--white); font-size: 14px; font-weight: 600; cursor: pointer; transition: var(--transition); text-decoration: none; color: var(--text-dark); }
+        .product-tab:hover, .product-tab.active { background: var(--primary); color: var(--white); border-color: var(--primary); }
+
+        .product-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-bottom: 60px; padding: 40px; background: var(--bg-light); border-radius: 20px; }
+        .product-detail-img { height: 350px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 80px; color: var(--white); box-shadow: var(--shadow-hover); }
+        .product-detail-img.saving { background: linear-gradient(135deg, #1a237e, #3949ab); }
+        .product-detail h3 { font-size: 28px; color: var(--primary); margin-bottom: 15px; }
+        .product-detail > div > p { color: var(--text-light); margin-bottom: 20px; font-size: 15px; }
+        .product-detail .features-list { list-style: none; margin-bottom: 25px; }
+        .product-detail .features-list li { padding: 10px 0; font-size: 14px; border-bottom: 1px solid #e0e0e0; display: flex; align-items: center; gap: 10px; }
+        .product-detail .features-list li i { color: #4caf50; }
+        .btn { padding: 14px 32px; border: none; border-radius: 30px; font-size: 15px; font-weight: 600; cursor: pointer; transition: var(--transition); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary { background: linear-gradient(135deg, var(--secondary), var(--secondary-light)); color: var(--primary); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(200,169,81,0.4); }
+
+        .compare-section { padding: 80px 0; background: var(--bg-light); }
+        .compare-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); }
+        .compare-table th { background: var(--primary); color: var(--white); padding: 18px 20px; font-size: 14px; text-align: center; }
+        .compare-table td { padding: 16px 20px; text-align: center; font-size: 14px; border-bottom: 1px solid #f0f0f0; }
+        .compare-table tr:hover td { background: #f8f9ff; }
+        .compare-table .product-name { text-align: left; font-weight: 600; color: var(--primary); }
+        .compare-table .check { color: #4caf50; font-size: 18px; }
+        .compare-table .cross { color: #ef5350; font-size: 18px; }
+
+        .faq-section { padding: 80px 0; }
+        .faq-list { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--white); border-radius: 12px; margin-bottom: 15px; box-shadow: var(--shadow); overflow: hidden; }
+        .faq-question { padding: 20px 25px; font-weight: 600; font-size: 15px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: var(--transition); }
+        .faq-question:hover { background: var(--bg-light); }
+        .faq-question i { transition: var(--transition); color: var(--secondary); }
+        .faq-answer { padding: 0 25px; max-height: 0; overflow: hidden; transition: all 0.3s ease; }
+        .faq-answer.open { padding: 0 25px 20px; max-height: 300px; }
+        .faq-answer p { font-size: 14px; color: var(--text-light); }
+        .faq-item.open .faq-question i { transform: rotate(180deg); }
+
+        .footer { background: #050d1f; color: rgba(255,255,255,0.8); padding: 60px 0 0; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .footer-col h4 { color: var(--white); font-size: 16px; margin-bottom: 20px; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul li a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; }
+        .footer-col ul li a:hover { color: var(--secondary); }
+        .footer-bottom { padding: 25px 0; text-align: center; font-size: 13px; color: rgba(255,255,255,0.5); }
+
+        @media (max-width: 768px) {
+            .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 20px; }
+            .nav-menu.active { display: flex; }
+            .hamburger { display: block; }
+            .product-detail { grid-template-columns: 1fr; }
+            .compare-table { font-size: 12px; }
+            .compare-table th, .compare-table td { padding: 10px 8px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .top-bar { display: none; }
+            .page-hero h1 { font-size: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar"><div class="container"><div class="top-bar-left"><span><i class="fas fa-phone"></i> 1500-888</span></div><div><a href="#">Bantuan</a></div></div></div>
+    <header class="header"><div class="container">
+        <a href="index.html" class="logo"><div class="logo-icon">BN</div><div class="logo-text"><h1>Bank Nusantara</h1><span>Trusted Since 1985</span></div></a>
+        <nav><ul class="nav-menu">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="tentang-kami.html">Tentang Kami</a></li>
+            <li><a href="tabungan.html" class="active">Produk <i class="fas fa-chevron-down" style="font-size:10px"></i></a><div class="dropdown"><a href="tabungan.html">Tabungan</a><a href="deposito.html">Deposito</a><a href="kredit.html">Kredit</a><a href="kartu-kredit.html">Kartu Kredit</a></div></li>
+            <li><a href="internet-banking.html">Layanan</a></li><li><a href="promo.html">Promo</a></li><li><a href="kontak.html">Kontak</a></li>
+            <li><a href="#" class="btn-login"><i class="fas fa-lock"></i> e-Banking</a></li>
+        </ul><div class="hamburger" onclick="document.querySelector('.nav-menu').classList.toggle('active')"><i class="fas fa-bars"></i></div></nav>
+    </div></header>
+
+    <section class="page-hero"><div class="container">
+        <h1>Produk Tabungan</h1>
+        <p>Pilih rekening tabungan yang sesuai dengan kebutuhan dan tujuan finansial Anda</p>
+        <div class="breadcrumb"><a href="index.html"><i class="fas fa-home"></i> Beranda</a><span>/</span><span>Produk Tabungan</span></div>
+    </div></section>
+
+    <section class="products-section">
+        <div class="container">
+            <div class="product-tabs">
+                <a href="tabungan.html" class="product-tab active">Tabungan</a>
+                <a href="deposito.html" class="product-tab">Deposito</a>
+                <a href="kredit.html" class="product-tab">Kredit</a>
+                <a href="kartu-kredit.html" class="product-tab">Kartu Kredit</a>
+            </div>
+
+            <!-- Product 1 -->
+            <div class="product-detail">
+                <div class="product-detail-img saving"><i class="fas fa-wallet"></i></div>
+                <div>
+                    <h3>Nusantara Saving Reguler</h3>
+                    <p>Tabungan harian dengan berbagai kemudahan transaksi dan bunga kompetitif. Cocok untuk kebutuhan sehari-hari.</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> Setoran awal: Rp 100.000</li>
+                        <li><i class="fas fa-check-circle"></i> Saldo minimum: Rp 50.000</li>
+                        <li><i class="fas fa-check-circle"></i> Bunga: hingga 2.5% p.a</li>
+                        <li><i class="fas fa-check-circle"></i> Bebas biaya admin 3 bulan pertama</li>
+                        <li><i class="fas fa-check-circle"></i> Kartu Debit GPN/Visa</li>
+                        <li><i class="fas fa-check-circle"></i> Akses Mobile & Internet Banking</li>
+                    </ul>
+                    <a href="kontak.html" class="btn btn-primary"><i class="fas fa-user-plus"></i> Buka Rekening</a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-detail" style="direction: rtl;">
+                <div class="product-detail-img" style="background: linear-gradient(135deg, #004d40, #00897b); direction: ltr;"><i class="fas fa-child"></i></div>
+                <div style="direction: ltr;">
+                    <h3>Nusantara Kids Saving</h3>
+                    <p>Tabungan khusus anak usia 0-17 tahun. Ajarkan si kecil menabung sejak dini dengan fitur edukasi keuangan.</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> Setoran awal: Rp 50.000</li>
+                        <li><i class="fas fa-check-circle"></i> Bebas biaya administrasi</li>
+                        <li><i class="fas fa-check-circle"></i> Bunga: 3% p.a (lebih tinggi)</li>
+                        <li><i class="fas fa-check-circle"></i> Kartu ATM khusus anak</li>
+                        <li><i class="fas fa-check-circle"></i> Fitur Parental Control</li>
+                        <li><i class="fas fa-check-circle"></i> Hadiah ulang tahun tahunan</li>
+                    </ul>
+                    <a href="kontak.html" class="btn btn-primary"><i class="fas fa-user-plus"></i> Buka Rekening</a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-detail">
+                <div class="product-detail-img" style="background: linear-gradient(135deg, #bf360c, #e64a19);"><i class="fas fa-briefcase"></i></div>
+                <div>
+                    <h3>Nusantara Business Account</h3>
+                    <p>Rekening bisnis untuk UMKM dan perusahaan. Dilengkapi fitur manajemen kas dan laporan keuangan otomatis.</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> Setoran awal: Rp 1.000.000</li>
+                        <li><i class="fas fa-check-circle"></i> Limit transaksi harian tinggi</li>
+                        <li><i class="fas fa-check-circle"></i> Cash management system</li>
+                        <li><i class="fas fa-check-circle"></i> Payroll otomatis</li>
+                        <li><i class="fas fa-check-circle"></i> Laporan keuangan digital</li>
+                        <li><i class="fas fa-check-circle"></i> Dedicated Relationship Manager</li>
+                    </ul>
+                    <a href="kontak.html" class="btn btn-primary"><i class="fas fa-user-plus"></i> Buka Rekening</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="compare-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perbandingan Produk</h2>
+                <p>Bandingkan fitur setiap jenis tabungan kami</p>
+                <div class="underline"></div>
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="compare-table">
+                    <thead>
+                        <tr><th>Fitur</th><th>Reguler</th><th>Kids</th><th>Business</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="product-name">Setoran Awal</td><td>Rp 100rb</td><td>Rp 50rb</td><td>Rp 1jt</td></tr>
+                        <tr><td class="product-name">Bunga p.a</td><td>2.5%</td><td>3.0%</td><td>1.5%</td></tr>
+                        <tr><td class="product-name">Biaya Admin/Bln</td><td>Rp 15rb</td><td>Gratis</td><td>Rp 50rb</td></tr>
+                        <tr><td class="product-name">Kartu Debit</td><td><span class="check"><i class="fas fa-check-circle"></i></span></td><td><span class="check"><i class="fas fa-check-circle"></i></span></td><td><span class="check"><i class="fas fa-check-circle"></i></span></td></tr>
+                        <tr><td class="product-name">Mobile Banking</td><td><span class="check"><i class="fas fa-check-circle"></i></span></td><td><span class="check"><i class="fas fa-check-circle"></i></span></td><td><span class="check"><i class="fas fa-check-circle"></i></span></td></tr>
+                        <tr><td class="product-name">Asuransi Gratis</td><td><span class="check"><i class="fas fa-check-circle"></i></span></td><td><span class="cross"><i class="fas fa-times-circle"></i></span></td><td><span class="check"><i class="fas fa-check-circle"></i></span></td></tr>
+                        <tr><td class="product-name">Payroll System</td><td><span class="cross"><i class="fas fa-times-circle"></i></span></td><td><span class="cross"><i class="fas fa-times-circle"></i></span></td><td><span class="check"><i class="fas fa-check-circle"></i></span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pertanyaan Umum</h2>
+                <p>Jawaban untuk pertanyaan yang sering diajukan</p>
+                <div class="underline"></div>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item" onclick="this.classList.toggle('open')">
+                    <div class="faq-question">Bagaimana cara membuka rekening tabungan? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer open"><p>Anda bisa membuka rekening secara online melalui aplikasi Nusantara Mobile atau datang langsung ke kantor cabang terdekat dengan membawa KTP dan NPWP.</p></div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('open')">
+                    <div class="faq-question">Berapa lama proses pembukaan rekening? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer"><p>Pembukaan rekening online hanya membutuhkan waktu 5-10 menit. Untuk pembukaan di cabang, proses selesai dalam 1 hari kerja.</p></div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('open')">
+                    <div class="faq-question">Apakah tabungan saya dijamin? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer"><p>Ya, seluruh simpanan di Bank Nusantara dijamin oleh Lembaga Penjamin Simpanan (LPS) sesuai ketentuan yang berlaku (maksimal Rp 2 Miliar per nasabah).</p></div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('open')">
+                    <div class="faq-question">Bagaimana cara menutup rekening? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer"><p>Anda dapat menutup rekening di kantor cabang mana saja dengan membawa KTP dan buku tabungan. Sisa saldo akan dikembalikan setelah dikurangi biaya penutupan.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer"><div class="container">
+        <div class="footer-grid">
+            <div class="footer-col"><h4>Bank Nusantara</h4><ul><li><a href="tentang-kami.html">Tentang Kami</a></li><li><a href="manajemen.html">Manajemen</a></li></ul></div>
+            <div class="footer-col"><h4>Produk</h4><ul><li><a href="tabungan.html">Tabungan</a></li><li><a href="deposito.html">Deposito</a></li><li><a href="kredit.html">Kredit</a></li></ul></div>
+            <div class="footer-col"><h4>Layanan</h4><ul><li><a href="internet-banking.html">Internet Banking</a></li><li><a href="mobile-banking.html">Mobile Banking</a></li></ul></div>
+            <div class="footer-col"><h4>Lainnya</h4><ul><li><a href="promo.html">Promo</a></li><li><a href="kontak.html">Kontak</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Bank Nusantara. Terdaftar dan diawasi oleh OJK.</p></div>
+    </div></footer>
+</body>
+</html>
