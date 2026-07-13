@@ -81,7 +81,6 @@
             padding: 10px; display: none; z-index: 100;
         }
         .nav-menu li:hover .dropdown { display: block; }
-        .nav-menu li .dropdown a { display: block; padding: 10px 15px; border-radius: 6px; font-size: 13px; }
         .nav-menu li { position: relative; }
 
         .btn-login {
@@ -171,18 +170,30 @@
         @keyframes lineShimmer { 0%,100%{opacity:0.2} 50%{opacity:0.7} }
 
         .hero-slider { position: absolute; inset: 0; z-index: 3; }
+
         .hero-slide {
-            position: absolute; inset: 0; opacity: 0;
-            transition: opacity 0.8s ease; display: flex; align-items: center;
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
         }
         .hero-slide.active { opacity: 1; }
 
+        /* ✅ JARAK DIPERSEMPIT: padding-top 60px → 20px */
         .hero-content-wrapper {
-            position: relative; z-index: 10;
-            display: grid; grid-template-columns: 1.4fr 1fr;
-            gap: 40px; align-items: center;
-            width: 100%; max-width: 1200px; margin: 0 auto;
-            padding: 60px 20px 50px;
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 40px;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 20px 40px;
         }
 
         .hero-content { color: var(--white); position: relative; }
@@ -211,13 +222,9 @@
             display: inline-block; opacity: 0; transform: translateY(100%);
             animation: heroLineReveal 0.9s cubic-bezier(0.23,1,0.32,1) forwards;
         }
-        .hero-slide:nth-child(1) .hero-content h2 .line:nth-child(1) .line-inner { animation-delay: 0.4s; }
-        .hero-slide:nth-child(1) .hero-content h2 .line:nth-child(2) .line-inner { animation-delay: 0.55s; }
-        .hero-slide:nth-child(1) .hero-content h2 .line:nth-child(3) .line-inner { animation-delay: 0.7s; }
-        .hero-slide:nth-child(2) .hero-content h2 .line:nth-child(1) .line-inner { animation-delay: 0.4s; }
-        .hero-slide:nth-child(2) .hero-content h2 .line:nth-child(2) .line-inner { animation-delay: 0.55s; }
-        .hero-slide:nth-child(3) .hero-content h2 .line:nth-child(1) .line-inner { animation-delay: 0.4s; }
-        .hero-slide:nth-child(3) .hero-content h2 .line:nth-child(2) .line-inner { animation-delay: 0.55s; }
+        .hero-slide.active .hero-content h2 .line:nth-child(1) .line-inner { animation-delay: 0.4s; }
+        .hero-slide.active .hero-content h2 .line:nth-child(2) .line-inner { animation-delay: 0.55s; }
+        .hero-slide.active .hero-content h2 .line:nth-child(3) .line-inner { animation-delay: 0.7s; }
 
         .hero-content h2 .gold-word {
             background: linear-gradient(135deg, #c8a951 0%, #e0c76a 40%, #f0d97a 60%, #b8943e 100%);
@@ -299,19 +306,24 @@
             pointer-events: none;
         }
 
+        /* ✅ KONSISTENSI KARTU DI SEMUA SLIDE */
         .hero-bank-card.card-1 {
             background: linear-gradient(135deg, #0a1f44, #1a3a6b, #2a5298);
-            z-index: 3; transform: rotate(-5deg) translateY(0);
+            z-index: 3;
+            transform: rotate(-5deg) translateY(0);
             animation: cardFloat1 6s ease-in-out infinite;
         }
         .hero-bank-card.card-2 {
             background: linear-gradient(135deg, #c8a951, #e0c76a, #b8943e);
-            color: #0a1f44; z-index: 2; transform: rotate(5deg) translate(30px, 20px);
+            color: #0a1f44;
+            z-index: 2;
+            transform: rotate(5deg) translate(30px, 20px);
             animation: cardFloat2 6s ease-in-out infinite 0.5s;
         }
         .hero-bank-card.card-3 {
             background: linear-gradient(135deg, #1e88e5, #42a5f5, #1565c0);
-            z-index: 1; transform: rotate(-2deg) translate(-15px, 40px);
+            z-index: 1;
+            transform: rotate(-2deg) translate(-15px, 40px);
             animation: cardFloat3 6s ease-in-out infinite 1s;
         }
         @keyframes cardFloat1 { 0%,100%{transform:rotate(-5deg) translateY(0)} 50%{transform:rotate(-3deg) translateY(-10px)} }
@@ -654,7 +666,7 @@
             .hero { min-height: auto; height: auto; padding-bottom: 40px; }
             .hero-content-wrapper {
                 grid-template-columns: 1fr; text-align: center;
-                padding: 100px 20px 60px; gap: 40px;
+                padding: 30px 20px 60px; gap: 40px;
             }
             .hero-visual { order: -1; }
             .hero-frame { max-width: 340px; }
@@ -679,7 +691,7 @@
             .hamburger { display: block; }
 
             .hero { min-height: auto; padding-bottom: 30px; }
-            .hero-content-wrapper { padding: 80px 20px 40px; }
+            .hero-content-wrapper { padding: 30px 20px 40px; }
             .hero-content h2 { font-size: clamp(1.8rem, 7vw, 2.5rem); letter-spacing: -0.5px; }
             .hero-content p { font-size: 14px; }
             .hero-stats { flex-wrap: wrap; gap: 16px; justify-content: center; }
@@ -801,7 +813,7 @@
         </div>
 
         <div class="hero-slider">
-            <!-- Slide 1 -->
+            <!-- ✅ SLIDE 1 -->
             <div class="hero-slide active">
                 <div class="container">
                     <div class="hero-content-wrapper">
@@ -878,7 +890,7 @@
                 </div>
             </div>
 
-            <!-- Slide 2 -->
+            <!-- ✅ SLIDE 2 - TANPA INLINE STYLE -->
             <div class="hero-slide">
                 <div class="container">
                     <div class="hero-content-wrapper">
@@ -908,8 +920,8 @@
                                 <div class="orbit-ring o2"></div>
                                 <div class="card-glow"></div>
                                 <div class="hero-card-stack">
-                                    <div class="hero-bank-card card-2" style="transform:rotate(-3deg) translateY(0)">
-                                        <div class="card-bank-name"><div class="card-logo" style="background:rgba(0,0,0,0.15)">BN</div> Bank Nusantara</div>
+                                    <div class="hero-bank-card card-1">
+                                        <div class="card-bank-name"><div class="card-logo">BN</div> Bank Nusantara</div>
                                         <div class="card-chip"></div>
                                         <div class="card-number">DEPOSITO BERJANGKA</div>
                                         <div class="card-bottom">
@@ -917,8 +929,8 @@
                                             <div class="card-type" style="font-size:14px">PREMIUM</div>
                                         </div>
                                     </div>
-                                    <div class="hero-bank-card card-1" style="transform:rotate(4deg) translate(25px,25px)">
-                                        <div class="card-bank-name"><div class="card-logo">BN</div> Bank Nusantara</div>
+                                    <div class="hero-bank-card card-2">
+                                        <div class="card-bank-name"><div class="card-logo" style="background:rgba(0,0,0,0.15)">BN</div> Bank Nusantara</div>
                                         <div class="card-chip"></div>
                                         <div class="card-number">TABUNGAN PRIORITAS</div>
                                         <div class="card-bottom">
@@ -941,7 +953,7 @@
                 </div>
             </div>
 
-            <!-- Slide 3 -->
+            <!-- ✅ SLIDE 3 - TANPA INLINE STYLE -->
             <div class="hero-slide">
                 <div class="container">
                     <div class="hero-content-wrapper">
@@ -971,7 +983,7 @@
                                 <div class="orbit-ring o2"></div>
                                 <div class="card-glow"></div>
                                 <div class="hero-card-stack">
-                                    <div class="hero-bank-card card-3" style="transform:rotate(-4deg) translateY(0);width:280px;height:180px">
+                                    <div class="hero-bank-card card-1">
                                         <div class="card-bank-name"><div class="card-logo">BN</div> BN Mobile</div>
                                         <div style="text-align:center;margin:20px 0">
                                             <i class="fas fa-mobile-alt" style="font-size:40px;opacity:0.8"></i>
@@ -981,8 +993,8 @@
                                             <div class="card-type" style="font-size:12px">iOS & Android</div>
                                         </div>
                                     </div>
-                                    <div class="hero-bank-card card-1" style="transform:rotate(5deg) translate(30px,25px);width:280px;height:180px">
-                                        <div class="card-bank-name"><div class="card-logo">BN</div> QRIS Pay</div>
+                                    <div class="hero-bank-card card-2">
+                                        <div class="card-bank-name"><div class="card-logo" style="background:rgba(0,0,0,0.15)">BN</div> QRIS Pay</div>
                                         <div style="text-align:center;margin:20px 0">
                                             <i class="fas fa-qrcode" style="font-size:40px;opacity:0.8"></i>
                                         </div>
