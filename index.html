@@ -48,10 +48,8 @@
         .btn-login:hover{background:var(--primary)!important;color:var(--white)!important;transform:translateY(-2px);box-shadow:0 4px 15px rgba(10,31,68,0.3)}
         .hamburger{display:none;font-size:24px;cursor:pointer;color:var(--primary)}
 
-        /* =============================================
-           HERO SECTION - COMPACT & 1 SCREEN FIT
-           ============================================= */
-        .hero{position:relative;height:100vh;min-height:600px;max-height:800px;overflow:hidden;display:flex;align-items:center;background:#030a1a}
+        /* ========== HERO SECTION ========== */
+        .hero{position:relative;height:100vh;min-height:600px;max-height:800px;overflow:hidden;display:flex;align-items:flex-start;background:#030a1a}
 
         .hero-mesh{position:absolute;inset:0;z-index:0;overflow:hidden}
         .mesh-blob{position:absolute;border-radius:50%;filter:blur(120px);opacity:0.6;will-change:transform}
@@ -74,21 +72,19 @@
 
         .hero-slider{position:absolute;inset:0;z-index:3}
 
-        /* ✅ FIX: align-items center supaya konten di-tengah vertikal, muat 1 layar */
-        .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1s cubic-bezier(0.4,0,0.2,1);display:flex;align-items:center;pointer-events:none}
+        /* ✅ FIX UTAMA: align-items flex-start + padding-top 8px → badge MEMPET navbar */
+        .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1s cubic-bezier(0.4,0,0.2,1);display:flex;align-items:flex-start;padding-top:8px;pointer-events:none}
         .hero-slide.active{opacity:1;pointer-events:auto}
 
         .hero-grid-layout{position:relative;z-index:10;display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center;width:100%}
 
         .hero-text{color:#fff;position:relative}
 
-        /* ✅ BADGE: mepet ke atas, padding & margin diperkecil */
         .hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(200,169,81,0.08);border:1px solid rgba(200,169,81,0.2);padding:5px 16px;border-radius:60px;font-size:11px;color:var(--secondary);font-weight:600;margin-bottom:8px;backdrop-filter:blur(10px);letter-spacing:0.5px;opacity:0;transform:translateY(20px);transition:all 0.8s cubic-bezier(0.23,1,0.32,1) 0.15s}
         .hero-slide.active .hero-badge{opacity:1;transform:translateY(0)}
         .badge-dot{width:6px;height:6px;background:var(--secondary);border-radius:50%;animation:dotPulse 2s ease-in-out infinite}
         @keyframes dotPulse{0%,100%{box-shadow:0 0 0 0 rgba(200,169,81,0.5)}50%{box-shadow:0 0 0 6px rgba(200,169,81,0)}}
 
-        /* ✅ TITLE: margin & font diperkecil */
         .hero-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:700;line-height:1.1;margin-bottom:8px;letter-spacing:-1px}
         .hero-title .t-line{display:block;overflow:hidden}
         .hero-title .t-inner{display:inline-block;opacity:0;transform:translateY(110%);transition:all 0.9s cubic-bezier(0.23,1,0.32,1)}
@@ -97,11 +93,9 @@
         .gold-text{background:linear-gradient(135deg,#c8a951 0%,#e0c76a 35%,#f5e08a 55%,#c8a951 80%,#b8943e 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s linear infinite;filter:drop-shadow(0 0 25px rgba(200,169,81,0.25))}
         @keyframes goldShimmer{to{background-position:200% center}}
 
-        /* ✅ DESC: margin diperkecil */
         .hero-desc{font-size:14px;margin-bottom:14px;color:rgba(255,255,255,0.7);line-height:1.6;max-width:520px;opacity:0;transform:translateY(20px);transition:all 0.8s cubic-bezier(0.23,1,0.32,1) 0.55s}
         .hero-slide.active .hero-desc{opacity:1;transform:translateY(0)}
 
-        /* ✅ BTNS: margin & padding diperkecil */
         .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;opacity:0;transform:translateY(20px);transition:all 0.8s cubic-bezier(0.23,1,0.32,1) 0.7s}
         .hero-slide.active .hero-btns{opacity:1;transform:translateY(0)}
         .hero-btns .btn{padding:12px 26px;font-size:13px;border-radius:50px;position:relative;overflow:hidden;text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-weight:600;cursor:pointer;border:none;transition:all 0.4s cubic-bezier(0.23,1,0.32,1)}
@@ -112,7 +106,6 @@
         .hero-btns .btn-glass{border:1.5px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.85);background:rgba(255,255,255,0.04);backdrop-filter:blur(10px)}
         .hero-btns .btn-glass:hover{background:rgba(255,255,255,0.1);border-color:var(--secondary);color:var(--secondary);transform:translateY(-3px)}
 
-        /* ✅ METRICS: padding diperkecil */
         .hero-metrics{display:flex;gap:0;opacity:0;transform:translateY(20px);transition:all 0.8s cubic-bezier(0.23,1,0.32,1) 0.85s}
         .hero-slide.active .hero-metrics{opacity:1;transform:translateY(0)}
         .metric{padding:0 20px;position:relative}
@@ -124,7 +117,6 @@
         .hero-visual{position:relative;display:flex;justify-content:center;align-items:center;opacity:0;transform:translateX(60px) scale(0.9);transition:all 1.2s cubic-bezier(0.23,1,0.32,1) 0.4s;perspective:1200px}
         .hero-slide.active .hero-visual{opacity:1;transform:translateX(0) scale(1)}
 
-        /* ✅ VISUAL STAGE: diperkecil dari 560px → 460px, compact */
         .visual-stage{position:relative;width:100%;max-width:460px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;transform-style:preserve-3d}
 
         .orbit{position:absolute;border-radius:50%;z-index:1}
@@ -137,10 +129,8 @@
         .orbit.o1 .orbit-dot{top:0;left:50%;transform:translate(-50%,-50%)}
         .orbit.o3 .orbit-dot{bottom:10%;right:0;transform:translate(50%,0);background:var(--accent);box-shadow:0 0 15px rgba(30,136,229,0.5)}
 
-        /* ✅ CARD WRAPPER: diperkecil dari 380x240 → 340x210 */
         .card-3d-wrapper{position:relative;width:340px;height:210px;z-index:5;transform-style:preserve-3d;transition:transform 0.4s ease}
 
-        /* ✅ BANK CARD: diperkecil dari 350x220 → 310x195 */
         .bank-card{position:absolute;width:310px;height:195px;border-radius:18px;padding:24px;color:#fff;box-shadow:0 25px 60px rgba(0,0,0,0.5);overflow:hidden;backface-visibility:hidden;transition:all 0.6s cubic-bezier(0.23,1,0.32,1)}
         .bank-card::before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(255,255,255,0.18) 0%,transparent 50%);pointer-events:none}
         .bank-card::after{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 60%);pointer-events:none}
@@ -161,14 +151,12 @@
 
         .card-glow{position:absolute;width:65%;height:65%;border-radius:50%;background:radial-gradient(circle,rgba(200,169,81,0.25) 0%,transparent 70%);filter:blur(60px);z-index:0}
 
-        /* ✅ GLASS CARDS: padding & font diperkecil */
         .glass-card{position:absolute;z-index:8;background:rgba(255,255,255,0.1);backdrop-filter:blur(20px) saturate(1.8);border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:11px 15px;display:flex;align-items:center;gap:10px;box-shadow:0 15px 40px rgba(0,0,0,0.3);color:#fff;transition:transform 0.3s ease}
         .glass-card:hover{transform:scale(1.05)!important}
         .gc-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
         .gc-val{font-size:13px;font-weight:800;line-height:1.2}
         .gc-lbl{font-size:9px;opacity:0.7;font-weight:500}
 
-        /* ✅ GLASS CARDS: posisi lebih mepet ke cards (jarak atas bawah dikurangi) */
         .gc-1{bottom:8%;left:-3%;animation:gcFloat1 7s ease-in-out infinite}
         .gc-1 .gc-icon{background:linear-gradient(135deg,rgba(200,169,81,0.3),rgba(200,169,81,0.1));color:var(--secondary)}
         .gc-2{top:8%;right:-2%;animation:gcFloat2 8s ease-in-out infinite 1s}
@@ -180,7 +168,6 @@
         @keyframes gcFloat2{0%,100%{transform:translateY(0) rotate(1deg)}50%{transform:translateY(-8px) rotate(-1deg)}}
         @keyframes gcFloat3{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-7px) rotate(-2deg)}}
 
-        /* ✅ CONTROLS: dinaikkan posisinya */
         .hero-controls{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10;align-items:center}
         .slide-tab{position:relative;width:60px;height:4px;border-radius:4px;background:rgba(255,255,255,0.15);cursor:pointer;overflow:hidden;transition:all 0.4s ease}
         .slide-tab:hover{background:rgba(255,255,255,0.25)}
@@ -339,7 +326,7 @@
             .footer-grid{grid-template-columns:repeat(2,1fr)}
             .stats-grid{grid-template-columns:repeat(2,1fr);gap:30px}
             .hero{min-height:auto;height:auto;max-height:none;padding-bottom:40px}
-            .hero-slide{align-items:center}
+            .hero-slide{padding-top:8px}
             .hero-container{padding:0 25px}
             .hero-grid-layout{grid-template-columns:1fr;text-align:center;gap:25px}
             .hero-visual{order:-1}
@@ -360,7 +347,7 @@
             .nav-menu.active{display:flex}
             .hamburger{display:block}
             .hero{min-height:auto;max-height:none;padding-bottom:30px}
-            .hero-slide{align-items:center}
+            .hero-slide{padding-top:8px}
             .hero-container{padding:0 20px}
             .hero-title{font-size:clamp(1.7rem,7vw,2.4rem);letter-spacing:-0.5px}
             .hero-desc{font-size:13px}
