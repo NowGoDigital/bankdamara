@@ -50,28 +50,22 @@
         .logo-icon{width:38px;height:38px;background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--secondary);font-size:18px;font-weight:bold;box-shadow:0 4px 12px rgba(10,31,68,0.3)}
         .logo-text h1{font-size:17px;color:var(--primary);font-weight:700;letter-spacing:-0.5px;line-height:1.1}
         .logo-text span{font-size:10px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px}
-
         .nav{display:flex;align-items:center}
         .nav-menu{display:flex;list-style:none;gap:2px;align-items:center}
         .nav-menu > li > a{text-decoration:none;color:var(--text-dark);font-weight:500;padding:8px 13px;border-radius:7px;transition:var(--transition);font-size:13px;display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
         .nav-menu > li > a:hover,.nav-menu > li > a.active{background:var(--primary);color:var(--white)}
-        /* ✅ SCROLLSPY ACTIVE — indicator garis bawah */
-        .nav-menu > li > a.active::after{content:'';display:none}
         .nav-menu li{position:relative}
         .nav-menu li .dropdown{position:absolute;top:calc(100% + 6px);left:0;background:var(--white);min-width:220px;box-shadow:var(--shadow-hover);border-radius:10px;padding:6px;display:none;z-index:100;opacity:0;transform:translateY(-8px);transition:all 0.25s ease;border:1px solid #f0f0f0}
         .nav-menu li:hover .dropdown{display:block;opacity:1;transform:translateY(0)}
         .nav-menu li .dropdown a{display:flex;align-items:center;gap:10px;padding:9px 13px;border-radius:6px;font-size:13px;color:var(--text-dark);text-decoration:none;transition:var(--transition);font-weight:500}
         .nav-menu li .dropdown a i{color:var(--secondary);font-size:11px;width:14px;text-align:center}
         .nav-menu li .dropdown a:hover{background:var(--bg-light);color:var(--primary);padding-left:16px}
-        .nav-menu li .dropdown a:hover i{color:var(--primary)}
-
         .btn-whatsapp{background:linear-gradient(135deg,var(--wa),var(--wa-dark))!important;color:var(--white)!important;font-weight:600!important;padding:8px 16px!important;border-radius:25px!important;margin-left:10px;box-shadow:0 4px 12px rgba(37,211,102,0.3);position:relative;overflow:hidden}
         .btn-whatsapp::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;background:rgba(255,255,255,0.2);border-radius:50%;transform:translate(-50%,-50%);transition:all 0.5s ease}
         .btn-whatsapp:hover::before{width:200px;height:200px}
         .btn-whatsapp:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(37,211,102,0.5);color:var(--white)!important}
         .btn-whatsapp .wa-pulse{width:8px;height:8px;background:#fff;border-radius:50%;position:relative;animation:waPulse 1.8s ease-in-out infinite}
         @keyframes waPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,0.7)}50%{box-shadow:0 0 0 6px rgba(255,255,255,0)}}
-
         .hamburger{display:none;font-size:22px;cursor:pointer;color:var(--primary);padding:6px 10px;border-radius:6px;transition:var(--transition)}
         .hamburger:hover{background:var(--bg-light)}
 
@@ -137,37 +131,96 @@
         .orbit-dot{position:absolute;width:8px;height:8px;background:var(--secondary);border-radius:50%;box-shadow:0 0 15px rgba(200,169,81,0.5)}
         .orbit.o1 .orbit-dot{top:0;left:50%;transform:translate(-50%,-50%)}
         .orbit.o3 .orbit-dot{bottom:10%;right:0;transform:translate(50%,0);background:var(--accent);box-shadow:0 0 15px rgba(30,136,229,0.5)}
-        .card-3d-wrapper{position:relative;width:340px;height:210px;z-index:5;transform-style:preserve-3d;transition:transform 0.4s ease}
-        .bank-card{position:absolute;width:310px;height:195px;border-radius:18px;padding:24px;color:#fff;box-shadow:0 25px 60px rgba(0,0,0,0.5);overflow:hidden;backface-visibility:hidden;transition:all 0.6s cubic-bezier(0.23,1,0.32,1)}
-        .bank-card::before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(255,255,255,0.18) 0%,transparent 50%);pointer-events:none}
-        .bank-card::after{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 60%);pointer-events:none}
-        .bank-card.c1{background:linear-gradient(135deg,#0a1f44,#1a3a6b,#2a5298);z-index:3;transform:rotate(-5deg) translateY(0)}
-        .bank-card.c2{background:linear-gradient(135deg,#c8a951,#e0c76a,#b8943e);color:#0a1f44;z-index:2;transform:rotate(5deg) translate(30px,22px)}
-        .bank-card.c3{background:linear-gradient(135deg,#1e88e5,#42a5f5,#1565c0);z-index:1;transform:rotate(-2deg) translate(-18px,40px)}
-        .card-top{display:flex;align-items:center;gap:8px;margin-bottom:20px;font-size:12px;font-weight:700;letter-spacing:1px}
-        .card-logo{width:26px;height:26px;background:rgba(255,255,255,0.2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800}
-        .card-chip{width:36px;height:26px;background:linear-gradient(135deg,#e0c76a,#c8a951);border-radius:6px;margin-bottom:14px;position:relative}
-        .card-chip::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60%;height:60%;border:1px solid rgba(0,0,0,0.15);border-radius:3px}
-        .card-num{font-size:14px;letter-spacing:3px;font-weight:500;margin-bottom:12px;font-family:'Courier New',monospace}
-        .card-end{display:flex;justify-content:space-between;align-items:flex-end}
-        .card-holder-label{font-size:9px;text-transform:uppercase;letter-spacing:1px;opacity:0.6}
-        .card-holder-name{font-size:12px;font-weight:600;margin-top:2px}
-        .card-brand{font-size:16px;font-weight:800;font-style:italic;opacity:0.9}
         .card-glow{position:absolute;width:65%;height:65%;border-radius:50%;background:radial-gradient(circle,rgba(200,169,81,0.25) 0%,transparent 70%);filter:blur(60px);z-index:0}
+
+        /* ============================================
+           📖 BUKU TABUNGAN STYLES
+           ============================================ */
+        .book-3d-wrapper{position:relative;width:340px;height:260px;z-index:5;transform-style:preserve-3d;transition:transform 0.4s ease}
+
+        .tabungan-book{position:absolute;border-radius:4px 12px 12px 4px;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,0.5);transition:all 0.6s cubic-bezier(0.23,1,0.32,1);backface-visibility:hidden}
+        /* Binding spine effect */
+        .tabungan-book::before{content:'';position:absolute;left:0;top:0;bottom:0;width:18px;z-index:10}
+        /* Paper edge lines */
+        .tabungan-book::after{content:'';position:absolute;left:18px;top:0;bottom:0;width:1px;background:repeating-linear-gradient(180deg,transparent,transparent 3px,rgba(0,0,0,0.05) 3px,rgba(0,0,0,0.05) 4px)}
+
+        /* Book 1 — Blue (Tabungan Utama) */
+        .tabungan-book.bk1{width:280px;height:200px;z-index:3;transform:rotate(-5deg) translateY(0)}
+        .tabungan-book.bk1::before{background:linear-gradient(90deg,#0a1f44,#132d5a)}
+        .tabungan-book.bk1 .bk-cover{background:linear-gradient(135deg,#0d2244 0%,#1a3a6b 40%,#2a5298 100%);width:100%;height:100%;padding:22px 22px 22px 38px;position:relative;display:flex;flex-direction:column;justify-content:space-between}
+        .tabungan-book.bk1 .bk-cover::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.1) 0%,transparent 50%);pointer-events:none}
+
+        /* Book 2 — Gold (Deposito) */
+        .tabungan-book.bk2{width:280px;height:200px;z-index:2;transform:rotate(4deg) translate(28px,20px);background:linear-gradient(135deg,#c8a951,#e0c76a,#b8943e)}
+        .tabungan-book.bk2::before{background:linear-gradient(90deg,#8a6d2a,#a07c30)}
+        .tabungan-book.bk2 .bk-cover{background:linear-gradient(135deg,#b8943e 0%,#c8a951 30%,#e0c76a 70%,#c8a951 100%);width:100%;height:100%;padding:22px 22px 22px 38px;position:relative;display:flex;flex-direction:column;justify-content:space-between}
+        .tabungan-book.bk2 .bk-cover::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.2) 0%,transparent 50%);pointer-events:none}
+
+        /* Book 3 — Blue Light (Tabungan Bisnis) */
+        .tabungan-book.bk3{width:280px;height:200px;z-index:1;transform:rotate(-2deg) translate(-16px,38px)}
+        .tabungan-book.bk3::before{background:linear-gradient(90deg,#0d47a1,#1565c0)}
+        .tabungan-book.bk3 .bk-cover{background:linear-gradient(135deg,#1565c0 0%,#1e88e5 40%,#42a5f5 100%);width:100%;height:100%;padding:22px 22px 22px 38px;position:relative;display:flex;flex-direction:column;justify-content:space-between}
+        .tabungan-book.bk3 .bk-cover::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.15) 0%,transparent 50%);pointer-events:none}
+
+        /* Book inner elements */
+        .bk-header{display:flex;align-items:center;gap:8px;position:relative;z-index:2}
+        .bk-logo{width:30px;height:30px;background:rgba(255,255,255,0.2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;flex-shrink:0}
+        .bk2 .bk-logo{background:rgba(0,0,0,0.15);color:#0a1f44}
+        .bk-bank-name{font-size:13px;font-weight:700;letter-spacing:1px;color:#fff}
+        .bk2 .bk-bank-name{color:#0a1f44}
+
+        .bk-body{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:8px 0}
+        .bk-type{font-size:18px;font-weight:800;color:#fff;letter-spacing:1px;text-shadow:0 2px 10px rgba(0,0,0,0.2)}
+        .bk2 .bk-type{color:#0a1f44}
+        .bk-sub{font-size:10px;color:rgba(255,255,255,0.7);letter-spacing:0.5px}
+        .bk2 .bk-sub{color:rgba(10,31,68,0.6)}
+
+        /* Transaction lines */
+        .bk-lines{display:flex;flex-direction:column;gap:3px;margin-top:4px}
+        .bk-line{height:2px;border-radius:1px;opacity:0.3}
+        .bk1 .bk-line{background:rgba(255,255,255,0.5)}
+        .bk2 .bk-line{background:rgba(10,31,68,0.3)}
+        .bk3 .bk-line{background:rgba(255,255,255,0.5)}
+        .bk-line:nth-child(1){width:80%}
+        .bk-line:nth-child(2){width:60%}
+        .bk-line:nth-child(3){width:70%}
+        .bk-line:nth-child(4){width:45%}
+
+        .bk-footer{display:flex;justify-content:space-between;align-items:flex-end;position:relative;z-index:2}
+        .bk-no{font-size:9px;color:rgba(255,255,255,0.5);letter-spacing:1px}
+        .bk2 .bk-no{color:rgba(10,31,68,0.4)}
+        .bk-badge{font-size:8px;font-weight:700;padding:3px 8px;border-radius:4px;letter-spacing:0.5px}
+        .bk1 .bk-badge{background:rgba(200,169,81,0.3);color:#e0c76a}
+        .bk2 .bk-badge{background:rgba(10,31,68,0.2);color:#0a1f44}
+        .bk3 .bk-badge{background:rgba(255,255,255,0.25);color:#fff}
+
+        /* Decorative pattern on cover */
+        .bk-pattern{position:absolute;right:-20px;bottom:-20px;width:120px;height:120px;border-radius:50%;border:2px solid rgba(255,255,255,0.06);pointer-events:none}
+        .bk-pattern::before{content:'';position:absolute;inset:15px;border-radius:50%;border:2px solid rgba(255,255,255,0.04)}
+        .bk2 .bk-pattern{border-color:rgba(10,31,68,0.08)}
+        .bk2 .bk-pattern::before{border-color:rgba(10,31,68,0.05)}
+
+        /* Page edges effect */
+        .bk-pages{position:absolute;right:-3px;top:8px;bottom:8px;width:6px;z-index:-1}
+        .bk-pages::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,#e8e0d0 0px,#e8e0d0 1px,#d4ccc0 1px,#d4ccc0 2px);border-radius:0 2px 2px 0}
+        .bk-pages::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(0,0,0,0.1));border-radius:0 2px 2px 0}
+
+        /* Glass cards remain */
         .glass-card{position:absolute;z-index:8;background:rgba(255,255,255,0.1);backdrop-filter:blur(20px) saturate(1.8);border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:11px 15px;display:flex;align-items:center;gap:10px;box-shadow:0 15px 40px rgba(0,0,0,0.3);color:#fff;transition:transform 0.3s ease}
         .glass-card:hover{transform:scale(1.05)!important}
         .gc-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
         .gc-val{font-size:13px;font-weight:800;line-height:1.2}
         .gc-lbl{font-size:9px;opacity:0.7;font-weight:500}
-        .gc-1{bottom:8%;left:-3%;animation:gcFloat1 7s ease-in-out infinite}
+        .gc-1{bottom:5%;left:-3%;animation:gcFloat1 7s ease-in-out infinite}
         .gc-1 .gc-icon{background:linear-gradient(135deg,rgba(200,169,81,0.3),rgba(200,169,81,0.1));color:var(--secondary)}
-        .gc-2{top:8%;right:-2%;animation:gcFloat2 8s ease-in-out infinite 1s}
+        .gc-2{top:5%;right:-2%;animation:gcFloat2 8s ease-in-out infinite 1s}
         .gc-2 .gc-icon{background:linear-gradient(135deg,rgba(30,136,229,0.3),rgba(30,136,229,0.1));color:#42a5f5}
-        .gc-3{top:46%;right:-6%;animation:gcFloat3 9s ease-in-out infinite 0.5s}
+        .gc-3{top:42%;right:-6%;animation:gcFloat3 9s ease-in-out infinite 0.5s}
         .gc-3 .gc-icon{background:linear-gradient(135deg,rgba(76,175,80,0.3),rgba(76,175,80,0.1));color:#66bb6a}
         @keyframes gcFloat1{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1deg)}}
         @keyframes gcFloat2{0%,100%{transform:translateY(0) rotate(1deg)}50%{transform:translateY(-8px) rotate(-1deg)}}
         @keyframes gcFloat3{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-7px) rotate(-2deg)}}
+
         .hero-controls{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10;align-items:center}
         .slide-tab{position:relative;width:60px;height:4px;border-radius:4px;background:rgba(255,255,255,0.15);cursor:pointer;overflow:hidden;transition:all 0.4s ease}
         .slide-tab:hover{background:rgba(255,255,255,0.25)}
@@ -211,7 +264,7 @@
         .section-title p{color:var(--text-light);font-size:16px;max-width:600px;margin:0 auto}
         .section-title .underline{width:60px;height:4px;background:linear-gradient(135deg,var(--secondary),var(--secondary-light));margin:15px auto 0;border-radius:2px}
 
-        /* TENTANG KAMI */
+        /* TENTANG */
         .about-section{padding:80px 0;background:var(--white)}
         .about-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:40px;flex-wrap:wrap}
         .about-tab{padding:10px 22px;border-radius:30px;font-size:13px;font-weight:600;cursor:pointer;transition:var(--transition);border:2px solid #e8e8e8;color:var(--text-light);background:var(--white)}
@@ -224,10 +277,6 @@
         .about-image{position:relative;border-radius:20px;overflow:hidden;height:380px}
         .about-image .about-img-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:80px;color:rgba(255,255,255,0.9)}
         .about-image.img-profil .about-img-bg{background:linear-gradient(135deg,var(--primary),#2a5298)}
-        .about-image.img-visi .about-img-bg{background:linear-gradient(135deg,#1a237e,#3949ab)}
-        .about-image.img-budaya .about-img-bg{background:linear-gradient(135deg,#004d40,#00897b)}
-        .about-image.img-manajemen .about-img-bg{background:linear-gradient(135deg,#4a148c,#7b1fa2)}
-        .about-image.img-karir .about-img-bg{background:linear-gradient(135deg,#bf360c,#e64a19)}
         .about-image .about-float{position:absolute;bottom:20px;left:20px;right:20px;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-radius:12px;padding:15px 20px;display:flex;align-items:center;gap:12px}
         .about-float .af-icon{width:45px;height:45px;border-radius:10px;background:linear-gradient(135deg,var(--secondary),var(--secondary-light));display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:18px;flex-shrink:0}
         .about-float h5{font-size:13px;color:var(--text-dark)}
@@ -306,7 +355,7 @@
         .product-card-body .btn{width:100%;justify-content:center;background:var(--primary);color:var(--white);padding:11px;border-radius:10px;font-size:13px}
         .product-card-body .btn:hover{background:var(--primary-light)}
 
-        /* LAYANAN DIGITAL */
+        /* DIGITAL */
         .digital-section{padding:80px 0;background:var(--white)}
         .digital-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
         .digital-visual{position:relative}
@@ -361,7 +410,6 @@
         .lelang-card-img .lc-status{position:absolute;top:12px;left:12px;padding:5px 12px;border-radius:20px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px}
         .lc-status.open{background:#4caf50;color:#fff}
         .lc-status.soon{background:#ff9800;color:#fff}
-        .lc-status.closed{background:#ef5350;color:#fff}
         .lelang-card-body{padding:20px}
         .lelang-card-body .lc-type{font-size:11px;color:var(--secondary);font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:5px}
         .lelang-card-body h4{font-size:16px;color:var(--text-dark);margin-bottom:8px}
@@ -393,7 +441,7 @@
         .pelaporan-card-body ul li:last-child{border-bottom:none}
         .pelaporan-card-body .btn{width:100%;justify-content:center;font-size:13px;padding:12px}
 
-        /* EXCHANGE RATE */
+        /* EXCHANGE */
         .exchange-rate{padding:80px 0;background:var(--primary);color:var(--white)}
         .exchange-rate .section-title h2{color:var(--white)}
         .exchange-rate .section-title p{color:rgba(255,255,255,0.7)}
@@ -436,7 +484,6 @@
         .footer-bottom-links{display:flex;gap:20px}
         .footer-bottom-links a{color:rgba(255,255,255,0.5);text-decoration:none;transition:var(--transition)}
         .footer-bottom-links a:hover{color:var(--secondary)}
-
         .scroll-top{position:fixed;bottom:30px;right:30px;width:50px;height:50px;background:var(--primary);color:var(--white);border:none;border-radius:50%;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:var(--shadow-hover);transition:var(--transition);z-index:999}
         .scroll-top:hover{background:var(--secondary);color:var(--primary);transform:translateY(-5px)}
         .scroll-top.show{display:flex}
@@ -451,7 +498,6 @@
         .wa-float-label{background:var(--white);padding:8px 16px;border-radius:8px;font-size:12px;font-weight:600;color:var(--text-dark);box-shadow:var(--shadow);margin-left:-8px;padding-left:16px;white-space:nowrap;position:relative;z-index:1}
         .wa-float-label::before{content:'';position:absolute;left:-6px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-right-color:var(--white)}
 
-        /* ✅ HIGHLIGHT EFFECT saat section dituju */
         .section-highlight{animation:sectionPulse 1s ease}
         @keyframes sectionPulse{0%{box-shadow:0 0 0 0 rgba(200,169,81,0.4)}50%{box-shadow:0 0 0 8px rgba(200,169,81,0.1)}100%{box-shadow:0 0 0 0 rgba(200,169,81,0)}}
 
@@ -475,8 +521,10 @@
             .hero-btns{justify-content:center}
             .hero-metrics{justify-content:center}
             .gc-3{display:none}.gc-1{left:0;bottom:0}.gc-2{right:0}
-            .bank-card{width:270px;height:170px;padding:20px}
-            .card-num{font-size:12px}
+            .book-3d-wrapper{width:260px;height:200px}
+            .tabungan-book{width:220px!important;height:160px!important}
+            .tabungan-book .bk-cover{padding:14px 14px 14px 30px!important}
+            .bk-type{font-size:14px!important}
             .scroll-hint{display:none}.slide-counter{display:none}
             .nav-menu{gap:0;overflow-x:auto;scrollbar-width:none}
             .nav-menu::-webkit-scrollbar{display:none}
@@ -506,10 +554,11 @@
             .metric+.metric::before{display:none}
             .metric-val{font-size:20px}
             .visual-stage{max-width:260px}
-            .bank-card{width:220px;height:140px;padding:16px}
-            .card-num{font-size:11px;letter-spacing:2px}
-            .card-top{font-size:10px;margin-bottom:12px}
-            .card-chip{width:26px;height:18px;margin-bottom:8px}
+            .book-3d-wrapper{width:220px;height:170px}
+            .tabungan-book{width:190px!important;height:140px!important}
+            .tabungan-book .bk-cover{padding:12px 12px 12px 26px!important}
+            .bk-type{font-size:12px!important}
+            .bk-bank-name{font-size:10px!important}
             .hero-btns{flex-direction:column;align-items:center}
             .hero-btns .btn{width:100%;justify-content:center}
             .glass-card{padding:9px 12px}
@@ -571,12 +620,8 @@
         </a>
         <nav class="nav">
             <ul class="nav-menu" id="navMenu">
-                <!-- ✅ BERANDA → scroll ke hero section -->
                 <li><a href="#beranda" class="nav-link active" data-section="beranda"><i class="fas fa-home"></i> Beranda</a></li>
-
-                <!-- ✅ TENTANG KAMI → scroll ke section #tentang -->
-                <li>
-                    <a href="#tentang" class="nav-link" data-section="tentang">Tentang Kami <i class="fas fa-chevron-down" style="font-size:9px"></i></a>
+                <li><a href="#tentang" class="nav-link" data-section="tentang">Tentang Kami <i class="fas fa-chevron-down" style="font-size:9px"></i></a>
                     <div class="dropdown">
                         <a href="#tentang" data-tab="profil"><i class="fas fa-building"></i> Profil</a>
                         <a href="#tentang" data-tab="visi"><i class="fas fa-bullseye"></i> Visi & Misi</a>
@@ -585,10 +630,7 @@
                         <a href="#tentang" data-tab="karir"><i class="fas fa-briefcase"></i> Karir</a>
                     </div>
                 </li>
-
-                <!-- ✅ PRODUK & LAYANAN → scroll ke section #produk -->
-                <li>
-                    <a href="#produk" class="nav-link" data-section="produk">Produk & Layanan <i class="fas fa-chevron-down" style="font-size:9px"></i></a>
+                <li><a href="#produk" class="nav-link" data-section="produk">Produk & Layanan <i class="fas fa-chevron-down" style="font-size:9px"></i></a>
                     <div class="dropdown">
                         <a href="#produk" data-product="tabungan"><i class="fas fa-piggy-bank"></i> Tabungan</a>
                         <a href="#produk" data-product="deposito"><i class="fas fa-chart-line"></i> Deposito</a>
@@ -596,21 +638,14 @@
                         <a href="#layanan"><i class="fas fa-concierge-bell"></i> Layanan Digital</a>
                     </div>
                 </li>
-
-                <!-- ✅ LELANG AGUNAN → scroll ke section #lelang -->
                 <li><a href="#lelang" class="nav-link" data-section="lelang"><i class="fas fa-gavel"></i> Lelang Agunan</a></li>
-
-                <!-- ✅ PELAPORAN → scroll ke section #pelaporan -->
-                <li>
-                    <a href="#pelaporan" class="nav-link" data-section="pelaporan">Pelaporan <i class="fas fa-chevron-down" style="font-size:9px"></i></a>
+                <li><a href="#pelaporan" class="nav-link" data-section="pelaporan">Pelaporan <i class="fas fa-chevron-down" style="font-size:9px"></i></a>
                     <div class="dropdown">
                         <a href="#pelaporan" data-report="publikasi"><i class="fas fa-newspaper"></i> Publikasi</a>
                         <a href="#pelaporan" data-report="tahunan"><i class="fas fa-book"></i> Tahunan</a>
                         <a href="#pelaporan" data-report="pengaduan"><i class="fas fa-comment-dots"></i> Pengaduan</a>
                     </div>
                 </li>
-
-                <!-- ✅ CTA WHATSAPP → buka WA -->
                 <li><a href="https://wa.me/6281234567890?text=Halo%20Bank%20Nusantara,%20saya%20ingin%20bertanya..." target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat CS <span class="wa-pulse"></span></a></li>
             </ul>
             <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
@@ -618,7 +653,7 @@
     </div>
 </header>
 
-<!-- ✅ HERO — id="beranda" untuk anchor -->
+<!-- HERO -->
 <section class="hero" id="beranda">
     <div class="hero-mesh"><div class="mesh-blob b1"></div><div class="mesh-blob b2"></div><div class="mesh-blob b3"></div><div class="mesh-blob b4"></div></div>
     <div class="hero-noise"></div>
@@ -632,18 +667,72 @@
                     <div class="hero-badge"><span class="badge-dot"></span>Terpercaya Sejak 1985 · Diawasi OJK · Dijamin LPS</div>
                     <h2 class="hero-title"><span class="t-line"><span class="t-inner">Wujudkan <span class="gold-text">Masa Depan</span></span></span><span class="t-line"><span class="t-inner">Finansial Anda</span></span></h2>
                     <p class="hero-desc">Solusi perbankan lengkap untuk kebutuhan personal dan bisnis Anda dengan layanan terpercaya, bunga kompetitif, dan teknologi modern.</p>
-                    <div class="hero-btns">
-                        <a href="#produk" class="btn btn-gold"><i class="fas fa-rocket"></i> Mulai Sekarang</a>
-                        <a href="#tentang" class="btn btn-glass"><i class="fas fa-play-circle"></i> Pelajari Lebih</a>
-                    </div>
+                    <div class="hero-btns"><a href="#produk" class="btn btn-gold"><i class="fas fa-rocket"></i> Mulai Sekarang</a><a href="#tentang" class="btn btn-glass"><i class="fas fa-play-circle"></i> Pelajari Lebih</a></div>
                     <div class="hero-metrics"><div class="metric"><span class="metric-val" data-count="5">0</span><span class="metric-lbl">Juta+ Nasabah</span></div><div class="metric"><span class="metric-val" data-count="1200">0</span><span class="metric-lbl">Cabang & ATM</span></div><div class="metric"><span class="metric-val" data-count="40">0</span><span class="metric-lbl">Tahun Pengalaman</span></div></div>
                 </div>
                 <div class="hero-visual" id="parallaxTarget"><div class="visual-stage" id="cardStage">
                     <div class="orbit o1"><div class="orbit-dot"></div></div><div class="orbit o2"></div><div class="orbit o3"><div class="orbit-dot"></div></div><div class="card-glow"></div>
-                    <div class="card-3d-wrapper" id="card3d">
-                        <div class="bank-card c1"><div class="card-top"><div class="card-logo">BN</div>Bank Nusantara</div><div class="card-chip"></div><div class="card-num">4821 •••• •••• 7634</div><div class="card-end"><div><div class="card-holder-label">Card Holder</div><div class="card-holder-name">JOHN DOE</div></div><div class="card-brand">VISA</div></div></div>
-                        <div class="bank-card c2"><div class="card-top"><div class="card-logo" style="background:rgba(0,0,0,0.15)">BN</div>Bank Nusantara</div><div class="card-chip"></div><div class="card-num">5392 •••• •••• 1048</div><div class="card-end"><div><div class="card-holder-label">Card Holder</div><div class="card-holder-name">JANE SMITH</div></div><div class="card-brand">MC</div></div></div>
-                        <div class="bank-card c3"><div class="card-top"><div class="card-logo">BN</div>Bank Nusantara</div><div class="card-chip"></div><div class="card-num">3782 •••• •••• 0051</div><div class="card-end"><div><div class="card-holder-label">Card Holder</div><div class="card-holder-name">AHMAD R.</div></div><div class="card-brand">AMEX</div></div></div>
+                    <div class="book-3d-wrapper" id="card3d">
+                        <!-- Buku Tabungan 1 — Tabungan Utama (Biru) -->
+                        <div class="tabungan-book bk1">
+                            <div class="bk-pages"></div>
+                            <div class="bk-cover">
+                                <div class="bk-pattern"></div>
+                                <div class="bk-header">
+                                    <div class="bk-logo">BN</div>
+                                    <div class="bk-bank-name">BANK NUSANTARA</div>
+                                </div>
+                                <div class="bk-body">
+                                    <div class="bk-type">TABUNGAN UTAMA</div>
+                                    <div class="bk-sub">Simpanan Aman & Menguntungkan</div>
+                                    <div class="bk-lines"><div class="bk-line"></div><div class="bk-line"></div><div class="bk-line"></div><div class="bk-line"></div></div>
+                                </div>
+                                <div class="bk-footer">
+                                    <div class="bk-no">No. 001-2026-88451</div>
+                                    <div class="bk-badge">PREMIUM</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Buku Tabungan 2 — Deposito (Gold) -->
+                        <div class="tabungan-book bk2">
+                            <div class="bk-pages"></div>
+                            <div class="bk-cover">
+                                <div class="bk-pattern"></div>
+                                <div class="bk-header">
+                                    <div class="bk-logo">BN</div>
+                                    <div class="bk-bank-name">BANK NUSANTARA</div>
+                                </div>
+                                <div class="bk-body">
+                                    <div class="bk-type">DEPOSITO BERJANGKA</div>
+                                    <div class="bk-sub">Investasi Cerdas 5.5% p.a</div>
+                                    <div class="bk-lines"><div class="bk-line"></div><div class="bk-line"></div><div class="bk-line"></div><div class="bk-line"></div></div>
+                                </div>
+                                <div class="bk-footer">
+                                    <div class="bk-no">No. 002-2026-33210</div>
+                                    <div class="bk-badge">GOLD</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Buku Tabungan 3 — Tabungan Bisnis (Biru Muda) -->
+                        <div class="tabungan-book bk3">
+                            <div class="bk-pages"></div>
+                            <div class="bk-cover">
+                                <div class="bk-pattern"></div>
+                                <div class="bk-header">
+                                    <div class="bk-logo">BN</div>
+                                    <div class="bk-bank-name">BANK NUSANTARA</div>
+                                </div>
+                                <div class="bk-body">
+                                    <div class="bk-type">TABUNGAN BISNIS</div>
+                                    <div class="bk-sub">Solusi Keuangan Usaha Anda</div>
+                                    <div class="bk-lines"><div class="bk-line"></div><div class="bk-line"></div><div class="bk-line"></div><div class="bk-line"></div></div>
+                                </div>
+                                <div class="bk-footer">
+                                    <div class="bk-no">No. 003-2026-77620</div>
+                                    <div class="bk-badge">BISNIS</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="glass-card gc-1"><div class="gc-icon"><i class="fas fa-shield-alt"></i></div><div><div class="gc-val">Dijamin LPS</div><div class="gc-lbl">Hingga Rp 2 Miliar</div></div></div>
                     <div class="glass-card gc-2"><div class="gc-icon"><i class="fas fa-chart-line"></i></div><div><div class="gc-val">5.5% p.a</div><div class="gc-lbl">Bunga Deposito</div></div></div>
@@ -658,17 +747,30 @@
                     <div class="hero-badge"><span class="badge-dot"></span>Investasi Aman & Menguntungkan</div>
                     <h2 class="hero-title"><span class="t-line"><span class="t-inner">Investasi Cerdas untuk</span></span><span class="t-line"><span class="t-inner"><span class="gold-text">Hidup Lebih Baik</span></span></span></h2>
                     <p class="hero-desc">Nikmati suku bunga kompetitif dan fleksibilitas dalam mengelola investasi Anda bersama kami. Dijamin LPS hingga Rp 2 Miliar.</p>
-                    <div class="hero-btns">
-                        <a href="#produk" class="btn btn-gold"><i class="fas fa-chart-line"></i> Lihat Investasi</a>
-                        <a href="#produk" class="btn btn-glass"><i class="fas fa-calculator"></i> Simulasi Deposito</a>
-                    </div>
+                    <div class="hero-btns"><a href="#produk" class="btn btn-gold"><i class="fas fa-chart-line"></i> Lihat Investasi</a><a href="#produk" class="btn btn-glass"><i class="fas fa-calculator"></i> Simulasi Deposito</a></div>
                     <div class="hero-metrics"><div class="metric"><span class="metric-val">5.5%</span><span class="metric-lbl">Bunga Deposito</span></div><div class="metric"><span class="metric-val">98%</span><span class="metric-lbl">Kepuasan Nasabah</span></div><div class="metric"><span class="metric-val">24</span><span class="metric-lbl">Bulan Tenor Max</span></div></div>
                 </div>
                 <div class="hero-visual"><div class="visual-stage">
                     <div class="orbit o1"><div class="orbit-dot"></div></div><div class="orbit o2"></div><div class="orbit o3"><div class="orbit-dot"></div></div><div class="card-glow"></div>
-                    <div class="card-3d-wrapper">
-                        <div class="bank-card c2" style="z-index:3;transform:rotate(-3deg)"><div class="card-top"><div class="card-logo" style="background:rgba(0,0,0,0.15)">BN</div>Bank Nusantara</div><div class="card-chip"></div><div class="card-num">DEPOSITO BERJANGKA</div><div class="card-end"><div><div class="card-holder-label">Suku Bunga</div><div class="card-holder-name">5.5% p.a</div></div><div class="card-brand" style="font-size:13px">PREMIUM</div></div></div>
-                        <div class="bank-card c1" style="transform:rotate(4deg) translate(22px,22px)"><div class="card-top"><div class="card-logo">BN</div>Bank Nusantara</div><div class="card-chip"></div><div class="card-num">TABUNGAN PRIORITAS</div><div class="card-end"><div><div class="card-holder-label">Exclusive</div><div class="card-holder-name">PRIORITY</div></div><div class="card-brand">GOLD</div></div></div>
+                    <div class="book-3d-wrapper">
+                        <div class="tabungan-book bk2" style="z-index:3;transform:rotate(-3deg)">
+                            <div class="bk-pages"></div>
+                            <div class="bk-cover">
+                                <div class="bk-pattern"></div>
+                                <div class="bk-header"><div class="bk-logo">BN</div><div class="bk-bank-name">BANK NUSANTARA</div></div>
+                                <div class="bk-body"><div class="bk-type">DEPOSITO BERJANGKA</div><div class="bk-sub">Suku Bunga 5.5% p.a · Tenor 1-24 Bulan</div><div class="bk-lines"><div class="bk-line"></div><div class="bk-line"></div><div class="bk-line"></div><div class="bk-line"></div></div></div>
+                                <div class="bk-footer"><div class="bk-no">No. 002-2026-33210</div><div class="bk-badge">PREMIUM</div></div>
+                            </div>
+                        </div>
+                        <div class="tabungan-book bk1" style="transform:rotate(4deg) translate(22px,22px)">
+                            <div class="bk-pages"></div>
+                            <div class="bk-cover">
+                                <div class="bk-pattern"></div>
+                                <div class="bk-header"><div class="bk-logo">BN</div><div class="bk-bank-name">BANK NUSANTARA</div></div>
+                                <div class="bk-body"><div class="bk-type">TABUNGAN PRIORITAS</div><div class="bk-sub">Exclusive Banking Experience</div><div class="bk-lines"><div class="bk-line"></div><div class="bk-line"></div><div class="bk-line"></div><div class="bk-line"></div></div></div>
+                                <div class="bk-footer"><div class="bk-no">No. 001-2026-99001</div><div class="bk-badge">GOLD</div></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="glass-card gc-2"><div class="gc-icon"><i class="fas fa-coins"></i></div><div><div class="gc-val">Rp 2T+</div><div class="gc-lbl">Total Aset Kelolaan</div></div></div>
                     <div class="glass-card gc-1"><div class="gc-icon"><i class="fas fa-lock"></i></div><div><div class="gc-val">100% Aman</div><div class="gc-lbl">Terenkripsi & Terjamin</div></div></div>
@@ -682,17 +784,38 @@
                     <div class="hero-badge"><span class="badge-dot"></span>Aplikasi Mobile Banking Terbaru</div>
                     <h2 class="hero-title"><span class="t-line"><span class="t-inner">Mobile Banking</span></span><span class="t-line"><span class="t-inner"><span class="gold-text">Terbaru</span> Kami</span></span></h2>
                     <p class="hero-desc">Transaksi lebih mudah, cepat, dan aman dengan aplikasi mobile banking terbaru. Transfer, bayar tagihan, dan investasi dalam genggaman.</p>
-                    <div class="hero-btns">
-                        <a href="#layanan" class="btn btn-gold"><i class="fas fa-mobile-alt"></i> Download App</a>
-                        <a href="#layanan" class="btn btn-glass"><i class="fas fa-info-circle"></i> Fitur Unggulan</a>
-                    </div>
+                    <div class="hero-btns"><a href="#layanan" class="btn btn-gold"><i class="fas fa-mobile-alt"></i> Download App</a><a href="#layanan" class="btn btn-glass"><i class="fas fa-info-circle"></i> Fitur Unggulan</a></div>
                     <div class="hero-metrics"><div class="metric"><span class="metric-val">4.8★</span><span class="metric-lbl">Rating App Store</span></div><div class="metric"><span class="metric-val">2M+</span><span class="metric-lbl">Download</span></div><div class="metric"><span class="metric-val">24/7</span><span class="metric-lbl">Layanan Online</span></div></div>
                 </div>
                 <div class="hero-visual"><div class="visual-stage">
                     <div class="orbit o1"><div class="orbit-dot"></div></div><div class="orbit o2"></div><div class="orbit o3"><div class="orbit-dot"></div></div><div class="card-glow"></div>
-                    <div class="card-3d-wrapper">
-                        <div class="bank-card c3" style="z-index:3;transform:rotate(-4deg);width:290px;height:180px"><div class="card-top"><div class="card-logo">BN</div>BN Mobile</div><div style="text-align:center;margin:12px 0"><i class="fas fa-mobile-alt" style="font-size:32px;opacity:0.8"></i></div><div class="card-end"><div><div class="card-holder-label">Versi Terbaru</div><div class="card-holder-name">v5.0 · 2026</div></div><div class="card-brand" style="font-size:11px">iOS & Android</div></div></div>
-                        <div class="bank-card c1" style="transform:rotate(5deg) translate(28px,22px);width:290px;height:180px"><div class="card-top"><div class="card-logo">BN</div>QRIS Pay</div><div style="text-align:center;margin:12px 0"><i class="fas fa-qrcode" style="font-size:32px;opacity:0.8"></i></div><div class="card-end"><div><div class="card-holder-label">Scan & Pay</div><div class="card-holder-name">Instant</div></div><div class="card-brand" style="font-size:11px">QRIS</div></div></div>
+                    <div class="book-3d-wrapper">
+                        <div class="tabungan-book bk3" style="z-index:3;transform:rotate(-4deg)">
+                            <div class="bk-pages"></div>
+                            <div class="bk-cover">
+                                <div class="bk-pattern"></div>
+                                <div class="bk-header"><div class="bk-logo">BN</div><div class="bk-bank-name">BANK NUSANTARA</div></div>
+                                <div class="bk-body">
+                                    <div class="bk-type">e-TABUNGAN</div>
+                                    <div class="bk-sub">Buku Digital · Akses 24/7</div>
+                                    <div style="text-align:center;margin:8px 0"><i class="fas fa-mobile-alt" style="font-size:28px;opacity:0.7;color:#fff"></i></div>
+                                </div>
+                                <div class="bk-footer"><div class="bk-no">BN Mobile v5.0</div><div class="bk-badge">DIGITAL</div></div>
+                            </div>
+                        </div>
+                        <div class="tabungan-book bk1" style="transform:rotate(5deg) translate(28px,22px)">
+                            <div class="bk-pages"></div>
+                            <div class="bk-cover">
+                                <div class="bk-pattern"></div>
+                                <div class="bk-header"><div class="bk-logo">BN</div><div class="bk-bank-name">BANK NUSANTARA</div></div>
+                                <div class="bk-body">
+                                    <div class="bk-type">QRIS PASSBOOK</div>
+                                    <div class="bk-sub">Scan & Pay Instant</div>
+                                    <div style="text-align:center;margin:8px 0"><i class="fas fa-qrcode" style="font-size:28px;opacity:0.7;color:#fff"></i></div>
+                                </div>
+                                <div class="bk-footer"><div class="bk-no">Real-time 24/7</div><div class="bk-badge">QRIS</div></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="glass-card gc-3"><div class="gc-icon"><i class="fas fa-star"></i></div><div><div class="gc-val">4.8 / 5.0</div><div class="gc-lbl">Rating Pengguna</div></div></div>
                     <div class="glass-card gc-1"><div class="gc-icon"><i class="fas fa-bolt"></i></div><div><div class="gc-val">Transfer Instan</div><div class="gc-lbl">Real-time 24/7</div></div></div>
@@ -705,25 +828,18 @@
     <div class="scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div>
 </section>
 
-<!-- QUICK ACCESS — semua link ke section -->
-<section class="quick-access">
-    <div class="container"><div class="quick-access-grid">
-        <a href="#produk" class="quick-access-card" data-product="tabungan"><div class="icon"><i class="fas fa-university"></i></div><h4>Tabungan</h4><p>Buka rekening baru dengan mudah</p></a>
-        <a href="#produk" class="quick-access-card" data-product="pinjaman"><div class="icon"><i class="fas fa-hand-holding-usd"></i></div><h4>Pinjaman</h4><p>KPR, KTA, dan kredit usaha</p></a>
-        <a href="#produk" class="quick-access-card" data-product="deposito"><div class="icon"><i class="fas fa-piggy-bank"></i></div><h4>Deposito</h4><p>Bunga kompetitif hingga 5.5%</p></a>
-        <a href="#lelang" class="quick-access-card"><div class="icon"><i class="fas fa-gavel"></i></div><h4>Lelang Agunan</h4><p>Properti & kendaraan harga miring</p></a>
-    </div></div>
-</section>
+<!-- QUICK ACCESS -->
+<section class="quick-access"><div class="container"><div class="quick-access-grid">
+    <a href="#produk" class="quick-access-card" data-product="tabungan"><div class="icon"><i class="fas fa-university"></i></div><h4>Tabungan</h4><p>Buka rekening baru dengan mudah</p></a>
+    <a href="#produk" class="quick-access-card" data-product="pinjaman"><div class="icon"><i class="fas fa-hand-holding-usd"></i></div><h4>Pinjaman</h4><p>KPR, KTA, dan kredit usaha</p></a>
+    <a href="#produk" class="quick-access-card" data-product="deposito"><div class="icon"><i class="fas fa-piggy-bank"></i></div><h4>Deposito</h4><p>Bunga kompetitif hingga 5.5%</p></a>
+    <a href="#lelang" class="quick-access-card"><div class="icon"><i class="fas fa-gavel"></i></div><h4>Lelang Agunan</h4><p>Properti & kendaraan harga miring</p></a>
+</div></div></section>
 
-<!-- TENTANG KAMI -->
+<!-- TENTANG -->
 <section class="about-section" id="tentang">
     <div class="container">
-        <div class="section-title">
-            <div class="st-badge"><i class="fas fa-building"></i> Tentang Kami</div>
-            <h2>Mengenal Bank Nusantara</h2>
-            <p>Lebih dari 40 tahun melayani masyarakat Indonesia dengan integritas dan inovasi</p>
-            <div class="underline"></div>
-        </div>
+        <div class="section-title"><div class="st-badge"><i class="fas fa-building"></i> Tentang Kami</div><h2>Mengenal Bank Nusantara</h2><p>Lebih dari 40 tahun melayani masyarakat Indonesia dengan integritas dan inovasi</p><div class="underline"></div></div>
         <div class="about-tabs">
             <div class="about-tab active" data-tab-btn="profil" onclick="switchTab('profil')"><i class="fas fa-building"></i> Profil</div>
             <div class="about-tab" data-tab-btn="visi" onclick="switchTab('visi')"><i class="fas fa-bullseye"></i> Visi & Misi</div>
@@ -731,522 +847,92 @@
             <div class="about-tab" data-tab-btn="manajemen" onclick="switchTab('manajemen')"><i class="fas fa-user-tie"></i> Manajemen</div>
             <div class="about-tab" data-tab-btn="karir" onclick="switchTab('karir')"><i class="fas fa-briefcase"></i> Karir</div>
         </div>
-        <!-- TAB: PROFIL -->
-        <div class="about-content active" id="tab-profil">
-            <div class="about-grid">
-                <div class="about-image img-profil"><div class="about-img-bg"><i class="fas fa-landmark"></i></div><div class="about-float"><div class="af-icon"><i class="fas fa-award"></i></div><div><h5>Bank Terbaik 2026</h5><p>Penghargaan dari Majalah Infobank</p></div></div></div>
-                <div class="about-text">
-                    <h3>Profil Bank Nusantara</h3>
-                    <p>PT Bank Nusantara Tbk didirikan pada tahun 1985 sebagai bank umum swasta nasional. Dengan kantor pusat di Jakarta, kami telah berkembang menjadi salah satu bank terpercaya di Indonesia dengan lebih dari 1.200 cabang dan ATM yang tersebar di seluruh Nusantara.</p>
-                    <p>Kami berkomitmen menyediakan layanan perbankan yang inklusif, inovatif, dan berintegritas untuk mendorong pertumbuhan ekonomi nasional serta kesejahteraan masyarakat.</p>
-                    <ul class="about-features">
-                        <li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>Terdaftar & Diawasi OJK</strong><span>Memenuhi seluruh regulasi perbankan Indonesia</span></div></li>
-                        <li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>Anggota LPS</strong><span>Simpanan nasabah dijamin hingga Rp 2 Miliar</span></div></li>
-                        <li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>Rating AAA (idn)</strong><span>Peringkat tertinggi dari Pefindo Rating</span></div></li>
-                        <li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>ISO 27001 Certified</strong><span>Standar internasional keamanan informasi</span></div></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- TAB: VISI & MISI -->
-        <div class="about-content" id="tab-visi">
-            <div class="vm-grid">
-                <div class="vm-card vm-visi"><div class="vm-icon"><i class="fas fa-eye"></i></div><h4>Visi</h4><p>Menjadi bank nasional terdepan yang terpercaya, inovatif, dan berkontribusi nyata dalam mendorong pertumbuhan ekonomi Indonesia yang berkelanjutan serta meningkatkan kualitas hidup masyarakat melalui layanan keuangan yang inklusif dan berkelas dunia.</p></div>
-                <div class="vm-card vm-misi"><div class="vm-icon"><i class="fas fa-rocket"></i></div><h4>Misi</h4><ul>
-                    <li><i class="fas fa-circle"></i> Menyediakan produk dan layanan perbankan yang inovatif, aman, dan mudah diakses oleh seluruh lapisan masyarakat</li>
-                    <li><i class="fas fa-circle"></i> Mengembangkan sumber daya manusia yang profesional, berintegritas, dan berorientasi pada pelayanan prima</li>
-                    <li><i class="fas fa-circle"></i> Menerapkan tata kelola perusahaan yang baik (Good Corporate Governance) secara konsisten</li>
-                    <li><i class="fas fa-circle"></i> Memberikan nilai tambah yang optimal bagi pemegang saham dan pemangku kepentingan</li>
-                    <li><i class="fas fa-circle"></i> Berperan aktif dalam program keuangan inklusif dan tanggung jawab sosial perusahaan</li>
-                </ul></div>
-            </div>
-        </div>
-        <!-- TAB: BUDAYA -->
-        <div class="about-content" id="tab-budaya">
-            <div class="budaya-grid">
-                <div class="budaya-card"><div class="bc-icon"><i class="fas fa-handshake"></i></div><h4>Integritas</h4><p>Menjunjung tinggi kejujuran, transparansi, dan etika dalam setiap tindakan dan keputusan bisnis kami.</p></div>
-                <div class="budaya-card"><div class="bc-icon"><i class="fas fa-lightbulb"></i></div><h4>Inovasi</h4><p>Terus berinovasi dan beradaptasi dengan perkembangan teknologi untuk memberikan solusi terbaik bagi nasabah.</p></div>
-                <div class="budaya-card"><div class="bc-icon"><i class="fas fa-users"></i></div><h4>Kolaborasi</h4><p>Membangun sinergi dan kerja sama yang solid antar tim, mitra, dan pemangku kepentingan untuk hasil optimal.</p></div>
-                <div class="budaya-card"><div class="bc-icon"><i class="fas fa-star"></i></div><h4>Keunggulan</h4><p>Berkomitmen pada standar kualitas tertinggi dalam setiap produk, layanan, dan proses operasional kami.</p></div>
-            </div>
-        </div>
-        <!-- TAB: MANAJEMEN -->
-        <div class="about-content" id="tab-manajemen">
-            <div class="mgmt-grid">
-                <div class="mgmt-card"><div class="mgmt-photo"><i class="fas fa-user-tie"></i></div><div class="mgmt-info"><h4>Dr. Hendra Wijaya, MBA</h4><div class="mgmt-role">Direktur Utama</div><p>30+ tahun pengalaman di industri perbankan nasional dan internasional.</p></div></div>
-                <div class="mgmt-card"><div class="mgmt-photo"><i class="fas fa-user-tie"></i></div><div class="mgmt-info"><h4>Sari Dewi, SE, AK, CA</h4><div class="mgmt-role">Direktur Keuangan</div><p>Ahli strategi keuangan dan manajemen risiko dengan sertifikasi internasional.</p></div></div>
-                <div class="mgmt-card"><div class="mgmt-photo"><i class="fas fa-user-tie"></i></div><div class="mgmt-info"><h4>Budi Santoso, M.Si</h4><div class="mgmt-role">Direktur Operasional</div><p>Pakar transformasi digital dan efisiensi operasional perbankan.</p></div></div>
-                <div class="mgmt-card"><div class="mgmt-photo"><i class="fas fa-user-tie"></i></div><div class="mgmt-info"><h4>Ratna Kusuma, SH, MH</h4><div class="mgmt-role">Direktur Kepatuhan</div><p>Spesialis regulasi perbankan dan compliance framework.</p></div></div>
-            </div>
-        </div>
-        <!-- TAB: KARIR -->
-        <div class="about-content" id="tab-karir">
-            <div class="karir-grid">
-                <div class="karir-text">
-                    <h3>Bergabung Bersama Kami</h3>
-                    <p>Kami mencari talenta terbaik yang bersemangat untuk tumbuh bersama dan memberikan dampak positif bagi jutaan nasabah di seluruh Indonesia. Bank Nusantara menawarkan lingkungan kerja yang dinamis, inklusif, dan penuh peluang pengembangan.</p>
-                    <div class="karir-benefits">
-                        <div class="karir-benefit"><i class="fas fa-heartbeat"></i> Asuransi Kesehatan</div>
-                        <div class="karir-benefit"><i class="fas fa-graduation-cap"></i> Program Pelatihan</div>
-                        <div class="karir-benefit"><i class="fas fa-chart-line"></i> Jenjang Karir Jelas</div>
-                        <div class="karir-benefit"><i class="fas fa-coins"></i> Bonus Tahunan</div>
-                        <div class="karir-benefit"><i class="fas fa-umbrella-beach"></i> Cuti 18 Hari/Tahun</div>
-                        <div class="karir-benefit"><i class="fas fa-laptop"></i> Flexible Working</div>
-                    </div>
-                    <a href="#tentang" class="btn btn-primary" onclick="switchTab('karir')"><i class="fas fa-search"></i> Lihat Lowongan</a>
-                </div>
-                <div class="karir-visual"><i class="fas fa-people-group"></i><div class="kv-float"><h5>50+ Posisi Terbuka</h5><p>Bergabunglah dengan 12.000+ karyawan kami</p></div></div>
-            </div>
-        </div>
+        <div class="about-content active" id="tab-profil"><div class="about-grid"><div class="about-image img-profil"><div class="about-img-bg"><i class="fas fa-landmark"></i></div><div class="about-float"><div class="af-icon"><i class="fas fa-award"></i></div><div><h5>Bank Terbaik 2026</h5><p>Penghargaan dari Majalah Infobank</p></div></div></div><div class="about-text"><h3>Profil Bank Nusantara</h3><p>PT Bank Nusantara Tbk didirikan pada tahun 1985 sebagai bank umum swasta nasional. Dengan kantor pusat di Jakarta, kami telah berkembang menjadi salah satu bank terpercaya di Indonesia dengan lebih dari 1.200 cabang dan ATM yang tersebar di seluruh Nusantara.</p><p>Kami berkomitmen menyediakan layanan perbankan yang inklusif, inovatif, dan berintegritas untuk mendorong pertumbuhan ekonomi nasional serta kesejahteraan masyarakat.</p><ul class="about-features"><li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>Terdaftar & Diawasi OJK</strong><span>Memenuhi seluruh regulasi perbankan Indonesia</span></div></li><li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>Anggota LPS</strong><span>Simpanan nasabah dijamin hingga Rp 2 Miliar</span></div></li><li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>Rating AAA (idn)</strong><span>Peringkat tertinggi dari Pefindo Rating</span></div></li><li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>ISO 27001 Certified</strong><span>Standar internasional keamanan informasi</span></div></li></ul></div></div></div>
+        <div class="about-content" id="tab-visi"><div class="vm-grid"><div class="vm-card vm-visi"><div class="vm-icon"><i class="fas fa-eye"></i></div><h4>Visi</h4><p>Menjadi bank nasional terdepan yang terpercaya, inovatif, dan berkontribusi nyata dalam mendorong pertumbuhan ekonomi Indonesia yang berkelanjutan serta meningkatkan kualitas hidup masyarakat melalui layanan keuangan yang inklusif dan berkelas dunia.</p></div><div class="vm-card vm-misi"><div class="vm-icon"><i class="fas fa-rocket"></i></div><h4>Misi</h4><ul><li><i class="fas fa-circle"></i> Menyediakan produk dan layanan perbankan yang inovatif, aman, dan mudah diakses</li><li><i class="fas fa-circle"></i> Mengembangkan SDM yang profesional, berintegritas, dan berorientasi pelayanan prima</li><li><i class="fas fa-circle"></i> Menerapkan Good Corporate Governance secara konsisten</li><li><i class="fas fa-circle"></i> Memberikan nilai tambah optimal bagi pemegang saham</li><li><i class="fas fa-circle"></i> Berperan aktif dalam program keuangan inklusif</li></ul></div></div></div>
+        <div class="about-content" id="tab-budaya"><div class="budaya-grid"><div class="budaya-card"><div class="bc-icon"><i class="fas fa-handshake"></i></div><h4>Integritas</h4><p>Menjunjung tinggi kejujuran, transparansi, dan etika dalam setiap tindakan.</p></div><div class="budaya-card"><div class="bc-icon"><i class="fas fa-lightbulb"></i></div><h4>Inovasi</h4><p>Terus berinovasi dan beradaptasi dengan perkembangan teknologi.</p></div><div class="budaya-card"><div class="bc-icon"><i class="fas fa-users"></i></div><h4>Kolaborasi</h4><p>Membangun sinergi dan kerja sama yang solid antar tim dan mitra.</p></div><div class="budaya-card"><div class="bc-icon"><i class="fas fa-star"></i></div><h4>Keunggulan</h4><p>Berkomitmen pada standar kualitas tertinggi dalam setiap layanan.</p></div></div></div>
+        <div class="about-content" id="tab-manajemen"><div class="mgmt-grid"><div class="mgmt-card"><div class="mgmt-photo"><i class="fas fa-user-tie"></i></div><div class="mgmt-info"><h4>Dr. Hendra Wijaya, MBA</h4><div class="mgmt-role">Direktur Utama</div><p>30+ tahun pengalaman di industri perbankan.</p></div></div><div class="mgmt-card"><div class="mgmt-photo"><i class="fas fa-user-tie"></i></div><div class="mgmt-info"><h4>Sari Dewi, SE, AK, CA</h4><div class="mgmt-role">Direktur Keuangan</div><p>Ahli strategi keuangan dan manajemen risiko.</p></div></div><div class="mgmt-card"><div class="mgmt-photo"><i class="fas fa-user-tie"></i></div><div class="mgmt-info"><h4>Budi Santoso, M.Si</h4><div class="mgmt-role">Direktur Operasional</div><p>Pakar transformasi digital perbankan.</p></div></div><div class="mgmt-card"><div class="mgmt-photo"><i class="fas fa-user-tie"></i></div><div class="mgmt-info"><h4>Ratna Kusuma, SH, MH</h4><div class="mgmt-role">Direktur Kepatuhan</div><p>Spesialis regulasi perbankan.</p></div></div></div></div>
+        <div class="about-content" id="tab-karir"><div class="karir-grid"><div class="karir-text"><h3>Bergabung Bersama Kami</h3><p>Kami mencari talenta terbaik yang bersemangat untuk tumbuh bersama dan memberikan dampak positif bagi jutaan nasabah di seluruh Indonesia.</p><div class="karir-benefits"><div class="karir-benefit"><i class="fas fa-heartbeat"></i> Asuransi Kesehatan</div><div class="karir-benefit"><i class="fas fa-graduation-cap"></i> Program Pelatihan</div><div class="karir-benefit"><i class="fas fa-chart-line"></i> Jenjang Karir Jelas</div><div class="karir-benefit"><i class="fas fa-coins"></i> Bonus Tahunan</div><div class="karir-benefit"><i class="fas fa-umbrella-beach"></i> Cuti 18 Hari/Tahun</div><div class="karir-benefit"><i class="fas fa-laptop"></i> Flexible Working</div></div><a href="#tentang" class="btn btn-primary" onclick="switchTab('karir')"><i class="fas fa-search"></i> Lihat Lowongan</a></div><div class="karir-visual"><i class="fas fa-people-group"></i><div class="kv-float"><h5>50+ Posisi Terbuka</h5><p>Bergabunglah dengan 12.000+ karyawan kami</p></div></div></div></div>
     </div>
 </section>
 
-<!-- PRODUK & LAYANAN -->
+<!-- PRODUK -->
 <section class="products" id="produk">
     <div class="container">
-        <div class="section-title">
-            <div class="st-badge"><i class="fas fa-box-open"></i> Produk & Layanan</div>
-            <h2>Solusi Keuangan Lengkap</h2>
-            <p>Pilih produk dan layanan perbankan yang tepat untuk kebutuhan personal maupun bisnis Anda</p>
-            <div class="underline"></div>
-        </div>
+        <div class="section-title"><div class="st-badge"><i class="fas fa-box-open"></i> Produk & Layanan</div><h2>Solusi Keuangan Lengkap</h2><p>Pilih produk dan layanan perbankan yang tepat untuk kebutuhan Anda</p><div class="underline"></div></div>
         <div class="products-grid">
-            <div class="product-card" id="prod-tabungan">
-                <div class="product-card-header"><i class="fas fa-piggy-bank"></i><h3>Tabungan</h3><p>Simpanan aman & menguntungkan</p></div>
-                <div class="product-card-body"><ul>
-                    <li><i class="fas fa-check-circle"></i> Setoran awal Rp 100.000</li>
-                    <li><i class="fas fa-check-circle"></i> Bebas biaya admin (bln pertama)</li>
-                    <li><i class="fas fa-check-circle"></i> Kartu debit gratis</li>
-                    <li><i class="fas fa-check-circle"></i> Akses e-Banking 24/7</li>
-                    <li><i class="fas fa-check-circle"></i> Bunga hingga 3.5% p.a</li>
-                </ul><a href="#produk" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div>
-            </div>
-            <div class="product-card" id="prod-deposito">
-                <div class="product-card-header"><i class="fas fa-chart-line"></i><h3>Deposito</h3><p>Investasi aman & terjamin</p></div>
-                <div class="product-card-body"><ul>
-                    <li><i class="fas fa-check-circle"></i> Bunga hingga 5.5% p.a</li>
-                    <li><i class="fas fa-check-circle"></i> Tenor fleksibel 1-24 bulan</li>
-                    <li><i class="fas fa-check-circle"></i> ARO otomatis</li>
-                    <li><i class="fas fa-check-circle"></i> Dijamin LPS</li>
-                    <li><i class="fas fa-check-circle"></i> Bunga dibayar di muka</li>
-                </ul><a href="#produk" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div>
-            </div>
-            <div class="product-card" id="prod-pinjaman">
-                <div class="product-card-header"><i class="fas fa-hand-holding-usd"></i><h3>Pinjaman</h3><p>Solusi kredit fleksibel</p></div>
-                <div class="product-card-body"><ul>
-                    <li><i class="fas fa-check-circle"></i> KPR bunga 4.99% fixed</li>
-                    <li><i class="fas fa-check-circle"></i> KTA tanpa agunan</li>
-                    <li><i class="fas fa-check-circle"></i> Kredit kendaraan</li>
-                    <li><i class="fas fa-check-circle"></i> Kredit usaha (KUR)</li>
-                    <li><i class="fas fa-check-circle"></i> Proses cepat 7 hari</li>
-                </ul><a href="#produk" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div>
-            </div>
-            <div class="product-card" id="prod-layanan">
-                <div class="product-card-header"><i class="fas fa-concierge-bell"></i><h3>Layanan Digital</h3><p>Banking dalam genggaman</p></div>
-                <div class="product-card-body"><ul>
-                    <li><i class="fas fa-check-circle"></i> Mobile Banking v5.0</li>
-                    <li><i class="fas fa-check-circle"></i> Internet Banking</li>
-                    <li><i class="fas fa-check-circle"></i> QRIS Payment</li>
-                    <li><i class="fas fa-check-circle"></i> Virtual Account</li>
-                    <li><i class="fas fa-check-circle"></i> API Banking</li>
-                </ul><a href="#layanan" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div>
-            </div>
+            <div class="product-card" id="prod-tabungan"><div class="product-card-header"><i class="fas fa-piggy-bank"></i><h3>Tabungan</h3><p>Simpanan aman & menguntungkan</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> Setoran awal Rp 100.000</li><li><i class="fas fa-check-circle"></i> Bebas biaya admin (bln pertama)</li><li><i class="fas fa-check-circle"></i> Kartu debit gratis</li><li><i class="fas fa-check-circle"></i> Akses e-Banking 24/7</li><li><i class="fas fa-check-circle"></i> Bunga hingga 3.5% p.a</li></ul><a href="#produk" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div></div>
+            <div class="product-card" id="prod-deposito"><div class="product-card-header"><i class="fas fa-chart-line"></i><h3>Deposito</h3><p>Investasi aman & terjamin</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> Bunga hingga 5.5% p.a</li><li><i class="fas fa-check-circle"></i> Tenor fleksibel 1-24 bulan</li><li><i class="fas fa-check-circle"></i> ARO otomatis</li><li><i class="fas fa-check-circle"></i> Dijamin LPS</li><li><i class="fas fa-check-circle"></i> Bunga dibayar di muka</li></ul><a href="#produk" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div></div>
+            <div class="product-card" id="prod-pinjaman"><div class="product-card-header"><i class="fas fa-hand-holding-usd"></i><h3>Pinjaman</h3><p>Solusi kredit fleksibel</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> KPR bunga 4.99% fixed</li><li><i class="fas fa-check-circle"></i> KTA tanpa agunan</li><li><i class="fas fa-check-circle"></i> Kredit kendaraan</li><li><i class="fas fa-check-circle"></i> Kredit usaha (KUR)</li><li><i class="fas fa-check-circle"></i> Proses cepat 7 hari</li></ul><a href="#produk" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div></div>
+            <div class="product-card" id="prod-layanan"><div class="product-card-header"><i class="fas fa-concierge-bell"></i><h3>Layanan Digital</h3><p>Banking dalam genggaman</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> Mobile Banking v5.0</li><li><i class="fas fa-check-circle"></i> Internet Banking</li><li><i class="fas fa-check-circle"></i> QRIS Payment</li><li><i class="fas fa-check-circle"></i> Virtual Account</li><li><i class="fas fa-check-circle"></i> API Banking</li></ul><a href="#layanan" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div></div>
         </div>
     </div>
 </section>
 
-<!-- LAYANAN DIGITAL -->
-<section class="digital-section" id="layanan">
-    <div class="container">
-        <div class="digital-grid">
-            <div class="digital-visual">
-                <div class="digital-phone"><div class="dp-screen">
-                    <div class="dp-logo">BN Mobile</div><div class="dp-sub">v5.0 · 2026</div>
-                    <div class="dp-balance">Saldo Anda</div><div class="dp-amount">Rp 12.450.000</div>
-                    <div class="dp-actions">
-                        <div class="dp-action"><i class="fas fa-paper-plane"></i><span>Transfer</span></div>
-                        <div class="dp-action"><i class="fas fa-qrcode"></i><span>QRIS</span></div>
-                        <div class="dp-action"><i class="fas fa-file-invoice"></i><span>Tagihan</span></div>
-                        <div class="dp-action"><i class="fas fa-mobile-alt"></i><span>Pulsa</span></div>
-                        <div class="dp-action"><i class="fas fa-chart-pie"></i><span>Investasi</span></div>
-                        <div class="dp-action"><i class="fas fa-ellipsis-h"></i><span>Lainnya</span></div>
-                    </div>
-                </div></div>
-                <div class="digital-float-1"><i class="fas fa-check-circle"></i><span>Transfer Berhasil!</span></div>
-                <div class="digital-float-2"><i class="fas fa-shield-alt"></i><span>100% Aman</span></div>
-            </div>
-            <div class="digital-text">
-                <h2>Banking Digital Terdepan di Indonesia</h2>
-                <p>Nikmati kemudahan bertransaksi kapan saja dan di mana saja dengan teknologi perbankan digital kami yang modern, cepat, dan aman. Semua dalam satu genggaman.</p>
-                <ul class="digital-features">
-                    <li><div class="df-icon"><i class="fas fa-bolt"></i></div><div><h4>Transfer Instan BI-FAST</h4><p>Kirim uang ke rekening bank manapun dalam hitungan detik, 24/7, biaya hanya Rp 2.500.</p></div></li>
-                    <li><div class="df-icon"><i class="fas fa-qrcode"></i></div><div><h4>QRIS Payment</h4><p>Bayar di jutaan merchant dengan scan QR code. Cashback hingga 20% setiap minggu.</p></div></li>
-                    <li><div class="df-icon"><i class="fas fa-file-invoice-dollar"></i></div><div><h4>Bayar Tagihan & Top Up</h4><p>Listrik, air, internet, BPJS, pulsa, e-wallet, dan 200+ tagihan lainnya dalam satu aplikasi.</p></div></li>
-                    <li><div class="df-icon"><i class="fas fa-fingerprint"></i></div><div><h4>Keamanan Biometrik</h4><p>Login dengan Face ID atau fingerprint. Enkripsi end-to-end untuk setiap transaksi Anda.</p></div></li>
-                </ul>
-                <a href="#produk" class="btn btn-dark"><i class="fas fa-download"></i> Download BN Mobile</a>
-            </div>
-        </div>
-    </div>
-</section>
+<!-- DIGITAL -->
+<section class="digital-section" id="layanan"><div class="container"><div class="digital-grid"><div class="digital-visual"><div class="digital-phone"><div class="dp-screen"><div class="dp-logo">BN Mobile</div><div class="dp-sub">v5.0 · 2026</div><div class="dp-balance">Saldo Anda</div><div class="dp-amount">Rp 12.450.000</div><div class="dp-actions"><div class="dp-action"><i class="fas fa-paper-plane"></i><span>Transfer</span></div><div class="dp-action"><i class="fas fa-qrcode"></i><span>QRIS</span></div><div class="dp-action"><i class="fas fa-file-invoice"></i><span>Tagihan</span></div><div class="dp-action"><i class="fas fa-mobile-alt"></i><span>Pulsa</span></div><div class="dp-action"><i class="fas fa-chart-pie"></i><span>Investasi</span></div><div class="dp-action"><i class="fas fa-ellipsis-h"></i><span>Lainnya</span></div></div></div></div><div class="digital-float-1"><i class="fas fa-check-circle"></i><span>Transfer Berhasil!</span></div><div class="digital-float-2"><i class="fas fa-shield-alt"></i><span>100% Aman</span></div></div><div class="digital-text"><h2>Banking Digital Terdepan</h2><p>Nikmati kemudahan bertransaksi kapan saja dan di mana saja dengan teknologi perbankan digital kami yang modern, cepat, dan aman.</p><ul class="digital-features"><li><div class="df-icon"><i class="fas fa-bolt"></i></div><div><h4>Transfer Instan BI-FAST</h4><p>Kirim uang ke bank manapun dalam hitungan detik, 24/7.</p></div></li><li><div class="df-icon"><i class="fas fa-qrcode"></i></div><div><h4>QRIS Payment</h4><p>Bayar di jutaan merchant dengan scan QR code.</p></div></li><li><div class="df-icon"><i class="fas fa-file-invoice-dollar"></i></div><div><h4>Bayar Tagihan & Top Up</h4><p>Listrik, air, internet, BPJS, pulsa, dan 200+ tagihan lainnya.</p></div></li><li><div class="df-icon"><i class="fas fa-fingerprint"></i></div><div><h4>Keamanan Biometrik</h4><p>Login dengan Face ID atau fingerprint. Enkripsi end-to-end.</p></div></li></ul><a href="#produk" class="btn btn-dark"><i class="fas fa-download"></i> Download BN Mobile</a></div></div></div></section>
 
-<!-- LELANG AGUNAN -->
-<section class="lelang-section" id="lelang">
-    <div class="container">
-        <div class="section-title">
-            <div class="st-badge"><i class="fas fa-gavel"></i> Lelang Agunan</div>
-            <h2>Agunan Pilihan Harga Terjangkau</h2>
-            <p>Temukan properti, kendaraan, dan aset berharga lainnya dengan harga di bawah pasaran melalui program lelang resmi Bank Nusantara</p>
-            <div class="underline"></div>
-        </div>
-        <div class="lelang-intro">
-            <div class="lelang-intro-img"><i class="fas fa-building-columns"></i><div class="li-badge"><i class="fas fa-fire"></i> Hot Deal</div></div>
-            <div class="lelang-intro-text">
-                <h3>Mengapa Memilih Lelang Agunan Kami?</h3>
-                <p>Bank Nusantara menyediakan berbagai aset agunan yang telah melalui proses verifikasi legalitas dan appraisal profesional. Dapatkan aset berkualitas dengan harga yang sangat kompetitif melalui mekanisme lelang yang transparan dan adil.</p>
-                <div class="lelang-stats">
-                    <div class="lelang-stat"><div class="ls-val">250+</div><div class="ls-lbl">Aset Tersedia</div></div>
-                    <div class="lelang-stat"><div class="ls-val">34</div><div class="ls-lbl">Provinsi</div></div>
-                    <div class="lelang-stat"><div class="ls-val">15%</div><div class="ls-lbl">Di Bawah NJOP</div></div>
-                    <div class="lelang-stat"><div class="ls-val">100%</div><div class="ls-lbl">Legal & Aman</div></div>
-                </div>
-                <a href="#lelang" class="btn btn-primary"><i class="fas fa-search"></i> Lihat Semua Agunan</a>
-            </div>
-        </div>
-        <div class="lelang-grid">
-            <div class="lelang-card"><div class="lelang-card-img"><i class="fas fa-home"></i><span class="lc-status open">Lelang Aktif</span></div><div class="lelang-card-body"><div class="lc-type">Properti</div><h4>Rumah 2 Lantai, BSD City</h4><div class="lc-location"><i class="fas fa-map-marker-alt"></i> Tangerang Selatan, Banten</div><div class="lc-price">Rp 850.000.000</div><div class="lc-meta"><span><i class="fas fa-ruler-combined"></i> LT 120m² / LB 180m²</span><span><i class="fas fa-clock"></i> Berakhir 25 Jul</span></div></div></div>
-            <div class="lelang-card"><div class="lelang-card-img"><i class="fas fa-car"></i><span class="lc-status open">Lelang Aktif</span></div><div class="lelang-card-body"><div class="lc-type">Kendaraan</div><h4>Toyota Fortuner 2022</h4><div class="lc-location"><i class="fas fa-map-marker-alt"></i> Jakarta Selatan, DKI Jakarta</div><div class="lc-price">Rp 425.000.000</div><div class="lc-meta"><span><i class="fas fa-tachometer-alt"></i> 28.000 km</span><span><i class="fas fa-clock"></i> Berakhir 20 Jul</span></div></div></div>
-            <div class="lelang-card"><div class="lelang-card-img"><i class="fas fa-store"></i><span class="lc-status soon">Segera Dibuka</span></div><div class="lelang-card-body"><div class="lc-type">Komersial</div><h4>Ruko 3 Lantai, PIK Avenue</h4><div class="lc-location"><i class="fas fa-map-marker-alt"></i> Jakarta Utara, DKI Jakarta</div><div class="lc-price">Rp 2.500.000.000</div><div class="lc-meta"><span><i class="fas fa-ruler-combined"></i> LT 100m² / LB 300m²</span><span><i class="fas fa-clock"></i> Mulai 1 Agu</span></div></div></div>
-        </div>
-    </div>
-</section>
+<!-- LELANG -->
+<section class="lelang-section" id="lelang"><div class="container"><div class="section-title"><div class="st-badge"><i class="fas fa-gavel"></i> Lelang Agunan</div><h2>Agunan Pilihan Harga Terjangkau</h2><p>Temukan properti, kendaraan, dan aset berharga dengan harga di bawah pasaran</p><div class="underline"></div></div><div class="lelang-intro"><div class="lelang-intro-img"><i class="fas fa-building-columns"></i><div class="li-badge"><i class="fas fa-fire"></i> Hot Deal</div></div><div class="lelang-intro-text"><h3>Mengapa Memilih Lelang Agunan Kami?</h3><p>Bank Nusantara menyediakan berbagai aset agunan yang telah melalui proses verifikasi legalitas dan appraisal profesional.</p><div class="lelang-stats"><div class="lelang-stat"><div class="ls-val">250+</div><div class="ls-lbl">Aset Tersedia</div></div><div class="lelang-stat"><div class="ls-val">34</div><div class="ls-lbl">Provinsi</div></div><div class="lelang-stat"><div class="ls-val">15%</div><div class="ls-lbl">Di Bawah NJOP</div></div><div class="lelang-stat"><div class="ls-val">100%</div><div class="ls-lbl">Legal & Aman</div></div></div><a href="#lelang" class="btn btn-primary"><i class="fas fa-search"></i> Lihat Semua Agunan</a></div></div><div class="lelang-grid"><div class="lelang-card"><div class="lelang-card-img"><i class="fas fa-home"></i><span class="lc-status open">Lelang Aktif</span></div><div class="lelang-card-body"><div class="lc-type">Properti</div><h4>Rumah 2 Lantai, BSD City</h4><div class="lc-location"><i class="fas fa-map-marker-alt"></i> Tangerang Selatan, Banten</div><div class="lc-price">Rp 850.000.000</div><div class="lc-meta"><span><i class="fas fa-ruler-combined"></i> LT 120m² / LB 180m²</span><span><i class="fas fa-clock"></i> Berakhir 25 Jul</span></div></div></div><div class="lelang-card"><div class="lelang-card-img"><i class="fas fa-car"></i><span class="lc-status open">Lelang Aktif</span></div><div class="lelang-card-body"><div class="lc-type">Kendaraan</div><h4>Toyota Fortuner 2022</h4><div class="lc-location"><i class="fas fa-map-marker-alt"></i> Jakarta Selatan</div><div class="lc-price">Rp 425.000.000</div><div class="lc-meta"><span><i class="fas fa-tachometer-alt"></i> 28.000 km</span><span><i class="fas fa-clock"></i> Berakhir 20 Jul</span></div></div></div><div class="lelang-card"><div class="lelang-card-img"><i class="fas fa-store"></i><span class="lc-status soon">Segera Dibuka</span></div><div class="lelang-card-body"><div class="lc-type">Komersial</div><h4>Ruko 3 Lantai, PIK Avenue</h4><div class="lc-location"><i class="fas fa-map-marker-alt"></i> Jakarta Utara</div><div class="lc-price">Rp 2.500.000.000</div><div class="lc-meta"><span><i class="fas fa-ruler-combined"></i> LT 100m² / LB 300m²</span><span><i class="fas fa-clock"></i> Mulai 1 Agu</span></div></div></div></div></div></section>
 
 <!-- PELAPORAN -->
-<section class="pelaporan-section" id="pelaporan">
-    <div class="container">
-        <div class="section-title">
-            <div class="st-badge"><i class="fas fa-file-alt"></i> Pelaporan</div>
-            <h2>Transparansi & Akuntabilitas</h2>
-            <p>Kami berkomitmen pada transparansi penuh. Akses laporan, publikasi, dan saluran pengaduan resmi Bank Nusantara</p>
-            <div class="underline"></div>
-        </div>
-        <div class="pelaporan-grid">
-            <div class="pelaporan-card" id="report-publikasi">
-                <div class="pelaporan-card-header"><div class="pc-icon"><i class="fas fa-newspaper"></i></div><h3>Publikasi</h3><p>Informasi resmi & pengumuman</p></div>
-                <div class="pelaporan-card-body"><ul>
-                    <li><i class="fas fa-file-pdf"></i> Laporan Keuangan Publikasi Triwulanan</li>
-                    <li><i class="fas fa-bullhorn"></i> Pengumuman RUPS Tahunan 2026</li>
-                    <li><i class="fas fa-newspaper"></i> Siaran Pers & Berita Resmi</li>
-                    <li><i class="fas fa-balance-scale"></i> Suku Bunga Dasar Kredit (SBDK)</li>
-                    <li><i class="fas fa-chart-bar"></i> Rasio Keuangan & KPMM</li>
-                </ul><a href="#pelaporan" class="btn btn-dark">Lihat Publikasi <i class="fas fa-arrow-right"></i></a></div>
-            </div>
-            <div class="pelaporan-card" id="report-tahunan">
-                <div class="pelaporan-card-header"><div class="pc-icon"><i class="fas fa-book-open"></i></div><h3>Laporan Tahunan</h3><p>Kinerja & pencapaian tahunan</p></div>
-                <div class="pelaporan-card-body"><ul>
-                    <li><i class="fas fa-file-pdf"></i> Annual Report 2025 (PDF)</li>
-                    <li><i class="fas fa-leaf"></i> Sustainability Report 2025</li>
-                    <li><i class="fas fa-shield-alt"></i> Laporan GCG 2025</li>
-                    <li><i class="fas fa-chart-pie"></i> Laporan Tahunan OJK 2025</li>
-                    <li><i class="fas fa-archive"></i> Arsip Laporan 2020 - 2024</li>
-                </ul><a href="#pelaporan" class="btn btn-dark">Download Laporan <i class="fas fa-arrow-right"></i></a></div>
-            </div>
-            <div class="pelaporan-card" id="report-pengaduan">
-                <div class="pelaporan-card-header"><div class="pc-icon"><i class="fas fa-comment-dots"></i></div><h3>Pengaduan</h3><p>Sampaikan keluhan & masukan</p></div>
-                <div class="pelaporan-card-body"><ul>
-                    <li><i class="fas fa-headset"></i> Call Center 1500-888 (24 jam)</li>
-                    <li><i class="fab fa-whatsapp"></i> WhatsApp CS: 0812-3456-7890</li>
-                    <li><i class="fas fa-envelope"></i> pengaduan@banknusantara.co.id</li>
-                    <li><i class="fas fa-clock"></i> Respon dalam 1x24 jam kerja</li>
-                    <li><i class="fas fa-user-shield"></i> Data pelapor dijamin kerahasiaannya</li>
-                </ul><a href="https://wa.me/6281234567890?text=Halo%20Bank%20Nusantara,%20saya%20ingin%20mengajukan%20pengaduan..." target="_blank" class="btn btn-dark">Buat Pengaduan <i class="fas fa-arrow-right"></i></a></div>
-            </div>
-        </div>
-    </div>
-</section>
+<section class="pelaporan-section" id="pelaporan"><div class="container"><div class="section-title"><div class="st-badge"><i class="fas fa-file-alt"></i> Pelaporan</div><h2>Transparansi & Akuntabilitas</h2><p>Akses laporan, publikasi, dan saluran pengaduan resmi Bank Nusantara</p><div class="underline"></div></div><div class="pelaporan-grid"><div class="pelaporan-card" id="report-publikasi"><div class="pelaporan-card-header"><div class="pc-icon"><i class="fas fa-newspaper"></i></div><h3>Publikasi</h3><p>Informasi resmi & pengumuman</p></div><div class="pelaporan-card-body"><ul><li><i class="fas fa-file-pdf"></i> Laporan Keuangan Triwulanan</li><li><i class="fas fa-bullhorn"></i> Pengumuman RUPS 2026</li><li><i class="fas fa-newspaper"></i> Siaran Pers Resmi</li><li><i class="fas fa-balance-scale"></i> SBDK</li><li><i class="fas fa-chart-bar"></i> Rasio Keuangan & KPMM</li></ul><a href="#pelaporan" class="btn btn-dark">Lihat Publikasi <i class="fas fa-arrow-right"></i></a></div></div><div class="pelaporan-card" id="report-tahunan"><div class="pelaporan-card-header"><div class="pc-icon"><i class="fas fa-book-open"></i></div><h3>Laporan Tahunan</h3><p>Kinerja & pencapaian tahunan</p></div><div class="pelaporan-card-body"><ul><li><i class="fas fa-file-pdf"></i> Annual Report 2025</li><li><i class="fas fa-leaf"></i> Sustainability Report 2025</li><li><i class="fas fa-shield-alt"></i> Laporan GCG 2025</li><li><i class="fas fa-chart-pie"></i> Laporan OJK 2025</li><li><i class="fas fa-archive"></i> Arsip 2020-2024</li></ul><a href="#pelaporan" class="btn btn-dark">Download <i class="fas fa-arrow-right"></i></a></div></div><div class="pelaporan-card" id="report-pengaduan"><div class="pelaporan-card-header"><div class="pc-icon"><i class="fas fa-comment-dots"></i></div><h3>Pengaduan</h3><p>Sampaikan keluhan & masukan</p></div><div class="pelaporan-card-body"><ul><li><i class="fas fa-headset"></i> Call Center 1500-888</li><li><i class="fab fa-whatsapp"></i> WA: 0812-3456-7890</li><li><i class="fas fa-envelope"></i> pengaduan@banknusantara.co.id</li><li><i class="fas fa-clock"></i> Respon 1x24 jam</li><li><i class="fas fa-user-shield"></i> Kerahasiaan dijamin</li></ul><a href="https://wa.me/6281234567890" target="_blank" class="btn btn-dark">Buat Pengaduan <i class="fas fa-arrow-right"></i></a></div></div></div></div></section>
 
-<!-- EXCHANGE RATE -->
-<section class="exchange-rate">
-    <div class="container">
-        <div class="section-title"><h2>Kurs Mata Uang</h2><p>Nilai tukar terbaru untuk transaksi valuta asing Anda</p><div class="underline"></div></div>
-        <div class="exchange-table"><table>
-            <thead><tr><th>Mata Uang</th><th>Beli (IDR)</th><th>Jual (IDR)</th><th>Perubahan</th><th>Update</th></tr></thead>
-            <tbody>
-                <tr><td><div class="currency"><div class="currency-flag">🇺🇸</div>USD</div></td><td>15,850</td><td>15,950</td><td class="rate-up"><i class="fas fa-arrow-up"></i> +25</td><td>14 Jul 2026</td></tr>
-                <tr><td><div class="currency"><div class="currency-flag">🇪🇺</div>EUR</div></td><td>17,200</td><td>17,350</td><td class="rate-down"><i class="fas fa-arrow-down"></i> -15</td><td>14 Jul 2026</td></tr>
-                <tr><td><div class="currency"><div class="currency-flag">🇬🇧</div>GBP</div></td><td>20,100</td><td>20,250</td><td class="rate-up"><i class="fas fa-arrow-up"></i> +40</td><td>14 Jul 2026</td></tr>
-                <tr><td><div class="currency"><div class="currency-flag">🇯🇵</div>JPY</div></td><td>105</td><td>107</td><td class="rate-down"><i class="fas fa-arrow-down"></i> -1</td><td>14 Jul 2026</td></tr>
-                <tr><td><div class="currency"><div class="currency-flag">🇸🇬</div>SGD</div></td><td>11,750</td><td>11,850</td><td class="rate-up"><i class="fas fa-arrow-up"></i> +10</td><td>14 Jul 2026</td></tr>
-                <tr><td><div class="currency"><div class="currency-flag">🇦🇺</div>AUD</div></td><td>10,400</td><td>10,500</td><td class="rate-up"><i class="fas fa-arrow-up"></i> +20</td><td>14 Jul 2026</td></tr>
-            </tbody>
-        </table></div>
-    </div>
-</section>
+<!-- EXCHANGE -->
+<section class="exchange-rate"><div class="container"><div class="section-title"><h2>Kurs Mata Uang</h2><p>Nilai tukar terbaru untuk transaksi valuta asing Anda</p><div class="underline"></div></div><div class="exchange-table"><table><thead><tr><th>Mata Uang</th><th>Beli (IDR)</th><th>Jual (IDR)</th><th>Perubahan</th><th>Update</th></tr></thead><tbody><tr><td><div class="currency"><div class="currency-flag">🇺🇸</div>USD</div></td><td>15,850</td><td>15,950</td><td class="rate-up"><i class="fas fa-arrow-up"></i> +25</td><td>14 Jul 2026</td></tr><tr><td><div class="currency"><div class="currency-flag">🇪🇺</div>EUR</div></td><td>17,200</td><td>17,350</td><td class="rate-down"><i class="fas fa-arrow-down"></i> -15</td><td>14 Jul 2026</td></tr><tr><td><div class="currency"><div class="currency-flag">🇬🇧</div>GBP</div></td><td>20,100</td><td>20,250</td><td class="rate-up"><i class="fas fa-arrow-up"></i> +40</td><td>14 Jul 2026</td></tr><tr><td><div class="currency"><div class="currency-flag">🇯🇵</div>JPY</div></td><td>105</td><td>107</td><td class="rate-down"><i class="fas fa-arrow-down"></i> -1</td><td>14 Jul 2026</td></tr><tr><td><div class="currency"><div class="currency-flag">🇸🇬</div>SGD</div></td><td>11,750</td><td>11,850</td><td class="rate-up"><i class="fas fa-arrow-up"></i> +10</td><td>14 Jul 2026</td></tr><tr><td><div class="currency"><div class="currency-flag">🇦🇺</div>AUD</div></td><td>10,400</td><td>10,500</td><td class="rate-up"><i class="fas fa-arrow-up"></i> +20</td><td>14 Jul 2026</td></tr></tbody></table></div></div></section>
 
 <!-- STATS -->
-<section class="stats">
-    <div class="container"><div class="stats-grid">
-        <div class="stat-item"><h3>5M+</h3><p>Nasabah Aktif</p></div>
-        <div class="stat-item"><h3>1,200+</h3><p>Cabang & ATM</p></div>
-        <div class="stat-item"><h3>40+</h3><p>Tahun Pengalaman</p></div>
-        <div class="stat-item"><h3>98%</h3><p>Kepuasan Nasabah</p></div>
-    </div></div>
-</section>
+<section class="stats"><div class="container"><div class="stats-grid"><div class="stat-item"><h3>5M+</h3><p>Nasabah Aktif</p></div><div class="stat-item"><h3>1,200+</h3><p>Cabang & ATM</p></div><div class="stat-item"><h3>40+</h3><p>Tahun Pengalaman</p></div><div class="stat-item"><h3>98%</h3><p>Kepuasan Nasabah</p></div></div></div></section>
 
 <!-- CTA -->
-<section class="cta">
-    <div class="container">
-        <div class="cta-content">
-            <h2>Siap Memulai Perjalanan Finansial Anda?</h2>
-            <p>Bergabunglah dengan jutaan nasabah yang telah mempercayakan keuangan mereka kepada Bank Nusantara. Buka rekening hanya dalam 5 menit!</p>
-            <div class="cta-buttons">
-                <a href="#produk" class="btn btn-primary"><i class="fas fa-user-plus"></i> Buka Rekening Online</a>
-                <a href="https://wa.me/6281234567890?text=Halo%20Bank%20Nusantara,%20saya%20ingin%20membuka%20rekening..." target="_blank" class="btn btn-outline" style="border-color:var(--wa);color:var(--wa-dark)"><i class="fab fa-whatsapp"></i> Chat via WhatsApp</a>
-            </div>
-        </div>
-    </div>
-</section>
+<section class="cta"><div class="container"><div class="cta-content"><h2>Siap Memulai Perjalanan Finansial Anda?</h2><p>Bergabunglah dengan jutaan nasabah yang telah mempercayakan keuangan mereka kepada Bank Nusantara.</p><div class="cta-buttons"><a href="#produk" class="btn btn-primary"><i class="fas fa-user-plus"></i> Buka Rekening Online</a><a href="https://wa.me/6281234567890" target="_blank" class="btn btn-outline" style="border-color:var(--wa);color:var(--wa-dark)"><i class="fab fa-whatsapp"></i> Chat via WhatsApp</a></div></div></div></section>
 
-<!-- FOOTER — semua link ke section -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Tentang Bank Nusantara</h4>
-                <p>Bank nasional terpercaya yang telah melayani masyarakat Indonesia sejak 1985 dengan layanan perbankan terbaik, teknologi modern, dan keamanan tinggi.</p>
-                <p><i class="fas fa-map-marker-alt" style="color:var(--secondary)"></i> Jl. Jend. Sudirman Kav. 88, Jakarta Pusat 10220</p>
-                <div class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
-            </div>
-            <div class="footer-col"><h4>Produk</h4><ul>
-                <li><a href="#produk" data-product="tabungan">Tabungan</a></li>
-                <li><a href="#produk" data-product="deposito">Deposito</a></li>
-                <li><a href="#produk" data-product="pinjaman">Pinjaman</a></li>
-                <li><a href="#layanan">Layanan Digital</a></li>
-                <li><a href="#lelang">Lelang Agunan</a></li>
-            </ul></div>
-            <div class="footer-col"><h4>Perusahaan</h4><ul>
-                <li><a href="#tentang" data-tab="profil">Profil</a></li>
-                <li><a href="#tentang" data-tab="visi">Visi & Misi</a></li>
-                <li><a href="#tentang" data-tab="manajemen">Manajemen</a></li>
-                <li><a href="#tentang" data-tab="karir">Karir</a></li>
-            </ul></div>
-            <div class="footer-col"><h4>Pelaporan</h4><ul>
-                <li><a href="#pelaporan" data-report="publikasi">Publikasi</a></li>
-                <li><a href="#pelaporan" data-report="tahunan">Laporan Tahunan</a></li>
-                <li><a href="#pelaporan" data-report="pengaduan">Pengaduan</a></li>
-                <li><a href="#pelaporan">FAQ</a></li>
-                <li><a href="https://wa.me/6281234567890" target="_blank">Hubungi Kami</a></li>
-            </ul></div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Bank Nusantara. Seluruh hak cipta dilindungi. Terdaftar dan diawasi oleh OJK.</p>
-            <div class="footer-bottom-links"><a href="#">Kebijakan Privasi</a><a href="#">Syarat & Ketentuan</a><a href="#">Keamanan</a></div>
-        </div>
-    </div>
-</footer>
+<!-- FOOTER -->
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Tentang Bank Nusantara</h4><p>Bank nasional terpercaya yang telah melayani masyarakat Indonesia sejak 1985.</p><p><i class="fas fa-map-marker-alt" style="color:var(--secondary)"></i> Jl. Jend. Sudirman Kav. 88, Jakarta Pusat 10220</p><div class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div><div class="footer-col"><h4>Produk</h4><ul><li><a href="#produk" data-product="tabungan">Tabungan</a></li><li><a href="#produk" data-product="deposito">Deposito</a></li><li><a href="#produk" data-product="pinjaman">Pinjaman</a></li><li><a href="#layanan">Layanan Digital</a></li><li><a href="#lelang">Lelang Agunan</a></li></ul></div><div class="footer-col"><h4>Perusahaan</h4><ul><li><a href="#tentang" data-tab="profil">Profil</a></li><li><a href="#tentang" data-tab="visi">Visi & Misi</a></li><li><a href="#tentang" data-tab="manajemen">Manajemen</a></li><li><a href="#tentang" data-tab="karir">Karir</a></li></ul></div><div class="footer-col"><h4>Pelaporan</h4><ul><li><a href="#pelaporan" data-report="publikasi">Publikasi</a></li><li><a href="#pelaporan" data-report="tahunan">Laporan Tahunan</a></li><li><a href="#pelaporan" data-report="pengaduan">Pengaduan</a></li><li><a href="#pelaporan">FAQ</a></li><li><a href="https://wa.me/6281234567890" target="_blank">Hubungi Kami</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 Bank Nusantara. Seluruh hak cipta dilindungi. Terdaftar dan diawasi oleh OJK.</p><div class="footer-bottom-links"><a href="#">Kebijakan Privasi</a><a href="#">Syarat & Ketentuan</a><a href="#">Keamanan</a></div></div></div></footer>
 
 <button class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
 
-<!-- FLOATING WA -->
-<div class="wa-float" id="waFloat">
-    <a href="https://wa.me/6281234567890?text=Halo%20Bank%20Nusantara,%20saya%20ingin%20bertanya..." target="_blank" class="wa-float-btn" title="Chat via WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <div class="wa-float-label">Butuh bantuan? Chat kami!</div>
-</div>
+<div class="wa-float" id="waFloat"><a href="https://wa.me/6281234567890?text=Halo%20Bank%20Nusantara,%20saya%20ingin%20bertanya..." target="_blank" class="wa-float-btn" title="Chat via WhatsApp"><i class="fab fa-whatsapp"></i></a><div class="wa-float-label">Butuh bantuan? Chat kami!</div></div>
 
 <script>
-// ========== PRELOADER ==========
-window.addEventListener('load',function(){
-    setTimeout(function(){document.getElementById('preloader').classList.add('hidden')},2200);
-});
+// PRELOADER
+window.addEventListener('load',function(){setTimeout(function(){document.getElementById('preloader').classList.add('hidden')},2200)});
 
-// ========== PARTICLES ==========
-(function(){
-    const c=document.getElementById('heroParticles');if(!c)return;
-    for(let i=0;i<30;i++){
-        const p=document.createElement('div');p.classList.add('h-particle');
-        const s=Math.random()*3+1.5;
-        const colors=['rgba(200,169,81,0.6)','rgba(30,136,229,0.4)','rgba(255,255,255,0.3)'];
-        p.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s}px;background:${colors[Math.floor(Math.random()*3)]};animation-duration:${Math.random()*15+8}s;animation-delay:${Math.random()*10}s`;
-        c.appendChild(p);
-    }
-})();
+// PARTICLES
+(function(){const c=document.getElementById('heroParticles');if(!c)return;for(let i=0;i<30;i++){const p=document.createElement('div');p.classList.add('h-particle');const s=Math.random()*3+1.5;const colors=['rgba(200,169,81,0.6)','rgba(30,136,229,0.4)','rgba(255,255,255,0.3)'];p.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s}px;background:${colors[Math.floor(Math.random()*3)]};animation-duration:${Math.random()*15+8}s;animation-delay:${Math.random()*10}s`;c.appendChild(p)}})();
 
-// ========== PARALLAX ==========
-(function(){
-    const hero=document.getElementById('beranda');
-    const cards=document.querySelectorAll('.card-3d-wrapper');
-    if(!hero)return;
-    hero.addEventListener('mousemove',function(e){
-        const rect=hero.getBoundingClientRect();
-        const x=(e.clientX-rect.left)/rect.width-0.5;
-        const y=(e.clientY-rect.top)/rect.height-0.5;
-        cards.forEach(card=>{card.style.transform=`rotateY(${x*15}deg) rotateX(${-y*15}deg)`});
-    });
-    hero.addEventListener('mouseleave',function(){cards.forEach(card=>{card.style.transform='rotateY(0) rotateX(0)'})});
-})();
+// PARALLAX
+(function(){const hero=document.getElementById('beranda');const cards=document.querySelectorAll('.book-3d-wrapper');if(!hero)return;hero.addEventListener('mousemove',function(e){const rect=hero.getBoundingClientRect();const x=(e.clientX-rect.left)/rect.width-0.5;const y=(e.clientY-rect.top)/rect.height-0.5;cards.forEach(card=>{card.style.transform=`rotateY(${x*15}deg) rotateX(${-y*15}deg)`})});hero.addEventListener('mouseleave',function(){cards.forEach(card=>{card.style.transform='rotateY(0) rotateX(0)'})})})();
 
-// ========== SLIDER ==========
-let currentSlide=0;
-const slides=document.querySelectorAll('.hero-slide');
-const tabs=document.querySelectorAll('.slide-tab');
-const counter=document.querySelector('.slide-counter .current');
-let autoTimer;
-const SLIDE_DURATION=5000;
-function goToSlide(index){
-    slides[currentSlide].classList.remove('active');
-    tabs[currentSlide].classList.remove('active');
-    tabs[currentSlide].querySelector('.tab-fill').style.width='0';
-    currentSlide=index;
-    slides[currentSlide].classList.add('active');
-    tabs[currentSlide].classList.add('active');
-    const fill=tabs[currentSlide].querySelector('.tab-fill');
-    fill.style.transition='none';fill.style.width='0';
-    requestAnimationFrame(()=>{requestAnimationFrame(()=>{fill.style.transition=`width ${SLIDE_DURATION}ms linear`;fill.style.width='100%'})});
-    if(counter)counter.textContent=String(currentSlide+1).padStart(2,'0');
-    if(currentSlide===0)animateCounters();
-    resetAutoSlide();
-}
-function nextSlide(){goToSlide((currentSlide+1)%slides.length)}
-function resetAutoSlide(){clearInterval(autoTimer);autoTimer=setInterval(nextSlide,SLIDE_DURATION)}
-(function(){
-    const fill=tabs[0].querySelector('.tab-fill');
-    fill.style.transition='none';fill.style.width='0';
-    requestAnimationFrame(()=>{requestAnimationFrame(()=>{fill.style.transition=`width ${SLIDE_DURATION}ms linear`;fill.style.width='100%'})});
-})();
+// SLIDER
+let currentSlide=0;const slides=document.querySelectorAll('.hero-slide');const tabs=document.querySelectorAll('.slide-tab');const counter=document.querySelector('.slide-counter .current');let autoTimer;const SLIDE_DURATION=5000;
+function goToSlide(index){slides[currentSlide].classList.remove('active');tabs[currentSlide].classList.remove('active');tabs[currentSlide].querySelector('.tab-fill').style.width='0';currentSlide=index;slides[currentSlide].classList.add('active');tabs[currentSlide].classList.add('active');const fill=tabs[currentSlide].querySelector('.tab-fill');fill.style.transition='none';fill.style.width='0';requestAnimationFrame(()=>{requestAnimationFrame(()=>{fill.style.transition=`width ${SLIDE_DURATION}ms linear`;fill.style.width='100%'})});if(counter)counter.textContent=String(currentSlide+1).padStart(2,'0');if(currentSlide===0)animateCounters();resetAutoSlide()}
+function nextSlide(){goToSlide((currentSlide+1)%slides.length)}function resetAutoSlide(){clearInterval(autoTimer);autoTimer=setInterval(nextSlide,SLIDE_DURATION)}
+(function(){const fill=tabs[0].querySelector('.tab-fill');fill.style.transition='none';fill.style.width='0';requestAnimationFrame(()=>{requestAnimationFrame(()=>{fill.style.transition=`width ${SLIDE_DURATION}ms linear`;fill.style.width='100%'})})})();
 autoTimer=setInterval(nextSlide,SLIDE_DURATION);
-function animateCounters(){
-    document.querySelectorAll('.metric-val[data-count]').forEach(el=>{
-        const target=parseInt(el.dataset.count);const duration=2000;const start=performance.now();
-        function update(now){const elapsed=now-start;const progress=Math.min(elapsed/duration,1);const eased=1-Math.pow(1-progress,3);el.textContent=Math.floor(eased*target).toLocaleString();if(progress<1)requestAnimationFrame(update);else el.textContent=target.toLocaleString()+'+'}
-        el.textContent='0';requestAnimationFrame(update);
-    });
-}
+function animateCounters(){document.querySelectorAll('.metric-val[data-count]').forEach(el=>{const target=parseInt(el.dataset.count);const duration=2000;const start=performance.now();function update(now){const elapsed=now-start;const progress=Math.min(elapsed/duration,1);const eased=1-Math.pow(1-progress,3);el.textContent=Math.floor(eased*target).toLocaleString();if(progress<1)requestAnimationFrame(update);else el.textContent=target.toLocaleString()+'+'}el.textContent='0';requestAnimationFrame(update)})}
 setTimeout(animateCounters,2500);
 
-// ========== ABOUT TABS ==========
-function switchTab(tabId){
-    document.querySelectorAll('.about-content').forEach(c=>c.classList.remove('active'));
-    document.querySelectorAll('.about-tab').forEach(t=>t.classList.remove('active'));
-    const tab=document.getElementById('tab-'+tabId);
-    if(tab)tab.classList.add('active');
-    const btn=document.querySelector('[data-tab-btn="'+tabId+'"]');
-    if(btn)btn.classList.add('active');
-}
+// TABS
+function switchTab(tabId){document.querySelectorAll('.about-content').forEach(c=>c.classList.remove('active'));document.querySelectorAll('.about-tab').forEach(t=>t.classList.remove('active'));const tab=document.getElementById('tab-'+tabId);if(tab)tab.classList.add('active');const btn=document.querySelector('[data-tab-btn="'+tabId+'"]');if(btn)btn.classList.add('active')}
 
-// ========== MENU MOBILE ==========
+// MENU
 function toggleMenu(){document.getElementById('navMenu').classList.toggle('active')}
-document.querySelectorAll('.nav-menu > li > a').forEach(link=>{
-    link.addEventListener('click',function(e){
-        if(window.innerWidth<=768 && this.nextElementSibling && this.nextElementSibling.classList.contains('dropdown')){
-            e.preventDefault();this.parentElement.classList.toggle('dropdown-open');
-        }
-    });
-});
+document.querySelectorAll('.nav-menu > li > a').forEach(link=>{link.addEventListener('click',function(e){if(window.innerWidth<=768&&this.nextElementSibling&&this.nextElementSibling.classList.contains('dropdown')){e.preventDefault();this.parentElement.classList.toggle('dropdown-open')}})});
 
-// ========== SCROLLSPY — Highlight menu aktif sesuai posisi scroll ==========
-const navLinks=document.querySelectorAll('.nav-link');
-const sectionIds=['beranda','tentang','produk','layanan','lelang','pelaporan'];
-const sections=sectionIds.map(id=>document.getElementById(id)).filter(Boolean);
-
-function updateScrollSpy(){
-    const scrollPos=window.scrollY+100;
-    let activeSection='beranda';
-    sections.forEach(section=>{
-        if(section && section.offsetTop<=scrollPos){
-            activeSection=section.id;
-        }
-    });
-    navLinks.forEach(link=>{
-        link.classList.remove('active');
-        if(link.getAttribute('data-section')===activeSection){
-            link.classList.add('active');
-        }
-    });
-}
+// SCROLLSPY
+const navLinks=document.querySelectorAll('.nav-link');const sectionIds=['beranda','tentang','produk','layanan','lelang','pelaporan'];const sections=sectionIds.map(id=>document.getElementById(id)).filter(Boolean);
+function updateScrollSpy(){const scrollPos=window.scrollY+100;let activeSection='beranda';sections.forEach(section=>{if(section&&section.offsetTop<=scrollPos)activeSection=section.id});navLinks.forEach(link=>{link.classList.remove('active');if(link.getAttribute('data-section')===activeSection)link.classList.add('active')})}
 window.addEventListener('scroll',updateScrollSpy);
+window.addEventListener('scroll',function(){const header=document.getElementById('mainHeader');if(header)header.classList.toggle('scrolled',window.scrollY>50)});
 
-// ========== HEADER SHADOW ON SCROLL ==========
-window.addEventListener('scroll',function(){
-    const header=document.getElementById('mainHeader');
-    if(header)header.classList.toggle('scrolled',window.scrollY>50);
-});
+// UNIVERSAL LINK HANDLER
+document.addEventListener('click',function(e){const link=e.target.closest('a[href^="#"]');if(!link)return;const href=link.getAttribute('href');if(!href||href==='#')return;const targetId=href.substring(1);const targetEl=document.getElementById(targetId);if(!targetEl)return;e.preventDefault();document.getElementById('navMenu').classList.remove('active');const headerHeight=document.getElementById('mainHeader').offsetHeight;const targetPos=targetEl.offsetTop-headerHeight-10;window.scrollTo({top:targetPos,behavior:'smooth'});const tabId=link.getAttribute('data-tab');if(tabId)setTimeout(()=>switchTab(tabId),400);const productId=link.getAttribute('data-product');if(productId){setTimeout(()=>{const card=document.getElementById('prod-'+productId);if(card){card.classList.add('section-highlight');card.style.outline='3px solid var(--secondary)';card.style.outlineOffset='4px';card.style.borderRadius='20px';setTimeout(()=>{card.classList.remove('section-highlight');card.style.outline='none'},2000)}},500)}const reportId=link.getAttribute('data-report');if(reportId){setTimeout(()=>{const card=document.getElementById('report-'+reportId);if(card){card.classList.add('section-highlight');card.style.outline='3px solid var(--secondary)';card.style.outlineOffset='4px';card.style.borderRadius='20px';setTimeout(()=>{card.classList.remove('section-highlight');card.style.outline='none'},2000)}},500)}});
 
-// ========== ✅ UNIVERSAL SMOOTH SCROLL + HIGHLIGHT + TAB SWITCH ==========
-document.addEventListener('click',function(e){
-    const link=e.target.closest('a[href^="#"]');
-    if(!link)return;
-    
-    const href=link.getAttribute('href');
-    if(!href||href==='#')return;
-    
-    const targetId=href.substring(1);
-    const targetEl=document.getElementById(targetId);
-    if(!targetEl)return;
-
-    e.preventDefault();
-
-    // Close mobile menu
-    document.getElementById('navMenu').classList.remove('active');
-
-    // Smooth scroll
-    const headerHeight=document.getElementById('mainHeader').offsetHeight;
-    const targetPos=targetEl.offsetTop-headerHeight-10;
-    window.scrollTo({top:targetPos,behavior:'smooth'});
-
-    // ✅ Switch tab jika ada data-tab
-    const tabId=link.getAttribute('data-tab');
-    if(tabId){
-        setTimeout(()=>switchTab(tabId),400);
-    }
-
-    // ✅ Highlight product card jika ada data-product
-    const productId=link.getAttribute('data-product');
-    if(productId){
-        setTimeout(()=>{
-            const card=document.getElementById('prod-'+productId);
-            if(card){
-                card.classList.add('section-highlight');
-                card.style.outline='3px solid var(--secondary)';
-                card.style.outlineOffset='4px';
-                card.style.borderRadius='20px';
-                setTimeout(()=>{
-                    card.classList.remove('section-highlight');
-                    card.style.outline='none';
-                },2000);
-            }
-        },500);
-    }
-
-    // ✅ Highlight report card jika ada data-report
-    const reportId=link.getAttribute('data-report');
-    if(reportId){
-        setTimeout(()=>{
-            const card=document.getElementById('report-'+reportId);
-            if(card){
-                card.classList.add('section-highlight');
-                card.style.outline='3px solid var(--secondary)';
-                card.style.outlineOffset='4px';
-                card.style.borderRadius='20px';
-                setTimeout(()=>{
-                    card.classList.remove('section-highlight');
-                    card.style.outline='none';
-                },2000);
-            }
-        },500);
-    }
-});
-
-// ========== SCROLL — show/hide buttons ==========
-window.addEventListener('scroll',function(){
-    const st=document.getElementById('scrollTop');
-    const wf=document.getElementById('waFloat');
-    const scrollY=window.pageYOffset;
-    if(st)st.classList.toggle('show',scrollY>300);
-    if(wf)wf.classList.toggle('show',scrollY>400);
-});
+// SCROLL BUTTONS
+window.addEventListener('scroll',function(){const st=document.getElementById('scrollTop');const wf=document.getElementById('waFloat');const scrollY=window.pageYOffset;if(st)st.classList.toggle('show',scrollY>300);if(wf)wf.classList.toggle('show',scrollY>400)});
 function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'})}
 
-// ========== SCROLL ANIMATION ==========
+// ANIMATION
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('animate')})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.product-card,.pelaporan-card,.lelang-card,.quick-access-card,.budaya-card,.mgmt-card,.vm-card,.stat-item').forEach(el=>obs.observe(el));
 </script>
