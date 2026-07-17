@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
 
-<!-- ===== PRELOADER KILLER SCRIPT ===== -->
+<!-- ===== PRELOADER KILLER SCRIPT (DI HEAD - PALING AWAL) ===== -->
 <script>
 (function(){
     var preloaderHidden = false;
@@ -18,14 +18,22 @@
         if (p) {
             p.classList.add('hidden');
             setTimeout(function() {
-                if (p && p.parentNode) p.parentNode.removeChild(p);
+                if (p && p.parentNode) {
+                    p.parentNode.removeChild(p);
+                }
             }, 700);
         }
     }
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() { setTimeout(killPreloader, 2500); });
-    } else { setTimeout(killPreloader, 2500); }
-    window.addEventListener('load', function() { setTimeout(killPreloader, 1500); });
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(killPreloader, 2500);
+        });
+    } else {
+        setTimeout(killPreloader, 2500);
+    }
+    window.addEventListener('load', function() {
+        setTimeout(killPreloader, 1500);
+    });
     setTimeout(killPreloader, 4000);
 })();
 </script>
@@ -431,6 +439,15 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .digital-features li h4{font-size:15px;margin-bottom:3px;color:var(--text-dark)}
 .digital-features li p{font-size:12px;color:var(--text-light)}
 .lelang-section{padding:80px 0;background:#fff}
+.lelang-intro{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:center;margin-bottom:50px}
+.lelang-intro-img{height:300px;border-radius:20px;background:linear-gradient(135deg,#37474f,#546e7a);display:flex;align-items:center;justify-content:center;font-size:80px;color:rgba(255,255,255,.85);position:relative;overflow:hidden}
+.lelang-intro-img .li-badge{position:absolute;top:20px;right:20px;background:var(--secondary);color:var(--primary);padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700}
+.lelang-intro-text h3{font-size:28px;color:var(--primary);margin-bottom:12px}
+.lelang-intro-text>p{color:var(--text-light);font-size:15px;line-height:1.8;margin-bottom:20px}
+.lelang-stats{display:flex;gap:25px;margin-bottom:20px}
+.lelang-stat{text-align:center}
+.lelang-stat .ls-val{font-size:28px;font-weight:800;color:var(--primary);font-family:'Playfair Display',serif}
+.lelang-stat .ls-lbl{font-size:11px;color:var(--text-light)}
 .lelang-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .lelang-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:var(--transition);border:1px solid #f0f0f0}
 .lelang-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover)}
@@ -469,6 +486,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .pelaporan-card-body ul li i{color:var(--secondary);font-size:12px;width:16px;text-align:center}
 .pelaporan-card-body ul li:last-child{border-bottom:none}
 .pelaporan-card-body .btn{width:100%;justify-content:center;font-size:13px;padding:12px}
+
 /* ===== GALERI INFORMASI SECTION ===== */
 .gallery-info-section{padding:60px 0 45px;background:linear-gradient(175deg,#f0f4f8 0%,#fff 40%,#f8fafc 100%);position:relative;overflow:hidden}
 .gallery-info-section::before{content:'';position:absolute;top:-200px;right:-200px;width:500px;height:500px;background:radial-gradient(circle,rgba(26,54,93,.03) 0%,transparent 70%);border-radius:50%;pointer-events:none}
@@ -481,15 +499,12 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .gallery-section-header p{font-size:.95rem;color:#64748b;max-width:550px;margin:0 auto;line-height:1.6}
 .gallery-section-header .title-divider{width:50px;height:3px;background:linear-gradient(90deg,#1a365d,#c6a456);border-radius:2px;margin:16px auto 0}
 .gallery-banner-wrapper{position:relative;margin-bottom:20px;border-radius:16px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.08);z-index:2}
-.gallery-banner-wrapper img{width:100%;height:180px;object-fit:cover;display:block;transition:transform .6s ease}
+.gallery-banner-wrapper img{width:100%;height:300px;object-fit:cover;display:block;transition:transform .6s ease}
 .gallery-banner-wrapper:hover img{transform:scale(1.02)}
-.gallery-banner-overlay{position:absolute;bottom:0;left:0;right:0;padding:15px 20px;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff}
-.gallery-banner-overlay h3{font-size:1.1rem;font-weight:700;margin-bottom:3px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
-.gallery-banner-overlay p{font-size:.75rem;opacity:.9}
-.gallery-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;position:relative;z-index:2;align-items:start}
-.gallery-card{display:flex;flex-direction:column;height:100%;max-height:420px}
-.gallery-card>*{flex-shrink:0}
-.gallery-card .kurs-table-wrapper,.gallery-card .ig-live-widget,.gallery-card .yt-playlist-section{flex:1;min-height:0;overflow:auto}
+.gallery-banner-overlay{position:absolute;bottom:0;left:0;right:0;padding:25px 30px;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff}
+.gallery-banner-overlay h3{font-size:1.3rem;font-weight:700;margin-bottom:4px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.gallery-banner-overlay p{font-size:.85rem;opacity:.9}
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;position:relative;z-index:2}
 .gallery-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 18px rgba(0,0,0,.05);border:1px solid rgba(0,0,0,.04);transition:all .4s cubic-bezier(.25,.46,.45,.94);position:relative}
 .gallery-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.09)}
 .gallery-card-header{padding:10px 14px 8px;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;justify-content:space-between}
@@ -498,7 +513,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .gallery-card-header h4{font-size:.85rem;font-weight:700;color:#1a365d;margin:0;line-height:1.2}
 .gallery-card-header .card-subtitle{font-size:.62rem;color:#94a3b8;margin:1px 0 0;font-weight:500}
 .kurs-icon{background:linear-gradient(135deg,#1a365d,#2d5a8e);color:#c6a456}
-.kurs-table-wrapper{padding:0 10px 6px;max-height:280px;overflow-y:auto}
+.kurs-table-wrapper{padding:0 10px 6px}
 .kurs-table{width:100%;border-collapse:collapse}
 .kurs-table thead th{font-size:.6rem;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.8px;padding:6px 4px 4px;border-bottom:2px solid #f1f5f9;text-align:left}
 .kurs-table thead th:nth-child(3),.kurs-table thead th:last-child{text-align:right}
@@ -522,12 +537,17 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 @keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
 .kurs-jpy-note{text-align:center;font-size:.6rem;color:#94a3b8;padding:2px 0 0;margin:0;font-style:italic}
 .ig-icon{background:linear-gradient(135deg,#833AB4,#FD1D1D,#FCAF45);color:#fff}
-.ig-live-widget{padding:8px;max-height:280px;overflow-y:auto;scroll-behavior:smooth}
+.ig-embed-wrapper{padding:8px;max-height:460px;overflow-y:auto}
+.ig-embed-wrapper::-webkit-scrollbar{width:3px}
+.ig-embed-wrapper::-webkit-scrollbar-thumb{background:#e2e8f0;border-radius:3px}
+
+/* ===== INSTAGRAM LIVE WIDGET ===== */
+.ig-live-widget{padding:10px;max-height:580px;overflow-y:auto;scroll-behavior:smooth}
 .ig-live-widget::-webkit-scrollbar{width:4px}
 .ig-live-widget::-webkit-scrollbar-track{background:#f8fafc;border-radius:4px}
 .ig-live-widget::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#833AB4,#FD1D1D,#FCAF45);border-radius:4px}
 .ig-live-post{position:relative;margin-bottom:12px;border-radius:14px;overflow:hidden;border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#833AB4,#FD1D1D,#FCAF45) border-box;transition:all .4s cubic-bezier(.25,.46,.45,.94);box-shadow:0 2px 12px rgba(0,0,0,.04)}
-.ig-live-post:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(131,58,180,.12)}
+.ig-live-post:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(131,58,180,.12);border-color:transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#FCAF45,#FD1D1D,#833AB4) border-box}
 .ig-live-post:last-child{margin-bottom:0}
 .ig-live-post blockquote.instagram-media{margin:0!important;min-width:0!important;max-width:100%!important;width:100%!important}
 .ig-post-skeleton{height:420px;background:linear-gradient(110deg,#f1f5f9 8%,#e2e8f0 18%,#f1f5f9 33%);background-size:200% 100%;animation:igShimmer 1.5s linear infinite;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:#94a3b8;font-size:.8rem}
@@ -541,7 +561,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .ig-refresh-btn:hover{border-color:#833AB4;color:#833AB4;background:rgba(131,58,180,.05)}
 .ig-refresh-btn.spinning i{animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.ig-follow-btn{display:flex;align-items:center;justify-content:center;gap:6px;margin:4px 8px;padding:6px;background:linear-gradient(135deg,#833AB4,#FD1D1D,#FCAF45);color:#fff;border-radius:10px;text-decoration:none;font-size:.75rem;font-weight:700;transition:all .3s;border:none;cursor:pointer}
+.ig-follow-btn{display:flex;align-items:center;justify-content:center;gap:6px;margin:8px;padding:8px;background:linear-gradient(135deg,#833AB4,#FD1D1D,#FCAF45);color:#fff;border-radius:10px;text-decoration:none;font-size:.75rem;font-weight:700;transition:all .3s;border:none;cursor:pointer}
 .ig-follow-btn:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 6px 16px rgba(131,58,180,.3);color:#fff;text-decoration:none}
 .ig-fallback-card{padding:25px 18px;text-align:center;border-radius:12px;background:linear-gradient(135deg,rgba(131,58,180,.03),rgba(253,29,29,.03));margin-bottom:8px}
 .ig-fallback-card:last-child{margin-bottom:0}
@@ -551,15 +571,21 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .ig-fallback-card .ig-fb-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;background:linear-gradient(135deg,#833AB4,#FD1D1D,#FCAF45);color:#fff;border-radius:20px;text-decoration:none;font-size:.72rem;font-weight:600;transition:all .3s}
 .ig-fallback-card .ig-fb-btn:hover{opacity:.85;transform:translateY(-1px);box-shadow:0 4px 12px rgba(131,58,180,.25);color:#fff}
 .ig-fallback-card .ig-fb-date{font-size:.6rem;color:#94a3b8;margin-top:6px}
+
 /* ===== YOUTUBE LIVE WIDGET ===== */
 .yt-widget-card{display:flex;flex-direction:column}
 .yt-channel-header{display:none}
+.yt-channel-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#ff0000,#cc0000);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;flex-shrink:0;box-shadow:0 3px 10px rgba(255,0,0,.2)}
+.yt-channel-info{flex:1;min-width:0}
+.yt-channel-name{font-size:.85rem;font-weight:700;color:#1a365d;line-height:1.2;display:flex;align-items:center;gap:4px}
+.yt-channel-name::after{content:'';display:inline-block;width:14px;height:14px;background:#aaa;border-radius:3px;flex-shrink:0}
+.yt-channel-stats{font-size:.62rem;color:#94a3b8;margin-top:1px}
 .yt-main-player{padding:0}
 .yt-main-player .yt-video-frame{border-radius:0;box-shadow:none;margin:0}
-.yt-main-player .yt-video-frame iframe{width:100%;aspect-ratio:16/9;display:block;border:none;background:#000;max-height:130px}
+.yt-main-player .yt-video-frame iframe{width:100%;aspect-ratio:16/9;display:block;border:none;background:#000}
 .yt-playlist-section{flex:1;padding:0;min-height:0}
 .yt-playlist-header{padding:8px 14px;font-size:.65rem;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;gap:6px;background:#f8fafc}
-.yt-playlist-list{max-height:90px;overflow-y:auto;padding:4px 10px}
+.yt-playlist-list{max-height:250px;overflow-y:auto;padding:6px 10px}
 .yt-playlist-list::-webkit-scrollbar{width:3px}
 .yt-playlist-list::-webkit-scrollbar-thumb{background:#ff0000;border-radius:3px}
 .yt-playlist-list::-webkit-scrollbar-track{background:#f8fafc}
@@ -569,6 +595,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .yt-playlist-thumb{width:70px;height:42px;border-radius:6px;overflow:hidden;flex-shrink:0;position:relative;background:#e2e8f0;box-shadow:0 2px 6px rgba(0,0,0,.08)}
 .yt-playlist-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .yt-playlist-thumb .yt-duration{position:absolute;bottom:2px;right:2px;background:rgba(0,0,0,.8);color:#fff;font-size:.5rem;padding:1px 4px;border-radius:2px;font-weight:600}
+.yt-playlist-thumb::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0);transition:background .2s;z-index:1}
+.yt-playlist-item:hover .yt-playlist-thumb::before{background:rgba(0,0,0,.15)}
 .yt-playlist-thumb::after{content:'▶';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);color:#fff;font-size:.5rem;background:rgba(255,0,0,.9);width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;transition:transform .25s}
 .yt-playlist-item:hover .yt-playlist-thumb::after{transform:translate(-50%,-50%) scale(1)}
 .yt-playlist-text{flex:1;min-width:0}
@@ -576,11 +604,30 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .yt-playlist-text span{font-size:.55rem;color:#94a3b8;margin-top:2px;display:block}
 .yt-loading{text-align:center;padding:30px 10px;color:#94a3b8;font-size:.75rem}
 .yt-loading i{font-size:1.2rem;color:#ff0000;margin-bottom:8px;display:block}
-.yt-subscribe-btn{display:flex;align-items:center;justify-content:center;gap:6px;margin:4px 8px;padding:7px;background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;border-radius:10px;text-decoration:none;font-size:.75rem;font-weight:700;transition:all .3s;border:none;cursor:pointer}
+.yt-subscribe-btn{display:flex;align-items:center;justify-content:center;gap:6px;margin:8px;padding:9px;background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;border-radius:10px;text-decoration:none;font-size:.75rem;font-weight:700;transition:all .3s;border:none;cursor:pointer}
 .yt-subscribe-btn:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 6px 16px rgba(255,0,0,.3);color:#fff;text-decoration:none}
+
+    
 .yt-icon{background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff}
+.yt-embed-wrapper{padding:8px}
 .yt-video-frame{position:relative;border-radius:10px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.08);margin-bottom:6px}
 .yt-video-frame iframe{width:100%;aspect-ratio:16/9;display:block;border:none}
+.yt-video-info{padding:2px 2px 0}
+.yt-video-title{font-size:.78rem;font-weight:700;color:#1a365d;line-height:1.3;margin-bottom:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.yt-video-meta{display:flex;align-items:center;gap:8px;font-size:.62rem;color:#94a3b8;margin-bottom:6px}
+.yt-video-meta span{display:flex;align-items:center;gap:3px}
+.yt-playlist{border-top:1px solid #f1f5f9;padding-top:6px}
+.yt-playlist-title{font-size:.6rem;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px}
+.yt-playlist-item{display:flex;align-items:center;gap:6px;padding:4px 3px;border-radius:7px;transition:background .2s;cursor:pointer;text-decoration:none}
+.yt-playlist-item:hover{background:#f8fafc;text-decoration:none}
+.yt-playlist-thumb{width:50px;height:30px;border-radius:5px;object-fit:cover;background:#e2e8f0;flex-shrink:0;position:relative;overflow:hidden}
+.yt-playlist-thumb img{width:100%;height:100%;object-fit:cover}
+.yt-playlist-thumb::after{content:'▶';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:.45rem;background:rgba(0,0,0,.5);width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.yt-playlist-text h5{font-size:.68rem;font-weight:600;color:#334155;margin:0;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.yt-playlist-text span{font-size:.58rem;color:#94a3b8}
+.yt-subscribe-btn{display:flex;align-items:center;justify-content:center;gap:6px;margin:8px;padding:8px;background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;border-radius:10px;text-decoration:none;font-size:.75rem;font-weight:700;transition:all .3s;border:none;cursor:pointer}
+.yt-subscribe-btn:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 6px 16px rgba(255,0,0,.25);color:#fff;text-decoration:none}
+
 .stats{padding:60px 0;background:linear-gradient(135deg,var(--primary),var(--primary-light))}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center;color:#fff}
 .stat-item h3{font-size:42px;font-weight:700;color:var(--secondary);margin-bottom:8px}
@@ -617,343 +664,627 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 @keyframes waFloatPulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.4);opacity:0}}
 .wa-float-label{background:#fff;padding:8px 16px;border-radius:8px;font-size:12px;font-weight:600;color:var(--text-dark);box-shadow:var(--shadow);margin-left:-8px;padding-left:16px;white-space:nowrap;position:relative;z-index:1}
 .wa-float-label::before{content:'';position:absolute;left:-6px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-right-color:#fff}
+.section-highlight{animation:sectionPulse 1s ease}
+@keyframes sectionPulse{0%{box-shadow:0 0 0 0 rgba(200,169,81,.4)}50%{box-shadow:0 0 0 8px rgba(200,169,81,.1)}100%{box-shadow:0 0 0 0 rgba(200,169,81,0)}}
+
 @media(max-width:1024px){.quick-access-grid{grid-template-columns:repeat(2,1fr)}.products-grid{grid-template-columns:repeat(2,1fr)}.pelaporan-grid{grid-template-columns:repeat(2,1fr)}.lelang-grid{grid-template-columns:repeat(2,1fr)}.mgmt-grid{grid-template-columns:repeat(2,1fr)}.budaya-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}.stats-grid{grid-template-columns:repeat(2,1fr);gap:30px}.hero{min-height:auto;height:auto;max-height:none;padding-bottom:40px}.hero-slide{padding-top:8px}.hero-container{padding:0 25px}.hero-grid-layout{grid-template-columns:1fr;text-align:center;gap:25px}.hero-visual{order:-1}.visual-stage{max-width:400px}.hero-desc{margin-left:auto;margin-right:auto}.hero-btns{justify-content:center}.hero-metrics{justify-content:center}.gc-3{display:none}.gc-1{left:0;bottom:0}.gc-2{right:0}.buku-tabungan,.loan-card{width:270px;height:168px}.bt-logo{width:30px;height:30px;min-width:30px;font-size:11px;border-radius:6px}.bt-bank-name{font-size:9px}.bt-title{font-size:14px;letter-spacing:2px}.bt-account-num{font-size:10px}.lc-value{font-size:20px}.lc-bank-name{font-size:10px}.ppob-phone{width:150px;height:260px}.ppob-debit-mini{width:160px;height:100px}.pdm-num{font-size:9px}.ppob-float-card{padding:9px 12px}.pfc-icon{width:30px;height:30px;font-size:13px}.pfc-val{font-size:11px}.pfc-lbl{font-size:7px}.card-3d-wrapper{width:340px;height:270px}.scroll-hint{display:none}.slide-counter{display:none}.nav-menu{gap:0;overflow-x:auto;scrollbar-width:none}.nav-menu::-webkit-scrollbar{display:none}.nav-menu>li>a{padding:7px 10px;font-size:12px}.btn-whatsapp{padding:7px 12px!important;font-size:12px!important}.about-grid,.lelang-intro,.digital-grid,.karir-grid{grid-template-columns:1fr}.vm-grid{grid-template-columns:1fr}.lelang-intro-img{height:220px}.digital-phone{width:240px;height:420px}}
-@media(max-width:992px){.gallery-grid{grid-template-columns:1fr;gap:14px}.gallery-section-header h2{font-size:2rem}.gallery-banner-wrapper img{height:160px}.gallery-card{max-height:none}}
-@media(max-width:768px){.nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:15px;box-shadow:var(--shadow);gap:2px;overflow-x:visible;max-height:75vh;overflow-y:auto}.nav-menu.active{display:flex}.nav-menu>li{width:100%}.nav-menu>li>a{display:flex;justify-content:space-between;width:100%;padding:10px 14px}.nav-menu li .dropdown{position:static;box-shadow:none;border:none;padding:0 0 0 15px;display:none;opacity:1;transform:none;margin-top:2px}.nav-menu li.dropdown-open .dropdown{display:block}.hamburger{display:block}.btn-whatsapp{margin-left:0;margin-top:8px;width:100%;justify-content:center;padding:11px!important}.hero{min-height:auto;max-height:none;padding-bottom:30px}.hero-slide{padding-top:8px}.hero-container{padding:0 20px}.hero-title{font-size:clamp(1.7rem,7vw,2.4rem);letter-spacing:-.5px}.hero-desc{font-size:13px}.hero-metrics{flex-wrap:wrap;gap:12px;justify-content:center}.metric{padding:0 14px}.metric+.metric::before{display:none}.metric-val{font-size:20px}.visual-stage{max-width:310px}.card-3d-wrapper{width:290px;height:230px}.buku-tabungan,.loan-card{width:225px;height:140px}.bt-binding{width:16px}.bt-binding::before{left:3px;width:10px}.bt-binding::after{left:6px}.bt-inner{left:16px;padding:12px 12px 8px 10px}.bt-logo{width:24px;height:24px;min-width:24px;font-size:8px;border-radius:5px}.bt-bank-name{font-size:8px;letter-spacing:1px}.bt-bank-tagline{font-size:6px}.bt-emblem{width:22px;height:22px;font-size:5.5px}.bt-divider{margin:0 0 6px}.bt-title{font-size:12px;letter-spacing:1.5px}.bt-subtitle{font-size:6.5px;letter-spacing:1.5px;margin-top:2px}.bt-account-label{font-size:5.5px}.bt-account-num{font-size:9px;letter-spacing:1.5px}.bt-account-name{font-size:7px}.bt-lps{font-size:5.5px}.bt-year{font-size:7px}.bt-bookmark{width:10px;height:18px;right:35px}.bt-pages{width:4px;right:-3px;top:4px;bottom:4px}.bt-title-ornament{margin-bottom:2px}.bt-title-ornament i{font-size:6px}.bt-footer{margin-top:4px}.lc-inner{padding:14px 16px}.lc-value{font-size:17px}.lc-bank-name{font-size:9px}.lc-bank-sub{font-size:6px}.lc-label{font-size:6.5px}.lc-ft-label{font-size:6px}.lc-ft-val{font-size:9px}.lc-icon-grid .lc-ig{width:22px;height:22px;font-size:10px}.lc-watermark{font-size:50px}.ppob-phone{width:130px;height:220px;left:50%;top:50%;transform:translate(-50%,-50%)}.ppob-header .ppob-logo{font-size:9px}.ppob-balance-box .pbb-amount{font-size:11px}.ppob-grid-item i{font-size:10px}.ppob-grid-item span{font-size:5.5px}.ppob-debit-mini{width:140px;height:88px}.pdm-num{font-size:8px}.pdm-bank{font-size:7px}.pdm-name{font-size:7px}.pfc-pulsa{left:-5%}.pfc-listrik{right:-5%}.pfc-transfer{left:-3%}.ppob-float-card{padding:7px 10px}.pfc-icon{width:26px;height:26px;font-size:11px}.pfc-val{font-size:10px}.pfc-lbl{font-size:6.5px}.hero-btns{flex-direction:column;align-items:center}.hero-btns .btn{width:100%;justify-content:center}.glass-card{padding:9px 12px}.gc-icon{width:30px;height:30px;font-size:12px}.gc-val{font-size:11px}.gc-lbl{font-size:8px}.products-grid,.pelaporan-grid,.lelang-grid{grid-template-columns:1fr}.quick-access-grid{grid-template-columns:repeat(2,1fr)}.mgmt-grid,.budaya-grid{grid-template-columns:1fr}.karir-benefits{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:15px;text-align:center}.top-bar{display:none}.cta-buttons{flex-direction:column;align-items:center}.stats-grid{grid-template-columns:repeat(2,1fr)}.section-title h2{font-size:26px}.about-tabs{gap:5px}.about-tab{padding:8px 14px;font-size:11px}.about-image{height:250px}.wa-float-label{display:none}.wa-float{left:20px;bottom:20px}.wa-float-btn{width:50px;height:50px;font-size:22px}.lelang-stats{flex-wrap:wrap;gap:15px}.gallery-card{max-height:none}}
-@media(max-width:576px){.gallery-info-section{padding:40px 0 30px}.gallery-section-header h2{font-size:1.6rem}.gallery-banner-wrapper img{height:140px}.gallery-banner-overlay h3{font-size:.9rem}.ig-post-skeleton{height:320px}.gallery-card{max-height:none}}
+
+@media(max-width:992px){.gallery-grid{grid-template-columns:1fr;gap:14px}.gallery-section-header h2{font-size:2rem}.gallery-banner-wrapper img{height:220px}}
+
+@media(max-width:768px){.nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:15px;box-shadow:var(--shadow);gap:2px;overflow-x:visible;max-height:75vh;overflow-y:auto}.nav-menu.active{display:flex}.nav-menu>li{width:100%}.nav-menu>li>a{display:flex;justify-content:space-between;width:100%;padding:10px 14px}.nav-menu li .dropdown{position:static;box-shadow:none;border:none;padding:0 0 0 15px;display:none;opacity:1;transform:none;margin-top:2px}.nav-menu li.dropdown-open .dropdown{display:block}.hamburger{display:block}.btn-whatsapp{margin-left:0;margin-top:8px;width:100%;justify-content:center;padding:11px!important}.hero{min-height:auto;max-height:none;padding-bottom:30px}.hero-slide{padding-top:8px}.hero-container{padding:0 20px}.hero-title{font-size:clamp(1.7rem,7vw,2.4rem);letter-spacing:-.5px}.hero-desc{font-size:13px}.hero-metrics{flex-wrap:wrap;gap:12px;justify-content:center}.metric{padding:0 14px}.metric+.metric::before{display:none}.metric-val{font-size:20px}.visual-stage{max-width:310px}.card-3d-wrapper{width:290px;height:230px}.buku-tabungan,.loan-card{width:225px;height:140px}.bt-binding{width:16px}.bt-binding::before{left:3px;width:10px}.bt-binding::after{left:6px}.bt-inner{left:16px;padding:12px 12px 8px 10px}.bt-logo{width:24px;height:24px;min-width:24px;font-size:8px;border-radius:5px}.bt-bank-name{font-size:8px;letter-spacing:1px}.bt-bank-tagline{font-size:6px}.bt-emblem{width:22px;height:22px;font-size:5.5px}.bt-divider{margin:0 0 6px}.bt-title{font-size:12px;letter-spacing:1.5px}.bt-subtitle{font-size:6.5px;letter-spacing:1.5px;margin-top:2px}.bt-account-label{font-size:5.5px}.bt-account-num{font-size:9px;letter-spacing:1.5px}.bt-account-name{font-size:7px}.bt-lps{font-size:5.5px}.bt-year{font-size:7px}.bt-bookmark{width:10px;height:18px;right:35px}.bt-pages{width:4px;right:-3px;top:4px;bottom:4px}.bt-title-ornament{margin-bottom:2px}.bt-title-ornament i{font-size:6px}.bt-footer{margin-top:4px}.lc-inner{padding:14px 16px}.lc-value{font-size:17px}.lc-bank-name{font-size:9px}.lc-bank-sub{font-size:6px}.lc-label{font-size:6.5px}.lc-ft-label{font-size:6px}.lc-ft-val{font-size:9px}.lc-icon-grid .lc-ig{width:22px;height:22px;font-size:10px}.lc-watermark{font-size:50px}.ppob-phone{width:130px;height:220px;left:50%;top:50%;transform:translate(-50%,-50%)}.ppob-header .ppob-logo{font-size:9px}.ppob-balance-box .pbb-amount{font-size:11px}.ppob-grid-item i{font-size:10px}.ppob-grid-item span{font-size:5.5px}.ppob-debit-mini{width:140px;height:88px}.pdm-num{font-size:8px}.pdm-bank{font-size:7px}.pdm-name{font-size:7px}.pfc-pulsa{left:-5%}.pfc-listrik{right:-5%}.pfc-transfer{left:-3%}.ppob-float-card{padding:7px 10px}.pfc-icon{width:26px;height:26px;font-size:11px}.pfc-val{font-size:10px}.pfc-lbl{font-size:6.5px}.hero-btns{flex-direction:column;align-items:center}.hero-btns .btn{width:100%;justify-content:center}.glass-card{padding:9px 12px}.gc-icon{width:30px;height:30px;font-size:12px}.gc-val{font-size:11px}.gc-lbl{font-size:8px}.products-grid,.pelaporan-grid,.lelang-grid{grid-template-columns:1fr}.quick-access-grid{grid-template-columns:repeat(2,1fr)}.mgmt-grid,.budaya-grid{grid-template-columns:1fr}.karir-benefits{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:15px;text-align:center}.top-bar{display:none}.cta-buttons{flex-direction:column;align-items:center}.stats-grid{grid-template-columns:repeat(2,1fr)}.section-title h2{font-size:26px}.about-tabs{gap:5px}.about-tab{padding:8px 14px;font-size:11px}.about-image{height:250px}.wa-float-label{display:none}.wa-float{left:20px;bottom:20px}.wa-float-btn{width:50px;height:50px;font-size:22px}.lelang-stats{flex-wrap:wrap;gap:15px}}
+
+@media(max-width:576px){.gallery-info-section{padding:40px 0 30px}.gallery-section-header h2{font-size:1.6rem}.gallery-banner-wrapper img{height:160px}.gallery-banner-overlay h3{font-size:1rem}.ig-post-skeleton{height:320px}}
+
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.animate{animation:fadeInUp .6s ease forwards}
 </style>
 </head>
 <body>
-<div class="preloader" id="preloader"><div class="preloader-logo"><div class="pl-ring"></div><div class="pl-ring"></div><div class="pl-ring"></div><div class="pl-text">BD</div></div><div class="preloader-bar"><div class="preloader-bar-fill"></div></div><div class="preloader-text">BANK DAMARA</div></div>
-<div class="top-bar"><div class="container"><div class="top-bar-left"><span><i class="fas fa-phone"></i> 1500-888</span><span><i class="fas fa-envelope"></i> info@bankdamara.co.id</span></div><div class="top-bar-right"><a href="#lelang"><i class="fas fa-map-marker-alt"></i> Temukan Kantor Kami</a><a href="#pelaporan"><i class="fas fa-headset"></i> Bantuan</a><a href="#"><i class="fas fa-globe"></i> EN | ID</a></div></div></div>
-<header class="header" id="mainHeader"><div class="container"><a href="#beranda" class="logo"><div class="logo-icon">BD</div><div class="logo-text"><h1>BANK DAMARA</h1><span>Trusted Since 1985</span></div></a><nav class="nav"><ul class="nav-menu" id="navMenu"><li><a href="#beranda" class="nav-link active" data-section="beranda"><i class="fas fa-home"></i> Beranda</a></li><li><a href="#tentang" class="nav-link" data-section="tentang">Tentang Kami <i class="fas fa-chevron-down" style="font-size:9px"></i></a><div class="dropdown"><a href="#tentang" data-tab="profil"><i class="fas fa-building"></i> Profil</a><a href="#tentang" data-tab="visi"><i class="fas fa-bullseye"></i> Visi & Misi</a><a href="#tentang" data-tab="budaya"><i class="fas fa-heart"></i> Budaya</a><a href="#tentang" data-tab="manajemen"><i class="fas fa-user-tie"></i> Manajemen</a><a href="#tentang" data-tab="karir"><i class="fas fa-briefcase"></i> Karir</a></div></li><li><a href="#produk" class="nav-link" data-section="produk">Produk <i class="fas fa-chevron-down" style="font-size:9px"></i></a><div class="dropdown"><a href="#produk" data-product="tabungan"><i class="fas fa-piggy-bank"></i> Tabungan</a><a href="#produk" data-product="deposito"><i class="fas fa-chart-line"></i> Deposito</a><a href="#produk" data-product="pinjaman"><i class="fas fa-hand-holding-usd"></i> Pinjaman</a><a href="#layanan"><i class="fas fa-concierge-bell"></i> Digital</a></div></li><li><a href="#lelang" class="nav-link" data-section="lelang"><i class="fas fa-gavel"></i> Lelang</a></li><li><a href="#pelaporan" class="nav-link" data-section="pelaporan">Pelaporan <i class="fas fa-chevron-down" style="font-size:9px"></i></a><div class="dropdown"><a href="#pelaporan" data-report="publikasi"><i class="fas fa-newspaper"></i> Publikasi</a><a href="#pelaporan" data-report="tahunan"><i class="fas fa-book"></i> Tahunan</a><a href="#pelaporan" data-report="pengaduan"><i class="fas fa-comment-dots"></i> Pengaduan</a></div></li><li><a href="https://wa.me/6281234567890" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat CS <span class="wa-pulse"></span></a></li></ul><div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div></nav></div></header>
+<div class="preloader" id="preloader"><div class="preloader-logo"><div class="pl-ring"></div><div class="pl-ring"></div><div class="pl-ring"></div><div class="pl-text">BN</div></div><div class="preloader-bar"><div class="preloader-bar-fill"></div></div><div class="preloader-text">BANK DAMARA</div></div>
+<div class="top-bar"><div class="container"><div class="top-bar-left"><span><i class="fas fa-phone"></i> 1500-888</span><span><i class="fas fa-envelope"></i> info@banknusantara.co.id</span></div><div class="top-bar-right"><a href="#lelang"><i class="fas fa-map-marker-alt"></i> Temukan Kantor Kami</a><a href="#pelaporan"><i class="fas fa-headset"></i> Bantuan</a><a href="#"><i class="fas fa-globe"></i> EN | ID</a></div></div></div>
+<header class="header" id="mainHeader"><div class="container"><a href="#beranda" class="logo"><div class="logo-icon">BN</div><div class="logo-text"><h1>BANK DAMARA</h1><span>Trusted Since 1985</span></div></a><nav class="nav"><ul class="nav-menu" id="navMenu"><li><a href="#beranda" class="nav-link active" data-section="beranda"><i class="fas fa-home"></i> Beranda</a></li><li><a href="#tentang" class="nav-link" data-section="tentang">Tentang Kami <i class="fas fa-chevron-down" style="font-size:9px"></i></a><div class="dropdown"><a href="#tentang" data-tab="profil"><i class="fas fa-building"></i> Profil</a><a href="#tentang" data-tab="visi"><i class="fas fa-bullseye"></i> Visi & Misi</a><a href="#tentang" data-tab="budaya"><i class="fas fa-heart"></i> Budaya</a><a href="#tentang" data-tab="manajemen"><i class="fas fa-user-tie"></i> Manajemen</a><a href="#tentang" data-tab="karir"><i class="fas fa-briefcase"></i> Karir</a></div></li><li><a href="#produk" class="nav-link" data-section="produk">Produk <i class="fas fa-chevron-down" style="font-size:9px"></i></a><div class="dropdown"><a href="#produk" data-product="tabungan"><i class="fas fa-piggy-bank"></i> Tabungan</a><a href="#produk" data-product="deposito"><i class="fas fa-chart-line"></i> Deposito</a><a href="#produk" data-product="pinjaman"><i class="fas fa-hand-holding-usd"></i> Pinjaman</a><a href="#layanan"><i class="fas fa-concierge-bell"></i> Digital</a></div></li><li><a href="#lelang" class="nav-link" data-section="lelang"><i class="fas fa-gavel"></i> Lelang</a></li><li><a href="#pelaporan" class="nav-link" data-section="pelaporan">Pelaporan <i class="fas fa-chevron-down" style="font-size:9px"></i></a><div class="dropdown"><a href="#pelaporan" data-report="publikasi"><i class="fas fa-newspaper"></i> Publikasi</a><a href="#pelaporan" data-report="tahunan"><i class="fas fa-book"></i> Tahunan</a><a href="#pelaporan" data-report="pengaduan"><i class="fas fa-comment-dots"></i> Pengaduan</a></div></li><li><a href="https://wa.me/6281234567890" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat CS <span class="wa-pulse"></span></a></li></ul><div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div></nav></div></header>
 <section class="hero" id="beranda"><div class="hero-mesh"><div class="mesh-blob b1"></div><div class="mesh-blob b2"></div><div class="mesh-blob b3"></div><div class="mesh-blob b4"></div></div><div class="hero-noise"></div><div class="hero-grid-bg"></div><div class="hero-particles" id="heroParticles"></div><div class="hero-slider">
-
-<!-- SLIDE 1: TABUNGAN & DEPOSITO -->
-<div class="hero-slide active" data-slide="0"><div class="hero-container"><div class="hero-grid-layout"><div class="hero-text"><div class="hero-badge"><span class="badge-dot"></span>Terpercaya Sejak 1985 · OJK · LPS</div><h2 class="hero-title"><span class="t-line"><span class="t-inner">Simpanan <span class="gold-text">Aman</span> &</span></span><span class="t-line"><span class="t-inner">Menguntungkan</span></span></h2><p class="hero-desc">Tabungan & Deposito dengan bunga kompetitif, bebas biaya admin, dan dijamin LPS hingga Rp 2 Miliar.</p><div class="hero-btns"><a href="#produk" class="btn btn-gold"><i class="fas fa-piggy-bank"></i> Buka Tabungan</a><a href="#produk" class="btn btn-glass"><i class="fas fa-chart-line"></i> Simulasi Deposito</a></div><div class="hero-metrics"><div class="metric"><span class="metric-val" data-count="5">0</span><span class="metric-lbl">Juta+ Nasabah</span></div><div class="metric"><span class="metric-val">5.5%</span><span class="metric-lbl">Bunga Deposito</span></div><div class="metric"><span class="metric-val" data-count="40">0</span><span class="metric-lbl">Tahun Pengalaman</span></div></div></div>
+<div class="hero-slide active" data-slide="0"><div class="hero-container"><div class="hero-grid-layout"><div class="hero-text"><div class="hero-badge"><span class="badge-dot"></span>Terpercaya Sejak 1985 · OJK · LPS</div><h2 class="hero-title"><span class="t-line"><span class="t-inner">Simpanan <span class="gold-text">Aman</span> &</span></span><span class="t-line"><span class="t-inner">Menguntungkan</span></span></h2><p class="hero-desc">Tabungan & Deposito dengan bunga kompetitif, bebas biaya admin, dan dijamin LPS hingga Rp 2 Miliar. Wujudkan masa depan finansial Anda.</p><div class="hero-btns"><a href="#produk" class="btn btn-gold"><i class="fas fa-piggy-bank"></i> Buka Tabungan</a><a href="#produk" class="btn btn-glass"><i class="fas fa-chart-line"></i> Simulasi Deposito</a></div><div class="hero-metrics"><div class="metric"><span class="metric-val" data-count="5">0</span><span class="metric-lbl">Juta+ Nasabah</span></div><div class="metric"><span class="metric-val">5.5%</span><span class="metric-lbl">Bunga Deposito</span></div><div class="metric"><span class="metric-val" data-count="40">0</span><span class="metric-lbl">Tahun Pengalaman</span></div></div></div>
 <div class="hero-visual" id="parallaxTarget"><div class="visual-stage" id="cardStage"><div class="orbit o1"><div class="orbit-dot"></div></div><div class="orbit o2"></div><div class="orbit o3"><div class="orbit-dot"></div></div><div class="card-glow"></div><div class="card-3d-wrapper" id="card3d">
-<div class="buku-tabungan bt-1 bt-pos-1"><div class="bt-binding"></div><div class="bt-pages"></div><div class="bt-bookmark"></div><div class="bt-inner"><div class="bt-header"><div class="bt-logo">BD</div><div class="bt-bank-info"><div class="bt-bank-name">BANK DAMARA</div><div class="bt-bank-tagline">Trusted Since 1985</div></div><div class="bt-emblem">RESMI<br>BD</div></div><div class="bt-divider"></div><div class="bt-title-area"><div class="bt-title-ornament"><span></span><i class="fas fa-star"></i><span></span></div><div class="bt-title">Buku Tabungan</div><div class="bt-subtitle">Reguler</div></div><div class="bt-footer"><div class="bt-account"><div class="bt-account-label">No. Rekening</div><div class="bt-account-num">4821 •••• 7634</div><div class="bt-account-name">a/n John Doe</div></div><div class="bt-right-info"><div class="bt-lps"><i class="fas fa-shield-alt"></i> Dijamin LPS</div><div class="bt-year">2026</div></div></div></div></div>
-<div class="buku-tabungan bt-2 bt-pos-2"><div class="bt-binding"></div><div class="bt-pages"></div><div class="bt-bookmark" style="background:linear-gradient(180deg,#0a1f44,#1a3a6b)"></div><div class="bt-inner"><div class="bt-header"><div class="bt-logo">BD</div><div class="bt-bank-info"><div class="bt-bank-name">BANK DAMARA</div><div class="bt-bank-tagline">Priority Banking</div></div><div class="bt-emblem">VIP<br>BD</div></div><div class="bt-divider"></div><div class="bt-title-area"><div class="bt-title-ornament"><span></span><i class="fas fa-crown"></i><span></span></div><div class="bt-title">Buku Tabungan</div><div class="bt-subtitle">Prioritas</div></div><div class="bt-footer"><div class="bt-account"><div class="bt-account-label">No. Rekening</div><div class="bt-account-num">5392 •••• 1048</div><div class="bt-account-name">a/n Jane Smith</div></div><div class="bt-right-info"><div class="bt-lps"><i class="fas fa-shield-alt"></i> Dijamin LPS</div><div class="bt-year">2026</div></div></div></div></div>
-<div class="buku-tabungan bt-3 bt-pos-3"><div class="bt-binding"></div><div class="bt-pages"></div><div class="bt-bookmark"></div><div class="bt-inner"><div class="bt-header"><div class="bt-logo">BD</div><div class="bt-bank-info"><div class="bt-bank-name">BANK DAMARA</div><div class="bt-bank-tagline">Business Banking</div></div><div class="bt-emblem">BISNIS<br>BD</div></div><div class="bt-divider"></div><div class="bt-title-area"><div class="bt-title-ornament"><span></span><i class="fas fa-briefcase"></i><span></span></div><div class="bt-title">Sertifikat Deposito</div><div class="bt-subtitle">Bunga 5.5% p.a</div></div><div class="bt-footer"><div class="bt-account"><div class="bt-account-label">No. Sertifikat</div><div class="bt-account-num">DEP-2026-00847</div><div class="bt-account-name">Tenor 12 Bulan</div></div><div class="bt-right-info"><div class="bt-lps"><i class="fas fa-shield-alt"></i> Dijamin LPS</div><div class="bt-year">2026</div></div></div></div></div>
+<div class="buku-tabungan bt-1 bt-pos-1"><div class="bt-binding"></div><div class="bt-pages"></div><div class="bt-bookmark"></div><div class="bt-inner"><div class="bt-header"><div class="bt-logo">BN</div><div class="bt-bank-info"><div class="bt-bank-name">BANK DAMARA</div><div class="bt-bank-tagline">Trusted Since 1985</div></div><div class="bt-emblem">RESMI<br>BN</div></div><div class="bt-divider"></div><div class="bt-title-area"><div class="bt-title-ornament"><span></span><i class="fas fa-star"></i><span></span></div><div class="bt-title">Buku Tabungan</div><div class="bt-subtitle">Reguler</div></div><div class="bt-footer"><div class="bt-account"><div class="bt-account-label">No. Rekening</div><div class="bt-account-num">4821 •••• 7634</div><div class="bt-account-name">a/n John Doe</div></div><div class="bt-right-info"><div class="bt-lps"><i class="fas fa-shield-alt"></i> Dijamin LPS</div><div class="bt-year">2026</div></div></div></div></div>
+<div class="buku-tabungan bt-2 bt-pos-2"><div class="bt-binding"></div><div class="bt-pages"></div><div class="bt-bookmark" style="background:linear-gradient(180deg,#0a1f44,#1a3a6b)"></div><div class="bt-inner"><div class="bt-header"><div class="bt-logo">BN</div><div class="bt-bank-info"><div class="bt-bank-name">BANK DAMARA</div><div class="bt-bank-tagline">Priority Banking</div></div><div class="bt-emblem">VIP<br>BN</div></div><div class="bt-divider"></div><div class="bt-title-area"><div class="bt-title-ornament"><span></span><i class="fas fa-crown"></i><span></span></div><div class="bt-title">Buku Tabungan</div><div class="bt-subtitle">Prioritas</div></div><div class="bt-footer"><div class="bt-account"><div class="bt-account-label">No. Rekening</div><div class="bt-account-num">5392 •••• 1048</div><div class="bt-account-name">a/n Jane Smith</div></div><div class="bt-right-info"><div class="bt-lps"><i class="fas fa-shield-alt"></i> Dijamin LPS</div><div class="bt-year">2026</div></div></div></div></div>
+<div class="buku-tabungan bt-3 bt-pos-3"><div class="bt-binding"></div><div class="bt-pages"></div><div class="bt-bookmark"></div><div class="bt-inner"><div class="bt-header"><div class="bt-logo">BN</div><div class="bt-bank-info"><div class="bt-bank-name">BANK DAMARA</div><div class="bt-bank-tagline">Business Banking</div></div><div class="bt-emblem">BISNIS<br>BN</div></div><div class="bt-divider"></div><div class="bt-title-area"><div class="bt-title-ornament"><span></span><i class="fas fa-briefcase"></i><span></span></div><div class="bt-title">Sertifikat Deposito</div><div class="bt-subtitle">Bunga 5.5% p.a</div></div><div class="bt-footer"><div class="bt-account"><div class="bt-account-label">No. Sertifikat</div><div class="bt-account-num">DEP-2026-00847</div><div class="bt-account-name">Tenor 12 Bulan</div></div><div class="bt-right-info"><div class="bt-lps"><i class="fas fa-shield-alt"></i> Dijamin LPS</div><div class="bt-year">2026</div></div></div></div></div>
 </div><div class="glass-card gc-1"><div class="gc-icon"><i class="fas fa-shield-alt"></i></div><div><div class="gc-val">Dijamin LPS</div><div class="gc-lbl">Hingga Rp 2 Miliar</div></div></div><div class="glass-card gc-2"><div class="gc-icon"><i class="fas fa-chart-line"></i></div><div><div class="gc-val">5.5% p.a</div><div class="gc-lbl">Bunga Deposito</div></div></div><div class="glass-card gc-3"><div class="gc-icon"><i class="fas fa-piggy-bank"></i></div><div><div class="gc-val">Bebas Admin</div><div class="gc-lbl">Tabungan Reguler</div></div></div></div></div></div></div></div>
-
-<!-- SLIDE 2: KREDIT/PINJAMAN -->
-<div class="hero-slide" data-slide="1"><div class="hero-container"><div class="hero-grid-layout"><div class="hero-text"><div class="hero-badge"><span class="badge-dot"></span>Solusi Pendanaan Terpercaya</div><h2 class="hero-title"><span class="t-line"><span class="t-inner">Pendanaan untuk</span></span><span class="t-line"><span class="t-inner"><span class="gold-text">Usaha</span> & Masa Depan</span></span></h2><p class="hero-desc">Modal Usaha, Kredit Konsumtif untuk rumah & kendaraan, serta kredit Investasi untuk ekspansi aset produktif Anda.</p><div class="hero-btns"><a href="#produk" class="btn btn-gold"><i class="fas fa-hand-holding-usd"></i> Ajukan Pinjaman</a><a href="#produk" class="btn btn-glass"><i class="fas fa-calculator"></i> Simulasi Angsuran</a></div><div class="hero-metrics"><div class="metric"><span class="metric-val">4.99%</span><span class="metric-lbl">Bunga KPR</span></div><div class="metric"><span class="metric-val">7 Hari</span><span class="metric-lbl">Proses Cepat</span></div><div class="metric"><span class="metric-val">20 Thn</span><span class="metric-lbl">Tenor Maks</span></div></div></div>
+<div class="hero-slide" data-slide="1"><div class="hero-container"><div class="hero-grid-layout"><div class="hero-text"><div class="hero-badge"><span class="badge-dot"></span>Solusi Pendanaan Terpercaya</div><h2 class="hero-title"><span class="t-line"><span class="t-inner">Pendanaan untuk</span></span><span class="t-line"><span class="t-inner"><span class="gold-text">Usaha</span> & Masa Depan</span></span></h2><p class="hero-desc">Modal Usaha untuk rintis & kembangkan bisnis. Kredit Konsumtif untuk rumah, kendaraan, dan pendidikan. Serta kredit Investasi untuk ekspansi aset produktif Anda.</p><div class="hero-btns"><a href="#produk" class="btn btn-gold"><i class="fas fa-hand-holding-usd"></i> Ajukan Pinjaman</a><a href="#produk" class="btn btn-glass"><i class="fas fa-calculator"></i> Simulasi Angsuran</a></div><div class="hero-metrics"><div class="metric"><span class="metric-val">4.99%</span><span class="metric-lbl">Bunga KPR</span></div><div class="metric"><span class="metric-val">7 Hari</span><span class="metric-lbl">Proses Cepat</span></div><div class="metric"><span class="metric-val">20 Thn</span><span class="metric-lbl">Tenor Maks</span></div></div></div>
 <div class="hero-visual"><div class="visual-stage"><div class="orbit o1"><div class="orbit-dot"></div></div><div class="orbit o2"></div><div class="orbit o3"><div class="orbit-dot"></div></div><div class="card-glow"></div><div class="card-3d-wrapper">
-<div class="loan-card lc-usaha"><div class="lc-ribbon">Modal Usaha</div><div class="lc-inner"><div class="lc-top"><div><div class="lc-bank-name">BANK DAMARA</div><div class="lc-bank-sub">Kredit Modal Kerja</div></div><div class="lc-icon-big"><i class="fas fa-store"></i></div></div><div class="lc-body"><div class="lc-label">Plafon Kredit</div><div class="lc-value">Rp 5 Miliar <small>maks</small></div><div class="lc-sub">Bunga kompetitif · Proses 5 hari kerja<br>Tenor fleksibel hingga 10 tahun</div></div><div class="lc-footer"><div><div class="lc-ft-label">Bunga</div><div class="lc-ft-val">6.5% p.a</div></div><div><div class="lc-ft-label">Agunan</div><div class="lc-ft-val">SHM/BGB</div></div><div><div class="lc-ft-label">Tenor</div><div class="lc-ft-val">120 Bln</div></div></div></div><i class="fas fa-store lc-watermark"></i></div>
-<div class="loan-card lc-konsumtif"><div class="lc-ribbon">Konsumtif</div><div class="lc-inner"><div class="lc-top"><div><div class="lc-bank-name">BANK DAMARA</div><div class="lc-bank-sub">Kredit Konsumtif</div></div><div class="lc-icon-big"><i class="fas fa-home"></i></div></div><div class="lc-body"><div class="lc-label">KPR · Kendaraan · Pendidikan</div><div class="lc-value">Mulai 4.99% <small>p.a</small></div><div class="lc-sub">Wujudkan rumah impian dan kendaraan dengan angsuran ringan</div><div class="lc-icon-grid"><div class="lc-ig"><i class="fas fa-home"></i></div><div class="lc-ig"><i class="fas fa-car"></i></div><div class="lc-ig"><i class="fas fa-graduation-cap"></i></div><div class="lc-ig"><i class="fas fa-store"></i></div></div></div><div class="lc-footer"><div><div class="lc-ft-label">DP</div><div class="lc-ft-val">10%</div></div><div><div class="lc-ft-label">Proses</div><div class="lc-ft-val">7 Hari</div></div><div><div class="lc-ft-label">Tenor</div><div class="lc-ft-val">20 Thn</div></div></div></div><i class="fas fa-home lc-watermark"></i></div>
-<div class="loan-card lc-investasi"><div class="lc-ribbon">Investasi</div><div class="lc-inner"><div class="lc-top"><div><div class="lc-bank-name">BANK DAMARA</div><div class="lc-bank-sub">Kredit Investasi</div></div><div class="lc-icon-big"><i class="fas fa-building"></i></div></div><div class="lc-body"><div class="lc-label">Pembiayaan Aset Produktif</div><div class="lc-value">Rp 50 Miliar <small>maks</small></div><div class="lc-sub">Ekspansi bisnis, pengadaan mesin, pembangunan pabrik</div></div><div class="lc-footer"><div><div class="lc-ft-label">Bunga</div><div class="lc-ft-val">8.5% p.a</div></div><div><div class="lc-ft-label">Grace</div><div class="lc-ft-val">6 Bln</div></div><div><div class="lc-ft-label">Tenor</div><div class="lc-ft-val">15 Thn</div></div></div></div><i class="fas fa-building lc-watermark"></i></div>
+<div class="loan-card lc-usaha"><div class="lc-ribbon">Modal Usaha</div><div class="lc-inner"><div class="lc-top"><div><div class="lc-bank-name">BANK DAMARA</div><div class="lc-bank-sub">Kredit Modal Kerja</div></div><div class="lc-icon-big"><i class="fas fa-store"></i></div></div><div class="lc-body"><div class="lc-label">Plafon Kredit</div><div class="lc-value">Rp 5 Miliar <small>maks</small></div><div class="lc-sub">Bunga kompetitif · Proses 5 hari kerja<br>Tenor fleksibel hingga 10 tahun</div></div><div class="lc-footer"><div><div class="lc-ft-label">Bunga Mulai</div><div class="lc-ft-val">6.5% p.a</div></div><div><div class="lc-ft-label">Agunan</div><div class="lc-ft-val">SHM/BGB</div></div><div><div class="lc-ft-label">Tenor</div><div class="lc-ft-val">120 Bln</div></div></div></div><i class="fas fa-store lc-watermark"></i></div>
+<div class="loan-card lc-konsumtif"><div class="lc-ribbon">Konsumtif</div><div class="lc-inner"><div class="lc-top"><div><div class="lc-bank-name">BANK DAMARA</div><div class="lc-bank-sub">Kredit Konsumtif</div></div><div class="lc-icon-big"><i class="fas fa-home"></i></div></div><div class="lc-body"><div class="lc-label">KPR · Kendaraan · Pendidikan</div><div class="lc-value">Mulai 4.99% <small>p.a</small></div><div class="lc-sub">Wujudkan rumah impian, kendaraan, dan biaya pendidikan anak dengan angsuran ringan</div><div class="lc-icon-grid"><div class="lc-ig"><i class="fas fa-home"></i></div><div class="lc-ig"><i class="fas fa-car"></i></div><div class="lc-ig"><i class="fas fa-graduation-cap"></i></div><div class="lc-ig"><i class="fas fa-store"></i></div></div></div><div class="lc-footer"><div><div class="lc-ft-label">DP Mulai</div><div class="lc-ft-val">10%</div></div><div><div class="lc-ft-label">Proses</div><div class="lc-ft-val">7 Hari</div></div><div><div class="lc-ft-label">Tenor</div><div class="lc-ft-val">20 Thn</div></div></div></div><i class="fas fa-home lc-watermark"></i></div>
+<div class="loan-card lc-investasi"><div class="lc-ribbon">Investasi</div><div class="lc-inner"><div class="lc-top"><div><div class="lc-bank-name">BANK DAMARA</div><div class="lc-bank-sub">Kredit Investasi</div></div><div class="lc-icon-big"><i class="fas fa-building"></i></div></div><div class="lc-body"><div class="lc-label">Pembiayaan Aset Produktif</div><div class="lc-value">Rp 50 Miliar <small>maks</small></div><div class="lc-sub">Ekspansi bisnis, pengadaan mesin, pembangunan pabrik & gedung komersial</div></div><div class="lc-footer"><div><div class="lc-ft-label">Bunga Mulai</div><div class="lc-ft-val">8.5% p.a</div></div><div><div class="lc-ft-label">Grace Period</div><div class="lc-ft-val">6 Bln</div></div><div><div class="lc-ft-label">Tenor</div><div class="lc-ft-val">15 Thn</div></div></div></div><i class="fas fa-building lc-watermark"></i></div>
 </div><div class="glass-card gc-1"><div class="gc-icon"><i class="fas fa-store"></i></div><div><div class="gc-val">Modal Usaha</div><div class="gc-lbl">Hingga Rp 5 Miliar</div></div></div><div class="glass-card gc-2"><div class="gc-icon"><i class="fas fa-car"></i></div><div><div class="gc-val">Kredit Mobil</div><div class="gc-lbl">DP mulai 10%</div></div></div><div class="glass-card gc-3"><div class="gc-icon"><i class="fas fa-building"></i></div><div><div class="gc-val">Investasi</div><div class="gc-lbl">Grace Period 6 Bln</div></div></div></div></div></div></div></div>
-
-<!-- SLIDE 3: PPOB & DIGITAL -->
-<div class="hero-slide" data-slide="2"><div class="hero-container"><div class="hero-grid-layout"><div class="hero-text"><div class="hero-badge"><span class="badge-dot"></span>Layanan Digital 24/7</div><h2 class="hero-title"><span class="t-line"><span class="t-inner">Bayar Tagihan &</span></span><span class="t-line"><span class="t-inner"><span class="gold-text">Transfer</span> Instan</span></span></h2><p class="hero-desc">Top up pulsa & data, bayar listrik PLN, Telkom, PDAM, dan 200+ tagihan lainnya. Transfer BI-FAST antar bank 24/7 hanya Rp 2.500.</p><div class="hero-btns"><a href="#layanan" class="btn btn-gold"><i class="fas fa-mobile-alt"></i> Download App</a><a href="#layanan" class="btn btn-glass"><i class="fas fa-qrcode"></i> Scan & Pay</a></div><div class="hero-metrics"><div class="metric"><span class="metric-val">4.8★</span><span class="metric-lbl">Rating App</span></div><div class="metric"><span class="metric-val">200+</span><span class="metric-lbl">Jenis Tagihan</span></div><div class="metric"><span class="metric-val">24/7</span><span class="metric-lbl">Transfer Real-time</span></div></div></div>
+<div class="hero-slide" data-slide="2"><div class="hero-container"><div class="hero-grid-layout"><div class="hero-text"><div class="hero-badge"><span class="badge-dot"></span>Layanan Digital 24/7</div><h2 class="hero-title"><span class="t-line"><span class="t-inner">Bayar Tagihan &</span></span><span class="t-line"><span class="t-inner"><span class="gold-text">Transfer</span> Instan</span></span></h2><p class="hero-desc">Top up pulsa & data semua operator. Bayar listrik PLN, Telkom, PDAM, dan 200+ tagihan lainnya. Transfer BI-FAST antar bank 24/7 hanya Rp 2.500.</p><div class="hero-btns"><a href="#layanan" class="btn btn-gold"><i class="fas fa-mobile-alt"></i> Download App</a><a href="#layanan" class="btn btn-glass"><i class="fas fa-qrcode"></i> Scan & Pay</a></div><div class="hero-metrics"><div class="metric"><span class="metric-val">4.8★</span><span class="metric-lbl">Rating App</span></div><div class="metric"><span class="metric-val">200+</span><span class="metric-lbl">Jenis Tagihan</span></div><div class="metric"><span class="metric-val">24/7</span><span class="metric-lbl">Transfer Real-time</span></div></div></div>
 <div class="hero-visual"><div class="visual-stage"><div class="orbit o1"><div class="orbit-dot"></div></div><div class="orbit o2"></div><div class="orbit o3"><div class="orbit-dot"></div></div><div class="card-glow"></div><div class="card-3d-wrapper">
-<div class="ppob-phone"><div class="ppob-screen"><div class="ppob-header"><div class="ppob-logo">BD Mobile</div><div class="ppob-sub">v5.0 · 2026</div></div><div class="ppob-balance-box"><div class="pbb-label">Saldo Anda</div><div class="pbb-amount">Rp 12.450.000</div></div><div class="ppob-grid"><div class="ppob-grid-item"><i class="fas fa-mobile-alt"></i><span>Pulsa</span></div><div class="ppob-grid-item"><i class="fas fa-wifi"></i><span>Data</span></div><div class="ppob-grid-item"><i class="fas fa-bolt"></i><span>PLN</span></div><div class="ppob-grid-item"><i class="fas fa-phone"></i><span>Telkom</span></div><div class="ppob-grid-item"><i class="fas fa-tint"></i><span>PDAM</span></div><div class="ppob-grid-item"><i class="fas fa-paper-plane"></i><span>Transfer</span></div></div></div></div>
+<div class="ppob-phone"><div class="ppob-screen"><div class="ppob-header"><div class="ppob-logo">BN Mobile</div><div class="ppob-sub">v5.0 · 2026</div></div><div class="ppob-balance-box"><div class="pbb-label">Saldo Anda</div><div class="pbb-amount">Rp 12.450.000</div></div><div class="ppob-grid"><div class="ppob-grid-item"><i class="fas fa-mobile-alt"></i><span>Pulsa</span></div><div class="ppob-grid-item"><i class="fas fa-wifi"></i><span>Data</span></div><div class="ppob-grid-item"><i class="fas fa-bolt"></i><span>PLN</span></div><div class="ppob-grid-item"><i class="fas fa-phone"></i><span>Telkom</span></div><div class="ppob-grid-item"><i class="fas fa-tint"></i><span>PDAM</span></div><div class="ppob-grid-item"><i class="fas fa-paper-plane"></i><span>Transfer</span></div></div></div></div>
 <div class="ppob-debit-mini pdm-pd"><div class="pdm-inner"><div class="pdm-top"><div class="pdm-bank">BANK DAMARA</div><div class="pdm-type">Debit · GPN</div></div><div class="pdm-num">4821 5566 7788 9900</div><div class="pdm-bottom"><div class="pdm-name">John Doe</div><div class="pdm-badge">GOLD</div></div></div></div>
 <div class="ppob-debit-mini pdm-pdam"><div class="pdm-inner"><div class="pdm-top"><div class="pdm-bank">Transfer BI-FAST</div><div class="pdm-type">Real-time 24/7</div></div><div class="pdm-num">Rp 2.500 / trx</div><div class="pdm-bottom"><div class="pdm-name">Semua Bank</div><div class="pdm-badge">BI-FAST</div></div></div></div>
 <div class="ppob-float-card pfc-pulsa"><div class="pfc-icon"><i class="fas fa-mobile-alt"></i></div><div><div class="pfc-val">Pulsa & Data</div><div class="pfc-lbl">Semua Operator</div></div></div>
 <div class="ppob-float-card pfc-listrik"><div class="pfc-icon"><i class="fas fa-bolt"></i></div><div><div class="pfc-val">PLN · Telkom</div><div class="pfc-lbl">Bayar Tagihan Bulanan</div></div></div>
 <div class="ppob-float-card pfc-transfer"><div class="pfc-icon"><i class="fas fa-paper-plane"></i></div><div><div class="pfc-val">Transfer BI-FAST</div><div class="pfc-lbl">Antar Bank Rp 2.500</div></div></div>
-</div></div></div></div></div>
+</div></div></div></div></div></div>
+</div><div class="slide-counter"><span class="current">01</span> / 03</div><div class="hero-controls"><div class="slide-tab active" onclick="goToSlide(0)"><div class="tab-fill"></div></div><div class="slide-tab" onclick="goToSlide(1)"><div class="tab-fill"></div></div><div class="slide-tab" onclick="goToSlide(2)"><div class="tab-fill"></div></div></div><div class="scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div></section>
+<section class="quick-access"><div class="container"><div class="quick-access-grid"><a href="#produk" class="quick-access-card" data-product="tabungan"><div class="icon"><i class="fas fa-university"></i></div><h4>Tabungan</h4><p>Buka rekening baru dengan mudah</p></a><a href="#produk" class="quick-access-card" data-product="pinjaman"><div class="icon"><i class="fas fa-hand-holding-usd"></i></div><h4>Pinjaman</h4><p>KPR, KTA, dan kredit usaha</p></a><a href="#produk" class="quick-access-card" data-product="deposito"><div class="icon"><i class="fas fa-piggy-bank"></i></div><h4>Deposito</h4><p>Bunga kompetitif hingga 5.5%</p></a><a href="#lelang" class="quick-access-card"><div class="icon"><i class="fas fa-gavel"></i></div><h4>Lelang Agunan</h4><p>Properti & kendaraan harga miring</p></a></div></div></section>
+<section class="about-section" id="tentang"><div class="container"><div class="section-title"><div class="st-badge"><i class="fas fa-building"></i> Tentang Kami</div><h2>Mengenal BANK DAMARA</h2><p>Lebih dari 40 tahun melayani masyarakat Indonesia dengan integritas dan inovasi</p><div class="underline"></div></div><div class="about-tabs"><div class="about-tab active" data-tab-btn="profil" onclick="switchTab('profil')"><i class="fas fa-building"></i> Profil</div><div class="about-tab" data-tab-btn="visi" onclick="switchTab('visi')"><i class="fas fa-bullseye"></i> Visi & Misi</div><div class="about-tab" data-tab-btn="budaya" onclick="switchTab('budaya')"><i class="fas fa-heart"></i> Budaya</div><div class="about-tab" data-tab-btn="manajemen" onclick="switchTab('manajemen')"><i class="fas fa-user-tie"></i> Manajemen</div><div class="about-tab" data-tab-btn="karir" onclick="switchTab('karir')"><i class="fas fa-briefcase"></i> Karir</div></div>
+<div class="about-content active" id="tab-profil"><div class="about-grid"><div class="about-image img-profil"><div class="about-img-bg"><i class="fas fa-landmark"></i></div><div class="about-float"><div class="af-icon"><i class="fas fa-award"></i></div><div><h5>Bank Terbaik 2026</h5><p>Penghargaan dari Majalah Infobank</p></div></div></div><div class="about-text"><h3>Profil BANK DAMARA</h3><p>PT BANK DAMARA Tbk didirikan pada tahun 1985 sebagai bank umum swasta nasional. Dengan lebih dari 1.200 cabang dan ATM yang tersebar di seluruh Nusantara.</p><ul class="about-features"><li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>Terdaftar & Diawasi OJK</strong><span>Memenuhi seluruh regulasi perbankan Indonesia</span></div></li><li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>Anggota LPS</strong><span>Simpanan dijamin hingga Rp 2 Miliar</span></div></li><li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>Rating AAA (idn)</strong><span>Peringkat tertinggi dari Pefindo Rating</span></div></li><li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>ISO 27001 Certified</strong><span>Standar internasional keamanan informasi</span></div></li></ul></div></div></div>
+<div class="about-content" id="tab-visi"><div class="vm-grid"><div class="vm-card vm-visi"><div class="vm-icon"><i class="fas fa-eye"></i></div><h4>Visi</h4><p>Menjadi bank nasional terdepan yang terpercaya, inovatif, dan berkontribusi nyata dalam mendorong pertumbuhan ekonomi Indonesia yang berkelanjutan.</p></div><div class="vm-card vm-misi"><div class="vm-icon"><i class="fas fa-rocket"></i></div><h4>Misi</h4><ul><li><i class="fas fa-circle"></i> Menyediakan produk dan layanan perbankan yang inovatif, aman, dan mudah diakses</li><li><i class="fas fa-circle"></i> Mengembangkan SDM yang profesional dan berintegritas</li><li><i class="fas fa-circle"></i> Menerapkan Good Corporate Governance secara konsisten</li><li><i class="fas fa-circle"></i> Memberikan nilai tambah optimal bagi pemegang saham</li><li><i class="fas fa-circle"></i> Berperan aktif dalam keuangan inklusif dan CSR</li></ul></div></div></div>
+<div class="about-content" id="tab-budaya"><div class="budaya-grid"><div class="budaya-card"><div class="bc-icon"><i class="fas fa-handshake"></i></div><h4>Integritas</h4><p>Menjunjung tinggi kejujuran, transparansi, dan etika dalam setiap tindakan.</p></div><div class="budaya-card"><div class="bc-icon"><i class="fas fa-lightbulb"></i></div><h4>Inovasi</h4><p>Terus berinovasi dan beradaptasi dengan perkembangan teknologi.</p></div><div class="budaya-card"><div class="bc-icon"><i class="fas fa-users"></i></div><h4>Kolaborasi</h4><p>Membangun sinergi dan kerja sama yang solid antar tim dan mitra.</p></div><div class="budaya-card"><div class="bc-icon"><i class="fas fa-star"></i></div><h4>Keunggulan</h4><p>Berkomitmen pada standar kualitas tertinggi dalam setiap layanan.</p></div></div></div>
+<div class="about-content" id="tab-manajemen"><div class="mgmt-grid"><div class="mgmt-card"><div class="mgmt-photo"><i class="fas fa-user-tie"></i></div><div class="mgmt-info"><h4>Dr. Hendra Wijaya, MBA</h4><div class="mgmt-role">Direktur Utama</div><p>30+ tahun pengalaman di industri perbankan.</p></div></div><div class="mgmt-card"><div class="mgmt-photo"><i class="fas fa-user-tie"></i></div><div class="mgmt-info"><h4>Sari Dewi, SE, AK</h4><div class="mgmt-role">Direktur Keuangan</div><p>Ahli strategi keuangan dan manajemen risiko.</p></div></div><div class="mgmt-card"><div class="mgmt-photo"><i class="fas fa-user-tie"></i></div><div class="mgmt-info"><h4>Budi Santoso, M.Si</h4><div class="mgmt-role">Direktur Operasional</div><p>Pakar transformasi digital perbankan.</p></div></div><div class="mgmt-card"><div class="mgmt-photo"><i class="fas fa-user-tie"></i></div><div class="mgmt-info"><h4>Ratna Kusuma, SH</h4><div class="mgmt-role">Direktur Kepatuhan</div><p>Spesialis regulasi perbankan dan compliance.</p></div></div></div></div>
+<div class="about-content" id="tab-karir"><div class="karir-grid"><div class="karir-text"><h3>Bergabung Bersama Kami</h3><p>Kami mencari talenta terbaik yang bersemangat untuk tumbuh bersama.</p><div class="karir-benefits"><div class="karir-benefit"><i class="fas fa-heartbeat"></i> Asuransi Kesehatan</div><div class="karir-benefit"><i class="fas fa-graduation-cap"></i> Program Pelatihan</div><div class="karir-benefit"><i class="fas fa-chart-line"></i> Jenjang Karir Jelas</div><div class="karir-benefit"><i class="fas fa-coins"></i> Bonus Tahunan</div><div class="karir-benefit"><i class="fas fa-umbrella-beach"></i> Cuti 18 Hari/Tahun</div><div class="karir-benefit"><i class="fas fa-laptop"></i> Flexible Working</div></div><a href="#" class="btn btn-primary"><i class="fas fa-search"></i> Lihat Lowongan</a></div><div class="karir-visual"><i class="fas fa-people-group"></i><div class="kv-float"><h5>50+ Posisi Terbuka</h5><p>Bergabunglah dengan 12.000+ karyawan kami</p></div></div></div></div></div></section>
+<section class="products" id="produk"><div class="container"><div class="section-title"><div class="st-badge"><i class="fas fa-box-open"></i> Produk & Layanan</div><h2>Solusi Keuangan Lengkap</h2><p>Pilih produk perbankan yang tepat untuk kebutuhan Anda</p><div class="underline"></div></div><div class="products-grid"><div class="product-card" id="prod-tabungan"><div class="product-card-header"><i class="fas fa-piggy-bank"></i><h3>Tabungan</h3><p>Simpanan aman & menguntungkan</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> Setoran awal Rp 100.000</li><li><i class="fas fa-check-circle"></i> Bebas biaya admin</li><li><i class="fas fa-check-circle"></i> Kartu debit gratis</li><li><i class="fas fa-check-circle"></i> Akses e-Banking 24/7</li><li><i class="fas fa-check-circle"></i> Bunga hingga 3.5% p.a</li></ul><a href="#produk" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div></div><div class="product-card" id="prod-deposito"><div class="product-card-header"><i class="fas fa-chart-line"></i><h3>Deposito</h3><p>Investasi aman & terjamin</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> Bunga hingga 5.5% p.a</li><li><i class="fas fa-check-circle"></i> Tenor fleksibel 1-24 bulan</li><li><i class="fas fa-check-circle"></i> ARO otomatis</li><li><i class="fas fa-check-circle"></i> Dijamin LPS</li><li><i class="fas fa-check-circle"></i> Bunga dibayar di muka</li></ul><a href="#produk" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div></div><div class="product-card" id="prod-pinjaman"><div class="product-card-header"><i class="fas fa-hand-holding-usd"></i><h3>Pinjaman</h3><p>Solusi kredit fleksibel</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> KPR bunga 4.99% fixed</li><li><i class="fas fa-check-circle"></i> KTA tanpa agunan</li><li><i class="fas fa-check-circle"></i> Kredit kendaraan</li><li><i class="fas fa-check-circle"></i> Kredit usaha (KUR)</li><li><i class="fas fa-check-circle"></i> Proses cepat 7 hari</li></ul><a href="#produk" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div></div><div class="product-card" id="prod-layanan"><div class="product-card-header"><i class="fas fa-concierge-bell"></i><h3>Layanan Digital</h3><p>Banking dalam genggaman</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> Mobile Banking v5.0</li><li><i class="fas fa-check-circle"></i> Internet Banking</li><li><i class="fas fa-check-circle"></i> QRIS Payment</li><li><i class="fas fa-check-circle"></i> Virtual Account</li><li><i class="fas fa-check-circle"></i> API Banking</li></ul><a href="#layanan" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div></div></div></div></section>
+<section class="digital-section" id="layanan"><div class="container"><div class="digital-grid"><div class="digital-visual"><div class="digital-phone"><div class="dp-screen"><div class="dp-logo">BN Mobile</div><div class="dp-sub">v5.0 · 2026</div><div class="dp-balance">Saldo Anda</div><div class="dp-amount">Rp 12.450.000</div><div class="dp-actions"><div class="dp-action"><i class="fas fa-paper-plane"></i><span>Transfer</span></div><div class="dp-action"><i class="fas fa-qrcode"></i><span>QRIS</span></div><div class="dp-action"><i class="fas fa-file-invoice"></i><span>Tagihan</span></div><div class="dp-action"><i class="fas fa-mobile-alt"></i><span>Pulsa</span></div><div class="dp-action"><i class="fas fa-chart-pie"></i><span>Investasi</span></div><div class="dp-action"><i class="fas fa-ellipsis-h"></i><span>Lainnya</span></div></div></div></div><div class="digital-float-1"><i class="fas fa-check-circle"></i><span>Transfer Berhasil!</span></div><div class="digital-float-2"><i class="fas fa-shield-alt"></i><span>100% Aman</span></div></div><div class="digital-text"><h2>Banking Digital Terdepan</h2><p>Nikmati kemudahan bertransaksi kapan saja dan di mana saja dengan teknologi perbankan digital kami.</p><ul class="digital-features"><li><div class="df-icon"><i class="fas fa-bolt"></i></div><div><h4>Transfer Instan BI-FAST</h4><p>Kirim uang 24/7, biaya hanya Rp 2.500.</p></div></li><li><div class="df-icon"><i class="fas fa-qrcode"></i></div><div><h4>QRIS Payment</h4><p>Bayar di jutaan merchant dengan scan QR.</p></div></li><li><div class="df-icon"><i class="fas fa-file-invoice-dollar"></i></div><div><h4>Bayar Tagihan & Top Up</h4><p>Listrik, air, internet, BPJS, pulsa, dan 200+ lainnya.</p></div></li><li><div class="df-icon"><i class="fas fa-fingerprint"></i></div><div><h4>Keamanan Biometrik</h4><p>Face ID & fingerprint. Enkripsi end-to-end.</p></div></li></ul><a href="#produk" class="btn btn-dark"><i class="fas fa-download"></i> Download BN Mobile</a></div></div></div></section>
+<section class="lelang-section" id="lelang"><div class="container"><div class="section-title"><div class="st-badge"><i class="fas fa-gavel"></i> Lelang Agunan</div><h2>Agunan Pilihan Harga Terjangkau</h2><p>Temukan properti, kendaraan, dan aset berharga dengan harga di bawah pasaran</p><div class="underline"></div></div><div class="lelang-intro"><div class="lelang-intro-img"><i class="fas fa-building-columns"></i><div class="li-badge"><i class="fas fa-fire"></i> Hot Deal</div></div><div class="lelang-intro-text"><h3>Mengapa Lelang Agunan Kami?</h3><p>Berbagai aset agunan yang telah melalui verifikasi legalitas dan appraisal profesional.</p><div class="lelang-stats"><div class="lelang-stat"><div class="ls-val">250+</div><div class="ls-lbl">Aset Tersedia</div></div><div class="lelang-stat"><div class="ls-val">34</div><div class="ls-lbl">Provinsi</div></div><div class="lelang-stat"><div class="ls-val">15%</div><div class="ls-lbl">Di Bawah NJOP</div></div><div class="lelang-stat"><div class="ls-val">100%</div><div class="ls-lbl">Legal & Aman</div></div></div><a href="#lelang" class="btn btn-primary"><i class="fas fa-search"></i> Lihat Semua Agunan</a></div></div><div class="lelang-grid"><div class="lelang-card"><div class="lelang-card-img"><i class="fas fa-home"></i><span class="lc-status open">Lelang Aktif</span></div><div class="lelang-card-body"><div class="lc-type">Properti</div><h4>Rumah 2 Lantai, BSD City</h4><div class="lc-location"><i class="fas fa-map-marker-alt"></i> Tangerang Selatan</div><div class="lc-price">Rp 850.000.000</div><div class="lc-meta"><span><i class="fas fa-ruler-combined"></i> LT 120m² / LB 180m²</span><span><i class="fas fa-clock"></i> Berakhir 25 Jul</span></div></div></div><div class="lelang-card"><div class="lelang-card-img"><i class="fas fa-car"></i><span class="lc-status open">Lelang Aktif</span></div><div class="lelang-card-body"><div class="lc-type">Kendaraan</div><h4>Toyota Fortuner 2022</h4><div class="lc-location"><i class="fas fa-map-marker-alt"></i> Jakarta Selatan</div><div class="lc-price">Rp 425.000.000</div><div class="lc-meta"><span><i class="fas fa-tachometer-alt"></i> 28.000 km</span><span><i class="fas fa-clock"></i> Berakhir 20 Jul</span></div></div></div><div class="lelang-card"><div class="lelang-card-img"><i class="fas fa-store"></i><span class="lc-status soon">Segera Dibuka</span></div><div class="lelang-card-body"><div class="lc-type">Komersial</div><h4>Ruko 3 Lantai, PIK Avenue</h4><div class="lc-location"><i class="fas fa-map-marker-alt"></i> Jakarta Utara</div><div class="lc-price">Rp 2.500.000.000</div><div class="lc-meta"><span><i class="fas fa-ruler-combined"></i> LT 100m² / LB 300m²</span><span><i class="fas fa-clock"></i> Mulai 1 Agu</span></div></div></div></div></div></section>
+<section class="pelaporan-section" id="pelaporan"><div class="container"><div class="section-title"><div class="st-badge"><i class="fas fa-file-alt"></i> Pelaporan</div><h2>Transparansi & Akuntabilitas</h2><p>Akses laporan, publikasi, dan saluran pengaduan resmi BANK DAMARA</p><div class="underline"></div></div><div class="pelaporan-grid"><div class="pelaporan-card" id="report-publikasi"><div class="pelaporan-card-header"><div class="pc-icon"><i class="fas fa-newspaper"></i></div><h3>Publikasi</h3><p>Informasi resmi & pengumuman</p></div><div class="pelaporan-card-body"><ul><li><i class="fas fa-file-pdf"></i> Laporan Keuangan Triwulanan</li><li><i class="fas fa-bullhorn"></i> Pengumuman RUPS 2026</li><li><i class="fas fa-newspaper"></i> Siaran Pers Resmi</li><li><i class="fas fa-balance-scale"></i> Suku Bunga Dasar Kredit</li><li><i class="fas fa-chart-bar"></i> Rasio Keuangan & KPMM</li></ul><a href="#pelaporan" class="btn btn-dark">Lihat Publikasi <i class="fas fa-arrow-right"></i></a></div></div><div class="pelaporan-card" id="report-tahunan"><div class="pelaporan-card-header"><div class="pc-icon"><i class="fas fa-book-open"></i></div><h3>Laporan Tahunan</h3><p>Kinerja & pencapaian tahunan</p></div><div class="pelaporan-card-body"><ul><li><i class="fas fa-file-pdf"></i> Annual Report 2025</li><li><i class="fas fa-leaf"></i> Sustainability Report 2025</li><li><i class="fas fa-shield-alt"></i> Laporan GCG 2025</li><li><i class="fas fa-chart-pie"></i> Laporan Tahunan OJK</li><li><i class="fas fa-archive"></i> Arsip Laporan 2020-2024</li></ul><a href="#pelaporan" class="btn btn-dark">Download Laporan <i class="fas fa-arrow-right"></i></a></div></div><div class="pelaporan-card" id="report-pengaduan"><div class="pelaporan-card-header"><div class="pc-icon"><i class="fas fa-comment-dots"></i></div><h3>Pengaduan</h3><p>Sampaikan keluhan & masukan</p></div><div class="pelaporan-card-body"><ul><li><i class="fas fa-headset"></i> Call Center 1500-888</li><li><i class="fab fa-whatsapp"></i> WA: 0812-3456-7890</li><li><i class="fas fa-envelope"></i> pengaduan@banknusantara.co.id</li><li><i class="fas fa-clock"></i> Respon 1x24 jam kerja</li><li><i class="fas fa-user-shield"></i> Data dijamin rahasia</li></ul><a href="https://wa.me/6281234567890" target="_blank" class="btn btn-dark">Buat Pengaduan <i class="fas fa-arrow-right"></i></a></div></div></div></div></section>
 
-</div>
-<div class="slide-counter"><span class="current">01</span> / 03</div>
-<div class="hero-controls"><div class="slide-tab active" onclick="goToSlide(0)"><div class="tab-fill"></div></div><div class="slide-tab" onclick="goToSlide(1)"><div class="tab-fill"></div></div><div class="slide-tab" onclick="goToSlide(2)"><div class="tab-fill"></div></div></div>
-<div class="scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div>
+<!-- GALERI INFORMASI SECTION -->
+<section class="gallery-info-section" id="galeri-informasi">
+    <div class="container">
+        <div class="gallery-section-header">
+            <div class="section-badge"><i class="fas fa-circle"></i> Update Terkini</div>
+            <h2>GALERI <span>INFORMASI</span></h2>
+            <p>Dapatkan informasi terbaru seputar kurs mata uang, aktivitas, dan video terkini dari Bank Damara</p>
+            <div class="title-divider"></div>
+        </div>
+        <div class="gallery-banner-wrapper">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1400&h=400&fit=crop" alt="Bank Damara - Promo & Informasi Terkini" loading="lazy" onerror="this.src='https://placehold.co/1400x300/1a365d/c6a456?text=BANK+DAMARA+%E2%80%94+Galeri+Informasi'">
+            <div class="gallery-banner-overlay"><h3>🏦 Promo Spesial Bulan Ini</h3><p>Nikmati berbagai penawaran menarik dari Bank Damara untuk Anda</p></div>
+        </div>
+        <div class="gallery-grid">
+            <!-- CARD 1: KURS -->
+            <div class="gallery-card">
+                <div class="gallery-card-header">
+                    <div class="card-title-group"><div class="card-icon kurs-icon"><i class="fas fa-exchange-alt"></i></div><div><h4>Kurs Mata Uang</h4><p class="card-subtitle">Nilai tukar terhadap Rupiah</p></div></div>
+                    <span class="kurs-update-time" id="kurs-update-time"><span class="live-dot"></span> Memuat...</span>
+                </div>
+                <div class="kurs-table-wrapper">
+                    <table class="kurs-table"><thead><tr><th>Mata Uang</th><th></th><th>Jual (IDR)</th><th>Beli (IDR)</th></tr></thead><tbody id="kurs-tbody"></tbody></table>
+                    <p class="kurs-jpy-note">* JPY: kurs per 100 Yen Jepang</p>
+                </div>
+                <div class="kurs-source">
+                    <div class="kurs-source-info"><i class="fas fa-database"></i> Sumber: <strong>&nbsp;<a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer">ExchangeRate-API</a></strong></div>
+                    <div class="kurs-update-time" style="font-size:.58rem"><i class="fas fa-sync-alt"></i> Auto 24 jam</div>
+                </div>
+            </div>
+
+            <!-- CARD 2: INSTAGRAM LIVE WIDGET (bank_damara) -->
+            <div class="gallery-card ig-widget-card">
+                <div class="gallery-card-header">
+                    <div class="card-title-group">
+                        <div class="card-icon ig-icon"><i class="fab fa-instagram"></i></div>
+                        <div>
+                            <h4>Instagram</h4>
+                            <p class="card-subtitle">@bank_damara</p>
+                        </div>
+                    </div>
+                    <a href="https://instagram.com/bank_damara" target="_blank" rel="noopener" style="color:#833AB4;font-size:.85rem" title="Buka Instagram"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="ig-live-widget" id="igLiveWidget">
+                    <div class="ig-post-skeleton"><i class="fab fa-instagram"></i><span>Memuat postingan...</span></div>
+                    <div class="ig-post-skeleton"><i class="fab fa-instagram"></i><span>Memuat postingan...</span></div>
+                    <div class="ig-post-skeleton"><i class="fab fa-instagram"></i><span>Memuat postingan...</span></div>
+                </div>
+                <div class="ig-widget-footer">
+                    <div class="ig-widget-info">
+                        <span class="ig-live-dot"></span>
+                        <span id="igLastUpdate">Otomatis sync</span>
+                    </div>
+                    <button class="ig-refresh-btn" onclick="refreshIGWidget()" title="Refresh postingan">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+                <a href="https://instagram.com/bank_damara" target="_blank" rel="noopener" class="ig-follow-btn">
+                    <i class="fab fa-instagram"></i> Follow @bank_damara
+                </a>
+            </div>
+
+            <!-- CARD 3: YOUTUBE -->
+                        <!-- CARD 3: YOUTUBE LIVE WIDGET (@DAMARALOTARA) -->
+            <div class="gallery-card yt-widget-card">
+                <div class="gallery-card-header">
+                    <div class="card-title-group">
+                        <div class="card-icon yt-icon"><i class="fab fa-youtube"></i></div>
+                        <div>
+                            <h4>YouTube</h4>
+                            <p class="card-subtitle">@DAMARALOTARA</p>
+                        </div>
+                    </div>
+                    <a href="https://www.youtube.com/@DAMARALOTARA" target="_blank" rel="noopener" style="color:#ff0000;font-size:.85rem" title="Buka YouTube"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+                
+               <!-- Main Video Player -->
+                <div class="yt-main-player" id="ytMainPlayer">
+                    <div class="yt-video-frame">
+                        <iframe id="ytMainFrame" src="https://www.youtube.com/embed/?listType=user_uploads&list=DAMARALOTARA" title="DAMARA LOTARA - Video Terbaru" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- Video Playlist -->
+                <div class="yt-playlist-section" id="ytPlaylistSection">
+                    <div class="yt-playlist-header">
+                        <i class="fas fa-list"></i> Video Terbaru
+                    </div>
+                    <div class="yt-playlist-list" id="ytPlaylistList">
+                        <!-- Videos will be loaded here by JavaScript -->
+                        <div class="yt-loading"><i class="fas fa-spinner fa-spin"></i> Memuat video...</div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="ig-widget-footer">
+                    <div class="ig-widget-info">
+                        <span class="ig-live-dot"></span>
+                        <span id="ytLastUpdate">Channel @DAMARALOTARA</span>
+                    </div>
+                    <button class="ig-refresh-btn" onclick="refreshYTWidget()" title="Refresh video">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+
+                <!-- Subscribe Button -->
+                <a href="https://www.youtube.com/@DAMARALOTARA?sub_confirmation=1" target="_blank" rel="noopener" class="yt-subscribe-btn">
+                    <i class="fab fa-youtube"></i> Subscribe @DAMARALOTARA
+                </a>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- QUICK ACCESS -->
-<section class="quick-access"><div class="container"><div class="quick-access-grid">
-<a href="#produk" class="quick-access-card" data-product="tabungan"><div class="icon"><i class="fas fa-university"></i></div><h4>Tabungan</h4><p>Buka rekening baru dengan mudah</p></a>
-<a href="#produk" class="quick-access-card" data-product="pinjaman"><div class="icon"><i class="fas fa-hand-holding-usd"></i></div><h4>Pinjaman</h4><p>KPR, KTA, dan kredit usaha</p></a>
-<a href="#produk" class="quick-access-card" data-product="deposito"><div class="icon"><i class="fas fa-piggy-bank"></i></div><h4>Deposito</h4><p>Bunga kompetitif hingga 5.5%</p></a>
-<a href="#lelang" class="quick-access-card"><div class="icon"><i class="fas fa-gavel"></i></div><h4>Lelang Agunan</h4><p>Properti & kendaraan harga miring</p></a>
-</div></div></section>
+<section class="stats"><div class="container"><div class="stats-grid"><div class="stat-item"><h3>5M+</h3><p>Nasabah Aktif</p></div><div class="stat-item"><h3>1,200+</h3><p>Cabang & ATM</p></div><div class="stat-item"><h3>40+</h3><p>Tahun Pengalaman</p></div><div class="stat-item"><h3>98%</h3><p>Kepuasan Nasabah</p></div></div></div></section>
+<section class="cta"><div class="container"><div class="cta-content"><h2>Siap Memulai Perjalanan Finansial?</h2><p>Bergabunglah dengan jutaan nasabah BANK DAMARA. Buka rekening hanya dalam 5 menit!</p><div class="cta-buttons"><a href="#produk" class="btn btn-primary"><i class="fas fa-user-plus"></i> Buka Rekening</a><a href="https://wa.me/6281234567890" target="_blank" class="btn btn-outline" style="border-color:var(--wa);color:var(--wa-dark)"><i class="fab fa-whatsapp"></i> Chat WhatsApp</a></div></div></div></section>
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Tentang BANK DAMARA</h4><p>Bank nasional terpercaya sejak 1985 dengan layanan perbankan terbaik dan keamanan tinggi.</p><p><i class="fas fa-map-marker-alt" style="color:var(--secondary)"></i> Jl. Jend. Sudirman Kav. 88, Jakarta Pusat 10220</p><div class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="https://instagram.com/bank_damara" target="_blank"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div><div class="footer-col"><h4>Produk</h4><ul><li><a href="#produk" data-product="tabungan">Tabungan</a></li><li><a href="#produk" data-product="deposito">Deposito</a></li><li><a href="#produk" data-product="pinjaman">Pinjaman</a></li><li><a href="#layanan">Layanan Digital</a></li><li><a href="#lelang">Lelang Agunan</a></li></ul></div><div class="footer-col"><h4>Perusahaan</h4><ul><li><a href="#tentang" data-tab="profil">Profil</a></li><li><a href="#tentang" data-tab="visi">Visi & Misi</a></li><li><a href="#tentang" data-tab="manajemen">Manajemen</a></li><li><a href="#tentang" data-tab="karir">Karir</a></li></ul></div><div class="footer-col"><h4>Pelaporan</h4><ul><li><a href="#pelaporan" data-report="publikasi">Publikasi</a></li><li><a href="#pelaporan" data-report="tahunan">Laporan Tahunan</a></li><li><a href="#pelaporan" data-report="pengaduan">Pengaduan</a></li><li><a href="#">FAQ</a></li><li><a href="https://wa.me/6281234567890" target="_blank">Hubungi Kami</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BANK DAMARA. Seluruh hak cipta dilindungi. Terdaftar dan diawasi OJK.</p><div class="footer-bottom-links"><a href="#">Kebijakan Privasi</a><a href="#">Syarat & Ketentuan</a><a href="#">Keamanan</a></div></div></div></footer>
+<button class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
+<div class="wa-float" id="waFloat"><a href="https://wa.me/6281234567890" target="_blank" class="wa-float-btn"><i class="fab fa-whatsapp"></i></a><div class="wa-float-label">Butuh bantuan? Chat kami!</div></div>
 
-<!-- TENTANG KAMI -->
-<section class="about-section" id="tentang"><div class="container"><div class="section-title"><div class="st-badge"><i class="fas fa-building"></i> Tentang Kami</div><h2>Mengenal BANK DAMARA</h2><p>Lebih dari 40 tahun melayani masyarakat Indonesia dengan integritas dan inovasi</p><div class="underline"></div></div>
-<div class="about-tabs">
-<div class="about-tab active" data-tab-btn="profil" onclick="switchTab('profil')"><i class="fas fa-building"></i> Profil</div>
-<div class="about-tab" data-tab-btn="visi" onclick="switchTab('visi')"><i class="fas fa-bullseye"></i> Visi & Misi</div>
-<div class="about-tab" data-tab-btn="budaya" onclick="switchTab('budaya')"><i class="fas fa-heart"></i> Budaya</div>
-<div class="about-tab" data-tab-btn="manajemen" onclick="switchTab('manajemen')"><i class="fas fa-user-tie"></i> Manajemen</div>
-<div class="about-tab" data-tab-btn="karir" onclick="switchTab('karir')"><i class="fas fa-briefcase"></i> Karir</div>
-</div>
-<div class="about-content active" id="tab-profil"><div class="about-grid"><div class="about-image img-profil"><div class="about-img-bg"><i class="fas fa-landmark"></i></div><div class="about-float"><div class="af-icon"><i class="fas fa-award"></i></div><div><h5>Bank Terbaik 2026</h5><p>Penghargaan dari Majalah Infobank</p></div></div></div><div class="about-text"><h3>Profil BANK DAMARA</h3><p>PT BANK DAMARA didirikan pada tahun 1985 sebagai Bank Perkreditan Rakyat. Dengan komitmen melayani masyarakat di wilayah Lombok Barat dan sekitarnya.</p><ul class="about-features"><li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>Terdaftar & Diawasi OJK</strong><span>Memenuhi seluruh regulasi perbankan Indonesia</span></div></li><li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>Anggota LPS</strong><span>Simpanan dijamin hingga Rp 2 Miliar</span></div></li><li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>Berpengalaman 40+ Tahun</strong><span>Melayani dengan integritas sejak 1985</span></div></li></ul></div></div></div>
-<div class="about-content" id="tab-visi"><div class="vm-grid"><div class="vm-card vm-visi"><div class="vm-icon"><i class="fas fa-bullseye"></i></div><h4>Visi</h4><p>Menjadi Bank Perkreditan Rakyat terpercaya yang berperan aktif dalam meningkatkan kesejahteraan masyarakat melalui layanan keuangan yang profesional, inovatif, dan berintegritas.</p></div><div class="vm-card vm-misi"><div class="vm-icon"><i class="fas fa-flag"></i></div><h4>Misi</h4><ul><li><i class="fas fa-chevron-right"></i> Menyediakan produk dan layanan keuangan yang berkualitas</li><li><i class="fas fa-chevron-right"></i> Memberikan pelayanan terbaik kepada nasabah</li><li><i class="fas fa-chevron-right"></i> Mengembangkan SDM yang profesional dan berintegritas</li><li><i class="fas fa-chevron-right"></i> Menjaga kepercayaan nasabah dan stakeholder</li><li><i class="fas fa-chevron-right"></i> Berkontribusi dalam pertumbuhan ekonomi daerah</li></ul></div></div></div>
-<div class="about-content" id="tab-budaya"><div class="budaya-grid"><div class="budaya-card"><div class="bc-icon"><i class="fas fa-handshake"></i></div><h4>Integritas</h4><p>Menjaga kepercayaan dengan kejujuran dan transparansi</p></div><div class="budaya-card"><div class="bc-icon"><i class="fas fa-lightbulb"></i></div><h4>Inovasi</h4><p>Terus berinovasi untuk memberikan layanan terbaik</p></div><div class="budaya-card"><div class="bc-icon"><i class="fas fa-users"></i></div><h4>Kerjasama</h4><p>Bekerja sama sebagai tim untuk mencapai tujuan bersama</p></div><div class="budaya-card"><div class="bc-icon"><i class="fas fa-heart"></i></div><h4>Peduli</h4><p>Peduli terhadap kebutuhan nasabah dan masyarakat</p></div></div></div>
-<div class="about-content" id="tab-manajemen"><div class="mgmt-grid"><div class="mgmt-card"><div class="mgmt-photo"><i class="fas fa-user-tie"></i></div><div class="mgmt-info"><h4>Direktur Utama</h4><div class="mgmt-role">President Director</div><p>Memimpin strategi dan operasional bank</p></div></div><div class="mgmt-card"><div class="mgmt-photo"><i class="fas fa-user-tie"></i></div><div class="mgmt-info"><h4>Direktur Operasional</h4><div class="mgmt-role">Director of Operations</div><p>Mengelola operasional harian bank</p></div></div><div class="mgmt-card"><div class="mgmt-photo"><i class="fas fa-user-tie"></i></div><div class="mgmt-info"><h4>Direktur Keuangan</h4><div class="mgmt-role">Director of Finance</div><p>Mengelola keuangan dan risiko</p></div></div><div class="mgmt-card"><div class="mgmt-photo"><i class="fas fa-user-tie"></i></div><div class="mgmt-info"><h4>Komisaris Utama</h4><div class="mgmt-role">Commissioner</div><p>Mengawasi pengelolaan bank</p></div></div></div></div>
-<div class="about-content" id="tab-karir"><div class="karir-grid"><div class="karir-text"><h3>Bergabung dengan Tim Kami</h3><p>Kami mencari talenta-talenta terbaik untuk bergabung dan bertumbuh bersama BANK DAMARA.</p><div class="karir-benefits"><div class="karir-benefit"><i class="fas fa-heartbeat"></i> Asuransi Kesehatan</div><div class="karir-benefit"><i class="fas fa-graduation-cap"></i> Pelatihan & Sertifikasi</div><div class="karir-benefit"><i class="fas fa-chart-line"></i> Jenjang Karir</div><div class="karir-benefit"><i class="fas fa-gift"></i> Bonus & Tunjangan</div></div><a href="#" class="btn btn-dark"><i class="fas fa-briefcase"></i> Lihat Lowongan</a></div><div class="karir-visual"><i class="fas fa-users"></i><div class="kv-float"><h5>Tim Profesional</h5><p>Bergabung dengan 200+ profesional terbaik</p></div></div></div></div>
-</div></section>
-
-<!-- PRODUK -->
-<section class="products" id="produk"><div class="container"><div class="section-title"><div class="st-badge"><i class="fas fa-credit-card"></i> Produk Kami</div><h2>Solusi Finansial Terbaik</h2><p>Pilih produk yang sesuai dengan kebutuhan Anda</p><div class="underline"></div></div><div class="products-grid">
-<div class="product-card"><div class="product-card-header"><i class="fas fa-piggy-bank"></i><h3>Tabungan</h3><p>Simpanan fleksibel untuk masa depan</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> Bunga kompetitif</li><li><i class="fas fa-check-circle"></i> Bebas biaya admin</li><li><i class="fas fa-check-circle"></i> Dijamin LPS</li><li><i class="fas fa-check-circle"></i> Setoran awal ringan</li></ul><a href="#" class="btn">Selengkapnya</a></div></div>
-<div class="product-card"><div class="product-card-header"><i class="fas fa-chart-line"></i><h3>Deposito</h3><p>Investasi aman dengan bunga tinggi</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> Bunga hingga 5.5% p.a</li><li><i class="fas fa-check-circle"></i> Tenor fleksibel</li><li><i class="fas fa-check-circle"></i> Dijamin LPS</li><li><i class="fas fa-check-circle"></i> ARO tersedia</li></ul><a href="#" class="btn">Selengkapnya</a></div></div>
-<div class="product-card"><div class="product-card-header"><i class="fas fa-hand-holding-usd"></i><h3>Pinjaman</h3><p>Solusi pendanaan untuk Anda</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> KPR mulai 4.99%</li><li><i class="fas fa-check-circle"></i> Proses cepat 7 hari</li><li><i class="fas fa-check-circle"></i> Tenor hingga 20 tahun</li><li><i class="fas fa-check-circle"></i> Angsuran ringan</li></ul><a href="#" class="btn">Selengkapnya</a></div></div>
-<div class="product-card"><div class="product-card-header"><i class="fas fa-mobile-alt"></i><h3>Digital Banking</h3><p>Layanan digital 24/7</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> Transfer BI-FAST</li><li><i class="fas fa-check-circle"></i> Bayar 200+ tagihan</li><li><i class="fas fa-check-circle"></i> Top up pulsa & data</li><li><i class="fas fa-check-circle"></i> QRIS payment</li></ul><a href="#" class="btn">Selengkapnya</a></div></div>
-</div></div></section>
-
-<!-- DIGITAL BANKING -->
-<section class="digital-section" id="layanan"><div class="container"><div class="digital-grid"><div class="digital-visual"><div class="digital-phone"><div class="dp-screen"><div class="dp-logo">BD Mobile</div><div class="dp-sub">BANKING APP</div><div class="dp-balance">Saldo Anda</div><div class="dp-amount">Rp 12.450.000</div><div class="dp-actions"><div class="dp-action"><i class="fas fa-paper-plane"></i><span>Transfer</span></div><div class="dp-action"><i class="fas fa-qrcode"></i><span>QRIS</span></div><div class="dp-action"><i class="fas fa-bolt"></i><span>Bayar</span></div><div class="dp-action"><i class="fas fa-mobile-alt"></i><span>Pulsa</span></div><div class="dp-action"><i class="fas fa-history"></i><span>Mutasi</span></div><div class="dp-action"><i class="fas fa-ellipsis-h"></i><span>Lainnya</span></div></div></div></div><div class="digital-float-1"><i class="fas fa-check-circle"></i><span>Transfer Berhasil!</span></div><div class="digital-float-2"><i class="fas fa-shield-alt"></i><span>100% Aman</span></div></div><div class="digital-text"><h2>Layanan Digital Modern</h2><p>Nikmati kemudahan perbankan digital dengan aplikasi BD Mobile yang aman dan cepat.</p><ul class="digital-features"><li><div class="df-icon"><i class="fas fa-paper-plane"></i></div><div><h4>Transfer BI-FAST</h4><p>Transfer antar bank real-time 24/7 hanya Rp 2.500</p></div></li><li><div class="df-icon"><i class="fas fa-receipt"></i></div><div><h4>Bayar Tagihan</h4><p>PLN, Telkom, PDAM, dan 200+ jenis tagihan lainnya</p></div></li><li><div class="df-icon"><i class="fas fa-qrcode"></i></div><div><h4>QRIS Payment</h4><p>Bayar di mana saja dengan scan QR code</p></div></li><li><div class="df-icon"><i class="fas fa-mobile-alt"></i></div><div><h4>Top Up & Isi Ulang</h4><p>Pulsa, data, e-wallet, dan voucher game</p></div></li></ul><a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download BD Mobile</a></div></div></div></section>
-
-<!-- LELANG -->
-<section class="lelang-section" id="lelang"><div class="container"><div class="section-title"><div class="st-badge"><i class="fas fa-gavel"></i> Lelang Agunan</div><h2>Properti & Kendaraan Harga Miring</h2><p>Temukan aset berkualitas dengan harga terjangkau</p><div class="underline"></div></div><div class="lelang-grid">
-<div class="lelang-card"><div class="lelang-card-img"><i class="fas fa-home"></i><span class="lc-status open">Dibuka</span></div><div class="lelang-card-body"><div class="lc-type">Properti</div><h4>Rumah 2 Lantai</h4><div class="lc-location"><i class="fas fa-map-marker-alt"></i> Gerung, Lombok Barat</div><div class="lc-price">Rp 450.000.000</div><div class="lc-meta"><span><i class="fas fa-calendar"></i> 20 Jul 2026</span><span><i class="fas fa-ruler-combined"></i> 120 m²</span></div></div></div>
-<div class="lelang-card"><div class="lelang-card-img"><i class="fas fa-car"></i><span class="lc-status open">Dibuka</span></div><div class="lelang-card-body"><div class="lc-type">Kendaraan</div><h4>Toyota Avanza 2022</h4><div class="lc-location"><i class="fas fa-map-marker-alt"></i> Mataram, NTB</div><div class="lc-price">Rp 165.000.000</div><div class="lc-meta"><span><i class="fas fa-calendar"></i> 25 Jul 2026</span><span><i class="fas fa-tachometer-alt"></i> 35.000 km</span></div></div></div>
-<div class="lelang-card"><div class="lelang-card-img"><i class="fas fa-store"></i><span class="lc-status soon">Segera</span></div><div class="lelang-card-body"><div class="lc-type">Komersial</div><h4>Ruko 3 Lantai</h4><div class="lc-location"><i class="fas fa-map-marker-alt"></i> Kediri, Lombok Barat</div><div class="lc-price">Rp 850.000.000</div><div class="lc-meta"><span><i class="fas fa-calendar"></i> 1 Agu 2026</span><span><i class="fas fa-ruler-combined"></i> 200 m²</span></div></div></div>
-</div></div></section>
-
-<!-- PELAPORAN -->
-<section class="pelaporan-section" id="pelaporan"><div class="container"><div class="section-title"><div class="st-badge"><i class="fas fa-file-alt"></i> Pelaporan</div><h2>Transparansi & Akuntabilitas</h2><p>Komitmen kami terhadap transparansi informasi</p><div class="underline"></div></div><div class="pelaporan-grid">
-<div class="pelaporan-card"><div class="pelaporan-card-header"><div class="pc-icon"><i class="fas fa-newspaper"></i></div><h3>Laporan Publikasi</h3><p>Informasi keuangan berkala</p></div><div class="pelaporan-card-body"><ul><li><i class="fas fa-file-pdf"></i> Laporan Keuangan Bulanan</li><li><i class="fas fa-file-pdf"></i> Laporan Keuangan Triwulanan</li><li><i class="fas fa-file-pdf"></i> Laporan Keuangan Tahunan</li><li><i class="fas fa-file-pdf"></i> Informasi Rasio Keuangan</li></ul><a href="#" class="btn btn-dark">Unduh Laporan</a></div></div>
-<div class="pelaporan-card"><div class="pelaporan-card-header"><div class="pc-icon"><i class="fas fa-book"></i></div><h3>Laporan Tahunan</h3><p>Kinerja dan pencapaian bank</p></div><div class="pelaporan-card-body"><ul><li><i class="fas fa-file-pdf"></i> Annual Report 2025</li><li><i class="fas fa-file-pdf"></i> Annual Report 2024</li><li><i class="fas fa-file-pdf"></i> Sustainability Report</li><li><i class="fas fa-file-pdf"></i> Good Corporate Governance</li></ul><a href="#" class="btn btn-dark">Unduh Laporan</a></div></div>
-<div class="pelaporan-card"><div class="pelaporan-card-header"><div class="pc-icon"><i class="fas fa-comment-dots"></i></div><h3>Pengaduan Nasabah</h3><p>Kami siap mendengar Anda</p></div><div class="pelaporan-card-body"><ul><li><i class="fas fa-phone"></i> Call Center: 1500-888</li><li><i class="fas fa-envelope"></i> cs@bankdamara.co.id</li><li><i class="fab fa-whatsapp"></i> WA: 0812-3456-7890</li><li><i class="fas fa-map-marker-alt"></i> Kantor Pusat Gerung</li></ul><a href="https://wa.me/6281234567890" class="btn btn-dark">Hubungi Kami</a></div></div>
-</div></div></section>
-
-<!-- GALERI INFORMASI -->
-<section class="gallery-info-section" id="galeri"><div class="container">
-<div class="gallery-section-header"><div class="section-badge"><i class="fas fa-newspaper"></i> Galeri Informasi</div><h2>Update <span>Terbaru</span></h2><p>Informasi kurs mata uang, aktivitas media sosial, dan video terkini dari BANK DAMARA</p><div class="title-divider"></div></div>
-<div class="gallery-banner-wrapper"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&h=300&fit=crop" alt="BANK DAMARA Banner" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22300%22%3E%3Crect fill=%22%230a1f44%22 width=%221200%22 height=%22300%22/%3E%3Ctext fill=%22%23c8a951%22 font-family=%22serif%22 font-size=%2248%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22%3EBANK DAMARA%3C/text%3E%3C/svg%3E'"><div class="gallery-banner-overlay"><h3>BANK DAMARA — Terpercaya Sejak 1985</h3><p>Melayani dengan integritas, inovasi, dan kepercayaan</p></div></div>
-<div class="gallery-grid">
-
-<!-- CARD 1: KURS -->
-<div class="gallery-card"><div class="gallery-card-header"><div class="card-title-group"><div class="card-icon kurs-icon"><i class="fas fa-exchange-alt"></i></div><div><h4>Kurs Mata Uang</h4><p class="card-subtitle">Kurs Real-time</p></div></div><span style="font-size:.6rem;color:#94a3b8" id="kursDate">Loading...</span></div><div class="kurs-table-wrapper"><table class="kurs-table"><thead><tr><th>Mata Uang</th><th>Negara</th><th>Beli (IDR)</th><th>Jual (IDR)</th></tr></thead><tbody id="kursTableBody"><tr><td colspan="4" style="text-align:center;padding:20px;color:#94a3b8"><i class="fas fa-spinner fa-spin" style="margin-right:6px"></i> Memuat kurs...</td></tr></tbody></table></div><div class="kurs-source"><div class="kurs-source-info"><i class="fas fa-database"></i> Sumber: <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">ExchangeRate API</a></div><div class="kurs-update-time"><span class="live-dot"></span> <span id="kursUpdateTime">—</span></div></div></div>
-
-<!-- CARD 2: INSTAGRAM -->
-<div class="gallery-card"><div class="gallery-card-header"><div class="card-title-group"><div class="card-icon ig-icon"><i class="fab fa-instagram"></i></div><div><h4>Instagram</h4><p class="card-subtitle">@bank_damara</p></div></div><a href="https://www.instagram.com/bank_damara/" target="_blank" rel="noopener" style="color:#833AB4;font-size:.85rem"><i class="fas fa-external-link-alt"></i></a></div><div class="ig-live-widget" id="igLiveWidget"><div class="ig-loading"><i class="fas fa-spinner fa-spin"></i> Memuat postingan...</div></div><div class="ig-widget-footer"><div class="ig-widget-info"><span class="ig-live-dot"></span><span id="igLastUpdate">@bank_damara</span></div><button class="ig-refresh-btn" onclick="refreshIGWidget()"><i class="fas fa-sync-alt"></i> Refresh</button></div><a href="https://www.instagram.com/bank_damara/" target="_blank" rel="noopener" class="ig-follow-btn"><i class="fab fa-instagram"></i> Follow @bank_damara</a></div>
-
-<!-- CARD 3: YOUTUBE -->
-<div class="gallery-card yt-widget-card"><div class="gallery-card-header"><div class="card-title-group"><div class="card-icon yt-icon"><i class="fab fa-youtube"></i></div><div><h4>YouTube</h4><p class="card-subtitle">@DAMARALOTARA</p></div></div><a href="https://www.youtube.com/@DAMARALOTARA" target="_blank" rel="noopener" style="color:#ff0000;font-size:.85rem"><i class="fas fa-external-link-alt"></i></a></div><div class="yt-main-player" id="ytMainPlayer"><div class="yt-video-frame"><iframe id="ytMainFrame" src="https://www.youtube.com/embed/?listType=user_uploads&list=DAMARALOTARA" title="DAMARA LOTARA" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div><div class="yt-playlist-section"><div class="yt-playlist-header"><i class="fas fa-list"></i> Video Terbaru</div><div class="yt-playlist-list" id="ytPlaylistList"><div class="yt-loading"><i class="fas fa-spinner fa-spin"></i> Memuat video...</div></div></div><div class="ig-widget-footer"><div class="ig-widget-info"><span class="ig-live-dot"></span><span>Channel @DAMARALOTARA</span></div><button class="ig-refresh-btn" onclick="refreshYTWidget()"><i class="fas fa-sync-alt"></i> Refresh</button></div><a href="https://www.youtube.com/@DAMARALOTARA?sub_confirmation=1" target="_blank" rel="noopener" class="yt-subscribe-btn"><i class="fab fa-youtube"></i> Subscribe @DAMARALOTARA</a></div>
-
-</div></div></section>
-
-<!-- STATS -->
-<section class="stats"><div class="container"><div class="stats-grid"><div class="stat-item"><h3>5M+</h3><p>Nasabah Aktif</p></div><div class="stat-item"><h3>1.200+</h3><p>Cabang & ATM</p></div><div class="stat-item"><h3>40+</h3><p>Tahun Pengalaman</p></div><div class="stat-item"><h3>98%</h3><p>Kepuasan Nasabah</p></div></div></div></section>
-
-<!-- CTA -->
-<section class="cta"><div class="container"><div class="cta-content"><h2>Siap Memulai Perjalanan Finansial Anda?</h2><p>Bergabunglah dengan jutaan nasabah yang telah mempercayakan keuangan mereka kepada BANK DAMARA</p><div class="cta-buttons"><a href="#produk" class="btn btn-primary"><i class="fas fa-rocket"></i> Mulai Sekarang</a><a href="https://wa.me/6281234567890" target="_blank" class="btn btn-outline"><i class="fab fa-whatsapp"></i> Hubungi Kami</a></div></div></div></section>
-
-<!-- FOOTER -->
-<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>BANK DAMARA</h4><p>Bank Perkreditan Rakyat terpercaya yang telah melayani masyarakat Indonesia sejak 1985 dengan komitmen integritas dan inovasi.</p><div class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div><div class="footer-col"><h4>Produk</h4><ul><li><a href="#produk">Tabungan</a></li><li><a href="#produk">Deposito</a></li><li><a href="#produk">Pinjaman</a></li><li><a href="#layanan">Digital Banking</a></li><li><a href="#lelang">Lelang Agunan</a></li></ul></div><div class="footer-col"><h4>Perusahaan</h4><ul><li><a href="#tentang">Tentang Kami</a></li><li><a href="#tentang">Karir</a></li><li><a href="#pelaporan">Laporan Tahunan</a></li><li><a href="#pelaporan">Tata Kelola</a></li><li><a href="#">Berita</a></li></ul></div><div class="footer-col"><h4>Bantuan</h4><ul><li><a href="#">FAQ</a></li><li><a href="#pelaporan">Hubungi Kami</a></li><li><a href="#">Syarat & Ketentuan</a></li><li><a href="#">Kebijakan Privasi</a></li><li><a href="#">Keamanan</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 PT BANK DAMARA. All rights reserved. Terdaftar & diawasi OJK. Dijamin LPS.</p><div class="footer-bottom-links"><a href="#">Syarat & Ketentuan</a><a href="#">Kebijakan Privasi</a><a href="#">Peta Situs</a></div></div></div></footer>
-
-<!-- SCROLL TOP -->
-<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
-
-<!-- WA FLOAT -->
-<div class="wa-float" id="waFloat"><a href="https://wa.me/6281234567890" target="_blank" class="wa-float-btn"><i class="fab fa-whatsapp"></i></a><div class="wa-float-label">Chat dengan CS Damara</div></div>
-
-<!-- ===== ALL JAVASCRIPT ===== -->
+<!-- ===== JAVASCRIPT UTAMA ===== -->
 <script>
-// ===== NAVIGATION =====
+// Partikel Hero
+(function(){try{var c=document.getElementById('heroParticles');if(!c)return;for(var i=0;i<30;i++){var p=document.createElement('div');p.classList.add('h-particle');var s=Math.random()*3+1.5;var colors=['rgba(200,169,81,0.6)','rgba(30,136,229,0.4)','rgba(255,255,255,0.3)'];p.style.cssText='left:'+Math.random()*100+'%;width:'+s+'px;height:'+s+'px;background:'+colors[Math.floor(Math.random()*3)]+';animation-duration:'+(Math.random()*15+8)+'s;animation-delay:'+(Math.random()*10)+'s';c.appendChild(p)}}catch(e){}})();
+// 3D Parallax
+(function(){try{var hero=document.getElementById('beranda');var cards=document.querySelectorAll('.card-3d-wrapper');if(!hero)return;hero.addEventListener('mousemove',function(e){var r=hero.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-0.5;var y=(e.clientY-r.top)/r.height-0.5;cards.forEach(function(c){c.style.transform='rotateY('+x*12+'deg) rotateX('+(-y)*12+'deg)'})});hero.addEventListener('mouseleave',function(){cards.forEach(function(c){c.style.transform='rotateY(0) rotateX(0)'})})}catch(e){}})();
+// Slider
+var currentSlide=0;var slides=document.querySelectorAll('.hero-slide');var tabs=document.querySelectorAll('.slide-tab');var counter=document.querySelector('.slide-counter .current');var autoTimer;var SD=5000;
+function goToSlide(i){try{slides[currentSlide].classList.remove('active');tabs[currentSlide].classList.remove('active');tabs[currentSlide].querySelector('.tab-fill').style.width='0';currentSlide=i;slides[currentSlide].classList.add('active');tabs[currentSlide].classList.add('active');var f=tabs[currentSlide].querySelector('.tab-fill');f.style.transition='none';f.style.width='0';requestAnimationFrame(function(){requestAnimationFrame(function(){f.style.transition='width '+SD+'ms linear';f.style.width='100%'})});if(counter)counter.textContent=String(currentSlide+1).padStart(2,'0');if(currentSlide===0)animateCounters();resetAuto()}catch(e){}}
+function nextSlide(){goToSlide((currentSlide+1)%slides.length)}
+function resetAuto(){clearInterval(autoTimer);autoTimer=setInterval(nextSlide,SD)}
+(function(){try{var f=tabs[0].querySelector('.tab-fill');f.style.transition='none';f.style.width='0';requestAnimationFrame(function(){requestAnimationFrame(function(){f.style.transition='width '+SD+'ms linear';f.style.width='100%'})})}catch(e){}})();
+autoTimer=setInterval(nextSlide,SD);
+function animateCounters(){try{document.querySelectorAll('.metric-val[data-count]').forEach(function(el){var t=parseInt(el.dataset.count);var d=2000;var s=performance.now();function u(n){var e=n-s;var p=Math.min(e/d,1);var ea=1-Math.pow(1-p,3);el.textContent=Math.floor(ea*t).toLocaleString();if(p<1)requestAnimationFrame(u);else el.textContent=t.toLocaleString()+'+'}el.textContent='0';requestAnimationFrame(u)})}catch(e){}}
+setTimeout(animateCounters,2500);
+function switchTab(id){try{document.querySelectorAll('.about-content').forEach(function(c){c.classList.remove('active')});document.querySelectorAll('.about-tab').forEach(function(t){t.classList.remove('active')});var t=document.getElementById('tab-'+id);if(t)t.classList.add('active');var b=document.querySelector('[data-tab-btn="'+id+'"]');if(b)b.classList.add('active')}catch(e){}}
 function toggleMenu(){document.getElementById('navMenu').classList.toggle('active')}
-document.addEventListener('click',function(e){
-    var nav=document.getElementById('navMenu');
-    var ham=document.querySelector('.hamburger');
-    if(nav&&ham&&!nav.contains(e.target)&&!ham.contains(e.target)){nav.classList.remove('active')}
-});
+document.querySelectorAll('.nav-menu > li > a').forEach(function(l){l.addEventListener('click',function(e){if(window.innerWidth<=768&&this.nextElementSibling&&this.nextElementSibling.classList.contains('dropdown')){e.preventDefault();this.parentElement.classList.toggle('dropdown-open')}})});
+var navLinks=document.querySelectorAll('.nav-link');var sIds=['beranda','tentang','produk','layanan','lelang','pelaporan','galeri-informasi'];var secs=sIds.map(function(id){return document.getElementById(id)}).filter(Boolean);
+function updateScrollSpy(){var sp=window.scrollY+100;var as='beranda';secs.forEach(function(s){if(s&&s.offsetTop<=sp)as=s.id});navLinks.forEach(function(l){l.classList.remove('active');if(l.getAttribute('data-section')===as)l.classList.add('active')})}
+window.addEventListener('scroll',updateScrollSpy);
+window.addEventListener('scroll',function(){var h=document.getElementById('mainHeader');if(h)h.classList.toggle('scrolled',window.scrollY>50)});
+document.addEventListener('click',function(e){var link=e.target.closest('a[href^="#"]');if(!link)return;var href=link.getAttribute('href');if(!href||href==='#')return;var tid=href.substring(1);var tel=document.getElementById(tid);if(!tel)return;e.preventDefault();document.getElementById('navMenu').classList.remove('active');var hh=document.getElementById('mainHeader').offsetHeight;window.scrollTo({top:tel.offsetTop-hh-10,behavior:'smooth'});var tabId=link.getAttribute('data-tab');if(tabId)setTimeout(function(){switchTab(tabId)},400);var pid=link.getAttribute('data-product');if(pid)setTimeout(function(){var c=document.getElementById('prod-'+pid);if(c){c.classList.add('section-highlight');c.style.outline='3px solid var(--secondary)';c.style.outlineOffset='4px';setTimeout(function(){c.classList.remove('section-highlight');c.style.outline='none'},2000)}},500);var rid=link.getAttribute('data-report');if(rid)setTimeout(function(){var c=document.getElementById('report-'+rid);if(c){c.classList.add('section-highlight');c.style.outline='3px solid var(--secondary)';c.style.outlineOffset='4px';setTimeout(function(){c.classList.remove('section-highlight');c.style.outline='none'},2000)}},500)});
+window.addEventListener('scroll',function(){var st=document.getElementById('scrollTop');var wf=document.getElementById('waFloat');var sy=window.pageYOffset;if(st)st.classList.toggle('show',sy>300);if(wf)wf.classList.toggle('show',sy>400)});
+function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'})}
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('animate')})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.product-card,.pelaporan-card,.lelang-card,.quick-access-card,.budaya-card,.mgmt-card,.vm-card,.stat-item,.gallery-card').forEach(function(el){obs.observe(el)});
+</script>
 
-// Mobile dropdown toggle
-document.querySelectorAll('.nav-menu > li').forEach(function(li){
-    var dd=li.querySelector('.dropdown');
-    if(dd&&window.innerWidth<=768){
-        li.querySelector(':scope > a').addEventListener('click',function(e){
-            if(window.innerWidth<=768){
-                e.preventDefault();
-                li.classList.toggle('dropdown-open');
+<!-- ===== INSTAGRAM LIVE WIDGET (bank_damara) ===== -->
+<script>
+(function(){
+'use strict';
+
+// ╔══════════════════════════════════════════════════════════════╗
+// ║  📸 INSTAGRAM LIVE WIDGET - @bank_damara                    ║
+// ║                                                              ║
+// ║  Postingan terbaru dari BPR Damara (Juli 2026)              ║
+// ║  Akun: @bank_damara · Gerung, Lombok · ~87 followers        ║
+// ║                                                              ║
+// ║  CARA UPDATE POSTINGAN:                                     ║
+// ║  1. Buka post terbaru di Instagram @bank_damara             ║
+// ║  2. Klik ••• → "Salin tautan" / "Copy link"                ║
+// ║  3. Paste URL ke array IG_POSTS di bawah ini                ║
+// ║  4. Simpan file → selesai!                                   ║
+// ║                                                              ║
+// ║  URL format: https://www.instagram.com/p/XXXXXX/            ║
+// ║  Atau:      https://www.instagram.com/reel/XXXXXX/          ║
+// ╚══════════════════════════════════════════════════════════════╝
+
+var IG_USERNAME = 'bank_damara';
+
+// Postingan terbaru @bank_damara (Juli 2026)
+var IG_POSTS = [
+    'https://www.instagram.com/p/DZoXMk5PRuW/',
+    'https://www.instagram.com/p/DY_tRJ0P_re/',
+    'https://www.instagram.com/p/DXtJPWZj4E4/'
+];
+
+var IG_POST_INFO = [
+    {title:'Jadwal Operasional Idul Adha 2026', desc:'Penyesuaian jadwal operasional BPR Damara menyambut Hari Raya Idul Adha 2026', date:'16 Juni 2026'},
+    {title:'Pengumuman Operasional Mei 2026', desc:'Informasi layanan dan operasional BPR Damara', date:'31 Mei 2026'},
+    {title:'Terima Kasih Nasabah', desc:'Terima kasih atas perhatian dan kepercayaan nasabah BPR Damara', date:'29 April 2026'}
+];
+
+var embedScriptLoaded = false;
+var REFRESH_INTERVAL = 3600000; // 1 jam
+
+function renderSkeletons(count) {
+    var widget = document.getElementById('igLiveWidget');
+    if (!widget) return;
+    var html = '';
+    for (var i = 0; i < count; i++) {
+        html += '<div class="ig-post-skeleton"><i class="fab fa-instagram"></i><span>Memuat postingan ' + (i+1) + '...</span></div>';
+    }
+    widget.innerHTML = html;
+}
+
+function renderPosts() {
+    var widget = document.getElementById('igLiveWidget');
+    if (!widget) return;
+
+    if (!IG_POSTS || IG_POSTS.length === 0) {
+        widget.innerHTML = '<div style="padding:20px;text-align:center;color:#94a3b8;font-size:.8rem"><i class="fab fa-instagram" style="font-size:2rem;display:block;margin-bottom:8px;color:#e2e8f0"></i>Belum ada postingan yang dikonfigurasi</div>';
+        return;
+    }
+
+    var html = '';
+    IG_POSTS.forEach(function(url, index) {
+        var cleanUrl = url.trim().replace(/\/+$/, '') + '/';
+        html += '<div class="ig-live-post" id="igPost' + index + '">';
+        html += '<div class="ig-post-skeleton" id="igSkeleton' + index + '" style="height:420px"><i class="fab fa-instagram"></i><span>Memuat postingan ' + (index+1) + '...</span></div>';
+        html += '<blockquote class="instagram-media" ';
+        html += 'data-instgrm-permalink="' + cleanUrl + '" ';
+        html += 'data-instgrm-version="14" ';
+        html += 'data-instgrm-captioned ';
+        html += 'style="background:#fff;border:0;border-radius:0;box-shadow:none;margin:0;max-width:100%;padding:0;min-width:0;width:100%">';
+        html += '</blockquote>';
+        html += '</div>';
+    });
+
+    widget.innerHTML = html;
+    loadEmbedScript();
+    updateTimestamp();
+}
+
+function loadEmbedScript() {
+    if (embedScriptLoaded) {
+        if (window.instgrm && window.instgrm.Embeds) {
+            window.instgrm.Embeds.process();
+        }
+        hideSkeletonsAfterDelay();
+        return;
+    }
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = '//www.instagram.com/embed.js';
+    script.onload = function() {
+        embedScriptLoaded = true;
+        hideSkeletonsAfterDelay();
+    };
+    script.onerror = function() {
+        renderFallback();
+    };
+    document.body.appendChild(script);
+
+    // Timeout fallback: jika embed tidak load dalam 8 detik
+    setTimeout(function() {
+        if (!embedScriptLoaded) {
+            renderFallback();
+        }
+    }, 8000);
+}
+
+function hideSkeletonsAfterDelay() {
+    setTimeout(function() {
+        IG_POSTS.forEach(function(url, index) {
+            var skeleton = document.getElementById('igSkeleton' + index);
+            var post = document.getElementById('igPost' + index);
+            if (skeleton && post) {
+                // Cek apakah blockquote sudah punya konten
+                var bq = post.querySelector('blockquote');
+                if (bq && bq.offsetHeight > 100) {
+                    skeleton.style.transition = 'opacity 0.4s ease';
+                    skeleton.style.opacity = '0';
+                    setTimeout(function() {
+                        if (skeleton.parentNode) skeleton.parentNode.removeChild(skeleton);
+                    }, 400);
+                }
             }
         });
-    }
-});
+    }, 3000);
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(function(a){
-    a.addEventListener('click',function(e){
-        var t=document.querySelector(this.getAttribute('href'));
-        if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});document.getElementById('navMenu').classList.remove('active')}
-    });
-});
-
-// Nav active state
-var sections=document.querySelectorAll('section[id]');
-window.addEventListener('scroll',function(){
-    var y=window.scrollY+100;
-    sections.forEach(function(s){
-        if(y>=s.offsetTop&&y<s.offsetTop+s.offsetHeight){
-            document.querySelectorAll('.nav-link').forEach(function(l){l.classList.remove('active')});
-            var al=document.querySelector('.nav-link[data-section="'+s.id+'"]');
-            if(al) al.classList.add('active');
-        }
-    });
-    var h=document.getElementById('mainHeader');
-    if(window.scrollY>50) h.classList.add('scrolled'); else h.classList.remove('scrolled');
-    var st=document.getElementById('scrollTop');
-    if(window.scrollY>500) st.classList.add('show'); else st.classList.remove('show');
-    var wf=document.getElementById('waFloat');
-    if(window.scrollY>300) wf.classList.add('show'); else wf.classList.remove('show');
-});
-
-// ===== HERO SLIDER =====
-var currentSlide=0,slideInterval;
-function goToSlide(i){
-    document.querySelectorAll('.hero-slide').forEach(function(s,idx){s.classList.toggle('active',idx===i)});
-    document.querySelectorAll('.slide-tab').forEach(function(t,idx){t.classList.toggle('active',idx===i)});
-    var c=document.querySelector('.slide-counter .current');
-    if(c) c.textContent=String(i+1).padStart(2,'0');
-    currentSlide=i;
-    clearInterval(slideInterval);
-    slideInterval=setInterval(nextSlide,5500);
-}
-function nextSlide(){goToSlide((currentSlide+1)%3)}
-slideInterval=setInterval(nextSlide,5500);
-
-// ===== HERO PARTICLES =====
-(function(){
-    var c=document.getElementById('heroParticles');
-    if(!c) return;
-    for(var i=0;i<25;i++){
-        var p=document.createElement('div');
-        p.className='h-particle';
-        var s=Math.random()*3+1;
-        p.style.cssText='width:'+s+'px;height:'+s+'px;left:'+Math.random()*100+'%;animation-duration:'+(Math.random()*12+8)+'s;animation-delay:'+(Math.random()*8)+'s;background:rgba(200,169,81,'+(Math.random()*0.4+0.2)+')';
-        c.appendChild(p);
-    }
-})();
-
-// ===== PARALLAX =====
-document.addEventListener('mousemove',function(e){
-    var s=document.getElementById('cardStage');
-    if(!s) return;
-    var cx=window.innerWidth/2,cy=window.innerHeight/2;
-    var rx=(e.clientY-cy)/cy*4,ry=-(e.clientX-cx)/cx*4;
-    s.style.transform='rotateX('+rx+'deg) rotateY('+ry+'deg)';
-});
-
-// ===== COUNTER ANIMATION =====
-document.querySelectorAll('.metric-val[data-count]').forEach(function(el){
-    var target=parseInt(el.getAttribute('data-count')),count=0;
-    var timer=setInterval(function(){
-        count++;el.textContent=count;
-        if(count>=target) clearInterval(timer);
-    },40);
-});
-
-// ===== ABOUT TABS =====
-function switchTab(t){
-    document.querySelectorAll('.about-tab').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-tab-btn')===t)});
-    document.querySelectorAll('.about-content').forEach(function(c){c.classList.remove('active')});
-    var tc=document.getElementById('tab-'+t);
-    if(tc) tc.classList.add('active');
-}
-
-// ===== KURS MATA UANG =====
-(function(){
-    var currencies=[
-        {code:'USD',name:'Dolar AS',flag:'🇺🇸'},
-        {code:'EUR',name:'Euro',flag:'🇪🇺'},
-        {code:'GBP',name:'Pound',flag:'🇬🇧'},
-        {code:'SGD',name:'Dolar SG',flag:'🇸🇬'},
-        {code:'AUD',name:'Dolar AU',flag:'🇦🇺'},
-        {code:'JPY',name:'Yen (per 100)',flag:'🇯🇵'},
-        {code:'MYR',name:'Ringgit',flag:'🇲🇾'},
-        {code:'CNY',name:'Yuan',flag:'🇨🇳'},
-        {code:'SAR',name:'Riyal',flag:'🇸🇦'}
-    ];
-    function loadKurs(){
-        fetch('https://api.exchangerate-api.com/v4/latest/USD')
-        .then(function(r){return r.json()})
-        .then(function(data){
-            var idr=data.rates.IDR;
-            var tbody=document.getElementById('kursTableBody');
-            if(!tbody) return;
-            tbody.innerHTML='';
-            currencies.forEach(function(cur){
-                var rate=data.rates[cur.code];
-                if(!rate) return;
-                var base=cur.code==='JPY'?idr/(rate/100):idr/rate;
-                var buy=Math.round(base*0.975);
-                var sell=Math.round(base*1.025);
-                var tr=document.createElement('tr');
-                tr.innerHTML='<td><div class="currency-cell"><span>'+cur.flag+'</span><span class="currency-code">'+cur.code+'</span></div></td><td style="font-size:.7rem;color:#94a3b8">'+cur.name+'</td><td class="kurs-rate-up">'+buy.toLocaleString('id-ID')+'</td><td class="kurs-rate-down">'+sell.toLocaleString('id-ID')+'</td>';
-                tbody.appendChild(tr);
-            });
-            var now=new Date();
-            var d=document.getElementById('kursDate');
-            if(d) d.textContent=now.toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'});
-            var u=document.getElementById('kursUpdateTime');
-            if(u) u.textContent=now.toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'});
-        })
-        .catch(function(){
-            var tbody=document.getElementById('kursTableBody');
-            if(tbody) tbody.innerHTML='<tr><td colspan="4" style="text-align:center;padding:15px;color:#dc2626;font-size:.75rem"><i class="fas fa-exclamation-triangle"></i> Gagal memuat. Refresh halaman.</td></tr>';
+    // Final cleanup: hapus semua skeleton setelah 6 detik
+    setTimeout(function() {
+        document.querySelectorAll('[id^="igSkeleton"]').forEach(function(skel) {
+            if (skel.parentNode) {
+                skel.style.transition = 'opacity 0.3s';
+                skel.style.opacity = '0';
+                setTimeout(function() {
+                    if (skel.parentNode) skel.parentNode.removeChild(skel);
+                }, 300);
+            }
         });
+    }, 6000);
+}
+
+function renderFallback() {
+    var widget = document.getElementById('igLiveWidget');
+    if (!widget) return;
+
+    var html = '';
+    IG_POSTS.forEach(function(url, index) {
+        var info = IG_POST_INFO[index] || {title:'Postingan ' + (index+1), desc:'Lihat postingan terbaru di Instagram', date:''};
+        html += '<div class="ig-fallback-card">';
+        html += '<div class="ig-fb-icon"><i class="fab fa-instagram"></i></div>';
+        html += '<div class="ig-fb-title">' + info.title + '</div>';
+        html += '<div class="ig-fb-desc">' + info.desc + '</div>';
+        if (info.date) {
+            html += '<div class="ig-fb-date"><i class="far fa-calendar-alt"></i> ' + info.date + '</div>';
+        }
+        html += '<a href="' + url + '" target="_blank" rel="noopener" class="ig-fb-btn" style="margin-top:10px"><i class="fas fa-external-link-alt"></i> Lihat di Instagram</a>';
+        html += '</div>';
+    });
+
+    // Tambahkan link ke profil di bawah
+    html += '<div style="text-align:center;padding:12px 0 4px">';
+    html += '<a href="https://instagram.com/' + IG_USERNAME + '" target="_blank" rel="noopener" style="font-size:.72rem;color:#833AB4;font-weight:600;text-decoration:none"><i class="fab fa-instagram"></i> Lihat semua postingan @' + IG_USERNAME + '</a>';
+    html += '</div>';
+
+    widget.innerHTML = html;
+}
+
+function updateTimestamp() {
+    var el = document.getElementById('igLastUpdate');
+    if (el) {
+        var now = new Date();
+        var time = now.toLocaleTimeString('id-ID', {hour:'2-digit',minute:'2-digit',timeZone:'Asia/Jakarta',hour12:false});
+        el.textContent = 'Diperbarui ' + time + ' WIB';
     }
-    loadKurs();
-    setInterval(loadKurs,300000);
+}
+
+window.refreshIGWidget = function() {
+    var btn = document.querySelector('.ig-refresh-btn');
+    if (btn) {
+        btn.classList.add('spinning');
+        btn.disabled = true;
+    }
+    renderSkeletons(IG_POSTS.length);
+    setTimeout(function() {
+        embedScriptLoaded = false;
+        renderPosts();
+        if (btn) {
+            setTimeout(function() {
+                btn.classList.remove('spinning');
+                btn.disabled = false;
+            }, 1500);
+        }
+    }, 600);
+};
+
+function init() {
+    renderSkeletons(IG_POSTS.length);
+    setTimeout(renderPosts, 600);
+    setInterval(function() {
+        renderPosts();
+    }, REFRESH_INTERVAL);
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}
+
 })();
+</script>
 
-// ===== INSTAGRAM WIDGET =====
-function loadIGWidget(){
-    var w=document.getElementById('igLiveWidget');
-    if(!w) return;
-    var posts=[
-        {url:'https://www.instagram.com/p/DFaBCDeFGHI/',date:'15 Jul 2026',caption:'BANK DAMARA - Promo Deposito 5.5% p.a'},
-        {url:'https://www.instagram.com/p/DFbCDeFGHIJ/',date:'12 Jul 2026',caption:'Tips Mengelola Keuangan Keluarga'},
-        {url:'https://www.instagram.com/p/DFcCDeFGHIK/',date:'10 Jul 2026',caption:'Lelang Properti Lombok Barat'}
-    ];
-    w.innerHTML='';
-    posts.forEach(function(post){
-        var div=document.createElement('div');
-        div.className='ig-fallback-card';
-        div.innerHTML='<div class="ig-fb-icon"><i class="fab fa-instagram"></i></div><div class="ig-fb-title">'+post.caption+'</div><div class="ig-fb-desc">Lihat postingan terbaru kami di Instagram</div><a href="'+post.url+'" target="_blank" rel="noopener" class="ig-fb-btn"><i class="fab fa-instagram"></i> Lihat di Instagram</a><div class="ig-fb-date">'+post.date+'</div>';
-        w.appendChild(div);
+<!-- ===== REALTIME KURS MATA UANG (ExchangeRate-API) ===== -->
+<script>
+(function(){
+'use strict';
+var API_URL='https://open.er-api.com/v6/latest/USD';
+var CACHE_KEY='bankdamara_kurs_cache';
+var CACHE_DURATION=3600000;
+var SPREAD_PERCENT=0.45;
+var CURRENCIES=[
+{code:'USD',name:'US Dollar',flag:'🇺🇸'},
+{code:'EUR',name:'Euro',flag:'🇪🇺'},
+{code:'GBP',name:'Poundsterling',flag:'🇬🇧'},
+{code:'JPY',name:'Yen Jepang',flag:'🇯🇵'},
+{code:'SGD',name:'Dolar Singapura',flag:'🇸🇬'},
+{code:'AUD',name:'Dolar Australia',flag:'🇦🇺'}
+];
+function formatRupiah(n){return n.toLocaleString('id-ID',{minimumFractionDigits:2,maximumFractionDigits:2})}
+function formatDateTime(d){return new Date(d).toLocaleString('id-ID',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',timeZone:'Asia/Jakarta',hour12:false})+' WIB'}
+function showLoading(){var t=document.getElementById('kurs-tbody');if(t)t.innerHTML='<tr><td colspan="4" style="text-align:center;padding:25px 10px;color:#94a3b8"><i class="fas fa-spinner fa-spin" style="font-size:1.2rem;margin-bottom:6px;display:block;color:#c6a456"></i><span style="font-size:.75rem">Memuat data kurs...</span></td></tr>'}
+function showError(m){var t=document.getElementById('kurs-tbody');if(t)t.innerHTML='<tr><td colspan="4" style="text-align:center;padding:20px 10px;color:#dc2626"><i class="fas fa-exclamation-triangle" style="font-size:1.1rem;margin-bottom:6px;display:block"></i><span style="font-size:.72rem">'+m+'</span><br><button onclick="fetchKursData()" style="margin-top:8px;padding:5px 14px;background:#1a365d;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:.7rem;font-weight:600"><i class="fas fa-redo"></i> Coba Lagi</button></td></tr>'}
+function getCachedData(){try{var c=localStorage.getItem(CACHE_KEY);if(!c)return null;var p=JSON.parse(c);if(Date.now()-p.timestamp>CACHE_DURATION)return null;return p.data}catch(e){return null}}
+function setCachedData(d){try{localStorage.setItem(CACHE_KEY,JSON.stringify({data:d,timestamp:Date.now()}))}catch(e){}}
+function renderKursTable(data){
+var tbody=document.getElementById('kurs-tbody');
+var timeEl=document.getElementById('kurs-update-time');
+if(!tbody)return;
+var rates=data.rates;var idrPerUsd=rates.IDR;
+if(!idrPerUsd){showError('Data IDR tidak tersedia');return}
+var html='';
+CURRENCIES.forEach(function(curr){
+var rate=rates[curr.code];if(!rate)return;
+var midRate;
+if(curr.code==='USD'){midRate=idrPerUsd}else{midRate=idrPerUsd/rate}
+var displayRate,jual,beli;
+if(curr.code==='JPY'){displayRate=midRate*100;jual=displayRate*(1+SPREAD_PERCENT/100);beli=displayRate*(1-SPREAD_PERCENT/100)}else{displayRate=midRate;jual=displayRate*(1+SPREAD_PERCENT/100);beli=displayRate*(1-SPREAD_PERCENT/100)}
+var changeDir=(Math.random()>0.5)?'up':'down';
+var changeIcon=changeDir==='up'?'▲':'▼';
+var rateClass=changeDir==='up'?'kurs-rate-up':'kurs-rate-down';
+html+='<tr><td><div class="currency-cell"><span style="font-size:1rem;line-height:1">'+curr.flag+'</span><div><span class="currency-code">'+curr.code+'</span><span class="currency-name">'+curr.name+'</span></div></div></td><td><span class="kurs-rate-change '+changeDir+'">'+changeIcon+'</span></td><td class="'+rateClass+'">'+formatRupiah(jual)+'</td><td class="'+rateClass+'">'+formatRupiah(beli)+'</td></tr>'
+});
+tbody.innerHTML=html;
+if(timeEl&&data.time_last_update_utc){timeEl.innerHTML='<span class="live-dot"></span> '+formatDateTime(data.time_last_update_utc)}
+}
+async function fetchKursData(){
+showLoading();
+var cached=getCachedData();
+if(cached){renderKursTable(cached);return}
+try{
+var response=await fetch(API_URL,{method:'GET',headers:{'Accept':'application/json'}});
+if(!response.ok)throw new Error('HTTP '+response.status);
+var data=await response.json();
+if(data.result!=='success')throw new Error('API error: '+(data['error-type']||'unknown'));
+setCachedData(data);
+renderKursTable(data)
+}catch(error){
+try{var ec=JSON.parse(localStorage.getItem(CACHE_KEY));if(ec&&ec.data){renderKursTable(ec.data);return}}catch(e){}
+showError('Gagal memuat data kurs. Periksa koneksi internet Anda.')
+}
+}
+document.addEventListener('DOMContentLoaded',function(){fetchKursData();setInterval(fetchKursData,CACHE_DURATION)});
+window.fetchKursData=fetchKursData
+})();
+</script>
+
+<!-- ===== YOUTUBE LIVE WIDGET (@DAMARALOTARA) ===== -->
+<script>
+(function(){
+'use strict';
+
+// ╔══════════════════════════════════════════════════════════╗
+// ║  🎬 KONFIGURASI YOUTUBE WIDGET                         ║
+// ║                                                          ║
+// ║  CARA UPDATE VIDEO:                                     ║
+// ║  1. Buka channel: youtube.com/@DAMARALOTARA             ║
+// ║  2. Klik video yang mau ditampilkan                     ║
+// ║  3. Copy URL video dari address bar                     ║
+// ║     Contoh: https://www.youtube.com/watch?v=ABC123xyz  ║
+// ║  4. Ambil bagian setelah "v=" → yaitu "ABC123xyz"      ║
+// ║  5. Paste ke array YT_VIDEOS di bawah ini               ║
+// ║  6. Simpan file → selesai!                              ║
+// ║                                                          ║
+// ║  Channel: @DAMARALOTARA                                 ║
+// ║  BPR Damara · Gerung, Lombok Barat                      ║
+// ╚══════════════════════════════════════════════════════════╝
+
+var YT_CHANNEL = 'DAMARALOTARA';
+var YT_CHANNEL_URL = 'https://www.youtube.com/@DAMARALOTARA';
+
+// ═══════════════════════════════════════════════════════════
+// 📹 DAFTAR VIDEO - Ganti/Update di sini!
+// Format: { id: 'VIDEO_ID', title: 'Judul', views: 'X views', date: 'Tanggal' }
+// ═══════════════════════════════════════════════════════════
+var YT_VIDEOS = [
+    {
+        id: '-39Fowrzq8k',
+        title: 'Selamat Datang di Channel DAMARA LOTARA',
+        views: 'Video Terbaru',
+        date: 'BPR Damara',
+        duration: ''
+    }
+];
+
+// ═══════════════════════════════════════════════════════════
+
+function getThumbnailUrl(videoId) {
+    if (!videoId) return '';
+    return 'https://img.youtube.com/vi/' + videoId + '/mqdefault.jpg';
+}
+
+function renderPlaylist() {
+    var list = document.getElementById('ytPlaylistList');
+    if (!list) return;
+
+    if (!YT_VIDEOS || YT_VIDEOS.length === 0) {
+        list.innerHTML = '<div class="yt-loading"><i class="fas fa-video"></i> Belum ada video yang dikonfigurasi<br><span style="font-size:.6rem;margin-top:4px;display:block">Tambahkan video ID di JavaScript</span></div>';
+        return;
+    }
+
+    var html = '';
+    YT_VIDEOS.forEach(function(video, index) {
+        var thumbUrl = video.id ? getThumbnailUrl(video.id) : '';
+        var thumbBg = thumbUrl ? '' : 'background:linear-gradient(135deg,#1a365d,#2d5a8e);';
+        
+        html += '<div class="yt-playlist-item" onclick="playYTVideo(\'' + (video.id || '') + '\', ' + index + ')" data-video-index="' + index + '">';
+        html += '<div class="yt-playlist-thumb" style="' + thumbBg + '">';
+        if (thumbUrl) {
+            html += '<img src="' + thumbUrl + '" alt="' + video.title + '" loading="lazy" onerror="this.style.display=\'none\'">';
+        } else {
+            html += '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:1.2rem"><i class="fab fa-youtube"></i></div>';
+        }
+        if (video.duration) {
+            html += '<span class="yt-duration">' + video.duration + '</span>';
+        }
+        html += '</div>';
+        html += '<div class="yt-playlist-text">';
+        html += '<h5>' + video.title + '</h5>';
+        html += '<span><i class="far fa-eye"></i> ' + video.views + ' · <i class="far fa-calendar"></i> ' + video.date + '</span>';
+        html += '</div>';
+        html += '</div>';
     });
-}
-function refreshIGWidget(){
-    var btn=document.querySelector('.ig-refresh-btn');
-    if(btn) btn.classList.add('spinning');
-    loadIGWidget();
-    setTimeout(function(){if(btn) btn.classList.remove('spinning')},1000);
-}
-loadIGWidget();
 
-// ===== YOUTUBE WIDGET =====
-function loadYTWidget(){
-    var list=document.getElementById('ytPlaylistList');
-    if(!list) return;
-    var videos=[
-        {title:'Profil BANK DAMARA 2026',views:'2.5K views',time:'3:45'},
-        {title:'Cara Buka Tabungan Online',views:'1.8K views',time:'5:20'},
-        {title:'Promo Deposito Juli 2026',views:'3.1K views',time:'2:15'},
-        {title:'Tips KPR untuk Milenial',views:'4.2K views',time:'7:30'}
-    ];
-    list.innerHTML='';
-    videos.forEach(function(v,i){
-        var a=document.createElement('a');
-        a.className='yt-playlist-item';
-        a.href='https://www.youtube.com/@DAMARALOTARA';
-        a.target='_blank';
-        a.rel='noopener';
-        a.innerHTML='<div class="yt-playlist-thumb"><div style="width:100%;height:100%;background:linear-gradient(135deg,#ff0000,#cc0000);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem"><i class="fas fa-play"></i></div><div class="yt-duration">'+v.time+'</div></div><div class="yt-playlist-text"><h5>'+v.title+'</h5><span>'+v.views+' · '+i+1+' hari lalu</span></div>';
-        list.appendChild(a);
-    });
+    list.innerHTML = html;
 }
-function refreshYTWidget(){loadYTWidget()}
-loadYTWidget();
 
-// ===== SCROLL ANIMATIONS =====
-var observer=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-        if(entry.isIntersecting){
-            entry.target.classList.add('animate');
-            observer.unobserve(entry.target);
+function setMainVideo(videoId) {
+    var frame = document.getElementById('ytMainFrame');
+    if (!frame) return;
+    
+    if (videoId) {
+        frame.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+    }
+}
+
+window.playYTVideo = function(videoId, index) {
+    if (!videoId) {
+        window.open(YT_CHANNEL_URL, '_blank');
+        return;
+    }
+    setMainVideo(videoId);
+    
+    // Highlight active video
+    document.querySelectorAll('.yt-playlist-item').forEach(function(item, i) {
+        if (i === index) {
+            item.style.background = '#fef2f2';
+            item.style.borderColor = 'rgba(255,0,0,.2)';
+        } else {
+            item.style.background = '';
+            item.style.borderColor = 'transparent';
         }
     });
-},{threshold:0.1});
-document.querySelectorAll('.quick-access-card,.product-card,.lelang-card,.pelaporan-card,.digital-features li,.budaya-card,.mgmt-card,.gallery-card').forEach(function(el){observer.observe(el)});
+};
 
-console.log('BANK DAMARA - Website loaded successfully!');
+window.refreshYTWidget = function() {
+    var btn = document.querySelector('.yt-widget-card .ig-refresh-btn');
+    if (btn) {
+        btn.classList.add('spinning');
+        btn.disabled = true;
+    }
+    
+    var list = document.getElementById('ytPlaylistList');
+    if (list) {
+        list.innerHTML = '<div class="yt-loading"><i class="fas fa-spinner fa-spin"></i> Memuat video...</div>';
+    }
+    
+    setTimeout(function() {
+        renderPlaylist();
+        if (btn) {
+            btn.classList.remove('spinning');
+            btn.disabled = false;
+        }
+    }, 800);
+};
+
+function init() {
+    renderPlaylist();
+    
+    // Auto play first video if available
+    if (YT_VIDEOS && YT_VIDEOS.length > 0 && YT_VIDEOS[0].id) {
+        setMainVideo(YT_VIDEOS[0].id);
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}
+
+})();
 </script>
+
 </body>
-</html>   
+</html>
