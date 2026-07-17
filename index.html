@@ -718,7 +718,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 
 <!-- ===== JAVASCRIPT UTAMA ===== -->
 <script>
-window.addEventListener('load',function(){setTimeout(function(){document.getElementById('preloader').classList.add('hidden')},2200)});
+setTimeout(function(){var p=document.getElementById('preloader');if(p)p.classList.add('hidden')},3500);
 (function(){var c=document.getElementById('heroParticles');if(!c)return;for(var i=0;i<30;i++){var p=document.createElement('div');p.classList.add('h-particle');var s=Math.random()*3+1.5;var colors=['rgba(200,169,81,0.6)','rgba(30,136,229,0.4)','rgba(255,255,255,0.3)'];p.style.cssText='left:'+Math.random()*100+'%;width:'+s+'px;height:'+s+'px;background:'+colors[Math.floor(Math.random()*3)]+';animation-duration:'+(Math.random()*15+8)+'s;animation-delay:'+(Math.random()*10)+'s';c.appendChild(p)}})();
 (function(){var hero=document.getElementById('beranda');var cards=document.querySelectorAll('.card-3d-wrapper');if(!hero)return;hero.addEventListener('mousemove',function(e){var r=hero.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-0.5;var y=(e.clientY-r.top)/r.height-0.5;cards.forEach(function(c){c.style.transform='rotateY('+x*12+'deg) rotateX('+(-y)*12+'deg)'})});hero.addEventListener('mouseleave',function(){cards.forEach(function(c){c.style.transform='rotateY(0) rotateX(0)'})})})();
 var currentSlide=0;var slides=document.querySelectorAll('.hero-slide');var tabs=document.querySelectorAll('.slide-tab');var counter=document.querySelector('.slide-counter .current');var autoTimer;var SD=5000;
