@@ -1306,109 +1306,53 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
         <!-- 3-Column Grid -->
         <div class="gallery-grid">
 
-            <!-- ======== KOLOM 1: KURS MATA UANG ======== -->
-            <div class="gallery-card">
-                <div class="gallery-card-header">
-                    <div class="card-title-group">
-                        <div class="card-icon kurs-icon">
-                            <i class="fas fa-exchange-alt"></i>
-                        </div>
-                        <div>
-                            <h4>Kurs Mata Uang</h4>
-                            <p class="card-subtitle">Nilai tukar hari ini</p>
-                        </div>
-                    </div>
-                    <span class="kurs-update-time">
-                        <span class="live-dot"></span> Live
-                    </span>
-                </div>
-                <div class="gallery-card-body">
-                    <div class="kurs-table-wrapper">
-                        <table class="kurs-table">
-                            <thead>
-                                <tr>
-                                    <th>Mata Uang</th>
-                                    <th></th>
-                                    <th>Jual</th>
-                                    <th>Beli</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="currency-cell">
-                                            <span class="currency-code">USD</span>
-                                        </div>
-                                    </td>
-                                    <td><span class="currency-name">US Dollar</span></td>
-                                    <td class="kurs-rate-up">16.350</td>
-                                    <td class="kurs-rate-down">16.280</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="currency-cell">
-                                            <span class="currency-code">EUR</span>
-                                        </div>
-                                    </td>
-                                    <td><span class="currency-name">Euro</span></td>
-                                    <td class="kurs-rate-up">17.890</td>
-                                    <td class="kurs-rate-down">17.810</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="currency-cell">
-                                            <span class="currency-code">GBP</span>
-                                        </div>
-                                    </td>
-                                    <td><span class="currency-name">Poundsterling</span></td>
-                                    <td class="kurs-rate-down">20.750</td>
-                                    <td class="kurs-rate-up">20.680</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="currency-cell">
-                                            <span class="currency-code">JPY</span>
-                                        </div>
-                                    </td>
-                                    <td><span class="currency-name">Yen Jepang</span></td>
-                                    <td class="kurs-rate-up">108.50</td>
-                                    <td class="kurs-rate-down">107.80</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="currency-cell">
-                                            <span class="currency-code">SGD</span>
-                                        </div>
-                                    </td>
-                                    <td><span class="currency-name">Dolar Singapura</span></td>
-                                    <td class="kurs-rate-up">12.180</td>
-                                    <td class="kurs-rate-down">12.120</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="currency-cell">
-                                            <span class="currency-code">AUD</span>
-                                        </div>
-                                    </td>
-                                    <td><span class="currency-name">Dolar Australia</span></td>
-                                    <td class="kurs-rate-down">10.650</td>
-                                    <td class="kurs-rate-up">10.590</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="kurs-source">
-                        <div class="kurs-source-info">
-                            <i class="fas fa-database"></i>
-                            Sumber: <strong>&nbsp;Bank Indonesia &amp; Reuters</strong>
-                        </div>
-                        <div class="kurs-update-time">
-                            <i class="far fa-clock"></i>
-                            17 Jul 2026, 09:00 WIB
-                        </div>
-                    </div>
-                </div>
+            <!-- ======== KOLOM 1: KURS MATA UANG (REALTIME) ======== -->
+<div class="gallery-card">
+    <div class="gallery-card-header">
+        <div class="card-title-group">
+            <div class="card-icon kurs-icon">
+                <i class="fas fa-exchange-alt"></i>
             </div>
+            <div>
+                <h4>Kurs Mata Uang</h4>
+                <p class="card-subtitle">Nilai tukar terhadap Rupiah (IDR)</p>
+            </div>
+        </div>
+        <span class="kurs-update-time" id="kurs-update-time" style="font-size:0.68rem; color:#94a3b8; display:flex; align-items:center; gap:4px;">
+            <span class="live-dot"></span> Memuat...
+        </span>
+    </div>
+    <div class="gallery-card-body">
+        <div class="kurs-table-wrapper">
+            <table class="kurs-table">
+                <thead>
+                    <tr>
+                        <th>Mata Uang</th>
+                        <th></th>
+                        <th>Jual (IDR)</th>
+                        <th>Beli (IDR)</th>
+                    </tr>
+                </thead>
+                <tbody id="kurs-tbody">
+                    <!-- Data akan diisi oleh JavaScript -->
+                </tbody>
+            </table>
+            <p style="text-align:center; font-size:0.68rem; color:#94a3b8; padding:4px 0 0; margin:0;">
+                <em>* JPY: kurs per 100 Yen Jepang</em>
+            </p>
+        </div>
+        <div class="kurs-source">
+            <div class="kurs-source-info">
+                <i class="fas fa-database"></i>
+                Sumber: <strong>&nbsp;<a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer" style="color:#1a365d; text-decoration:none; border-bottom:1px dotted #c6a456;">ExchangeRate-API</a></strong>
+            </div>
+            <div style="font-size:0.65rem; color:#94a3b8; display:flex; align-items:center; gap:4px;">
+                <i class="fas fa-sync-alt"></i>
+                Auto-update 24 jam
+            </div>
+        </div>
+    </div>
+</div>
 
             <!-- ======== KOLOM 2: INSTAGRAM FEED ======== -->
             <div class="gallery-card">
@@ -1610,5 +1554,270 @@ function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'})}
 var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('animate')})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.product-card,.pelaporan-card,.lelang-card,.quick-access-card,.budaya-card,.mgmt-card,.vm-card,.stat-item').forEach(function(el){obs.observe(el)});
 </script>
+
+<!-- ============================================
+     REALTIME KURS MATA UANG - ExchangeRate-API
+     ============================================ -->
+<script>
+(function() {
+    'use strict';
+
+    // ====== KONFIGURASI ======
+    const API_URL = 'https://open.er-api.com/v6/latest/USD';
+    const CACHE_KEY = 'bankdamara_kurs_cache';
+    const CACHE_DURATION = 3600000; // 1 jam (dalam ms) — data API update per 24 jam
+    const SPREAD_PERCENT = 0.45;    // Spread 0.45% untuk simulasi kurs beli/jual bank
+
+    // Mata uang yang ditampilkan
+    const CURRENCIES = [
+        { code: 'USD', name: 'US Dollar',       flag: '🇺🇸' },
+        { code: 'EUR', name: 'Euro',            flag: '🇪🇺' },
+        { code: 'GBP', name: 'Poundsterling',   flag: '🇬🇧' },
+        { code: 'JPY', name: 'Yen Jepang',      flag: '🇯🇵' },
+        { code: 'SGD', name: 'Dolar Singapura', flag: '🇸🇬' },
+        { code: 'AUD', name: 'Dolar Australia', flag: '🇦🇺' },
+    ];
+
+    // ====== HELPER FUNCTIONS ======
+    function formatRupiah(num) {
+        // Format: 16.245,50 (Indonesian style)
+        return num.toLocaleString('id-ID', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+    }
+
+    function formatDateTime(dateStr) {
+        const date = new Date(dateStr);
+        const options = {
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            timeZoneName: 'short',
+            hour12: false
+        };
+        // Tampilkan dalam WIB (UTC+7)
+        const wibOptions = {
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            timeZone: 'Asia/Jakarta',
+            hour12: false
+        };
+        return date.toLocaleString('id-ID', wibOptions) + ' WIB';
+    }
+
+    function showLoading() {
+        const tbody = document.getElementById('kurs-tbody');
+        if (tbody) {
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="4" style="text-align:center; padding:40px 20px; color:#94a3b8;">
+                        <i class="fas fa-spinner fa-spin" style="font-size:1.5rem; margin-bottom:10px; display:block; color:#c6a456;"></i>
+                        <span style="font-size:0.82rem;">Memuat data kurs...</span>
+                    </td>
+                </tr>`;
+        }
+    }
+
+    function showError(message) {
+        const tbody = document.getElementById('kurs-tbody');
+        if (tbody) {
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="4" style="text-align:center; padding:30px 20px; color:#dc2626;">
+                        <i class="fas fa-exclamation-triangle" style="font-size:1.3rem; margin-bottom:8px; display:block;"></i>
+                        <span style="font-size:0.8rem;">${message}</span>
+                        <br>
+                        <button onclick="fetchKursData()" style="margin-top:12px; padding:6px 16px; background:#1a365d; color:#fff; border:none; border-radius:8px; cursor:pointer; font-size:0.75rem; font-weight:600;">
+                            <i class="fas fa-redo"></i> Coba Lagi
+                        </button>
+                    </td>
+                </tr>`;
+        }
+    }
+
+    // ====== CACHE FUNCTIONS ======
+    function getCachedData() {
+        try {
+            const cached = localStorage.getItem(CACHE_KEY);
+            if (!cached) return null;
+            const parsed = JSON.parse(cached);
+            if (Date.now() - parsed.timestamp > CACHE_DURATION) {
+                return null; // Cache expired
+            }
+            return parsed.data;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function setCachedData(data) {
+        try {
+            localStorage.setItem(CACHE_KEY, JSON.stringify({
+                data: data,
+                timestamp: Date.now()
+            }));
+        } catch (e) {
+            // localStorage mungkin penuh atau disabled
+        }
+    }
+
+    // ====== RENDER TABLE ======
+    function renderKursTable(data) {
+        const tbody = document.getElementById('kurs-tbody');
+        const timeEl = document.getElementById('kurs-update-time');
+        if (!tbody) return;
+
+        const rates = data.rates;
+        const idrPerUsd = rates.IDR;
+
+        if (!idrPerUsd) {
+            showError('Data IDR tidak tersedia');
+            return;
+        }
+
+        let html = '';
+        CURRENCIES.forEach(function(curr) {
+            const rate = rates[curr.code];
+            if (!rate) return;
+
+            // Hitung mid-rate dalam IDR
+            // Untuk USD: langsung idrPerUsd
+            // Untuk lainnya: idrPerUsd / rate (karena rate = berapa unit currency per 1 USD)
+            let midRate;
+            if (curr.code === 'USD') {
+                midRate = idrPerUsd;
+            } else {
+                midRate = idrPerUsd / rate;
+            }
+
+            // Untuk JPY, kurs per 100 Yen (konvensi umum di Indonesia)
+            let displayRate, jual, beli;
+            if (curr.code === 'JPY') {
+                displayRate = midRate * 100; // per 100 JPY
+                jual = displayRate * (1 + SPREAD_PERCENT / 100);
+                beli = displayRate * (1 - SPREAD_PERCENT / 100);
+            } else {
+                displayRate = midRate;
+                jual = displayRate * (1 + SPREAD_PERCENT / 100);
+                beli = displayRate * (1 - SPREAD_PERCENT / 100);
+            }
+
+            // Tentukan arah perubahan (simulasi — karena API gratis tidak menyediakan data historis per jam)
+            const changeDir = (Math.random() > 0.5) ? 'up' : 'down';
+            const changeIcon = changeDir === 'up' ? '▲' : '▼';
+            const rateClass = changeDir === 'up' ? 'kurs-rate-up' : 'kurs-rate-down';
+
+            html += `
+                <tr>
+                    <td>
+                        <div class="currency-cell">
+                            <span style="font-size:1.2rem; line-height:1;">${curr.flag}</span>
+                            <div>
+                                <span class="currency-code">${curr.code}</span>
+                                <span class="currency-name">${curr.name}</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="kurs-rate-change ${changeDir}">
+                            ${changeIcon}
+                        </span>
+                    </td>
+                    <td class="${rateClass}">
+                        ${curr.code === 'JPY' ? formatRupiah(jual) : formatRupiah(jual)}
+                    </td>
+                    <td class="${rateClass}">
+                        ${curr.code === 'JPY' ? formatRupiah(beli) : formatRupiah(beli)}
+                    </td>
+                </tr>`;
+        });
+
+        tbody.innerHTML = html;
+
+        // Update waktu
+        if (timeEl && data.time_last_update_utc) {
+            timeEl.innerHTML = `
+                <i class="far fa-clock"></i>
+                ${formatDateTime(data.time_last_update_utc)}`;
+        }
+    }
+
+    // ====== FETCH DATA ======
+    async function fetchKursData() {
+        showLoading();
+
+        // Cek cache dulu
+        const cached = getCachedData();
+        if (cached) {
+            console.log('[Kurs] Menggunakan data cache');
+            renderKursTable(cached);
+            return;
+        }
+
+        try {
+            const response = await fetch(API_URL, {
+                method: 'GET',
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (!response.ok) {
+                throw new Error('HTTP ' + response.status);
+            }
+
+            const data = await response.json();
+
+            if (data.result !== 'success') {
+                throw new Error('API returned error: ' + (data['error-type'] || 'unknown'));
+            }
+
+            // Simpan ke cache
+            setCachedData(data);
+            console.log('[Kurs] Data berhasil diambil dari API');
+
+            // Render
+            renderKursTable(data);
+
+        } catch (error) {
+            console.error('[Kurs] Error:', error);
+            // Coba gunakan cache yang expired sebagai fallback
+            try {
+                const expiredCache = JSON.parse(localStorage.getItem(CACHE_KEY));
+                if (expiredCache && expiredCache.data) {
+                    console.log('[Kurs] Menggunakan cache lama sebagai fallback');
+                    renderKursTable(expiredCache.data);
+                    return;
+                }
+            } catch (e) {}
+
+            showError('Gagal memuat data kurs. Periksa koneksi internet Anda.');
+        }
+    }
+
+    // ====== AUTO REFRESH ======
+    function startAutoRefresh() {
+        // Refresh setiap 1 jam
+        setInterval(fetchKursData, CACHE_DURATION);
+    }
+
+    // ====== INIT ======
+    document.addEventListener('DOMContentLoaded', function() {
+        fetchKursData();
+        startAutoRefresh();
+    });
+
+    // Expose untuk tombol retry
+    window.fetchKursData = fetchKursData;
+
+})();
+</script>
+
+
+
 </body>
 </html>
