@@ -547,6 +547,31 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .ig-embed-wrapper{padding:8px;max-height:460px;overflow-y:auto}
 .ig-embed-wrapper::-webkit-scrollbar{width:3px}
 .ig-embed-wrapper::-webkit-scrollbar-thumb{background:#e2e8f0;border-radius:3px}
+
+ /* ===== INSTAGRAM LIVE WIDGET ===== */
+.ig-live-widget{padding:10px;max-height:520px;overflow-y:auto;scroll-behavior:smooth}
+.ig-live-widget::-webkit-scrollbar{width:4px}
+.ig-live-widget::-webkit-scrollbar-track{background:#f8fafc;border-radius:4px}
+.ig-live-widget::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#833AB4,#FD1D1D,#FCAF45);border-radius:4px}
+.ig-live-post{position:relative;margin-bottom:12px;border-radius:14px;overflow:hidden;border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#833AB4,#FD1D1D,#FCAF45) border-box;transition:all .4s cubic-bezier(.25,.46,.45,.94);box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.ig-live-post:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(131,58,180,.12);border-color:transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#FCAF45,#FD1D1D,#833AB4) border-box}
+.ig-live-post:last-child{margin-bottom:0}
+.ig-live-post blockquote.instagram-media{margin:0!important;min-width:0!important;max-width:100%!important;width:100%!important}
+.ig-post-skeleton{height:380px;background:linear-gradient(110deg,#f1f5f9 8%,#e2e8f0 18%,#f1f5f9 33%);background-size:200% 100%;animation:igShimmer 1.5s linear infinite;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:#94a3b8;font-size:.8rem}
+.ig-post-skeleton i{font-size:2rem;color:#e2e8f0;animation:igPulse 1.5s ease-in-out infinite}
+@keyframes igShimmer{to{background-position-x:-200%}}
+@keyframes igPulse{0%,100%{opacity:.4;transform:scale(.95)}50%{opacity:1;transform:scale(1.05)}}
+.ig-widget-footer{padding:8px 12px;border-top:1px solid #f1f5f9;display:flex;align-items:center;justify-content:space-between}
+.ig-widget-info{display:flex;align-items:center;gap:6px;font-size:.68rem;color:#94a3b8}
+.ig-widget-info .ig-live-dot{width:6px;height:6px;background:#16a34a;border-radius:50%;animation:livePulse 2s infinite}
+.ig-refresh-btn{background:none;border:1.5px solid #e2e8f0;color:#64748b;padding:5px 12px;border-radius:20px;font-size:.68rem;font-weight:600;cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:5px}
+.ig-refresh-btn:hover{border-color:#833AB4;color:#833AB4;background:rgba(131,58,180,.05)}
+.ig-refresh-btn.spinning i{animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ig-config-hint{margin:8px 12px;padding:8px 12px;background:linear-gradient(135deg,rgba(131,58,180,.05),rgba(253,29,29,.05));border-radius:8px;font-size:.65rem;color:#64748b;line-height:1.5;border:1px dashed rgba(131,58,180,.2)}
+.ig-config-hint code{background:rgba(131,58,180,.1);color:#833AB4;padding:1px 5px;border-radius:3px;font-weight:600}   
+    
+    
 .ig-post-item{border-radius:10px;overflow:hidden;margin-bottom:8px;border:1px solid #f1f5f9;transition:all .3s}
 .ig-post-item:hover{box-shadow:0 6px 18px rgba(0,0,0,.06)}
 .ig-post-item:last-child{margin-bottom:0}
@@ -700,16 +725,33 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
                     <div class="kurs-update-time" style="font-size:.58rem"><i class="fas fa-sync-alt"></i> Auto 24 jam</div>
                 </div>
             </div>
-            <div class="gallery-card">
+                        <div class="gallery-card ig-widget-card">
                 <div class="gallery-card-header">
-                    <div class="card-title-group"><div class="card-icon ig-icon"><i class="fab fa-instagram"></i></div><div><h4>Instagram</h4><p class="card-subtitle">@bank_damara</p></div></div>
-                    <a href="https://instagram.com/bank_damara" target="_blank" rel="noopener" style="color:#833AB4;font-size:.85rem" title="Buka Instagram"><i class="fas fa-external-link-alt"></i></a>
+                    <div class="card-title-group">
+                        <div class="card-icon ig-icon"><i class="fab fa-instagram"></i></div>
+                        <div>
+                            <h4>Instagram</h4>
+                            <p class="card-subtitle">@bospinjamanku</p>
+                        </div>
+                    </div>
+                    <a href="https://instagram.com/bospinjamanku" target="_blank" rel="noopener" style="color:#833AB4;font-size:.85rem" title="Buka Instagram"><i class="fas fa-external-link-alt"></i></a>
                 </div>
-                <div class="ig-embed-wrapper">
-                    <div class="ig-post-item"><div class="ig-post-header"><div class="ig-avatar"><span>BD</span></div><div><span class="ig-username">bank_damara <i class="fas fa-check-circle ig-verified"></i></span></div></div><img class="ig-post-image" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=400&fit=crop" alt="Instagram Post" loading="lazy" onerror="this.src='https://placehold.co/400x400/1a365d/ffffff?text=Bank+Damara'"><div class="ig-post-actions"><i class="far fa-heart"></i><i class="far fa-comment"></i><i class="far fa-paper-plane"></i></div><div class="ig-post-caption"><strong>bankdamara</strong> 💰 Wujudkan impianmu bersama Bank Damara! Buka rekening tabungan sekarang dan nikmati bunga kompetitif. #BankDamara #TabunganMasaDepan</div></div>
-                    <div class="ig-post-item"><div class="ig-post-header"><div class="ig-avatar"><span>BD</span></div><div><span class="ig-username">bank_damara <i class="fas fa-check-circle ig-verified"></i></span></div></div><img class="ig-post-image" src="https://images.unsplash.com/photo-1559526324-593bc073d938?w=400&h=400&fit=crop" alt="Instagram Post" loading="lazy" onerror="this.src='https://placehold.co/400x400/c6a456/ffffff?text=Promo+Spesial'"><div class="ig-post-actions"><i class="far fa-heart"></i><i class="far fa-comment"></i><i class="far fa-paper-plane"></i></div><div class="ig-post-caption"><strong>bankdamara</strong> 🎉 Promo Spesial! Deposito berjangka dengan bunga hingga 6% p.a. Berlaku hingga akhir bulan. #PromoDeposito #Investasi</div></div>
+                <div class="ig-live-widget" id="igLiveWidget">
+                    <div class="ig-post-skeleton"><i class="fab fa-instagram"></i><span>Memuat postingan...</span></div>
+                    <div class="ig-post-skeleton"><i class="fab fa-instagram"></i><span>Memuat postingan...</span></div>
                 </div>
-                <a href="https://instagram.com/bank_damara" target="_blank" rel="noopener" class="ig-follow-btn"><i class="fab fa-instagram"></i> Follow @bank_damara</a>
+                <div class="ig-widget-footer">
+                    <div class="ig-widget-info">
+                        <span class="ig-live-dot"></span>
+                        <span id="igLastUpdate">Otomatis sync</span>
+                    </div>
+                    <button class="ig-refresh-btn" onclick="refreshIGWidget()" title="Refresh postingan">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+                <a href="https://instagram.com/bospinjamanku" target="_blank" rel="noopener" class="ig-follow-btn">
+                    <i class="fab fa-instagram"></i> Follow @bospinjamanku
+                </a>
             </div>
             <div class="gallery-card">
                 <div class="gallery-card-header">
@@ -833,5 +875,181 @@ document.addEventListener('DOMContentLoaded',function(){fetchKursData();setInter
 window.fetchKursData=fetchKursData
 })();
 </script>
+
+
+<!-- ===== INSTAGRAM LIVE WIDGET ===== -->
+<script>
+(function(){
+'use strict';
+
+// ╔══════════════════════════════════════════════════════════╗
+// ║  📸 KONFIGURASI INSTAGRAM WIDGET                        ║
+// ║                                                         ║
+// ║  CARA UPDATE:                                           ║
+// ║  1. Buka postingan Instagram di browser                 ║
+// ║  2. Copy URL lengkap dari address bar                   ║
+// ║  3. Paste ke array IG_POSTS di bawah ini                ║
+// ║  4. Simpan file → konten otomatis terupdate!            ║
+// ║                                                         ║
+// ║  Contoh URL:                                            ║
+// ║  https://www.instagram.com/p/DA1b2C3d4E5/              ║
+// ║  https://www.instagram.com/reel/DA1b2C3d4E5/           ║
+// ╚══════════════════════════════════════════════════════════╝
+
+var IG_USERNAME = 'bank_damara';
+
+var IG_POSTS = [
+    'https://www.instagram.com/p/DA1b2C3d4E5/',
+    'https://www.instagram.com/p/DB2c3D4e5F6/',
+    'https://www.instagram.com/p/DC3d4E5f6G7/',
+    'https://www.instagram.com/reel/DD4e5F6g7H8/'
+];
+
+// Auto refresh interval (default: 1 jam)
+var REFRESH_INTERVAL = 3600000;
+
+// Cache key
+var CACHE_KEY = 'ig_widget_cache_' + IG_USERNAME ; 
+
+// ═══════════════════════════════════════════════════════════
+
+var embedLoaded = false;
+
+function renderSkeletons(count) {
+    var widget = document.getElementById('igLiveWidget');
+    if (!widget) return;
+    var html = '';
+    for (var i = 0; i < count; i++) {
+        html += '<div class="ig-post-skeleton"><i class="fab fa-instagram"></i><span>Memuat postingan ' + (i+1) + '...</span></div>';
+    }
+    widget.innerHTML = html;
+}
+
+function renderPosts() {
+    var widget = document.getElementById('igLiveWidget');
+    if (!widget) return;
+
+    if (!IG_POSTS || IG_POSTS.length === 0) {
+        widget.innerHTML = '<div class="ig-config-hint"><i class="fas fa-info-circle"></i> Tambahkan URL postingan Instagram ke array <code>IG_POSTS</code> di JavaScript untuk menampilkan konten.</div>';
+        return;
+    }
+
+    var html = '';
+    IG_POSTS.forEach(function(url, index) {
+        var cleanUrl = url.trim().replace(/\/+$/, '') + '/';
+        html += '<div class="ig-live-post" id="igPost' + index + '">';
+        html += '<div class="ig-post-skeleton" id="igSkeleton' + index + '"><i class="fab fa-instagram"></i><span>Memuat postingan ' + (index+1) + '...</span></div>';
+        html += '<blockquote class="instagram-media" ';
+        html += 'data-instgrm-permalink="' + cleanUrl + '" ';
+        html += 'data-instgrm-version="14" ';
+        html += 'data-instgrm-captioned ';
+        html += 'style="background:#fff;border:0;border-radius:0;box-shadow:none;margin:0;max-width:100%;padding:0;min-width:0;width:100%">';
+        html += '</blockquote>';
+        html += '</div>';
+    });
+
+    widget.innerHTML = html;
+    loadEmbedScript();
+    updateTimestamp();
+}
+
+function loadEmbedScript() {
+    if (embedLoaded) {
+        if (window.instgrm) {
+            window.instgrm.Embeds.process();
+        }
+        return;
+    }
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = '//www.instagram.com/embed.js';
+    script.onload = function() {
+        embedLoaded = true;
+        hideSkeletonsAfterDelay();
+    };
+    script.onerror = function() {
+        showFallback();
+    };
+    document.body.appendChild(script);
+}
+
+function hideSkeletonsAfterDelay() {
+    setTimeout(function() {
+        IG_POSTS.forEach(function(url, index) {
+            var skeleton = document.getElementById('igSkeleton' + index);
+            if (skeleton) {
+                skeleton.style.transition = 'opacity 0.4s ease';
+                skeleton.style.opacity = '0';
+                setTimeout(function() {
+                    if (skeleton.parentNode) skeleton.parentNode.removeChild(skeleton);
+                }, 400);
+            }
+        });
+    }, 2500);
+}
+
+function showFallback() {
+    var widget = document.getElementById('igLiveWidget');
+    if (!widget) return;
+    var html = '';
+    IG_POSTS.forEach(function(url, index) {
+        html += '<div class="ig-live-post" style="padding:20px;text-align:center">';
+        html += '<i class="fab fa-instagram" style="font-size:2rem;color:#833AB4;margin-bottom:8px;display:block"></i>';
+        html += '<p style="font-size:.78rem;color:#64748b;margin-bottom:10px">Postingan ' + (index+1) + '</p>';
+        html += '<a href="' + url + '" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:linear-gradient(135deg,#833AB4,#FD1D1D,#FCAF45);color:#fff;border-radius:20px;text-decoration:none;font-size:.75rem;font-weight:600">';
+        html += '<i class="fas fa-external-link-alt"></i> Lihat di Instagram</a>';
+        html += '</div>';
+    });
+    widget.innerHTML = html;
+}
+
+function updateTimestamp() {
+    var el = document.getElementById('igLastUpdate');
+    if (el) {
+        var now = new Date();
+        var time = now.toLocaleTimeString('id-ID', {hour:'2-digit',minute:'2-digit',timeZone:'Asia/Jakarta',hour12:false});
+        el.textContent = 'Diperbarui ' + time + ' WIB';
+    }
+}
+
+window.refreshIGWidget = function() {
+    var btn = document.querySelector('.ig-refresh-btn');
+    if (btn) {
+        btn.classList.add('spinning');
+        btn.disabled = true;
+    }
+    renderSkeletons(IG_POSTS.length);
+    setTimeout(function() {
+        renderPosts();
+        if (btn) {
+            btn.classList.remove('spinning');
+            btn.disabled = false;
+        }
+    }, 800);
+};
+
+// Initialize on DOM ready
+function init() {
+    renderSkeletons(IG_POSTS.length);
+    setTimeout(renderPosts, 500);
+    setInterval(function() {
+        renderPosts();
+    }, REFRESH_INTERVAL);
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}
+
+})();
+</script>
+
+
+
+
+
 </body>
 </html>
