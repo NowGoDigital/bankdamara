@@ -504,7 +504,12 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .gallery-banner-overlay{position:absolute;bottom:0;left:0;right:0;padding:25px 30px;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff}
 .gallery-banner-overlay h3{font-size:1.3rem;font-weight:700;margin-bottom:4px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
 .gallery-banner-overlay p{font-size:.85rem;opacity:.9}
-.gallery-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;position:relative;z-index:2}
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;position:relative;z-index:2;align-items:start}
+.gallery-card{display:flex;flex-direction:column;height:100%}
+.gallery-card>*{flex-shrink:0}
+.gallery-card .kurs-table-wrapper,
+.gallery-card .ig-live-widget,
+.gallery-card .yt-playlist-section{flex:1;min-height:0;overflow:auto}
 .gallery-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 18px rgba(0,0,0,.05);border:1px solid rgba(0,0,0,.04);transition:all .4s cubic-bezier(.25,.46,.45,.94);position:relative}
 .gallery-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.09)}
 .gallery-card-header{padding:10px 14px 8px;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;justify-content:space-between}
@@ -585,7 +590,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .yt-main-player .yt-video-frame iframe{width:100%;aspect-ratio:16/9;display:block;border:none;background:#000}
 .yt-playlist-section{flex:1;padding:0;min-height:0}
 .yt-playlist-header{padding:8px 14px;font-size:.65rem;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;gap:6px;background:#f8fafc}
-.yt-playlist-list{max-height:250px;overflow-y:auto;padding:6px 10px}
+.yt-playlist-list{max-height:160px;overflow-y:auto;padding:6px 10px}
 .yt-playlist-list::-webkit-scrollbar{width:3px}
 .yt-playlist-list::-webkit-scrollbar-thumb{background:#ff0000;border-radius:3px}
 .yt-playlist-list::-webkit-scrollbar-track{background:#f8fafc}
