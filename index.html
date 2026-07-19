@@ -707,10 +707,517 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 </div><div class="slide-counter"><span class="current">01</span> / 03</div><div class="hero-controls"><div class="slide-tab active" onclick="goToSlide(0)"><div class="tab-fill"></div></div><div class="slide-tab" onclick="goToSlide(1)"><div class="tab-fill"></div></div><div class="slide-tab" onclick="goToSlide(2)"><div class="tab-fill"></div></div></div><div class="scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div></section>
 <section class="quick-access"><div class="container"><div class="quick-access-grid"><a href="#produk" class="quick-access-card" data-product="tabungan"><div class="icon"><i class="fas fa-university"></i></div><h4>Tabungan</h4><p>Buka rekening baru dengan mudah</p></a><a href="#produk" class="quick-access-card" data-product="pinjaman"><div class="icon"><i class="fas fa-hand-holding-usd"></i></div><h4>Pinjaman</h4><p>KPR, KTA, dan kredit usaha</p></a><a href="#produk" class="quick-access-card" data-product="deposito"><div class="icon"><i class="fas fa-piggy-bank"></i></div><h4>Deposito</h4><p>Bunga kompetitif hingga 5.5%</p></a><a href="#lelang" class="quick-access-card"><div class="icon"><i class="fas fa-gavel"></i></div><h4>Lelang Agunan</h4><p>Properti & kendaraan harga miring</p></a></div></div></section>
 <section class="about-section" id="tentang"><div class="container"><div class="section-title"><div class="st-badge"><i class="fas fa-building"></i> Tentang Kami</div><h2>Mengenal BANK DAMARA</h2><p>Lebih dari 40 tahun melayani masyarakat Indonesia dengan integritas dan inovasi</p><div class="underline"></div></div><div class="about-tabs"><div class="about-tab active" data-tab-btn="profil" onclick="switchTab('profil')"><i class="fas fa-building"></i> Profil</div><div class="about-tab" data-tab-btn="visi" onclick="switchTab('visi')"><i class="fas fa-bullseye"></i> Visi & Misi</div><div class="about-tab" data-tab-btn="budaya" onclick="switchTab('budaya')"><i class="fas fa-heart"></i> Budaya</div><div class="about-tab" data-tab-btn="manajemen" onclick="switchTab('manajemen')"><i class="fas fa-user-tie"></i> Manajemen</div><div class="about-tab" data-tab-btn="karir" onclick="switchTab('karir')"><i class="fas fa-briefcase"></i> Karir</div></div>
-<div class="about-content active" id="tab-profil"><div class="about-grid"><div class="about-image img-profil"><div class="about-img-bg"><i class="fas fa-landmark"></i></div><div class="about-float"><div class="af-icon"><i class="fas fa-award"></i></div><div><h5>Bank Terbaik 2026</h5><p>Penghargaan dari Majalah Infobank</p></div></div></div><div class="about-text"><h3>Profil BANK DAMARA</h3><p>PT BANK DAMARA Tbk didirikan pada tahun 1985 sebagai bank umum swasta nasional. Dengan lebih dari 1.200 cabang dan ATM yang tersebar di seluruh Nusantara.</p><ul class="about-features"><li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>Terdaftar & Diawasi OJK</strong><span>Memenuhi seluruh regulasi perbankan Indonesia</span></div></li><li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>Anggota LPS</strong><span>Simpanan dijamin hingga Rp 2 Miliar</span></div></li><li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>Rating AAA (idn)</strong><span>Peringkat tertinggi dari Pefindo Rating</span></div></li><li><div class="af-check"><i class="fas fa-check"></i></div><div><strong>ISO 27001 Certified</strong><span>Standar internasional keamanan informasi</span></div></li></ul></div></div></div>
-<div class="about-content" id="tab-visi"><div class="vm-grid"><div class="vm-card vm-visi"><div class="vm-icon"><i class="fas fa-eye"></i></div><h4>Visi</h4><p>Menjadi bank nasional terdepan yang terpercaya, inovatif, dan berkontribusi nyata dalam mendorong pertumbuhan ekonomi Indonesia yang berkelanjutan.</p></div><div class="vm-card vm-misi"><div class="vm-icon"><i class="fas fa-rocket"></i></div><h4>Misi</h4><ul><li><i class="fas fa-circle"></i> Menyediakan produk dan layanan perbankan yang inovatif, aman, dan mudah diakses</li><li><i class="fas fa-circle"></i> Mengembangkan SDM yang profesional dan berintegritas</li><li><i class="fas fa-circle"></i> Menerapkan Good Corporate Governance secara konsisten</li><li><i class="fas fa-circle"></i> Memberikan nilai tambah optimal bagi pemegang saham</li><li><i class="fas fa-circle"></i> Berperan aktif dalam keuangan inklusif dan CSR</li></ul></div></div></div>
-<div class="about-content" id="tab-budaya"><div class="budaya-grid"><div class="budaya-card"><div class="bc-icon"><i class="fas fa-handshake"></i></div><h4>Integritas</h4><p>Menjunjung tinggi kejujuran, transparansi, dan etika dalam setiap tindakan.</p></div><div class="budaya-card"><div class="bc-icon"><i class="fas fa-lightbulb"></i></div><h4>Inovasi</h4><p>Terus berinovasi dan beradaptasi dengan perkembangan teknologi.</p></div><div class="budaya-card"><div class="bc-icon"><i class="fas fa-users"></i></div><h4>Kolaborasi</h4><p>Membangun sinergi dan kerja sama yang solid antar tim dan mitra.</p></div><div class="budaya-card"><div class="bc-icon"><i class="fas fa-star"></i></div><h4>Keunggulan</h4><p>Berkomitmen pada standar kualitas tertinggi dalam setiap layanan.</p></div></div></div>
 
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- TAB 1: PROFIL (REDESIGNED)                                    -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="about-content active" id="tab-profil">
+
+    <!-- Hero Banner -->
+    <div style="position:relative;background:linear-gradient(135deg,#0a1f44 0%,#1a3a6b 50%,#0d47a1 100%);border-radius:24px;padding:40px 36px 45px;margin-bottom:30px;overflow:hidden;color:#fff">
+        <!-- Decorative -->
+        <div style="position:absolute;top:-60px;right:-60px;width:250px;height:250px;border:2px solid rgba(200,169,81,.1);border-radius:50%;pointer-events:none"></div>
+        <div style="position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border:1px solid rgba(200,169,81,.07);border-radius:50%;pointer-events:none"></div>
+        <div style="position:absolute;top:50%;right:5%;width:120px;height:120px;background:radial-gradient(circle,rgba(200,169,81,.08),transparent 70%);border-radius:50%;pointer-events:none"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,rgba(200,169,81,.5),transparent)"></div>
+
+        <!-- Content Grid -->
+        <div style="display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;position:relative;z-index:2" class="profil-hero-grid">
+            <!-- Left: Text -->
+            <div>
+                <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(200,169,81,.12);border:1px solid rgba(200,169,81,.25);padding:5px 16px;border-radius:50px;font-size:10px;font-weight:700;color:#e0c76a;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px">
+                    <i class="fas fa-landmark" style="font-size:9px"></i> Sejak 1985
+                </div>
+                <h2 style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#fff;margin:0 0 10px;line-height:1.2">Profil <span style="background:linear-gradient(135deg,#c8a951,#e0c76a,#f5e08a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">BANK DAMARA</span></h2>
+                <p style="font-size:14px;color:rgba(255,255,255,.7);line-height:1.8;margin:0;max-width:560px">PT BANK DAMARA Tbk didirikan pada tahun 1985 sebagai bank umum swasta nasional. Dengan lebih dari <strong style="color:#e0c76a">1.200 cabang dan ATM</strong> yang tersebar di seluruh Nusantara, kami berkomitmen memberikan layanan perbankan terbaik.</p>
+            </div>
+            <!-- Right: Big Logo -->
+            <div style="text-align:center" class="profil-hero-logo">
+                <div style="width:100px;height:100px;border-radius:24px;background:linear-gradient(135deg,rgba(200,169,81,.2),rgba(200,169,81,.05));display:flex;align-items:center;justify-content:center;border:2px solid rgba(200,169,81,.25);margin:0 auto;backdrop-filter:blur(10px)">
+                    <span style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;background:linear-gradient(135deg,#c8a951,#e0c76a,#f5e08a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">BN</span>
+                </div>
+                <div style="font-size:10px;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase;margin-top:8px;font-weight:600">Trusted Since 1985</div>
+            </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px;padding-top:24px;border-top:1px solid rgba(200,169,81,.15);position:relative;z-index:2" class="profil-stats-grid">
+            <div style="text-align:center">
+                <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;background:linear-gradient(135deg,#c8a951,#e0c76a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1">40+</div>
+                <div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:4px;font-weight:500;letter-spacing:.5px">Tahun Berdiri</div>
+            </div>
+            <div style="text-align:center">
+                <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;background:linear-gradient(135deg,#c8a951,#e0c76a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1">1,200+</div>
+                <div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:4px;font-weight:500;letter-spacing:.5px">Cabang & ATM</div>
+            </div>
+            <div style="text-align:center">
+                <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;background:linear-gradient(135deg,#c8a951,#e0c76a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1">5M+</div>
+                <div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:4px;font-weight:500;letter-spacing:.5px">Nasabah Aktif</div>
+            </div>
+            <div style="text-align:center">
+                <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;background:linear-gradient(135deg,#c8a951,#e0c76a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1">34</div>
+                <div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:4px;font-weight:500;letter-spacing:.5px">Provinsi</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content: 2 Kolom -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px" class="profil-content-grid">
+
+        <!-- Kolom Kiri: Timeline Sejarah -->
+        <div style="background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 4px 25px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.04)">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:22px">
+                <div style="width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#0a1f44,#1a3a6b);display:flex;align-items:center;justify-content:center">
+                    <i class="fas fa-clock-rotate-left" style="color:#c8a951;font-size:16px"></i>
+                </div>
+                <div>
+                    <h4 style="font-size:16px;font-weight:700;color:#1a365d;margin:0">Perjalanan Kami</h4>
+                    <p style="font-size:11px;color:#94a3b8;margin:0">Milestone penting BANK DAMARA</p>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div style="position:relative;padding-left:22px;border-left:2px solid #e8e8e8">
+                <!-- 2024 -->
+                <div style="margin-bottom:20px;position:relative">
+                    <div style="position:absolute;left:-29px;top:2px;width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,#c8a951,#e0c76a);border:3px solid #fff;box-shadow:0 2px 8px rgba(200,169,81,.35)"></div>
+                    <div style="font-size:10px;color:#c8a951;font-weight:700;letter-spacing:1px;text-transform:uppercase">2024</div>
+                    <div style="font-size:13px;color:#1a365d;font-weight:700;margin:2px 0">Transformasi Digital</div>
+                    <div style="font-size:12px;color:#64748b;line-height:1.5">Peluncuran BN Mobile v5.0 dengan fitur BI-FAST dan QRIS</div>
+                </div>
+                <!-- 2018 -->
+                <div style="margin-bottom:20px;position:relative">
+                    <div style="position:absolute;left:-29px;top:2px;width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,#c8a951,#e0c76a);border:3px solid #fff;box-shadow:0 2px 8px rgba(200,169,81,.35)"></div>
+                    <div style="font-size:10px;color:#c8a951;font-weight:700;letter-spacing:1px;text-transform:uppercase">2018</div>
+                    <div style="font-size:13px;color:#1a365d;font-weight:700;margin:2px 0">IPO & Go Public</div>
+                    <div style="font-size:12px;color:#64748b;line-height:1.5">Terdaftar di Bursa Efek Indonesia dengan kode BDMR</div>
+                </div>
+                <!-- 2005 -->
+                <div style="margin-bottom:20px;position:relative">
+                    <div style="position:absolute;left:-29px;top:2px;width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,#c8a951,#e0c76a);border:3px solid #fff;box-shadow:0 2px 8px rgba(200,169,81,.35)"></div>
+                    <div style="font-size:10px;color:#c8a951;font-weight:700;letter-spacing:1px;text-transform:uppercase">2005</div>
+                    <div style="font-size:13px;color:#1a365d;font-weight:700;margin:2px 0">Ekspansi Nasional</div>
+                    <div style="font-size:12px;color:#64748b;line-height:1.5">Pembukaan cabang ke-500 di seluruh Indonesia</div>
+                </div>
+                <!-- 1995 -->
+                <div style="margin-bottom:20px;position:relative">
+                    <div style="position:absolute;left:-29px;top:2px;width:14px;height:14px;border-radius:50%;background:#e2e8f0;border:3px solid #fff"></div>
+                    <div style="font-size:10px;color:#94a3b8;font-weight:600;letter-spacing:1px;text-transform:uppercase">1995</div>
+                    <div style="font-size:13px;color:#1a365d;font-weight:700;margin:2px 0">Bank Devisa</div>
+                    <div style="font-size:12px;color:#64748b;line-height:1.5">Mendapat izin operasional sebagai bank devisa</div>
+                </div>
+                <!-- 1985 -->
+                <div style="position:relative">
+                    <div style="position:absolute;left:-29px;top:2px;width:14px;height:14px;border-radius:50%;background:#e2e8f0;border:3px solid #fff"></div>
+                    <div style="font-size:10px;color:#94a3b8;font-weight:600;letter-spacing:1px;text-transform:uppercase">1985</div>
+                    <div style="font-size:13px;color:#1a365d;font-weight:700;margin:2px 0">Didirikan</div>
+                    <div style="font-size:12px;color:#64748b;line-height:1.5">Berdiri sebagai bank umum swasta nasional di Jakarta</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kolom Kanan: Sertifikasi & Penghargaan -->
+        <div style="display:flex;flex-direction:column;gap:20px">
+
+            <!-- Sertifikasi -->
+            <div style="background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 4px 25px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.04)">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+                    <div style="width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05));display:flex;align-items:center;justify-content:center;border:1px solid rgba(200,169,81,.2)">
+                        <i class="fas fa-certificate" style="color:#c8a951;font-size:16px"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size:16px;font-weight:700;color:#1a365d;margin:0">Sertifikasi & Legalitas</h4>
+                        <p style="font-size:11px;color:#94a3b8;margin:0">Pengakuan resmi dan standar mutu</p>
+                    </div>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px" class="profil-cert-grid">
+                    <!-- OJK -->
+                    <div style="display:flex;align-items:center;gap:10px;padding:14px;background:linear-gradient(135deg,rgba(30,136,229,.04),rgba(30,136,229,.01));border-radius:12px;border:1px solid rgba(30,136,229,.1);transition:all .3s" onmouseover="this.style.borderColor='rgba(30,136,229,.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(30,136,229,.1)';this.style.transform='translateY(0)'">
+                        <div style="width:38px;height:38px;min-width:38px;border-radius:10px;background:linear-gradient(135deg,#e3f2fd,#bbdefb);display:flex;align-items:center;justify-content:center">
+                            <i class="fas fa-shield-halved" style="color:#1565c0;font-size:14px"></i>
+                        </div>
+                        <div>
+                            <div style="font-size:12px;font-weight:700;color:#1a365d">Terdaftar OJK</div>
+                            <div style="font-size:10px;color:#94a3b8">Diawasi resmi</div>
+                        </div>
+                    </div>
+                    <!-- LPS -->
+                    <div style="display:flex;align-items:center;gap:10px;padding:14px;background:linear-gradient(135deg,rgba(46,125,50,.04),rgba(46,125,50,.01));border-radius:12px;border:1px solid rgba(46,125,50,.1);transition:all .3s" onmouseover="this.style.borderColor='rgba(46,125,50,.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(46,125,50,.1)';this.style.transform='translateY(0)'">
+                        <div style="width:38px;height:38px;min-width:38px;border-radius:10px;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);display:flex;align-items:center;justify-content:center">
+                            <i class="fas fa-shield-alt" style="color:#2e7d32;font-size:14px"></i>
+                        </div>
+                        <div>
+                            <div style="font-size:12px;font-weight:700;color:#1a365d">Anggota LPS</div>
+                            <div style="font-size:10px;color:#94a3b8">Dijamin Rp 2 M</div>
+                        </div>
+                    </div>
+                    <!-- Rating -->
+                    <div style="display:flex;align-items:center;gap:10px;padding:14px;background:linear-gradient(135deg,rgba(200,169,81,.06),rgba(200,169,81,.02));border-radius:12px;border:1px solid rgba(200,169,81,.15);transition:all .3s" onmouseover="this.style.borderColor='rgba(200,169,81,.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(200,169,81,.15)';this.style.transform='translateY(0)'">
+                        <div style="width:38px;height:38px;min-width:38px;border-radius:10px;background:linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05));display:flex;align-items:center;justify-content:center">
+                            <i class="fas fa-star" style="color:#c8a951;font-size:14px"></i>
+                        </div>
+                        <div>
+                            <div style="font-size:12px;font-weight:700;color:#1a365d">Rating AAA</div>
+                            <div style="font-size:10px;color:#94a3b8">Pefindo Rating</div>
+                        </div>
+                    </div>
+                    <!-- ISO -->
+                    <div style="display:flex;align-items:center;gap:10px;padding:14px;background:linear-gradient(135deg,rgba(156,39,176,.04),rgba(156,39,176,.01));border-radius:12px;border:1px solid rgba(156,39,176,.1);transition:all .3s" onmouseover="this.style.borderColor='rgba(156,39,176,.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(156,39,176,.1)';this.style.transform='translateY(0)'">
+                        <div style="width:38px;height:38px;min-width:38px;border-radius:10px;background:linear-gradient(135deg,#f3e5f5,#e1bee7);display:flex;align-items:center;justify-content:center">
+                            <i class="fas fa-lock" style="color:#7b1fa2;font-size:14px"></i>
+                        </div>
+                        <div>
+                            <div style="font-size:12px;font-weight:700;color:#1a365d">ISO 27001</div>
+                            <div style="font-size:10px;color:#94a3b8">Keamanan Info</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Penghargaan -->
+            <div style="background:linear-gradient(135deg,#fffdf5,#fff9e6);border-radius:20px;padding:24px;border:1px solid rgba(200,169,81,.2);box-shadow:0 4px 25px rgba(200,169,81,.08)">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+                    <div style="width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#c8a951,#e0c76a);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(200,169,81,.3)">
+                        <i class="fas fa-trophy" style="color:#0a1f44;font-size:16px"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size:16px;font-weight:700;color:#1a365d;margin:0">Penghargaan Terbaru</h4>
+                        <p style="font-size:11px;color:#94a3b8;margin:0">Prestasi dan pencapaian</p>
+                    </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:10px">
+                    <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:#fff;border-radius:12px;border:1px solid rgba(200,169,81,.12)">
+                        <div style="width:36px;height:36px;min-width:36px;border-radius:50%;background:linear-gradient(135deg,#c8a951,#e0c76a);display:flex;align-items:center;justify-content:center">
+                            <span style="font-size:14px">🏆</span>
+                        </div>
+                        <div style="flex:1">
+                            <div style="font-size:12px;font-weight:700;color:#1a365d">Bank Terbaik 2026</div>
+                            <div style="font-size:10px;color:#94a3b8">Majalah Infobank — Kategori Bank BUKU 3</div>
+                        </div>
+                        <span style="padding:3px 10px;background:linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05));border-radius:20px;font-size:10px;font-weight:700;color:#c8a951;border:1px solid rgba(200,169,81,.2)">2026</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:#fff;border-radius:12px;border:1px solid rgba(200,169,81,.12)">
+                        <div style="width:36px;height:36px;min-width:36px;border-radius:50%;background:linear-gradient(135deg,#e3f2fd,#bbdefb);display:flex;align-items:center;justify-content:center">
+                            <span style="font-size:14px">🥇</span>
+                        </div>
+                        <div style="flex:1">
+                            <div style="font-size:12px;font-weight:700;color:#1a365d">Best Digital Banking</div>
+                            <div style="font-size:10px;color:#94a3b8">Indonesia Digital Finance Award</div>
+                        </div>
+                        <span style="padding:3px 10px;background:rgba(30,136,229,.08);border-radius:20px;font-size:10px;font-weight:700;color:#1565c0;border:1px solid rgba(30,136,229,.12)">2025</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:#fff;border-radius:12px;border:1px solid rgba(200,169,81,.12)">
+                        <div style="width:36px;height:36px;min-width:36px;border-radius:50%;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);display:flex;align-items:center;justify-content:center">
+                            <span style="font-size:14px">🌿</span>
+                        </div>
+                        <div style="flex:1">
+                            <div style="font-size:12px;font-weight:700;color:#1a365d">Best CSR Program</div>
+                            <div style="font-size:10px;color:#94a3b8">Kompas Sustainability Award</div>
+                        </div>
+                        <span style="padding:3px 10px;background:rgba(46,125,50,.08);border-radius:20px;font-size:10px;font-weight:700;color:#2e7d32;border:1px solid rgba(46,125,50,.12)">2025</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <style>
+        @media(max-width:768px){
+            .profil-hero-grid{grid-template-columns:1fr !important;text-align:center}
+            .profil-hero-logo{display:none !important}
+            .profil-stats-grid{grid-template-columns:repeat(2,1fr) !important}
+            .profil-content-grid{grid-template-columns:1fr !important}
+            .profil-cert-grid{grid-template-columns:1fr !important}
+        }
+    </style>
+</div>
+<!-- ═══════ AKHIR TAB PROFIL ═══════ -->
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- TAB 2: VISI & MISI (REDESIGNED)                               -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="about-content" id="tab-visi">
+
+    <!-- VISI SECTION -->
+    <div style="position:relative;background:linear-gradient(135deg,#0a1f44 0%,#1a3a6b 40%,#0d47a1 100%);border-radius:24px;padding:45px 40px;margin-bottom:30px;overflow:hidden;color:#fff;text-align:center" class="visi-hero">
+        <!-- Decorative -->
+        <div style="position:absolute;top:-80px;left:-80px;width:300px;height:300px;border:2px solid rgba(200,169,81,.06);border-radius:50%;pointer-events:none"></div>
+        <div style="position:absolute;bottom:-60px;right:-60px;width:250px;height:250px;border:1px solid rgba(200,169,81,.05);border-radius:50%;pointer-events:none"></div>
+        <div style="position:absolute;top:10px;left:10px;right:10px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,169,81,.4),transparent)"></div>
+        <div style="position:absolute;bottom:10px;left:10px;right:10px;height:2px;background:linear-gradient(90deg,transparent,rgba(200,169,81,.2),transparent)"></div>
+        <!-- Floating dots -->
+        <div style="position:absolute;top:20%;left:8%;width:6px;height:6px;background:rgba(200,169,81,.3);border-radius:50%;animation:gcFloat1 6s ease-in-out infinite"></div>
+        <div style="position:absolute;top:60%;right:10%;width:8px;height:8px;background:rgba(200,169,81,.2);border-radius:50%;animation:gcFloat2 8s ease-in-out infinite"></div>
+        <div style="position:absolute;bottom:25%;left:15%;width:5px;height:5px;background:rgba(30,136,229,.3);border-radius:50%;animation:gcFloat3 7s ease-in-out infinite"></div>
+
+        <div style="position:relative;z-index:2">
+            <!-- Badge -->
+            <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(200,169,81,.1);border:1px solid rgba(200,169,81,.25);padding:6px 20px;border-radius:50px;font-size:10px;font-weight:700;color:#e0c76a;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px">
+                <i class="fas fa-eye" style="font-size:10px"></i> Visi Perusahaan
+            </div>
+
+            <!-- Quote Icon -->
+            <div style="margin-bottom:16px">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" style="opacity:.2"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="#c8a951"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="#c8a951"/></svg>
+            </div>
+
+            <!-- Visi Text -->
+            <h3 style="font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,28px);font-weight:700;color:#fff;line-height:1.5;max-width:700px;margin:0 auto 20px">
+                Menjadi <span style="background:linear-gradient(135deg,#c8a951,#e0c76a,#f5e08a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">bank nasional terdepan</span> yang terpercaya, inovatif, dan berkontribusi nyata dalam mendorong pertumbuhan ekonomi Indonesia yang berkelanjutan.
+            </h3>
+
+            <!-- Pillars -->
+            <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:24px">
+                <div style="display:flex;align-items:center;gap:6px;padding:8px 18px;background:rgba(255,255,255,.06);border-radius:50px;border:1px solid rgba(200,169,81,.15)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a951" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:600">Terpercaya</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:8px 18px;background:rgba(255,255,255,.06);border-radius:50px;border:1px solid rgba(200,169,81,.15)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a951" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:600">Inovatif</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:8px 18px;background:rgba(255,255,255,.06);border-radius:50px;border:1px solid rgba(200,169,81,.15)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a951" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    <span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:600">Berkontribusi</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;padding:8px 18px;background:rgba(255,255,255,.06);border-radius:50px;border:1px solid rgba(200,169,81,.15)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a951" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <span style="font-size:12px;color:rgba(255,255,255,.8);font-weight:600">Berkelanjutan</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MISI SECTION -->
+    <div style="margin-bottom:0">
+        <!-- Section Label -->
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">
+            <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05));display:flex;align-items:center;justify-content:center;border:1px solid rgba(200,169,81,.2)">
+                <i class="fas fa-rocket" style="color:#c8a951;font-size:18px"></i>
+            </div>
+            <div>
+                <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#1a365d;margin:0">Misi Kami</h3>
+                <p style="font-size:12px;color:#94a3b8;margin:0">Langkah strategis untuk mewujudkan visi</p>
+            </div>
+        </div>
+
+        <!-- Misi Cards -->
+        <div style="display:grid;grid-template-columns:1fr;gap:14px" class="misi-cards-grid">
+            <!-- Misi 1 -->
+            <div style="display:flex;align-items:flex-start;gap:18px;padding:22px;background:#fff;border-radius:16px;box-shadow:0 3px 18px rgba(0,0,0,.05);border:1px solid rgba(0,0,0,.04);transition:all .4s" onmouseover="this.style.transform='translateX(6px)';this.style.boxShadow='0 8px 30px rgba(10,31,68,.1)';this.style.borderColor='rgba(200,169,81,.2)'" onmouseout="this.style.transform='translateX(0)';this.style.boxShadow='0 3px 18px rgba(0,0,0,.05)';this.style.borderColor='rgba(0,0,0,.04)'">
+                <div style="width:52px;height:52px;min-width:52px;border-radius:14px;background:linear-gradient(135deg,#e3f2fd,#bbdefb);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(21,101,192,.12);position:relative">
+                    <i class="fas fa-lightbulb" style="color:#1565c0;font-size:20px"></i>
+                    <div style="position:absolute;top:-4px;right:-4px;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#0a1f44,#1a3a6b);display:flex;align-items:center;justify-content:center;font-size:9px;color:#e0c76a;font-weight:800;border:2px solid #fff">1</div>
+                </div>
+                <div style="flex:1">
+                    <h4 style="font-size:15px;font-weight:700;color:#1a365d;margin:0 0 4px">Inovasi Produk & Layanan</h4>
+                    <p style="font-size:13px;color:#64748b;line-height:1.7;margin:0">Menyediakan produk dan layanan perbankan yang inovatif, aman, dan mudah diakses oleh seluruh lapisan masyarakat Indonesia.</p>
+                </div>
+            </div>
+            <!-- Misi 2 -->
+            <div style="display:flex;align-items:flex-start;gap:18px;padding:22px;background:#fff;border-radius:16px;box-shadow:0 3px 18px rgba(0,0,0,.05);border:1px solid rgba(0,0,0,.04);transition:all .4s" onmouseover="this.style.transform='translateX(6px)';this.style.boxShadow='0 8px 30px rgba(10,31,68,.1)';this.style.borderColor='rgba(200,169,81,.2)'" onmouseout="this.style.transform='translateX(0)';this.style.boxShadow='0 3px 18px rgba(0,0,0,.05)';this.style.borderColor='rgba(0,0,0,.04)'">
+                <div style="width:52px;height:52px;min-width:52px;border-radius:14px;background:linear-gradient(135deg,#fff3e0,#ffe0b2);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(230,81,0,.12);position:relative">
+                    <i class="fas fa-user-graduate" style="color:#e65100;font-size:20px"></i>
+                    <div style="position:absolute;top:-4px;right:-4px;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#0a1f44,#1a3a6b);display:flex;align-items:center;justify-content:center;font-size:9px;color:#e0c76a;font-weight:800;border:2px solid #fff">2</div>
+                </div>
+                <div style="flex:1">
+                    <h4 style="font-size:15px;font-weight:700;color:#1a365d;margin:0 0 4px">Pengembangan SDM Unggul</h4>
+                    <p style="font-size:13px;color:#64748b;line-height:1.7;margin:0">Mengembangkan sumber daya manusia yang profesional, berintegritas, dan memiliki kompetensi bertaraf internasional.</p>
+                </div>
+            </div>
+            <!-- Misi 3 -->
+            <div style="display:flex;align-items:flex-start;gap:18px;padding:22px;background:#fff;border-radius:16px;box-shadow:0 3px 18px rgba(0,0,0,.05);border:1px solid rgba(0,0,0,.04);transition:all .4s" onmouseover="this.style.transform='translateX(6px)';this.style.boxShadow='0 8px 30px rgba(10,31,68,.1)';this.style.borderColor='rgba(200,169,81,.2)'" onmouseout="this.style.transform='translateX(0)';this.style.boxShadow='0 3px 18px rgba(0,0,0,.05)';this.style.borderColor='rgba(0,0,0,.04)'">
+                <div style="width:52px;height:52px;min-width:52px;border-radius:14px;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(46,125,50,.12);position:relative">
+                    <i class="fas fa-balance-scale" style="color:#2e7d32;font-size:20px"></i>
+                    <div style="position:absolute;top:-4px;right:-4px;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#0a1f44,#1a3a6b);display:flex;align-items:center;justify-content:center;font-size:9px;color:#e0c76a;font-weight:800;border:2px solid #fff">3</div>
+                </div>
+                <div style="flex:1">
+                    <h4 style="font-size:15px;font-weight:700;color:#1a365d;margin:0 0 4px">Good Corporate Governance</h4>
+                    <p style="font-size:13px;color:#64748b;line-height:1.7;margin:0">Menerapkan prinsip tata kelola perusahaan yang baik secara konsisten di seluruh lini operasional.</p>
+                </div>
+            </div>
+            <!-- Misi 4 -->
+            <div style="display:flex;align-items:flex-start;gap:18px;padding:22px;background:#fff;border-radius:16px;box-shadow:0 3px 18px rgba(0,0,0,.05);border:1px solid rgba(0,0,0,.04);transition:all .4s" onmouseover="this.style.transform='translateX(6px)';this.style.boxShadow='0 8px 30px rgba(10,31,68,.1)';this.style.borderColor='rgba(200,169,81,.2)'" onmouseout="this.style.transform='translateX(0)';this.style.boxShadow='0 3px 18px rgba(0,0,0,.05)';this.style.borderColor='rgba(0,0,0,.04)'">
+                <div style="width:52px;height:52px;min-width:52px;border-radius:14px;background:linear-gradient(135deg,rgba(200,169,81,.12),rgba(200,169,81,.04));display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(200,169,81,.15);position:relative">
+                    <i class="fas fa-chart-line" style="color:#c8a951;font-size:20px"></i>
+                    <div style="position:absolute;top:-4px;right:-4px;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#0a1f44,#1a3a6b);display:flex;align-items:center;justify-content:center;font-size:9px;color:#e0c76a;font-weight:800;border:2px solid #fff">4</div>
+                </div>
+                <div style="flex:1">
+                    <h4 style="font-size:15px;font-weight:700;color:#1a365d;margin:0 0 4px">Nilai Tambah Pemegang Saham</h4>
+                    <p style="font-size:13px;color:#64748b;line-height:1.7;margin:0">Memberikan nilai tambah optimal bagi pemegang saham melalui pertumbuhan bisnis yang sehat dan berkelanjutan.</p>
+                </div>
+            </div>
+            <!-- Misi 5 -->
+            <div style="display:flex;align-items:flex-start;gap:18px;padding:22px;background:#fff;border-radius:16px;box-shadow:0 3px 18px rgba(0,0,0,.05);border:1px solid rgba(0,0,0,.04);transition:all .4s" onmouseover="this.style.transform='translateX(6px)';this.style.boxShadow='0 8px 30px rgba(10,31,68,.1)';this.style.borderColor='rgba(200,169,81,.2)'" onmouseout="this.style.transform='translateX(0)';this.style.boxShadow='0 3px 18px rgba(0,0,0,.05)';this.style.borderColor='rgba(0,0,0,.04)'">
+                <div style="width:52px;height:52px;min-width:52px;border-radius:14px;background:linear-gradient(135deg,#f3e5f5,#e1bee7);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(156,39,176,.12);position:relative">
+                    <i class="fas fa-hands-helping" style="color:#7b1fa2;font-size:20px"></i>
+                    <div style="position:absolute;top:-4px;right:-4px;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#0a1f44,#1a3a6b);display:flex;align-items:center;justify-content:center;font-size:9px;color:#e0c76a;font-weight:800;border:2px solid #fff">5</div>
+                </div>
+                <div style="flex:1">
+                    <h4 style="font-size:15px;font-weight:700;color:#1a365d;margin:0 0 4px">Keuangan Inklusif & CSR</h4>
+                    <p style="font-size:13px;color:#64748b;line-height:1.7;margin:0">Berperan aktif dalam memperluas akses keuangan inklusif dan menjalankan program tanggung jawab sosial perusahaan.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @media(max-width:768px){
+            .visi-hero{padding:30px 20px !important}
+        }
+    </style>
+</div>
+<!-- ═══════ AKHIR TAB VISI & MISI ═══════ -->
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- TAB 3: BUDAYA (REDESIGNED)                                    -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="about-content" id="tab-budaya">
+
+    <!-- Header -->
+    <div style="text-align:center;margin-bottom:30px">
+        <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(200,169,81,.1),rgba(10,31,68,.04));padding:6px 20px;border-radius:50px;font-size:10px;font-weight:700;color:#0a1f44;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(200,169,81,.2);margin-bottom:10px">
+            <i class="fas fa-heart" style="color:#c8a951;font-size:9px"></i> Core Values
+        </div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#1a365d;margin:0 0 6px">Budaya Perusahaan</h3>
+        <p style="font-size:13px;color:#94a3b8;margin:0;line-height:1.6;max-width:500px;margin-left:auto;margin-right:auto">Empat nilai fundamental yang menjadi fondasi dalam setiap langkah dan keputusan BANK DAMARA</p>
+    </div>
+
+    <!-- Budaya Cards -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px" class="budaya-grid-v2">
+
+        <!-- 1: Integritas -->
+        <div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.04);transition:all .5s cubic-bezier(.25,.46,.45,.94);position:relative" onmouseover="this.style.transform='translateY(-8px)';this.style.boxShadow='0 16px 50px rgba(21,101,192,.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 25px rgba(0,0,0,.06)'">
+            <!-- Top gradient bar -->
+            <div style="height:4px;background:linear-gradient(90deg,#0a1f44,#1565c0,#42a5f5)"></div>
+            <div style="padding:28px 24px">
+                <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+                    <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#e3f2fd,#bbdefb);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(21,101,192,.12);position:relative">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                        <!-- Number badge -->
+                        <div style="position:absolute;top:-5px;right:-5px;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#0a1f44,#1a3a6b);display:flex;align-items:center;justify-content:center;font-size:10px;color:#e0c76a;font-weight:800;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.15)">1</div>
+                    </div>
+                    <div>
+                        <h4 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1a365d;margin:0">Integritas</h4>
+                        <p style="font-size:11px;color:#1565c0;font-weight:600;margin:2px 0 0;letter-spacing:.5px">INTEGRITY</p>
+                    </div>
+                </div>
+                <p style="font-size:13px;color:#475569;line-height:1.8;margin:0 0 16px">Menjunjung tinggi kejujuran, transparansi, dan etika dalam setiap tindakan. Kami percaya bahwa kepercayaan dibangun di atas fondasi integritas yang kokoh.</p>
+                <!-- Keywords -->
+                <div style="display:flex;flex-wrap:wrap;gap:6px">
+                    <span style="padding:4px 12px;background:rgba(21,101,192,.06);color:#1565c0;border-radius:20px;font-size:10px;font-weight:600;border:1px solid rgba(21,101,192,.1)">Jujur</span>
+                    <span style="padding:4px 12px;background:rgba(21,101,192,.06);color:#1565c0;border-radius:20px;font-size:10px;font-weight:600;border:1px solid rgba(21,101,192,.1)">Transparan</span>
+                    <span style="padding:4px 12px;background:rgba(21,101,192,.06);color:#1565c0;border-radius:20px;font-size:10px;font-weight:600;border:1px solid rgba(21,101,192,.1)">Etis</span>
+                    <span style="padding:4px 12px;background:rgba(21,101,192,.06);color:#1565c0;border-radius:20px;font-size:10px;font-weight:600;border:1px solid rgba(21,101,192,.1)">Akuntabel</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2: Inovasi -->
+        <div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.04);transition:all .5s cubic-bezier(.25,.46,.45,.94);position:relative" onmouseover="this.style.transform='translateY(-8px)';this.style.boxShadow='0 16px 50px rgba(230,81,0,.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 25px rgba(0,0,0,.06)'">
+            <div style="height:4px;background:linear-gradient(90deg,#e65100,#ff9800,#ffb74d)"></div>
+            <div style="padding:28px 24px">
+                <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+                    <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#fff3e0,#ffe0b2);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(230,81,0,.12);position:relative">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 18h6"/><path d="M10 22h4"/>
+                            <path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/>
+                        </svg>
+                        <div style="position:absolute;top:-5px;right:-5px;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#e65100,#ff9800);display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:800;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.15)">2</div>
+                    </div>
+                    <div>
+                        <h4 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1a365d;margin:0">Inovasi</h4>
+                        <p style="font-size:11px;color:#e65100;font-weight:600;margin:2px 0 0;letter-spacing:.5px">INNOVATION</p>
+                    </div>
+                </div>
+                <p style="font-size:13px;color:#475569;line-height:1.8;margin:0 0 16px">Terus berinovasi dan beradaptasi dengan perkembangan teknologi untuk menghadirkan solusi perbankan yang relevan dan memudahkan nasabah.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:6px">
+                    <span style="padding:4px 12px;background:rgba(230,81,0,.06);color:#e65100;border-radius:20px;font-size:10px;font-weight:600;border:1px solid rgba(230,81,0,.1)">Kreatif</span>
+                    <span style="padding:4px 12px;background:rgba(230,81,0,.06);color:#e65100;border-radius:20px;font-size:10px;font-weight:600;border:1px solid rgba(230,81,0,.1)">Adaptif</span>
+                    <span style="padding:4px 12px;background:rgba(230,81,0,.06);color:#e65100;border-radius:20px;font-size:10px;font-weight:600;border:1px solid rgba(230,81,0,.1)">Digital</span>
+                    <span style="padding:4px 12px;background:rgba(230,81,0,.06);color:#e65100;border-radius:20px;font-size:10px;font-weight:600;border:1px solid rgba(230,81,0,.1)">Futuristik</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3: Kolaborasi -->
+        <div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.04);transition:all .5s cubic-bezier(.25,.46,.45,.94);position:relative" onmouseover="this.style.transform='translateY(-8px)';this.style.boxShadow='0 16px 50px rgba(46,125,50,.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 25px rgba(0,0,0,.06)'">
+            <div style="height:4px;background:linear-gradient(90deg,#2e7d32,#4caf50,#81c784)"></div>
+            <div style="padding:28px 24px">
+                <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+                    <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(46,125,50,.12);position:relative">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        <div style="position:absolute;top:-5px;right:-5px;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#2e7d32,#4caf50);display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:800;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.15)">3</div>
+                    </div>
+                    <div>
+                        <h4 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1a365d;margin:0">Kolaborasi</h4>
+                        <p style="font-size:11px;color:#2e7d32;font-weight:600;margin:2px 0 0;letter-spacing:.5px">COLLABORATION</p>
+                    </div>
+                </div>
+                <p style="font-size:13px;color:#475569;line-height:1.8;margin:0 0 16px">Membangun sinergi dan kerja sama yang solid antar tim, mitra bisnis, dan pemangku kepentingan untuk mencapai tujuan bersama.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:6px">
+                    <span style="padding:4px 12px;background:rgba(46,125,50,.06);color:#2e7d32;border-radius:20px;font-size:10px;font-weight:600;border:1px solid rgba(46,125,50,.1)">Sinergi</span>
+                    <span style="padding:4px 12px;background:rgba(46,125,50,.06);color:#2e7d32;border-radius:20px;font-size:10px;font-weight:600;border:1px solid rgba(46,125,50,.1)">Teamwork</span>
+                    <span style="padding:4px 12px;background:rgba(46,125,50,.06);color:#2e7d32;border-radius:20px;font-size:10px;font-weight:600;border:1px solid rgba(46,125,50,.1)">Solidaritas</span>
+                    <span style="padding:4px 12px;background:rgba(46,125,50,.06);color:#2e7d32;border-radius:20px;font-size:10px;font-weight:600;border:1px solid rgba(46,125,50,.1)">Partnership</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4: Keunggulan -->
+        <div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.04);transition:all .5s cubic-bezier(.25,.46,.45,.94);position:relative" onmouseover="this.style.transform='translateY(-8px)';this.style.boxShadow='0 16px 50px rgba(156,39,176,.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 25px rgba(0,0,0,.06)'">
+            <div style="height:4px;background:linear-gradient(90deg,#7b1fa2,#ab47bc,#ce93d8)"></div>
+            <div style="padding:28px 24px">
+                <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+                    <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#f3e5f5,#e1bee7);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(156,39,176,.12);position:relative">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7b1fa2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        <div style="position:absolute;top:-5px;right:-5px;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#7b1fa2,#ab47bc);display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:800;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.15)">4</div>
+                    </div>
+                    <div>
+                        <h4 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1a365d;margin:0">Keunggulan</h4>
+                        <p style="font-size:11px;color:#7b1fa2;font-weight:600;margin:2px 0 0;letter-spacing:.5px">EXCELLENCE</p>
+                    </div>
+                </div>
+                <p style="font-size:13px;color:#475569;line-height:1.8;margin:0 0 16px">Berkomitmen pada standar kualitas tertinggi dalam setiap layanan dan produk yang kami hadirkan untuk memberikan pengalaman terbaik.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:6px">
+                    <span style="padding:4px 12px;background:rgba(156,39,176,.06);color:#7b1fa2;border-radius:20px;font-size:10px;font-weight:600;border:1px solid rgba(156,39,176,.1)">Berkualitas</span>
+                    <span style="padding:4px 12px;background:rgba(156,39,176,.06);color:#7b1fa2;border-radius:20px;font-size:10px;font-weight:600;border:1px solid rgba(156,39,176,.1)">Profesional</span>
+                    <span style="padding:4px 12px;background:rgba(156,39,176,.06);color:#7b1fa2;border-radius:20px;font-size:10px;font-weight:600;border:1px solid rgba(156,39,176,.1)">Terdepan</span>
+                    <span style="padding:4px 12px;background:rgba(156,39,176,.06);color:#7b1fa2;border-radius:20px;font-size:10px;font-weight:600;border:1px solid rgba(156,39,176,.1)">Best in Class</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Quote Footer -->
+    <div style="margin-top:24px;background:linear-gradient(135deg,rgba(10,31,68,.03),rgba(200,169,81,.05));border-radius:16px;padding:22px 28px;border:1px solid rgba(200,169,81,.12);text-align:center">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="opacity:.15;margin-bottom:8px"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="#c8a951"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="#c8a951"/></svg>
+        <p style="font-family:'Playfair Display',serif;font-size:15px;color:#1a365d;font-style:italic;line-height:1.6;margin:0 0 6px;font-weight:600">"Budaya bukan sekadar slogan di dinding, melainkan DNA yang hidup dalam setiap napas organisasi."</p>
+        <p style="font-size:11px;color:#94a3b8;margin:0;font-weight:600;letter-spacing:.5px">— Filosofi BANK DAMARA</p>
+    </div>
+
+    <style>
+        @media(max-width:768px){
+            .budaya-grid-v2{grid-template-columns:1fr !important}
+        }
+    </style>
+</div>
+<!-- ═══════ AKHIR TAB BUDAYA ═══════ -->
 
 <!-- ===== PENGGANTI TAB MANAJEMEN - LAYOUT SIDEBAR (KOMISARIS FIRST) ===== -->
 <div class="about-content" id="tab-manajemen">
