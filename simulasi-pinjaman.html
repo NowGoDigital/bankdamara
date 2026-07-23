@@ -79,11 +79,9 @@ header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.85);backd
 .container{max-width:1400px;margin:0 auto;padding:0 2rem 4rem}
 .sim-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;align-items:start}
 
-/* ===== PERKECIL GLASS CARD ===== */
 .glass{background:rgba(255,255,255,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.7);border-radius:20px;box-shadow:var(--shadow);padding:1.5rem;transition:all .3s}
 .glass:hover{box-shadow:var(--shadow-hover)}
 
-/* ===== PERKECIL SECTION HEAD ===== */
 .section-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
 .section-head-icon{width:40px;height:40px;background:var(--blue-gradient);border-radius:12px;display:grid;place-items:center;color:#fff;font-size:1rem;box-shadow:0 4px 15px rgba(37,99,235,.35)}
 .section-head h2{font-family:'Poppins',sans-serif;font-size:1.2rem;color:var(--primary-dark);font-weight:700}
@@ -146,10 +144,8 @@ header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.85);backd
 
 .result-panel{position:sticky;top:100px}
 
-/* ===== PERKECIL SUMMARY GRID ===== */
 .summary-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin-bottom:1rem}
 
-/* ===== PERKECIL SUMMARY CARD ===== */
 .summary-card{padding:.85rem 1rem;background:linear-gradient(135deg,#fff,#f8fafc);border:1px solid var(--border);border-radius:12px;position:relative;overflow:hidden;transition:all .3s}
 .summary-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
 .summary-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--blue-gradient)}
@@ -158,12 +154,12 @@ header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.85);backd
 .summary-card.highlight .sc-label{color:rgba(255,255,255,.85)}
 .summary-card.highlight .sc-value{color:#93c5fd}
 
-/* ===== PERKECIL LABEL & VALUE ===== */
 .sc-label{font-size:.72rem;color:var(--text-light);margin-bottom:.15rem;display:flex;align-items:center;gap:.35rem;font-weight:500}
 .sc-label i{color:var(--accent);font-size:.78rem}
-.sc-value{font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:700;color:var(--primary-dark);margin-top:.15rem;letter-spacing:-.3px}
+.sc-value{font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:700;color:var(--primary-dark);margin-top:.15rem;letter-spacing:-.3px;font-variant-numeric:tabular-nums}
 .summary-card.highlight .sc-value{font-size:1.25rem;color:#bfdbfe}
 
+/* ===== TABEL AMORTISASI - RAPI & LURUS ===== */
 .table-wrap{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:1rem}
 .table-head{padding:.85rem 1.15rem;background:var(--dark-gradient);color:#fff;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
 .table-head h4{font-size:.95rem;display:flex;align-items:center;gap:.5rem;font-family:'Poppins',sans-serif;font-weight:600}
@@ -174,16 +170,88 @@ header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.85);backd
 .table-scroll{max-height:400px;overflow-y:auto}
 .table-scroll::-webkit-scrollbar{width:6px}
 .table-scroll::-webkit-scrollbar-thumb{background:var(--accent);border-radius:10px}
-table{width:100%;border-collapse:collapse;font-size:.85rem}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:.85rem;
+  font-variant-numeric:tabular-nums;
+  font-feature-settings:'tnum';
+}
 thead{background:#f8fafc;position:sticky;top:0;z-index:2}
-th{padding:.65rem .9rem;text-align:left;font-weight:700;color:var(--primary-dark);font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid var(--border);font-family:'Poppins',sans-serif}
-td{padding:.65rem .9rem;border-bottom:1px solid var(--border);color:var(--text)}
+th{
+  padding:.7rem 1rem;
+  text-align:left;
+  font-weight:700;
+  color:var(--primary-dark);
+  font-size:.72rem;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  border-bottom:2px solid var(--border);
+  font-family:'Poppins',sans-serif;
+  white-space:nowrap;
+}
+th.num{
+  text-align:right;
+  font-variant-numeric:tabular-nums;
+}
+td{
+  padding:.65rem 1rem;
+  border-bottom:1px solid var(--border);
+  color:var(--text);
+  vertical-align:middle;
+}
 tbody tr{transition:background .2s}
-tbody tr:hover{background:#f0f7ff}
-td.num{font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;text-align:right;letter-spacing:-.2px}
+tbody tr:nth-child(even){background:#f8fafc}
+tbody tr:hover{background:#e0edff}
+
+/* Kolom Bulan */
+td.bln{
+  text-align:center;
+  font-weight:700;
+  color:var(--primary-dark);
+  font-family:'DM Sans',sans-serif;
+  width:50px;
+}
+td.bln .bln-badge{
+  display:inline-block;
+  min-width:28px;
+  padding:2px 8px;
+  background:linear-gradient(135deg,#dbeafe,#e0f2fe);
+  color:var(--primary);
+  border-radius:6px;
+  font-size:.78rem;
+}
+
+/* Kolom Angka - Rata Kanan Lurus */
+td.num{
+  font-family:'DM Sans',sans-serif;
+  font-size:.85rem;
+  font-weight:600;
+  text-align:right;
+  letter-spacing:-.2px;
+  font-variant-numeric:tabular-nums;
+  font-feature-settings:'tnum';
+  white-space:nowrap;
+}
 td.pokok{color:var(--primary)}
 td.bunga{color:var(--accent-cyan)}
-td.saldo{color:var(--text-light)}
+td.saldo{color:var(--text-light);font-weight:500}
+
+/* Baris Total (ditambahkan via JS) */
+tr.row-total{
+  background:var(--dark-gradient) !important;
+  color:#fff;
+  font-weight:700;
+}
+tr.row-total td{
+  color:#fff;
+  border-top:2px solid var(--accent);
+  padding-top:.85rem;
+  padding-bottom:.85rem;
+}
+tr.row-total td.num{color:#bfdbfe}
+tr.row-total td.bln .bln-badge{background:rgba(255,255,255,.2);color:#fff}
 
 .compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:1rem}
 .compare-card{padding:1.25rem;border-radius:18px;color:#fff;position:relative;overflow:hidden;transition:all .3s}
@@ -199,28 +267,118 @@ td.saldo{color:var(--text-light)}
 .cc-row{display:flex;justify-content:space-between;padding:.4rem 0;border-top:1px solid rgba(255,255,255,.18);font-size:.82rem;position:relative;z-index:1}
 .cc-row:last-child{border-top:2px solid rgba(255,255,255,.35);margin-top:.4rem;padding-top:.65rem}
 .cc-row .lbl{opacity:.9}
-.cc-row .val{font-family:'DM Sans',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:-.2px}
+.cc-row .val{font-family:'DM Sans',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:-.2px;font-variant-numeric:tabular-nums}
 .cc-row:last-child .val{font-size:.95rem;color:#bfdbfe}
 .cc-badge{position:absolute;top:.85rem;right:.85rem;background:rgba(255,255,255,.25);padding:.2rem .55rem;border-radius:50px;font-size:.62rem;font-weight:700;letter-spacing:.5px;z-index:1}
 
+/* ===== INFO SECTION - 1 BARIS 3 KOLOM COMPACT ===== */
 .info-section{margin-top:3rem}
-.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1.5rem}
-.info-card{background:rgba(255,255,255,.85);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.7);border-radius:18px;padding:1.75rem;transition:all .3s;position:relative;overflow:hidden}
-.info-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover)}
-.info-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.info-section .info-title{
+  text-align:center;
+  margin-bottom:1.5rem;
+}
+.info-section .info-title h2{
+  font-family:'Poppins',sans-serif;
+  font-size:1.6rem;
+  color:var(--primary-dark);
+  font-weight:700;
+  margin-bottom:.35rem;
+}
+.info-section .info-title p{
+  color:var(--text-light);
+  font-size:.88rem;
+  max-width:600px;
+  margin:0 auto;
+  line-height:1.6;
+}
+
+/* GRID 1 BARIS 3 KOLOM - tidak akan wrap */
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:1rem;
+  align-items:stretch;
+}
+
+.info-card{
+  background:rgba(255,255,255,.85);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:16px;
+  padding:1.25rem;
+  transition:all .3s;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.info-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.info-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
 .info-card.flat::before{background:linear-gradient(90deg,#2563eb,#1e40af)}
 .info-card.efektif::before{background:linear-gradient(90deg,#0891b2,#06b6d4)}
 .info-card.anuitas::before{background:linear-gradient(90deg,#7c3aed,#a855f7)}
-.ic-icon{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;color:#fff;font-size:1.35rem;margin-bottom:1.1rem}
+
+.ic-icon{
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-size:1.1rem;
+  margin-bottom:.85rem;
+  flex-shrink:0;
+}
 .info-card.flat .ic-icon{background:linear-gradient(135deg,#2563eb,#1e40af)}
 .info-card.efektif .ic-icon{background:linear-gradient(135deg,#0891b2,#06b6d4)}
 .info-card.anuitas .ic-icon{background:linear-gradient(135deg,#7c3aed,#a855f7)}
-.info-card h3{font-family:'Poppins',sans-serif;font-size:1.15rem;color:var(--primary-dark);margin-bottom:.65rem;font-weight:700}
-.info-card p{color:var(--text-light);font-size:.88rem;margin-bottom:.85rem;line-height:1.7}
-.info-card ul{list-style:none;font-size:.85rem;color:var(--text)}
-.info-card ul li{padding:.35rem 0;padding-left:1.5rem;position:relative;line-height:1.6}
-.info-card ul li::before{content:'✓';position:absolute;left:0;color:var(--success);font-weight:700}
-.formula{background:#f0f7ff;border-left:3px solid var(--accent);padding:.65rem .9rem;border-radius:8px;font-family:'DM Sans',monospace;font-size:.8rem;font-weight:600;color:var(--primary-dark);margin-top:.85rem;overflow-x:auto}
+
+.info-card h3{
+  font-family:'Poppins',sans-serif;
+  font-size:1rem;
+  color:var(--primary-dark);
+  margin-bottom:.4rem;
+  font-weight:700;
+}
+.info-card > p{
+  color:var(--text-light);
+  font-size:.8rem;
+  margin-bottom:.65rem;
+  line-height:1.55;
+}
+.info-card ul{
+  list-style:none;
+  font-size:.78rem;
+  color:var(--text);
+  margin-bottom:.65rem;
+  flex-grow:0;
+}
+.info-card ul li{
+  padding:.2rem 0 .2rem 1.25rem;
+  position:relative;
+  line-height:1.5;
+}
+.info-card ul li::before{
+  content:'✓';
+  position:absolute;
+  left:0;
+  color:var(--success);
+  font-weight:700;
+  font-size:.75rem;
+}
+.formula{
+  background:#f0f7ff;
+  border-left:3px solid var(--accent);
+  padding:.5rem .7rem;
+  border-radius:6px;
+  font-family:'DM Sans',monospace;
+  font-size:.7rem;
+  font-weight:600;
+  color:var(--primary-dark);
+  margin-top:auto;
+  overflow-x:auto;
+  white-space:nowrap;
+}
 
 .cta-section{margin-top:3rem;background:var(--dark-gradient);border-radius:26px;padding:2.5rem 2rem;text-align:center;color:#fff;position:relative;overflow:hidden}
 .cta-section::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="%2360a5fa" opacity="0.4"/><circle cx="80" cy="40" r="1.5" fill="%2393c5fd" opacity="0.3"/><circle cx="40" cy="70" r="1" fill="%2360a5fa" opacity="0.4"/><circle cx="90" cy="90" r="2" fill="%2306b6d4" opacity="0.3"/></svg>');opacity:.6}
@@ -248,7 +406,7 @@ footer{background:var(--primary-dark);color:#fff;padding:2.5rem 2rem 1.5rem;marg
   .sim-layout{grid-template-columns:1fr}
   .result-panel{position:static}
   .compare-grid{grid-template-columns:1fr}
-  .info-grid{grid-template-columns:1fr}
+  .info-grid{grid-template-columns:repeat(3, minmax(0, 1fr));gap:.75rem}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
@@ -258,12 +416,14 @@ footer{background:var(--primary-dark);color:#fff;padding:2.5rem 2rem 1.5rem;marg
   .method-tabs{grid-template-columns:repeat(2,1fr)}
   .summary-grid{grid-template-columns:1fr}
   .summary-card.highlight{grid-column:span 1}
+  .info-grid{grid-template-columns:1fr;gap:.75rem}
   .footer-grid{grid-template-columns:1fr}
   .glass{padding:1.25rem}
   .container{padding:0 1rem 3rem}
   table{font-size:.75rem}
-  th,td{padding:.5rem .4rem}
-  td.num{font-size:.75rem}
+  th,td{padding:.5rem .5rem}
+  td.num{font-size:.78rem}
+  td.bln{width:40px}
 }
 
 @media print{
@@ -272,6 +432,7 @@ footer{background:var(--primary-dark);color:#fff;padding:2.5rem 2rem 1.5rem;marg
   .glass{box-shadow:none;border:1px solid #ddd;page-break-inside:avoid}
   .result-panel{position:static}
   .sim-layout{grid-template-columns:1fr}
+  tr.row-total{background:#0c2461 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 
 .fade-up{opacity:0;transform:translateY(30px);transition:all .6s ease-out}
@@ -419,7 +580,6 @@ footer{background:var(--primary-dark);color:#fff;padding:2.5rem 2rem 1.5rem;marg
       </div>
 
       <div id="singleView">
-        <!-- CHARTS DIHAPUS — hanya summary cards + tabel -->
         <div class="summary-grid">
           <div class="summary-card highlight">
             <div class="sc-label"><i class="fas fa-hand-holding-dollar"></i> Cicilan per Bulan</div>
@@ -451,11 +611,11 @@ footer{background:var(--primary-dark);color:#fff;padding:2.5rem 2rem 1.5rem;marg
             <table id="tblAmort">
               <thead>
                 <tr>
-                  <th>Bln</th>
-                  <th style="text-align:right">Cicilan</th>
-                  <th style="text-align:right">Pokok</th>
-                  <th style="text-align:right">Bunga</th>
-                  <th style="text-align:right">Sisa Pokok</th>
+                  <th style="text-align:center">Bln</th>
+                  <th class="num">Cicilan</th>
+                  <th class="num">Pokok</th>
+                  <th class="num">Bunga</th>
+                  <th class="num">Sisa Pokok</th>
                 </tr>
               </thead>
               <tbody id="tblBody"></tbody>
@@ -470,50 +630,51 @@ footer{background:var(--primary-dark);color:#fff;padding:2.5rem 2rem 1.5rem;marg
     </div>
   </div>
 
+  <!-- INFO SECTION - 1 BARIS 3 KOLOM -->
   <section class="info-section fade-up">
-    <div class="section-head" style="justify-content:center;text-align:center;flex-direction:column;border:none;padding:0">
-      <h2 style="font-family:'Poppins',sans-serif;font-size:1.8rem;color:var(--primary-dark);font-weight:700">Pahami 3 Metode Bunga</h2>
-      <p style="color:var(--text-light);max-width:600px;margin:.5rem auto 0;line-height:1.7">Setiap metode punya karakteristik berbeda. Pilih yang paling sesuai dengan kemampuan finansial Anda.</p>
+    <div class="info-title">
+      <h2>Pahami 3 Metode Bunga</h2>
+      <p>Setiap metode punya karakteristik berbeda. Pilih yang paling sesuai dengan kemampuan finansial Anda.</p>
     </div>
 
     <div class="info-grid">
       <div class="info-card flat">
         <div class="ic-icon"><i class="fas fa-equals"></i></div>
         <h3>Bunga Flat</h3>
-        <p>Bunga dihitung dari <strong>pokok awal</strong> dan tetap selama masa pinjaman. Cicilan bulanan Anda selalu sama.</p>
+        <p>Bunga dihitung dari pokok awal dan tetap selama masa pinjaman.</p>
         <ul>
-          <li>Cicilan stabil setiap bulan</li>
-          <li>Mudah diprediksi & direncanakan</li>
-          <li>Cocok untuk pendapatan tetap</li>
+          <li>Cicilan stabil tiap bulan</li>
+          <li>Mudah diprediksi</li>
+          <li>Cocok pendapatan tetap</li>
           <li>Total bunga paling besar</li>
         </ul>
-        <div class="formula">Bunga = Pokok × Bunga% × Tahun</div>
+        <div class="formula">Bunga = Pokok × i% × Tahun</div>
       </div>
 
       <div class="info-card efektif">
         <div class="ic-icon"><i class="fas fa-arrow-trend-down"></i></div>
         <h3>Bunga Efektif</h3>
-        <p>Bunga dihitung dari <strong>sisa pokok</strong>. Cicilan menurun setiap bulan seiring berkurangnya pokok.</p>
+        <p>Bunga dihitung dari sisa pokok. Cicilan menurun setiap bulan.</p>
         <ul>
           <li>Total bunga paling kecil</li>
-          <li>Cicilan berat di awal, ringan di akhir</li>
-          <li>Cocok jika income meningkat</li>
+          <li>Berat di awal, ringan di akhir</li>
           <li>Lebih adil & transparan</li>
+          <li>Cocok income meningkat</li>
         </ul>
-        <div class="formula">Bunga = Sisa Pokok × (Bunga% ÷ 12)</div>
+        <div class="formula">Bunga = Sisa × (i% ÷ 12)</div>
       </div>
 
       <div class="info-card anuitas">
         <div class="ic-icon"><i class="fas fa-chart-line"></i></div>
         <h3>Bunga Anuitas</h3>
-        <p>Cicilan <strong>total tetap</strong>, tapi komposisi pokok dan bunga berubah setiap bulan. Metode paling umum.</p>
+        <p>Cicilan total tetap, komposisi pokok-bunga berubah tiap bulan.</p>
         <ul>
           <li>Cicilan tetap seperti flat</li>
-          <li>Total bunga lebih hemat dari flat</li>
-          <li>Standar perbankan internasional</li>
-          <li>Fleksibel untuk semua profil</li>
+          <li>Total bunga lebih hemat</li>
+          <li>Standar perbankan global</li>
+          <li>Fleksibel semua profil</li>
         </ul>
-        <div class="formula">PMT = P × i(1+i)^n / ((1+i)^n - 1)</div>
+        <div class="formula">PMT = P·i(1+i)ⁿ / ((1+i)ⁿ-1)</div>
       </div>
     </div>
   </section>
@@ -567,12 +728,6 @@ footer{background:var(--primary-dark);color:#fff;padding:2.5rem 2rem 1.5rem;marg
 
 <script>
 const fmt = n => 'Rp ' + Math.round(n).toLocaleString('id-ID');
-const fmtShort = n => {
-  if(n >= 1e9) return 'Rp ' + (n/1e9).toFixed(1) + 'M';
-  if(n >= 1e6) return 'Rp ' + (n/1e6).toFixed(1) + 'Jt';
-  if(n >= 1e3) return 'Rp ' + (n/1e3).toFixed(0) + 'Rb';
-  return fmt(n);
-};
 
 const inputJumlah = document.getElementById('inputJumlah');
 function formatRupiahInput(val){
@@ -677,17 +832,31 @@ function calcAnuitas(pokok, tenor, bungaTahun){
   return {cicilan:pmt, totalPokok:pokok, totalBunga, total:pokok+totalBunga, schedule};
 }
 
-function renderTable(schedule){
+/* RENDER TABEL - RATA KANAN & LURUS VERTIKAL */
+function renderTable(schedule, totalPokok, totalBunga){
   const tbody = document.getElementById('tblBody');
-  tbody.innerHTML = schedule.map(s => `
+  const rows = schedule.map(s => `
     <tr>
-      <td><strong>${s.bln}</strong></td>
+      <td class="bln"><span class="bln-badge">${s.bln}</span></td>
       <td class="num">${fmt(s.cicilan)}</td>
       <td class="num pokok">${fmt(s.pokok)}</td>
       <td class="num bunga">${fmt(s.bunga)}</td>
       <td class="num saldo">${fmt(s.sisa)}</td>
     </tr>
   `).join('');
+  
+  // Baris Total
+  const totalRow = `
+    <tr class="row-total">
+      <td class="bln"><span class="bln-badge">Σ</span></td>
+      <td class="num">${fmt(totalPokok + totalBunga)}</td>
+      <td class="num">${fmt(totalPokok)}</td>
+      <td class="num">${fmt(totalBunga)}</td>
+      <td class="num">—</td>
+    </tr>
+  `;
+  
+  tbody.innerHTML = rows + totalRow;
 }
 
 function renderCompare(pokok, tenor, bungaTahun){
@@ -776,7 +945,7 @@ function hitung(){
   document.getElementById('outBunga').textContent = fmt(res.totalBunga);
   document.getElementById('outTotal').textContent = fmt(res.total);
   
-  renderTable(res.schedule);
+  renderTable(res.schedule, res.totalPokok, res.totalBunga);
   window._lastResult = res;
 }
 
