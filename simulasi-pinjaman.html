@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simulasi Pinjaman - BANK DAMARA</title>
-<meta name="description" content="Simulasi pinjaman BANK DAMARA dengan perhitungan bunga Flat, Efektif, dan Anuitas. Hitung cicilan Anda secara akurat dan transparan.">
+<meta name="description" content="Simulasi pinjaman BANK DAMARA dengan perhitungan bunga Flat, Efektif, dan Anuitas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
@@ -18,22 +18,14 @@
   --accent-light:#60a5fa;
   --accent-cyan:#06b6d4;
   --blue-gradient:linear-gradient(135deg,#2563eb 0%,#0ea5e9 50%,#06b6d4 100%);
-  --blue-gradient-soft:linear-gradient(135deg,#3b82f6 0%,#60a5fa 50%,#93c5fd 100%);
   --dark-gradient:linear-gradient(135deg,#0c2461 0%,#1e40af 50%,#2563eb 100%);
   --bg-gradient:linear-gradient(135deg,#eff6ff 0%,#dbeafe 50%,#e0f2fe 100%);
-  --bg:#f0f7ff;
-  --card:#ffffff;
   --text:#0f172a;
   --text-light:#475569;
   --border:rgba(30,58,138,.1);
   --shadow:0 10px 40px rgba(12,36,97,.08);
   --shadow-hover:0 20px 60px rgba(12,36,97,.15);
   --success:#10b981;
-  --warning:#f59e0b;
-  --danger:#ef4444;
-  --flat:#2563eb;
-  --efektif:#0891b2;
-  --anuitas:#7c3aed;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -45,7 +37,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg-gradient);co
 .bg-animated::after{width:500px;height:500px;background:#06b6d4;bottom:-150px;left:-150px;animation-delay:-10s}
 @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(50px,50px) scale(1.1)}}
 
-header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all .3s}
+header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav-wrap{max-width:1400px;margin:0 auto;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
 .logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--primary-dark)}
 .logo-icon{width:45px;height:45px;background:var(--blue-gradient);border-radius:12px;display:grid;place-items:center;color:#fff;font-family:'Poppins',sans-serif;font-weight:800;font-size:1.1rem;box-shadow:0 4px 15px rgba(37,99,235,.4)}
@@ -65,88 +57,96 @@ header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.85);backd
 .btn-wa:hover{background:#1ebe5a;transform:translateY(-2px)}
 .menu-toggle{display:none;background:none;border:none;font-size:1.5rem;color:var(--primary-dark);cursor:pointer}
 
-.hero{padding:3rem 2rem 2rem;text-align:center;position:relative}
-.breadcrumb{display:flex;justify-content:center;gap:.5rem;font-size:.85rem;color:var(--text-light);margin-bottom:1rem;flex-wrap:wrap}
+.hero{padding:2.5rem 2rem 1.5rem;text-align:center;position:relative}
+.breadcrumb{display:flex;justify-content:center;gap:.5rem;font-size:.85rem;color:var(--text-light);margin-bottom:.75rem;flex-wrap:wrap}
 .breadcrumb a{color:var(--accent);text-decoration:none;font-weight:600}
-.breadcrumb a:hover{text-decoration:underline}
-.hero h1{font-family:'Poppins',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:var(--primary-dark);margin-bottom:.75rem;line-height:1.2}
+.hero h1{font-family:'Poppins',sans-serif;font-size:clamp(1.8rem,4.5vw,3rem);font-weight:700;color:var(--primary-dark);margin-bottom:.5rem;line-height:1.2}
 .hero h1 span{background:var(--blue-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{font-size:1.05rem;color:var(--text-light);max-width:700px;margin:0 auto;line-height:1.7}
-.hero-badges{display:flex;gap:1rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap}
-.hero-badge{display:flex;align-items:center;gap:.5rem;padding:.5rem 1rem;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:50px;font-size:.85rem;font-weight:600}
+.hero p{font-size:1rem;color:var(--text-light);max-width:700px;margin:0 auto;line-height:1.6}
+.hero-badges{display:flex;gap:.75rem;justify-content:center;margin-top:1rem;flex-wrap:wrap}
+.hero-badge{display:flex;align-items:center;gap:.4rem;padding:.4rem .85rem;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:50px;font-size:.8rem;font-weight:600}
 .hero-badge i{color:var(--accent)}
 
-.container{max-width:1400px;margin:0 auto;padding:0 2rem 4rem}
-.sim-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;align-items:start}
+.container{max-width:1400px;margin:0 auto;padding:0 2rem 3rem}
 
-.glass{background:rgba(255,255,255,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.7);border-radius:20px;box-shadow:var(--shadow);padding:1.5rem;transition:all .3s}
+/* ===== LAYOUT: FORM LEBIH KECIL, HASIL LEBIH BESAR ===== */
+.sim-layout{
+  display:grid;
+  grid-template-columns:0.85fr 1.55fr;
+  gap:1.5rem;
+  align-items:start;
+}
+
+/* ===== FORM CARD LEBIH COMPACT ===== */
+.glass{background:rgba(255,255,255,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.7);border-radius:20px;box-shadow:var(--shadow);padding:1.25rem;transition:all .3s}
 .glass:hover{box-shadow:var(--shadow-hover)}
 
-.section-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
-.section-head-icon{width:40px;height:40px;background:var(--blue-gradient);border-radius:12px;display:grid;place-items:center;color:#fff;font-size:1rem;box-shadow:0 4px 15px rgba(37,99,235,.35)}
-.section-head h2{font-family:'Poppins',sans-serif;font-size:1.2rem;color:var(--primary-dark);font-weight:700}
-.section-head p{font-size:.8rem;color:var(--text-light);margin-top:2px}
+.section-head{display:flex;align-items:center;gap:.65rem;margin-bottom:.85rem;padding-bottom:.65rem;border-bottom:1px solid var(--border)}
+.section-head-icon{width:36px;height:36px;background:var(--blue-gradient);border-radius:10px;display:grid;place-items:center;color:#fff;font-size:.9rem;box-shadow:0 4px 12px rgba(37,99,235,.35);flex-shrink:0}
+.section-head h2{font-family:'Poppins',sans-serif;font-size:1.05rem;color:var(--primary-dark);font-weight:700}
+.section-head p{font-size:.75rem;color:var(--text-light);margin-top:1px}
 
-.form-group{margin-bottom:1.25rem}
-.form-label{display:block;margin-bottom:.5rem;font-weight:600;font-size:.88rem;color:var(--primary-dark)}
-.form-label i{color:var(--accent);margin-right:.4rem}
-.form-hint{font-size:.75rem;color:var(--text-light);margin-top:.4rem;display:block}
+.form-group{margin-bottom:1rem}
+.form-label{display:block;margin-bottom:.4rem;font-weight:600;font-size:.82rem;color:var(--primary-dark)}
+.form-label i{color:var(--accent);margin-right:.3rem}
+.form-hint{font-size:.7rem;color:var(--text-light);margin-top:.3rem;display:block}
 
 .input-wrap{position:relative;display:flex;align-items:center}
-.input-wrap .prefix,.input-wrap .suffix{position:absolute;color:var(--text-light);font-weight:600;font-size:.95rem;pointer-events:none;display:flex;align-items:center;gap:.4rem}
-.input-wrap .prefix{left:1rem}
-.input-wrap .suffix{right:1rem}
-.input-wrap i.field-icon{color:var(--accent);font-size:1rem}
+.input-wrap .prefix,.input-wrap .suffix{position:absolute;color:var(--text-light);font-weight:600;font-size:.9rem;pointer-events:none;display:flex;align-items:center;gap:.3rem;z-index:2}
+.input-wrap .prefix{left:.85rem}
+.input-wrap .suffix{right:.85rem}
+.input-wrap i.field-icon{color:var(--accent);font-size:.95rem}
 
+/* ===== PERBAIKAN: padding-left diperbesar agar tidak bertumpuk ===== */
 .input-wrap input[type="text"],
 .input-wrap input[type="number"],
 .input-wrap select{
   width:100%;
-  padding:.85rem 1rem .85rem 3rem;
+  padding:.75rem 1rem .75rem 4.2rem;
   border:2px solid var(--border);
-  border-radius:12px;
-  font-size:.95rem;
+  border-radius:11px;
+  font-size:.92rem;
   font-family:'DM Sans','Plus Jakarta Sans',sans-serif;
   font-weight:500;
   background:#fff;
   transition:all .3s;
   color:var(--text);
 }
-.input-wrap input.with-suffix{padding-right:3rem}
-.input-wrap select{padding-left:3rem;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b82f6'><path d='M7 10l5 5 5-5z'/></svg>");background-repeat:no-repeat;background-position:right 1rem center;background-size:20px}
+.input-wrap input.with-suffix{padding-right:2.75rem}
+.input-wrap select{padding-left:3rem;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b82f6'><path d='M7 10l5 5 5-5z'/></svg>");background-repeat:no-repeat;background-position:right .85rem center;background-size:18px}
 
 .input-wrap input:focus,.input-wrap select:focus{
   outline:none;
   border-color:var(--accent);
-  box-shadow:0 0 0 4px rgba(59,130,246,.15);
+  box-shadow:0 0 0 3px rgba(59,130,246,.15);
 }
 .input-wrap input::placeholder{color:#94a3b8;font-weight:400}
 
-.tenor-info{display:inline-flex;align-items:center;gap:.4rem;margin-top:.4rem;padding:.3rem .7rem;background:linear-gradient(135deg,#dbeafe,#e0f2fe);border-radius:50px;font-size:.78rem;font-weight:600;color:var(--primary)}
-.tenor-info i{color:var(--accent)}
+.tenor-info{display:inline-flex;align-items:center;gap:.35rem;margin-top:.35rem;padding:.25rem .6rem;background:linear-gradient(135deg,#dbeafe,#e0f2fe);border-radius:50px;font-size:.72rem;font-weight:600;color:var(--primary)}
+.tenor-info i{color:var(--accent);font-size:.7rem}
 
-.method-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-bottom:1.25rem}
-.method-tab{padding:.8rem .4rem;background:#fff;border:2px solid var(--border);border-radius:12px;cursor:pointer;text-align:center;transition:all .3s;font-family:inherit}
+.method-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:1rem}
+.method-tab{padding:.7rem .3rem;background:#fff;border:2px solid var(--border);border-radius:10px;cursor:pointer;text-align:center;transition:all .3s;font-family:inherit}
 .method-tab:hover{border-color:var(--accent);transform:translateY(-2px)}
-.method-tab.active{background:var(--dark-gradient);color:#fff;border-color:var(--primary);box-shadow:0 8px 25px rgba(30,58,138,.3)}
-.method-tab i{font-size:1.15rem;margin-bottom:.2rem;display:block}
+.method-tab.active{background:var(--dark-gradient);color:#fff;border-color:var(--primary);box-shadow:0 6px 20px rgba(30,58,138,.3)}
+.method-tab i{font-size:1rem;margin-bottom:.15rem;display:block}
 .method-tab.active i{color:#93c5fd}
-.method-tab .m-name{font-weight:700;font-size:.8rem;display:block}
-.method-tab .m-desc{font-size:.65rem;opacity:.75;margin-top:2px;display:block}
+.method-tab .m-name{font-weight:700;font-size:.75rem;display:block}
+.method-tab .m-desc{font-size:.62rem;opacity:.75;margin-top:1px;display:block}
 .method-tab[data-method="flat"].active{background:linear-gradient(135deg,#2563eb,#1e40af)}
 .method-tab[data-method="efektif"].active{background:linear-gradient(135deg,#0891b2,#0e7490)}
 .method-tab[data-method="anuitas"].active{background:linear-gradient(135deg,#7c3aed,#5b21b6)}
 .method-tab[data-method="compare"].active{background:var(--dark-gradient)}
 
-.btn-calc{width:100%;padding:.95rem;background:var(--blue-gradient);color:#fff;border:none;border-radius:12px;font-size:.95rem;font-weight:700;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:.5rem;font-family:inherit;box-shadow:0 8px 25px rgba(37,99,235,.35)}
-.btn-calc:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(37,99,235,.5)}
+.btn-calc{width:100%;padding:.85rem;background:var(--blue-gradient);color:#fff;border:none;border-radius:11px;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:.5rem;font-family:inherit;box-shadow:0 6px 20px rgba(37,99,235,.35)}
+.btn-calc:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,99,235,.5)}
 .btn-calc:active{transform:translateY(0)}
 
-.result-panel{position:sticky;top:100px}
+.result-panel{position:sticky;top:90px}
 
 .summary-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin-bottom:1rem}
 
-.summary-card{padding:.85rem 1rem;background:linear-gradient(135deg,#fff,#f8fafc);border:1px solid var(--border);border-radius:12px;position:relative;overflow:hidden;transition:all .3s}
+.summary-card{padding:.8rem .95rem;background:linear-gradient(135deg,#fff,#f8fafc);border:1px solid var(--border);border-radius:12px;position:relative;overflow:hidden;transition:all .3s}
 .summary-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
 .summary-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--blue-gradient)}
 .summary-card.highlight{grid-column:span 2;background:var(--dark-gradient);color:#fff;border:none}
@@ -156,134 +156,66 @@ header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.85);backd
 
 .sc-label{font-size:.72rem;color:var(--text-light);margin-bottom:.15rem;display:flex;align-items:center;gap:.35rem;font-weight:500}
 .sc-label i{color:var(--accent);font-size:.78rem}
-.sc-value{font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:700;color:var(--primary-dark);margin-top:.15rem;letter-spacing:-.3px;font-variant-numeric:tabular-nums}
-.summary-card.highlight .sc-value{font-size:1.25rem;color:#bfdbfe}
+.sc-value{font-family:'DM Sans',sans-serif;font-size:1.15rem;font-weight:700;color:var(--primary-dark);margin-top:.15rem;letter-spacing:-.3px;font-variant-numeric:tabular-nums}
+.summary-card.highlight .sc-value{font-size:1.4rem;color:#bfdbfe}
 
-/* ===== TABEL AMORTISASI - RAPI & LURUS ===== */
 .table-wrap{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:1rem}
-.table-head{padding:.85rem 1.15rem;background:var(--dark-gradient);color:#fff;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
-.table-head h4{font-size:.95rem;display:flex;align-items:center;gap:.5rem;font-family:'Poppins',sans-serif;font-weight:600}
+.table-head{padding:.75rem 1rem;background:var(--dark-gradient);color:#fff;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.table-head h4{font-size:.9rem;display:flex;align-items:center;gap:.4rem;font-family:'Poppins',sans-serif;font-weight:600}
 .table-head h4 i{color:#93c5fd}
-.table-actions{display:flex;gap:.5rem}
-.btn-sm{padding:.35rem .8rem;font-size:.78rem;border-radius:50px;background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.2);cursor:pointer;transition:all .3s;font-family:inherit;display:inline-flex;align-items:center;gap:.3rem;font-weight:500}
+.table-actions{display:flex;gap:.4rem}
+.btn-sm{padding:.3rem .7rem;font-size:.72rem;border-radius:50px;background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.2);cursor:pointer;transition:all .3s;font-family:inherit;display:inline-flex;align-items:center;gap:.3rem;font-weight:500}
 .btn-sm:hover{background:rgba(255,255,255,.25)}
-.table-scroll{max-height:400px;overflow-y:auto}
+.table-scroll{max-height:450px;overflow-y:auto}
 .table-scroll::-webkit-scrollbar{width:6px}
 .table-scroll::-webkit-scrollbar-thumb{background:var(--accent);border-radius:10px}
 
-table{
-  width:100%;
-  border-collapse:collapse;
-  font-size:.85rem;
-  font-variant-numeric:tabular-nums;
-  font-feature-settings:'tnum';
-}
+table{width:100%;border-collapse:collapse;font-size:.83rem;font-variant-numeric:tabular-nums;font-feature-settings:'tnum'}
 thead{background:#f8fafc;position:sticky;top:0;z-index:2}
-th{
-  padding:.7rem 1rem;
-  text-align:left;
-  font-weight:700;
-  color:var(--primary-dark);
-  font-size:.72rem;
-  text-transform:uppercase;
-  letter-spacing:.5px;
-  border-bottom:2px solid var(--border);
-  font-family:'Poppins',sans-serif;
-  white-space:nowrap;
-}
-th.num{
-  text-align:right;
-  font-variant-numeric:tabular-nums;
-}
-td{
-  padding:.65rem 1rem;
-  border-bottom:1px solid var(--border);
-  color:var(--text);
-  vertical-align:middle;
-}
+th{padding:.65rem .85rem;text-align:left;font-weight:700;color:var(--primary-dark);font-size:.7rem;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid var(--border);font-family:'Poppins',sans-serif;white-space:nowrap}
+th.num{text-align:right;font-variant-numeric:tabular-nums}
+td{padding:.6rem .85rem;border-bottom:1px solid var(--border);color:var(--text);vertical-align:middle}
 tbody tr{transition:background .2s}
 tbody tr:nth-child(even){background:#f8fafc}
 tbody tr:hover{background:#e0edff}
 
-/* Kolom Bulan */
-td.bln{
-  text-align:center;
-  font-weight:700;
-  color:var(--primary-dark);
-  font-family:'DM Sans',sans-serif;
-  width:50px;
-}
-td.bln .bln-badge{
-  display:inline-block;
-  min-width:28px;
-  padding:2px 8px;
-  background:linear-gradient(135deg,#dbeafe,#e0f2fe);
-  color:var(--primary);
-  border-radius:6px;
-  font-size:.78rem;
-}
+td.bln{text-align:center;font-weight:700;color:var(--primary-dark);font-family:'DM Sans',sans-serif;width:45px}
+td.bln .bln-badge{display:inline-block;min-width:26px;padding:2px 7px;background:linear-gradient(135deg,#dbeafe,#e0f2fe);color:var(--primary);border-radius:6px;font-size:.75rem}
 
-/* Kolom Angka - Rata Kanan Lurus */
-td.num{
-  font-family:'DM Sans',sans-serif;
-  font-size:.85rem;
-  font-weight:600;
-  text-align:right;
-  letter-spacing:-.2px;
-  font-variant-numeric:tabular-nums;
-  font-feature-settings:'tnum';
-  white-space:nowrap;
-}
+td.num{font-family:'DM Sans',sans-serif;font-size:.83rem;font-weight:600;text-align:right;letter-spacing:-.2px;font-variant-numeric:tabular-nums;font-feature-settings:'tnum';white-space:nowrap}
 td.pokok{color:var(--primary)}
 td.bunga{color:var(--accent-cyan)}
 td.saldo{color:var(--text-light);font-weight:500}
 
-/* Baris Total (ditambahkan via JS) */
-tr.row-total{
-  background:var(--dark-gradient) !important;
-  color:#fff;
-  font-weight:700;
-}
-tr.row-total td{
-  color:#fff;
-  border-top:2px solid var(--accent);
-  padding-top:.85rem;
-  padding-bottom:.85rem;
-}
+tr.row-total{background:var(--dark-gradient) !important;color:#fff;font-weight:700}
+tr.row-total td{color:#fff;border-top:2px solid var(--accent);padding-top:.8rem;padding-bottom:.8rem}
 tr.row-total td.num{color:#bfdbfe}
 tr.row-total td.bln .bln-badge{background:rgba(255,255,255,.2);color:#fff}
 
-.compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:1rem}
-.compare-card{padding:1.25rem;border-radius:18px;color:#fff;position:relative;overflow:hidden;transition:all .3s}
+.compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-bottom:1rem}
+.compare-card{padding:1.15rem;border-radius:18px;color:#fff;position:relative;overflow:hidden;transition:all .3s}
 .compare-card:hover{transform:translateY(-4px)}
 .compare-card.flat{background:linear-gradient(135deg,#2563eb,#1e40af)}
 .compare-card.efektif{background:linear-gradient(135deg,#0891b2,#0e7490)}
 .compare-card.anuitas{background:linear-gradient(135deg,#7c3aed,#5b21b6)}
 .compare-card::before{content:'';position:absolute;top:-50%;right:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.12) 0%,transparent 60%);animation:pulse 4s infinite}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
-.cc-icon{width:44px;height:44px;background:rgba(255,255,255,.2);backdrop-filter:blur(10px);border-radius:12px;display:grid;place-items:center;font-size:1.15rem;margin-bottom:.85rem;position:relative;z-index:1}
-.cc-name{font-size:1rem;font-weight:700;margin-bottom:.2rem;position:relative;z-index:1;font-family:'Poppins',sans-serif}
-.cc-desc{font-size:.72rem;opacity:.9;margin-bottom:.85rem;position:relative;z-index:1}
-.cc-row{display:flex;justify-content:space-between;padding:.4rem 0;border-top:1px solid rgba(255,255,255,.18);font-size:.82rem;position:relative;z-index:1}
-.cc-row:last-child{border-top:2px solid rgba(255,255,255,.35);margin-top:.4rem;padding-top:.65rem}
+.cc-icon{width:40px;height:40px;background:rgba(255,255,255,.2);backdrop-filter:blur(10px);border-radius:11px;display:grid;place-items:center;font-size:1.05rem;margin-bottom:.75rem;position:relative;z-index:1}
+.cc-name{font-size:.95rem;font-weight:700;margin-bottom:.2rem;position:relative;z-index:1;font-family:'Poppins',sans-serif}
+.cc-desc{font-size:.7rem;opacity:.9;margin-bottom:.7rem;position:relative;z-index:1}
+.cc-row{display:flex;justify-content:space-between;padding:.35rem 0;border-top:1px solid rgba(255,255,255,.18);font-size:.78rem;position:relative;z-index:1}
+.cc-row:last-child{border-top:2px solid rgba(255,255,255,.35);margin-top:.35rem;padding-top:.6rem}
 .cc-row .lbl{opacity:.9}
-.cc-row .val{font-family:'DM Sans',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:-.2px;font-variant-numeric:tabular-nums}
-.cc-row:last-child .val{font-size:.95rem;color:#bfdbfe}
-.cc-badge{position:absolute;top:.85rem;right:.85rem;background:rgba(255,255,255,.25);padding:.2rem .55rem;border-radius:50px;font-size:.62rem;font-weight:700;letter-spacing:.5px;z-index:1}
+.cc-row .val{font-family:'DM Sans',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:-.2px;font-variant-numeric:tabular-nums}
+.cc-row:last-child .val{font-size:.9rem;color:#bfdbfe}
+.cc-badge{position:absolute;top:.75rem;right:.75rem;background:rgba(255,255,255,.25);padding:.2rem .5rem;border-radius:50px;font-size:.6rem;font-weight:700;letter-spacing:.5px;z-index:1}
 
-/* ===== INFO SECTION - 1 BARIS 3 KOLOM COMPACT ===== */
-.info-section{margin-top:3rem}
-.info-section .info-title{text-align:center;margin-bottom:1.25rem}
-.info-section .info-title h2{
-  font-family:'Poppins',sans-serif;font-size:1.6rem;
-  color:var(--primary-dark);font-weight:700;margin-bottom:.35rem;
-}
-.info-section .info-title p{
-  color:var(--text-light);font-size:.85rem;
-  max-width:600px;margin:0 auto;line-height:1.6;
-}
+/* ===== INFO SECTION - 1 BARIS 3 KOLOM (FIXED) ===== */
+.info-section{margin-top:2.5rem}
+.info-section .info-title{text-align:center;margin-bottom:1rem}
+.info-section .info-title h2{font-family:'Poppins',sans-serif;font-size:1.5rem;color:var(--primary-dark);font-weight:700;margin-bottom:.3rem}
+.info-section .info-title p{color:var(--text-light);font-size:.82rem;max-width:600px;margin:0 auto;line-height:1.5}
 
-/* GRID 3 KOLOM - PAKSA 1 BARIS */
 .info-grid{
   display:grid;
   grid-template-columns:repeat(3, minmax(0, 1fr));
@@ -295,72 +227,90 @@ tr.row-total td.bln .bln-badge{background:rgba(255,255,255,.2);color:#fff}
   background:rgba(255,255,255,.85);
   backdrop-filter:blur(20px);
   border:1px solid rgba(255,255,255,.7);
-  border-radius:16px;
+  border-radius:14px;
   padding:1rem;
   transition:all .3s;
   position:relative;
   overflow:hidden;
   display:flex;
   flex-direction:column;
-  min-width:0; /* KUNCI: izinkan card mengecil */
+  min-width:0; /* KUNCI: izinkan card mengecil di grid */
 }
-.info-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.info-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
 .info-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
 .info-card.flat::before{background:linear-gradient(90deg,#2563eb,#1e40af)}
 .info-card.efektif::before{background:linear-gradient(90deg,#0891b2,#06b6d4)}
 .info-card.anuitas::before{background:linear-gradient(90deg,#7c3aed,#a855f7)}
 
-.ic-icon{
-  width:40px;height:40px;border-radius:11px;
-  display:grid;place-items:center;color:#fff;
-  font-size:1rem;margin-bottom:.75rem;flex-shrink:0;
-}
+.ic-icon{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;color:#fff;font-size:1rem;margin-bottom:.7rem;flex-shrink:0}
 .info-card.flat .ic-icon{background:linear-gradient(135deg,#2563eb,#1e40af)}
 .info-card.efektif .ic-icon{background:linear-gradient(135deg,#0891b2,#06b6d4)}
 .info-card.anuitas .ic-icon{background:linear-gradient(135deg,#7c3aed,#a855f7)}
 
-.info-card h3{
-  font-family:'Poppins',sans-serif;font-size:.95rem;
-  color:var(--primary-dark);margin-bottom:.35rem;font-weight:700;
-}
-.info-card > p{
-  color:var(--text-light);font-size:.78rem;
-  margin-bottom:.6rem;line-height:1.5;
-}
-.info-card ul{
-  list-style:none;font-size:.75rem;color:var(--text);
-  margin-bottom:.6rem;flex-grow:0;
-}
-.info-card ul li{
-  padding:.18rem 0 .18rem 1.2rem;position:relative;line-height:1.45;
-}
-.info-card ul li::before{
-  content:'✓';position:absolute;left:0;color:var(--success);
-  font-weight:700;font-size:.72rem;
-}
+.info-card h3{font-family:'Poppins',sans-serif;font-size:.95rem;color:var(--primary-dark);margin-bottom:.3rem;font-weight:700}
+.info-card > p{color:var(--text-light);font-size:.75rem;margin-bottom:.55rem;line-height:1.45}
+.info-card ul{list-style:none;font-size:.72rem;color:var(--text);margin-bottom:.55rem}
+.info-card ul li{padding:.15rem 0 .15rem 1.15rem;position:relative;line-height:1.4}
+.info-card ul li::before{content:'✓';position:absolute;left:0;color:var(--success);font-weight:700;font-size:.7rem}
 
 /* FORMULA - BISA WRAP, TIDAK MEMAKSA CARD LEBAR */
 .formula{
-  background:#f0f7ff;border-left:3px solid var(--accent);
-  padding:.45rem .65rem;border-radius:6px;
+  background:#f0f7ff;
+  border-left:3px solid var(--accent);
+  padding:.4rem .6rem;
+  border-radius:6px;
   font-family:'DM Sans',monospace;
-  font-size:.68rem;font-weight:600;
+  font-size:.68rem;
+  font-weight:600;
   color:var(--primary-dark);
   margin-top:auto;
-  word-break:break-word;      /* KUNCI: bisa wrap */
+  word-break:break-word;
   overflow-wrap:break-word;
   line-height:1.4;
 }
 
-@media(max-width:1024px){
-  .info-grid{gap:.6rem}
-  .info-card{padding:.85rem}
-  .info-card h3{font-size:.9rem}
-  .info-card > p{font-size:.75rem}
-  .info-card ul li{font-size:.72rem}
+.cta-section{margin-top:2.5rem;background:var(--dark-gradient);border-radius:22px;padding:2rem 1.75rem;text-align:center;color:#fff;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="%2360a5fa" opacity="0.4"/><circle cx="80" cy="40" r="1.5" fill="%2393c5fd" opacity="0.3"/><circle cx="40" cy="70" r="1" fill="%2360a5fa" opacity="0.4"/><circle cx="90" cy="90" r="2" fill="%2306b6d4" opacity="0.3"/></svg>');opacity:.6}
+.cta-section h2{font-family:'Poppins',sans-serif;font-size:1.6rem;margin-bottom:.5rem;position:relative;font-weight:700}
+.cta-section p{opacity:.95;margin-bottom:1.5rem;max-width:600px;margin-left:auto;margin-right:auto;position:relative;line-height:1.6;font-size:.9rem}
+.cta-buttons{display:flex;gap:.85rem;justify-content:center;flex-wrap:wrap;position:relative}
+.cta-buttons .btn-primary{background:linear-gradient(135deg,#60a5fa,#06b6d4);color:#fff;box-shadow:0 8px 25px rgba(96,165,250,.4)}
+.cta-buttons .btn-outline{border-color:#fff;color:#fff}
+.cta-buttons .btn-outline:hover{background:#fff;color:var(--primary-dark)}
+
+footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margin-top:2.5rem}
+.footer-wrap{max-width:1400px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:1.5rem}
+.footer-col h4{font-family:'Poppins',sans-serif;margin-bottom:.75rem;color:#93c5fd;font-weight:600}
+.footer-col p,.footer-col a{color:rgba(255,255,255,.75);font-size:.85rem;text-decoration:none;display:block;margin-bottom:.4rem;transition:color .3s;line-height:1.6}
+.footer-col a:hover{color:#93c5fd}
+.footer-logo{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}
+.footer-bottom{padding-top:1.15rem;border-top:1px solid rgba(255,255,255,.1);text-align:center;color:rgba(255,255,255,.65);font-size:.8rem}
+
+.float-wa{position:fixed;bottom:2rem;right:2rem;width:58px;height:58px;background:#25d366;color:#fff;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;text-decoration:none;box-shadow:0 8px 25px rgba(37,211,102,.4);z-index:999;transition:all .3s;animation:bounce 2s infinite}
+.float-wa:hover{transform:scale(1.1)}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+@media(max-width:1100px){
+  .sim-layout{grid-template-columns:1fr;gap:1.25rem}
+  .result-panel{position:static}
 }
 @media(max-width:768px){
+  .nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:1.5rem;gap:1rem;box-shadow:var(--shadow)}
+  .nav-menu.show{display:flex}
+  .menu-toggle{display:block}
+  .method-tabs{grid-template-columns:repeat(2,1fr)}
+  .summary-grid{grid-template-columns:1fr}
+  .summary-card.highlight{grid-column:span 1}
   .info-grid{grid-template-columns:1fr}
+  .compare-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .glass{padding:1.15rem}
+  .container{padding:0 1rem 2.5rem}
+  table{font-size:.72rem}
+  th,td{padding:.45rem .4rem}
+  td.num{font-size:.72rem}
+  td.bln{width:38px}
 }
 
 @media print{
@@ -406,7 +356,7 @@ tr.row-total td.bln .bln-badge{background:rgba(255,255,255,.2);color:#fff}
     <span>Simulasi Pinjaman</span>
   </div>
   <h1>Simulasi <span>Pinjaman</span> Cerdas</h1>
-  <p>Hitung estimasi cicilan Anda dengan 3 metode perhitungan bunga: <strong>Flat, Efektif, dan Anuitas</strong>. Transparan, akurat, dan real-time.</p>
+  <p>Hitung estimasi cicilan Anda dengan 3 metode perhitungan bunga: <strong>Flat, Efektif, dan Anuitas</strong>.</p>
   <div class="hero-badges">
     <div class="hero-badge"><i class="fas fa-shield-halved"></i> 100% Akurat</div>
     <div class="hero-badge"><i class="fas fa-bolt"></i> Real-time</div>
@@ -418,12 +368,13 @@ tr.row-total td.bln .bln-badge{background:rgba(255,255,255,.2);color:#fff}
 <div class="container">
   <div class="sim-layout">
 
+    <!-- FORM - LEBIH KECIL -->
     <div class="glass fade-up">
       <div class="section-head">
         <div class="section-head-icon"><i class="fas fa-sliders"></i></div>
         <div>
           <h2>Parameter Pinjaman</h2>
-          <p>Silakan isi data pinjaman Anda</p>
+          <p>Isi data pinjaman Anda</p>
         </div>
       </div>
 
@@ -435,54 +386,54 @@ tr.row-total td.bln .bln-badge{background:rgba(255,255,255,.2);color:#fff}
           <span class="prefix"><i class="fas fa-circle-dollar-to-slot field-icon"></i> Rp</span>
           <input type="text" id="inputJumlah" value="100.000.000" inputmode="numeric" autocomplete="off">
         </div>
-        <span class="form-hint">Min. Rp 5.000.000 — Maks. Rp 5.000.000.000</span>
+        <span class="form-hint">Min. Rp 5 Jt — Maks. Rp 5 M</span>
       </div>
 
       <div class="form-group">
         <label class="form-label" for="selectTenor">
-          <i class="fas fa-calendar-days"></i>Jangka Waktu (Tenor)
+          <i class="fas fa-calendar-days"></i>Jangka Waktu
         </label>
         <div class="input-wrap">
           <span class="prefix"><i class="fas fa-clock field-icon"></i></span>
           <select id="selectTenor">
             <option value="6">6 Bulan</option>
             <option value="12">12 Bulan (1 Tahun)</option>
-            <option value="18">18 Bulan (1,5 Tahun)</option>
+            <option value="18">18 Bulan</option>
             <option value="24">24 Bulan (2 Tahun)</option>
             <option value="36" selected>36 Bulan (3 Tahun)</option>
             <option value="48">48 Bulan (4 Tahun)</option>
             <option value="60">60 Bulan (5 Tahun)</option>
             <option value="72">72 Bulan (6 Tahun)</option>
-            <option value="84">84 Bulan (7 Tahun)</option>
+            <option value="84">84 Bulan</option>
             <option value="96">96 Bulan (8 Tahun)</option>
-            <option value="108">108 Bulan (9 Tahun)</option>
+            <option value="108">108 Bulan</option>
             <option value="120">120 Bulan (10 Tahun)</option>
           </select>
         </div>
-        <div class="tenor-info" id="tenorInfo"><i class="fas fa-info-circle"></i> Dipilih: 36 bulan (3 tahun)</div>
+        <div class="tenor-info" id="tenorInfo"><i class="fas fa-info-circle"></i> 36 bulan (3 tahun)</div>
       </div>
 
       <div class="form-group">
         <label class="form-label" for="inputBunga">
-          <i class="fas fa-percent"></i>Suku Bunga per Tahun
+          <i class="fas fa-percent"></i>Suku Bunga / Tahun
         </label>
         <div class="input-wrap">
           <span class="prefix"><i class="fas fa-chart-simple field-icon"></i></span>
           <input type="number" id="inputBunga" class="with-suffix" value="9.5" min="1" max="25" step="0.1">
           <span class="suffix">%</span>
         </div>
-        <span class="form-hint">Rentang umum: 7% — 15% per tahun</span>
+        <span class="form-hint">Umum: 7% — 15% per tahun</span>
       </div>
 
       <div class="form-group">
         <label class="form-label">
-          <i class="fas fa-calculator"></i>Metode Perhitungan
+          <i class="fas fa-calculator"></i>Metode Hitung
         </label>
         <div class="method-tabs">
           <button class="method-tab active" data-method="flat">
             <i class="fas fa-equals"></i>
             <span class="m-name">Flat</span>
-            <span class="m-desc">Cicilan Tetap</span>
+            <span class="m-desc">Tetap</span>
           </button>
           <button class="method-tab" data-method="efektif">
             <i class="fas fa-arrow-trend-down"></i>
@@ -496,17 +447,18 @@ tr.row-total td.bln .bln-badge{background:rgba(255,255,255,.2);color:#fff}
           </button>
           <button class="method-tab" data-method="compare">
             <i class="fas fa-scale-balanced"></i>
-            <span class="m-name">Bandingkan</span>
+            <span class="m-name">Banding</span>
             <span class="m-desc">3 Metode</span>
           </button>
         </div>
       </div>
 
       <button class="btn-calc" onclick="hitung()">
-        <i class="fas fa-calculator"></i> Hitung Simulasi Sekarang
+        <i class="fas fa-calculator"></i> Hitung Sekarang
       </button>
     </div>
 
+    <!-- HASIL - LEBIH DOMINAN -->
     <div class="glass result-panel fade-up" id="resultPanel">
       <div class="section-head">
         <div class="section-head-icon"><i class="fas fa-chart-pie"></i></div>
@@ -569,53 +521,53 @@ tr.row-total td.bln .bln-badge{background:rgba(255,255,255,.2);color:#fff}
 
   <!-- INFO SECTION - 1 BARIS 3 KOLOM -->
   <section class="info-section fade-up">
-  <div class="info-title">
-    <h2>Pahami 3 Metode Bunga</h2>
-    <p>Karakteristik berbeda tiap metode. Pilih sesuai kemampuan finansial Anda.</p>
-  </div>
-
-  <div class="info-grid">
-    <div class="info-card flat">
-      <div class="ic-icon"><i class="fas fa-equals"></i></div>
-      <h3>Bunga Flat</h3>
-      <p>Bunga dari pokok awal, tetap selama pinjaman.</p>
-      <ul>
-        <li>Cicilan stabil tiap bulan</li>
-        <li>Mudah diprediksi</li>
-        <li>Cocok income tetap</li>
-      </ul>
-      <div class="formula">Bunga = Pokok × i% × Thn</div>
+    <div class="info-title">
+      <h2>Pahami 3 Metode Bunga</h2>
+      <p>Setiap metode punya karakteristik berbeda. Pilih sesuai kemampuan finansial Anda.</p>
     </div>
 
-    <div class="info-card efektif">
-      <div class="ic-icon"><i class="fas fa-arrow-trend-down"></i></div>
-      <h3>Bunga Efektif</h3>
-      <p>Bunga dari sisa pokok, cicilan menurun.</p>
-      <ul>
-        <li>Total bunga paling kecil</li>
-        <li>Berat di awal, ringan akhir</li>
-        <li>Lebih adil & transparan</li>
-      </ul>
-      <div class="formula">Bunga = Sisa × (i%/12)</div>
-    </div>
+    <div class="info-grid">
+      <div class="info-card flat">
+        <div class="ic-icon"><i class="fas fa-equals"></i></div>
+        <h3>Bunga Flat</h3>
+        <p>Bunga dari pokok awal, tetap selama pinjaman.</p>
+        <ul>
+          <li>Cicilan stabil tiap bulan</li>
+          <li>Mudah diprediksi</li>
+          <li>Cocok income tetap</li>
+        </ul>
+        <div class="formula">Bunga = Pokok × i% × Thn</div>
+      </div>
 
-    <div class="info-card anuitas">
-      <div class="ic-icon"><i class="fas fa-chart-line"></i></div>
-      <h3>Bunga Anuitas</h3>
-      <p>Cicilan tetap, komposisi berubah tiap bulan.</p>
-      <ul>
-        <li>Cicilan tetap spt flat</li>
-        <li>Total bunga lebih hemat</li>
-        <li>Standar perbankan global</li>
-      </ul>
-      <div class="formula">PMT = P·i(1+i)ⁿ/((1+i)ⁿ-1)</div>
+      <div class="info-card efektif">
+        <div class="ic-icon"><i class="fas fa-arrow-trend-down"></i></div>
+        <h3>Bunga Efektif</h3>
+        <p>Bunga dari sisa pokok, cicilan menurun.</p>
+        <ul>
+          <li>Total bunga paling kecil</li>
+          <li>Berat awal, ringan akhir</li>
+          <li>Lebih adil & transparan</li>
+        </ul>
+        <div class="formula">Bunga = Sisa × (i% ÷ 12)</div>
+      </div>
+
+      <div class="info-card anuitas">
+        <div class="ic-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Bunga Anuitas</h3>
+        <p>Cicilan tetap, komposisi berubah tiap bulan.</p>
+        <ul>
+          <li>Cicilan tetap spt flat</li>
+          <li>Total bunga lebih hemat</li>
+          <li>Standar perbankan global</li>
+        </ul>
+        <div class="formula">PMT = P·i(1+i)ⁿ / ((1+i)ⁿ-1)</div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section class="cta-section fade-up">
     <h2>Siap Mengajukan Pinjaman?</h2>
-    <p>Konsultasikan kebutuhan pinjaman Anda dengan tim ahli BANK DAMARA. Proses cepat, bunga kompetitif, dan persetujuan mudah.</p>
+    <p>Konsultasikan dengan tim ahli BANK DAMARA. Proses cepat, bunga kompetitif.</p>
     <div class="cta-buttons">
       <a href="https://wa.me/6281234567890" class="btn btn-primary" target="_blank"><i class="fab fa-whatsapp"></i> Chat WhatsApp</a>
       <a href="index.html#kontak" class="btn btn-outline"><i class="fas fa-phone"></i> Hubungi Kami</a>
@@ -631,7 +583,7 @@ tr.row-total td.bln .bln-badge{background:rgba(255,255,255,.2);color:#fff}
           <div class="logo-icon">BN</div>
           <div class="logo-text" style="color:#fff">BANK DAMARA<span>Trusted Since 1983</span></div>
         </div>
-        <p>Bank terpercaya yang melayani nasabah dengan integritas, inovasi, dan pelayanan prima selama lebih dari 40 tahun.</p>
+        <p>Bank terpercaya yang melayani nasabah dengan integritas dan inovasi lebih dari 40 tahun.</p>
       </div>
       <div class="footer-col">
         <h4>Produk</h4>
@@ -694,7 +646,7 @@ function updateTenorInfo(){
   const bln = parseInt(selectTenor.value, 10);
   const thn = bln / 12;
   const thnStr = Number.isInteger(thn) ? thn + ' tahun' : thn.toFixed(1).replace('.0','') + ' tahun';
-  tenorInfo.innerHTML = `<i class="fas fa-info-circle"></i> Dipilih: ${bln} bulan (${thnStr})`;
+  tenorInfo.innerHTML = `<i class="fas fa-info-circle"></i> ${bln} bulan (${thnStr})`;
 }
 selectTenor.addEventListener('change', () => { updateTenorInfo(); hitung(); });
 updateTenorInfo();
@@ -747,8 +699,7 @@ function calcEfektif(pokok, tenor, bungaTahun){
     totalBunga += bunga;
     schedule.push({bln:b, cicilan, pokok:pokokBln, bunga, sisa:Math.max(0,sisa)});
   }
-  const total = pokok + totalBunga;
-  return {cicilan:schedule[0].cicilan, cicilanMin:schedule[schedule.length-1].cicilan, totalPokok:pokok, totalBunga, total, schedule};
+  return {cicilan:schedule[0].cicilan, cicilanMin:schedule[schedule.length-1].cicilan, totalPokok:pokok, totalBunga, total:pokok+totalBunga, schedule};
 }
 
 function calcAnuitas(pokok, tenor, bungaTahun){
@@ -766,7 +717,6 @@ function calcAnuitas(pokok, tenor, bungaTahun){
   return {cicilan:pmt, totalPokok:pokok, totalBunga, total:pokok+totalBunga, schedule};
 }
 
-/* RENDER TABEL - RATA KANAN & LURUS VERTIKAL */
 function renderTable(schedule, totalPokok, totalBunga){
   const tbody = document.getElementById('tblBody');
   const rows = schedule.map(s => `
@@ -779,7 +729,6 @@ function renderTable(schedule, totalPokok, totalBunga){
     </tr>
   `).join('');
   
-  // Baris Total
   const totalRow = `
     <tr class="row-total">
       <td class="bln"><span class="bln-badge">Σ</span></td>
