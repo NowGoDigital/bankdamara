@@ -1,1 +1,820 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulasi Pinjaman - BANK DAMARA</title>
+<meta name="description" content="Simulasi pinjaman BANK DAMARA dengan perhitungan bunga Flat, Efektif, dan Anuitas. Hitung cicilan Anda secara akurat dan transparan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root{
+  --primary:#0a2540;
+  --primary-light:#1e3a5f;
+  --accent:#d4a24c;
+  --accent-light:#f4c77a;
+  --gold-gradient:linear-gradient(135deg,#d4a24c 0%,#f4c77a 50%,#d4a24c 100%);
+  --dark-gradient:linear-gradient(135deg,#0a2540 0%,#1e3a5f 100%);
+  --bg:#f5f7fa;
+  --card:#ffffff;
+  --text:#1a2332;
+  --text-light:#5a6c7d;
+  --border:rgba(10,37,64,.08);
+  --shadow:0 10px 40px rgba(10,37,64,.08);
+  --shadow-hover:0 20px 60px rgba(10,37,64,.15);
+  --success:#10b981;
+  --warning:#f59e0b;
+  --danger:#ef4444;
+  --flat:#3b82f6;
+  --efektif:#10b981;
+  --anuitas:#8b5cf6;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
 
+/* ===== ANIMATED BACKGROUND ===== */
+.bg-animated{position:fixed;inset:0;z-index:-1;background:linear-gradient(135deg,#f5f7fa 0%,#e8edf3 50%,#f5f7fa 100%)}
+.bg-animated::before,.bg-animated::after{content:'';position:absolute;border-radius:50%;filter:blur(80px);opacity:.3;animation:float 20s infinite ease-in-out}
+.bg-animated::before{width:500px;height:500px;background:var(--accent);top:-100px;right:-100px}
+.bg-animated::after{width:400px;height:400px;background:var(--primary-light);bottom:-100px;left:-100px;animation-delay:-10s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(50px,50px) scale(1.1)}}
+
+/* ===== HEADER ===== */
+header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all .3s}
+.nav-wrap{max-width:1400px;margin:0 auto;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--primary)}
+.logo-icon{width:45px;height:45px;background:var(--gold-gradient);border-radius:12px;display:grid;place-items:center;color:#fff;font-family:'Orbitron',sans-serif;font-weight:700;font-size:1.1rem;box-shadow:0 4px 15px rgba(212,162,76,.4)}
+.logo-text{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;letter-spacing:.5px}
+.logo-text span{color:var(--accent);font-size:.7rem;display:block;font-family:'Inter',sans-serif;letter-spacing:3px;font-weight:500;text-transform:uppercase;margin-top:-3px}
+.nav-menu{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-menu a{color:var(--text);text-decoration:none;font-weight:500;font-size:.95rem;transition:color .3s;position:relative}
+.nav-menu a:hover{color:var(--accent)}
+.nav-menu a.active{color:var(--accent)}
+.nav-menu a.active::after{content:'';position:absolute;bottom:-6px;left:0;right:0;height:2px;background:var(--gold-gradient);border-radius:2px}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:50px;font-weight:600;font-size:.9rem;text-decoration:none;transition:all .3s;border:none;cursor:pointer;font-family:inherit}
+.btn-primary{background:var(--gold-gradient);color:#fff;box-shadow:0 4px 15px rgba(212,162,76,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(212,162,76,.5)}
+.btn-outline{background:transparent;color:var(--primary);border:2px solid var(--primary)}
+.btn-outline:hover{background:var(--primary);color:#fff}
+.btn-wa{background:#25d366;color:#fff}
+.btn-wa:hover{background:#1ebe5a;transform:translateY(-2px)}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;color:var(--primary);cursor:pointer}
+
+/* ===== HERO ===== */
+.hero{padding:4rem 2rem 3rem;text-align:center;position:relative}
+.breadcrumb{display:flex;justify-content:center;gap:.5rem;font-size:.85rem;color:var(--text-light);margin-bottom:1.5rem;flex-wrap:wrap}
+.breadcrumb a{color:var(--accent);text-decoration:none;font-weight:500}
+.breadcrumb a:hover{text-decoration:underline}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:var(--primary);margin-bottom:1rem;line-height:1.2}
+.hero h1 span{background:var(--gold-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:1.1rem;color:var(--text-light);max-width:700px;margin:0 auto}
+.hero-badges{display:flex;gap:1rem;justify-content:center;margin-top:2rem;flex-wrap:wrap}
+.hero-badge{display:flex;align-items:center;gap:.5rem;padding:.5rem 1rem;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:50px;font-size:.85rem;font-weight:500}
+.hero-badge i{color:var(--accent)}
+
+/* ===== MAIN CONTAINER ===== */
+.container{max-width:1400px;margin:0 auto;padding:0 2rem 4rem}
+.sim-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;align-items:start}
+
+/* ===== GLASS CARD ===== */
+.glass{background:rgba(255,255,255,.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.6);border-radius:24px;box-shadow:var(--shadow);padding:2rem;transition:all .3s}
+.glass:hover{box-shadow:var(--shadow-hover)}
+.section-head{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.section-head-icon{width:48px;height:48px;background:var(--gold-gradient);border-radius:14px;display:grid;place-items:center;color:#fff;font-size:1.2rem;box-shadow:0 4px 15px rgba(212,162,76,.3)}
+.section-head h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--primary)}
+.section-head p{font-size:.85rem;color:var(--text-light);margin-top:2px}
+
+/* ===== FORM ===== */
+.form-group{margin-bottom:1.5rem}
+.form-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem;font-weight:600;font-size:.9rem;color:var(--primary)}
+.form-label .value{background:var(--gold-gradient);color:#fff;padding:.25rem .75rem;border-radius:50px;font-size:.8rem;font-family:'Orbitron',sans-serif;font-weight:500}
+.input-wrap{position:relative}
+.input-wrap i{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--accent);font-size:1rem}
+.input-wrap input[type="number"],.input-wrap select{width:100%;padding:1rem 1rem 1rem 2.75rem;border:2px solid var(--border);border-radius:14px;font-size:1rem;font-family:inherit;background:#fff;transition:all .3s;color:var(--text)}
+.input-wrap input[type="number"]:focus,.input-wrap select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(212,162,76,.15)}
+input[type="range"]{-webkit-appearance:none;width:100%;height:8px;background:linear-gradient(90deg,var(--accent) 0%,var(--accent) var(--val,50%),#e0e6ed var(--val,50%),#e0e6ed 100%);border-radius:10px;outline:none;margin-top:.5rem}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;background:var(--gold-gradient);border-radius:50%;cursor:pointer;border:3px solid #fff;box-shadow:0 2px 10px rgba(212,162,76,.4);transition:transform .2s}
+input[type="range"]::-webkit-slider-thumb:hover{transform:scale(1.2)}
+input[type="range"]::-moz-range-thumb{width:24px;height:24px;background:var(--gold-gradient);border-radius:50%;cursor:pointer;border:3px solid #fff;box-shadow:0 2px 10px rgba(212,162,76,.4)}
+.range-marks{display:flex;justify-content:space-between;font-size:.75rem;color:var(--text-light);margin-top:.5rem}
+
+/* ===== METHOD TABS ===== */
+.method-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-bottom:1.5rem}
+.method-tab{padding:1rem .5rem;background:#fff;border:2px solid var(--border);border-radius:14px;cursor:pointer;text-align:center;transition:all .3s;font-family:inherit}
+.method-tab:hover{border-color:var(--accent);transform:translateY(-2px)}
+.method-tab.active{background:var(--dark-gradient);color:#fff;border-color:var(--primary);box-shadow:0 8px 25px rgba(10,37,64,.2)}
+.method-tab i{font-size:1.3rem;margin-bottom:.25rem;display:block}
+.method-tab.active i{color:var(--accent-light)}
+.method-tab .m-name{font-weight:700;font-size:.85rem;display:block}
+.method-tab .m-desc{font-size:.7rem;opacity:.7;margin-top:2px;display:block}
+.method-tab[data-method="flat"].active{background:linear-gradient(135deg,#3b82f6,#1e40af)}
+.method-tab[data-method="efektif"].active{background:linear-gradient(135deg,#10b981,#047857)}
+.method-tab[data-method="anuitas"].active{background:linear-gradient(135deg,#8b5cf6,#5b21b6)}
+.method-tab[data-method="compare"].active{background:var(--dark-gradient)}
+
+.btn-calc{width:100%;padding:1.1rem;background:var(--gold-gradient);color:#fff;border:none;border-radius:14px;font-size:1rem;font-weight:700;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:.5rem;font-family:inherit;box-shadow:0 8px 25px rgba(212,162,76,.3)}
+.btn-calc:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(212,162,76,.5)}
+.btn-calc:active{transform:translateY(0)}
+
+/* ===== RESULT PANEL ===== */
+.result-panel{position:sticky;top:100px}
+.summary-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:1.5rem}
+.summary-card{padding:1.25rem;background:linear-gradient(135deg,#fff,#f8fafc);border:1px solid var(--border);border-radius:16px;position:relative;overflow:hidden;transition:all .3s}
+.summary-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.summary-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--gold-gradient)}
+.summary-card.highlight{grid-column:span 2;background:var(--dark-gradient);color:#fff;border:none}
+.summary-card.highlight::before{display:none}
+.summary-card.highlight .sc-label{color:rgba(255,255,255,.8)}
+.summary-card.highlight .sc-value{color:var(--accent-light)}
+.sc-label{font-size:.8rem;color:var(--text-light);margin-bottom:.25rem;display:flex;align-items:center;gap:.4rem}
+.sc-label i{color:var(--accent);font-size:.85rem}
+.sc-value{font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:700;color:var(--primary);margin-top:.25rem}
+.summary-card.highlight .sc-value{font-size:1.8rem}
+
+/* ===== CHARTS ===== */
+.charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+.chart-box{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.25rem}
+.chart-box h4{font-size:.9rem;color:var(--primary);margin-bottom:.75rem;display:flex;align-items:center;gap:.4rem}
+.chart-box h4 i{color:var(--accent)}
+.chart-wrap{position:relative;height:220px}
+
+/* ===== TABLE ===== */
+.table-wrap{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:1rem}
+.table-head{padding:1rem 1.25rem;background:var(--dark-gradient);color:#fff;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.table-head h4{font-size:1rem;display:flex;align-items:center;gap:.5rem}
+.table-head h4 i{color:var(--accent-light)}
+.table-actions{display:flex;gap:.5rem}
+.btn-sm{padding:.4rem .9rem;font-size:.8rem;border-radius:50px;background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.2);cursor:pointer;transition:all .3s;font-family:inherit;display:inline-flex;align-items:center;gap:.3rem}
+.btn-sm:hover{background:rgba(255,255,255,.25)}
+.table-scroll{max-height:400px;overflow-y:auto}
+.table-scroll::-webkit-scrollbar{width:6px}
+.table-scroll::-webkit-scrollbar-thumb{background:var(--accent);border-radius:10px}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+thead{background:#f8fafc;position:sticky;top:0;z-index:2}
+th{padding:.75rem 1rem;text-align:left;font-weight:600;color:var(--primary);font-size:.75rem;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid var(--border)}
+td{padding:.75rem 1rem;border-bottom:1px solid var(--border);color:var(--text)}
+tbody tr{transition:background .2s}
+tbody tr:hover{background:#f8fafc}
+td.num{font-family:'Orbitron',sans-serif;font-size:.8rem;font-weight:500;text-align:right}
+td.pokok{color:var(--primary)}
+td.bunga{color:var(--accent)}
+td.saldo{color:var(--text-light)}
+
+/* ===== COMPARE VIEW ===== */
+.compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem}
+.compare-card{padding:1.5rem;border-radius:20px;color:#fff;position:relative;overflow:hidden;transition:all .3s}
+.compare-card:hover{transform:translateY(-5px)}
+.compare-card.flat{background:linear-gradient(135deg,#3b82f6,#1e40af)}
+.compare-card.efektif{background:linear-gradient(135deg,#10b981,#047857)}
+.compare-card.anuitas{background:linear-gradient(135deg,#8b5cf6,#5b21b6)}
+.compare-card::before{content:'';position:absolute;top:-50%;right:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 60%);animation:pulse 4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.cc-icon{width:50px;height:50px;background:rgba(255,255,255,.2);backdrop-filter:blur(10px);border-radius:14px;display:grid;place-items:center;font-size:1.3rem;margin-bottom:1rem;position:relative;z-index:1}
+.cc-name{font-size:1.1rem;font-weight:700;margin-bottom:.25rem;position:relative;z-index:1}
+.cc-desc{font-size:.75rem;opacity:.85;margin-bottom:1rem;position:relative;z-index:1}
+.cc-row{display:flex;justify-content:space-between;padding:.5rem 0;border-top:1px solid rgba(255,255,255,.15);font-size:.85rem;position:relative;z-index:1}
+.cc-row:last-child{border-top:2px solid rgba(255,255,255,.3);margin-top:.5rem;padding-top:.75rem}
+.cc-row .lbl{opacity:.85}
+.cc-row .val{font-family:'Orbitron',sans-serif;font-weight:700;font-size:.9rem}
+.cc-row:last-child .val{font-size:1.1rem;color:#fef3c7}
+.cc-badge{position:absolute;top:1rem;right:1rem;background:rgba(255,255,255,.25);padding:.25rem .6rem;border-radius:50px;font-size:.65rem;font-weight:700;letter-spacing:.5px;z-index:1}
+
+/* ===== INFO SECTION ===== */
+.info-section{margin-top:4rem}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.info-card{background:rgba(255,255,255,.8);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.6);border-radius:20px;padding:2rem;transition:all .3s;position:relative;overflow:hidden}
+.info-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover)}
+.info-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.info-card.flat::before{background:linear-gradient(90deg,#3b82f6,#1e40af)}
+.info-card.efektif::before{background:linear-gradient(90deg,#10b981,#047857)}
+.info-card.anuitas::before{background:linear-gradient(90deg,#8b5cf6,#5b21b6)}
+.ic-icon{width:60px;height:60px;border-radius:16px;display:grid;place-items:center;color:#fff;font-size:1.5rem;margin-bottom:1.25rem}
+.info-card.flat .ic-icon{background:linear-gradient(135deg,#3b82f6,#1e40af)}
+.info-card.efektif .ic-icon{background:linear-gradient(135deg,#10b981,#047857)}
+.info-card.anuitas .ic-icon{background:linear-gradient(135deg,#8b5cf6,#5b21b6)}
+.info-card h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--primary);margin-bottom:.75rem}
+.info-card p{color:var(--text-light);font-size:.9rem;margin-bottom:1rem}
+.info-card ul{list-style:none;font-size:.85rem;color:var(--text)}
+.info-card ul li{padding:.4rem 0;padding-left:1.5rem;position:relative}
+.info-card ul li::before{content:'✓';position:absolute;left:0;color:var(--success);font-weight:700}
+.formula{background:#f8fafc;border-left:3px solid var(--accent);padding:.75rem 1rem;border-radius:8px;font-family:'Orbitron',sans-serif;font-size:.8rem;color:var(--primary);margin-top:1rem;overflow-x:auto}
+
+/* ===== CTA ===== */
+.cta-section{margin-top:4rem;background:var(--dark-gradient);border-radius:30px;padding:3rem 2rem;text-align:center;color:#fff;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="%23d4a24c" opacity="0.3"/><circle cx="80" cy="40" r="1.5" fill="%23d4a24c" opacity="0.2"/><circle cx="40" cy="70" r="1" fill="%23d4a24c" opacity="0.3"/><circle cx="90" cy="90" r="2" fill="%23d4a24c" opacity="0.2"/></svg>');opacity:.5}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:.75rem;position:relative}
+.cta-section p{opacity:.9;margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto;position:relative}
+.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative}
+.cta-buttons .btn-primary{background:var(--gold-gradient);color:#fff}
+.cta-buttons .btn-outline{border-color:#fff;color:#fff}
+.cta-buttons .btn-outline:hover{background:#fff;color:var(--primary)}
+
+/* ===== FOOTER ===== */
+footer{background:var(--primary);color:#fff;padding:3rem 2rem 1.5rem;margin-top:4rem}
+.footer-wrap{max-width:1400px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
+.footer-col h4{font-family:'Playfair Display',serif;margin-bottom:1rem;color:var(--accent-light)}
+.footer-col p,.footer-col a{color:rgba(255,255,255,.7);font-size:.9rem;text-decoration:none;display:block;margin-bottom:.5rem;transition:color .3s}
+.footer-col a:hover{color:var(--accent-light)}
+.footer-logo{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.footer-bottom{padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);text-align:center;color:rgba(255,255,255,.6);font-size:.85rem}
+
+/* ===== FLOATING ===== */
+.float-wa{position:fixed;bottom:2rem;right:2rem;width:60px;height:60px;background:#25d366;color:#fff;border-radius:50%;display:grid;place-items:center;font-size:1.6rem;text-decoration:none;box-shadow:0 8px 25px rgba(37,211,102,.4);z-index:999;transition:all .3s;animation:bounce 2s infinite}
+.float-wa:hover{transform:scale(1.1)}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .sim-layout{grid-template-columns:1fr}
+  .result-panel{position:static}
+  .compare-grid{grid-template-columns:1fr}
+  .info-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:1.5rem;gap:1rem;box-shadow:var(--shadow)}
+  .nav-menu.show{display:flex}
+  .menu-toggle{display:block}
+  .method-tabs{grid-template-columns:repeat(2,1fr)}
+  .summary-grid{grid-template-columns:1fr}
+  .summary-card.highlight{grid-column:span 1}
+  .charts-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .glass{padding:1.5rem}
+  .container{padding:0 1rem 3rem}
+  table{font-size:.75rem}
+  th,td{padding:.5rem .4rem}
+}
+
+/* ===== PRINT ===== */
+@media print{
+  header,.float-wa,.btn-calc,.cta-section,footer,.method-tabs,.form-group,.breadcrumb,.hero-badges,.table-actions{display:none!important}
+  body{background:#fff}
+  .glass{box-shadow:none;border:1px solid #ddd;page-break-inside:avoid}
+  .result-panel{position:static}
+  .sim-layout{grid-template-columns:1fr}
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-up{opacity:0;transform:translateY(30px);transition:all .6s ease-out}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="bg-animated"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">BN</div>
+      <div class="logo-text">BANK DAMARA<span>Trusted Since 1983</span></div>
+    </a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="index.html#tentang">Tentang</a></li>
+      <li><a href="index.html#produk">Produk</a></li>
+      <li><a href="simulasi-pinjaman.html" class="active">Simulasi</a></li>
+      <li><a href="index.html#lelang">Lelang</a></li>
+      <li><a href="index.html#kontak">Kontak</a></li>
+      <li><a href="https://wa.me/6281234567890" class="btn btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Chat</a></li>
+    </ul>
+    <button class="menu-toggle" onclick="document.getElementById('navMenu').classList.toggle('show')"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="breadcrumb">
+    <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
+    <span>/</span>
+    <span>Simulasi Pinjaman</span>
+  </div>
+  <h1>Simulasi <span>Pinjaman</span> Cerdas</h1>
+  <p>Hitung estimasi cicilan Anda dengan 3 metode perhitungan bunga: <strong>Flat, Efektif, dan Anuitas</strong>. Transparan, akurat, dan real-time.</p>
+  <div class="hero-badges">
+    <div class="hero-badge"><i class="fas fa-shield-halved"></i> 100% Akurat</div>
+    <div class="hero-badge"><i class="fas fa-bolt"></i> Real-time</div>
+    <div class="hero-badge"><i class="fas fa-scale-balanced"></i> 3 Metode</div>
+    <div class="hero-badge"><i class="fas fa-print"></i> Bisa Di-print</div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<div class="container">
+  <div class="sim-layout">
+
+    <!-- FORM -->
+    <div class="glass fade-up">
+      <div class="section-head">
+        <div class="section-head-icon"><i class="fas fa-sliders"></i></div>
+        <div>
+          <h2>Parameter Pinjaman</h2>
+          <p>Atur sesuai kebutuhan Anda</p>
+        </div>
+      </div>
+
+      <!-- Jumlah Pinjaman -->
+      <div class="form-group">
+        <label class="form-label">
+          <span><i class="fas fa-money-bill-wave" style="color:var(--accent);margin-right:.4rem"></i>Jumlah Pinjaman</span>
+          <span class="value" id="valJumlah">Rp 100.000.000</span>
+        </label>
+        <input type="range" id="rangeJumlah" min="5000000" max="5000000000" step="5000000" value="100000000">
+        <div class="range-marks"><span>Rp 5 Juta</span><span>Rp 5 Miliar</span></div>
+      </div>
+
+      <!-- Jangka Waktu -->
+      <div class="form-group">
+        <label class="form-label">
+          <span><i class="fas fa-calendar-days" style="color:var(--accent);margin-right:.4rem"></i>Jangka Waktu</span>
+          <span class="value" id="valTenor">36 Bulan</span>
+        </label>
+        <input type="range" id="rangeTenor" min="6" max="120" step="6" value="36">
+        <div class="range-marks"><span>6 Bulan</span><span>120 Bulan (10 Thn)</span></div>
+      </div>
+
+      <!-- Suku Bunga -->
+      <div class="form-group">
+        <label class="form-label">
+          <span><i class="fas fa-percent" style="color:var(--accent);margin-right:.4rem"></i>Suku Bunga / Tahun</span>
+          <span class="value" id="valBunga">9.5%</span>
+        </label>
+        <input type="range" id="rangeBunga" min="1" max="25" step="0.5" value="9.5">
+        <div class="range-marks"><span>1%</span><span>25%</span></div>
+      </div>
+
+      <!-- Metode -->
+      <div class="form-group">
+        <label class="form-label">
+          <span><i class="fas fa-calculator" style="color:var(--accent);margin-right:.4rem"></i>Metode Perhitungan</span>
+        </label>
+        <div class="method-tabs">
+          <button class="method-tab active" data-method="flat">
+            <i class="fas fa-equals"></i>
+            <span class="m-name">Flat</span>
+            <span class="m-desc">Cicilan Tetap</span>
+          </button>
+          <button class="method-tab" data-method="efektif">
+            <i class="fas fa-arrow-trend-down"></i>
+            <span class="m-name">Efektif</span>
+            <span class="m-desc">Menurun</span>
+          </button>
+          <button class="method-tab" data-method="anuitas">
+            <i class="fas fa-chart-line"></i>
+            <span class="m-name">Anuitas</span>
+            <span class="m-desc">Balance</span>
+          </button>
+          <button class="method-tab" data-method="compare">
+            <i class="fas fa-scale-balanced"></i>
+            <span class="m-name">Bandingkan</span>
+            <span class="m-desc">3 Metode</span>
+          </button>
+        </div>
+      </div>
+
+      <button class="btn-calc" onclick="hitung()">
+        <i class="fas fa-calculator"></i> Hitung Simulasi Sekarang
+      </button>
+    </div>
+
+    <!-- RESULT -->
+    <div class="glass result-panel fade-up" id="resultPanel">
+      <div class="section-head">
+        <div class="section-head-icon"><i class="fas fa-chart-pie"></i></div>
+        <div>
+          <h2>Hasil Simulasi</h2>
+          <p id="resultMethod">Metode: Flat</p>
+        </div>
+      </div>
+
+      <!-- SINGLE VIEW -->
+      <div id="singleView">
+        <div class="summary-grid">
+          <div class="summary-card highlight">
+            <div class="sc-label"><i class="fas fa-hand-holding-dollar"></i> Cicilan per Bulan</div>
+            <div class="sc-value" id="outCicilan">Rp 0</div>
+          </div>
+          <div class="summary-card">
+            <div class="sc-label"><i class="fas fa-wallet"></i> Pokok Pinjaman</div>
+            <div class="sc-value" id="outPokok">Rp 0</div>
+          </div>
+          <div class="summary-card">
+            <div class="sc-label"><i class="fas fa-coins"></i> Total Bunga</div>
+            <div class="sc-value" id="outBunga">Rp 0</div>
+          </div>
+          <div class="summary-card" style="grid-column:span 2">
+            <div class="sc-label"><i class="fas fa-sack-dollar"></i> Total Pembayaran (Pokok + Bunga)</div>
+            <div class="sc-value" id="outTotal">Rp 0</div>
+          </div>
+        </div>
+
+        <div class="charts-grid">
+          <div class="chart-box">
+            <h4><i class="fas fa-chart-pie"></i> Komposisi</h4>
+            <div class="chart-wrap"><canvas id="pieChart"></canvas></div>
+          </div>
+          <div class="chart-box">
+            <h4><i class="fas fa-chart-line"></i> Sisa Pokok</h4>
+            <div class="chart-wrap"><canvas id="lineChart"></canvas></div>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <div class="table-head">
+            <h4><i class="fas fa-table-list"></i> Tabel Amortisasi</h4>
+            <div class="table-actions">
+              <button class="btn-sm" onclick="window.print()"><i class="fas fa-print"></i> Print</button>
+              <button class="btn-sm" onclick="exportCSV()"><i class="fas fa-file-csv"></i> CSV</button>
+            </div>
+          </div>
+          <div class="table-scroll">
+            <table id="tblAmort">
+              <thead>
+                <tr>
+                  <th>Bln</th>
+                  <th style="text-align:right">Cicilan</th>
+                  <th style="text-align:right">Pokok</th>
+                  <th style="text-align:right">Bunga</th>
+                  <th style="text-align:right">Sisa Pokok</th>
+                </tr>
+              </thead>
+              <tbody id="tblBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPARE VIEW -->
+      <div id="compareView" style="display:none">
+        <div class="compare-grid" id="compareGrid"></div>
+        <div class="chart-box">
+          <h4><i class="fas fa-chart-column"></i> Perbandingan Total Bunga</h4>
+          <div class="chart-wrap" style="height:280px"><canvas id="compareChart"></canvas></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFO SECTION -->
+  <section class="info-section fade-up">
+    <div class="section-head" style="justify-content:center;text-align:center;flex-direction:column;border:none;padding:0">
+      <h2 style="font-family:'Playfair Display',serif;font-size:2rem;color:var(--primary)">Pahami 3 Metode Bunga</h2>
+      <p style="color:var(--text-light);max-width:600px;margin:.5rem auto 0">Setiap metode punya karakteristik berbeda. Pilih yang paling sesuai dengan kemampuan finansial Anda.</p>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card flat">
+        <div class="ic-icon"><i class="fas fa-equals"></i></div>
+        <h3>Bunga Flat</h3>
+        <p>Bunga dihitung dari <strong>pokok awal</strong> dan tetap selama masa pinjaman. Cicilan bulanan Anda selalu sama.</p>
+        <ul>
+          <li>Cicilan stabil setiap bulan</li>
+          <li>Mudah diprediksi & direncanakan</li>
+          <li>Cocok untuk pendapatan tetap</li>
+          <li>Total bunga paling besar</li>
+        </ul>
+        <div class="formula">Bunga = Pokok × Bunga% × Tahun</div>
+      </div>
+
+      <div class="info-card efektif">
+        <div class="ic-icon"><i class="fas fa-arrow-trend-down"></i></div>
+        <h3>Bunga Efektif</h3>
+        <p>Bunga dihitung dari <strong>sisa pokok</strong>. Cicilan menurun setiap bulan seiring berkurangnya pokok.</p>
+        <ul>
+          <li>Total bunga paling kecil</li>
+          <li>Cicilan berat di awal, ringan di akhir</li>
+          <li>Cocok jika income meningkat</li>
+          <li>Lebih adil & transparan</li>
+        </ul>
+        <div class="formula">Bunga = Sisa Pokok × (Bunga% ÷ 12)</div>
+      </div>
+
+      <div class="info-card anuitas">
+        <div class="ic-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Bunga Anuitas</h3>
+        <p>Cicilan <strong>total tetap</strong>, tapi komposisi pokok dan bunga berubah setiap bulan. Metode paling umum.</p>
+        <ul>
+          <li>Cicilan tetap seperti flat</li>
+          <li>Total bunga lebih hemat dari flat</li>
+          <li>Standar perbankan internasional</li>
+          <li>Fleksibel untuk semua profil</li>
+        </ul>
+        <div class="formula">PMT = P × i(1+i)^n / ((1+i)^n - 1)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section fade-up">
+    <h2>Siap Mengajukan Pinjaman?</h2>
+    <p>Konsultasikan kebutuhan pinjaman Anda dengan tim ahli BANK DAMARA. Proses cepat, bunga kompetitif, dan persetujuan mudah.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/6281234567890" class="btn btn-primary" target="_blank"><i class="fab fa-whatsapp"></i> Chat WhatsApp</a>
+      <a href="index.html#kontak" class="btn btn-outline"><i class="fas fa-phone"></i> Hubungi Kami</a>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <div class="logo-icon">BN</div>
+          <div class="logo-text" style="color:#fff">BANK DAMARA<span>Trusted Since 1983</span></div>
+        </div>
+        <p>Bank terpercaya yang melayani nasabah dengan integritas, inovasi, dan pelayanan prima selama lebih dari 40 tahun.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Produk</h4>
+        <a href="#">Tabungan</a>
+        <a href="#">Deposito</a>
+        <a href="#">Pinjaman</a>
+        <a href="#">Layanan Digital</a>
+      </div>
+      <div class="footer-col">
+        <h4>Perusahaan</h4>
+        <a href="index.html#tentang">Tentang Kami</a>
+        <a href="#">Karir</a>
+        <a href="#">Berita</a>
+        <a href="#">Investor</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <a href="tel:1500888"><i class="fas fa-phone"></i> 1500-888</a>
+        <a href="mailto:info@bankdamara.co.id"><i class="fas fa-envelope"></i> info@bankdamara.co.id</a>
+        <a href="#"><i class="fas fa-location-dot"></i> Jakarta, Indonesia</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 BANK DAMARA. All rights reserved. Terdaftar & diawasi OJK.</div>
+  </div>
+</footer>
+
+<a href="https://wa.me/6281234567890" class="float-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+// ===== FORMAT RUPIAH =====
+const fmt = n => 'Rp ' + Math.round(n).toLocaleString('id-ID');
+const fmtShort = n => {
+  if(n >= 1e9) return 'Rp ' + (n/1e9).toFixed(1) + 'M';
+  if(n >= 1e6) return 'Rp ' + (n/1e6).toFixed(1) + 'Jt';
+  if(n >= 1e3) return 'Rp ' + (n/1e3).toFixed(0) + 'Rb';
+  return fmt(n);
+};
+
+// ===== RANGE INPUTS =====
+const rJ = document.getElementById('rangeJumlah');
+const rT = document.getElementById('rangeTenor');
+const rB = document.getElementById('rangeBunga');
+const vJ = document.getElementById('valJumlah');
+const vT = document.getElementById('valTenor');
+const vB = document.getElementById('valBunga');
+
+function updateRange(r, v, formatter){
+  const pct = ((r.value - r.min) / (r.max - r.min)) * 100;
+  r.style.setProperty('--val', pct + '%');
+  v.textContent = formatter(+r.value);
+}
+rJ.addEventListener('input', () => updateRange(rJ, vJ, fmt));
+rT.addEventListener('input', () => updateRange(rT, vT, n => n + ' Bulan'));
+rB.addEventListener('input', () => updateRange(rB, vB, n => n + '%'));
+updateRange(rJ, vJ, fmt);
+updateRange(rT, vT, n => n + ' Bulan');
+updateRange(rB, vB, n => n + '%');
+
+// ===== METHOD TABS =====
+let currentMethod = 'flat';
+document.querySelectorAll('.method-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.method-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    currentMethod = tab.dataset.method;
+    hitung();
+  });
+});
+
+// ===== PERHITUNGAN =====
+function calcFlat(pokok, tenor, bungaTahun){
+  const bungaTotal = pokok * (bungaTahun/100) * (tenor/12);
+  const cicilan = (pokok + bungaTotal) / tenor;
+  const pokokBln = pokok / tenor;
+  const bungaBln = bungaTotal / tenor;
+  const schedule = [];
+  let sisa = pokok;
+  for(let i=1; i<=tenor; i++){
+    sisa -= pokokBln;
+    schedule.push({bln:i, cicilan, pokok:pokokBln, bunga:bungaBln, sisa:Math.max(0,sisa)});
+  }
+  return {cicilan, pokokBln, bungaBln, totalPokok:pokok, totalBunga:bungaTotal, total:pokok+bungaTotal, schedule};
+}
+
+function calcEfektif(pokok, tenor, bungaTahun){
+  const pokokBln = pokok / tenor;
+  const i = bungaTahun / 100 / 12;
+  const schedule = [];
+  let sisa = pokok, totalBunga = 0;
+  for(let b=1; b<=tenor; b++){
+    const bunga = sisa * i;
+    const cicilan = pokokBln + bunga;
+    sisa -= pokokBln;
+    totalBunga += bunga;
+    schedule.push({bln:b, cicilan, pokok:pokokBln, bunga, sisa:Math.max(0,sisa)});
+  }
+  const total = pokok + totalBunga;
+  return {cicilan:schedule[0].cicilan, cicilanMin:schedule[schedule.length-1].cicilan, totalPokok:pokok, totalBunga, total, schedule};
+}
+
+function calcAnuitas(pokok, tenor, bungaTahun){
+  const i = bungaTahun / 100 / 12;
+  const pmt = i === 0 ? pokok/tenor : pokok * i * Math.pow(1+i,tenor) / (Math.pow(1+i,tenor) - 1);
+  const schedule = [];
+  let sisa = pokok, totalBunga = 0;
+  for(let b=1; b<=tenor; b++){
+    const bunga = sisa * i;
+    const byrPokok = pmt - bunga;
+    sisa -= byrPokok;
+    totalBunga += bunga;
+    schedule.push({bln:b, cicilan:pmt, pokok:byrPokok, bunga, sisa:Math.max(0,sisa)});
+  }
+  return {cicilan:pmt, totalPokok:pokok, totalBunga, total:pokok+totalBunga, schedule};
+}
+
+// ===== CHARTS =====
+let pieChart, lineChart, compareChart;
+
+function drawPie(pokok, bunga){
+  const ctx = document.getElementById('pieChart');
+  if(pieChart) pieChart.destroy();
+  pieChart = new Chart(ctx, {
+    type:'doughnut',
+    data:{labels:['Pokok','Bunga'], datasets:[{data:[pokok,bunga], backgroundColor:['#0a2540','#d4a24c'], borderWidth:0}]},
+    options:{responsive:true, maintainAspectRatio:false, cutout:'65%', plugins:{legend:{position:'bottom', labels:{font:{size:11},padding:10}}}}
+  });
+}
+
+function drawLine(schedule){
+  const ctx = document.getElementById('lineChart');
+  if(lineChart) lineChart.destroy();
+  const labels = schedule.map(s => s.bln);
+  const data = schedule.map(s => s.sisa);
+  lineChart = new Chart(ctx, {
+    type:'line',
+    data:{labels, datasets:[{label:'Sisa Pokok', data, borderColor:'#d4a24c', backgroundColor:'rgba(212,162,76,.15)', fill:true, tension:.4, pointRadius:0, borderWidth:2}]},
+    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{x:{display:false}, y:{ticks:{callback:v=>fmtShort(v), font:{size:10}}, grid:{color:'rgba(0,0,0,.05)'}}}}
+  });
+}
+
+function drawCompare(flat, efektif, anuitas){
+  const ctx = document.getElementById('compareChart');
+  if(compareChart) compareChart.destroy();
+  compareChart = new Chart(ctx, {
+    type:'bar',
+    data:{
+      labels:['Flat','Efektif','Anuitas'],
+      datasets:[
+        {label:'Pokok', data:[flat.totalPokok, efektif.totalPokok, anuitas.totalPokok], backgroundColor:'#0a2540'},
+        {label:'Bunga', data:[flat.totalBunga, efektif.totalBunga, anuitas.totalBunga], backgroundColor:'#d4a24c'}
+      ]
+    },
+    options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom', labels:{font:{size:11}}}}, scales:{x:{stacked:true}, y:{stacked:true, ticks:{callback:v=>fmtShort(v)}}}}
+  });
+}
+
+// ===== RENDER =====
+function renderTable(schedule){
+  const tbody = document.getElementById('tblBody');
+  tbody.innerHTML = schedule.map(s => `
+    <tr>
+      <td><strong>${s.bln}</strong></td>
+      <td class="num">${fmt(s.cicilan)}</td>
+      <td class="num pokok">${fmt(s.pokok)}</td>
+      <td class="num bunga">${fmt(s.bunga)}</td>
+      <td class="num saldo">${fmt(s.sisa)}</td>
+    </tr>
+  `).join('');
+}
+
+function renderCompare(pokok, tenor, bungaTahun){
+  const f = calcFlat(pokok, tenor, bungaTahun);
+  const e = calcEfektif(pokok, tenor, bungaTahun);
+  const a = calcAnuitas(pokok, tenor, bungaTahun);
+  const cicFlat = f.cicilan;
+  const cicEf1 = e.schedule[0].cicilan;
+  const cicEfN = e.schedule[e.schedule.length-1].cicilan;
+  const cicAn = a.cicilan;
+  
+  // Tentukan "Terhemat"
+  const minBunga = Math.min(f.totalBunga, e.totalBunga, a.totalBunga);
+  
+  const grid = document.getElementById('compareGrid');
+  grid.innerHTML = `
+    <div class="compare-card flat">
+      ${f.totalBunga === minBunga ? '<div class="cc-badge">TERMURAH</div>' : ''}
+      <div class="cc-icon"><i class="fas fa-equals"></i></div>
+      <div class="cc-name">Flat</div>
+      <div class="cc-desc">Cicilan tetap setiap bulan</div>
+      <div class="cc-row"><span class="lbl">Cicilan/bln</span><span class="val">${fmt(cicFlat)}</span></div>
+      <div class="cc-row"><span class="lbl">Total Bunga</span><span class="val">${fmt(f.totalBunga)}</span></div>
+      <div class="cc-row"><span class="lbl">Total Bayar</span><span class="val">${fmt(f.total)}</span></div>
+    </div>
+    <div class="compare-card efektif">
+      ${e.totalBunga === minBunga ? '<div class="cc-badge">TERMURAH</div>' : ''}
+      <div class="cc-icon"><i class="fas fa-arrow-trend-down"></i></div>
+      <div class="cc-name">Efektif</div>
+      <div class="cc-desc">Cicilan menurun tiap bulan</div>
+      <div class="cc-row"><span class="lbl">Bulan ke-1</span><span class="val">${fmt(cicEf1)}</span></div>
+      <div class="cc-row"><span class="lbl">Bulan ke-${tenor}</span><span class="val">${fmt(cicEfN)}</span></div>
+      <div class="cc-row"><span class="lbl">Total Bunga</span><span class="val">${fmt(e.totalBunga)}</span></div>
+      <div class="cc-row"><span class="lbl">Total Bayar</span><span class="val">${fmt(e.total)}</span></div>
+    </div>
+    <div class="compare-card anuitas">
+      ${a.totalBunga === minBunga ? '<div class="cc-badge">TERMURAH</div>' : ''}
+      <div class="cc-icon"><i class="fas fa-chart-line"></i></div>
+      <div class="cc-name">Anuitas</div>
+      <div class="cc-desc">Cicilan tetap, komposisi berubah</div>
+      <div class="cc-row"><span class="lbl">Cicilan/bln</span><span class="val">${fmt(cicAn)}</span></div>
+      <div class="cc-row"><span class="lbl">Total Bunga</span><span class="val">${fmt(a.totalBunga)}</span></div>
+      <div class="cc-row"><span class="lbl">Total Bayar</span><span class="val">${fmt(a.total)}</span></div>
+    </div>
+  `;
+  drawCompare(f, e, a);
+}
+
+function hitung(){
+  const pokok = +rJ.value;
+  const tenor = +rT.value;
+  const bungaTahun = +rB.value;
+  
+  document.getElementById('singleView').style.display = currentMethod === 'compare' ? 'none' : 'block';
+  document.getElementById('compareView').style.display = currentMethod === 'compare' ? 'block' : 'none';
+  
+  if(currentMethod === 'compare'){
+    document.getElementById('resultMethod').textContent = 'Mode Perbandingan 3 Metode';
+    renderCompare(pokok, tenor, bungaTahun);
+    return;
+  }
+  
+  let res, methodName, cicilanText;
+  if(currentMethod === 'flat'){
+    res = calcFlat(pokok, tenor, bungaTahun);
+    methodName = 'Flat (Cicilan Tetap)';
+    cicilanText = fmt(res.cicilan);
+  } else if(currentMethod === 'efektif'){
+    res = calcEfektif(pokok, tenor, bungaTahun);
+    methodName = 'Efektif (Menurun)';
+    cicilanText = fmt(res.schedule[0].cicilan) + ' → ' + fmt(res.schedule[res.schedule.length-1].cicilan);
+  } else {
+    res = calcAnuitas(pokok, tenor, bungaTahun);
+    methodName = 'Anuitas (Balance)';
+    cicilanText = fmt(res.cicilan);
+  }
+  
+  document.getElementById('resultMethod').textContent = 'Metode: ' + methodName;
+  document.getElementById('outCicilan').textContent = cicilanText;
+  document.getElementById('outPokok').textContent = fmt(res.totalPokok);
+  document.getElementById('outBunga').textContent = fmt(res.totalBunga);
+  document.getElementById('outTotal').textContent = fmt(res.total);
+  
+  drawPie(res.totalPokok, res.totalBunga);
+  drawLine(res.schedule);
+  renderTable(res.schedule);
+  
+  window._lastResult = res;
+}
+
+// ===== EXPORT CSV =====
+function exportCSV(){
+  if(!window._lastResult) return;
+  const r = window._lastResult;
+  let csv = 'Bulan,Cicilan,Pokok,Bunga,Sisa Pokok\n';
+  r.schedule.forEach(s => {
+    csv += `${s.bln},${Math.round(s.cicilan)},${Math.round(s.pokok)},${Math.round(s.bunga)},${Math.round(s.sisa)}\n`;
+  });
+  const blob = new Blob([csv], {type:'text/csv'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `simulasi-pinjaman-${currentMethod}-${Date.now()}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// ===== SCROLL ANIMATION =====
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:.1});
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+// ===== AUTO HITUNG =====
+hitung();
+</script>
+</body>
+</html>
