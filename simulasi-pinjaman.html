@@ -273,30 +273,21 @@ tr.row-total td.bln .bln-badge{background:rgba(255,255,255,.2);color:#fff}
 
 /* ===== INFO SECTION - 1 BARIS 3 KOLOM COMPACT ===== */
 .info-section{margin-top:3rem}
-.info-section .info-title{
-  text-align:center;
-  margin-bottom:1.5rem;
-}
+.info-section .info-title{text-align:center;margin-bottom:1.25rem}
 .info-section .info-title h2{
-  font-family:'Poppins',sans-serif;
-  font-size:1.6rem;
-  color:var(--primary-dark);
-  font-weight:700;
-  margin-bottom:.35rem;
+  font-family:'Poppins',sans-serif;font-size:1.6rem;
+  color:var(--primary-dark);font-weight:700;margin-bottom:.35rem;
 }
 .info-section .info-title p{
-  color:var(--text-light);
-  font-size:.88rem;
-  max-width:600px;
-  margin:0 auto;
-  line-height:1.6;
+  color:var(--text-light);font-size:.85rem;
+  max-width:600px;margin:0 auto;line-height:1.6;
 }
 
-/* GRID 1 BARIS 3 KOLOM - tidak akan wrap */
+/* GRID 3 KOLOM - PAKSA 1 BARIS */
 .info-grid{
   display:grid;
   grid-template-columns:repeat(3, minmax(0, 1fr));
-  gap:1rem;
+  gap:.75rem;
   align-items:stretch;
 }
 
@@ -305,12 +296,13 @@ tr.row-total td.bln .bln-badge{background:rgba(255,255,255,.2);color:#fff}
   backdrop-filter:blur(20px);
   border:1px solid rgba(255,255,255,.7);
   border-radius:16px;
-  padding:1.25rem;
+  padding:1rem;
   transition:all .3s;
   position:relative;
   overflow:hidden;
   display:flex;
   flex-direction:column;
+  min-width:0; /* KUNCI: izinkan card mengecil */
 }
 .info-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
 .info-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
@@ -319,111 +311,56 @@ tr.row-total td.bln .bln-badge{background:rgba(255,255,255,.2);color:#fff}
 .info-card.anuitas::before{background:linear-gradient(90deg,#7c3aed,#a855f7)}
 
 .ic-icon{
-  width:44px;
-  height:44px;
-  border-radius:12px;
-  display:grid;
-  place-items:center;
-  color:#fff;
-  font-size:1.1rem;
-  margin-bottom:.85rem;
-  flex-shrink:0;
+  width:40px;height:40px;border-radius:11px;
+  display:grid;place-items:center;color:#fff;
+  font-size:1rem;margin-bottom:.75rem;flex-shrink:0;
 }
 .info-card.flat .ic-icon{background:linear-gradient(135deg,#2563eb,#1e40af)}
 .info-card.efektif .ic-icon{background:linear-gradient(135deg,#0891b2,#06b6d4)}
 .info-card.anuitas .ic-icon{background:linear-gradient(135deg,#7c3aed,#a855f7)}
 
 .info-card h3{
-  font-family:'Poppins',sans-serif;
-  font-size:1rem;
-  color:var(--primary-dark);
-  margin-bottom:.4rem;
-  font-weight:700;
+  font-family:'Poppins',sans-serif;font-size:.95rem;
+  color:var(--primary-dark);margin-bottom:.35rem;font-weight:700;
 }
 .info-card > p{
-  color:var(--text-light);
-  font-size:.8rem;
-  margin-bottom:.65rem;
-  line-height:1.55;
+  color:var(--text-light);font-size:.78rem;
+  margin-bottom:.6rem;line-height:1.5;
 }
 .info-card ul{
-  list-style:none;
-  font-size:.78rem;
-  color:var(--text);
-  margin-bottom:.65rem;
-  flex-grow:0;
+  list-style:none;font-size:.75rem;color:var(--text);
+  margin-bottom:.6rem;flex-grow:0;
 }
 .info-card ul li{
-  padding:.2rem 0 .2rem 1.25rem;
-  position:relative;
-  line-height:1.5;
+  padding:.18rem 0 .18rem 1.2rem;position:relative;line-height:1.45;
 }
 .info-card ul li::before{
-  content:'✓';
-  position:absolute;
-  left:0;
-  color:var(--success);
-  font-weight:700;
-  font-size:.75rem;
+  content:'✓';position:absolute;left:0;color:var(--success);
+  font-weight:700;font-size:.72rem;
 }
+
+/* FORMULA - BISA WRAP, TIDAK MEMAKSA CARD LEBAR */
 .formula{
-  background:#f0f7ff;
-  border-left:3px solid var(--accent);
-  padding:.5rem .7rem;
-  border-radius:6px;
+  background:#f0f7ff;border-left:3px solid var(--accent);
+  padding:.45rem .65rem;border-radius:6px;
   font-family:'DM Sans',monospace;
-  font-size:.7rem;
-  font-weight:600;
+  font-size:.68rem;font-weight:600;
   color:var(--primary-dark);
   margin-top:auto;
-  overflow-x:auto;
-  white-space:nowrap;
+  word-break:break-word;      /* KUNCI: bisa wrap */
+  overflow-wrap:break-word;
+  line-height:1.4;
 }
-
-.cta-section{margin-top:3rem;background:var(--dark-gradient);border-radius:26px;padding:2.5rem 2rem;text-align:center;color:#fff;position:relative;overflow:hidden}
-.cta-section::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="%2360a5fa" opacity="0.4"/><circle cx="80" cy="40" r="1.5" fill="%2393c5fd" opacity="0.3"/><circle cx="40" cy="70" r="1" fill="%2360a5fa" opacity="0.4"/><circle cx="90" cy="90" r="2" fill="%2306b6d4" opacity="0.3"/></svg>');opacity:.6}
-.cta-section h2{font-family:'Poppins',sans-serif;font-size:1.8rem;margin-bottom:.6rem;position:relative;font-weight:700}
-.cta-section p{opacity:.95;margin-bottom:1.75rem;max-width:600px;margin-left:auto;margin-right:auto;position:relative;line-height:1.7}
-.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative}
-.cta-buttons .btn-primary{background:linear-gradient(135deg,#60a5fa,#06b6d4);color:#fff;box-shadow:0 8px 25px rgba(96,165,250,.4)}
-.cta-buttons .btn-outline{border-color:#fff;color:#fff}
-.cta-buttons .btn-outline:hover{background:#fff;color:var(--primary-dark)}
-
-footer{background:var(--primary-dark);color:#fff;padding:2.5rem 2rem 1.5rem;margin-top:3rem}
-.footer-wrap{max-width:1400px;margin:0 auto}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:1.75rem}
-.footer-col h4{font-family:'Poppins',sans-serif;margin-bottom:.85rem;color:#93c5fd;font-weight:600}
-.footer-col p,.footer-col a{color:rgba(255,255,255,.75);font-size:.88rem;text-decoration:none;display:block;margin-bottom:.4rem;transition:color .3s;line-height:1.6}
-.footer-col a:hover{color:#93c5fd}
-.footer-logo{display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem}
-.footer-bottom{padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.1);text-align:center;color:rgba(255,255,255,.65);font-size:.82rem}
-
-.float-wa{position:fixed;bottom:2rem;right:2rem;width:60px;height:60px;background:#25d366;color:#fff;border-radius:50%;display:grid;place-items:center;font-size:1.6rem;text-decoration:none;box-shadow:0 8px 25px rgba(37,211,102,.4);z-index:999;transition:all .3s;animation:bounce 2s infinite}
-.float-wa:hover{transform:scale(1.1)}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
 @media(max-width:1024px){
-  .sim-layout{grid-template-columns:1fr}
-  .result-panel{position:static}
-  .compare-grid{grid-template-columns:1fr}
-  .info-grid{grid-template-columns:repeat(3, minmax(0, 1fr));gap:.75rem}
-  .footer-grid{grid-template-columns:1fr 1fr}
+  .info-grid{gap:.6rem}
+  .info-card{padding:.85rem}
+  .info-card h3{font-size:.9rem}
+  .info-card > p{font-size:.75rem}
+  .info-card ul li{font-size:.72rem}
 }
 @media(max-width:768px){
-  .nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:1.5rem;gap:1rem;box-shadow:var(--shadow)}
-  .nav-menu.show{display:flex}
-  .menu-toggle{display:block}
-  .method-tabs{grid-template-columns:repeat(2,1fr)}
-  .summary-grid{grid-template-columns:1fr}
-  .summary-card.highlight{grid-column:span 1}
-  .info-grid{grid-template-columns:1fr;gap:.75rem}
-  .footer-grid{grid-template-columns:1fr}
-  .glass{padding:1.25rem}
-  .container{padding:0 1rem 3rem}
-  table{font-size:.75rem}
-  th,td{padding:.5rem .5rem}
-  td.num{font-size:.78rem}
-  td.bln{width:40px}
+  .info-grid{grid-template-columns:1fr}
 }
 
 @media print{
@@ -632,52 +569,49 @@ footer{background:var(--primary-dark);color:#fff;padding:2.5rem 2rem 1.5rem;marg
 
   <!-- INFO SECTION - 1 BARIS 3 KOLOM -->
   <section class="info-section fade-up">
-    <div class="info-title">
-      <h2>Pahami 3 Metode Bunga</h2>
-      <p>Setiap metode punya karakteristik berbeda. Pilih yang paling sesuai dengan kemampuan finansial Anda.</p>
+  <div class="info-title">
+    <h2>Pahami 3 Metode Bunga</h2>
+    <p>Karakteristik berbeda tiap metode. Pilih sesuai kemampuan finansial Anda.</p>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-card flat">
+      <div class="ic-icon"><i class="fas fa-equals"></i></div>
+      <h3>Bunga Flat</h3>
+      <p>Bunga dari pokok awal, tetap selama pinjaman.</p>
+      <ul>
+        <li>Cicilan stabil tiap bulan</li>
+        <li>Mudah diprediksi</li>
+        <li>Cocok income tetap</li>
+      </ul>
+      <div class="formula">Bunga = Pokok × i% × Thn</div>
     </div>
 
-    <div class="info-grid">
-      <div class="info-card flat">
-        <div class="ic-icon"><i class="fas fa-equals"></i></div>
-        <h3>Bunga Flat</h3>
-        <p>Bunga dihitung dari pokok awal dan tetap selama masa pinjaman.</p>
-        <ul>
-          <li>Cicilan stabil tiap bulan</li>
-          <li>Mudah diprediksi</li>
-          <li>Cocok pendapatan tetap</li>
-          <li>Total bunga paling besar</li>
-        </ul>
-        <div class="formula">Bunga = Pokok × i% × Tahun</div>
-      </div>
-
-      <div class="info-card efektif">
-        <div class="ic-icon"><i class="fas fa-arrow-trend-down"></i></div>
-        <h3>Bunga Efektif</h3>
-        <p>Bunga dihitung dari sisa pokok. Cicilan menurun setiap bulan.</p>
-        <ul>
-          <li>Total bunga paling kecil</li>
-          <li>Berat di awal, ringan di akhir</li>
-          <li>Lebih adil & transparan</li>
-          <li>Cocok income meningkat</li>
-        </ul>
-        <div class="formula">Bunga = Sisa × (i% ÷ 12)</div>
-      </div>
-
-      <div class="info-card anuitas">
-        <div class="ic-icon"><i class="fas fa-chart-line"></i></div>
-        <h3>Bunga Anuitas</h3>
-        <p>Cicilan total tetap, komposisi pokok-bunga berubah tiap bulan.</p>
-        <ul>
-          <li>Cicilan tetap seperti flat</li>
-          <li>Total bunga lebih hemat</li>
-          <li>Standar perbankan global</li>
-          <li>Fleksibel semua profil</li>
-        </ul>
-        <div class="formula">PMT = P·i(1+i)ⁿ / ((1+i)ⁿ-1)</div>
-      </div>
+    <div class="info-card efektif">
+      <div class="ic-icon"><i class="fas fa-arrow-trend-down"></i></div>
+      <h3>Bunga Efektif</h3>
+      <p>Bunga dari sisa pokok, cicilan menurun.</p>
+      <ul>
+        <li>Total bunga paling kecil</li>
+        <li>Berat di awal, ringan akhir</li>
+        <li>Lebih adil & transparan</li>
+      </ul>
+      <div class="formula">Bunga = Sisa × (i%/12)</div>
     </div>
-  </section>
+
+    <div class="info-card anuitas">
+      <div class="ic-icon"><i class="fas fa-chart-line"></i></div>
+      <h3>Bunga Anuitas</h3>
+      <p>Cicilan tetap, komposisi berubah tiap bulan.</p>
+      <ul>
+        <li>Cicilan tetap spt flat</li>
+        <li>Total bunga lebih hemat</li>
+        <li>Standar perbankan global</li>
+      </ul>
+      <div class="formula">PMT = P·i(1+i)ⁿ/((1+i)ⁿ-1)</div>
+    </div>
+  </div>
+</section>
 
   <section class="cta-section fade-up">
     <h2>Siap Mengajukan Pinjaman?</h2>
