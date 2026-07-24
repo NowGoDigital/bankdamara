@@ -7,7 +7,7 @@
 <meta name="description" content="Simulasi pinjaman BANK DAMARA dengan perhitungan bunga Flat, Efektif, dan Anuitas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 :root{
@@ -26,6 +26,8 @@
   --shadow:0 10px 40px rgba(12,36,97,.08);
   --shadow-hover:0 20px 60px rgba(12,36,97,.15);
   --success:#10b981;
+  /* FONT KHUSUS ANGKA - MONOSPACE, LURUS VERTIKAL */
+  --font-mono: 'JetBrains Mono', 'Roboto Mono', 'Menlo', monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -103,14 +105,15 @@ header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.85);backd
   border:2px solid var(--border);
   border-radius:11px;
   font-size:.92rem;
-  font-family:'DM Sans','Plus Jakarta Sans',sans-serif;
+  font-family:var(--font-mono);
   font-weight:500;
   background:#fff;
   transition:all .3s;
   color:var(--text);
+  letter-spacing:.02em;
 }
 .input-wrap input.with-suffix{padding-right:2.75rem}
-.input-wrap select{padding-left:3rem;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b82f6'><path d='M7 10l5 5 5-5z'/></svg>");background-repeat:no-repeat;background-position:right .85rem center;background-size:18px}
+.input-wrap select{padding-left:3rem;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b82f6'><path d='M7 10l5 5 5-5z'/></svg>");background-repeat:no-repeat;background-position:right .85rem center;background-size:18px;font-family:'Plus Jakarta Sans',sans-serif}
 
 .input-wrap input:focus,.input-wrap select:focus{
   outline:none;
@@ -141,7 +144,6 @@ header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.85);backd
 
 .result-panel{position:sticky;top:90px}
 
-/* ===== SUMMARY GRID - 3 KOLOM ===== */
 .summary-grid{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
@@ -162,7 +164,6 @@ header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.85);backd
 .summary-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
 .summary-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--blue-gradient)}
 
-/* HIGHLIGHT - span 3 kolom (full width di baris 1) */
 .summary-card.highlight{
   grid-column:span 3;
   background:var(--dark-gradient);
@@ -183,17 +184,21 @@ header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.85);backd
   gap:.3rem;
   font-weight:500;
   white-space:nowrap;
+  font-family:'Plus Jakarta Sans',sans-serif;
 }
 .sc-label i{color:var(--accent);font-size:.75rem}
+
+/* ===== SC-VALUE: FONT MONOSPACE, LURUS VERTIKAL ===== */
 .sc-value{
-  font-family:'DM Sans',sans-serif;
+  font-family:var(--font-mono);
   font-size:1rem;
-  font-weight:700;
+  font-weight:600;
   color:var(--primary-dark);
-  margin-top:.15rem;
-  letter-spacing:-.3px;
-  font-variant-numeric:tabular-nums;
+  margin-top:.2rem;
+  letter-spacing:.02em;
   white-space:nowrap;
+  font-variant-numeric:tabular-nums;
+  font-feature-settings:'tnum' 1, 'zero' 1;
 }
 
 .table-wrap{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:1rem}
@@ -207,26 +212,90 @@ header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.85);backd
 .table-scroll::-webkit-scrollbar{width:6px}
 .table-scroll::-webkit-scrollbar-thumb{background:var(--accent);border-radius:10px}
 
-table{width:100%;border-collapse:collapse;font-size:.83rem;font-variant-numeric:tabular-nums;font-feature-settings:'tnum'}
+/* ===== TABEL: FONT MONOSPACE KHUSUS KOLOM ANGKA ===== */
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:.83rem;
+  font-variant-numeric:tabular-nums;
+  font-feature-settings:'tnum' 1, 'zero' 1;
+}
 thead{background:#f8fafc;position:sticky;top:0;z-index:2}
-th{padding:.65rem .85rem;text-align:left;font-weight:700;color:var(--primary-dark);font-size:.7rem;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid var(--border);font-family:'Poppins',sans-serif;white-space:nowrap}
-th.num{text-align:right;font-variant-numeric:tabular-nums}
-td{padding:.6rem .85rem;border-bottom:1px solid var(--border);color:var(--text);vertical-align:middle}
+
+th{
+  padding:.7rem .9rem;
+  text-align:left;
+  font-weight:700;
+  color:var(--primary-dark);
+  font-size:.7rem;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  border-bottom:2px solid var(--border);
+  font-family:'Poppins',sans-serif;
+  white-space:nowrap;
+}
+th.num{
+  text-align:right;
+  font-family:var(--font-mono);
+  letter-spacing:.03em;
+  padding-right:1rem;
+}
+
+td{
+  padding:.6rem .9rem;
+  border-bottom:1px solid var(--border);
+  color:var(--text);
+  vertical-align:middle;
+}
 tbody tr{transition:background .2s}
 tbody tr:nth-child(even){background:#f8fafc}
 tbody tr:hover{background:#e0edff}
 
-td.bln{text-align:center;font-weight:700;color:var(--primary-dark);font-family:'DM Sans',sans-serif;width:45px}
-td.bln .bln-badge{display:inline-block;min-width:26px;padding:2px 7px;background:linear-gradient(135deg,#dbeafe,#e0f2fe);color:var(--primary);border-radius:6px;font-size:.75rem}
+td.bln{
+  text-align:center;
+  font-weight:700;
+  color:var(--primary-dark);
+  font-family:var(--font-mono);
+  width:50px;
+}
+td.bln .bln-badge{
+  display:inline-block;
+  min-width:30px;
+  padding:3px 8px;
+  background:linear-gradient(135deg,#dbeafe,#e0f2fe);
+  color:var(--primary);
+  border-radius:6px;
+  font-size:.78rem;
+  font-weight:600;
+}
 
-td.num{font-family:'DM Sans',sans-serif;font-size:.83rem;font-weight:600;text-align:right;letter-spacing:-.2px;font-variant-numeric:tabular-nums;font-feature-settings:'tnum';white-space:nowrap}
+/* ===== KOLOM ANGKA: MONOSPACE + LURUS VERTIKAL ===== */
+td.num{
+  font-family:var(--font-mono);
+  font-size:.82rem;
+  font-weight:500;
+  text-align:right;
+  letter-spacing:.03em;
+  white-space:nowrap;
+  font-variant-numeric:tabular-nums;
+  font-feature-settings:'tnum' 1, 'zero' 1;
+  padding-right:1rem;
+}
 td.pokok{color:var(--primary)}
-td.bunga{color:var(--accent-cyan)}
+td.bunga{color:var(--accent-cyan);font-weight:500}
 td.saldo{color:var(--text-light);font-weight:500}
 
 tr.row-total{background:var(--dark-gradient) !important;color:#fff;font-weight:700}
-tr.row-total td{color:#fff;border-top:2px solid var(--accent);padding-top:.8rem;padding-bottom:.8rem}
-tr.row-total td.num{color:#bfdbfe}
+tr.row-total td{
+  color:#fff;
+  border-top:2px solid var(--accent);
+  padding-top:.8rem;
+  padding-bottom:.8rem;
+}
+tr.row-total td.num{
+  color:#bfdbfe;
+  font-weight:700;
+}
 tr.row-total td.bln .bln-badge{background:rgba(255,255,255,.2);color:#fff}
 
 .compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-bottom:1rem}
@@ -243,7 +312,17 @@ tr.row-total td.bln .bln-badge{background:rgba(255,255,255,.2);color:#fff}
 .cc-row{display:flex;justify-content:space-between;padding:.35rem 0;border-top:1px solid rgba(255,255,255,.18);font-size:.78rem;position:relative;z-index:1}
 .cc-row:last-child{border-top:2px solid rgba(255,255,255,.35);margin-top:.35rem;padding-top:.6rem}
 .cc-row .lbl{opacity:.9}
-.cc-row .val{font-family:'DM Sans',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:-.2px;font-variant-numeric:tabular-nums}
+
+/* ===== CC-ROW VALUE: MONOSPACE, LURUS ===== */
+.cc-row .val{
+  font-family:var(--font-mono);
+  font-weight:600;
+  font-size:.82rem;
+  letter-spacing:.03em;
+  white-space:nowrap;
+  font-variant-numeric:tabular-nums;
+  font-feature-settings:'tnum' 1;
+}
 .cc-row:last-child .val{font-size:.9rem;color:#bfdbfe}
 .cc-badge{position:absolute;top:.75rem;right:.75rem;background:rgba(255,255,255,.25);padding:.2rem .5rem;border-radius:50px;font-size:.6rem;font-weight:700;letter-spacing:.5px;z-index:1}
 
@@ -294,7 +373,7 @@ tr.row-total td.bln .bln-badge{background:rgba(255,255,255,.2);color:#fff}
   border-left:3px solid var(--accent);
   padding:.4rem .6rem;
   border-radius:6px;
-  font-family:'DM Sans',monospace;
+  font-family:var(--font-mono);
   font-size:.68rem;
   font-weight:600;
   color:var(--primary-dark);
@@ -302,6 +381,7 @@ tr.row-total td.bln .bln-badge{background:rgba(255,255,255,.2);color:#fff}
   word-break:break-word;
   overflow-wrap:break-word;
   line-height:1.4;
+  letter-spacing:.02em;
 }
 
 .cta-section{margin-top:2.5rem;background:var(--dark-gradient);border-radius:22px;padding:2rem 1.75rem;text-align:center;color:#fff;position:relative;overflow:hidden}
@@ -343,8 +423,9 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
   .glass{padding:1.15rem}
   .container{padding:0 1rem 2.5rem}
   table{font-size:.72rem}
-  th,td{padding:.45rem .4rem}
-  td.num{font-size:.72rem}
+  th,td{padding:.45rem .5rem}
+  td.num{font-size:.72rem;padding-right:.6rem}
+  th.num{padding-right:.6rem}
   td.bln{width:38px}
 }
 
@@ -502,14 +583,11 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
       </div>
 
       <div id="singleView">
-        <!-- SUMMARY GRID - 3 KOLOM -->
         <div class="summary-grid">
-          <!-- Baris 1: Cicilan (highlight, full width) -->
           <div class="summary-card highlight">
             <div class="sc-label"><i class="fas fa-hand-holding-dollar"></i> Cicilan per Bulan</div>
             <div class="sc-value" id="outCicilan">Rp 0</div>
           </div>
-          <!-- Baris 2: 3 kolom -->
           <div class="summary-card">
             <div class="sc-label"><i class="fas fa-wallet"></i> Pokok Pinjaman</div>
             <div class="sc-value" id="outPokok">Rp 0</div>
@@ -752,24 +830,30 @@ function calcAnuitas(pokok, tenor, bungaTahun){
   return {cicilan:pmt, totalPokok:pokok, totalBunga, total:pokok+totalBunga, schedule};
 }
 
+/* ===== FORMAT RUPIAH DENGAN PADDING ANGKA (ALIGNMENT MONOSPACE) ===== */
+const fmtPad = n => {
+  const val = Math.round(n).toLocaleString('id-ID');
+  return 'Rp ' + val;
+};
+
 function renderTable(schedule, totalPokok, totalBunga){
   const tbody = document.getElementById('tblBody');
   const rows = schedule.map(s => `
     <tr>
       <td class="bln"><span class="bln-badge">${s.bln}</span></td>
-      <td class="num">${fmt(s.cicilan)}</td>
-      <td class="num pokok">${fmt(s.pokok)}</td>
-      <td class="num bunga">${fmt(s.bunga)}</td>
-      <td class="num saldo">${fmt(s.sisa)}</td>
+      <td class="num">${fmtPad(s.cicilan)}</td>
+      <td class="num pokok">${fmtPad(s.pokok)}</td>
+      <td class="num bunga">${fmtPad(s.bunga)}</td>
+      <td class="num saldo">${fmtPad(s.sisa)}</td>
     </tr>
   `).join('');
   
   const totalRow = `
     <tr class="row-total">
       <td class="bln"><span class="bln-badge">Σ</span></td>
-      <td class="num">${fmt(totalPokok + totalBunga)}</td>
-      <td class="num">${fmt(totalPokok)}</td>
-      <td class="num">${fmt(totalBunga)}</td>
+      <td class="num">${fmtPad(totalPokok + totalBunga)}</td>
+      <td class="num">${fmtPad(totalPokok)}</td>
+      <td class="num">${fmtPad(totalBunga)}</td>
       <td class="num">—</td>
     </tr>
   `;
