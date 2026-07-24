@@ -675,6 +675,38 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 
 @media(max-width:576px){.gallery-info-section{padding:40px 0 30px}.gallery-section-header h2{font-size:1.6rem}.gallery-banner-wrapper img{height:160px}.gallery-banner-overlay h3{font-size:1rem}.ig-post-skeleton{height:320px}}
 
+/* ===== TENTANG KAMI - PHOTO & MAPS (BARU) ===== */
+.tentang-visual-area{display:flex;flex-direction:column;gap:20px}
+.tentang-photo-box{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 8px 35px rgba(0,0,0,.12);height:300px;transition:all .5s ease}
+.tentang-photo-box:hover{box-shadow:0 16px 50px rgba(0,0,0,.18);transform:translateY(-4px)}
+.tentang-photo-box img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.tentang-photo-box:hover img{transform:scale(1.05)}
+.tentang-photo-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(2,59,150,.88) 0%,rgba(2,59,150,.3) 50%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;color:#fff}
+.tentang-photo-overlay h4{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:4px;font-weight:700}
+.tentang-photo-overlay p{font-size:13px;opacity:.92;margin:0;display:flex;align-items:center;gap:6px}
+.tentang-photo-overlay p i{color:#c8a951;font-size:11px}
+.tentang-photo-badge{position:absolute;top:18px;left:18px;background:linear-gradient(135deg,#c8a951,#e0c76a);color:#023b96;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;gap:6px;box-shadow:0 4px 15px rgba(200,169,81,.4);z-index:3}
+.tentang-photo-badge i{font-size:10px}
+.tentang-maps-box{border-radius:20px;overflow:hidden;box-shadow:0 8px 35px rgba(0,0,0,.1);height:280px;position:relative;background:#e8eef7;border:1px solid rgba(0,0,0,.04)}
+.tentang-maps-box iframe{width:100%;height:100%;border:0;display:block}
+.tentang-maps-header{position:absolute;top:0;left:0;right:0;background:linear-gradient(135deg,#023b96,#1a5bc7);color:#fff;padding:12px 18px;z-index:2;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600}
+.tentang-maps-header i{color:#c8a951;font-size:15px}
+.tentang-maps-header span{font-family:'Playfair Display',serif;letter-spacing:.3px}
+@media(max-width:1024px){
+    .profil-visual-grid{grid-template-columns:1fr !important}
+    .tentang-photo-box,.tentang-maps-box{height:260px}
+}
+@media(max-width:768px){
+    .tentang-photo-box,.tentang-maps-box{height:220px}
+    .tentang-photo-overlay h4{font-size:17px}
+    .tentang-photo-overlay p{font-size:11px}
+}
+
+
+
+
+
+    
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.animate{animation:fadeInUp .6s ease forwards}
 </style>
 </head>
@@ -722,7 +754,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
         <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,rgba(200,169,81,.5),transparent)"></div>
 
         <!-- Content Grid -->
-        <div style="display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;position:relative;z-index:2" class="profil-hero-grid">
+        <div style="display:grid;grid-template-columns:1fr;gap:30px;align-items:center;position:relative;z-index:2" class="profil-hero-grid">
             <!-- Left: Text -->
             <div>
                 <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(200,169,81,.12);border:1px solid rgba(200,169,81,.25);padding:5px 16px;border-radius:50px;font-size:10px;font-weight:700;color:#e0c76a;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px">
@@ -732,33 +764,10 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
                 <p style="font-size:14px;color:rgba(255,255,255,.7);line-height:1.8;margin:0;max-width:560px">PT BANK DAMARA Tbk didirikan pada tahun 1985 sebagai bank umum swasta nasional. Dengan lebih dari <strong style="color:#e0c76a">1.200 cabang dan ATM</strong> yang tersebar di seluruh Nusantara, kami berkomitmen memberikan layanan perbankan terbaik.</p>
             </div>
             <!-- Right: Big Logo -->
-            <div style="text-align:center" class="profil-hero-logo">
-                <div style="width:100px;height:100px;border-radius:24px;background:linear-gradient(135deg,rgba(200,169,81,.2),rgba(200,169,81,.05));display:flex;align-items:center;justify-content:center;border:2px solid rgba(200,169,81,.25);margin:0 auto;backdrop-filter:blur(10px)">
-                    <span style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;background:linear-gradient(135deg,#c8a951,#e0c76a,#f5e08a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">BN</span>
-                </div>
-                <div style="font-size:10px;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase;margin-top:8px;font-weight:600">Trusted Since 1985</div>
-            </div>
+            
         </div>
 
-        <!-- Stats Bar -->
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px;padding-top:24px;border-top:1px solid rgba(200,169,81,.15);position:relative;z-index:2" class="profil-stats-grid">
-            <div style="text-align:center">
-                <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;background:linear-gradient(135deg,#c8a951,#e0c76a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1">40+</div>
-                <div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:4px;font-weight:500;letter-spacing:.5px">Tahun Berdiri</div>
-            </div>
-            <div style="text-align:center">
-                <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;background:linear-gradient(135deg,#c8a951,#e0c76a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1">1,200+</div>
-                <div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:4px;font-weight:500;letter-spacing:.5px">Cabang & ATM</div>
-            </div>
-            <div style="text-align:center">
-                <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;background:linear-gradient(135deg,#c8a951,#e0c76a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1">5M+</div>
-                <div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:4px;font-weight:500;letter-spacing:.5px">Nasabah Aktif</div>
-            </div>
-            <div style="text-align:center">
-                <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;background:linear-gradient(135deg,#c8a951,#e0c76a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1">34</div>
-                <div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:4px;font-weight:500;letter-spacing:.5px">Provinsi</div>
-            </div>
-        </div>
+        
     </div>
 
     <!-- Main Content: 2 Kolom -->
@@ -819,114 +828,77 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
         <!-- Kolom Kanan: Sertifikasi & Penghargaan -->
         <div style="display:flex;flex-direction:column;gap:20px">
 
-            <!-- Sertifikasi -->
-            <div style="background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 4px 25px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.04)">
-                <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
-                    <div style="width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05));display:flex;align-items:center;justify-content:center;border:1px solid rgba(200,169,81,.2)">
-                        <i class="fas fa-certificate" style="color:#c8a951;font-size:16px"></i>
-                    </div>
-                    <div>
-                        <h4 style="font-size:16px;font-weight:700;color:#023b96;margin:0">Sertifikasi & Legalitas</h4>
-                        <p style="font-size:11px;color:#94a3b8;margin:0">Pengakuan resmi dan standar mutu</p>
-                    </div>
-                </div>
+        <!-- Kolom Kanan: Foto + Google Maps (BARU) -->
+<div class="tentang-visual-area">
 
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px" class="profil-cert-grid">
-                    <!-- OJK -->
-                    <div style="display:flex;align-items:center;gap:10px;padding:14px;background:linear-gradient(135deg,rgba(30,136,229,.04),rgba(30,136,229,.01));border-radius:12px;border:1px solid rgba(30,136,229,.1);transition:all .3s" onmouseover="this.style.borderColor='rgba(30,136,229,.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(30,136,229,.1)';this.style.transform='translateY(0)'">
-                        <div style="width:38px;height:38px;min-width:38px;border-radius:10px;background:linear-gradient(135deg,#e3f2fd,#bbdefb);display:flex;align-items:center;justify-content:center">
-                            <i class="fas fa-shield-halved" style="color:#1565c0;font-size:14px"></i>
-                        </div>
-                        <div>
-                            <div style="font-size:12px;font-weight:700;color:#023b96">Terdaftar OJK</div>
-                            <div style="font-size:10px;color:#94a3b8">Diawasi resmi</div>
-                        </div>
-                    </div>
-                    <!-- LPS -->
-                    <div style="display:flex;align-items:center;gap:10px;padding:14px;background:linear-gradient(135deg,rgba(46,125,50,.04),rgba(46,125,50,.01));border-radius:12px;border:1px solid rgba(46,125,50,.1);transition:all .3s" onmouseover="this.style.borderColor='rgba(46,125,50,.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(46,125,50,.1)';this.style.transform='translateY(0)'">
-                        <div style="width:38px;height:38px;min-width:38px;border-radius:10px;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);display:flex;align-items:center;justify-content:center">
-                            <i class="fas fa-shield-alt" style="color:#2e7d32;font-size:14px"></i>
-                        </div>
-                        <div>
-                            <div style="font-size:12px;font-weight:700;color:#023b96">Anggota LPS</div>
-                            <div style="font-size:10px;color:#94a3b8">Dijamin Rp 2 M</div>
-                        </div>
-                    </div>
-                    <!-- Rating -->
-                    <div style="display:flex;align-items:center;gap:10px;padding:14px;background:linear-gradient(135deg,rgba(200,169,81,.06),rgba(200,169,81,.02));border-radius:12px;border:1px solid rgba(200,169,81,.15);transition:all .3s" onmouseover="this.style.borderColor='rgba(200,169,81,.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(200,169,81,.15)';this.style.transform='translateY(0)'">
-                        <div style="width:38px;height:38px;min-width:38px;border-radius:10px;background:linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05));display:flex;align-items:center;justify-content:center">
-                            <i class="fas fa-star" style="color:#c8a951;font-size:14px"></i>
-                        </div>
-                        <div>
-                            <div style="font-size:12px;font-weight:700;color:#023b96">Rating AAA</div>
-                            <div style="font-size:10px;color:#94a3b8">Pefindo Rating</div>
-                        </div>
-                    </div>
-                    <!-- ISO -->
-                    <div style="display:flex;align-items:center;gap:10px;padding:14px;background:linear-gradient(135deg,rgba(156,39,176,.04),rgba(156,39,176,.01));border-radius:12px;border:1px solid rgba(156,39,176,.1);transition:all .3s" onmouseover="this.style.borderColor='rgba(156,39,176,.25)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(156,39,176,.1)';this.style.transform='translateY(0)'">
-                        <div style="width:38px;height:38px;min-width:38px;border-radius:10px;background:linear-gradient(135deg,#f3e5f5,#e1bee7);display:flex;align-items:center;justify-content:center">
-                            <i class="fas fa-lock" style="color:#7b1fa2;font-size:14px"></i>
-                        </div>
-                        <div>
-                            <div style="font-size:12px;font-weight:700;color:#023b96">ISO 27001</div>
-                            <div style="font-size:10px;color:#94a3b8">Keamanan Info</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Penghargaan -->
-            <div style="background:linear-gradient(135deg,#fffdf5,#fff9e6);border-radius:20px;padding:24px;border:1px solid rgba(200,169,81,.2);box-shadow:0 4px 25px rgba(200,169,81,.08)">
-                <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
-                    <div style="width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#c8a951,#e0c76a);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(200,169,81,.3)">
-                        <i class="fas fa-trophy" style="color:#023b96;font-size:16px"></i>
-                    </div>
-                    <div>
-                        <h4 style="font-size:16px;font-weight:700;color:#023b96;margin:0">Penghargaan Terbaru</h4>
-                        <p style="font-size:11px;color:#94a3b8;margin:0">Prestasi dan pencapaian</p>
-                    </div>
-                </div>
-                <div style="display:flex;flex-direction:column;gap:10px">
-                    <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:#fff;border-radius:12px;border:1px solid rgba(200,169,81,.12)">
-                        <div style="width:36px;height:36px;min-width:36px;border-radius:50%;background:linear-gradient(135deg,#c8a951,#e0c76a);display:flex;align-items:center;justify-content:center">
-                            <span style="font-size:14px">🏆</span>
-                        </div>
-                        <div style="flex:1">
-                            <div style="font-size:12px;font-weight:700;color:#023b96">Bank Terbaik 2026</div>
-                            <div style="font-size:10px;color:#94a3b8">Majalah Infobank — Kategori Bank BUKU 3</div>
-                        </div>
-                        <span style="padding:3px 10px;background:linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05));border-radius:20px;font-size:10px;font-weight:700;color:#c8a951;border:1px solid rgba(200,169,81,.2)">2026</span>
-                    </div>
-                    <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:#fff;border-radius:12px;border:1px solid rgba(200,169,81,.12)">
-                        <div style="width:36px;height:36px;min-width:36px;border-radius:50%;background:linear-gradient(135deg,#e3f2fd,#bbdefb);display:flex;align-items:center;justify-content:center">
-                            <span style="font-size:14px">🥇</span>
-                        </div>
-                        <div style="flex:1">
-                            <div style="font-size:12px;font-weight:700;color:#023b96">Best Digital Banking</div>
-                            <div style="font-size:10px;color:#94a3b8">Indonesia Digital Finance Award</div>
-                        </div>
-                        <span style="padding:3px 10px;background:rgba(30,136,229,.08);border-radius:20px;font-size:10px;font-weight:700;color:#1565c0;border:1px solid rgba(30,136,229,.12)">2025</span>
-                    </div>
-                    <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:#fff;border-radius:12px;border:1px solid rgba(200,169,81,.12)">
-                        <div style="width:36px;height:36px;min-width:36px;border-radius:50%;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);display:flex;align-items:center;justify-content:center">
-                            <span style="font-size:14px">🌿</span>
-                        </div>
-                        <div style="flex:1">
-                            <div style="font-size:12px;font-weight:700;color:#023b96">Best CSR Program</div>
-                            <div style="font-size:10px;color:#94a3b8">Kompas Sustainability Award</div>
-                        </div>
-                        <span style="padding:3px 10px;background:rgba(46,125,50,.08);border-radius:20px;font-size:10px;font-weight:700;color:#2e7d32;border:1px solid rgba(46,125,50,.12)">2025</span>
-                    </div>
-                </div>
-            </div>
-
+    <!-- Foto Kantor Pusat -->
+    <div class="tentang-photo-box">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop" 
+             alt="Kantor Pusat BANK DAMARA" 
+             onerror="this.parentElement.style.background='linear-gradient(135deg,#023b96,#1a5bc7)';this.style.display='none'">
+        <div class="tentang-photo-badge">
+            <i class="fas fa-star"></i> Kantor Pusat
         </div>
+        <div class="tentang-photo-overlay">
+            <h4>BANK DAMARA Tower</h4>
+            <p><i class="fas fa-map-marker-alt"></i> Jl. Jend. Sudirman Kav. 88, Jakarta Pusat 10220</p>
+        </div>
+    </div>
+
+    <!-- Google Maps -->
+    <div class="tentang-maps-box">
+        <div class="tentang-maps-header">
+            <i class="fas fa-map-marked-alt"></i>
+            <span>Lokasi Kantor Pusat</span>
+        </div>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5212327694836!2d106.82292231476896!3d-6.175392395518854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sMonumen%20Nasional!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lokasi Kantor Pusat BANK DAMARA">
+        </iframe>
+    </div>
+
+    <!-- Sertifikasi (dipindah ke bawah Maps) -->
+    <div style="background:#fff;border-radius:20px;padding:24px 20px;box-shadow:0 4px 25px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.04)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+            <div style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05));display:flex;align-items:center;justify-content:center;border:1px solid rgba(200,169,81,.2)">
+                <i class="fas fa-certificate" style="color:#c8a951;font-size:14px"></i>
+            </div>
+            <div>
+                <h4 style="font-size:14px;font-weight:700;color:#023b96;margin:0">Sertifikasi & Legalitas</h4>
+                <p style="font-size:10px;color:#94a3b8;margin:0">Pengakuan resmi</p>
+            </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px" class="profil-cert-grid">
+            <div style="display:flex;align-items:center;gap:8px;padding:10px;background:linear-gradient(135deg,rgba(30,136,229,.04),rgba(30,136,229,.01));border-radius:10px;border:1px solid rgba(30,136,229,.1)">
+                <div style="width:32px;height:32px;min-width:32px;border-radius:8px;background:linear-gradient(135deg,#e3f2fd,#bbdefb);display:flex;align-items:center;justify-content:center"><i class="fas fa-shield-halved" style="color:#1565c0;font-size:12px"></i></div>
+                <div><div style="font-size:11px;font-weight:700;color:#023b96">Terdaftar OJK</div><div style="font-size:9px;color:#94a3b8">Diawasi resmi</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px;background:linear-gradient(135deg,rgba(46,125,50,.04),rgba(46,125,50,.01));border-radius:10px;border:1px solid rgba(46,125,50,.1)">
+                <div style="width:32px;height:32px;min-width:32px;border-radius:8px;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);display:flex;align-items:center;justify-content:center"><i class="fas fa-shield-alt" style="color:#2e7d32;font-size:12px"></i></div>
+                <div><div style="font-size:11px;font-weight:700;color:#023b96">Anggota LPS</div><div style="font-size:9px;color:#94a3b8">Dijamin Rp 2 M</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px;background:linear-gradient(135deg,rgba(200,169,81,.06),rgba(200,169,81,.02));border-radius:10px;border:1px solid rgba(200,169,81,.15)">
+                <div style="width:32px;height:32px;min-width:32px;border-radius:8px;background:linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05));display:flex;align-items:center;justify-content:center"><i class="fas fa-star" style="color:#c8a951;font-size:12px"></i></div>
+                <div><div style="font-size:11px;font-weight:700;color:#023b96">Rating AAA</div><div style="font-size:9px;color:#94a3b8">Pefindo</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px;background:linear-gradient(135deg,rgba(156,39,176,.04),rgba(156,39,176,.01));border-radius:10px;border:1px solid rgba(156,39,176,.1)">
+                <div style="width:32px;height:32px;min-width:32px;border-radius:8px;background:linear-gradient(135deg,#f3e5f5,#e1bee7);display:flex;align-items:center;justify-content:center"><i class="fas fa-lock" style="color:#7b1fa2;font-size:12px"></i></div>
+                <div><div style="font-size:11px;font-weight:700;color:#023b96">ISO 27001</div><div style="font-size:9px;color:#94a3b8">Keamanan</div></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+            
     </div>
 
     <style>
         @media(max-width:768px){
             .profil-hero-grid{grid-template-columns:1fr !important;text-align:center}
-            .profil-hero-logo{display:none !important}
             .profil-stats-grid{grid-template-columns:repeat(2,1fr) !important}
             .profil-content-grid{grid-template-columns:1fr !important}
             .profil-cert-grid{grid-template-columns:1fr !important}
