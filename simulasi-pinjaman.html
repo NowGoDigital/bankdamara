@@ -33,13 +33,11 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg-gradient);color:var(--text);line-height:1.6;overflow-x:hidden;font-size:15px}
-
 .bg-animated{position:fixed;inset:0;z-index:-1;background:var(--bg-gradient)}
 .bg-animated::before,.bg-animated::after{content:'';position:absolute;border-radius:50%;filter:blur(120px);opacity:.2;animation:float 20s infinite ease-in-out}
 .bg-animated::before{width:600px;height:600px;background:#c9a227;top:-150px;right:-150px}
 .bg-animated::after{width:500px;height:500px;background:#2a4a7f;bottom:-150px;left:-150px;animation-delay:-10s}
 @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(50px,50px) scale(1.1)}}
-
 header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav-wrap{max-width:1400px;margin:0 auto;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
 .logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--primary-dark)}
@@ -59,13 +57,11 @@ header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.88);backd
 .btn-wa{background:#25d366;color:#fff}
 .btn-wa:hover{background:#1ebe5a;transform:translateY(-2px)}
 .menu-toggle{display:none;background:none;border:none;font-size:1.5rem;color:var(--primary-dark);cursor:pointer}
-
 .hero{padding:2.5rem 2rem 1.5rem;text-align:center;position:relative}
 .breadcrumb{display:flex;justify-content:center;gap:.5rem;font-size:.85rem;color:var(--text-light);margin-bottom:.75rem;flex-wrap:wrap}
 .breadcrumb a{color:var(--accent-deep);text-decoration:none;font-weight:600}
 .hero h1{font-family:'Poppins',sans-serif;font-size:clamp(1.8rem,4.5vw,3rem);font-weight:700;color:var(--primary-dark);margin-bottom:.5rem;line-height:1.2}
 .hero h1 span{background:var(--gold-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-
 .hero-tagline{max-width:520px;margin:1rem auto 0;position:relative;padding:1rem 2rem}
 .hero-tagline::before,.hero-tagline::after{content:'';display:block;width:80px;height:2px;background:var(--gold-gradient);margin:0 auto;border-radius:2px}
 .hero-tagline::before{margin-bottom:.85rem}
@@ -74,7 +70,6 @@ header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.88);backd
 .hero-tagline p strong{color:var(--accent-deep);font-weight:700;font-style:normal;background:var(--gold-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-tagline .tagline-icon{display:inline-flex;align-items:center;gap:.5rem;justify-content:center;margin-bottom:.35rem}
 .hero-tagline .tagline-icon i{color:var(--accent);font-size:.65rem}
-
 .container{max-width:1400px;margin:0 auto;padding:0 2rem 3rem}
 .sim-layout{display:grid;grid-template-columns:0.85fr 1.55fr;gap:1.5rem;align-items:start}
 .glass{background:rgba(255,255,255,.9);backdrop-filter:blur(20px);border:1px solid rgba(201,162,39,.15);border-radius:20px;box-shadow:var(--shadow);padding:1.25rem;transition:all .3s}
@@ -237,8 +232,6 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
   .container{max-width:100% !important;margin:0 !important;padding:0 !important}
   .sim-layout{display:block !important}
   .result-panel{position:static !important;background:#fff !important;border:none !important;border-radius:0 !important;box-shadow:none !important;padding:0 !important;margin:0 !important;backdrop-filter:none !important}
-
-  /* ===== PRINT HEADER ===== */
   .print-header{display:block !important;padding-bottom:6px !important;margin-bottom:6px !important;border-bottom:2px solid #c9a227 !important}
   .print-header-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
   .print-brand{display:flex;align-items:center;gap:8px}
@@ -250,55 +243,12 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
   .print-title{text-align:center;margin-top:4px}
   .print-title h1{font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;color:#0a1628;margin:0;letter-spacing:.5px}
   .print-title .print-method{font-size:10px;color:#c9a227;font-weight:600;margin-top:2px;text-transform:uppercase;letter-spacing:1px}
-
-  /* ===== PARAMETER PINJAMAN (3 KOLOM) - TAMPIL DI PRINT ===== */
-  .print-params{
-    display:grid !important;
-    grid-template-columns:repeat(3, 1fr) !important;
-    gap:4px !important;
-    margin-bottom:6px !important;
-    padding:6px !important;
-    background:#f5f0e8 !important;
-    border:1px solid #d4a853 !important;
-    border-radius:4px !important;
-    page-break-inside:avoid;
-  }
-  .print-param-item{
-    background:#fff !important;
-    padding:6px 10px !important;
-    border-radius:3px !important;
-    border-left:3px solid #c9a227 !important;
-  }
-  .print-param-label{
-    display:block;
-    font-size:8px;
-    color:#4a4a5e;
-    font-weight:600;
-    text-transform:uppercase;
-    letter-spacing:.4px;
-    margin-bottom:2px;
-    font-family:'Plus Jakarta Sans',sans-serif;
-  }
-  .print-param-value{
-    display:block;
-    font-family:'JetBrains Mono',monospace;
-    font-size:11px;
-    font-weight:700;
-    color:#0a1628;
-    letter-spacing:.02em;
-    font-variant-numeric:tabular-nums;
-  }
-  .print-param-sub{
-    display:block;
-    font-size:8px;
-    color:#a07c1c;
-    margin-top:1px;
-    font-weight:600;
-    font-family:'Plus Jakarta Sans',sans-serif;
-  }
-
+  .print-params{display:grid !important;grid-template-columns:repeat(3, 1fr) !important;gap:4px !important;margin-bottom:6px !important;padding:6px !important;background:#f5f0e8 !important;border:1px solid #d4a853 !important;border-radius:4px !important;page-break-inside:avoid}
+  .print-param-item{background:#fff !important;padding:6px 10px !important;border-radius:3px !important;border-left:3px solid #c9a227 !important}
+  .print-param-label{display:block;font-size:8px;color:#4a4a5e;font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px;font-family:'Plus Jakarta Sans',sans-serif}
+  .print-param-value{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#0a1628;letter-spacing:.02em;font-variant-numeric:tabular-nums}
+  .print-param-sub{display:block;font-size:8px;color:#a07c1c;margin-top:1px;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif}
   .section-head{display:none !important}
-
   .summary-grid{display:grid !important;grid-template-columns:repeat(3, 1fr) !important;gap:4px !important;margin-bottom:6px !important;page-break-inside:avoid}
   .summary-card{padding:5px 8px !important;background:#fff !important;border:1px solid #d4a853 !important;border-radius:4px !important;box-shadow:none !important;backdrop-filter:none !important;min-width:0 !important}
   .summary-card::before{display:none !important}
@@ -308,53 +258,81 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
   .sc-label{font-size:8px !important;color:#4a4a5e !important;margin-bottom:1px !important;font-weight:600 !important;text-transform:uppercase;letter-spacing:.3px}
   .sc-label i{display:none !important}
   .sc-value{font-family:'JetBrains Mono',monospace !important;font-size:11px !important;font-weight:600 !important;color:#0a1628 !important;margin-top:1px !important;letter-spacing:.02em !important;white-space:nowrap !important;font-variant-numeric:tabular-nums !important}
-
   .table-wrap{background:#fff !important;border:1px solid #c9a227 !important;border-radius:0 !important;overflow:visible !important;margin-bottom:0 !important}
   .table-head{background:#0a1628 !important;color:#fff !important;padding:5px 10px !important;border-bottom:2px solid #c9a227 !important;border-radius:0 !important}
   .table-head h4{font-size:11px !important;font-weight:700 !important;font-family:'Poppins',sans-serif !important}
   .table-head h4 i{color:#e6b830 !important}
+  .table-scroll{max-height:none !important;overflow:visible !important}
+  table{width:100% !important;border-collapse:collapse !important;font-size:9px !important;page-break-inside:auto !important;table-layout:auto !important}
+  thead{background:#f5f0e8 !important;position:static !important;display:table-header-group !important}
+  tbody{display:table-row-group !important}
 
-  /* ===== TABLE SCROLL: HAPUS BATAS TINGGI DI PRINT ===== */
-  .table-scroll{
-    max-height:none !important;
-    overflow:visible !important;
+  /* ===== PERBAIKAN KOLOM BULAN - COMPACT ===== */
+  th:first-child{
+    width:28px !important;
+    min-width:28px !important;
+    max-width:28px !important;
+    text-align:center !important;
+    padding:4px 3px !important;
+    font-size:7px !important;
+    letter-spacing:.2px !important;
   }
-
-  /* ===== TABEL: FULL ROWS, AUTO PAGE BREAK ===== */
-  table{
-    width:100% !important;
-    border-collapse:collapse !important;
-    font-size:9px !important;
-    page-break-inside:auto !important;
+  td.bln{
+    text-align:center !important;
+    font-weight:600 !important;
+    color:#0a1628 !important;
+    width:28px !important;
+    min-width:28px !important;
+    max-width:28px !important;
+    padding:2px 3px !important;
+    font-family:'JetBrains Mono',monospace !important;
   }
-  thead{
+  td.bln .bln-badge{
     background:#f5f0e8 !important;
-    position:static !important;
-    display:table-header-group !important;
+    color:#0a1628 !important;
+    border:1px solid #d4a853 !important;
+    border-radius:3px !important;
+    font-size:8px !important;
+    padding:1px 4px !important;
+    min-width:auto !important;
+    max-width:22px !important;
+    display:inline-block;
+    line-height:1.2 !important;
   }
-  tbody{
-    display:table-row-group !important;
+
+  /* ===== KOLOM ANGKA - LEBIH RAPAT ===== */
+  th.num{
+    text-align:right !important;
+    padding:4px 6px 4px 4px !important;
+    font-size:7px !important;
+    font-family:'Poppins',sans-serif !important;
+    letter-spacing:.3px !important;
+    font-weight:700 !important;
   }
-  tfoot, tr.row-total{
-    display:table-row-group !important;
+  td.num{
+    font-family:'JetBrains Mono',monospace !important;
+    font-size:9px !important;
+    font-weight:500 !important;
+    text-align:right !important;
+    padding:2px 6px 2px 4px !important;
+    letter-spacing:.02em !important;
+    white-space:nowrap !important;
+    font-variant-numeric:tabular-nums !important;
   }
-  th{padding:4px 6px !important;font-size:8px !important;font-weight:700 !important;color:#0a1628 !important;text-transform:uppercase !important;letter-spacing:.4px !important;border-bottom:1.5px solid #c9a227 !important;font-family:'Poppins',sans-serif !important;white-space:nowrap !important}
-  th.num{text-align:right !important;padding-right:8px !important;font-family:'JetBrains Mono',monospace !important;letter-spacing:.03em !important}
-  td{padding:3px 6px !important;border-bottom:1px solid #ece4d4 !important;color:#1a1a2e !important;font-size:9px !important}
+
+  th{padding:4px 6px !important;font-size:7px !important;font-weight:700 !important;color:#0a1628 !important;text-transform:uppercase !important;letter-spacing:.3px !important;border-bottom:1.5px solid #c9a227 !important;font-family:'Poppins',sans-serif !important;white-space:nowrap !important}
+  td{padding:2px 6px !important;border-bottom:1px solid #ece4d4 !important;color:#1a1a2e !important;font-size:9px !important}
   tr{page-break-inside:avoid !important}
   tbody tr:nth-child(even){background:#faf7f2 !important}
   tbody tr:hover{background:transparent !important}
-  td.bln{text-align:center !important;font-weight:600 !important;color:#0a1628 !important;width:32px !important;font-family:'JetBrains Mono',monospace !important}
-  td.bln .bln-badge{background:#f5f0e8 !important;color:#0a1628 !important;border:1px solid #d4a853 !important;border-radius:3px !important;font-size:8px !important;padding:1px 5px !important;min-width:22px !important;display:inline-block}
-  td.num{font-family:'JetBrains Mono',monospace !important;font-size:9px !important;font-weight:500 !important;text-align:right !important;padding-right:8px !important;letter-spacing:.02em !important;white-space:nowrap !important;font-variant-numeric:tabular-nums !important}
   td.pokok{color:#142952 !important}
   td.bunga{color:#a07c1c !important;font-weight:600 !important}
   td.saldo{color:#4a4a5e !important}
   tr.row-total{background:#0a1628 !important;color:#fff !important;page-break-inside:avoid !important}
-  tr.row-total td{color:#fff !important;border-top:2px solid #c9a227 !important;padding:5px 6px !important;font-weight:700 !important;font-size:9px !important}
-  tr.row-total td.num{color:#e6b830 !important;font-weight:700 !important}
+  tr.row-total td{color:#fff !important;border-top:2px solid #c9a227 !important;padding:4px 6px !important;font-weight:700 !important;font-size:9px !important}
+  tr.row-total td:first-child{padding:4px 3px !important}
+  tr.row-total td.num{color:#e6b830 !important;font-weight:700 !important;padding-right:6px !important}
   tr.row-total td.bln .bln-badge{background:rgba(201,162,39,.25) !important;color:#e6b830 !important;border-color:#c9a227 !important}
-
   .print-footer-note{display:block !important;margin-top:8px !important;padding-top:6px !important;border-top:1px dashed #c9a227 !important;font-size:8px !important;color:#4a4a5e !important;text-align:center;line-height:1.5 !important;font-style:italic}
   .print-footer-note strong{color:#0a1628;font-style:normal}
 }
@@ -363,9 +341,7 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
 </style>
 </head>
 <body>
-
 <div class="bg-animated"></div>
-
 <header>
   <div class="nav-wrap">
     <a href="index.html" class="logo">
@@ -384,7 +360,6 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
     <button class="menu-toggle" onclick="document.getElementById('navMenu').classList.toggle('show')"><i class="fas fa-bars"></i></button>
   </div>
 </header>
-
 <section class="hero">
   <div class="breadcrumb">
     <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
@@ -401,10 +376,8 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
     <p>Hitung kebutuhan keuangan Anda dengan <strong>Bijak</strong></p>
   </div>
 </section>
-
 <div class="container">
   <div class="sim-layout">
-
     <div class="glass fade-up">
       <div class="section-head">
         <div class="section-head-icon"><i class="fas fa-sliders"></i></div>
@@ -413,7 +386,6 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
           <p>Isi data pinjaman Anda</p>
         </div>
       </div>
-
       <div class="form-group">
         <label class="form-label" for="inputJumlah">
           <i class="fas fa-money-bill-wave"></i>Jumlah Pinjaman
@@ -424,7 +396,6 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
         </div>
         <span class="form-hint">Min. Rp 5 Jt</span>
       </div>
-
       <div class="form-group">
         <label class="form-label" for="selectTenor">
           <i class="fas fa-calendar-days"></i>Jangka Waktu
@@ -441,7 +412,6 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
         </div>
         <div class="tenor-info" id="tenorInfo"><i class="fas fa-info-circle"></i> 36 bulan (3 tahun)</div>
       </div>
-
       <div class="form-group">
         <label class="form-label" for="inputBunga">
           <i class="fas fa-percent"></i>Suku Bunga / Tahun
@@ -453,7 +423,6 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
         </div>
         <span class="form-hint">Umum: 7% — 15% per tahun</span>
       </div>
-
       <div class="form-group">
         <label class="form-label">
           <i class="fas fa-calculator"></i>Metode Hitung
@@ -481,14 +450,11 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
           </button>
         </div>
       </div>
-
       <button class="btn-calc" onclick="hitung()">
         <i class="fas fa-calculator"></i> Hitung Sekarang
       </button>
     </div>
-
     <div class="glass result-panel fade-up" id="resultPanel">
-
       <div class="print-header">
         <div class="print-header-top">
           <div class="print-brand">
@@ -508,8 +474,6 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
           <div class="print-method" id="printMethod">Metode: Flat</div>
         </div>
       </div>
-
-      <!-- ===== PARAMETER PINJAMAN UNTUK PRINT (3 KOLOM) ===== -->
       <div class="print-params">
         <div class="print-param-item">
           <span class="print-param-label">Jumlah Pinjaman</span>
@@ -526,7 +490,6 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
           <span class="print-param-sub">per tahun</span>
         </div>
       </div>
-
       <div class="section-head">
         <div class="section-head-icon"><i class="fas fa-chart-pie"></i></div>
         <div>
@@ -534,7 +497,6 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
           <p id="resultMethod">Metode: Flat</p>
         </div>
       </div>
-
       <div id="singleView">
         <div class="summary-grid">
           <div class="summary-card highlight">
@@ -554,7 +516,6 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
             <div class="sc-value" id="outTotal">Rp 0</div>
           </div>
         </div>
-
         <div class="table-wrap">
           <div class="table-head">
             <h4><i class="fas fa-table-list"></i> Tabel Amortisasi</h4>
@@ -578,25 +539,21 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
             </table>
           </div>
         </div>
-
         <div class="print-footer-note">
           *Simulasi ini bersifat <strong>estimasi</strong> dan tidak mengikat. Perhitungan aktual dapat berbeda sesuai kebijakan BANK DAMARA.<br>
           Untuk pengajuan resmi, silakan hubungi cabang terdekat atau WhatsApp resmi kami.
         </div>
       </div>
-
       <div id="compareView" style="display:none">
         <div class="compare-grid" id="compareGrid"></div>
       </div>
     </div>
   </div>
-
   <section class="info-section fade-up">
     <div class="info-title">
       <h2>Pahami 3 Metode Bunga</h2>
       <p>Setiap metode punya karakteristik berbeda. Pilih sesuai kemampuan finansial Anda.</p>
     </div>
-
     <div class="info-grid">
       <div class="info-card flat">
         <div class="ic-icon"><i class="fas fa-equals"></i></div>
@@ -609,7 +566,6 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
         </ul>
         <div class="formula">Bunga = Pokok × i% × Thn</div>
       </div>
-
       <div class="info-card efektif">
         <div class="ic-icon"><i class="fas fa-arrow-trend-down"></i></div>
         <h3>Bunga Efektif</h3>
@@ -621,7 +577,6 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
         </ul>
         <div class="formula">Bunga = Sisa × (i% ÷ 12)</div>
       </div>
-
       <div class="info-card anuitas">
         <div class="ic-icon"><i class="fas fa-chart-line"></i></div>
         <h3>Bunga Anuitas</h3>
@@ -635,7 +590,6 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
       </div>
     </div>
   </section>
-
   <section class="cta-section fade-up">
     <h2>Siap Mengajukan <span>Pinjaman</span>?</h2>
     <p>Konsultasikan dengan tim ahli BANK DAMARA. Proses cepat, bunga kompetitif.</p>
@@ -645,7 +599,6 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
     </div>
   </section>
 </div>
-
 <footer>
   <div class="footer-wrap">
     <div class="footer-grid">
@@ -680,274 +633,37 @@ footer{background:var(--primary-dark);color:#fff;padding:2rem 2rem 1.25rem;margi
     <div class="footer-bottom">© 2025 BANK DAMARA. All rights reserved. Terdaftar & diawasi OJK.</div>
   </div>
 </footer>
-
 <a href="https://wa.me/6281234567890" class="float-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
 <script>
 const fmt = n => 'Rp ' + Math.round(n).toLocaleString('id-ID');
-
 const inputJumlah = document.getElementById('inputJumlah');
-function formatRupiahInput(val){
-  const angka = val.replace(/\D/g, '');
-  if(!angka) return '';
-  return angka.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-}
-function parseRupiahInput(val){
-  return parseInt(val.replace(/\./g, '').replace(/\D/g,''), 10) || 0;
-}
-inputJumlah.addEventListener('input', e => {
-  const angka = e.target.value.replace(/\D/g, '');
-  e.target.value = formatRupiahInput(angka);
-  setTimeout(() => e.target.setSelectionRange(e.target.value.length, e.target.value.length), 0);
-});
-inputJumlah.addEventListener('blur', () => {
-  const n = parseRupiahInput(inputJumlah.value);
-  if(n < 5000000) inputJumlah.value = formatRupiahInput('5000000');
-  else inputJumlah.value = formatRupiahInput(String(n));
-  hitung();
-});
-inputJumlah.addEventListener('keydown', e => {
-  if(e.key === 'Enter'){ e.preventDefault(); inputJumlah.blur(); hitung(); }
-});
-
-const selectTenor = document.getElementById('selectTenor');
-const tenorInfo = document.getElementById('tenorInfo');
-function updateTenorInfo(){
-  const bln = parseInt(selectTenor.value, 10);
-  const thn = bln / 12;
-  const thnStr = Number.isInteger(thn) ? thn + ' tahun' : thn.toFixed(1).replace('.0','') + ' tahun';
-  tenorInfo.innerHTML = `<i class="fas fa-info-circle"></i> ${bln} bulan (${thnStr})`;
-}
-selectTenor.addEventListener('change', () => { updateTenorInfo(); hitung(); });
+function formatRupiahInput(val){const angka=val.replace(/\D/g,'');if(!angka)return '';return angka.replace(/\B(?=(\d{3})+(?!\d))/g,'.')}
+function parseRupiahInput(val){return parseInt(val.replace(/\./g,'').replace(/\D/g,''),10)||0}
+inputJumlah.addEventListener('input',e=>{const angka=e.target.value.replace(/\D/g,'');e.target.value=formatRupiahInput(angka);setTimeout(()=>e.target.setSelectionRange(e.target.value.length,e.target.value.length),0)});
+inputJumlah.addEventListener('blur',()=>{const n=parseRupiahInput(inputJumlah.value);if(n<5000000)inputJumlah.value=formatRupiahInput('5000000');else inputJumlah.value=formatRupiahInput(String(n));hitung()});
+inputJumlah.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();inputJumlah.blur();hitung()}});
+const selectTenor=document.getElementById('selectTenor');
+const tenorInfo=document.getElementById('tenorInfo');
+function updateTenorInfo(){const bln=parseInt(selectTenor.value,10);const thn=bln/12;const thnStr=Number.isInteger(thn)?thn+' tahun':thn.toFixed(1).replace('.0','')+' tahun';tenorInfo.innerHTML=`<i class="fas fa-info-circle"></i> ${bln} bulan (${thnStr})`}
+selectTenor.addEventListener('change',()=>{updateTenorInfo();hitung()});
 updateTenorInfo();
-
-const inputBunga = document.getElementById('inputBunga');
-inputBunga.addEventListener('change', () => {
-  let v = parseFloat(inputBunga.value);
-  if(isNaN(v) || v < 1) v = 1;
-  if(v > 25) v = 25;
-  inputBunga.value = v;
-  hitung();
-});
-
-let currentMethod = 'flat';
-document.querySelectorAll('.method-tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.method-tab').forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    currentMethod = tab.dataset.method;
-    hitung();
-  });
-});
-
-function calcFlat(pokok, tenor, bungaTahun){
-  const bungaTotal = pokok * (bungaTahun/100) * (tenor/12);
-  const cicilan = (pokok + bungaTotal) / tenor;
-  const pokokBln = pokok / tenor;
-  const bungaBln = bungaTotal / tenor;
-  const schedule = [];
-  let sisa = pokok;
-  for(let i=1; i<=tenor; i++){
-    sisa -= pokokBln;
-    schedule.push({bln:i, cicilan, pokok:pokokBln, bunga:bungaBln, sisa:Math.max(0,sisa)});
-  }
-  return {cicilan, pokokBln, bungaBln, totalPokok:pokok, totalBunga:bungaTotal, total:pokok+bungaTotal, schedule};
-}
-
-function calcEfektif(pokok, tenor, bungaTahun){
-  const pokokBln = pokok / tenor;
-  const i = bungaTahun / 100 / 12;
-  const schedule = [];
-  let sisa = pokok, totalBunga = 0;
-  for(let b=1; b<=tenor; b++){
-    const bunga = sisa * i;
-    const cicilan = pokokBln + bunga;
-    sisa -= pokokBln;
-    totalBunga += bunga;
-    schedule.push({bln:b, cicilan, pokok:pokokBln, bunga, sisa:Math.max(0,sisa)});
-  }
-  return {cicilan:schedule[0].cicilan, cicilanMin:schedule[schedule.length-1].cicilan, totalPokok:pokok, totalBunga, total:pokok+totalBunga, schedule};
-}
-
-function calcAnuitas(pokok, tenor, bungaTahun){
-  const i = bungaTahun / 100 / 12;
-  const pmt = i === 0 ? pokok/tenor : pokok * i * Math.pow(1+i,tenor) / (Math.pow(1+i,tenor) - 1);
-  const schedule = [];
-  let sisa = pokok, totalBunga = 0;
-  for(let b=1; b<=tenor; b++){
-    const bunga = sisa * i;
-    const byrPokok = pmt - bunga;
-    sisa -= byrPokok;
-    totalBunga += bunga;
-    schedule.push({bln:b, cicilan:pmt, pokok:byrPokok, bunga, sisa:Math.max(0,sisa)});
-  }
-  return {cicilan:pmt, totalPokok:pokok, totalBunga, total:pokok+totalBunga, schedule};
-}
-
-const fmtPad = n => 'Rp ' + Math.round(n).toLocaleString('id-ID');
-
-function renderTable(schedule, totalPokok, totalBunga){
-  const tbody = document.getElementById('tblBody');
-  const rows = schedule.map(s => `
-    <tr>
-      <td class="bln"><span class="bln-badge">${s.bln}</span></td>
-      <td class="num">${fmtPad(s.cicilan)}</td>
-      <td class="num pokok">${fmtPad(s.pokok)}</td>
-      <td class="num bunga">${fmtPad(s.bunga)}</td>
-      <td class="num saldo">${fmtPad(s.sisa)}</td>
-    </tr>
-  `).join('');
-  
-  const totalRow = `
-    <tr class="row-total">
-      <td class="bln"><span class="bln-badge">Σ</span></td>
-      <td class="num">${fmtPad(totalPokok + totalBunga)}</td>
-      <td class="num">${fmtPad(totalPokok)}</td>
-      <td class="num">${fmtPad(totalBunga)}</td>
-      <td class="num">—</td>
-    </tr>
-  `;
-  
-  tbody.innerHTML = rows + totalRow;
-}
-
-function renderCompare(pokok, tenor, bungaTahun){
-  const f = calcFlat(pokok, tenor, bungaTahun);
-  const e = calcEfektif(pokok, tenor, bungaTahun);
-  const a = calcAnuitas(pokok, tenor, bungaTahun);
-  const minBunga = Math.min(f.totalBunga, e.totalBunga, a.totalBunga);
-  const grid = document.getElementById('compareGrid');
-  grid.innerHTML = `
-    <div class="compare-card flat">
-      ${f.totalBunga === minBunga ? '<div class="cc-badge">TERMURAH</div>' : ''}
-      <div class="cc-icon"><i class="fas fa-equals"></i></div>
-      <div class="cc-name">Flat</div>
-      <div class="cc-desc">Cicilan tetap setiap bulan</div>
-      <div class="cc-row"><span class="lbl">Cicilan/bln</span><span class="val">${fmt(f.cicilan)}</span></div>
-      <div class="cc-row"><span class="lbl">Total Bunga</span><span class="val">${fmt(f.totalBunga)}</span></div>
-      <div class="cc-row"><span class="lbl">Total Bayar</span><span class="val">${fmt(f.total)}</span></div>
-    </div>
-    <div class="compare-card efektif">
-      ${e.totalBunga === minBunga ? '<div class="cc-badge">TERMURAH</div>' : ''}
-      <div class="cc-icon"><i class="fas fa-arrow-trend-down"></i></div>
-      <div class="cc-name">Efektif</div>
-      <div class="cc-desc">Cicilan menurun tiap bulan</div>
-      <div class="cc-row"><span class="lbl">Bulan ke-1</span><span class="val">${fmt(e.schedule[0].cicilan)}</span></div>
-      <div class="cc-row"><span class="lbl">Bulan ke-${tenor}</span><span class="val">${fmt(e.schedule[e.schedule.length-1].cicilan)}</span></div>
-      <div class="cc-row"><span class="lbl">Total Bunga</span><span class="val">${fmt(e.totalBunga)}</span></div>
-      <div class="cc-row"><span class="lbl">Total Bayar</span><span class="val">${fmt(e.total)}</span></div>
-    </div>
-    <div class="compare-card anuitas">
-      ${a.totalBunga === minBunga ? '<div class="cc-badge">TERMURAH</div>' : ''}
-      <div class="cc-icon"><i class="fas fa-chart-line"></i></div>
-      <div class="cc-name">Anuitas</div>
-      <div class="cc-desc">Cicilan tetap, komposisi berubah</div>
-      <div class="cc-row"><span class="lbl">Cicilan/bln</span><span class="val">${fmt(a.cicilan)}</span></div>
-      <div class="cc-row"><span class="lbl">Total Bunga</span><span class="val">${fmt(a.totalBunga)}</span></div>
-      <div class="cc-row"><span class="lbl">Total Bayar</span><span class="val">${fmt(a.total)}</span></div>
-    </div>
-  `;
-}
-
-let _lastMethodName = 'Flat (Cicilan Tetap)';
-
-function hitung(){
-  const pokok = parseRupiahInput(inputJumlah.value);
-  const tenor = parseInt(selectTenor.value, 10);
-  const bungaTahun = parseFloat(inputBunga.value);
-  
-  if(!pokok || pokok < 5000000){ alert('Jumlah pinjaman minimal Rp 5.000.000'); return; }
-  if(isNaN(bungaTahun) || bungaTahun < 1 || bungaTahun > 25){ alert('Suku bunga harus antara 1% - 25%'); return; }
-  
-  document.getElementById('singleView').style.display = currentMethod === 'compare' ? 'none' : 'block';
-  document.getElementById('compareView').style.display = currentMethod === 'compare' ? 'block' : 'none';
-  
-  if(currentMethod === 'compare'){
-    document.getElementById('resultMethod').textContent = 'Mode Perbandingan 3 Metode';
-    _lastMethodName = 'Perbandingan 3 Metode';
-    renderCompare(pokok, tenor, bungaTahun);
-    return;
-  }
-  
-  let res, methodName, cicilanText;
-  if(currentMethod === 'flat'){
-    res = calcFlat(pokok, tenor, bungaTahun);
-    methodName = 'Flat (Cicilan Tetap)';
-    cicilanText = fmt(res.cicilan);
-  } else if(currentMethod === 'efektif'){
-    res = calcEfektif(pokok, tenor, bungaTahun);
-    methodName = 'Efektif (Menurun)';
-    cicilanText = fmt(res.schedule[0].cicilan) + ' → ' + fmt(res.schedule[res.schedule.length-1].cicilan);
-  } else {
-    res = calcAnuitas(pokok, tenor, bungaTahun);
-    methodName = 'Anuitas (Balance)';
-    cicilanText = fmt(res.cicilan);
-  }
-  
-  _lastMethodName = methodName;
-  document.getElementById('resultMethod').textContent = 'Metode: ' + methodName;
-  document.getElementById('outCicilan').textContent = cicilanText;
-  document.getElementById('outPokok').textContent = fmt(res.totalPokok);
-  document.getElementById('outBunga').textContent = fmt(res.totalBunga);
-  document.getElementById('outTotal').textContent = fmt(res.total);
-  
-  renderTable(res.schedule, res.totalPokok, res.totalBunga);
-  window._lastResult = res;
-}
-
-function formatTanggalID(date){
-  const bulan = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
-  const d = String(date.getDate()).padStart(2,'0');
-  const m = bulan[date.getMonth()];
-  const y = date.getFullYear();
-  return `${d} ${m} ${y}`;
-}
-
-function doPrint(){
-  const now = new Date();
-  const tglStr = formatTanggalID(now);
-  const simId = 'DMR-' + now.getFullYear() + String(now.getMonth()+1).padStart(2,'0') + String(now.getDate()).padStart(2,'0') + '-' + String(Math.floor(Math.random()*9000)+1000);
-  
-  document.getElementById('printTgl').textContent = tglStr;
-  document.getElementById('printId').textContent = simId;
-  document.getElementById('printMethod').textContent = 'Metode: ' + _lastMethodName;
-
-  /* ===== ISI PARAMETER PINJAMAN DI PRINT ===== */
-  const pokok = parseRupiahInput(inputJumlah.value);
-  const tenor = parseInt(selectTenor.value, 10);
-  const bunga = parseFloat(inputBunga.value);
-  const thn = tenor / 12;
-  const thnStr = Number.isInteger(thn) ? thn + ' Tahun' : thn.toFixed(1).replace('.0','') + ' Tahun';
-
-  document.getElementById('printPokok').textContent = fmt(pokok);
-  document.getElementById('printTenor').textContent = tenor + ' Bulan';
-  document.getElementById('printTenorSub').textContent = '(' + thnStr + ')';
-  document.getElementById('printBunga').textContent = String(bunga).replace('.', ',') + '%';
-  
-  setTimeout(() => window.print(), 100);
-}
-
-function exportCSV(){
-  if(!window._lastResult) return;
-  const r = window._lastResult;
-  let csv = 'Bulan,Cicilan,Pokok,Bunga,Sisa Pokok\n';
-  r.schedule.forEach(s => {
-    csv += `${s.bln},${Math.round(s.cicilan)},${Math.round(s.pokok)},${Math.round(s.bunga)},${Math.round(s.sisa)}\n`;
-  });
-  const blob = new Blob([csv], {type:'text/csv'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `simulasi-pinjaman-${currentMethod}-${Date.now()}.csv`;
-  a.click();
-  URL.revokeObjectURL(url);
-}
-
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-}, {threshold:.1});
-document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
-
+const inputBunga=document.getElementById('inputBunga');
+inputBunga.addEventListener('change',()=>{let v=parseFloat(inputBunga.value);if(isNaN(v)||v<1)v=1;if(v>25)v=25;inputBunga.value=v;hitung()});
+let currentMethod='flat';
+document.querySelectorAll('.method-tab').forEach(tab=>{tab.addEventListener('click',()=>{document.querySelectorAll('.method-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');currentMethod=tab.dataset.method;hitung()})});
+function calcFlat(pokok,tenor,bungaTahun){const bungaTotal=pokok*(bungaTahun/100)*(tenor/12);const cicilan=(pokok+bungaTotal)/tenor;const pokokBln=pokok/tenor;const bungaBln=bungaTotal/tenor;const schedule=[];let sisa=pokok;for(let i=1;i<=tenor;i++){sisa-=pokokBln;schedule.push({bln:i,cicilan,pokok:pokokBln,bunga:bungaBln,sisa:Math.max(0,sisa)})}return{cicilan,pokokBln,bungaBln,totalPokok:pokok,totalBunga:bungaTotal,total:pokok+bungaTotal,schedule}}
+function calcEfektif(pokok,tenor,bungaTahun){const pokokBln=pokok/tenor;const i=bungaTahun/100/12;const schedule=[];let sisa=pokok,totalBunga=0;for(let b=1;b<=tenor;b++){const bunga=sisa*i;const cicilan=pokokBln+bunga;sisa-=pokokBln;totalBunga+=bunga;schedule.push({bln:b,cicilan,pokok:pokokBln,bunga,sisa:Math.max(0,sisa)})}return{cicilan:schedule[0].cicilan,cicilanMin:schedule[schedule.length-1].cicilan,totalPokok:pokok,totalBunga,total:pokok+totalBunga,schedule}}
+function calcAnuitas(pokok,tenor,bungaTahun){const i=bungaTahun/100/12;const pmt=i===0?pokok/tenor:pokok*i*Math.pow(1+i,tenor)/(Math.pow(1+i,tenor)-1);const schedule=[];let sisa=pokok,totalBunga=0;for(let b=1;b<=tenor;b++){const bunga=sisa*i;const byrPokok=pmt-bunga;sisa-=byrPokok;totalBunga+=bunga;schedule.push({bln:b,cicilan:pmt,pokok:byrPokok,bunga,sisa:Math.max(0,sisa)})}return{cicilan:pmt,totalPokok:pokok,totalBunga,total:pokok+totalBunga,schedule}}
+const fmtPad=n=>'Rp '+Math.round(n).toLocaleString('id-ID');
+function renderTable(schedule,totalPokok,totalBunga){const tbody=document.getElementById('tblBody');const rows=schedule.map(s=>`<tr><td class="bln"><span class="bln-badge">${s.bln}</span></td><td class="num">${fmtPad(s.cicilan)}</td><td class="num pokok">${fmtPad(s.pokok)}</td><td class="num bunga">${fmtPad(s.bunga)}</td><td class="num saldo">${fmtPad(s.sisa)}</td></tr>`).join('');const totalRow=`<tr class="row-total"><td class="bln"><span class="bln-badge">Σ</span></td><td class="num">${fmtPad(totalPokok+totalBunga)}</td><td class="num">${fmtPad(totalPokok)}</td><td class="num">${fmtPad(totalBunga)}</td><td class="num">—</td></tr>`;tbody.innerHTML=rows+totalRow}
+function renderCompare(pokok,tenor,bungaTahun){const f=calcFlat(pokok,tenor,bungaTahun);const e=calcEfektif(pokok,tenor,bungaTahun);const a=calcAnuitas(pokok,tenor,bungaTahun);const minBunga=Math.min(f.totalBunga,e.totalBunga,a.totalBunga);const grid=document.getElementById('compareGrid');grid.innerHTML=`<div class="compare-card flat">${f.totalBunga===minBunga?'<div class="cc-badge">TERMURAH</div>':''}<div class="cc-icon"><i class="fas fa-equals"></i></div><div class="cc-name">Flat</div><div class="cc-desc">Cicilan tetap setiap bulan</div><div class="cc-row"><span class="lbl">Cicilan/bln</span><span class="val">${fmt(f.cicilan)}</span></div><div class="cc-row"><span class="lbl">Total Bunga</span><span class="val">${fmt(f.totalBunga)}</span></div><div class="cc-row"><span class="lbl">Total Bayar</span><span class="val">${fmt(f.total)}</span></div></div><div class="compare-card efektif">${e.totalBunga===minBunga?'<div class="cc-badge">TERMURAH</div>':''}<div class="cc-icon"><i class="fas fa-arrow-trend-down"></i></div><div class="cc-name">Efektif</div><div class="cc-desc">Cicilan menurun tiap bulan</div><div class="cc-row"><span class="lbl">Bulan ke-1</span><span class="val">${fmt(e.schedule[0].cicilan)}</span></div><div class="cc-row"><span class="lbl">Bulan ke-${tenor}</span><span class="val">${fmt(e.schedule[e.schedule.length-1].cicilan)}</span></div><div class="cc-row"><span class="lbl">Total Bunga</span><span class="val">${fmt(e.totalBunga)}</span></div><div class="cc-row"><span class="lbl">Total Bayar</span><span class="val">${fmt(e.total)}</span></div></div><div class="compare-card anuitas">${a.totalBunga===minBunga?'<div class="cc-badge">TERMURAH</div>':''}<div class="cc-icon"><i class="fas fa-chart-line"></i></div><div class="cc-name">Anuitas</div><div class="cc-desc">Cicilan tetap, komposisi berubah</div><div class="cc-row"><span class="lbl">Cicilan/bln</span><span class="val">${fmt(a.cicilan)}</span></div><div class="cc-row"><span class="lbl">Total Bunga</span><span class="val">${fmt(a.totalBunga)}</span></div><div class="cc-row"><span class="lbl">Total Bayar</span><span class="val">${fmt(a.total)}</span></div></div>`}
+let _lastMethodName='Flat (Cicilan Tetap)';
+function hitung(){const pokok=parseRupiahInput(inputJumlah.value);const tenor=parseInt(selectTenor.value,10);const bungaTahun=parseFloat(inputBunga.value);if(!pokok||pokok<5000000){alert('Jumlah pinjaman minimal Rp 5.000.000');return}if(isNaN(bungaTahun)||bungaTahun<1||bungaTahun>25){alert('Suku bunga harus antara 1% - 25%');return}document.getElementById('singleView').style.display=currentMethod==='compare'?'none':'block';document.getElementById('compareView').style.display=currentMethod==='compare'?'block':'none';if(currentMethod==='compare'){document.getElementById('resultMethod').textContent='Mode Perbandingan 3 Metode';_lastMethodName='Perbandingan 3 Metode';renderCompare(pokok,tenor,bungaTahun);return}let res,methodName,cicilanText;if(currentMethod==='flat'){res=calcFlat(pokok,tenor,bungaTahun);methodName='Flat (Cicilan Tetap)';cicilanText=fmt(res.cicilan)}else if(currentMethod==='efektif'){res=calcEfektif(pokok,tenor,bungaTahun);methodName='Efektif (Menurun)';cicilanText=fmt(res.schedule[0].cicilan)+' → '+fmt(res.schedule[res.schedule.length-1].cicilan)}else{res=calcAnuitas(pokok,tenor,bungaTahun);methodName='Anuitas (Balance)';cicilanText=fmt(res.cicilan)}_lastMethodName=methodName;document.getElementById('resultMethod').textContent='Metode: '+methodName;document.getElementById('outCicilan').textContent=cicilanText;document.getElementById('outPokok').textContent=fmt(res.totalPokok);document.getElementById('outBunga').textContent=fmt(res.totalBunga);document.getElementById('outTotal').textContent=fmt(res.total);renderTable(res.schedule,res.totalPokok,res.totalBunga);window._lastResult=res}
+function formatTanggalID(date){const bulan=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];const d=String(date.getDate()).padStart(2,'0');const m=bulan[date.getMonth()];const y=date.getFullYear();return`${d} ${m} ${y}`}
+function doPrint(){const now=new Date();const tglStr=formatTanggalID(now);const simId='DMR-'+now.getFullYear()+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0')+'-'+String(Math.floor(Math.random()*9000)+1000);document.getElementById('printTgl').textContent=tglStr;document.getElementById('printId').textContent=simId;document.getElementById('printMethod').textContent='Metode: '+_lastMethodName;const pokok=parseRupiahInput(inputJumlah.value);const tenor=parseInt(selectTenor.value,10);const bunga=parseFloat(inputBunga.value);const thn=tenor/12;const thnStr=Number.isInteger(thn)?thn+' Tahun':thn.toFixed(1).replace('.0','')+' Tahun';document.getElementById('printPokok').textContent=fmt(pokok);document.getElementById('printTenor').textContent=tenor+' Bulan';document.getElementById('printTenorSub').textContent='('+thnStr+')';document.getElementById('printBunga').textContent=String(bunga).replace('.',',')+'%';setTimeout(()=>window.print(),100)}
+function exportCSV(){if(!window._lastResult)return;const r=window._lastResult;let csv='Bulan,Cicilan,Pokok,Bunga,Sisa Pokok\n';r.schedule.forEach(s=>{csv+=`${s.bln},${Math.round(s.cicilan)},${Math.round(s.pokok)},${Math.round(s.bunga)},${Math.round(s.sisa)}\n`});const blob=new Blob([csv],{type:'text/csv'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`simulasi-pinjaman-${currentMethod}-${Date.now()}.csv`;a.click();URL.revokeObjectURL(url)}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 hitung();
 </script>
 </body>
