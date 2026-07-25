@@ -730,7 +730,765 @@ div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"]:hover{
     }
 }
 
-                             
+
+/* ══════════════════════════════════════════════════════════════ */
+/* RESPONSIVE MOBILE FIX - TAMBAHAN                              */
+/* Hanya berlaku di layar kecil, desktop TIDAK TERPENGARUH       */
+/* ══════════════════════════════════════════════════════════════ */
+
+/* ─── TABLET & MOBILE LANDSCAPE (≤768px) ─── */
+@media(max-width:768px){
+
+    /* Hero Banner Profil Frame */
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child{
+        padding:14px 16px !important;
+        flex-wrap:wrap;
+        gap:10px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child h4{
+        font-size:15px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child p{
+        font-size:10px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child > div:first-child > div:first-child{
+        width:34px !important;height:34px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child > div:last-child{
+        padding:5px 10px !important;font-size:9px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:last-child{
+        padding:18px 16px 20px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] p{
+        font-size:13px !important;
+    }
+
+    /* Timeline Card */
+    .profil-content-grid > div:first-child{
+        padding:20px 16px !important;
+    }
+    .profil-content-grid > div:first-child h4{
+        font-size:14px !important;
+    }
+
+    /* Sertifikasi Card */
+    .profil-content-grid .tentang-visual-area > div:last-child{
+        padding:18px 14px !important;
+    }
+
+    /* Visi Hero */
+    .visi-hero{
+        padding:28px 18px !important;
+        border-radius:18px !important;
+    }
+    .visi-hero h3{
+        font-size:18px !important;
+        line-height:1.5 !important;
+    }
+    .visi-hero > div > div:last-child > div{
+        padding:6px 12px !important;
+    }
+    .visi-hero > div > div:last-child > div span{
+        font-size:11px !important;
+    }
+
+    /* Misi Cards */
+    .misi-cards-grid > div{
+        padding:16px !important;
+        gap:12px !important;
+    }
+    .misi-cards-grid > div > div:first-child{
+        width:44px !important;height:44px !important;min-width:44px !important;
+    }
+    .misi-cards-grid > div > div:first-child i{
+        font-size:16px !important;
+    }
+    .misi-cards-grid h4{
+        font-size:14px !important;
+    }
+    .misi-cards-grid p{
+        font-size:12px !important;
+    }
+
+    /* Budaya Cards */
+    .budaya-grid-v2 > div{
+        border-radius:16px !important;
+    }
+    .budaya-grid-v2 > div > div:last-child{
+        padding:20px 16px !important;
+    }
+    .budaya-grid-v2 h4{
+        font-size:16px !important;
+    }
+    .budaya-grid-v2 p{
+        font-size:12px !important;
+    }
+    .budaya-grid-v2 > div > div:last-child > div:first-child > div:first-child{
+        width:48px !important;height:48px !important;
+    }
+
+    /* Budaya Quote Footer */
+    .budaya-grid-v2 ~ div{
+        padding:16px 18px !important;
+    }
+    .budaya-grid-v2 ~ div p{
+        font-size:13px !important;
+    }
+
+    /* Komisaris & Direksi Cards */
+    .komisaris-grid > div > div:last-child,
+    .direksi-grid > div > div:last-child{
+        padding:18px 14px 20px !important;
+    }
+    .komisaris-grid h3,
+    .direksi-grid > div > div:last-child h3{
+        font-size:16px !important;
+    }
+    .komisaris-grid p,
+    .direksi-grid > div > div:last-child p{
+        font-size:11px !important;
+    }
+
+    /* Direktur Utama - Header Photo Area */
+    .direksi-grid > div > div:first-child{
+        padding:22px 16px 35px !important;
+    }
+    .direksi-grid > div > div:first-child > div > div > div{
+        width:90px !important;height:90px !important;
+    }
+
+    /* Komisaris - Icon area */
+    .komisaris-grid > div > div > div:first-child{
+        width:65px !important;height:65px !important;
+    }
+
+    /* Transfer & PPOB Headers */
+    .transfer-ppob-grid > div > div:first-child{
+        padding:20px 18px 18px !important;
+    }
+    .transfer-ppob-grid > div > div:first-child h3{
+        font-size:18px !important;
+    }
+    .transfer-ppob-grid > div > div:first-child p{
+        font-size:11px !important;
+    }
+    .transfer-ppob-grid > div > div:first-child > div > div:first-child{
+        width:48px !important;height:48px !important;min-width:48px !important;
+    }
+    .transfer-ppob-grid > div > div:first-child > div > div:first-child svg{
+        width:24px !important;height:24px !important;
+    }
+
+    /* Transfer Items Body */
+    .transfer-ppob-grid > div > div:last-child{
+        padding:18px 16px 20px !important;
+    }
+    .transfer-ppob-grid > div > div:last-child > div{
+        padding:14px !important;
+        gap:12px !important;
+    }
+    .transfer-ppob-grid > div > div:last-child > div > div:first-child{
+        width:42px !important;height:42px !important;min-width:42px !important;
+    }
+    .transfer-ppob-grid > div > div:last-child > div > div:first-child svg{
+        width:20px !important;height:20px !important;
+    }
+    .transfer-ppob-grid h4{
+        font-size:13px !important;
+    }
+    .transfer-ppob-grid p{
+        font-size:12px !important;
+    }
+
+    /* PPOB Items Grid */
+    .ppob-items-grid > div{
+        padding:14px 10px !important;
+    }
+    .ppob-items-grid > div > div:first-child{
+        width:44px !important;height:44px !important;
+    }
+    .ppob-items-grid > div > div:first-child svg{
+        width:22px !important;height:22px !important;
+    }
+    .ppob-items-grid h4{
+        font-size:12px !important;
+    }
+    .ppob-items-grid p{
+        font-size:10px !important;
+    }
+
+    /* Section Title */
+    .section-title h2{
+        font-size:22px !important;
+    }
+    .section-title p{
+        font-size:14px !important;
+    }
+    .section-title .st-badge{
+        font-size:10px !important;
+        padding:4px 12px !important;
+    }
+
+    /* Stats Section */
+    .stat-item h3{
+        font-size:30px !important;
+    }
+    .stat-item p{
+        font-size:12px !important;
+    }
+
+    /* CTA Section */
+    .cta-content h2{
+        font-size:24px !important;
+    }
+    .cta-content p{
+        font-size:14px !important;
+    }
+
+    /* Lelang Intro */
+    .lelang-intro-img{
+        height:180px !important;
+    }
+    .lelang-intro-text h3{
+        font-size:22px !important;
+    }
+    .lelang-intro-text p{
+        font-size:13px !important;
+    }
+    .lelang-stat .ls-val{
+        font-size:22px !important;
+    }
+
+    /* Pelaporan Cards */
+    .pelaporan-card-header{
+        padding:22px 20px !important;
+    }
+    .pelaporan-card-body{
+        padding:18px 20px !important;
+    }
+    .pelaporan-card-header h3{
+        font-size:18px !important;
+    }
+
+    /* Product Cards */
+    .product-card-header{
+        padding:22px 20px !important;
+    }
+    .product-card-header h3{
+        font-size:18px !important;
+    }
+    .product-card-body{
+        padding:18px 20px !important;
+    }
+
+    /* Gallery Banner */
+    .gallery-banner-wrapper img{
+        height:180px !important;
+    }
+    .gallery-banner-overlay{
+        padding:18px 20px !important;
+    }
+    .gallery-banner-overlay h3{
+        font-size:1rem !important;
+    }
+
+    /* Gallery Section Header */
+    .gallery-section-header h2{
+        font-size:1.8rem !important;
+    }
+    .gallery-section-header p{
+        font-size:.85rem !important;
+    }
+
+    /* Footer */
+    .footer{
+        padding:40px 0 0 !important;
+    }
+    .footer-grid{
+        gap:25px !important;
+    }
+    .footer-col h4{
+        font-size:14px !important;
+    }
+    .footer-col p,
+    .footer-col ul li a{
+        font-size:12px !important;
+    }
+
+    /* About Section */
+    .about-section{
+        padding:50px 0 !important;
+    }
+    .about-tabs{
+        gap:4px !important;
+        margin-bottom:25px !important;
+    }
+    .about-tab{
+        padding:7px 12px !important;
+        font-size:10px !important;
+    }
+
+    /* Karir */
+    .karir-text h3{
+        font-size:22px !important;
+    }
+    .karir-text p{
+        font-size:13px !important;
+    }
+    .karir-benefit{
+        padding:10px !important;
+        font-size:12px !important;
+    }
+    .karir-visual{
+        height:250px !important;
+    }
+
+    /* Quick Access */
+    .quick-access-card{
+        padding:20px 15px !important;
+    }
+    .quick-access-card .icon{
+        width:50px !important;height:50px !important;
+        font-size:22px !important;
+    }
+    .quick-access-card h4{
+        font-size:13px !important;
+    }
+    .quick-access-card p{
+        font-size:11px !important;
+    }
+
+    /* Products Section */
+    .products{
+        padding:50px 0 !important;
+    }
+
+    /* Lelang Section */
+    .lelang-section{
+        padding:50px 0 !important;
+    }
+
+    /* Pelaporan Section */
+    .pelaporan-section{
+        padding:50px 0 !important;
+    }
+
+    /* Digital/Layanan Section */
+    .digital-section{
+        padding:50px 0 !important;
+    }
+
+    /* Container padding */
+    .container{
+        padding:0 15px !important;
+    }
+}
+
+/* ─── MOBILE PORTRAIT (≤576px) ─── */
+@media(max-width:576px){
+
+    /* Hero Banner Profil - lebih kecil lagi */
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child{
+        padding:12px 14px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child h4{
+        font-size:14px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:last-child{
+        padding:16px 14px 18px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] p{
+        font-size:12px !important;
+        line-height:1.7 !important;
+    }
+
+    /* Photo & Maps lebih pendek */
+    .tentang-photo-box{
+        height:180px !important;
+    }
+    .tentang-maps-box{
+        height:200px !important;
+    }
+    .tentang-photo-overlay{
+        padding:16px !important;
+    }
+    .tentang-photo-overlay h4{
+        font-size:15px !important;
+    }
+    .tentang-photo-overlay p{
+        font-size:10px !important;
+    }
+    .tentang-photo-badge{
+        top:12px !important;left:12px !important;
+        padding:4px 10px !important;font-size:9px !important;
+    }
+    .tentang-maps-header{
+        padding:10px 14px !important;
+        font-size:12px !important;
+    }
+
+    /* Sertifikasi jadi 1 kolom */
+    .profil-cert-grid{
+        grid-template-columns:1fr !important;
+    }
+
+    /* Section Title lebih kecil */
+    .section-title h2{
+        font-size:20px !important;
+    }
+    .section-title p{
+        font-size:13px !important;
+    }
+    .section-title{
+        margin-bottom:30px !important;
+    }
+
+    /* Stats */
+    .stats-grid{
+        gap:15px !important;
+    }
+    .stat-item h3{
+        font-size:26px !important;
+    }
+    .stat-item p{
+        font-size:11px !important;
+    }
+    .stats{
+        padding:40px 0 !important;
+    }
+
+    /* CTA */
+    .cta{
+        padding:50px 0 !important;
+    }
+    .cta-content h2{
+        font-size:22px !important;
+    }
+    .cta-content p{
+        font-size:13px !important;
+    }
+    .cta-buttons{
+        gap:10px !important;
+    }
+    .cta-buttons .btn{
+        padding:12px 20px !important;
+        font-size:13px !important;
+        width:100%;
+        justify-content:center;
+    }
+
+    /* Visi Hero */
+    .visi-hero{
+        padding:24px 14px !important;
+    }
+    .visi-hero h3{
+        font-size:16px !important;
+    }
+    .visi-hero > div > div:last-child{
+        gap:8px !important;
+    }
+    .visi-hero > div > div:last-child > div{
+        padding:5px 10px !important;
+    }
+    .visi-hero > div > div:last-child > div span{
+        font-size:10px !important;
+    }
+    .visi-hero > div > div:last-child > div svg{
+        width:12px !important;height:12px !important;
+    }
+
+    /* Misi Section Label */
+    .misi-cards-grid ~ div,
+    #tab-visi > div:last-child > div:first-child{
+        margin-bottom:16px !important;
+    }
+
+    /* Gallery */
+    .gallery-info-section{
+        padding:35px 0 25px !important;
+    }
+    .gallery-section-header h2{
+        font-size:1.5rem !important;
+    }
+    .gallery-section-header p{
+        font-size:.8rem !important;
+    }
+    .gallery-banner-wrapper img{
+        height:140px !important;
+    }
+    .gallery-banner-overlay{
+        padding:14px 16px !important;
+    }
+    .gallery-banner-overlay h3{
+        font-size:.9rem !important;
+    }
+    .gallery-banner-overlay p{
+        font-size:.75rem !important;
+    }
+
+    /* Lelang Stats */
+    .lelang-stats{
+        gap:12px !important;
+    }
+    .lelang-stat .ls-val{
+        font-size:20px !important;
+    }
+    .lelang-stat .ls-lbl{
+        font-size:10px !important;
+    }
+
+    /* Footer */
+    .footer-bottom{
+        font-size:11px !important;
+        gap:10px !important;
+    }
+    .footer-bottom-links{
+        gap:12px !important;
+    }
+    .footer-bottom-links a{
+        font-size:11px !important;
+    }
+
+    /* WhatsApp Float */
+    .wa-float-btn{
+        width:46px !important;height:46px !important;
+        font-size:20px !important;
+    }
+
+    /* Scroll Top */
+    .scroll-top{
+        width:42px !important;height:42px !important;
+        font-size:16px !important;
+        bottom:20px !important;right:20px !important;
+    }
+
+    /* Container */
+    .container{
+        padding:0 12px !important;
+    }
+
+    /* Quick Access margin */
+    .quick-access{
+        margin-top:-35px !important;
+        padding-bottom:40px !important;
+    }
+
+    /* Product Card Header Icon */
+    .product-card-header i{
+        font-size:28px !important;
+    }
+
+    /* Pelaporan Icon */
+    .pelaporan-card-header .pc-icon{
+        width:55px !important;height:55px !important;
+        font-size:24px !important;
+    }
+}
+
+/* ─── MOBILE KECIL (≤480px) ─── */
+@media(max-width:480px){
+
+    /* Hero Banner Profil - paling kecil */
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child{
+        padding:10px 12px !important;
+        gap:8px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child h4{
+        font-size:13px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child p{
+        font-size:9px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child > div:first-child > div:first-child{
+        width:30px !important;height:30px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child > div:first-child > div:first-child i{
+        font-size:12px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child > div:last-child{
+        padding:4px 8px !important;font-size:8px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:last-child{
+        padding:14px 12px 16px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] p{
+        font-size:11.5px !important;
+    }
+
+    /* Photo & Maps lebih pendek lagi */
+    .tentang-photo-box{
+        height:160px !important;
+    }
+    .tentang-maps-box{
+        height:180px !important;
+    }
+
+    /* About tabs */
+    .about-tab{
+        padding:6px 10px !important;
+        font-size:9.5px !important;
+        border-radius:20px !important;
+    }
+
+    /* Section Title */
+    .section-title h2{
+        font-size:18px !important;
+    }
+    .section-title p{
+        font-size:12px !important;
+    }
+
+    /* Stats */
+    .stat-item h3{
+        font-size:22px !important;
+    }
+
+    /* CTA */
+    .cta-content h2{
+        font-size:20px !important;
+    }
+
+    /* Visi Hero */
+    .visi-hero{
+        padding:20px 12px !important;
+    }
+    .visi-hero h3{
+        font-size:15px !important;
+    }
+    .visi-hero > div > div:last-child > div{
+        padding:5px 8px !important;
+        gap:4px !important;
+    }
+    .visi-hero > div > div:last-child > div span{
+        font-size:9px !important;
+    }
+
+    /* Misi Cards */
+    .misi-cards-grid > div{
+        padding:14px 12px !important;
+    }
+    .misi-cards-grid > div > div:first-child{
+        width:38px !important;height:38px !important;min-width:38px !important;
+    }
+    .misi-cards-grid > div > div:first-child i{
+        font-size:14px !important;
+    }
+    .misi-cards-grid h4{
+        font-size:13px !important;
+    }
+    .misi-cards-grid p{
+        font-size:11px !important;
+    }
+
+    /* Budaya Cards */
+    .budaya-grid-v2 > div > div:last-child{
+        padding:16px 14px !important;
+    }
+    .budaya-grid-v2 h4{
+        font-size:15px !important;
+    }
+    .budaya-grid-v2 p{
+        font-size:11px !important;
+    }
+    .budaya-grid-v2 > div > div:last-child > div:first-child > div:first-child{
+        width:42px !important;height:42px !important;
+    }
+    .budaya-grid-v2 > div > div:last-child > div:first-child > div:first-child svg{
+        width:22px !important;height:22px !important;
+    }
+
+    /* Komisaris / Direksi Cards */
+    .komisaris-grid > div > div:last-child,
+    .direksi-grid > div > div:last-child{
+        padding:14px 12px 16px !important;
+    }
+    .komisaris-grid h3,
+    .direksi-grid > div > div:last-child h3{
+        font-size:14px !important;
+    }
+    .komisaris-grid > div > div > div:first-child{
+        width:55px !important;height:55px !important;
+    }
+    .direksi-grid > div > div:first-child > div > div > div{
+        width:75px !important;height:75px !important;
+    }
+
+    /* Transfer & PPOB */
+    .transfer-ppob-grid > div > div:first-child{
+        padding:16px 14px 14px !important;
+    }
+    .transfer-ppob-grid > div > div:first-child h3{
+        font-size:16px !important;
+    }
+    .transfer-ppob-grid > div > div:last-child{
+        padding:14px 12px 16px !important;
+    }
+
+    /* Gallery */
+    .gallery-section-header h2{
+        font-size:1.3rem !important;
+    }
+
+    /* Container */
+    .container{
+        padding:0 10px !important;
+    }
+}
+
+/* ─── MOBILE SANGAT KECIL (≤380px) ─── */
+@media(max-width:380px){
+
+    /* Hero Banner Profil */
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child{
+        padding:8px 10px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child h4{
+        font-size:12px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:last-child{
+        padding:12px 10px 14px !important;
+    }
+    div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] p{
+        font-size:11px !important;
+    }
+
+    /* About tabs */
+    .about-tab{
+        padding:5px 8px !important;
+        font-size:9px !important;
+    }
+
+    /* Section Title */
+    .section-title h2{
+        font-size:16px !important;
+    }
+
+    /* Photo & Maps */
+    .tentang-photo-box{
+        height:140px !important;
+    }
+    .tentang-maps-box{
+        height:160px !important;
+    }
+
+    /* Stats */
+    .stat-item h3{
+        font-size:20px !important;
+    }
+
+    /* CTA */
+    .cta-content h2{
+        font-size:18px !important;
+    }
+
+    /* Container */
+    .container{
+        padding:0 8px !important;
+    }
+}
+
+    
 
 </style>
 </head>
