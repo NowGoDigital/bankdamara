@@ -1808,14 +1808,22 @@ div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"]:hover{
         margin-bottom:10px !important;
     }
 
-    /* Hero Buttons */
-    .hero-btns{
-        margin-bottom:14px !important;
-    }
-    .hero-btns .btn{
-        padding:10px 20px !important;
-        font-size:12px !important;
-    }
+    /* Hero Buttons — Berdampingan 50:50 */
+.hero-btns{
+    margin-bottom:14px !important;
+    flex-wrap:nowrap !important;
+    gap:8px !important;
+    justify-content:center !important;
+}
+.hero-btns .btn{
+    padding:10px 8px !important;
+    font-size:11px !important;
+    flex:1 !important;
+    width:50% !important;
+    justify-content:center !important;
+    text-align:center !important;
+    white-space:nowrap !important;
+}
 
     /* Hero Metrics */
     .hero-metrics{
@@ -1890,10 +1898,16 @@ div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"]:hover{
     .hero-desc{
         font-size:11px !important;
     }
-    .hero-btns .btn{
-        padding:9px 16px !important;
-        font-size:11px !important;
-    }
+    .hero-btns{
+    gap:6px !important;
+}
+.hero-btns .btn{
+    padding:10px 6px !important;
+    font-size:10px !important;
+    flex:1 !important;
+    width:50% !important;
+    letter-spacing:0 !important;
+}
     .metric-val{
         font-size:16px !important;
     }
