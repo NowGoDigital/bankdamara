@@ -1917,7 +1917,69 @@ div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"]:hover{
 }
 
 
+/* ══════════════════════════════════════════════════════════════ */
+/* 🎯 HERO BUTTONS MOBILE — SEJAJAR BERDAMPINGAN (FINAL FIX)    */
+/* Override semua CSS mobile yang bikin tombol jadi atas-bawah  */
+/* ══════════════════════════════════════════════════════════════ */
 
+@media(max-width:768px){
+    /* OVERRIDE flex-direction:column di media query sebelumnya */
+    .hero-btns{
+        flex-direction:row !important;
+        flex-wrap:nowrap !important;
+        gap:10px !important;
+        justify-content:center !important;
+        align-items:center !important;
+        width:100% !important;
+    }
+    /* OVERRIDE width:100% di tombol individual */
+    .hero-btns .btn{
+        width:auto !important;
+        flex:1 1 0 !important;
+        min-width:0 !important;
+        max-width:none !important;
+        padding:12px 14px !important;
+        font-size:12px !important;
+        white-space:nowrap !important;
+        justify-content:center !important;
+        gap:6px !important;
+    }
+    .hero-btns .btn i{
+        font-size:13px !important;
+        flex-shrink:0 !important;
+    }
+}
+
+/* Layar sangat kecil (≤480px) — tombol lebih compact */
+@media(max-width:480px){
+    .hero-btns{
+        gap:8px !important;
+    }
+    .hero-btns .btn{
+        padding:10px 10px !important;
+        font-size:11px !important;
+        letter-spacing:0 !important;
+        gap:5px !important;
+    }
+    .hero-btns .btn i{
+        font-size:12px !important;
+    }
+}
+
+/* HP sangat kecil (≤380px) — iPhone SE, Galaxy A01, dll */
+@media(max-width:380px){
+    .hero-btns{
+        gap:6px !important;
+    }
+    .hero-btns .btn{
+        padding:9px 8px !important;
+        font-size:10px !important;
+        gap:4px !important;
+    }
+    .hero-btns .btn i{
+        font-size:11px !important;
+    }
+}
 
 
     
