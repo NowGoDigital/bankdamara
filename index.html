@@ -3339,6 +3339,202 @@ div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"]:hover{
     </div>
 </section>
 
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- TAB MENU: PENJAMINAN LPS & SUKU BUNGA BPR                     -->
+<!-- Disisipkan persis di bawah section Galeri Informasi            -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section style="padding:0 0 50px;background:linear-gradient(180deg,#f8fafc 0%,#fff 100%);margin-top:-10px">
+<div class="container">
+<div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.05)">
+
+    <!-- HEADER BAR -->
+    <div style="background:linear-gradient(135deg,#023b96 0%,#1a5bc7 100%);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid rgba(200,169,81,.3)">
+        <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(200,169,81,.15);display:flex;align-items:center;justify-content:center;border:1px solid rgba(200,169,81,.25)">
+                <i class="fas fa-info-circle" style="color:#c8a951;font-size:14px"></i>
+            </div>
+            <div>
+                <h4 style="font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#fff;margin:0">Informasi Penting</h4>
+                <p style="font-size:10px;color:rgba(255,255,255,.7);margin:1px 0 0">Penjaminan LPS & Suku Bunga</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB BUTTONS -->
+    <div style="display:flex;border-bottom:2px solid #f1f5f9;background:#fafbfe">
+        <button id="lpsTabBtn1" onclick="switchLpsSbTab('lps')" style="flex:1;padding:14px 16px;background:linear-gradient(135deg,#023b96,#1a5bc7);color:#fff;font-size:13px;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .3s ease;font-family:'Inter',sans-serif;letter-spacing:.3px">
+            <i class="fas fa-shield-alt" style="color:#c8a951;font-size:14px"></i>
+            <span>Penjaminan LPS</span>
+        </button>
+        <button id="lpsTabBtn2" onclick="switchLpsSbTab('bunga')" style="flex:1;padding:14px 16px;background:#f8fafc;color:#64748b;font-size:13px;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .3s ease;font-family:'Inter',sans-serif;letter-spacing:.3px;border-left:1px solid #f1f5f9">
+            <i class="fas fa-percent" style="color:#94a3b8;font-size:14px"></i>
+            <span>Suku Bunga BPR</span>
+        </button>
+    </div>
+
+    <!-- TAB CONTENT BODY -->
+    <div style="padding:24px 28px 28px;background:#fff">
+
+        <!-- ═══ TAB 1: PENJAMINAN LPS ═══ -->
+        <div id="lpsContent-lps" style="display:block;animation:lpsFadeIn .4s ease">
+
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
+                <div style="width:52px;height:52px;min-width:52px;border-radius:14px;background:linear-gradient(135deg,#e3f2fd,#bbdefb);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(21,101,192,.12)">
+                    <i class="fas fa-shield-alt" style="color:#1565c0;font-size:22px"></i>
+                </div>
+                <div>
+                    <h4 style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#023b96;margin:0">Penjaminan LPS</h4>
+                    <p style="font-size:11px;color:#94a3b8;margin:2px 0 0">Lembaga Penjamin Simpanan</p>
+                </div>
+            </div>
+
+            <!-- Suku Bunga Penjaminan -->
+            <div style="background:linear-gradient(135deg,rgba(2,59,150,.04),rgba(21,101,192,.02));border-radius:14px;padding:20px 24px;border:1px solid rgba(21,101,192,.1);margin-bottom:16px;display:flex;align-items:center;gap:20px">
+                <div style="flex:1">
+                    <div style="font-size:10px;color:#94a3b8;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Suku Bunga Penjaminan</div>
+                    <div style="font-family:'Playfair Display',serif;font-size:42px;font-weight:800;color:#023b96;line-height:1">6<span style="font-size:22px;opacity:.7">%</span></div>
+                </div>
+                <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#023b96,#1a5bc7);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(2,59,150,.2)">
+                    <i class="fas fa-shield-alt" style="color:#c8a951;font-size:24px"></i>
+                </div>
+            </div>
+
+            <!-- Periode Berlaku -->
+            <div style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:linear-gradient(135deg,rgba(200,169,81,.06),rgba(200,169,81,.02));border-radius:12px;border:1px solid rgba(200,169,81,.15);margin-bottom:16px">
+                <div style="width:40px;height:40px;min-width:40px;border-radius:10px;background:linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05));display:flex;align-items:center;justify-content:center">
+                    <i class="fas fa-calendar-alt" style="color:#c8a951;font-size:16px"></i>
+                </div>
+                <div>
+                    <div style="font-size:10px;color:#94a3b8;font-weight:600;letter-spacing:.5px;text-transform:uppercase">Periode Berlaku</div>
+                    <div style="font-size:14px;color:#023b96;font-weight:700;margin-top:2px">LPS BPR: 1 Juni 2025 — 30 September 2025</div>
+                </div>
+            </div>
+
+            <!-- Info Penjaminan -->
+            <div style="display:flex;align-items:flex-start;gap:10px;padding:14px 18px;background:linear-gradient(135deg,rgba(46,125,50,.04),rgba(46,125,50,.01));border-radius:12px;border:1px solid rgba(46,125,50,.1);margin-bottom:18px">
+                <i class="fas fa-info-circle" style="color:#2e7d32;font-size:16px;margin-top:2px;flex-shrink:0"></i>
+                <p style="font-size:13px;color:#475569;line-height:1.7;margin:0">
+                    Maksimum nilai simpanan yang dijamin LPS per Nasabah per Bank adalah <strong style="color:#023b96;font-size:14px">Rp. 2 Miliar</strong>.
+                </p>
+            </div>
+
+            <!-- Tombol Cek LPS -->
+            <div style="text-align:center">
+                <a href="https://www.lps.go.id" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:linear-gradient(135deg,#023b96,#1a5bc7);color:#fff;border-radius:50px;font-size:13px;font-weight:700;text-decoration:none;transition:all .4s cubic-bezier(.25,.46,.45,.94);box-shadow:0 6px 20px rgba(2,59,150,.2);letter-spacing:.3px" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 30px rgba(2,59,150,.35)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 6px 20px rgba(2,59,150,.2)'">
+                    <i class="fas fa-external-link-alt" style="font-size:11px"></i>
+                    Cek Tingkat Bunga Penjaminan LPS
+                </a>
+            </div>
+        </div>
+
+        <!-- ═══ TAB 2: SUKU BUNGA BPR ═══ -->
+        <div id="lpsContent-bunga" style="display:none">
+
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
+                <div style="width:52px;height:52px;min-width:52px;border-radius:14px;background:linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05));display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(200,169,81,.12)">
+                    <i class="fas fa-percent" style="color:#c8a951;font-size:22px"></i>
+                </div>
+                <div>
+                    <h4 style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#023b96;margin:0">Suku Bunga BPR DAMARA</h4>
+                    <p style="font-size:11px;color:#94a3b8;margin:2px 0 0">Berlaku saat ini</p>
+                </div>
+            </div>
+
+            <!-- 2 Card Suku Bunga -->
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px" class="lps-bunga-grid">
+
+                <!-- Tabungan -->
+                <div style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9);border-radius:16px;padding:24px 20px;text-align:center;border:1px solid rgba(46,125,50,.12);position:relative;overflow:hidden">
+                    <div style="position:absolute;top:-15px;right:-15px;width:60px;height:60px;border:2px solid rgba(46,125,50,.08);border-radius:50%;pointer-events:none"></div>
+                    <div style="width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 4px 12px rgba(46,125,50,.1)">
+                        <i class="fas fa-piggy-bank" style="color:#2e7d32;font-size:24px"></i>
+                    </div>
+                    <div style="font-size:10px;color:#2e7d32;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;opacity:.7">Tabungan</div>
+                    <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:800;color:#2e7d32;line-height:1">4,00<span style="font-size:18px;opacity:.7">%</span></div>
+                    <div style="font-size:10px;color:#2e7d32;opacity:.6;margin-top:4px">per tahun</div>
+                </div>
+
+                <!-- Deposito -->
+                <div style="background:linear-gradient(135deg,#e3f2fd,#bbdefb);border-radius:16px;padding:24px 20px;text-align:center;border:1px solid rgba(21,101,192,.12);position:relative;overflow:hidden">
+                    <div style="position:absolute;top:-15px;right:-15px;width:60px;height:60px;border:2px solid rgba(21,101,192,.08);border-radius:50%;pointer-events:none"></div>
+                    <div style="width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 4px 12px rgba(21,101,192,.1)">
+                        <i class="fas fa-chart-line" style="color:#1565c0;font-size:24px"></i>
+                    </div>
+                    <div style="font-size:10px;color:#1565c0;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;opacity:.7">Deposito</div>
+                    <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:800;color:#1565c0;line-height:1">6,50<span style="font-size:18px;opacity:.7">%</span></div>
+                    <div style="font-size:10px;color:#1565c0;opacity:.6;margin-top:4px">per tahun</div>
+                </div>
+            </div>
+
+            <!-- Disclaimer -->
+            <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:linear-gradient(135deg,rgba(255,167,38,.06),rgba(255,167,38,.02));border-radius:12px;border:1px solid rgba(255,167,38,.15)">
+                <i class="fas fa-exclamation-circle" style="color:#ff9800;font-size:16px;flex-shrink:0"></i>
+                <p style="font-size:12px;color:#64748b;margin:0;line-height:1.5">Suku bunga <strong style="color:#023b96">sewaktu-waktu dapat berubah</strong> sesuai dengan ketentuan yang berlaku.</p>
+            </div>
+        </div>
+
+    </div>
+    <!-- END TAB CONTENT BODY -->
+
+</div>
+<!-- END FRAME -->
+
+<!-- Animation & Script -->
+<style>
+@keyframes lpsFadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){
+    .lps-bunga-grid{grid-template-columns:1fr 1fr !important;gap:10px !important}
+}
+@media(max-width:480px){
+    #lpsTabBtn1, #lpsTabBtn2{padding:12px 8px !important;font-size:11px !important}
+    #lpsTabBtn1 span, #lpsTabBtn2 span{font-size:11px !important}
+}
+</style>
+
+<script>
+function switchLpsSbTab(tab){
+    // Hide all contents
+    document.querySelectorAll('[id^="lpsContent-"]').forEach(function(el){
+        el.style.display='none';
+    });
+    // Reset all buttons
+    document.getElementById('lpsTabBtn1').style.background='#f8fafc';
+    document.getElementById('lpsTabBtn1').style.color='#64748b';
+    document.getElementById('lpsTabBtn1').querySelector('i').style.color='#94a3b8';
+    document.getElementById('lpsTabBtn2').style.background='#f8fafc';
+    document.getElementById('lpsTabBtn2').style.color='#64748b';
+    document.getElementById('lpsTabBtn2').querySelector('i').style.color='#94a3b8';
+
+    // Show selected tab
+    var target=document.getElementById('lpsContent-'+tab);
+    if(target){
+        target.style.display='block';
+        target.style.animation='none';
+        target.offsetHeight;
+        target.style.animation='lpsFadeIn .4s ease';
+    }
+
+    // Highlight active button
+    if(tab==='lps'){
+        var btn=document.getElementById('lpsTabBtn1');
+        btn.style.background='linear-gradient(135deg,#023b96,#1a5bc7)';
+        btn.style.color='#fff';
+        btn.querySelector('i').style.color='#c8a951';
+    }else{
+        var btn=document.getElementById('lpsTabBtn2');
+        btn.style.background='linear-gradient(135deg,#023b96,#1a5bc7)';
+        btn.style.color='#fff';
+        btn.querySelector('i').style.color='#c8a951';
+    }
+}
+</script>
+
+</div>
+</section>
+<!-- ═══════ AKHIR TAB MENU LPS & SUKU BUNGA ═══════ -->
+
+
+    
 <section class="stats"><div class="container"><div class="stats-grid"><div class="stat-item"><h3>5M+</h3><p>Nasabah Aktif</p></div><div class="stat-item"><h3>1,200+</h3><p>Cabang & ATM</p></div><div class="stat-item"><h3>40+</h3><p>Tahun Pengalaman</p></div><div class="stat-item"><h3>98%</h3><p>Kepuasan Nasabah</p></div></div></div></section>
 <section class="cta"><div class="container"><div class="cta-content"><h2>Siap Memulai Perjalanan Finansial?</h2><p>Bergabunglah dengan jutaan nasabah BANK DAMARA. Buka rekening hanya dalam 5 menit!</p><div class="cta-buttons"><a href="#produk" class="btn btn-primary"><i class="fas fa-user-plus"></i> Buka Rekening</a><a href="https://wa.me/6281234567890" target="_blank" class="btn btn-outline" style="border-color:var(--wa);color:var(--wa-dark)"><i class="fab fa-whatsapp"></i> Chat WhatsApp</a></div></div></div></section>
 <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Tentang BANK DAMARA</h4><p>Bank nasional terpercaya sejak 1985 dengan layanan perbankan terbaik dan keamanan tinggi.</p><p><i class="fas fa-map-marker-alt" style="color:var(--secondary)"></i> Jl. Jend. Sudirman Kav. 88, Jakarta Pusat 10220</p><div class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="https://instagram.com/bank_damara" target="_blank"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div><div class="footer-col"><h4>Produk</h4><ul><li><a href="#produk" data-product="tabungan">Tabungan</a></li><li><a href="#produk" data-product="deposito">Deposito</a></li><li><a href="#produk" data-product="pinjaman">Pinjaman</a></li><li><a href="#layanan">Layanan Digital</a></li><li><a href="#lelang">Lelang Agunan</a></li></ul></div><div class="footer-col"><h4>Perusahaan</h4><ul><li><a href="#tentang" data-tab="profil">Profil</a></li><li><a href="#tentang" data-tab="visi">Visi & Misi</a></li><li><a href="#tentang" data-tab="manajemen">Manajemen</a></li><li><a href="#tentang" data-tab="karir">Karir</a></li></ul></div><div class="footer-col"><h4>Pelaporan</h4><ul><li><a href="#pelaporan" data-report="publikasi">Publikasi</a></li><li><a href="#pelaporan" data-report="tahunan">Laporan Tahunan</a></li><li><a href="#pelaporan" data-report="pengaduan">Pengaduan</a></li><li><a href="#">FAQ</a></li><li><a href="https://wa.me/6281234567890" target="_blank">Hubungi Kami</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BANK DAMARA. Seluruh hak cipta dilindungi. Terdaftar dan diawasi OJK.</p><div class="footer-bottom-links"><a href="#">Kebijakan Privasi</a><a href="#">Syarat & Ketentuan</a><a href="#">Keamanan</a></div></div></div></footer>
