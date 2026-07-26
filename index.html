@@ -3339,199 +3339,121 @@ div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"]:hover{
     </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════════ -->
-<!-- TAB MENU: PENJAMINAN LPS & SUKU BUNGA BPR                     -->
-<!-- Disisipkan persis di bawah section Galeri Informasi            -->
-<!-- ══════════════════════════════════════════════════════════════ -->
-<section style="padding:0 0 50px;background:linear-gradient(180deg,#f8fafc 0%,#fff 100%);margin-top:-10px">
+<!-- ═══ TAB LPS & SUKU BUNGA — VERSI COMPACT ═══ -->
+<section style="padding:0 0 40px;background:linear-gradient(180deg,#f8fafc 0%,#fff 100%);margin-top:-10px">
 <div class="container">
-<div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.05)">
-
-    <!-- HEADER BAR -->
-    <div style="background:linear-gradient(135deg,#023b96 0%,#1a5bc7 100%);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid rgba(200,169,81,.3)">
-        <div style="display:flex;align-items:center;gap:10px">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(200,169,81,.15);display:flex;align-items:center;justify-content:center;border:1px solid rgba(200,169,81,.25)">
-                <i class="fas fa-info-circle" style="color:#c8a951;font-size:14px"></i>
-            </div>
-            <div>
-                <h4 style="font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#fff;margin:0">Informasi Penting</h4>
-                <p style="font-size:10px;color:rgba(255,255,255,.7);margin:1px 0 0">Penjaminan LPS & Suku Bunga</p>
-            </div>
-        </div>
-    </div>
+<div style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.06)">
 
     <!-- TAB BUTTONS -->
-    <div style="display:flex;border-bottom:2px solid #f1f5f9;background:#fafbfe">
-        <button id="lpsTabBtn1" onclick="switchLpsSbTab('lps')" style="flex:1;padding:14px 16px;background:linear-gradient(135deg,#023b96,#1a5bc7);color:#fff;font-size:13px;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .3s ease;font-family:'Inter',sans-serif;letter-spacing:.3px">
-            <i class="fas fa-shield-alt" style="color:#c8a951;font-size:14px"></i>
+    <div style="display:flex;border-bottom:1px solid #e8ecf2">
+        <button id="lpsTabBtn1" onclick="switchLpsSbTab('lps')" style="flex:1;padding:11px 10px;background:linear-gradient(135deg,#023b96,#1a5bc7);color:#fff;font-size:12px;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;font-family:'Inter',sans-serif">
+            <i class="fas fa-shield-alt" style="color:#c8a951;font-size:11px"></i>
             <span>Penjaminan LPS</span>
         </button>
-        <button id="lpsTabBtn2" onclick="switchLpsSbTab('bunga')" style="flex:1;padding:14px 16px;background:#f8fafc;color:#64748b;font-size:13px;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .3s ease;font-family:'Inter',sans-serif;letter-spacing:.3px;border-left:1px solid #f1f5f9">
-            <i class="fas fa-percent" style="color:#94a3b8;font-size:14px"></i>
+        <button id="lpsTabBtn2" onclick="switchLpsSbTab('bunga')" style="flex:1;padding:11px 10px;background:#f8fafc;color:#64748b;font-size:12px;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;font-family:'Inter',sans-serif;border-left:1px solid #e8ecf2">
+            <i class="fas fa-percent" style="color:#94a3b8;font-size:11px"></i>
             <span>Suku Bunga BPR</span>
         </button>
     </div>
 
-    <!-- TAB CONTENT BODY -->
-    <div style="padding:24px 28px 28px;background:#fff">
+    <!-- TAB CONTENT -->
+    <div style="padding:16px 20px 18px">
 
-        <!-- ═══ TAB 1: PENJAMINAN LPS ═══ -->
-        <div id="lpsContent-lps" style="display:block;animation:lpsFadeIn .4s ease">
-
-            <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
-                <div style="width:52px;height:52px;min-width:52px;border-radius:14px;background:linear-gradient(135deg,#e3f2fd,#bbdefb);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(21,101,192,.12)">
-                    <i class="fas fa-shield-alt" style="color:#1565c0;font-size:22px"></i>
+        <!-- TAB 1: PENJAMINAN LPS -->
+        <div id="lpsContent-lps" style="display:block;animation:lpsFadeIn .3s ease">
+            <div style="display:flex;align-items:center;gap:14px" class="lps-lps-row">
+                <!-- Bunga -->
+                <div style="background:linear-gradient(135deg,rgba(2,59,150,.05),rgba(21,101,192,.03));border-radius:12px;padding:12px 16px;border:1px solid rgba(2,59,150,.08);text-align:center;min-width:90px">
+                    <div style="font-size:9px;color:#94a3b8;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:4px">Bunga LPS</div>
+                    <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:#023b96;line-height:1">6<span style="font-size:14px;opacity:.6">%</span></div>
                 </div>
-                <div>
-                    <h4 style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#023b96;margin:0">Penjaminan LPS</h4>
-                    <p style="font-size:11px;color:#94a3b8;margin:2px 0 0">Lembaga Penjamin Simpanan</p>
-                </div>
-            </div>
-
-            <!-- Suku Bunga Penjaminan -->
-            <div style="background:linear-gradient(135deg,rgba(2,59,150,.04),rgba(21,101,192,.02));border-radius:14px;padding:20px 24px;border:1px solid rgba(21,101,192,.1);margin-bottom:16px;display:flex;align-items:center;gap:20px">
+                <!-- Info -->
                 <div style="flex:1">
-                    <div style="font-size:10px;color:#94a3b8;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Suku Bunga Penjaminan</div>
-                    <div style="font-family:'Playfair Display',serif;font-size:42px;font-weight:800;color:#023b96;line-height:1">6<span style="font-size:22px;opacity:.7">%</span></div>
+                    <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+                        <i class="fas fa-calendar-alt" style="color:#c8a951;font-size:10px"></i>
+                        <span style="font-size:11px;color:#475569;font-weight:600">LPS BPR: 1 Juni 2025 — 30 September 2025</span>
+                    </div>
+                    <div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:8px">
+                        <i class="fas fa-info-circle" style="color:#1a5bc7;font-size:10px;margin-top:2px;flex-shrink:0"></i>
+                        <span style="font-size:11px;color:#475569;line-height:1.5">Maks. simpanan dijamin: <strong style="color:#023b96">Rp. 2 Miliar</strong> per Nasabah per Bank</span>
+                    </div>
+                    <a href="https://www.lps.go.id" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;padding:6px 14px;background:linear-gradient(135deg,#023b96,#1a5bc7);color:#fff;border-radius:20px;font-size:11px;font-weight:700;text-decoration:none;box-shadow:0 3px 10px rgba(2,59,150,.15);transition:all .3s ease" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 16px rgba(2,59,150,.25)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 3px 10px rgba(2,59,150,.15)'">
+                        <i class="fas fa-external-link-alt" style="font-size:8px"></i> Cek Bunga LPS
+                    </a>
                 </div>
-                <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#023b96,#1a5bc7);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(2,59,150,.2)">
-                    <i class="fas fa-shield-alt" style="color:#c8a951;font-size:24px"></i>
-                </div>
-            </div>
-
-            <!-- Periode Berlaku -->
-            <div style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:linear-gradient(135deg,rgba(200,169,81,.06),rgba(200,169,81,.02));border-radius:12px;border:1px solid rgba(200,169,81,.15);margin-bottom:16px">
-                <div style="width:40px;height:40px;min-width:40px;border-radius:10px;background:linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05));display:flex;align-items:center;justify-content:center">
-                    <i class="fas fa-calendar-alt" style="color:#c8a951;font-size:16px"></i>
-                </div>
-                <div>
-                    <div style="font-size:10px;color:#94a3b8;font-weight:600;letter-spacing:.5px;text-transform:uppercase">Periode Berlaku</div>
-                    <div style="font-size:14px;color:#023b96;font-weight:700;margin-top:2px">LPS BPR: 1 Juni 2025 — 30 September 2025</div>
-                </div>
-            </div>
-
-            <!-- Info Penjaminan -->
-            <div style="display:flex;align-items:flex-start;gap:10px;padding:14px 18px;background:linear-gradient(135deg,rgba(46,125,50,.04),rgba(46,125,50,.01));border-radius:12px;border:1px solid rgba(46,125,50,.1);margin-bottom:18px">
-                <i class="fas fa-info-circle" style="color:#2e7d32;font-size:16px;margin-top:2px;flex-shrink:0"></i>
-                <p style="font-size:13px;color:#475569;line-height:1.7;margin:0">
-                    Maksimum nilai simpanan yang dijamin LPS per Nasabah per Bank adalah <strong style="color:#023b96;font-size:14px">Rp. 2 Miliar</strong>.
-                </p>
-            </div>
-
-            <!-- Tombol Cek LPS -->
-            <div style="text-align:center">
-                <a href="https://www.lps.go.id" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:linear-gradient(135deg,#023b96,#1a5bc7);color:#fff;border-radius:50px;font-size:13px;font-weight:700;text-decoration:none;transition:all .4s cubic-bezier(.25,.46,.45,.94);box-shadow:0 6px 20px rgba(2,59,150,.2);letter-spacing:.3px" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 30px rgba(2,59,150,.35)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 6px 20px rgba(2,59,150,.2)'">
-                    <i class="fas fa-external-link-alt" style="font-size:11px"></i>
-                    Cek Tingkat Bunga Penjaminan LPS
-                </a>
             </div>
         </div>
 
-        <!-- ═══ TAB 2: SUKU BUNGA BPR ═══ -->
+        <!-- TAB 2: SUKU BUNGA BPR -->
         <div id="lpsContent-bunga" style="display:none">
-
-            <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
-                <div style="width:52px;height:52px;min-width:52px;border-radius:14px;background:linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05));display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(200,169,81,.12)">
-                    <i class="fas fa-percent" style="color:#c8a951;font-size:22px"></i>
-                </div>
-                <div>
-                    <h4 style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#023b96;margin:0">Suku Bunga BPR DAMARA</h4>
-                    <p style="font-size:11px;color:#94a3b8;margin:2px 0 0">Berlaku saat ini</p>
-                </div>
-            </div>
-
-            <!-- 2 Card Suku Bunga -->
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px" class="lps-bunga-grid">
-
+            <div style="display:flex;align-items:center;gap:12px" class="lps-bunga-row">
                 <!-- Tabungan -->
-                <div style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9);border-radius:16px;padding:24px 20px;text-align:center;border:1px solid rgba(46,125,50,.12);position:relative;overflow:hidden">
-                    <div style="position:absolute;top:-15px;right:-15px;width:60px;height:60px;border:2px solid rgba(46,125,50,.08);border-radius:50%;pointer-events:none"></div>
-                    <div style="width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 4px 12px rgba(46,125,50,.1)">
-                        <i class="fas fa-piggy-bank" style="color:#2e7d32;font-size:24px"></i>
+                <div style="flex:1;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);border-radius:12px;padding:14px 12px;text-align:center;border:1px solid rgba(46,125,50,.1)">
+                    <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:4px">
+                        <i class="fas fa-piggy-bank" style="color:#2e7d32;font-size:14px"></i>
+                        <span style="font-size:9px;color:#2e7d32;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:.7">Tabungan</span>
                     </div>
-                    <div style="font-size:10px;color:#2e7d32;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;opacity:.7">Tabungan</div>
-                    <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:800;color:#2e7d32;line-height:1">4,00<span style="font-size:18px;opacity:.7">%</span></div>
-                    <div style="font-size:10px;color:#2e7d32;opacity:.6;margin-top:4px">per tahun</div>
+                    <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:#2e7d32;line-height:1">4,00<span style="font-size:14px;opacity:.6">%</span></div>
+                    <div style="font-size:9px;color:#2e7d32;opacity:.5;margin-top:2px">per tahun</div>
                 </div>
-
                 <!-- Deposito -->
-                <div style="background:linear-gradient(135deg,#e3f2fd,#bbdefb);border-radius:16px;padding:24px 20px;text-align:center;border:1px solid rgba(21,101,192,.12);position:relative;overflow:hidden">
-                    <div style="position:absolute;top:-15px;right:-15px;width:60px;height:60px;border:2px solid rgba(21,101,192,.08);border-radius:50%;pointer-events:none"></div>
-                    <div style="width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 4px 12px rgba(21,101,192,.1)">
-                        <i class="fas fa-chart-line" style="color:#1565c0;font-size:24px"></i>
+                <div style="flex:1;background:linear-gradient(135deg,#e3f2fd,#bbdefb);border-radius:12px;padding:14px 12px;text-align:center;border:1px solid rgba(21,101,192,.1)">
+                    <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:4px">
+                        <i class="fas fa-chart-line" style="color:#1565c0;font-size:14px"></i>
+                        <span style="font-size:9px;color:#1565c0;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:.7">Deposito</span>
                     </div>
-                    <div style="font-size:10px;color:#1565c0;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;opacity:.7">Deposito</div>
-                    <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:800;color:#1565c0;line-height:1">6,50<span style="font-size:18px;opacity:.7">%</span></div>
-                    <div style="font-size:10px;color:#1565c0;opacity:.6;margin-top:4px">per tahun</div>
+                    <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:#1565c0;line-height:1">6,50<span style="font-size:14px;opacity:.6">%</span></div>
+                    <div style="font-size:9px;color:#1565c0;opacity:.5;margin-top:2px">per tahun</div>
                 </div>
-            </div>
-
-            <!-- Disclaimer -->
-            <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:linear-gradient(135deg,rgba(255,167,38,.06),rgba(255,167,38,.02));border-radius:12px;border:1px solid rgba(255,167,38,.15)">
-                <i class="fas fa-exclamation-circle" style="color:#ff9800;font-size:16px;flex-shrink:0"></i>
-                <p style="font-size:12px;color:#64748b;margin:0;line-height:1.5">Suku bunga <strong style="color:#023b96">sewaktu-waktu dapat berubah</strong> sesuai dengan ketentuan yang berlaku.</p>
+                <!-- Disclaimer -->
+                <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;background:rgba(255,152,0,.06);border-radius:8px;border:1px solid rgba(255,152,0,.1);max-width:120px" class="lps-disclaimer-box">
+                    <i class="fas fa-exclamation-triangle" style="color:#ff9800;font-size:10px;flex-shrink:0"></i>
+                    <span style="font-size:10px;color:#64748b;line-height:1.4">Sewaktu-waktu dapat berubah</span>
+                </div>
             </div>
         </div>
 
     </div>
-    <!-- END TAB CONTENT BODY -->
-
 </div>
-<!-- END FRAME -->
 
-<!-- Animation & Script -->
 <style>
-@keyframes lpsFadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lpsFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:768px){
-    .lps-bunga-grid{grid-template-columns:1fr 1fr !important;gap:10px !important}
-}
-@media(max-width:480px){
-    #lpsTabBtn1, #lpsTabBtn2{padding:12px 8px !important;font-size:11px !important}
-    #lpsTabBtn1 span, #lpsTabBtn2 span{font-size:11px !important}
+    .lps-lps-row{flex-direction:column !important;gap:10px !important}
+    .lps-lps-row > div:first-child{min-width:auto !important;width:100%}
+    .lps-bunga-row{flex-direction:column !important;gap:10px !important}
+    .lps-bunga-row > div{max-width:100% !important;width:100% !important}
+    .lps-bunga-row > div:first-child,
+    .lps-bunga-row > div:nth-child(2){display:flex;align-items:center;gap:10px;padding:10px 14px !important}
+    .lps-disclaimer-box{max-width:100% !important}
 }
 </style>
 
 <script>
 function switchLpsSbTab(tab){
-    // Hide all contents
-    document.querySelectorAll('[id^="lpsContent-"]').forEach(function(el){
-        el.style.display='none';
-    });
-    // Reset all buttons
+    document.querySelectorAll('[id^="lpsContent-"]').forEach(function(el){el.style.display='none'});
     document.getElementById('lpsTabBtn1').style.background='#f8fafc';
     document.getElementById('lpsTabBtn1').style.color='#64748b';
     document.getElementById('lpsTabBtn1').querySelector('i').style.color='#94a3b8';
     document.getElementById('lpsTabBtn2').style.background='#f8fafc';
     document.getElementById('lpsTabBtn2').style.color='#64748b';
     document.getElementById('lpsTabBtn2').querySelector('i').style.color='#94a3b8';
-
-    // Show selected tab
-    var target=document.getElementById('lpsContent-'+tab);
-    if(target){
-        target.style.display='block';
-        target.style.animation='none';
-        target.offsetHeight;
-        target.style.animation='lpsFadeIn .4s ease';
-    }
-
-    // Highlight active button
+    var t=document.getElementById('lpsContent-'+tab);
+    if(t){t.style.display='block';t.style.animation='none';t.offsetHeight;t.style.animation='lpsFadeIn .3s ease'}
     if(tab==='lps'){
-        var btn=document.getElementById('lpsTabBtn1');
-        btn.style.background='linear-gradient(135deg,#023b96,#1a5bc7)';
-        btn.style.color='#fff';
-        btn.querySelector('i').style.color='#c8a951';
+        document.getElementById('lpsTabBtn1').style.background='linear-gradient(135deg,#023b96,#1a5bc7)';
+        document.getElementById('lpsTabBtn1').style.color='#fff';
+        document.getElementById('lpsTabBtn1').querySelector('i').style.color='#c8a951';
     }else{
-        var btn=document.getElementById('lpsTabBtn2');
-        btn.style.background='linear-gradient(135deg,#023b96,#1a5bc7)';
-        btn.style.color='#fff';
-        btn.querySelector('i').style.color='#c8a951';
+        document.getElementById('lpsTabBtn2').style.background='linear-gradient(135deg,#023b96,#1a5bc7)';
+        document.getElementById('lpsTabBtn2').style.color='#fff';
+        document.getElementById('lpsTabBtn2').querySelector('i').style.color='#c8a951';
     }
 }
 </script>
-
 </div>
 </section>
-<!-- ═══════ AKHIR TAB MENU LPS & SUKU BUNGA ═══════ -->
+<!-- ═══ AKHIR TAB COMPACT ═══ -->
 
 
     
