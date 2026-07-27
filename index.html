@@ -3581,14 +3581,14 @@ function switchLpsSbTab(tab){
 </section>
 <!-- ═══ AKHIR TAB COMPACT ═══ -->
 
-<!-- ═══════ SECTION CTA DENGAN BACKGROUND FOTO ═══════ -->
+<!-- ═══════ SECTION CTA — COMPACT 1 BARIS ═══════ -->
 <section class="cta" style="
     position:relative;
     background:url('cta-bg.jpg') center center / cover no-repeat;
-    padding:70px 0;
+    padding:45px 0;
     overflow:hidden;
 ">
-    <!-- OVERLAY GELAP (biar text terbaca) -->
+    <!-- OVERLAY GELAP -->
     <div style="
         position:absolute;
         top:0;left:0;right:0;bottom:0;
@@ -3596,33 +3596,54 @@ function switchLpsSbTab(tab){
         z-index:1;
     "></div>
     
-    <!-- KONTEN (di atas overlay) -->
+    <!-- KONTEN -->
     <div class="container" style="position:relative;z-index:2">
-        <div class="cta-content">
-            <h2 style="color:#fff">Siap Memulai Perjalanan Finansial Anda?</h2>
-            <p style="color:rgba(255,255,255,.85)">Bergabunglah dengan jutaan nasabah yang telah mempercayakan keuangan mereka kepada BANK DAMARA</p>
-            <div class="cta-buttons">
-                <a href="tabungan.html" class="btn btn-gold" style="
+        <div class="cta-content" style="text-align:center;padding:0">
+            
+            <!-- JUDUL — 1 BARIS -->
+            <h2 style="
+                color:#fff;
+                font-family:'Playfair Display',serif;
+                font-size:28px;
+                font-weight:800;
+                margin:0 0 8px;
+                white-space:nowrap;
+                line-height:1.2;
+            ">Siap Memulai Perjalanan Finansial Anda?</h2>
+            
+            <!-- DESKRIPSI — 1 BARIS -->
+            <p style="
+                color:rgba(255,255,255,.85);
+                font-size:14px;
+                font-weight:400;
+                margin:0 0 20px;
+                white-space:nowrap;
+                line-height:1.4;
+            ">Bergabunglah dengan jutaan nasabah yang telah mempercayakan keuangan mereka kepada BANK DAMARA</p>
+            
+            <!-- TOMBOL -->
+            <div class="cta-buttons" style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap">
+                <a href="tabungan.html" style="
                     display:inline-flex;align-items:center;gap:8px;
-                    padding:13px 28px;
+                    padding:11px 24px;
                     background:linear-gradient(135deg,#c8a951,#e0c76a);
                     color:#023b96;
                     border-radius:50px;
-                    font-size:14px;font-weight:700;
+                    font-size:13px;font-weight:700;
                     text-decoration:none;
                     box-shadow:0 6px 20px rgba(200,169,81,.4);
                     transition:all .3s ease;
                 " onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 30px rgba(200,169,81,.6)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 6px 20px rgba(200,169,81,.4)'">
                     <i class="fas fa-piggy-bank"></i> Buka Tabungan
                 </a>
-                <a href="https://wa.me/6281234567890" class="btn btn-outline-white" target="_blank" style="
+                <a href="https://wa.me/6281234567890" target="_blank" style="
                     display:inline-flex;align-items:center;gap:8px;
-                    padding:13px 28px;
+                    padding:11px 24px;
                     background:rgba(255,255,255,.12);
                     color:#fff;
                     border:1.5px solid rgba(255,255,255,.4);
                     border-radius:50px;
-                    font-size:14px;font-weight:700;
+                    font-size:13px;font-weight:700;
                     text-decoration:none;
                     backdrop-filter:blur(10px);
                     transition:all .3s ease;
@@ -3630,9 +3651,24 @@ function switchLpsSbTab(tab){
                     <i class="fab fa-whatsapp"></i> Hubungi Kami
                 </a>
             </div>
+            
         </div>
     </div>
 </section>
+
+<!-- ═══ RESPONSIVE MOBILE — override nowrap ═══ -->
+<style>
+@media(max-width:768px){
+    .cta-content h2{
+        white-space:normal !important;
+        font-size:22px !important;
+    }
+    .cta-content p{
+        white-space:normal !important;
+        font-size:13px !important;
+    }
+}
+</style>
 
 <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Tentang BANK DAMARA</h4><p>Bank nasional terpercaya sejak 1985 dengan layanan perbankan terbaik dan keamanan tinggi.</p><p><i class="fas fa-map-marker-alt" style="color:var(--secondary)"></i> Jl. Jend. Sudirman Kav. 88, Jakarta Pusat 10220</p><div class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="https://instagram.com/bank_damara" target="_blank"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div><div class="footer-col"><h4>Produk</h4><ul><li><a href="#produk" data-product="tabungan">Tabungan</a></li><li><a href="#produk" data-product="deposito">Deposito</a></li><li><a href="#produk" data-product="pinjaman">Pinjaman</a></li><li><a href="#layanan">Layanan Digital</a></li><li><a href="#lelang">Lelang Agunan</a></li></ul></div><div class="footer-col"><h4>Perusahaan</h4><ul><li><a href="#tentang" data-tab="profil">Profil</a></li><li><a href="#tentang" data-tab="visi">Visi & Misi</a></li><li><a href="#tentang" data-tab="manajemen">Manajemen</a></li><li><a href="#tentang" data-tab="karir">Karir</a></li></ul></div><div class="footer-col"><h4>Pelaporan</h4><ul><li><a href="#pelaporan" data-report="publikasi">Publikasi</a></li><li><a href="#pelaporan" data-report="tahunan">Laporan Tahunan</a></li><li><a href="#pelaporan" data-report="pengaduan">Pengaduan</a></li><li><a href="#">FAQ</a></li><li><a href="https://wa.me/6281234567890" target="_blank">Hubungi Kami</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BANK DAMARA. Seluruh hak cipta dilindungi. Terdaftar dan diawasi OJK.</p><div class="footer-bottom-links"><a href="#">Kebijakan Privasi</a><a href="#">Syarat & Ketentuan</a><a href="#">Keamanan</a></div></div></div></footer>
 <button class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
