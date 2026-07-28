@@ -3,896 +3,1134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Panel — BANK DAMARA</title>
+<title>Admin Panel - BANK DAMARA</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 <style>
-:root{--primary:#023b96;--primary-light:#1a5bc7;--secondary:#c8a951;--secondary-light:#e0c76a;--dark:#0f172a;--text:#334155;--text-light:#64748b;--bg:#f1f5f9;--white:#fff;--border:#e2e8f0;--success:#16a34a;--danger:#dc2626;--warning:#f59e0b;--shadow:0 1px 3px rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.06);--shadow-lg:0 10px 25px rgba(0,0,0,.1);--radius:12px}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+:root{--primary:#023b96;--primary-light:#1a5bc7;--secondary:#c8a951;--secondary-light:#e0c76a;--accent:#2970d4;--text-dark:#2c3e50;--text-light:#6c757d;--bg-light:#f8f9fa;--white:#ffffff;--danger:#dc3545;--success:#28a745;--warning:#ffc107;--info:#17a2b8;--shadow:0 4px 20px rgba(0,0,0,0.1);--shadow-hover:0 8px 30px rgba(0,0,0,0.15);--transition:all 0.3s ease}
+body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);line-height:1.6;background:var(--bg-light)}
 
-/* ═══ LOGIN PAGE ═══ */
-.login-wrapper{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#023b96 0%,#0f172a 100%);position:relative;overflow:hidden}
-.login-wrapper::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(200,169,81,.15),transparent 70%);border-radius:50%}
-.login-wrapper::after{content:'';position:absolute;bottom:-150px;left:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(26,91,199,.2),transparent 70%);border-radius:50%}
-.login-card{background:#fff;border-radius:24px;padding:48px 40px;width:100%;max-width:420px;box-shadow:0 25px 60px rgba(0,0,0,.3);position:relative;z-index:2;text-align:center}
-.login-logo{width:70px;height:70px;border-radius:18px;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 25px rgba(2,59,150,.3)}
-.login-logo span{font-family:'Playfair Display',serif;font-size:24px;font-weight:800;color:var(--secondary)}
-.login-card h1{font-size:22px;color:var(--primary);margin-bottom:6px;font-weight:700}
-.login-card p{font-size:13px;color:var(--text-light);margin-bottom:28px}
-.form-group{margin-bottom:18px;text-align:left}
-.form-group label{display:block;font-size:12px;font-weight:600;color:var(--text);margin-bottom:6px;letter-spacing:.5px}
-.form-group input,.form-group textarea,.form-group select{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:inherit;transition:all .3s;background:#fff}
-.form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(2,59,150,.1)}
-.form-group textarea{resize:vertical;min-height:100px}
-.btn-login{width:100%;padding:14px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;transition:all .3s;font-family:inherit}
-.btn-login:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(2,59,150,.3)}
-.login-error{background:#fef2f2;color:var(--danger);padding:10px 14px;border-radius:8px;font-size:12px;margin-bottom:16px;display:none;border:1px solid #fecaca}
-.login-hint{margin-top:20px;padding:14px;background:var(--bg);border-radius:10px;font-size:11px;color:var(--text-light);text-align:left}
-.login-hint strong{color:var(--primary)}
+/* LOGIN PAGE */
+.login-page{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);position:relative;overflow:hidden}
+.login-page::before{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(200,169,81,.1) 0%,transparent 70%);animation:loginBgFloat 20s ease-in-out infinite}
+.login-page::after{content:'';position:absolute;bottom:-50%;left:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(200,169,81,.05) 0%,transparent 70%);animation:loginBgFloat 25s ease-in-out infinite reverse}
+@keyframes loginBgFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(50px,50px)}}
+.login-container{background:var(--white);border-radius:20px;padding:50px 40px;width:100%;max-width:420px;box-shadow:0 20px 60px rgba(0,0,0,.2);position:relative;z-index:2;animation:loginSlideIn .6s ease}
+@keyframes loginSlideIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.login-logo{text-align:center;margin-bottom:30px}
+.login-logo .logo-icon{width:70px;height:70px;background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:18px;display:flex;align-items:center;justify-content:center;color:var(--secondary);font-size:28px;font-weight:bold;margin:0 auto 15px;box-shadow:0 8px 25px rgba(2,59,150,.3)}
+.login-logo h1{font-family:'Playfair Display',serif;font-size:24px;color:var(--primary);margin-bottom:5px}
+.login-logo p{color:var(--text-light);font-size:14px}
+.login-form .form-group{margin-bottom:20px}
+.login-form label{display:block;font-size:13px;font-weight:600;color:var(--text-dark);margin-bottom:6px}
+.login-form input{width:100%;padding:14px 16px;border:2px solid #e8e8e8;border-radius:12px;font-size:14px;transition:var(--transition);font-family:inherit}
+.login-form input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px rgba(2,59,150,.1)}
+.login-form .btn-login{width:100%;padding:14px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;transition:var(--transition);font-family:inherit}
+.login-form .btn-login:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(2,59,150,.3)}
+.login-error{background:#fff3f3;border:1px solid #ffcdd2;color:var(--danger);padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:15px;display:none}
+.login-hint{text-align:center;margin-top:20px;padding:12px;background:var(--bg-light);border-radius:10px;font-size:12px;color:var(--text-light)}
 
-/* ═══ ADMIN LAYOUT ═══ */
-.admin-wrapper{display:none;min-height:100vh}
-.admin-sidebar{position:fixed;left:0;top:0;bottom:0;width:260px;background:linear-gradient(180deg,#0f172a 0%,#1e293b 100%);color:#fff;overflow-y:auto;z-index:100;transition:transform .3s}
-.admin-sidebar-header{padding:24px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
-.admin-sidebar-header h2{font-family:'Playfair Display',serif;font-size:18px;color:var(--secondary);margin-bottom:2px}
-.admin-sidebar-header p{font-size:11px;color:rgba(255,255,255,.5)}
-.admin-nav{padding:16px 12px}
-.admin-nav-item{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:10px;color:rgba(255,255,255,.65);font-size:13px;font-weight:500;cursor:pointer;transition:all .3s;margin-bottom:4px;border:none;background:none;width:100%;text-align:left;font-family:inherit}
-.admin-nav-item:hover{background:rgba(255,255,255,.06);color:#fff}
-.admin-nav-item.active{background:linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05));color:var(--secondary);border:1px solid rgba(200,169,81,.2)}
-.admin-nav-item i{width:20px;text-align:center;font-size:14px}
-.admin-nav-divider{height:1px;background:rgba(255,255,255,.06);margin:12px 16px}
-.admin-nav-section{padding:8px 16px;font-size:10px;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:1.5px;font-weight:700}
-.admin-main{margin-left:260px;padding:24px 30px;min-height:100vh}
-.admin-topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--border)}
-.admin-topbar h1{font-size:22px;color:var(--primary);font-weight:700}
-.admin-topbar-right{display:flex;align-items:center;gap:12px}
-.admin-user{display:flex;align-items:center;gap:10px;padding:8px 16px;background:#fff;border-radius:10px;box-shadow:var(--shadow)}
-.admin-user-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700}
-.admin-user-info{font-size:12px}
-.admin-user-info strong{display:block;color:var(--text)}
-.admin-user-info span{color:var(--text-light);font-size:10px}
-.btn-logout{padding:8px 16px;background:#fef2f2;color:var(--danger);border:1px solid #fecaca;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all .3s;font-family:inherit}
-.btn-logout:hover{background:#fee2e2}
+/* ADMIN LAYOUT */
+.admin-layout{display:none;min-height:100vh}
+.admin-layout.active{display:flex}
+.sidebar{width:260px;background:linear-gradient(180deg,var(--primary) 0%,#011a3d 100%);color:#fff;position:fixed;top:0;left:0;bottom:0;z-index:100;display:flex;flex-direction:column;transition:var(--transition)}
+.sidebar-header{padding:20px;border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:12px}
+.sidebar-header .s-logo{width:40px;height:40px;background:linear-gradient(135deg,var(--secondary),var(--secondary-light));border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:16px;font-weight:900;font-family:'Playfair Display',serif}
+.sidebar-header h2{font-size:16px;font-weight:700}
+.sidebar-header p{font-size:11px;color:rgba(255,255,255,.5)}
+.sidebar-nav{flex:1;padding:20px 12px;overflow-y:auto}
+.sidebar-nav .nav-section{font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1.5px;margin:20px 12px 10px;font-weight:700}
+.sidebar-nav .nav-section:first-child{margin-top:0}
+.sidebar-nav .nav-item{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:10px;color:rgba(255,255,255,.7);font-size:13px;font-weight:500;cursor:pointer;transition:var(--transition);margin-bottom:4px}
+.sidebar-nav .nav-item:hover{background:rgba(255,255,255,.08);color:#fff}
+.sidebar-nav .nav-item.active{background:rgba(200,169,81,.15);color:var(--secondary);border:1px solid rgba(200,169,81,.3)}
+.sidebar-nav .nav-item i{width:20px;text-align:center;font-size:14px}
+.sidebar-footer{padding:16px 20px;border-top:1px solid rgba(255,255,255,.1)}
+.sidebar-footer .user-info{display:flex;align-items:center;gap:10px}
+.sidebar-footer .user-avatar{width:36px;height:36px;background:linear-gradient(135deg,var(--secondary),var(--secondary-light));border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:14px;font-weight:700}
+.sidebar-footer .user-name{font-size:13px;font-weight:600}
+.sidebar-footer .user-role{font-size:11px;color:rgba(255,255,255,.5)}
 
-/* ═══ PANELS ═══ */
-.panel{display:none;animation:fadeIn .4s ease}
-.panel.active{display:block}
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.panel-card{background:#fff;border-radius:16px;padding:28px;box-shadow:var(--shadow);margin-bottom:24px;border:1px solid var(--border)}
-.panel-card h3{font-size:16px;color:var(--primary);margin-bottom:6px;display:flex;align-items:center;gap:10px}
-.panel-card h3 i{color:var(--secondary);font-size:18px}
-.panel-card p.desc{font-size:13px;color:var(--text-light);margin-bottom:20px}
-.panel-card .divider{height:1px;background:var(--border);margin:20px 0}
+/* MAIN CONTENT */
+.main-content{margin-left:260px;flex:1;padding:30px;min-height:100vh}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;padding-bottom:20px;border-bottom:1px solid #e8e8e8}
+.topbar h1{font-size:24px;font-weight:700;color:var(--primary)}
+.topbar .topbar-actions{display:flex;align-items:center;gap:12px}
+.topbar .btn-logout{padding:8px 16px;background:var(--danger);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:var(--transition);font-family:inherit}
+.topbar .btn-logout:hover{background:#c82333;transform:translateY(-1px)}
+.topbar .btn-view-site{padding:8px 16px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:var(--transition);text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-family:inherit}
+.topbar .btn-view-site:hover{background:var(--primary-light)}
+
+/* PANELS */
+.panel{display:none}
+.panel.active{display:block;animation:panelFadeIn .4s ease}
+@keyframes panelFadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* DASHBOARD STATS */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-bottom:30px}
+.stat-card{background:#fff;border-radius:16px;padding:24px;box-shadow:var(--shadow);transition:var(--transition);display:flex;align-items:center;gap:16px}
+.stat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.stat-card .stat-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px}
+.stat-card:nth-child(1) .stat-icon{background:linear-gradient(135deg,#e3f2fd,#bbdefb);color:#1565c0}
+.stat-card:nth-child(2) .stat-icon{background:linear-gradient(135deg,#fff3e0,#ffe0b2);color:#e65100}
+.stat-card:nth-child(3) .stat-icon{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);color:#2e7d32}
+.stat-card:nth-child(4) .stat-icon{background:linear-gradient(135deg,#fce4ec,#f8bbd0);color:#c62828}
+.stat-card .stat-info h3{font-size:28px;font-weight:800;color:var(--primary);margin-bottom:2px}
+.stat-card .stat-info p{font-size:13px;color:var(--text-light)}
+
+/* CARD COMPONENTS */
+.card{background:#fff;border-radius:16px;box-shadow:var(--shadow);overflow:hidden;margin-bottom:24px}
+.card-header{padding:20px 24px;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center}
+.card-header h3{font-size:18px;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:10px}
+.card-header h3 i{color:var(--secondary)}
+.card-body{padding:24px}
+.card-footer{padding:16px 24px;border-top:1px solid #f0f0f0;background:var(--bg-light)}
+
+/* BUTTONS */
+.btn{padding:10px 20px;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:var(--transition);display:inline-flex;align-items:center;gap:6px;font-family:inherit}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-light);transform:translateY(-1px)}
+.btn-success{background:var(--success);color:#fff}
+.btn-success:hover{background:#218838}
+.btn-danger{background:var(--danger);color:#fff}
+.btn-danger:hover{background:#c82333}
+.btn-warning{background:var(--warning);color:#333}
+.btn-sm{padding:6px 12px;font-size:12px}
+.btn-icon{width:32px;height:32px;padding:0;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;border:none;cursor:pointer;transition:var(--transition)}
+
+/* TABLE */
+.table-wrapper{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+table th{background:var(--bg-light);padding:12px 16px;text-align:left;font-size:12px;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #e8e8e8}
+table td{padding:12px 16px;border-bottom:1px solid #f0f0f0;font-size:13px;vertical-align:middle}
+table tr:hover{background:rgba(2,59,150,.02)}
+table .actions{display:flex;gap:6px}
+
+/* FORMS */
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--text-dark);margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;border:2px solid #e8e8e8;border-radius:10px;font-size:14px;transition:var(--transition);font-family:inherit}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px rgba(2,59,150,.1)}
+.form-group textarea{min-height:100px;resize:vertical}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.form-row.three{grid-template-columns:1fr 1fr 1fr}
-.btn-save{padding:12px 28px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;transition:all .3s;display:inline-flex;align-items:center;gap:8px;font-family:inherit}
-.btn-save:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(2,59,150,.3)}
-.btn-save.secondary{background:linear-gradient(135deg,var(--secondary),var(--secondary-light));color:var(--primary)}
-.btn-delete{padding:8px 14px;background:#fef2f2;color:var(--danger);border:1px solid #fecaca;border-radius:8px;font-size:11px;font-weight:600;cursor:pointer;transition:all .3s;font-family:inherit}
-.btn-delete:hover{background:#fee2e2}
 
-/* ═══ TOAST ═══ */
-.toast{position:fixed;top:24px;right:24px;padding:14px 24px;background:var(--success);color:#fff;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.2);z-index:9999;display:none;animation:toastIn .4s ease}
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.active{display:flex}
+.modal{background:#fff;border-radius:16px;width:100%;max-width:600px;max-height:90vh;overflow-y:auto;animation:modalSlideIn .3s ease}
+@keyframes modalSlideIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+.modal-header{padding:20px 24px;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center}
+.modal-header h3{font-size:18px;font-weight:700;color:var(--primary)}
+.modal-close{width:32px;height:32px;border-radius:8px;border:none;background:var(--bg-light);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+.modal-close:hover{background:#ffcdd2;color:var(--danger)}
+.modal-body{padding:24px}
+.modal-footer{padding:16px 24px;border-top:1px solid #f0f0f0;display:flex;justify-content:flex-end;gap:10px}
+
+/* ICON PICKER */
+.icon-picker{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;max-height:200px;overflow-y:auto;padding:10px;border:2px solid #e8e8e8;border-radius:10px}
+.icon-picker .icon-option{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:8px;cursor:pointer;transition:var(--transition);border:2px solid transparent;font-size:16px;color:var(--text-dark)}
+.icon-picker .icon-option:hover{background:var(--bg-light);border-color:var(--primary)}
+.icon-picker .icon-option.selected{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+/* BADGES */
+.badge{display:inline-flex;align-items:center;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.badge-success{background:#e8f5e9;color:#2e7d32}
+.badge-warning{background:#fff3e0;color:#e65100}
+.badge-info{background:#e3f2fd;color:#1565c0}
+.badge-danger{background:#ffebee;color:#c62828}
+
+/* TOAST */
+.toast-container{position:fixed;top:20px;right:20px;z-index:2000;display:flex;flex-direction:column;gap:10px}
+.toast{padding:14px 20px;border-radius:10px;color:#fff;font-size:13px;font-weight:500;display:flex;align-items:center;gap:10px;animation:toastIn .3s ease;min-width:280px;box-shadow:0 8px 25px rgba(0,0,0,.15)}
+.toast.success{background:var(--success)}
 .toast.error{background:var(--danger)}
-@keyframes toastIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+.toast.info{background:var(--info)}
+@keyframes toastIn{from{opacity:0;transform:translateX(100%)}to{opacity:1;transform:translateX(0)}}
 
-/* ═══ DATA TABLE ═══ */
-.data-table{width:100%;border-collapse:collapse;margin-top:16px}
-.data-table th{text-align:left;padding:10px 14px;font-size:11px;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:.8px;border-bottom:2px solid var(--border);background:var(--bg)}
-.data-table td{padding:12px 14px;font-size:13px;border-bottom:1px solid var(--border);vertical-align:top}
-.data-table tr:hover td{background:rgba(2,59,150,.02)}
-.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700}
-.badge-success{background:#dcfce7;color:#16a34a}
-.badge-warning{background:#fef3c7;color:#d97706}
-.badge-danger{background:#fef2f2;color:#dc2626}
-.badge-info{background:#dbeafe;color:#1d4ed8}
+/* EMPTY STATE */
+.empty-state{text-align:center;padding:40px 20px;color:var(--text-light)}
+.empty-state i{font-size:48px;color:#e0e0e0;margin-bottom:15px}
+.empty-state h4{font-size:16px;color:var(--text-dark);margin-bottom:8px}
+.empty-state p{font-size:13px;margin-bottom:20px}
 
-/* ═══ DASHBOARD STATS ═══ */
-.dash-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:28px}
-.dash-stat{background:#fff;border-radius:14px;padding:22px;box-shadow:var(--shadow);border:1px solid var(--border);transition:all .3s}
-.dash-stat:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
-.dash-stat-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:14px}
-.dash-stat h4{font-size:24px;color:var(--text);font-weight:800;margin-bottom:2px}
-.dash-stat p{font-size:12px;color:var(--text-light)}
+/* PREVIEW CARD */
+.preview-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.preview-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #f0f0f0;transition:var(--transition)}
+.preview-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.preview-card .preview-img{height:140px;display:flex;align-items:center;justify-content:center;font-size:40px;color:rgba(255,255,255,.85);position:relative}
+.preview-card .preview-img img{width:100%;height:100%;object-fit:cover}
+.preview-card .preview-body{padding:16px}
+.preview-card .preview-body h4{font-size:15px;color:var(--text-dark);margin-bottom:6px}
+.preview-card .preview-body p{font-size:12px;color:var(--text-light);margin-bottom:10px}
+.preview-card .preview-body .preview-actions{display:flex;gap:8px}
 
-/* ═══ RESPONSIVE ═══ */
-@media(max-width:1024px){
-.admin-sidebar{transform:translateX(-100%)}
-.admin-sidebar.open{transform:translateX(0)}
-.admin-main{margin-left:0}
-.dash-stats{grid-template-columns:1fr 1fr}
-.form-row{grid-template-columns:1fr}
-.form-row.three{grid-template-columns:1fr}
-}
+/* RESPONSIVE */
 @media(max-width:768px){
-.dash-stats{grid-template-columns:1fr}
-.admin-main{padding:16px}
-.login-card{margin:20px;padding:32px 24px}
+.sidebar{transform:translateX(-100%)}
+.sidebar.open{transform:translateX(0)}
+.main-content{margin-left:0}
+.form-row{grid-template-columns:1fr}
+.stats-grid{grid-template-columns:1fr}
+.icon-picker{grid-template-columns:repeat(6,1fr)}
 }
 
-.mobile-toggle{display:none;position:fixed;top:16px;left:16px;z-index:101;width:42px;height:42px;border-radius:10px;background:var(--primary);color:#fff;border:none;font-size:18px;cursor:pointer;box-shadow:var(--shadow-lg)}
-@media(max-width:1024px){.mobile-toggle{display:flex;align-items:center;justify-content:center}}
+/* CATEGORY/TAG */
+.tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:var(--bg-light);border-radius:20px;font-size:12px;font-weight:500;border:1px solid #e8e8e8}
+.tag .tag-remove{width:18px;height:18px;border-radius:50%;background:var(--danger);color:#fff;border:none;cursor:pointer;font-size:10px;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+.tag .tag-remove:hover{background:#c82333}
+
+/* YEAR CHIPS */
+.year-chips{display:flex;flex-wrap:wrap;gap:8px}
+.year-chip{padding:8px 16px;background:#fff;border:2px solid #e8e8e8;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;transition:var(--transition)}
+.year-chip:hover{border-color:var(--primary)}
+.year-chip.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.year-chip .remove-year{margin-left:6px;color:inherit;opacity:.6;cursor:pointer}
+.year-chip .remove-year:hover{opacity:1}
 </style>
 </head>
 <body>
 
-<!-- ═══ TOAST NOTIFICATION ═══ -->
-<div class="toast" id="toast"></div>
-
-<!-- ═══ LOGIN PAGE ═══ -->
-<div class="login-wrapper" id="loginPage">
-    <div class="login-card">
-        <div class="login-logo"><span>BD</span></div>
-        <h1>Admin Panel</h1>
-        <p>BANK DAMARA — Content Management System</p>
-        <div class="login-error" id="loginError">Username atau password salah!</div>
-        <form onsubmit="doLogin(event)">
-            <div class="form-group">
-                <label><i class="fas fa-user"></i> Username</label>
-                <input type="text" id="loginUser" placeholder="Masukkan username" required>
-            </div>
-            <div class="form-group">
-                <label><i class="fas fa-lock"></i> Password</label>
-                <input type="password" id="loginPass" placeholder="Masukkan password" required>
-            </div>
-            <button type="submit" class="btn-login"><i class="fas fa-sign-in-alt"></i> Masuk</button>
-        </form>
-        <div class="login-hint">
-            <strong>Demo Login:</strong><br>
-            Username: <code>admin</code> &nbsp;|&nbsp; Password: <code>damara2026</code>
-        </div>
-    </div>
+<!-- LOGIN PAGE -->
+<div class="login-page" id="loginPage">
+<div class="login-container">
+<div class="login-logo">
+<div class="logo-icon">BD</div>
+<h1>Admin Panel</h1>
+<p>BANK DAMARA - Content Management System</p>
+</div>
+<div class="login-error" id="loginError">
+<i class="fas fa-exclamation-circle"></i> Username atau password salah!
+</div>
+<form class="login-form" onsubmit="handleLogin(event)">
+<div class="form-group">
+<label><i class="fas fa-user"></i> Username</label>
+<input type="text" id="loginUsername" placeholder="Masukkan username" required>
+</div>
+<div class="form-group">
+<label><i class="fas fa-lock"></i> Password</label>
+<input type="password" id="loginPassword" placeholder="Masukkan password" required>
+</div>
+<button type="submit" class="btn-login"><i class="fas fa-sign-in-alt"></i> Masuk</button>
+</form>
+<div class="login-hint">
+<i class="fas fa-info-circle"></i> Default: <strong>admin</strong> / <strong>admin123</strong>
+</div>
+</div>
 </div>
 
-<!-- ═══ ADMIN PANEL ═══ -->
-<div class="admin-wrapper" id="adminPanel">
-    <button class="mobile-toggle" onclick="document.querySelector('.admin-sidebar').classList.toggle('open')"><i class="fas fa-bars"></i></button>
-    
-    <!-- SIDEBAR -->
-    <aside class="admin-sidebar">
-        <div class="admin-sidebar-header">
-            <h2>BANK DAMARA</h2>
-            <p>Admin CMS v1.0</p>
-        </div>
-        <nav class="admin-nav">
-            <div class="admin-nav-section">Dashboard</div>
-            <button class="admin-nav-item active" onclick="showPanel('dashboard',this)"><i class="fas fa-tachometer-alt"></i> Dashboard</button>
-            
-            <div class="admin-nav-divider"></div>
-            <div class="admin-nav-section">Update Terkini</div>
-            <button class="admin-nav-item" onclick="showPanel('lps',this)"><i class="fas fa-shield-alt"></i> Penjaminan LPS</button>
-            <button class="admin-nav-item" onclick="showPanel('bunga',this)"><i class="fas fa-percent"></i> Suku Bunga BPR</button>
-            
-            <div class="admin-nav-divider"></div>
-            <div class="admin-nav-section">Perusahaan</div>
-            <button class="admin-nav-item" onclick="showPanel('profil',this)"><i class="fas fa-building"></i> Profil</button>
-            <button class="admin-nav-item" onclick="showPanel('visimisi',this)"><i class="fas fa-bullseye"></i> Visi & Misi</button>
-            <button class="admin-nav-item" onclick="showPanel('budaya',this)"><i class="fas fa-heart"></i> Budaya</button>
-            <button class="admin-nav-item" onclick="showPanel('manajemen',this)"><i class="fas fa-user-tie"></i> Manajemen</button>
-            <button class="admin-nav-item" onclick="showPanel('karir',this)"><i class="fas fa-briefcase"></i> Karir</button>
-            
-            <div class="admin-nav-divider"></div>
-            <div class="admin-nav-section">Konten</div>
-            <button class="admin-nav-item" onclick="showPanel('pelaporan',this)"><i class="fas fa-file-alt"></i> Pelaporan</button>
-            <button class="admin-nav-item" onclick="showPanel('lelang',this)"><i class="fas fa-gavel"></i> Lelang Agunan</button>
-        </nav>
-    </aside>
+<!-- ADMIN LAYOUT -->
+<div class="admin-layout" id="adminLayout">
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+<div class="sidebar-header">
+<div class="s-logo">BD</div>
+<div>
+<h2>BANK DAMARA</h2>
+<p>Admin Panel</p>
+</div>
+</div>
+<nav class="sidebar-nav">
+<div class="nav-section">Menu Utama</div>
+<div class="nav-item active" onclick="showPanel('dashboard')"><i class="fas fa-tachometer-alt"></i> Dashboard</div>
+<div class="nav-section">Kelola Konten</div>
+<div class="nav-item" onclick="showPanel('pelaporan')"><i class="fas fa-file-alt"></i> Pelaporan</div>
+<div class="nav-item" onclick="showPanel('lelang')"><i class="fas fa-gavel"></i> Lelang</div>
+<div class="nav-section">Pengaturan</div>
+<div class="nav-item" onclick="showPanel('kategori')"><i class="fas fa-tags"></i> Kategori</div>
+<div class="nav-item" onclick="showPanel('tahun')"><i class="fas fa-calendar-alt"></i> Tahun</div>
+</nav>
+<div class="sidebar-footer">
+<div class="user-info">
+<div class="user-avatar">A</div>
+<div>
+<div class="user-name">Administrator</div>
+<div class="user-role">Super Admin</div>
+</div>
+</div>
+</div>
+</aside>
 
-    <!-- MAIN CONTENT -->
-    <main class="admin-main">
-        <div class="admin-topbar">
-            <h1 id="pageTitle">Dashboard</h1>
-            <div class="admin-topbar-right">
-                <div class="admin-user">
-                    <div class="admin-user-avatar">A</div>
-                    <div class="admin-user-info"><strong>Admin</strong><span>Super Admin</span></div>
-                </div>
-                <button class="btn-logout" onclick="doLogout()"><i class="fas fa-sign-out-alt"></i> Keluar</button>
-            </div>
-        </div>
-
-        <!-- ═══ PANEL: DASHBOARD ═══ -->
-        <div class="panel active" id="panel-dashboard">
-            <div class="dash-stats">
-                <div class="dash-stat">
-                    <div class="dash-stat-icon" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);color:#1d4ed8"><i class="fas fa-shield-alt"></i></div>
-                    <h4>LPS & Bunga</h4>
-                    <p>Data penjaminan & suku bunga</p>
-                </div>
-                <div class="dash-stat">
-                    <div class="dash-stat-icon" style="background:linear-gradient(135deg,#dcfce7,#bbf7d0);color:#16a34a"><i class="fas fa-building"></i></div>
-                    <h4>Profil Perusahaan</h4>
-                    <p>Visi, misi, budaya, manajemen</p>
-                </div>
-                <div class="dash-stat">
-                    <div class="dash-stat-icon" style="background:linear-gradient(135deg,#fef3c7,#fde68a);color:#d97706"><i class="fas fa-file-alt"></i></div>
-                    <h4>Pelaporan</h4>
-                    <p>Laporan publikasi & tahunan</p>
-                </div>
-                <div class="dash-stat">
-                    <div class="dash-stat-icon" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0);color:#c62828"><i class="fas fa-gavel"></i></div>
-                    <h4>Lelang Agunan</h4>
-                    <p>Daftar aset lelang aktif</p>
-                </div>
-            </div>
-            <div class="panel-card">
-                <h3><i class="fas fa-info-circle"></i> Selamat Datang di Admin Panel</h3>
-                <p class="desc">Gunakan menu di sidebar kiri untuk mengelola konten website BANK DAMARA. Semua perubahan akan disimpan di localStorage browser dan dapat dibaca oleh halaman utama.</p>
-                <div class="divider"></div>
-                <p style="font-size:13px;color:var(--text-light)"><strong>Cara kerja:</strong> Data yang Anda update di sini akan tersimpan di browser (localStorage). Halaman <code>index.html</code> akan membaca data dari localStorage saat halaman dimuat, dan menampilkan data default jika belum ada perubahan.</p>
-            </div>
-        </div>
-
-        <!-- ═══ PANEL: PENJAMINAN LPS ═══ -->
-        <div class="panel" id="panel-lps">
-            <div class="panel-card">
-                <h3><i class="fas fa-shield-alt"></i> Bunga Penjaminan LPS</h3>
-                <p class="desc">Update data bunga penjaminan LPS yang tampil di section "Update Terkini"</p>
-                <div class="divider"></div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Bunga LPS (%)</label>
-                        <input type="text" id="lpsBunga" placeholder="Contoh: 6">
-                    </div>
-                    <div class="form-group">
-                        <label>Periode Berlaku</label>
-                        <input type="text" id="lpsPeriode" placeholder="Contoh: 1 Juni 2025 — 30 September 2025">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Maks. Simpanan Dijamin</label>
-                        <input type="text" id="lpsMaks" placeholder="Contoh: Rp. 2 Miliar">
-                    </div>
-                    <div class="form-group">
-                        <label>Link LPS (URL)</label>
-                        <input type="text" id="lpsLink" placeholder="https://www.lps.go.id">
-                    </div>
-                </div>
-                <button class="btn-save" onclick="saveLPS()"><i class="fas fa-save"></i> Simpan Perubahan</button>
-            </div>
-        </div>
-
-        <!-- ═══ PANEL: SUKU BUNGA BPR ═══ -->
-        <div class="panel" id="panel-bunga">
-            <div class="panel-card">
-                <h3><i class="fas fa-percent"></i> Suku Bunga BPR</h3>
-                <p class="desc">Update suku bunga tabungan dan deposito yang tampil di section "Update Terkini"</p>
-                <div class="divider"></div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Bunga Tabungan (% per tahun)</label>
-                        <input type="text" id="bungaTab" placeholder="Contoh: 4,00">
-                    </div>
-                    <div class="form-group">
-                        <label>Bunga Deposito (% per tahun)</label>
-                        <input type="text" id="bungaDep" placeholder="Contoh: 6,50">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Catatan Disclaimer</label>
-                    <input type="text" id="bungaDisclaimer" placeholder="Sewaktu-waktu dapat berubah">
-                </div>
-                <button class="btn-save" onclick="saveBunga()"><i class="fas fa-save"></i> Simpan Perubahan</button>
-            </div>
-        </div>
-
-        <!-- ═══ PANEL: PROFIL ═══ -->
-        <div class="panel" id="panel-profil">
-            <div class="panel-card">
-                <h3><i class="fas fa-building"></i> Profil Perusahaan</h3>
-                <p class="desc">Update ringkasan profil yang tampil di tab "Profil" pada section Tentang Kami</p>
-                <div class="divider"></div>
-                <div class="form-group">
-                    <label>Paragraf 1 — Pendirian & Legalitas</label>
-                    <textarea id="profilP1" rows="4" placeholder="Teks tentang pendirian dan legalitas..."></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Paragraf 2 — Sejarah Peleburan</label>
-                    <textarea id="profilP2" rows="4" placeholder="Teks tentang sejarah peleburan..."></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Paragraf 3 — Kantor & Operasional</label>
-                    <textarea id="profilP3" rows="4" placeholder="Teks tentang kantor dan operasional..."></textarea>
-                </div>
-                <button class="btn-save" onclick="saveProfil()"><i class="fas fa-save"></i> Simpan Perubahan</button>
-            </div>
-        </div>
-
-        <!-- ═══ PANEL: VISI & MISI ═══ -->
-        <div class="panel" id="panel-visimisi">
-            <div class="panel-card">
-                <h3><i class="fas fa-bullseye"></i> Visi Perusahaan</h3>
-                <p class="desc">Update teks visi yang tampil di tab "Visi & Misi"</p>
-                <div class="divider"></div>
-                <div class="form-group">
-                    <label>Teks Visi</label>
-                    <textarea id="visiText" rows="4" placeholder="Masukkan visi perusahaan..."></textarea>
-                </div>
-            </div>
-            <div class="panel-card">
-                <h3><i class="fas fa-rocket"></i> Misi Perusahaan</h3>
-                <p class="desc">Update daftar misi (satu per baris)</p>
-                <div class="divider"></div>
-                <div class="form-group">
-                    <label>Misi 1</label>
-                    <input type="text" id="misi1" placeholder="Misi pertama...">
-                </div>
-                <div class="form-group">
-                    <label>Misi 2</label>
-                    <input type="text" id="misi2" placeholder="Misi kedua...">
-                </div>
-                <div class="form-group">
-                    <label>Misi 3</label>
-                    <input type="text" id="misi3" placeholder="Misi ketiga...">
-                </div>
-                <div class="form-group">
-                    <label>Misi 4</label>
-                    <input type="text" id="misi4" placeholder="Misi keempat...">
-                </div>
-                <div class="form-group">
-                    <label>Misi 5</label>
-                    <input type="text" id="misi5" placeholder="Misi kelima...">
-                </div>
-                <button class="btn-save" onclick="saveVisiMisi()"><i class="fas fa-save"></i> Simpan Perubahan</button>
-            </div>
-        </div>
-
-        <!-- ═══ PANEL: BUDAYA ═══ -->
-        <div class="panel" id="panel-budaya">
-            <div class="panel-card">
-                <h3><i class="fas fa-heart"></i> Budaya Perusahaan</h3>
-                <p class="desc">Update 4 nilai budaya perusahaan (Core Values)</p>
-                <div class="divider"></div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Budaya 1 — Nama</label>
-                        <input type="text" id="budaya1nama" placeholder="Contoh: Integritas">
-                    </div>
-                    <div class="form-group">
-                        <label>Budaya 1 — Deskripsi</label>
-                        <input type="text" id="budaya1desc" placeholder="Deskripsi singkat...">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Budaya 2 — Nama</label>
-                        <input type="text" id="budaya2nama" placeholder="Contoh: Inovasi">
-                    </div>
-                    <div class="form-group">
-                        <label>Budaya 2 — Deskripsi</label>
-                        <input type="text" id="budaya2desc" placeholder="Deskripsi singkat...">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Budaya 3 — Nama</label>
-                        <input type="text" id="budaya3nama" placeholder="Contoh: Kolaborasi">
-                    </div>
-                    <div class="form-group">
-                        <label>Budaya 3 — Deskripsi</label>
-                        <input type="text" id="budaya3desc" placeholder="Deskripsi singkat...">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Budaya 4 — Nama</label>
-                        <input type="text" id="budaya4nama" placeholder="Contoh: Keunggulan">
-                    </div>
-                    <div class="form-group">
-                        <label>Budaya 4 — Deskripsi</label>
-                        <input type="text" id="budaya4desc" placeholder="Deskripsi singkat...">
-                    </div>
-                </div>
-                <button class="btn-save" onclick="saveBudaya()"><i class="fas fa-save"></i> Simpan Perubahan</button>
-            </div>
-        </div>
-
-        <!-- ═══ PANEL: MANAJEMEN ═══ -->
-        <div class="panel" id="panel-manajemen">
-            <div class="panel-card">
-                <h3><i class="fas fa-user-tie"></i> Dewan Komisaris</h3>
-                <p class="desc">Update data komisaris</p>
-                <div class="divider"></div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Komisaris Utama — Nama</label>
-                        <input type="text" id="komUtNama" placeholder="Nama lengkap">
-                    </div>
-                    <div class="form-group">
-                        <label>Komisaris Utama — Deskripsi</label>
-                        <textarea id="komUtDesc" rows="3" placeholder="Profil singkat..."></textarea>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Komisaris — Nama</label>
-                        <input type="text" id="komNama" placeholder="Nama lengkap">
-                    </div>
-                    <div class="form-group">
-                        <label>Komisaris — Deskripsi</label>
-                        <textarea id="komDesc" rows="3" placeholder="Profil singkat..."></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="panel-card">
-                <h3><i class="fas fa-user-shield"></i> Dewan Direksi</h3>
-                <p class="desc">Update data direksi</p>
-                <div class="divider"></div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Direktur Utama — Nama</label>
-                        <input type="text" id="dirUtNama" placeholder="Nama lengkap">
-                    </div>
-                    <div class="form-group">
-                        <label>Direktur Utama — Deskripsi</label>
-                        <textarea id="dirUtDesc" rows="3" placeholder="Profil singkat..."></textarea>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Direktur Kepatuhan — Nama</label>
-                        <input type="text" id="dirKepNama" placeholder="Nama lengkap">
-                    </div>
-                    <div class="form-group">
-                        <label>Direktur Kepatuhan — Deskripsi</label>
-                        <textarea id="dirKepDesc" rows="3" placeholder="Profil singkat..."></textarea>
-                    </div>
-                </div>
-                <button class="btn-save" onclick="saveManajemen()"><i class="fas fa-save"></i> Simpan Perubahan</button>
-            </div>
-        </div>
-
-        <!-- ═══ PANEL: KARIR ═══ -->
-        <div class="panel" id="panel-karir">
-            <div class="panel-card">
-                <h3><i class="fas fa-briefcase"></i> Informasi Karir</h3>
-                <p class="desc">Update konten tab Karir</p>
-                <div class="divider"></div>
-                <div class="form-group">
-                    <label>Judul</label>
-                    <input type="text" id="karirJudul" placeholder="Contoh: Bergabung Bersama Kami">
-                </div>
-                <div class="form-group">
-                    <label>Deskripsi</label>
-                    <textarea id="karirDesc" rows="3" placeholder="Deskripsi karir..."></textarea>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Jumlah Posisi Terbuka</label>
-                        <input type="text" id="karirPosisi" placeholder="Contoh: 50+">
-                    </div>
-                    <div class="form-group">
-                        <label>Jumlah Karyawan</label>
-                        <input type="text" id="karirKaryawan" placeholder="Contoh: 12.000+">
-                    </div>
-                </div>
-                <button class="btn-save" onclick="saveKarir()"><i class="fas fa-save"></i> Simpan Perubahan</button>
-            </div>
-        </div>
-
-        <!-- ═══ PANEL: PELAPORAN ═══ -->
-        <div class="panel" id="panel-pelaporan">
-            <div class="panel-card">
-                <h3><i class="fas fa-newspaper"></i> Publikasi</h3>
-                <p class="desc">Update daftar laporan publikasi</p>
-                <div class="divider"></div>
-                <div class="form-group">
-                    <label>Item Publikasi 1</label>
-                    <input type="text" id="pub1" placeholder="Contoh: Laporan Keuangan Triwulanan">
-                </div>
-                <div class="form-group">
-                    <label>Item Publikasi 2</label>
-                    <input type="text" id="pub2" placeholder="Contoh: Rasio Keuangan & KPMM">
-                </div>
-                <div class="form-group">
-                    <label>Link Halaman Publikasi</label>
-                    <input type="text" id="pubLink" placeholder="URL halaman pelaporan...">
-                </div>
-            </div>
-            <div class="panel-card">
-                <h3><i class="fas fa-book-open"></i> Laporan Tahunan</h3>
-                <p class="desc">Update daftar laporan tahunan</p>
-                <div class="divider"></div>
-                <div class="form-group">
-                    <label>Item Laporan 1</label>
-                    <input type="text" id="lap1" placeholder="Contoh: Laporan Tahunan">
-                </div>
-                <div class="form-group">
-                    <label>Item Laporan 2</label>
-                    <input type="text" id="lap2" placeholder="Contoh: Laporan Berkelanjutan">
-                </div>
-                <div class="form-group">
-                    <label>Item Laporan 3</label>
-                    <input type="text" id="lap3" placeholder="Contoh: Laporan GCG">
-                </div>
-            </div>
-            <div class="panel-card">
-                <h3><i class="fas fa-comment-dots"></i> Pengaduan</h3>
-                <p class="desc">Update daftar saluran pengaduan</p>
-                <div class="divider"></div>
-                <div class="form-group">
-                    <label>Item Pengaduan 1</label>
-                    <input type="text" id="peng1" placeholder="Contoh: Laporan Pengaduan Konsumen">
-                </div>
-                <div class="form-group">
-                    <label>Item Pengaduan 2</label>
-                    <input type="text" id="peng2" placeholder="Contoh: Whistleblowing System (WBS)">
-                </div>
-                <div class="form-group">
-                    <label>Link Halaman Pengaduan</label>
-                    <input type="text" id="pengLink" placeholder="URL halaman pengaduan...">
-                </div>
-                <button class="btn-save" onclick="savePelaporan()"><i class="fas fa-save"></i> Simpan Perubahan</button>
-            </div>
-        </div>
-
-        <!-- ═══ PANEL: LELANG AGUNAN ═══ -->
-        <div class="panel" id="panel-lelang">
-            <div class="panel-card">
-                <h3><i class="fas fa-gavel"></i> Statistik Lelang</h3>
-                <p class="desc">Update angka statistik di section lelang</p>
-                <div class="divider"></div>
-                <div class="form-row" style="grid-template-columns:1fr 1fr 1fr 1fr">
-                    <div class="form-group">
-                        <label>Aset Tersedia</label>
-                        <input type="text" id="lelangAset" placeholder="Contoh: 250+">
-                    </div>
-                    <div class="form-group">
-                        <label>Provinsi</label>
-                        <input type="text" id="lelangProv" placeholder="Contoh: 34">
-                    </div>
-                    <div class="form-group">
-                        <label>Di Bawah NJOP</label>
-                        <input type="text" id="lelangNjop" placeholder="Contoh: 15%">
-                    </div>
-                    <div class="form-group">
-                        <label>Legal & Aman</label>
-                        <input type="text" id="lelangLegal" placeholder="Contoh: 100%">
-                    </div>
-                </div>
-            </div>
-            <div class="panel-card">
-                <h3><i class="fas fa-list"></i> Daftar Agunan Lelang</h3>
-                <p class="desc">Tambah dan kelola item agunan lelang</p>
-                <div class="divider"></div>
-                <div class="form-row three">
-                    <div class="form-group">
-                        <label>Nama Agunan</label>
-                        <input type="text" id="lelangNama" placeholder="Contoh: Tanah & Bangunan SHM">
-                    </div>
-                    <div class="form-group">
-                        <label>Lokasi</label>
-                        <input type="text" id="lelangLokasi" placeholder="Contoh: Lombok Barat, NTB">
-                    </div>
-                    <div class="form-group">
-                        <label>Harga (Rp)</label>
-                        <input type="text" id="lelangHarga" placeholder="Contoh: 450.000.000">
-                    </div>
-                </div>
-                <div class="form-row three">
-                    <div class="form-group">
-                        <label>Tipe</label>
-                        <select id="lelangTipe">
-                            <option value="Properti">Properti</option>
-                            <option value="Kendaraan">Kendaraan</option>
-                            <option value="Tanah">Tanah</option>
-                            <option value="Ruko">Ruko</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Status</label>
-                        <select id="lelangStatus">
-                            <option value="open">Dibuka</option>
-                            <option value="soon">Segera</option>
-                            <option value="closed">Ditutup</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Tanggal Lelang</label>
-                        <input type="date" id="lelangTanggal">
-                    </div>
-                </div>
-                <button class="btn-save" onclick="addLelang()"><i class="fas fa-plus"></i> Tambah Agunan</button>
-                <div style="overflow-x:auto;margin-top:20px">
-                    <table class="data-table" id="lelangTable">
-                        <thead><tr><th>No</th><th>Nama Agunan</th><th>Tipe</th><th>Lokasi</th><th>Harga</th><th>Status</th><th>Aksi</th></tr></thead>
-                        <tbody id="lelangTbody"></tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-    </main>
+<!-- MAIN CONTENT -->
+<main class="main-content">
+<div class="topbar">
+<h1 id="pageTitle">Dashboard</h1>
+<div class="topbar-actions">
+<a href="index.html" target="_blank" class="btn-view-site"><i class="fas fa-external-link-alt"></i> Lihat Website</a>
+<button class="btn-logout" onclick="handleLogout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+</div>
 </div>
 
-<!-- ═══ JAVASCRIPT ═══ -->
+<!-- DASHBOARD PANEL -->
+<div class="panel active" id="panel-dashboard">
+<div class="stats-grid">
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-file-alt"></i></div>
+<div class="stat-info"><h3 id="statPelaporan">3</h3><p>Kartu Pelaporan</p></div>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-gavel"></i></div>
+<div class="stat-info"><h3 id="statLelang">0</h3><p>Item Lelang</p></div>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-tags"></i></div>
+<div class="stat-info"><h3 id="statKategori">3</h3><p>Kategori</p></div>
+</div>
+<div class="stat-card">
+<div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+<div class="stat-info"><h3 id="statTahun">4</h3><p>Tahun</p></div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header"><h3><i class="fas fa-info-circle"></i> Panduan Penggunaan</h3></div>
+<div class="card-body">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px">
+<div style="padding:20px;background:var(--bg-light);border-radius:12px;border-left:4px solid var(--primary)">
+<h4 style="font-size:14px;color:var(--primary);margin-bottom:8px"><i class="fas fa-file-alt"></i> Kelola Pelaporan</h4>
+<p style="font-size:12px;color:var(--text-light)">Edit judul, deskripsi, icon, daftar item, dan tombol pada 3 kartu pelaporan (Publikasi, Laporan Tahunan, Pengaduan)</p>
+</div>
+<div style="padding:20px;background:var(--bg-light);border-radius:12px;border-left:4px solid var(--secondary)">
+<h4 style="font-size:14px;color:var(--primary);margin-bottom:8px"><i class="fas fa-gavel"></i> Kelola Lelang</h4>
+<p style="font-size:12px;color:var(--text-light)">Tambah, edit, atau hapus item lelang agunan. Atur foto, harga, lokasi, dan status lelang</p>
+</div>
+<div style="padding:20px;background:var(--bg-light);border-radius:12px;border-left:4px solid var(--success)">
+<h4 style="font-size:14px;color:var(--primary);margin-bottom:8px"><i class="fas fa-save"></i> Simpan & Publikasikan</h4>
+<p style="font-size:12px;color:var(--text-light)">Semua perubahan otomatis tersimpan di browser. Data akan muncul di halaman utama website</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header"><h3><i class="fas fa-clock"></i> Aktivitas Terakhir</h3></div>
+<div class="card-body">
+<div id="activityLog" style="font-size:13px;color:var(--text-light)">
+<p><i class="fas fa-check-circle" style="color:var(--success)"></i> Sistem siap digunakan. Silakan kelola konten melalui menu di sidebar.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- PELAPORAN PANEL -->
+<div class="panel" id="panel-pelaporan">
+<div class="card">
+<div class="card-header">
+<h3><i class="fas fa-file-alt"></i> Kelola Section Pelaporan</h3>
+</div>
+<div class="card-body">
+<p style="font-size:13px;color:var(--text-light);margin-bottom:20px">Edit konten pada 3 kartu pelaporan: Publikasi, Laporan Tahunan, dan Pengaduan.</p>
+
+<!-- Section Title -->
+<div class="card" style="margin-bottom:20px;border:1px solid #e8e8e8">
+<div class="card-header" style="background:var(--bg-light)"><h3 style="font-size:15px"><i class="fas fa-heading"></i> Judul Section</h3></div>
+<div class="card-body">
+<div class="form-row">
+<div class="form-group">
+<label>Badge Text</label>
+<input type="text" id="pelaporanBadge" value="Pelaporan" oninput="savePelaporanSection()">
+</div>
+<div class="form-group">
+<label>Judul Utama</label>
+<input type="text" id="pelaporanTitle" value="Transparansi & Akuntabilitas" oninput="savePelaporanSection()">
+</div>
+</div>
+<div class="form-group">
+<label>Deskripsi Section</label>
+<textarea id="pelaporanDesc" rows="2" oninput="savePelaporanSection()">Akses Laporan publikasi, Laporan Tahunan dan Saluran Pengaduan Resmi BANK DAMARA</textarea>
+</div>
+</div>
+</div>
+
+<!-- Card 1: Publikasi -->
+<div class="card" style="margin-bottom:20px;border:2px solid #e3f2fd" id="pelaporanCard1">
+<div class="card-header" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb)">
+<h3 style="font-size:15px;color:#1565c0"><i class="fas fa-newspaper"></i> Kartu 1: Publikasi</h3>
+<button class="btn btn-sm btn-primary" onclick="editPelaporanCard(0)"><i class="fas fa-edit"></i> Edit</button>
+</div>
+<div class="card-body" id="pelaporanPreview0"></div>
+</div>
+
+<!-- Card 2: Laporan Tahunan -->
+<div class="card" style="margin-bottom:20px;border:2px solid #fff3e0" id="pelaporanCard2">
+<div class="card-header" style="background:linear-gradient(135deg,#fff3e0,#ffe0b2)">
+<h3 style="font-size:15px;color:#e65100"><i class="fas fa-book-open"></i> Kartu 2: Laporan Tahunan</h3>
+<button class="btn btn-sm btn-primary" onclick="editPelaporanCard(1)"><i class="fas fa-edit"></i> Edit</button>
+</div>
+<div class="card-body" id="pelaporanPreview1"></div>
+</div>
+
+<!-- Card 3: Pengaduan -->
+<div class="card" style="margin-bottom:20px;border:2px solid #fce4ec" id="pelaporanCard3">
+<div class="card-header" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0)">
+<h3 style="font-size:15px;color:#c62828"><i class="fas fa-comment-dots"></i> Kartu 3: Pengaduan</h3>
+<button class="btn btn-sm btn-primary" onclick="editPelaporanCard(2)"><i class="fas fa-edit"></i> Edit</button>
+</div>
+<div class="card-body" id="pelaporanPreview2"></div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- LELANG PANEL -->
+<div class="panel" id="panel-lelang">
+<div class="card">
+<div class="card-header">
+<h3><i class="fas fa-gavel"></i> Kelola Section Lelang</h3>
+<button class="btn btn-success" onclick="openLelangModal()"><i class="fas fa-plus"></i> Tambah Item Lelang</button>
+</div>
+<div class="card-body">
+<!-- Lelang Section Settings -->
+<div class="card" style="margin-bottom:20px;border:1px solid #e8e8e8">
+<div class="card-header" style="background:var(--bg-light)"><h3 style="font-size:15px"><i class="fas fa-cog"></i> Pengaturan Section Lelang</h3></div>
+<div class="card-body">
+<div class="form-row">
+<div class="form-group">
+<label>Judul Section</label>
+<input type="text" id="lelangTitle" value="Agunan Pilihan Harga Terjangkau" oninput="saveLelangSection()">
+</div>
+<div class="form-group">
+<label>Deskripsi Section</label>
+<input type="text" id="lelangDesc" value="Temukan properti, kendaraan, dan aset berharga dengan harga di bawah pasaran" oninput="saveLelangSection()">
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Jumlah Aset</label>
+<input type="text" id="lelangStat1" value="250+" oninput="saveLelangSection()">
+</div>
+<div class="form-group">
+<label>Provinsi</label>
+<input type="text" id="lelangStat2" value="34" oninput="saveLelangSection()">
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Di Bawah NJOP</label>
+<input type="text" id="lelangStat3" value="15%" oninput="saveLelangSection()">
+</div>
+<div class="form-group">
+<label>Status Legal</label>
+<input type="text" id="lelangStat4" value="100%" oninput="saveLelangSection()">
+</div>
+</div>
+</div>
+</div>
+
+<!-- Lelang Items List -->
+<h4 style="font-size:15px;color:var(--primary);margin-bottom:15px"><i class="fas fa-list"></i> Daftar Item Lelang</h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr>
+<th>Foto</th>
+<th>Judul</th>
+<th>Kategori</th>
+<th>Harga</th>
+<th>Lokasi</th>
+<th>Status</th>
+<th>Aksi</th>
+</tr>
+</thead>
+<tbody id="lelangTableBody">
+<tr><td colspan="7" class="empty-state" style="padding:30px"><i class="fas fa-inbox" style="font-size:32px;color:#e0e0e0;display:block;margin-bottom:10px"></i>Belum ada item lelang. Klik "Tambah Item Lelang" untuk menambahkan.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+<!-- KATEGORI PANEL -->
+<div class="panel" id="panel-kategori">
+<div class="card">
+<div class="card-header">
+<h3><i class="fas fa-tags"></i> Kelola Kategori</h3>
+</div>
+<div class="card-body">
+<p style="font-size:13px;color:var(--text-light);margin-bottom:20px">Kategori digunakan untuk mengelompokkan item lelang dan pelaporan.</p>
+
+<div class="form-group">
+<label>Tambah Kategori Baru</label>
+<div style="display:flex;gap:10px">
+<input type="text" id="newCategoryInput" placeholder="Nama kategori..." style="flex:1">
+<select id="newCategoryType" style="width:150px">
+<option value="lelang">Lelang</option>
+<option value="pelaporan">Pelaporan</option>
+</select>
+<button class="btn btn-success" onclick="addCategory()"><i class="fas fa-plus"></i> Tambah</button>
+</div>
+</div>
+
+<h4 style="font-size:14px;color:var(--primary);margin:20px 0 10px">Kategori Lelang</h4>
+<div class="tag-list" id="lelangCategories"></div>
+
+<h4 style="font-size:14px;color:var(--primary);margin:20px 0 10px">Kategori Pelaporan</h4>
+<div class="tag-list" id="pelaporanCategories"></div>
+</div>
+</div>
+</div>
+
+<!-- TAHUN PANEL -->
+<div class="panel" id="panel-tahun">
+<div class="card">
+<div class="card-header">
+<h3><i class="fas fa-calendar-alt"></i> Kelola Tahun</h3>
+</div>
+<div class="card-body">
+<p style="font-size:13px;color:var(--text-light);margin-bottom:20px">Daftar tahun yang tersedia untuk filter laporan dan lelang.</p>
+
+<div class="form-group">
+<label>Tambah Tahun</label>
+<div style="display:flex;gap:10px">
+<input type="number" id="newYearInput" placeholder="2026" min="2000" max="2099" style="flex:1">
+<button class="btn btn-success" onclick="addYear()"><i class="fas fa-plus"></i> Tambah</button>
+</div>
+</div>
+
+<h4 style="font-size:14px;color:var(--primary);margin:20px 0 10px">Daftar Tahun</h4>
+<div class="year-chips" id="yearChips"></div>
+</div>
+</div>
+</div>
+
+</main>
+</div>
+
+<!-- MODAL: EDIT PELAPORAN CARD -->
+<div class="modal-overlay" id="modalPelaporan">
+<div class="modal">
+<div class="modal-header">
+<h3><i class="fas fa-edit"></i> Edit Kartu Pelaporan</h3>
+<button class="modal-close" onclick="closeModal('modalPelaporan')"><i class="fas fa-times"></i></button>
+</div>
+<div class="modal-body">
+<input type="hidden" id="editPelaporanIndex">
+<div class="form-row">
+<div class="form-group">
+<label>Judul Kartu</label>
+<input type="text" id="editPC_Title">
+</div>
+<div class="form-group">
+<label>Deskripsi</label>
+<input type="text" id="editPC_Desc">
+</div>
+</div>
+<div class="form-group">
+<label>Icon (Font Awesome class)</label>
+<div style="display:flex;gap:10px;align-items:center">
+<input type="text" id="editPC_Icon" placeholder="fa-newspaper" style="flex:1">
+<div id="editPC_IconPreview" style="width:50px;height:50px;border-radius:12px;background:var(--bg-light);display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--primary)"></div>
+</div>
+</div>
+<div class="form-group">
+<label>Daftar Item (satu per baris)</label>
+<textarea id="editPC_Items" rows="5" placeholder="Laporan Keuangan Triwulanan&#10;Rasio Keuangan & KPMM"></textarea>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Icon Item (Font Awesome)</label>
+<input type="text" id="editPC_ItemIcon" placeholder="fa-file-pdf">
+</div>
+<div class="form-group">
+<label>Teks Tombol</label>
+<input type="text" id="editPC_BtnText" placeholder="Lihat Publikasi">
+</div>
+</div>
+<div class="form-group">
+<label>Link Tombol (URL)</label>
+<input type="text" id="editPC_BtnLink" placeholder="https://...">
+</div>
+<div class="form-group">
+<label>Foto/Gambar Header (URL)</label>
+<input type="text" id="editPC_Image" placeholder="https://... (kosongkan untuk gradient default)">
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn btn-danger" onclick="closeModal('modalPelaporan')">Batal</button>
+<button class="btn btn-success" onclick="savePelaporanCard()"><i class="fas fa-save"></i> Simpan</button>
+</div>
+</div>
+</div>
+
+<!-- MODAL: ADD/EDIT LELANG -->
+<div class="modal-overlay" id="modalLelang">
+<div class="modal">
+<div class="modal-header">
+<h3 id="modalLelangTitle"><i class="fas fa-plus"></i> Tambah Item Lelang</h3>
+<button class="modal-close" onclick="closeModal('modalLelang')"><i class="fas fa-times"></i></button>
+</div>
+<div class="modal-body">
+<input type="hidden" id="editLelangIndex" value="-1">
+<div class="form-row">
+<div class="form-group">
+<label>Judul Aset</label>
+<input type="text" id="lelangItemTitle" placeholder="Rumah 2 Lantai di Mataram">
+</div>
+<div class="form-group">
+<label>Kategori</label>
+<select id="lelangItemCategory">
+<option value="Properti">Properti</option>
+<option value="Kendaraan">Kendaraan</option>
+<option value="Tanah">Tanah</option>
+<option value="Ruko">Ruko</option>
+<option value="Lainnya">Lainnya</option>
+</select>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Harga (Rp)</label>
+<input type="text" id="lelangItemPrice" placeholder="500.000.000">
+</div>
+<div class="form-group">
+<label>Lokasi</label>
+<input type="text" id="lelangItemLocation" placeholder="Mataram, NTB">
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Status</label>
+<select id="lelangItemStatus">
+<option value="open">Terbuka</option>
+<option value="soon">Segera</option>
+<option value="closed">Tertutup</option>
+</select>
+</div>
+<div class="form-group">
+<label>Tahun</label>
+<select id="lelangItemYear"></select>
+</div>
+</div>
+<div class="form-group">
+<label>Foto Aset (URL)</label>
+<input type="text" id="lelangItemImage" placeholder="https://... (kosongkan untuk gradient)">
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Icon (jika tanpa foto)</label>
+<input type="text" id="lelangItemIcon" placeholder="fa-home" value="fa-home">
+</div>
+<div class="form-group">
+<label>Luas (opsional)</label>
+<input type="text" id="lelangItemArea" placeholder="150 m²">
+</div>
+</div>
+<div class="form-group">
+<label>Deskripsi Singkat</label>
+<textarea id="lelangItemDesc" rows="3" placeholder="Deskripsi singkat aset..."></textarea>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn btn-danger" onclick="closeModal('modalLelang')">Batal</button>
+<button class="btn btn-success" onclick="saveLelangItem()"><i class="fas fa-save"></i> Simpan</button>
+</div>
+</div>
+</div>
+
+<!-- TOAST CONTAINER -->
+<div class="toast-container" id="toastContainer"></div>
+
 <script>
-// ═══════════════════════════════════════════════
-// KONFIGURASI & UTILITAS
-// ═══════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════
+// DATA STORE (localStorage)
+// ═══════════════════════════════════════════════════════════════
+const STORAGE_KEY = 'bankdamara_admin_data';
+
+const DEFAULT_DATA = {
+pelaporan: {
+badge: 'Pelaporan',
+title: 'Transparansi & Akuntabilitas',
+desc: 'Akses Laporan publikasi, Laporan Tahunan dan Saluran Pengaduan Resmi BANK DAMARA',
+cards: [
+{
+title: 'Publikasi',
+desc: 'Informasi Kinerja keuangan',
+icon: 'fa-newspaper',
+items: ['Laporan Keuangan Triwulanan', 'Rasio Keuangan & KPMM'],
+itemIcon: 'fa-file-pdf',
+btnText: 'Lihat Publikasi',
+btnLink: 'https://nowgodigital.github.io/bankdamara/pelaporan.html',
+image: ''
+},
+{
+title: 'Laporan Tahunan',
+desc: 'Kinerja & pencapaian tahunan',
+icon: 'fa-book-open',
+items: ['Laporan Tahunan', 'Laporan Berkelanjutan', 'Laporan GCG (Tata Kelola)'],
+itemIcon: 'fa-file-pdf',
+btnText: 'Download Laporan',
+btnLink: 'https://nowgodigital.github.io/bankdamara/pelaporan.html',
+image: ''
+},
+{
+title: 'Pengaduan',
+desc: 'Sampaikan keluhan & masukan',
+icon: 'fa-comment-dots',
+items: ['Laporan Pengaduan Konsumen', 'Whistleblowing System (WBS)'],
+itemIcon: 'fa-headset',
+btnText: 'Buat Pengaduan',
+btnLink: 'https://nowgodigital.github.io/bankdamara/pelaporan.html',
+image: ''
+}
+]
+},
+lelang: {
+title: 'Agunan Pilihan Harga Terjangkau',
+desc: 'Temukan properti, kendaraan, dan aset berharga dengan harga di bawah pasaran',
+stats: ['250+', '34', '15%', '100%'],
+items: []
+},
+categories: {
+lelang: ['Properti', 'Kendaraan', 'Tanah', 'Ruko'],
+pelaporan: ['Keuangan', 'Tata Kelola', 'Pengaduan']
+},
+years: [2026, 2025, 2024, 2023]
+};
+
+function getData() {
+try {
+const stored = localStorage.getItem(STORAGE_KEY);
+if (stored) return JSON.parse(stored);
+} catch(e) {}
+return JSON.parse(JSON.stringify(DEFAULT_DATA));
+}
+
+function saveData(data) {
+localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+updateStats();
+}
+
+// ═══════════════════════════════════════════════════════════════
+// AUTH
+// ═══════════════════════════════════════════════════════════════
 const ADMIN_USER = 'admin';
-const ADMIN_PASS = 'damara2026';
-const STORAGE_KEY = 'bankdamara_cms';
+const ADMIN_PASS = 'admin123';
 
-function getCMS(){
-    try{ return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }catch(e){ return {}; }
-}
-function setCMS(data){
-    var existing = getCMS();
-    Object.assign(existing, data);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(existing));
-}
-function showToast(msg, type){
-    var t = document.getElementById('toast');
-    t.textContent = msg;
-    t.className = 'toast' + (type==='error'?' error':'');
-    t.style.display = 'block';
-    setTimeout(function(){ t.style.display='none'; }, 3000);
-}
+function handleLogin(e) {
+e.preventDefault();
+const user = document.getElementById('loginUsername').value;
+const pass = document.getElementById('loginPassword').value;
 
-// ═══════════════════════════════════════════════
-// LOGIN / LOGOUT
-// ═══════════════════════════════════════════════
-function doLogin(e){
-    e.preventDefault();
-    var u = document.getElementById('loginUser').value;
-    var p = document.getElementById('loginPass').value;
-    if(u === ADMIN_USER && p === ADMIN_PASS){
-        sessionStorage.setItem('bd_admin','1');
-        document.getElementById('loginPage').style.display='none';
-        document.getElementById('adminPanel').style.display='block';
-        loadAllData();
-    } else {
-        document.getElementById('loginError').style.display='block';
-    }
+if (user === ADMIN_USER && pass === ADMIN_PASS) {
+sessionStorage.setItem('admin_logged_in', 'true');
+document.getElementById('loginPage').style.display = 'none';
+document.getElementById('adminLayout').classList.add('active');
+initAdmin();
+showToast('Login berhasil! Selamat datang, Admin.', 'success');
+} else {
+document.getElementById('loginError').style.display = 'block';
+setTimeout(() => document.getElementById('loginError').style.display = 'none', 3000);
 }
-function doLogout(){
-    sessionStorage.removeItem('bd_admin');
-    document.getElementById('adminPanel').style.display='none';
-    document.getElementById('loginPage').style.display='flex';
-    document.getElementById('loginUser').value='';
-    document.getElementById('loginPass').value='';
-    document.getElementById('loginError').style.display='none';
-}
-// Auto-check session
-if(sessionStorage.getItem('bd_admin')==='1'){
-    document.getElementById('loginPage').style.display='none';
-    document.getElementById('adminPanel').style.display='block';
-    loadAllData();
 }
 
-// ═══════════════════════════════════════════════
+function handleLogout() {
+sessionStorage.removeItem('admin_logged_in');
+document.getElementById('adminLayout').classList.remove('active');
+document.getElementById('loginPage').style.display = 'flex';
+document.getElementById('loginUsername').value = '';
+document.getElementById('loginPassword').value = '';
+}
+
+function checkAuth() {
+if (sessionStorage.getItem('admin_logged_in') === 'true') {
+document.getElementById('loginPage').style.display = 'none';
+document.getElementById('adminLayout').classList.add('active');
+initAdmin();
+}
+}
+
+// ═══════════════════════════════════════════════════════════════
 // NAVIGATION
-// ═══════════════════════════════════════════════
-function showPanel(id, btn){
-    document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active')});
-    document.querySelectorAll('.admin-nav-item').forEach(function(b){b.classList.remove('active')});
-    document.getElementById('panel-'+id).classList.add('active');
-    if(btn) btn.classList.add('active');
-    var titles = {dashboard:'Dashboard',lps:'Penjaminan LPS',bunga:'Suku Bunga BPR',profil:'Profil Perusahaan',visimisi:'Visi & Misi',budaya:'Budaya',manajemen:'Manajemen',karir:'Karir',pelaporan:'Pelaporan',lelang:'Lelang Agunan'};
-    document.getElementById('pageTitle').textContent = titles[id] || 'Dashboard';
-    // Close mobile sidebar
-    document.querySelector('.admin-sidebar').classList.remove('open');
+// ═══════════════════════════════════════════════════════════════
+function showPanel(panelId) {
+document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+document.querySelectorAll('.sidebar-nav .nav-item').forEach(n => n.classList.remove('active'));
+
+document.getElementById('panel-' + panelId).classList.add('active');
+event.currentTarget.classList.add('active');
+
+const titles = {
+dashboard: 'Dashboard',
+pelaporan: 'Kelola Pelaporan',
+lelang: 'Kelola Lelang',
+kategori: 'Kelola Kategori',
+tahun: 'Kelola Tahun'
+};
+document.getElementById('pageTitle').textContent = titles[panelId] || 'Dashboard';
+
+// Refresh data on panel switch
+if (panelId === 'pelaporan') renderPelaporanPreviews();
+if (panelId === 'lelang') renderLelangTable();
+if (panelId === 'kategori') renderCategories();
+if (panelId === 'tahun') renderYears();
 }
 
-// ═══════════════════════════════════════════════
-// LOAD DATA FROM STORAGE
-// ═══════════════════════════════════════════════
-function loadAllData(){
-    var d = getCMS();
-    // LPS
-    document.getElementById('lpsBunga').value = d.lpsBunga || '6';
-    document.getElementById('lpsPeriode').value = d.lpsPeriode || '1 Juni 2025 — 30 September 2025';
-    document.getElementById('lpsMaks').value = d.lpsMaks || 'Rp. 2 Miliar';
-    document.getElementById('lpsLink').value = d.lpsLink || 'https://www.lps.go.id';
-    // Bunga
-    document.getElementById('bungaTab').value = d.bungaTab || '4,00';
-    document.getElementById('bungaDep').value = d.bungaDep || '6,50';
-    document.getElementById('bungaDisclaimer').value = d.bungaDisclaimer || 'Sewaktu-waktu dapat berubah';
-    // Profil
-    document.getElementById('profilP1').value = d.profilP1 || '';
-    document.getElementById('profilP2').value = d.profilP2 || '';
-    document.getElementById('profilP3').value = d.profilP3 || '';
-    // Visi Misi
-    document.getElementById('visiText').value = d.visiText || '';
-    document.getElementById('misi1').value = d.misi1 || '';
-    document.getElementById('misi2').value = d.misi2 || '';
-    document.getElementById('misi3').value = d.misi3 || '';
-    document.getElementById('misi4').value = d.misi4 || '';
-    document.getElementById('misi5').value = d.misi5 || '';
-    // Budaya
-    document.getElementById('budaya1nama').value = d.budaya1nama || '';
-    document.getElementById('budaya1desc').value = d.budaya1desc || '';
-    document.getElementById('budaya2nama').value = d.budaya2nama || '';
-    document.getElementById('budaya2desc').value = d.budaya2desc || '';
-    document.getElementById('budaya3nama').value = d.budaya3nama || '';
-    document.getElementById('budaya3desc').value = d.budaya3desc || '';
-    document.getElementById('budaya4nama').value = d.budaya4nama || '';
-    document.getElementById('budaya4desc').value = d.budaya4desc || '';
-    // Manajemen
-    document.getElementById('komUtNama').value = d.komUtNama || '';
-    document.getElementById('komUtDesc').value = d.komUtDesc || '';
-    document.getElementById('komNama').value = d.komNama || '';
-    document.getElementById('komDesc').value = d.komDesc || '';
-    document.getElementById('dirUtNama').value = d.dirUtNama || '';
-    document.getElementById('dirUtDesc').value = d.dirUtDesc || '';
-    document.getElementById('dirKepNama').value = d.dirKepNama || '';
-    document.getElementById('dirKepDesc').value = d.dirKepDesc || '';
-    // Karir
-    document.getElementById('karirJudul').value = d.karirJudul || '';
-    document.getElementById('karirDesc').value = d.karirDesc || '';
-    document.getElementById('karirPosisi').value = d.karirPosisi || '';
-    document.getElementById('karirKaryawan').value = d.karirKaryawan || '';
-    // Pelaporan
-    document.getElementById('pub1').value = d.pub1 || '';
-    document.getElementById('pub2').value = d.pub2 || '';
-    document.getElementById('pubLink').value = d.pubLink || '';
-    document.getElementById('lap1').value = d.lap1 || '';
-    document.getElementById('lap2').value = d.lap2 || '';
-    document.getElementById('lap3').value = d.lap3 || '';
-    document.getElementById('peng1').value = d.peng1 || '';
-    document.getElementById('peng2').value = d.peng2 || '';
-    document.getElementById('pengLink').value = d.pengLink || '';
-    // Lelang
-    document.getElementById('lelangAset').value = d.lelangAset || '';
-    document.getElementById('lelangProv').value = d.lelangProv || '';
-    document.getElementById('lelangNjop').value = d.lelangNjop || '';
-    document.getElementById('lelangLegal').value = d.lelangLegal || '';
-    renderLelang();
+// ═══════════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════════
+function initAdmin() {
+const data = getData();
+// Load pelaporan section settings
+document.getElementById('pelaporanBadge').value = data.pelaporan.badge;
+document.getElementById('pelaporanTitle').value = data.pelaporan.title;
+document.getElementById('pelaporanDesc').value = data.pelaporan.desc;
+// Load lelang section settings
+document.getElementById('lelangTitle').value = data.lelang.title;
+document.getElementById('lelangDesc').value = data.lelang.desc;
+document.getElementById('lelangStat1').value = data.lelang.stats[0];
+document.getElementById('lelangStat2').value = data.lelang.stats[1];
+document.getElementById('lelangStat3').value = data.lelang.stats[2];
+document.getElementById('lelangStat4').value = data.lelang.stats[3];
+
+renderPelaporanPreviews();
+renderLelangTable();
+renderCategories();
+renderYears();
+updateStats();
+populateYearSelect();
 }
 
-// ═══════════════════════════════════════════════
-// SAVE FUNCTIONS
-// ═══════════════════════════════════════════════
-function saveLPS(){
-    setCMS({
-        lpsBunga: document.getElementById('lpsBunga').value,
-        lpsPeriode: document.getElementById('lpsPeriode').value,
-        lpsMaks: document.getElementById('lpsMaks').value,
-        lpsLink: document.getElementById('lpsLink').value
-    });
-    showToast('✓ Data Penjaminan LPS berhasil disimpan!');
-}
-function saveBunga(){
-    setCMS({
-        bungaTab: document.getElementById('bungaTab').value,
-        bungaDep: document.getElementById('bungaDep').value,
-        bungaDisclaimer: document.getElementById('bungaDisclaimer').value
-    });
-    showToast('✓ Data Suku Bunga BPR berhasil disimpan!');
-}
-function saveProfil(){
-    setCMS({
-        profilP1: document.getElementById('profilP1').value,
-        profilP2: document.getElementById('profilP2').value,
-        profilP3: document.getElementById('profilP3').value
-    });
-    showToast('✓ Profil perusahaan berhasil disimpan!');
-}
-function saveVisiMisi(){
-    setCMS({
-        visiText: document.getElementById('visiText').value,
-        misi1: document.getElementById('misi1').value,
-        misi2: document.getElementById('misi2').value,
-        misi3: document.getElementById('misi3').value,
-        misi4: document.getElementById('misi4').value,
-        misi5: document.getElementById('misi5').value
-    });
-    showToast('✓ Visi & Misi berhasil disimpan!');
-}
-function saveBudaya(){
-    setCMS({
-        budaya1nama: document.getElementById('budaya1nama').value,
-        budaya1desc: document.getElementById('budaya1desc').value,
-        budaya2nama: document.getElementById('budaya2nama').value,
-        budaya2desc: document.getElementById('budaya2desc').value,
-        budaya3nama: document.getElementById('budaya3nama').value,
-        budaya3desc: document.getElementById('budaya3desc').value,
-        budaya4nama: document.getElementById('budaya4nama').value,
-        budaya4desc: document.getElementById('budaya4desc').value
-    });
-    showToast('✓ Budaya perusahaan berhasil disimpan!');
-}
-function saveManajemen(){
-    setCMS({
-        komUtNama: document.getElementById('komUtNama').value,
-        komUtDesc: document.getElementById('komUtDesc').value,
-        komNama: document.getElementById('komNama').value,
-        komDesc: document.getElementById('komDesc').value,
-        dirUtNama: document.getElementById('dirUtNama').value,
-        dirUtDesc: document.getElementById('dirUtDesc').value,
-        dirKepNama: document.getElementById('dirKepNama').value,
-        dirKepDesc: document.getElementById('dirKepDesc').value
-    });
-    showToast('✓ Data Manajemen berhasil disimpan!');
-}
-function saveKarir(){
-    setCMS({
-        karirJudul: document.getElementById('karirJudul').value,
-        karirDesc: document.getElementById('karirDesc').value,
-        karirPosisi: document.getElementById('karirPosisi').value,
-        karirKaryawan: document.getElementById('karirKaryawan').value
-    });
-    showToast('✓ Informasi Karir berhasil disimpan!');
-}
-function savePelaporan(){
-    setCMS({
-        pub1: document.getElementById('pub1').value,
-        pub2: document.getElementById('pub2').value,
-        pubLink: document.getElementById('pubLink').value,
-        lap1: document.getElementById('lap1').value,
-        lap2: document.getElementById('lap2').value,
-        lap3: document.getElementById('lap3').value,
-        peng1: document.getElementById('peng1').value,
-        peng2: document.getElementById('peng2').value,
-        pengLink: document.getElementById('pengLink').value
-    });
-    showToast('✓ Data Pelaporan berhasil disimpan!');
+function updateStats() {
+const data = getData();
+document.getElementById('statPelaporan').textContent = data.pelaporan.cards.length;
+document.getElementById('statLelang').textContent = data.lelang.items.length;
+document.getElementById('statKategori').textContent = data.categories.lelang.length + data.categories.pelaporan.length;
+document.getElementById('statTahun').textContent = data.years.length;
 }
 
-// ═══════════════════════════════════════════════
-// LELANG CRUD
-// ═══════════════════════════════════════════════
-function getLelangList(){
-    var d = getCMS();
-    return d.lelangList || [];
+// ═══════════════════════════════════════════════════════════════
+// PELAPORAN
+// ═══════════════════════════════════════════════════════════════
+function savePelaporanSection() {
+const data = getData();
+data.pelaporan.badge = document.getElementById('pelaporanBadge').value;
+data.pelaporan.title = document.getElementById('pelaporanTitle').value;
+data.pelaporan.desc = document.getElementById('pelaporanDesc').value;
+saveData(data);
 }
-function addLelang(){
-    var nama = document.getElementById('lelangNama').value.trim();
-    var lokasi = document.getElementById('lelangLokasi').value.trim();
-    var harga = document.getElementById('lelangHarga').value.trim();
-    var tipe = document.getElementById('lelangTipe').value;
-    var status = document.getElementById('lelangStatus').value;
-    var tanggal = document.getElementById('lelangTanggal').value;
-    if(!nama || !lokasi || !harga){ showToast('Harap isi nama, lokasi, dan harga!','error'); return; }
-    var list = getLelangList();
-    list.push({id:Date.now(),nama:nama,lokasi:lokasi,harga:harga,tipe:tipe,status:status,tanggal:tanggal});
-    var d = getCMS();
-    d.lelangList = list;
-    d.lelangAset = document.getElementById('lelangAset').value;
-    d.lelangProv = document.getElementById('lelangProv').value;
-    d.lelangNjop = document.getElementById('lelangNjop').value;
-    d.lelangLegal = document.getElementById('lelangLegal').value;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(d));
-    document.getElementById('lelangNama').value='';
-    document.getElementById('lelangLokasi').value='';
-    document.getElementById('lelangHarga').value='';
-    document.getElementById('lelangTanggal').value='';
-    renderLelang();
-    showToast('✓ Agunan berhasil ditambahkan!');
+
+function renderPelaporanPreviews() {
+const data = getData();
+data.pelaporan.cards.forEach((card, i) => {
+const el = document.getElementById('pelaporanPreview' + i);
+if (!el) return;
+el.innerHTML = `
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+<div style="width:45px;height:45px;border-radius:12px;background:var(--bg-light);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--primary)">
+<i class="fas ${card.icon}"></i>
+</div>
+<div>
+<h4 style="font-size:15px;color:var(--text-dark)">${card.title}</h4>
+<p style="font-size:12px;color:var(--text-light)">${card.desc}</p>
+</div>
+</div>
+<div style="margin-bottom:12px">
+${card.items.map(item => `<div style="display:flex;align-items:center;gap:8px;padding:6px 0;font-size:13px;color:var(--text-dark);border-bottom:1px solid #f8f8f8">
+<i class="fas ${card.itemIcon}" style="color:var(--secondary);font-size:12px"></i> ${item}
+</div>`).join('')}
+</div>
+<div style="display:flex;align-items:center;gap:10px">
+<span class="badge badge-info"><i class="fas fa-link"></i> ${card.btnText}</span>
+<span style="font-size:11px;color:var(--text-light)">${card.btnLink ? '✓ Link aktif' : '✗ Belum ada link'}</span>
+</div>
+${card.image ? `<div style="margin-top:10px"><img src="${card.image}" style="width:100%;height:80px;object-fit:cover;border-radius:8px" onerror="this.style.display='none'"></div>` : ''}
+`;
+});
 }
-function deleteLelang(id){
-    if(!confirm('Hapus agunan ini?')) return;
-    var list = getLelangList().filter(function(i){return i.id!==id});
-    var d = getCMS();
-    d.lelangList = list;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(d));
-    renderLelang();
-    showToast('✓ Agunan berhasil dihapus!');
+
+function editPelaporanCard(index) {
+const data = getData();
+const card = data.pelaporan.cards[index];
+document.getElementById('editPelaporanIndex').value = index;
+document.getElementById('editPC_Title').value = card.title;
+document.getElementById('editPC_Desc').value = card.desc;
+document.getElementById('editPC_Icon').value = card.icon;
+document.getElementById('editPC_Items').value = card.items.join('\n');
+document.getElementById('editPC_ItemIcon').value = card.itemIcon;
+document.getElementById('editPC_BtnText').value = card.btnText;
+document.getElementById('editPC_BtnLink').value = card.btnLink;
+document.getElementById('editPC_Image').value = card.image || '';
+updateIconPreview();
+openModal('modalPelaporan');
 }
-function renderLelang(){
-    var list = getLelangList();
-    var tbody = document.getElementById('lelangTbody');
-    if(!tbody) return;
-    if(list.length===0){ tbody.innerHTML='<tr><td colspan="7" style="text-align:center;padding:20px;color:#94a3b8">Belum ada data agunan</td></tr>'; return; }
-    var html = '';
-    list.forEach(function(item,idx){
-        var statusBadge = item.status==='open'?'<span class="badge badge-success">Dibuka</span>':item.status==='soon'?'<span class="badge badge-warning">Segera</span>':'<span class="badge badge-danger">Ditutup</span>';
-        html+='<tr>';
-        html+='<td>'+(idx+1)+'</td>';
-        html+='<td><strong>'+item.nama+'</strong></td>';
-        html+='<td><span class="badge badge-info">'+item.tipe+'</span></td>';
-        html+='<td>'+item.lokasi+'</td>';
-        html+='<td>Rp '+parseInt(item.harga).toLocaleString('id-ID')+'</td>';
-        html+='<td>'+statusBadge+'</td>';
-        html+='<td><button class="btn-delete" onclick="deleteLelang('+item.id+')"><i class="fas fa-trash"></i></button></td>';
-        html+='</tr>';
-    });
-    tbody.innerHTML = html;
+
+function updateIconPreview() {
+const icon = document.getElementById('editPC_Icon').value;
+document.getElementById('editPC_IconPreview').innerHTML = `<i class="fas ${icon}"></i>`;
 }
+document.getElementById('editPC_Icon').addEventListener('input', updateIconPreview);
+
+function savePelaporanCard() {
+const data = getData();
+const index = parseInt(document.getElementById('editPelaporanIndex').value);
+const items = document.getElementById('editPC_Items').value.split('\n').filter(i => i.trim());
+
+data.pelaporan.cards[index] = {
+title: document.getElementById('editPC_Title').value,
+desc: document.getElementById('editPC_Desc').value,
+icon: document.getElementById('editPC_Icon').value,
+items: items,
+itemIcon: document.getElementById('editPC_ItemIcon').value,
+btnText: document.getElementById('editPC_BtnText').value,
+btnLink: document.getElementById('editPC_BtnLink').value,
+image: document.getElementById('editPC_Image').value
+};
+
+saveData(data);
+closeModal('modalPelaporan');
+renderPelaporanPreviews();
+showToast('Kartu pelaporan berhasil disimpan!', 'success');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// LELANG
+// ═══════════════════════════════════════════════════════════════
+function saveLelangSection() {
+const data = getData();
+data.lelang.title = document.getElementById('lelangTitle').value;
+data.lelang.desc = document.getElementById('lelangDesc').value;
+data.lelang.stats = [
+document.getElementById('lelangStat1').value,
+document.getElementById('lelangStat2').value,
+document.getElementById('lelangStat3').value,
+document.getElementById('lelangStat4').value
+];
+saveData(data);
+}
+
+function renderLelangTable() {
+const data = getData();
+const tbody = document.getElementById('lelangTableBody');
+
+if (data.lelang.items.length === 0) {
+tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:30px;color:var(--text-light)"><i class="fas fa-inbox" style="font-size:32px;color:#e0e0e0;display:block;margin-bottom:10px"></i>Belum ada item lelang. Klik "Tambah Item Lelang" untuk menambahkan.</td></tr>';
+return;
+}
+
+tbody.innerHTML = data.lelang.items.map((item, i) => `
+<tr>
+<td>
+${item.image
+? `<img src="${item.image}" style="width:50px;height:50px;border-radius:8px;object-fit:cover" onerror="this.outerHTML='<div style=\\'width:50px;height:50px;border-radius:8px;background:var(--bg-light);display:flex;align-items:center;justify-content:center\\'><i class=\\'fas ${item.icon || 'fa-home'}\\' style=\\'color:var(--primary)\\'></i></div>'">`
+: `<div style="width:50px;height:50px;border-radius:8px;background:var(--bg-light);display:flex;align-items:center;justify-content:center"><i class="fas ${item.icon || 'fa-home'}" style="color:var(--primary)"></i></div>`
+}
+</td>
+<td><strong>${item.title}</strong><br><span style="font-size:11px;color:var(--text-light)">${item.desc ? item.desc.substring(0,40)+'...' : ''}</span></td>
+<td><span class="badge badge-info">${item.category}</span></td>
+<td><strong style="color:var(--primary)">Rp ${item.price}</strong></td>
+<td>${item.location}</td>
+<td><span class="badge ${item.status === 'open' ? 'badge-success' : item.status === 'soon' ? 'badge-warning' : 'badge-danger'}">${item.status === 'open' ? 'Terbuka' : item.status === 'soon' ? 'Segera' : 'Tertutup'}</span></td>
+<td class="actions">
+<button class="btn-icon btn-warning" onclick="editLelangItem(${i})" title="Edit"><i class="fas fa-edit"></i></button>
+<button class="btn-icon btn-danger" onclick="deleteLelangItem(${i})" title="Hapus"><i class="fas fa-trash"></i></button>
+</td>
+</tr>
+`).join('');
+}
+
+function openLelangModal(index = -1) {
+document.getElementById('editLelangIndex').value = index;
+populateYearSelect();
+
+if (index >= 0) {
+const data = getData();
+const item = data.lelang.items[index];
+document.getElementById('modalLelangTitle').innerHTML = '<i class="fas fa-edit"></i> Edit Item Lelang';
+document.getElementById('lelangItemTitle').value = item.title;
+document.getElementById('lelangItemCategory').value = item.category;
+document.getElementById('lelangItemPrice').value = item.price;
+document.getElementById('lelangItemLocation').value = item.location;
+document.getElementById('lelangItemStatus').value = item.status;
+document.getElementById('lelangItemYear').value = item.year || 2026;
+document.getElementById('lelangItemImage').value = item.image || '';
+document.getElementById('lelangItemIcon').value = item.icon || 'fa-home';
+document.getElementById('lelangItemArea').value = item.area || '';
+document.getElementById('lelangItemDesc').value = item.desc || '';
+} else {
+document.getElementById('modalLelangTitle').innerHTML = '<i class="fas fa-plus"></i> Tambah Item Lelang';
+document.getElementById('lelangItemTitle').value = '';
+document.getElementById('lelangItemPrice').value = '';
+document.getElementById('lelangItemLocation').value = '';
+document.getElementById('lelangItemStatus').value = 'open';
+document.getElementById('lelangItemImage').value = '';
+document.getElementById('lelangItemIcon').value = 'fa-home';
+document.getElementById('lelangItemArea').value = '';
+document.getElementById('lelangItemDesc').value = '';
+}
+openModal('modalLelang');
+}
+
+function editLelangItem(index) {
+openLelangModal(index);
+}
+
+function deleteLelangItem(index) {
+if (!confirm('Yakin ingin menghapus item lelang ini?')) return;
+const data = getData();
+data.lelang.items.splice(index, 1);
+saveData(data);
+renderLelangTable();
+showToast('Item lelang berhasil dihapus!', 'success');
+}
+
+function saveLelangItem() {
+const data = getData();
+const index = parseInt(document.getElementById('editLelangIndex').value);
+
+const item = {
+title: document.getElementById('lelangItemTitle').value,
+category: document.getElementById('lelangItemCategory').value,
+price: document.getElementById('lelangItemPrice').value,
+location: document.getElementById('lelangItemLocation').value,
+status: document.getElementById('lelangItemStatus').value,
+year: document.getElementById('lelangItemYear').value,
+image: document.getElementById('lelangItemImage').value,
+icon: document.getElementById('lelangItemIcon').value,
+area: document.getElementById('lelangItemArea').value,
+desc: document.getElementById('lelangItemDesc').value
+};
+
+if (!item.title || !item.price) {
+showToast('Judul dan Harga wajib diisi!', 'error');
+return;
+}
+
+if (index >= 0) {
+data.lelang.items[index] = item;
+} else {
+data.lelang.items.push(item);
+}
+
+saveData(data);
+closeModal('modalLelang');
+renderLelangTable();
+showToast(index >= 0 ? 'Item lelang berhasil diperbarui!' : 'Item lelang berhasil ditambahkan!', 'success');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// KATEGORI
+// ═══════════════════════════════════════════════════════════════
+function renderCategories() {
+const data = getData();
+const lelangEl = document.getElementById('lelangCategories');
+const pelaporanEl = document.getElementById('pelaporanCategories');
+
+lelangEl.innerHTML = data.categories.lelang.map((cat, i) =>
+`<div class="tag"><span>${cat}</span><button class="tag-remove" onclick="removeCategory('lelang',${i})"><i class="fas fa-times"></i></button></div>`
+).join('');
+
+pelaporanEl.innerHTML = data.categories.pelaporan.map((cat, i) =>
+`<div class="tag"><span>${cat}</span><button class="tag-remove" onclick="removeCategory('pelaporan',${i})"><i class="fas fa-times"></i></button></div>`
+).join('');
+}
+
+function addCategory() {
+const input = document.getElementById('newCategoryInput');
+const type = document.getElementById('newCategoryType').value;
+const name = input.value.trim();
+if (!name) { showToast('Nama kategori tidak boleh kosong!', 'error'); return; }
+
+const data = getData();
+if (data.categories[type].includes(name)) {
+showToast('Kategori sudah ada!', 'error');
+return;
+}
+data.categories[type].push(name);
+saveData(data);
+input.value = '';
+renderCategories();
+showToast('Kategori berhasil ditambahkan!', 'success');
+}
+
+function removeCategory(type, index) {
+if (!confirm('Hapus kategori ini?')) return;
+const data = getData();
+data.categories[type].splice(index, 1);
+saveData(data);
+renderCategories();
+showToast('Kategori berhasil dihapus!', 'success');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// TAHUN
+// ═══════════════════════════════════════════════════════════════
+function renderYears() {
+const data = getData();
+const el = document.getElementById('yearChips');
+el.innerHTML = data.years.sort((a,b) => b-a).map((year, i) =>
+`<div class="year-chip active">${year} <span class="remove-year" onclick="removeYear(${i})">×</span></div>`
+).join('');
+}
+
+function addYear() {
+const input = document.getElementById('newYearInput');
+const year = parseInt(input.value);
+if (!year || year < 2000 || year > 2099) { showToast('Tahun tidak valid!', 'error'); return; }
+
+const data = getData();
+if (data.years.includes(year)) {
+showToast('Tahun sudah ada!', 'error');
+return;
+}
+data.years.push(year);
+saveData(data);
+input.value = '';
+renderYears();
+populateYearSelect();
+showToast('Tahun berhasil ditambahkan!', 'success');
+}
+
+function removeYear(index) {
+if (!confirm('Hapus tahun ini?')) return;
+const data = getData();
+data.years.splice(index, 1);
+saveData(data);
+renderYears();
+populateYearSelect();
+showToast('Tahun berhasil dihapus!', 'success');
+}
+
+function populateYearSelect() {
+const data = getData();
+const select = document.getElementById('lelangItemYear');
+select.innerHTML = data.years.sort((a,b) => b-a).map(y => `<option value="${y}">${y}</option>`).join('');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// MODAL & TOAST
+// ═══════════════════════════════════════════════════════════════
+function openModal(id) {
+document.getElementById(id).classList.add('active');
+}
+
+function closeModal(id) {
+document.getElementById(id).classList.remove('active');
+}
+
+function showToast(message, type = 'info') {
+const container = document.getElementById('toastContainer');
+const toast = document.createElement('div');
+toast.className = 'toast ' + type;
+const icons = { success: 'fa-check-circle', error: 'fa-exclamation-circle', info: 'fa-info-circle' };
+toast.innerHTML = `<i class="fas ${icons[type]}"></i> ${message}`;
+container.appendChild(toast);
+setTimeout(() => { toast.style.opacity = '0'; toast.style.transform = 'translateX(100%)'; setTimeout(() => toast.remove(), 300); }, 3000);
+}
+
+// Close modal on overlay click
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+overlay.addEventListener('click', function(e) {
+if (e.target === this) this.classList.remove('active');
+});
+});
+
+// ═══════════════════════════════════════════════════════════════
+// INIT ON LOAD
+// ═══════════════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', checkAuth);
 </script>
 </body>
 </html>
