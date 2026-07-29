@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pelaporan - BANK DAMARA</title>
+<title>Pelaporan - BANK NUSANTARA</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -242,7 +242,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
         <a href="index.html" class="logo">
             <div class="logo-icon">BN</div>
             <div class="logo-text">
-                <h1>BANK DAMARA</h1>
+                <h1>BANK NUSANTARA</h1>
                 <span>Trusted Since 1985</span>
             </div>
         </a>
@@ -294,7 +294,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
                     <span style="color:var(--secondary)">Pelaporan</span>
                 </div>
                 <h1>Transparansi & <span class="gold">Pelaporan</span></h1>
-                <p>Akses publikasi laporan keuangan, laporan tahunan, GCG, dan saluran pengaduan konsumen BANK DAMARA secara transparan dan akuntabel.</p>
+                <p>Akses publikasi laporan keuangan, laporan tahunan, GCG, dan saluran pengaduan konsumen BANK NUSANTARA secara transparan dan akuntabel.</p>
             </div>
             <div class="page-hero-visual">
                 <i class="fas fa-file-alt"></i>
@@ -429,7 +429,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
                     <div class="content-body">
                         <div class="content-description">
                             <i class="fas fa-info-circle" style="color:#c8a951"></i>
-                            Laporan Keuangan Triwulan BANK DAMARA dipublikasikan sesuai ketentuan OJK untuk memberikan transparansi kinerja keuangan kepada publik.
+                            Laporan Keuangan Triwulan BANK NUSANTARA dipublikasikan sesuai ketentuan OJK untuk memberikan transparansi kinerja keuangan kepada publik.
                         </div>
                         <div class="report-grid" id="grid-publikasi">
                             <!-- Diisi oleh JS -->
@@ -449,7 +449,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
                     <div class="content-body">
                         <div class="content-description">
                             <i class="fas fa-info-circle" style="color:#c8a951"></i>
-                            Dokumen resmi tahunan BANK DAMARA yang mencakup kinerja perusahaan, tata kelola, dan komitmen keberlanjutan.
+                            Dokumen resmi tahunan BANK NUSANTARA yang mencakup kinerja perusahaan, tata kelola, dan komitmen keberlanjutan.
                         </div>
                         <div class="report-grid" id="grid-tahunan"></div>
                     </div>
@@ -480,7 +480,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>Tentang BANK DAMARA</h4>
+                <h4>Tentang BANK NUSANTARA</h4>
                 <p>Bank nasional terpercaya sejak 1985 dengan layanan perbankan terbaik dan keamanan tinggi.</p>
                 <p><i class="fas fa-map-marker-alt" style="color:var(--secondary)"></i> Jl. Jend. Sudirman Kav. 88, Jakarta Pusat 10220</p>
                 <div class="footer-social">
@@ -522,7 +522,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 BANK DAMARA. Seluruh hak cipta dilindungi. Terdaftar dan diawasi OJK.</p>
+            <p>&copy; 2026 BANK NUSANTARA. Seluruh hak cipta dilindungi. Terdaftar dan diawasi OJK.</p>
             <div class="footer-bottom-links">
                 <a href="#">Kebijakan Privasi</a>
                 <a href="#">Syarat & Ketentuan</a>
@@ -610,17 +610,17 @@ function showReport(btn,category,type,year){
         if(type==='tahunan'){
             titleEl.textContent='Laporan Tahunan';
             subtitleEl.textContent='Tahun '+year;
-            gridEl.innerHTML=buildTahunanCards(year,'Laporan Tahunan','Laporan Tahunan BANK DAMARA tahun '+year+' memuat ringkasan kinerja, strategi, dan pencapaian perusahaan selama satu tahun buku.');
+            gridEl.innerHTML=buildTahunanCards(year,'Laporan Tahunan','Laporan Tahunan BANK NUSANTARA tahun '+year+' memuat ringkasan kinerja, strategi, dan pencapaian perusahaan selama satu tahun buku.');
         }
         else if(type==='berkelanjutan'){
             titleEl.textContent='Laporan Berkelanjutan';
             subtitleEl.textContent='Tahun '+year;
-            gridEl.innerHTML=buildTahunanCards(year,'Laporan Berkelanjutan','Laporan Keberlanjutan (Sustainability Report) BANK DAMARA tahun '+year+' tentang komitmen ESG.');
+            gridEl.innerHTML=buildTahunanCards(year,'Laporan Berkelanjutan','Laporan Keberlanjutan (Sustainability Report) BANK NUSANTARA tahun '+year+' tentang komitmen ESG.');
         }
         else if(type==='gcg'){
             titleEl.textContent='Laporan GCG (Tata Kelola)';
             subtitleEl.textContent='Tahun '+year;
-            gridEl.innerHTML=buildTahunanCards(year,'Laporan GCG','Laporan Good Corporate Governance (GCG) BANK DAMARA tahun '+year+'.');
+            gridEl.innerHTML=buildTahunanCards(year,'Laporan GCG','Laporan Good Corporate Governance (GCG) BANK NUSANTARA tahun '+year+'.');
         }
     }
     else if(category==='pengaduan'){
@@ -716,7 +716,7 @@ function buildPengaduanKonsumen(){
     return `
         <div class="content-description">
             <i class="fas fa-shield-alt" style="color:#c8a951"></i>
-            BANK DAMARA berkomitmen memberikan pelayanan terbaik. Jika Anda mengalami kendala atau ketidakpuasan terhadap produk/layanan kami, silakan sampaikan pengaduan melalui saluran resmi di bawah ini.
+            BANK NUSANTARA berkomitmen memberikan pelayanan terbaik. Jika Anda mengalami kendala atau ketidakpuasan terhadap produk/layanan kami, silakan sampaikan pengaduan melalui saluran resmi di bawah ini.
         </div>
 
         <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:16px" class="pk-grid">
@@ -764,7 +764,7 @@ function buildWBS(){
     return `
         <div class="wbs-card">
             <h4><i class="fas fa-user-secret"></i> Whistleblowing System (WBS)</h4>
-            <p>Saluran pelaporan internal BANK DAMARA untuk mengungkapkan dugaan pelanggaran, kecurangan (fraud), korupsi, gratifikasi, atau tindakan tidak etis yang dilakukan oleh karyawan, direksi, atau pihak terkait dengan bank.</p>
+            <p>Saluran pelaporan internal BANK NUSANTARA untuk mengungkapkan dugaan pelanggaran, kecurangan (fraud), korupsi, gratifikasi, atau tindakan tidak etis yang dilakukan oleh karyawan, direksi, atau pihak terkait dengan bank.</p>
 
             <div class="wbs-channels">
                 <div class="wbs-channel">
