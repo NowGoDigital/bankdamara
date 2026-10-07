@@ -551,6 +551,24 @@ section { padding: 80px 0; }
 }
 .hero-pagination strong { color: #fff; font-size: 1.2rem; }
 
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 5%;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+  font-weight: 600;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-scroll-hint i { animation: bounce 2s infinite; }
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
 /* ============ QUICK ACCESS CARDS ============ */
 .quick-access {
   margin-top: -80px;
@@ -1168,6 +1186,7 @@ footer { background: #050d1a; color: #fff; padding: 60px 0 20px; }
   .mobile-mockup { width: 240px; }
   .mobile-screen { min-height: 400px; }
   .hero-pagination { display: none; }
+  .hero-scroll-hint { display: none; }
   
   .quick-access { margin-top: -40px; }
   .quick-grid { padding: 20px; }
@@ -1193,8 +1212,8 @@ footer { background: #050d1a; color: #fff; padding: 60px 0 20px; }
     <div class="top-bar-right">
       <a href="#pelaporan">Bantuan</a>
       <div class="lang-switch">
-        <a href="#" class="active">ID</a>
         <a href="#">EN</a>
+        <a href="#" class="active">ID</a>
       </div>
     </div>
   </div>
@@ -1445,6 +1464,10 @@ footer { background: #050d1a; color: #fff; padding: 60px 0 20px; }
   <div class="hero-pagination">
     <strong>0<span id="currentSlideNum">1</span></strong> / 03
   </div>
+
+  <div class="hero-scroll-hint">
+    <i class="fas fa-chevron-down"></i> Scroll
+  </div>
 </section>
 
 <!-- ============ QUICK ACCESS ============ -->
@@ -1486,9 +1509,10 @@ footer { background: #050d1a; color: #fff; padding: 60px 0 20px; }
       <div class="about-content">
         <h3>Profil Perusahaan</h3>
         <p><strong>Mengenal BANK NUSANTARA Lebih Dekat</strong></p>
-        <p><strong>Sejak 1985 — Pendirian & Legalitas.</strong> PT. Bank Perekonomian Rakyat NUSANTARA didirikan dengan Akta Pendirian Nomor 72 tanggal 18 November 2021 oleh Notaris Didik Hijrianto, SH, MKn di Kabupaten Lombok Utara, dan telah mendapat pengesahan dari Kementerian Hukum dan HAM RI dengan SK Nomor AHU-0002865.AH.01.01.TAHUN 2022 tanggal 13 Januari 2022.</p>
-        <p><strong>Sejarah Peleburan.</strong> BPR NUSANTARA merupakan hasil peleburan dua BPR yang berdiri sejak tahun 1991, yaitu PT BPR Dana Master Surya (Lombok Barat) dan PT BPR Tanjung Abdi Swadaya (Lombok Utara). Peleburan ini didasari POJK Nomor 21/POJK.03/2019 tentang penggabungan BPR untuk memenuhi kebutuhan Modal Inti minimum.</p>
-        <p><strong>Kantor & Operasional.</strong> BPR NUSANTARA beroperasi sejak 13 Januari 2022 dengan kantor pusat di Jl. Imam Bonjol No. 7X, Gerung, Lombok Barat dan kantor cabang di Tanjung, Lombok Utara serta Manggis, Karangasem, Bali. Modal dasar saat ini sebesar Rp 8 Miliar dengan modal disetor Rp 4,4 Miliar.</p>
+        <p><strong>Sejak 1985</strong></p>
+        <p>Pendirian & Legalitas. PT. Bank Perekonomian Rakyat NUSANTARA didirikan dengan Akta Pendirian Nomor 72 tanggal 18 November 2021 oleh Notaris Didik Hijrianto, SH, MKn di Kabupaten Lombok Utara, dan telah mendapat pengesahan dari Kementerian Hukum dan HAM RI dengan SK Nomor AHU-0002865.AH.01.01.TAHUN 2022 tanggal 13 Januari 2022.</p>
+        <p>Sejarah Peleburan. BPR NUSANTARA merupakan hasil peleburan dua BPR yang berdiri sejak tahun 1991, yaitu PT BPR Dana Master Surya (Lombok Barat) dan PT BPR Tanjung Abdi Swadaya (Lombok Utara). Peleburan ini didasari POJK Nomor 21/POJK.03/2019 tentang penggabungan BPR untuk memenuhi kebutuhan Modal Inti minimum.</p>
+        <p>Kantor & Operasional. BPR NUSANTARA beroperasi sejak 13 Januari 2022 dengan kantor pusat di Jl. Imam Bonjol No. 7X, Gerung, Lombok Barat dan kantor cabang di Tanjung, Lombok Utara serta Manggis, Karangasem, Bali. Modal dasar saat ini sebesar Rp 8 Miliar dengan modal disetor Rp 4,4 Miliar.</p>
         <p>PT. Bank Perekonomian Rakyat NUSANTARA didirikan dengan Akta Pendirian Nomor 72 tanggal 18 November 2021 yang dibuat di hadapan Notaris DIDIK HIJRIANTO, Sarjana Hukum Master Kenotarisan Notaris di Kabupaten Lombok Utara dan telah mendapat pengesahan dari Kementerian Hukum dan Hak Asasi Manusia Republik Indonesia dengan Surat Keputusan Nomor AHU-0002865.AH.01.01.TAHUN 2022 tanggal 13 Januari 2022. Dan telah mengalami perubahan dengan akta terakhir Nomor 01 tanggal 05 Juni 2023 yang dibuat di depan Notaris DIDIK HIJRIANTO, Sarjana Hukum Master Kenotarisan Notaris di Kabupaten Lombok Utara, dan telah mendapatkan pengesahan dari Menteri Hukum dan Hak Asasi Manusia Republik Indonesia berdasarkan Surat Keputusan Nomor AHU-0030802.AH.01.02.TAHUN 2023.</p>
         <p>PT. Bank Perekonomian Rakyat NUSANTARA adalah Bank atau Lembaga Keuangan milik swasta yang berkedudukan di Nusa Tenggara Barat. Tepatnya di Kabupaten Lombok Barat sebagai kantor Pusat dan Kabupaten Lombok Utara sebagai kantor cabang. Dengan adanya PT. Bank Perekonomian Rakyat NUSANTARA ini dapat membantu masyarakat dan pemerintah dalam memajukan perekonomian di Nusa Tenggara Barat pada umumnya dan Kabupaten Lombok Barat dan Lombok Utara pada khususnya.</p>
         <p>PT. Bank Perekonomian Rakyat NUSANTARA sebelumnya adalah hasil peleburan dua BPR yang berkedudukan di Lombok Barat dan Lombok Utara, yaitu PT BPR DANA MASTER SURYA yang didirikan pada tahun 1991 dan PT BPR TANJUNG ABDI SWADAYA yang didirikan tahun 1991 juga. Desakan OJK untuk pemenuhan Modal Inti Tahun 2019 sebesar Rp. 3 Milyar dan Tahun 2024 sebesar Rp. 6 Milyar adalah salah satu cikal bakal Peleburan BPR NUSANTARA. Namun sampai akhir tahun 2019 belum terealisasi, yang akhirnya Tahun 2019 sesuai dengan POJK NOMOR 21/POJK.03/2019 tentang PENGGABUNGAN, PELEBURAN, DAN PENGAMBILALIHAN BANK PERKREDITAN RAKYAT, kedua BPR tersebut dilebur menjadi BPR NUSANTARA yang mempunyai arti Bank Perekonomian Rakyat Dana Master Lotara.</p>
@@ -1643,8 +1667,8 @@ footer { background: #050d1a; color: #fff; padding: 60px 0 20px; }
     </div>
     <div class="management-header">
       <div class="stats">
-        <div><strong>2</strong>Anggota Dewan Komisaris</div>
-        <div><strong>2</strong>Anggota Direksi</div>
+        <div><strong>2</strong>Komisaris</div>
+        <div><strong>2</strong>Direksi</div>
         <div><strong>2024-2028</strong>Periode Berdasarkan RUPS</div>
       </div>
     </div>
