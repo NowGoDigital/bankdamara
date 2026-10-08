@@ -101,27 +101,27 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .page-hero h1 span{background:linear-gradient(135deg,var(--secondary),var(--secondary-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .page-hero p{font-size:16px;color:rgba(255,255,255,.85);max-width:600px;margin:0 auto;line-height:1.7}
 
-/* LAYANAN SECTION */
-.digital-section{padding:80px 0;background:#fff}
+/* LAYANAN SECTION (PADDING DIPERSEMPIT) */
+.digital-section{padding:40px 0;background:#fff}
 
 /* TRANSFER & PPOB GRID */
 .transfer-ppob-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
 
 /* CTA */
-.cta{padding:80px 0;text-align:center;background:var(--bg-light);position:relative;overflow:hidden}
+.cta{padding:60px 0;text-align:center;background:var(--bg-light);position:relative;overflow:hidden}
 .cta::before{content:'';position:absolute;top:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(200,169,81,.1) 0%,transparent 70%);border-radius:50%;pointer-events:none}
 .cta-content{max-width:700px;margin:0 auto;position:relative;z-index:2}
-.cta-content h2{font-size:36px;color:var(--primary);margin-bottom:15px;font-weight:700}
-.cta-content p{color:var(--text-light);margin-bottom:30px;font-size:16px}
+.cta-content h2{font-size:32px;color:var(--primary);margin-bottom:12px;font-weight:700}
+.cta-content p{color:var(--text-light);margin-bottom:24px;font-size:15px}
 .cta-buttons{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
-.btn{padding:14px 32px;border:none;border-radius:30px;font-size:15px;font-weight:600;cursor:pointer;transition:var(--transition);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn{padding:12px 28px;border:none;border-radius:30px;font-size:14px;font-weight:600;cursor:pointer;transition:var(--transition);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
 .btn-primary{background:linear-gradient(135deg,var(--secondary),var(--secondary-light));color:var(--primary)}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(200,169,81,.4)}
 .btn-outline{background:transparent;border:2px solid var(--primary);color:var(--primary)}
 .btn-outline:hover{background:var(--primary);color:#fff;transform:translateY(-3px)}
 
 /* FOOTER */
-.footer{background:#011a3d;color:rgba(255,255,255,.8);padding:60px 0 0}
+.footer{background:#011a3d;color:rgba(255,255,255,.8);padding:50px 0 0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
 .footer-col h4{color:#fff;font-size:16px;margin-bottom:20px;position:relative}
 .footer-col h4::after{content:'';position:absolute;bottom:-8px;left:0;width:30px;height:3px;background:var(--secondary);border-radius:2px}
@@ -165,7 +165,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .page-hero{padding:60px 0 40px}
 .page-hero h1{font-size:2rem}
 .page-hero p{font-size:14px}
-.digital-section{padding:50px 0 !important}
+/* PERSEMPIT PADDING MOBILE */
+.digital-section{padding:25px 0 !important}
 .transfer-ppob-grid > div > div:first-child{padding:20px 18px 18px !important;min-height:auto !important}
 .transfer-ppob-grid > div > div:first-child h3{font-size:18px !important}
 .transfer-ppob-grid > div > div:first-child p{font-size:11px !important}
@@ -193,7 +194,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 }
 @media(max-width:576px){
 .ppob-items-grid{grid-template-columns:1fr !important}
-.cta{padding:50px 0 !important}
+.cta{padding:40px 0 !important}
 .cta-content h2{font-size:22px}
 .cta-content p{font-size:13px}
 .cta-buttons .btn{padding:12px 20px;font-size:13px;width:100%;justify-content:center}
@@ -300,8 +301,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 </div>
 </section>
 
-<!-- ===== LAYANAN SECTION (SECTION-TITLE DIHAPUS) ===== -->
-<section class="digital-section" id="layanan" style="padding:80px 0;background:linear-gradient(175deg,#f8f9fa 0%,#fff 50%,#f8f9fa 100%);position:relative;overflow:hidden">
+<!-- ===== LAYANAN SECTION (PADDING DIPERSEMPIT) ===== -->
+<section class="digital-section" id="layanan" style="padding:40px 0;background:linear-gradient(175deg,#f8f9fa 0%,#fff 50%,#f8f9fa 100%);position:relative;overflow:hidden">
 <!-- Background decorative elements -->
 <div style="position:absolute;top:-150px;right:-150px;width:400px;height:400px;background:radial-gradient(circle,rgba(2,59,150,.04) 0%,transparent 70%);border-radius:50%;pointer-events:none"></div>
 <div style="position:absolute;bottom:-100px;left:-100px;width:350px;height:350px;background:radial-gradient(circle,rgba(200,169,81,.06) 0%,transparent 70%);border-radius:50%;pointer-events:none"></div>
@@ -310,7 +311,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 <!-- ===== 2 KOLOM UTAMA: TRANSFER & PPOB ===== -->
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-bottom:0" class="transfer-ppob-grid">
 
-<!-- ══════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════ -->
 <!-- KOLOM KIRI: JASA TRANSFER                   -->
 <!-- ═══════════════════════════════════════════ -->
 <div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.04);transition:all .4s ease" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 12px 40px rgba(2,59,150,.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 25px rgba(0,0,0,.07)'">
@@ -398,7 +399,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 </div>
 </div>
 
-<!-- ══════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════ -->
 <!-- KOLOM KANAN: PPOB                          -->
 <!-- ═══════════════════════════════════════════ -->
 <div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.04);transition:all .4s ease" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 12px 40px rgba(200,169,81,.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 25px rgba(0,0,0,.07)'">
