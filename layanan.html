@@ -88,7 +88,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .hamburger{display:none;font-size:22px;cursor:pointer;color:var(--primary);padding:6px 10px;border-radius:6px;transition:var(--transition)}
 .hamburger:hover{background:var(--bg-light)}
 
-/* ===== PAGE HERO (SENADA DENGAN HALAMAN LAIN) ===== */
+/* PAGE HERO */
 .page-hero{position:relative;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 50%,var(--accent) 100%);padding:80px 0 60px;overflow:hidden}
 .page-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(200,169,81,.15) 0%,transparent 70%);border-radius:50%;pointer-events:none}
 .page-hero::after{content:'';position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(200,169,81,.1) 0%,transparent 70%);border-radius:50%;pointer-events:none}
@@ -101,20 +101,14 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .page-hero h1 span{background:linear-gradient(135deg,var(--secondary),var(--secondary-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .page-hero p{font-size:16px;color:rgba(255,255,255,.85);max-width:600px;margin:0 auto;line-height:1.7}
 
-/* ===== SECTION TITLE (SAMA PERSIS DENGAN index2.html) ===== */
+/* SECTION TITLE */
 .section-title{text-align:center;margin-bottom:50px}
 .section-title .st-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(200,169,81,.1);color:var(--secondary);padding:5px 16px;border-radius:60px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
 .section-title h2{font-size:36px;color:var(--primary);margin-bottom:12px;font-weight:700}
 .section-title p{color:var(--text-light);font-size:16px;max-width:600px;margin:0 auto}
 .section-title .underline{width:60px;height:4px;background:linear-gradient(135deg,var(--secondary),var(--secondary-light));margin:15px auto 0;border-radius:2px}
 
-/* ===== LAYANAN SECTION (SAMA PERSIS DENGAN index2.html) ===== */
-.digital-section{padding:80px 0;background:#fff;position:relative;overflow:hidden}
-
-/* ===== TRANSFER & PPOB GRID (SAMA PERSIS DENGAN index2.html) ===== */
-.transfer-ppob-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-
-/* ===== CTA SECTION ===== */
+/* CTA */
 .cta{padding:80px 0;text-align:center;background:var(--bg-light);position:relative;overflow:hidden}
 .cta::before{content:'';position:absolute;top:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(200,169,81,.1) 0%,transparent 70%);border-radius:50%;pointer-events:none}
 .cta-content{max-width:700px;margin:0 auto;position:relative;z-index:2}
@@ -127,7 +121,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .btn-outline{background:transparent;border:2px solid var(--primary);color:var(--primary)}
 .btn-outline:hover{background:var(--primary);color:#fff;transform:translateY(-3px)}
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 .footer{background:#011a3d;color:rgba(255,255,255,.8);padding:60px 0 0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
 .footer-col h4{color:#fff;font-size:16px;margin-bottom:20px;position:relative}
@@ -145,7 +139,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .footer-bottom-links a{color:rgba(255,255,255,.5);text-decoration:none;transition:var(--transition)}
 .footer-bottom-links a:hover{color:var(--secondary)}
 
-/* ===== SCROLL TOP & WA FLOAT ===== */
+/* SCROLL TOP & WA FLOAT */
 .scroll-top{position:fixed;bottom:30px;right:30px;width:50px;height:50px;background:var(--primary);color:#fff;border:none;border-radius:50%;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:var(--shadow-hover);transition:var(--transition);z-index:999}
 .scroll-top:hover{background:var(--secondary);color:var(--primary);transform:translateY(-5px)}
 .scroll-top.show{display:flex}
@@ -158,7 +152,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .wa-float-label{background:#fff;padding:8px 16px;border-radius:8px;font-size:12px;font-weight:600;color:var(--text-dark);box-shadow:var(--shadow);margin-left:-8px;padding-left:16px;white-space:nowrap;position:relative;z-index:1}
 .wa-float-label::before{content:'';position:absolute;left:-6px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-right-color:#fff}
 
-/* ===== RESPONSIVE (SAMA PERSIS DENGAN index2.html) ===== */
+/* RESPONSIVE */
 @media(max-width:1024px){.transfer-ppob-grid{grid-template-columns:1fr !important}}
 @media(max-width:768px){
 .nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:15px;box-shadow:var(--shadow);gap:2px;overflow-x:visible;max-height:75vh;overflow-y:auto}
@@ -172,8 +166,6 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .page-hero{padding:60px 0 40px}
 .page-hero h1{font-size:2rem}
 .page-hero p{font-size:14px}
-.digital-section{padding:50px 0 !important}
-.section-title{margin-bottom:30px !important}
 .section-title h2{font-size:26px}
 .transfer-ppob-grid > div > div:first-child{padding:20px 18px 18px !important}
 .transfer-ppob-grid > div > div:first-child h3{font-size:18px !important}
@@ -181,9 +173,9 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .transfer-ppob-grid > div > div:first-child > div > div:first-child{width:48px !important;height:48px !important;min-width:48px !important}
 .transfer-ppob-grid > div > div:first-child > div > div:first-child svg{width:24px !important;height:24px !important}
 .transfer-ppob-grid > div > div:last-child{padding:18px 16px 20px !important}
-.transfer-ppob-grid > div > div:last-child > div{padding:14px !important;gap:12px !important}
-.transfer-ppob-grid > div > div:last-child > div > div:first-child{width:42px !important;height:42px !important;min-width:42px !important}
-.transfer-ppob-grid > div > div:last-child > div > div:first-child svg{width:20px !important;height:20px !important}
+.transfer-ppob-grid > div:first-child > div:last-child > div{padding:14px !important;gap:12px !important}
+.transfer-ppob-grid > div:first-child > div:last-child > div > div:first-child{width:42px !important;height:42px !important;min-width:42px !important}
+.transfer-ppob-grid > div:first-child > div:last-child > div > div:first-child svg{width:20px !important;height:20px !important}
 .transfer-ppob-grid h4{font-size:13px !important}
 .transfer-ppob-grid p{font-size:12px !important}
 .ppob-items-grid{grid-template-columns:1fr 1fr !important}
@@ -312,7 +304,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 </div>
 </section>
 
-<!-- ===== LAYANAN SECTION (SAMA PERSIS DENGAN index2.html) ===== -->
+<!-- ===== LAYANAN SECTION (PERSIS SAMA DENGAN index2.html) ===== -->
 <section class="digital-section" id="layanan" style="padding:80px 0;background:linear-gradient(175deg,#f8f9fa 0%,#fff 50%,#f8f9fa 100%);position:relative;overflow:hidden">
 <!-- Background decorative elements -->
 <div style="position:absolute;top:-150px;right:-150px;width:400px;height:400px;background:radial-gradient(circle,rgba(2,59,150,.04) 0%,transparent 70%);border-radius:50%;pointer-events:none"></div>
