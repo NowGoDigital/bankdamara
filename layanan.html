@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- ===== PRELOADER KILLER SCRIPT ===== -->
 <script>
 (function(){
 var preloaderHidden = false;
@@ -88,7 +87,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .hamburger{display:none;font-size:22px;cursor:pointer;color:var(--primary);padding:6px 10px;border-radius:6px;transition:var(--transition)}
 .hamburger:hover{background:var(--bg-light)}
 
-/* ===== PAGE HERO (MINI) ===== */
+/* PAGE HERO */
 .page-hero{position:relative;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 50%,var(--accent) 100%);padding:80px 0 60px;overflow:hidden}
 .page-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(200,169,81,.15) 0%,transparent 70%);border-radius:50%;pointer-events:none}
 .page-hero::after{content:'';position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(200,169,81,.1) 0%,transparent 70%);border-radius:50%;pointer-events:none}
@@ -101,105 +100,21 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .page-hero h1 span{background:linear-gradient(135deg,var(--secondary),var(--secondary-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .page-hero p{font-size:16px;color:rgba(255,255,255,.85);max-width:600px;margin:0 auto;line-height:1.7}
 
-/* ===== SECTION TITLE ===== */
+/* SECTION TITLE */
 .section-title{text-align:center;margin-bottom:50px}
 .section-title .st-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(200,169,81,.1);color:var(--secondary);padding:5px 16px;border-radius:60px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
 .section-title h2{font-size:36px;color:var(--primary);margin-bottom:12px;font-weight:700}
 .section-title p{color:var(--text-light);font-size:16px;max-width:600px;margin:0 auto}
 .section-title .underline{width:60px;height:4px;background:linear-gradient(135deg,var(--secondary),var(--secondary-light));margin:15px auto 0;border-radius:2px}
 
-/* ===== LAYANAN SECTION ===== */
+/* LAYANAN SECTION */
 .digital-section{padding:80px 0;background:#fff;position:relative;overflow:hidden}
 .digital-section::before{content:'';position:absolute;top:-150px;right:-150px;width:400px;height:400px;background:radial-gradient(circle,rgba(2,59,150,.04) 0%,transparent 70%);border-radius:50%;pointer-events:none}
 .digital-section::after{content:'';position:absolute;bottom:-100px;left:-100px;width:350px;height:350px;background:radial-gradient(circle,rgba(200,169,81,.06) 0%,transparent 70%);border-radius:50%;pointer-events:none}
 
 .transfer-ppob-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
 
-/* Transfer & PPOB Cards */
-.transfer-ppob-grid > div{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.04);transition:all .4s ease}
-.transfer-ppob-grid > div:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,.12)}
-
-/* Header Cards */
-.transfer-ppob-grid > div > div:first-child{padding:28px 28px 24px;position:relative;overflow:hidden}
-.transfer-ppob-grid > div:first-child > div:first-child{background:linear-gradient(135deg,#023b96 0%,#1a5bc7 50%,#2970d4 100%)}
-.transfer-ppob-grid > div:last-child > div:first-child{background:linear-gradient(135deg,#c8a951 0%,#e0c76a 50%,#b8943e 100%)}
-
-.transfer-ppob-grid > div > div:first-child::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border:2px solid rgba(255,255,255,.1);border-radius:50%;pointer-events:none}
-.transfer-ppob-grid > div > div:first-child::after{content:'';position:absolute;bottom:-20px;right:40px;width:80px;height:80px;border:1px solid rgba(255,255,255,.08);border-radius:50%;pointer-events:none}
-
-.transfer-ppob-grid > div > div:first-child > div{display:flex;align-items:center;gap:16px;position:relative;z-index:2}
-.transfer-ppob-grid > div > div:first-child > div > div:first-child{width:60px;height:60px;min-width:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.2)}
-.transfer-ppob-grid > div:first-child > div:first-child > div > div:first-child{background:linear-gradient(135deg,rgba(200,169,81,.2),rgba(200,169,81,.08))}
-.transfer-ppob-grid > div:last-child > div:first-child > div > div:first-child{background:linear-gradient(135deg,rgba(2,59,150,.15),rgba(2,59,150,.06))}
-
-.transfer-ppob-grid > div:first-child > div:first-child h3{font-size:22px;font-weight:700;color:#fff;margin:0 0 4px;font-family:'Playfair Display',serif}
-.transfer-ppob-grid > div:last-child > div:first-child h3{font-size:22px;font-weight:700;color:#023b96;margin:0 0 4px;font-family:'Playfair Display',serif}
-
-.transfer-ppob-grid > div:first-child > div:first-child p{font-size:12px;color:rgba(255,255,255,.65);margin:0;line-height:1.5}
-.transfer-ppob-grid > div:last-child > div:first-child p{font-size:12px;color:rgba(2,59,150,.7);margin:0;line-height:1.5}
-
-/* Body Cards */
-.transfer-ppob-grid > div > div:last-child{padding:24px 28px 28px}
-
-/* Transfer Items */
-.transfer-ppob-grid > div:first-child > div:last-child > div{display:flex;align-items:flex-start;gap:16px;padding:18px;border-radius:14px;margin-bottom:14px;transition:all .3s}
-.transfer-ppob-grid > div:first-child > div:last-child > div:last-child{margin-bottom:0}
-
-.transfer-ppob-grid > div:first-child > div:last-child > div:nth-child(1){background:linear-gradient(135deg,rgba(30,136,229,.04),rgba(30,136,229,.01));border:1px solid rgba(30,136,229,.08)}
-.transfer-ppob-grid > div:first-child > div:last-child > div:nth-child(2){background:linear-gradient(135deg,rgba(46,125,50,.04),rgba(46,125,50,.01));border:1px solid rgba(46,125,50,.08)}
-.transfer-ppob-grid > div:first-child > div:last-child > div:nth-child(3){background:linear-gradient(135deg,rgba(156,39,176,.04),rgba(156,39,176,.01));border:1px solid rgba(156,39,176,.08)}
-
-.transfer-ppob-grid > div:first-child > div:last-child > div:hover{transform:translateX(5px)}
-.transfer-ppob-grid > div:first-child > div:last-child > div:nth-child(1):hover{background:linear-gradient(135deg,rgba(30,136,229,.08),rgba(30,136,229,.03));border-color:rgba(30,136,229,.18)}
-.transfer-ppob-grid > div:first-child > div:last-child > div:nth-child(2):hover{background:linear-gradient(135deg,rgba(46,125,50,.08),rgba(46,125,50,.03));border-color:rgba(46,125,50,.18)}
-.transfer-ppob-grid > div:first-child > div:last-child > div:nth-child(3):hover{background:linear-gradient(135deg,rgba(156,39,176,.08),rgba(156,39,176,.03));border-color:rgba(156,39,176,.18)}
-
-.transfer-ppob-grid > div:first-child > div:last-child > div > div:first-child{width:50px;height:50px;min-width:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.1)}
-.transfer-ppob-grid > div:first-child > div:last-child > div:nth-child(1) > div:first-child{background:linear-gradient(135deg,#e3f2fd,#bbdefb)}
-.transfer-ppob-grid > div:first-child > div:last-child > div:nth-child(2) > div:first-child{background:linear-gradient(135deg,#e8f5e9,#c8e6c9)}
-.transfer-ppob-grid > div:first-child > div:last-child > div:nth-child(3) > div:first-child{background:linear-gradient(135deg,#f3e5f5,#e1bee7)}
-
-.transfer-ppob-grid > div:first-child > div:last-child > div > div:last-child{flex:1}
-.transfer-ppob-grid > div:first-child > div:last-child > div h4{font-size:15px;font-weight:700;color:#023b96;margin:0 0 4px}
-.transfer-ppob-grid > div:first-child > div:last-child > div p{font-size:13px;color:#64748b;margin:0;line-height:1.6}
-.transfer-ppob-grid > div:first-child > div:last-child > div > div:last-child > div{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
-.transfer-ppob-grid > div:first-child > div:last-child > div > div:last-child span{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
-
-.transfer-ppob-grid > div:first-child > div:last-child > div:nth-child(1) > div:last-child span{background:rgba(21,101,192,.08);color:#1565c0}
-.transfer-ppob-grid > div:first-child > div:last-child > div:nth-child(2) > div:last-child span{background:rgba(46,125,50,.08);color:#2e7d32}
-.transfer-ppob-grid > div:first-child > div:last-child > div:nth-child(3) > div:last-child span{background:rgba(156,39,176,.08);color:#7b1fa2}
-
-/* PPOB Items Grid */
-.ppob-items-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.ppob-items-grid > div{display:flex;flex-direction:column;align-items:center;text-align:center;padding:20px 14px;border-radius:14px;transition:all .3s;cursor:pointer}
-.ppob-items-grid > div:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(0,0,0,.1)}
-
-.ppob-items-grid > div:nth-child(1){background:linear-gradient(135deg,#fff8e1,#fff3e0);border:1px solid rgba(255,167,38,.15)}
-.ppob-items-grid > div:nth-child(2){background:linear-gradient(135deg,#e3f2fd,#e8eaf6);border:1px solid rgba(21,101,192,.12)}
-.ppob-items-grid > div:nth-child(3){background:linear-gradient(135deg,#e0f7fa,#e0f2f1);border:1px solid rgba(0,137,188,.12)}
-.ppob-items-grid > div:nth-child(4){background:linear-gradient(135deg,#fce4ec,#f8bbd0);border:1px solid rgba(198,40,40,.1)}
-.ppob-items-grid > div:nth-child(5){background:linear-gradient(135deg,#f3e5f5,#e1bee7);border:1px solid rgba(123,31,162,.1)}
-.ppob-items-grid > div:nth-child(6){background:linear-gradient(135deg,#fff3e0,#ffe0b2);border:1px solid rgba(230,81,0,.12)}
-
-.ppob-items-grid > div:nth-child(1):hover{border-color:rgba(255,167,38,.3)}
-.ppob-items-grid > div:nth-child(2):hover{border-color:rgba(21,101,192,.25)}
-.ppob-items-grid > div:nth-child(3):hover{border-color:rgba(0,137,188,.25)}
-.ppob-items-grid > div:nth-child(4):hover{border-color:rgba(198,40,40,.2)}
-.ppob-items-grid > div:nth-child(5):hover{border-color:rgba(123,31,162,.2)}
-.ppob-items-grid > div:nth-child(6):hover{border-color:rgba(230,81,0,.25)}
-
-.ppob-items-grid > div > div:first-child{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;box-shadow:0 4px 12px rgba(0,0,0,.1)}
-.ppob-items-grid > div:nth-child(1) > div:first-child{background:linear-gradient(135deg,#fff3e0,#ffe0b2)}
-.ppob-items-grid > div:nth-child(2) > div:first-child{background:linear-gradient(135deg,#e3f2fd,#bbdefb)}
-.ppob-items-grid > div:nth-child(3) > div:first-child{background:linear-gradient(135deg,#e0f7fa,#b2ebf2)}
-.ppob-items-grid > div:nth-child(4) > div:first-child{background:linear-gradient(135deg,#fce4ec,#f8bbd0)}
-.ppob-items-grid > div:nth-child(5) > div:first-child{background:linear-gradient(135deg,#f3e5f5,#e1bee7)}
-.ppob-items-grid > div:nth-child(6) > div:first-child{background:linear-gradient(135deg,#fff3e0,#ffe0b2)}
-
-.ppob-items-grid h4{font-size:13px;font-weight:700;color:#023b96;margin:0 0 3px}
-.ppob-items-grid p{font-size:11px;color:#64748b;margin:0;line-height:1.4}
-
-/* ===== CTA SECTION ===== */
+/* CTA */
 .cta{padding:80px 0;text-align:center;background:var(--bg-light);position:relative;overflow:hidden}
 .cta::before{content:'';position:absolute;top:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(200,169,81,.1) 0%,transparent 70%);border-radius:50%;pointer-events:none}
 .cta-content{max-width:700px;margin:0 auto;position:relative;z-index:2}
@@ -212,7 +127,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .btn-outline{background:transparent;border:2px solid var(--primary);color:var(--primary)}
 .btn-outline:hover{background:var(--primary);color:#fff;transform:translateY(-3px)}
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 .footer{background:#011a3d;color:rgba(255,255,255,.8);padding:60px 0 0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
 .footer-col h4{color:#fff;font-size:16px;margin-bottom:20px;position:relative}
@@ -230,7 +145,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .footer-bottom-links a{color:rgba(255,255,255,.5);text-decoration:none;transition:var(--transition)}
 .footer-bottom-links a:hover{color:var(--secondary)}
 
-/* ===== SCROLL TOP & WA FLOAT ===== */
+/* SCROLL TOP & WA FLOAT */
 .scroll-top{position:fixed;bottom:30px;right:30px;width:50px;height:50px;background:var(--primary);color:#fff;border:none;border-radius:50%;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:var(--shadow-hover);transition:var(--transition);z-index:999}
 .scroll-top:hover{background:var(--secondary);color:var(--primary);transform:translateY(-5px)}
 .scroll-top.show{display:flex}
@@ -243,15 +158,15 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .wa-float-label{background:#fff;padding:8px 16px;border-radius:8px;font-size:12px;font-weight:600;color:var(--text-dark);box-shadow:var(--shadow);margin-left:-8px;padding-left:16px;white-space:nowrap;position:relative;z-index:1}
 .wa-float-label::before{content:'';position:absolute;left:-6px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-right-color:#fff}
 
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media(max-width:1024px){.transfer-ppob-grid{grid-template-columns:1fr}}
-@media(max-width:768px){.nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:15px;box-shadow:var(--shadow);gap:2px;overflow-x:visible;max-height:75vh;overflow-y:auto}.nav-menu.active{display:flex}.nav-menu>li{width:100%}.nav-menu>li>a{display:flex;justify-content:space-between;width:100%;padding:10px 14px}.nav-menu li .dropdown{position:static;box-shadow:none;border:none;padding:0 0 0 15px;display:none;opacity:1;transform:none;margin-top:2px}.nav-menu li.dropdown-open .dropdown{display:block}.hamburger{display:block}.btn-whatsapp{margin-left:0;margin-top:8px;width:100%;justify-content:center;padding:11px!important}.page-hero{padding:60px 0 40px}.page-hero h1{font-size:2rem}.page-hero p{font-size:14px}.digital-section{padding:50px 0}.section-title h2{font-size:26px}.transfer-ppob-grid > div > div:first-child{padding:20px 18px 18px}.transfer-ppob-grid > div > div:first-child h3{font-size:18px}.transfer-ppob-grid > div > div:first-child p{font-size:11px}.transfer-ppob-grid > div > div:first-child > div > div:first-child{width:48px;height:48px;min-width:48px}.transfer-ppob-grid > div > div:first-child > div > div:first-child svg{width:24px;height:24px}.transfer-ppob-grid > div > div:last-child{padding:18px 16px 20px}.transfer-ppob-grid > div:first-child > div:last-child > div{padding:14px;gap:12px}.transfer-ppob-grid > div:first-child > div:last-child > div > div:first-child{width:42px;height:42px;min-width:42px}.transfer-ppob-grid > div:first-child > div:last-child > div > div:first-child svg{width:20px;height:20px}.transfer-ppob-grid h4{font-size:13px}.transfer-ppob-grid p{font-size:12px}.ppob-items-grid{grid-template-columns:1fr 1fr}.ppob-items-grid > div{padding:14px 10px}.ppob-items-grid > div > div:first-child{width:44px;height:44px}.ppob-items-grid > div > div:first-child svg{width:22px;height:22px}.ppob-items-grid h4{font-size:12px}.ppob-items-grid p{font-size:10px}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:15px;text-align:center}.top-bar{display:none}.cta-buttons{flex-direction:column;align-items:center}.wa-float-label{display:none}.wa-float{left:20px;bottom:20px}.wa-float-btn{width:50px;height:50px;font-size:22px}}
-@media(max-width:576px){.ppob-items-grid{grid-template-columns:1fr}.section-title h2{font-size:20px}.section-title p{font-size:13px}.cta-content h2{font-size:22px}.cta-content p{font-size:13px}.cta-buttons .btn{padding:12px 20px;font-size:13px;width:100%;justify-content:center}.footer-bottom{font-size:11px;gap:10px}.footer-bottom-links{gap:12px}.footer-bottom-links a{font-size:11px}.scroll-top{width:42px;height:42px;font-size:16px;bottom:20px;right:20px}}
+@media(max-width:768px){.nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:15px;box-shadow:var(--shadow);gap:2px;overflow-x:visible;max-height:75vh;overflow-y:auto}.nav-menu.active{display:flex}.nav-menu>li{width:100%}.nav-menu>li>a{display:flex;justify-content:space-between;width:100%;padding:10px 14px}.nav-menu li .dropdown{position:static;box-shadow:none;border:none;padding:0 0 0 15px;display:none;opacity:1;transform:none;margin-top:2px}.nav-menu li.dropdown-open .dropdown{display:block}.hamburger{display:block}.btn-whatsapp{margin-left:0;margin-top:8px;width:100%;justify-content:center;padding:11px!important}.page-hero{padding:60px 0 40px}.page-hero h1{font-size:2rem}.page-hero p{font-size:14px}.digital-section{padding:50px 0}.section-title h2{font-size:26px}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:15px;text-align:center}.top-bar{display:none}.cta-buttons{flex-direction:column;align-items:center}.wa-float-label{display:none}.wa-float{left:20px;bottom:20px}.wa-float-btn{width:50px;height:50px;font-size:22px}}
+@media(max-width:576px){.section-title h2{font-size:20px}.section-title p{font-size:13px}.cta-content h2{font-size:22px}.cta-content p{font-size:13px}.cta-buttons .btn{padding:12px 20px;font-size:13px;width:100%;justify-content:center}.footer-bottom{font-size:11px;gap:10px}.footer-bottom-links{gap:12px}.footer-bottom-links a{font-size:11px}.scroll-top{width:42px;height:42px;font-size:16px;bottom:20px;right:20px}}
 </style>
 </head>
 <body>
 
-<!-- ===== PRELOADER ===== -->
+<!-- PRELOADER -->
 <div class="preloader" id="preloader">
 <div class="preloader-logo">
 <div class="pl-ring"></div>
@@ -263,7 +178,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 <div class="preloader-text">BANK NUSANTARA</div>
 </div>
 
-<!-- ===== TOP BAR ===== -->
+<!-- TOP BAR -->
 <div class="top-bar">
 <div class="container">
 <div class="top-bar-left">
@@ -278,7 +193,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 </div>
 </div>
 
-<!-- ===== HEADER & NAVBAR ===== -->
+<!-- HEADER & NAVBAR -->
 <header class="header" id="mainHeader">
 <div class="container">
 <a href="index2.html" class="logo">
@@ -324,7 +239,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 </div>
 </header>
 
-<!-- ===== PAGE HERO ===== -->
+<!-- PAGE HERO -->
 <section class="page-hero">
 <div class="container">
 <div class="page-hero-content">
@@ -339,7 +254,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 </div>
 </section>
 
-<!-- ===== LAYANAN SECTION ===== -->
+<!-- LAYANAN SECTION -->
 <section class="digital-section">
 <div class="container">
 <div class="section-title">
@@ -349,12 +264,17 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 <div class="underline"></div>
 </div>
 
-<div class="transfer-ppob-grid">
+<!-- 2 KOLOM UTAMA: TRANSFER & PPOB -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-bottom:0" class="transfer-ppob-grid">
+
 <!-- ═══ KOLOM KIRI: JASA TRANSFER ═══ -->
-<div>
-<div>
-<div>
-<div>
+<div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.04);transition:all .4s ease" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 12px 40px rgba(2,59,150,.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 25px rgba(0,0,0,.07)'">
+<!-- Header Transfer -->
+<div style="background:linear-gradient(135deg,#023b96 0%,#1a5bc7 50%,#2970d4 100%);padding:28px 28px 24px;position:relative;overflow:hidden">
+<div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border:2px solid rgba(200,169,81,.15);border-radius:50%;pointer-events:none"></div>
+<div style="position:absolute;bottom:-20px;right:40px;width:80px;height:80px;border:1px solid rgba(200,169,81,.1);border-radius:50%;pointer-events:none"></div>
+<div style="display:flex;align-items:center;gap:16px;position:relative;z-index:2">
+<div style="width:60px;height:60px;min-width:60px;border-radius:16px;background:linear-gradient(135deg,rgba(200,169,81,.2),rgba(200,169,81,.08));display:flex;align-items:center;justify-content:center;border:1px solid rgba(200,169,81,.25)">
 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c8a951" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <path d="M17 1l4 4-4 4"/>
 <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
@@ -363,15 +283,16 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 </svg>
 </div>
 <div>
-<h3>Jasa Transfer</h3>
-<p>Transfer ke seluruh bank dalam negeri secara online, LLG, dan Kliring</p>
+<h3 style="font-size:22px;font-weight:700;color:#fff;margin:0 0 4px;font-family:'Playfair Display',serif">Jasa Transfer</h3>
+<p style="font-size:12px;color:rgba(255,255,255,.65);margin:0;line-height:1.5">Transfer ke seluruh bank dalam negeri secara online, LLG, dan Kliring</p>
 </div>
 </div>
 </div>
-<div>
+<!-- Body Transfer Items -->
+<div style="padding:24px 28px 28px">
 <!-- Item 1: Online Transfer -->
-<div>
-<div>
+<div style="display:flex;align-items:flex-start;gap:16px;padding:18px;border-radius:14px;background:linear-gradient(135deg,rgba(30,136,229,.04),rgba(30,136,229,.01));border:1px solid rgba(30,136,229,.08);margin-bottom:14px;transition:all .3s" onmouseover="this.style.background='linear-gradient(135deg,rgba(30,136,229,.08),rgba(30,136,229,.03))';this.style.borderColor='rgba(30,136,229,.18)'" onmouseout="this.style.background='linear-gradient(135deg,rgba(30,136,229,.04),rgba(30,136,229,.01))';this.style.borderColor='rgba(30,136,229,.08)'">
+<div style="width:50px;height:50px;min-width:50px;border-radius:14px;background:linear-gradient(135deg,#e3f2fd,#bbdefb);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(21,101,192,.12)">
 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <rect x="2" y="4" width="20" height="16" rx="2"/>
 <path d="M6 12h12"/>
@@ -380,36 +301,36 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 <circle cx="18" cy="16" r="2" fill="#1565c0" stroke="none"/>
 </svg>
 </div>
-<div>
-<h4>Transfer Online</h4>
-<p>Transfer real-time ke seluruh bank dalam negeri. Proses instan 24/7 dengan biaya ringan.</p>
-<div>
-<span><i class="fas fa-bolt" style="font-size:9px"></i> Real-time</span>
-<span><i class="fas fa-clock" style="font-size:9px"></i> 24/7</span>
+<div style="flex:1">
+<h4 style="font-size:15px;font-weight:700;color:#023b96;margin:0 0 4px">Transfer Online</h4>
+<p style="font-size:13px;color:#64748b;margin:0;line-height:1.6">Transfer real-time ke seluruh bank dalam negeri. Proses instan 24/7 dengan biaya ringan.</p>
+<div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+<span style="display:inline-flex;align-items:center;gap:4px;padding:3px 10px;background:rgba(21,101,192,.08);color:#1565c0;border-radius:20px;font-size:11px;font-weight:600"><i class="fas fa-bolt" style="font-size:9px"></i> Real-time</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:3px 10px;background:rgba(21,101,192,.08);color:#1565c0;border-radius:20px;font-size:11px;font-weight:600"><i class="fas fa-clock" style="font-size:9px"></i> 24/7</span>
 </div>
 </div>
 </div>
 <!-- Item 2: LLG -->
-<div>
-<div>
+<div style="display:flex;align-items:flex-start;gap:16px;padding:18px;border-radius:14px;background:linear-gradient(135deg,rgba(46,125,50,.04),rgba(46,125,50,.01));border:1px solid rgba(46,125,50,.08);margin-bottom:14px;transition:all .3s" onmouseover="this.style.background='linear-gradient(135deg,rgba(46,125,50,.08),rgba(46,125,50,.03))';this.style.borderColor='rgba(46,125,50,.18)'" onmouseout="this.style.background='linear-gradient(135deg,rgba(46,125,50,.04),rgba(46,125,50,.01))';this.style.borderColor='rgba(46,125,50,.08)'">
+<div style="width:50px;height:50px;min-width:50px;border-radius:14px;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(46,125,50,.12)">
 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <path d="M12 2L2 7l10 5 10-5-10-5z"/>
 <path d="M2 17l10 5 10-5"/>
 <path d="M2 12l10 5 10-5"/>
 </svg>
 </div>
-<div>
-<h4>LLG (Lalu Lintas Giro)</h4>
-<p>Transfer dana antar bank melalui sistem Bank Indonesia. Cocok untuk transaksi nominal besar dengan biaya efisien.</p>
-<div>
-<span><i class="fas fa-university" style="font-size:9px"></i> Bank Indonesia</span>
-<span><i class="fas fa-hand-holding-usd" style="font-size:9px"></i> Biaya Murah</span>
+<div style="flex:1">
+<h4 style="font-size:15px;font-weight:700;color:#023b96;margin:0 0 4px">LLG (Lalu Lintas Giro)</h4>
+<p style="font-size:13px;color:#64748b;margin:0;line-height:1.6">Transfer dana antar bank melalui sistem Bank Indonesia. Cocok untuk transaksi nominal besar dengan biaya efisien.</p>
+<div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+<span style="display:inline-flex;align-items:center;gap:4px;padding:3px 10px;background:rgba(46,125,50,.08);color:#2e7d32;border-radius:20px;font-size:11px;font-weight:600"><i class="fas fa-university" style="font-size:9px"></i> Bank Indonesia</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:3px 10px;background:rgba(46,125,50,.08);color:#2e7d32;border-radius:20px;font-size:11px;font-weight:600"><i class="fas fa-hand-holding-usd" style="font-size:9px"></i> Biaya Murah</span>
 </div>
 </div>
 </div>
 <!-- Item 3: Kliring -->
-<div>
-<div>
+<div style="display:flex;align-items:flex-start;gap:16px;padding:18px;border-radius:14px;background:linear-gradient(135deg,rgba(156,39,176,.04),rgba(156,39,176,.01));border:1px solid rgba(156,39,176,.08);transition:all .3s" onmouseover="this.style.background='linear-gradient(135deg,rgba(156,39,176,.08),rgba(156,39,176,.03))';this.style.borderColor='rgba(156,39,176,.18)'" onmouseout="this.style.background='linear-gradient(135deg,rgba(156,39,176,.04),rgba(156,39,176,.01))';this.style.borderColor='rgba(156,39,176,.08)'">
+<div style="width:50px;height:50px;min-width:50px;border-radius:14px;background:linear-gradient(135deg,#f3e5f5,#e1bee7);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(156,39,176,.12)">
 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7b1fa2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <rect x="1" y="4" width="22" height="16" rx="2"/>
 <path d="M1 10h22"/>
@@ -418,12 +339,12 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 <path d="M18 15h2"/>
 </svg>
 </div>
-<div>
-<h4>Kliring</h4>
-<p>Pemindahbukuan antar bank melalui sistem kliring nasional. Aman, terverifikasi, dan tercatat resmi.</p>
-<div>
-<span><i class="fas fa-shield-alt" style="font-size:9px"></i> Aman & Terverifikasi</span>
-<span><i class="fas fa-file-alt" style="font-size:9px"></i> Tercatat Resmi</span>
+<div style="flex:1">
+<h4 style="font-size:15px;font-weight:700;color:#023b96;margin:0 0 4px">Kliring</h4>
+<p style="font-size:13px;color:#64748b;margin:0;line-height:1.6">Pemindahbukuan antar bank melalui sistem kliring nasional. Aman, terverifikasi, dan tercatat resmi.</p>
+<div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+<span style="display:inline-flex;align-items:center;gap:4px;padding:3px 10px;background:rgba(156,39,176,.08);color:#7b1fa2;border-radius:20px;font-size:11px;font-weight:600"><i class="fas fa-shield-alt" style="font-size:9px"></i> Aman & Terverifikasi</span>
+<span style="display:inline-flex;align-items:center;gap:4px;padding:3px 10px;background:rgba(156,39,176,.08);color:#7b1fa2;border-radius:20px;font-size:11px;font-weight:600"><i class="fas fa-file-alt" style="font-size:9px"></i> Tercatat Resmi</span>
 </div>
 </div>
 </div>
@@ -431,9 +352,13 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 </div>
 
 <!-- ═══ KOLOM KANAN: PPOB ═══ -->
-<div>
-<div>
-<div>
+<div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 25px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.04);transition:all .4s ease" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 12px 40px rgba(200,169,81,.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 25px rgba(0,0,0,.07)'">
+<!-- Header PPOB -->
+<div style="background:linear-gradient(135deg,#c8a951 0%,#e0c76a 50%,#b8943e 100%);padding:28px 28px 24px;position:relative;overflow:hidden">
+<div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border:2px solid rgba(2,59,150,.08);border-radius:50%;pointer-events:none"></div>
+<div style="position:absolute;bottom:-20px;right:40px;width:80px;height:80px;border:1px solid rgba(2,59,150,.06);border-radius:50%;pointer-events:none"></div>
+<div style="display:flex;align-items:center;gap:16px;position:relative;z-index:2">
+<div style="width:60px;height:60px;min-width:60px;border-radius:16px;background:linear-gradient(135deg,rgba(2,59,150,.15),rgba(2,59,150,.06));display:flex;align-items:center;justify-content:center;border:1px solid rgba(2,59,150,.12)">
 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#023b96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <rect x="2" y="3" width="20" height="18" rx="2"/>
 <path d="M2 9h20"/>
@@ -444,57 +369,58 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 </svg>
 </div>
 <div>
-<h3>PPOB</h3>
-<p>Payment Point Online Bank — pembayaran tagihan dan pembelian produk digital</p>
+<h3 style="font-size:22px;font-weight:700;color:#023b96;margin:0 0 4px;font-family:'Playfair Display',serif">PPOB</h3>
+<p style="font-size:12px;color:rgba(2,59,150,.7);margin:0;line-height:1.5">Payment Point Online Bank — pembayaran tagihan dan pembelian produk digital</p>
 </div>
 </div>
 </div>
-<div>
-<div class="ppob-items-grid">
+<!-- Body PPOB Items (Grid 2 kolom) -->
+<div style="padding:24px 28px 28px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px" class="ppob-items-grid">
 <!-- Item 1: Tagihan Listrik -->
-<div>
-<div>
+<div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:20px 14px;border-radius:14px;background:linear-gradient(135deg,#fff8e1,#fff3e0);border:1px solid rgba(255,167,38,.15);transition:all .3s;cursor:pointer" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 25px rgba(255,167,38,.15)';this.style.borderColor='rgba(255,167,38,.3)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.borderColor='rgba(255,167,38,.15)'">
+<div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#fff3e0,#ffe0b2);display:flex;align-items:center;justify-content:center;margin-bottom:10px;box-shadow:0 4px 12px rgba(230,81,0,.1)">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
 </svg>
 </div>
-<h4>Tagihan Listrik</h4>
-<p>Bayar tagihan PLN pascabayar bulanan</p>
+<h4 style="font-size:13px;font-weight:700;color:#023b96;margin:0 0 3px">Tagihan Listrik</h4>
+<p style="font-size:11px;color:#64748b;margin:0;line-height:1.4">Bayar tagihan PLN pascabayar bulanan</p>
 </div>
 <!-- Item 2: Tagihan Telkom -->
-<div>
-<div>
+<div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:20px 14px;border-radius:14px;background:linear-gradient(135deg,#e3f2fd,#e8eaf6);border:1px solid rgba(21,101,192,.12);transition:all .3s;cursor:pointer" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 25px rgba(21,101,192,.12)';this.style.borderColor='rgba(21,101,192,.25)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.borderColor='rgba(21,101,192,.12)'">
+<div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#e3f2fd,#bbdefb);display:flex;align-items:center;justify-content:center;margin-bottom:10px;box-shadow:0 4px 12px rgba(21,101,192,.1)">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
 </svg>
 </div>
-<h4>Tagihan Telkom</h4>
-<p>Bayar tagihan telepon & internet Indihome</p>
+<h4 style="font-size:13px;font-weight:700;color:#023b96;margin:0 0 3px">Tagihan Telkom</h4>
+<p style="font-size:11px;color:#64748b;margin:0;line-height:1.4">Bayar tagihan telepon & internet Indihome</p>
 </div>
 <!-- Item 3: Tagihan PDAM -->
-<div>
-<div>
+<div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:20px 14px;border-radius:14px;background:linear-gradient(135deg,#e0f7fa,#e0f2f1);border:1px solid rgba(0,137,188,.12);transition:all .3s;cursor:pointer" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 25px rgba(0,137,188,.12)';this.style.borderColor='rgba(0,137,188,.25)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.borderColor='rgba(0,137,188,.12)'">
+<div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#e0f7fa,#b2ebf2);display:flex;align-items:center;justify-content:center;margin-bottom:10px;box-shadow:0 4px 12px rgba(0,137,188,.1)">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00838f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
 </svg>
 </div>
-<h4>Tagihan PDAM</h4>
-<p>Bayar tagihan air bersih PDAM bulanan</p>
+<h4 style="font-size:13px;font-weight:700;color:#023b96;margin:0 0 3px">Tagihan PDAM</h4>
+<p style="font-size:11px;color:#64748b;margin:0;line-height:1.4">Bayar tagihan air bersih PDAM bulanan</p>
 </div>
 <!-- Item 4: Beli Pulsa -->
-<div>
-<div>
+<div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:20px 14px;border-radius:14px;background:linear-gradient(135deg,#fce4ec,#f8bbd0);border:1px solid rgba(198,40,40,.1);transition:all .3s;cursor:pointer" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 25px rgba(198,40,40,.1)';this.style.borderColor='rgba(198,40,40,.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.borderColor='rgba(198,40,40,.1)'">
+<div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#fce4ec,#f8bbd0);display:flex;align-items:center;justify-content:center;margin-bottom:10px;box-shadow:0 4px 12px rgba(198,40,40,.1)">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
 <line x1="12" y1="18" x2="12.01" y2="18"/>
 </svg>
 </div>
-<h4>Beli Pulsa</h4>
-<p>Top up pulsa semua operator seluler</p>
+<h4 style="font-size:13px;font-weight:700;color:#023b96;margin:0 0 3px">Beli Pulsa</h4>
+<p style="font-size:11px;color:#64748b;margin:0;line-height:1.4">Top up pulsa semua operator seluler</p>
 </div>
 <!-- Item 5: Beli Paket Data -->
-<div>
-<div>
+<div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:20px 14px;border-radius:14px;background:linear-gradient(135deg,#f3e5f5,#e1bee7);border:1px solid rgba(123,31,162,.1);transition:all .3s;cursor:pointer" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 25px rgba(123,31,162,.1)';this.style.borderColor='rgba(123,31,162,.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.borderColor='rgba(123,31,162,.1)'">
+<div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#f3e5f5,#e1bee7);display:flex;align-items:center;justify-content:center;margin-bottom:10px;box-shadow:0 4px 12px rgba(123,31,162,.1)">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7b1fa2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
 <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
@@ -502,29 +428,30 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 <line x1="12" y1="20" x2="12.01" y2="20"/>
 </svg>
 </div>
-<h4>Beli Paket Data</h4>
-<p>Paket internet semua operator harga bersaing</p>
+<h4 style="font-size:13px;font-weight:700;color:#023b96;margin:0 0 3px">Beli Paket Data</h4>
+<p style="font-size:11px;color:#64748b;margin:0;line-height:1.4">Paket internet semua operator harga bersaing</p>
 </div>
 <!-- Item 6: Beli Token Listrik -->
-<div>
-<div>
+<div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:20px 14px;border-radius:14px;background:linear-gradient(135deg,#fff3e0,#ffe0b2);border:1px solid rgba(230,81,0,.12);transition:all .3s;cursor:pointer" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 25px rgba(230,81,0,.12)';this.style.borderColor='rgba(230,81,0,.25)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';this.style.borderColor='rgba(230,81,0,.12)'">
+<div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#fff3e0,#ffe0b2);display:flex;align-items:center;justify-content:center;margin-bottom:10px;box-shadow:0 4px 12px rgba(230,81,0,.1)">
 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <rect x="1" y="6" width="18" height="12" rx="2"/>
 <line x1="23" y1="13" x2="23" y2="11"/>
 <path d="M7 10l2 2 4-4" stroke-width="2"/>
 </svg>
 </div>
-<h4>Beli Token Listrik</h4>
-<p>Token listrik prabayar PLN berbagai nominal</p>
+<h4 style="font-size:13px;font-weight:700;color:#023b96;margin:0 0 3px">Beli Token Listrik</h4>
+<p style="font-size:11px;color:#64748b;margin:0;line-height:1.4">Token listrik prabayar PLN berbagai nominal</p>
 </div>
 </div>
 </div>
 </div>
+
 </div>
 </div>
 </section>
 
-<!-- ===== CTA SECTION ===== -->
+<!-- CTA SECTION -->
 <section class="cta">
 <div class="container">
 <div class="cta-content">
@@ -538,7 +465,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- FOOTER -->
 <footer class="footer">
 <div class="container">
 <div class="footer-grid">
@@ -595,14 +522,14 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 </div>
 </footer>
 
-<!-- ===== SCROLL TOP & WA FLOAT ===== -->
+<!-- SCROLL TOP & WA FLOAT -->
 <button class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
 <div class="wa-float" id="waFloat">
 <a href="https://wa.me/6281234567890" target="_blank" class="wa-float-btn"><i class="fab fa-whatsapp"></i></a>
 <div class="wa-float-label">Butuh bantuan? Chat kami!</div>
 </div>
 
-<!-- ===== JAVASCRIPT ===== -->
+<!-- JAVASCRIPT -->
 <script>
 function toggleMenu(){document.getElementById('navMenu').classList.toggle('active')}
 document.querySelectorAll('.nav-menu > li > a').forEach(function(l){
