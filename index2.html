@@ -96,6 +96,15 @@ img{max-width:100%;display:block}
 .hero-slide h2 span{color:var(--secondary);display:block}
 .hero-slide p{font-size:1.05rem;opacity:.9;margin-bottom:30px;max-width:560px}
 
+/* QUICK LINKS */
+.quick-links{background:#fff;padding:40px 0;border-bottom:1px solid var(--gray-light)}
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.quick-card{background:var(--light);padding:24px;border-radius:var(--radius);text-align:center;transition:var(--transition);border:1px solid var(--gray-light);cursor:pointer}
+.quick-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--secondary)}
+.quick-card i{font-size:2rem;color:var(--primary);margin-bottom:12px}
+.quick-card h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;color:var(--primary);margin-bottom:6px}
+.quick-card p{font-size:.82rem;color:var(--gray)}
+
 /* STATS STRIP */
 .stats-strip{background:#fff;padding:30px 0;border-bottom:1px solid var(--gray-light)}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
@@ -142,6 +151,8 @@ section{padding:80px 0}
 .highlight-box{background:var(--light);padding:18px;border-radius:var(--radius-sm);border-left:3px solid var(--secondary)}
 .highlight-box .num{font-size:1.4rem;font-weight:800;color:var(--primary);font-family:'Playfair Display',serif}
 .highlight-box .lbl{font-size:.82rem;color:var(--gray)}
+.profile-full{margin-top:30px}
+.profile-full p{color:var(--gray);margin-bottom:14px;font-size:.92rem;line-height:1.8}
 
 /* TIMELINE */
 .timeline{position:relative;padding:30px 0;margin-top:30px}
@@ -244,6 +255,7 @@ section{padding:80px 0}
 
 /* LELANG */
 .lelang{background:#fff}
+.lelang-badge{display:inline-block;background:linear-gradient(135deg,#ff6b6b,#ee5a6f);color:#fff;padding:6px 16px;border-radius:50px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;box-shadow:0 4px 12px rgba(238,90,111,.3)}
 .lelang-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:30px 0}
 .lelang-stat{background:var(--light);padding:24px;border-radius:var(--radius);text-align:center;border:1px solid var(--gray-light)}
 .lelang-stat .num{font-size:2rem;font-weight:800;color:var(--primary);font-family:'Playfair Display',serif}
@@ -294,7 +306,7 @@ section{padding:80px 0}
 .galeri-link:hover{gap:10px;color:var(--secondary)}
 
 /* CTA */
-.cta{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:#fff;padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta{background:linear-gradient(135deg(var(--primary) 0%,var(--primary-dark) 100%);color:#fff;padding:80px 0;text-align:center;position:relative;overflow:hidden}
 .cta::before{content:'';position:absolute;top:-50%;left:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(201,162,39,.15) 0%,transparent 70%);border-radius:50%}
 .cta > *{position:relative;z-index:2}
 .cta h2{font-size:2.4rem;margin-bottom:14px}
@@ -337,6 +349,7 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 0}
   .galeri-grid{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
   .lelang-stats{grid-template-columns:repeat(2,1fr)}
+  .quick-grid{grid-template-columns:repeat(2,1fr)}
   .timeline::before{left:20px}
   .timeline-item{width:100%;left:0!important;text-align:left!important;padding-left:50px;padding-right:0}
   .timeline-item::before{left:11px!important;right:auto!important}
@@ -358,6 +371,7 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 0}
   .btn{width:100%;justify-content:center}
   .career{padding:40px 24px}
   .vision-box{padding:30px 20px}
+  .quick-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -374,8 +388,8 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 0}
     </div>
     <div class="topbar-actions">
       <div class="lang-switch">
-        <a href="#" class="active">ID</a>
         <a href="#">EN</a>
+        <a href="#" class="active">ID</a>
       </div>
     </div>
   </div>
@@ -443,9 +457,9 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 0}
     <div class="hero-visual">
       <div class="hero-card">
         <div class="hero-stats">
-          <div class="stat-item"><div class="stat-num">500K+</div><div class="stat-label">Nasabah</div></div>
+          <div class="stat-item"><div class="stat-num" data-target="500">0</div><div class="stat-label">Juta+ Nasabah</div></div>
           <div class="stat-item"><div class="stat-num">5.5%</div><div class="stat-label">Bunga Deposito</div></div>
-          <div class="stat-item"><div class="stat-num">40+</div><div class="stat-label">Tahun Pengalaman</div></div>
+          <div class="stat-item"><div class="stat-num" data-target="40">0</div><div class="stat-label">Tahun Pengalaman</div></div>
           <div class="stat-item"><div class="stat-num">AAA</div><div class="stat-label">Rating Pefindo</div></div>
         </div>
       </div>
@@ -503,65 +517,33 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 0}
   </div>
 </section>
 
-<!-- STATS STRIP -->
-<div class="stats-strip">
+<!-- QUICK LINKS -->
+<div class="quick-links">
   <div class="container">
-    <div class="stats-grid">
-      <div><div class="num" data-target="500000">0</div><div class="lbl">Nasabah Aktif</div></div>
-      <div><div class="num">5.5%</div><div class="lbl">Bunga Deposito</div></div>
-      <div><div class="num" data-target="40">0</div><div class="lbl">Tahun Pengalaman</div></div>
-      <div><div class="num">AAA</div><div class="lbl">Rating Pefindo</div></div>
+    <div class="quick-grid">
+      <div class="quick-card" onclick="location.href='#produk'">
+        <i class="fas fa-piggy-bank"></i>
+        <h4>Tabungan</h4>
+        <p>Buka rekening baru dengan mudah</p>
+      </div>
+      <div class="quick-card" onclick="location.href='#produk'">
+        <i class="fas fa-hand-holding-usd"></i>
+        <h4>Pinjaman</h4>
+        <p>Modal Kerja, Konsumtif dan Investasi</p>
+      </div>
+      <div class="quick-card" onclick="location.href='#produk'">
+        <i class="fas fa-coins"></i>
+        <h4>Deposito</h4>
+        <p>Bunga kompetitif hingga penjaminan LPS</p>
+      </div>
+      <div class="quick-card" onclick="location.href='#lelang'">
+        <i class="fas fa-gavel"></i>
+        <h4>Lelang Agunan</h4>
+        <p>Properti & kendaraan harga miring</p>
+      </div>
     </div>
   </div>
 </div>
-
-<!-- PRODUK CARDS -->
-<section class="products" id="produk">
-  <div class="container">
-    <div class="section-head">
-      <span class="section-tag">Produk & Layanan</span>
-      <h2>Solusi Keuangan Lengkap</h2>
-      <p>Pilih produk perbankan yang tepat untuk kebutuhan Anda</p>
-    </div>
-    <div class="products-grid">
-      <div class="product-card">
-        <div class="product-icon"><i class="fas fa-piggy-bank"></i></div>
-        <h3>Tabungan</h3>
-        <p>Simpanan aman & menguntungkan</p>
-        <ul class="product-features">
-          <li><i class="fas fa-check"></i> Setoran awal Rp 100.000</li>
-          <li><i class="fas fa-check"></i> Setor Tarik di semua Cabang</li>
-          <li><i class="fas fa-check"></i> Bunga bersaing</li>
-        </ul>
-        <a href="https://nowgodigital.github.io/bankdamara/tabungan.html" class="product-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="product-card">
-        <div class="product-icon"><i class="fas fa-coins"></i></div>
-        <h3>Deposito</h3>
-        <p>Investasi aman & terjamin</p>
-        <ul class="product-features">
-          <li><i class="fas fa-check"></i> Bunga hingga penjaminan LPS</li>
-          <li><i class="fas fa-check"></i> Tenor fleksibel 1-24 bulan</li>
-          <li><i class="fas fa-check"></i> ARO otomatis</li>
-          <li><i class="fas fa-check"></i> Dijamin LPS</li>
-        </ul>
-        <a href="https://nowgodigital.github.io/bankdamara/deposito.html" class="product-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="product-card">
-        <div class="product-icon"><i class="fas fa-hand-holding-usd"></i></div>
-        <h3>Pinjaman</h3>
-        <p>Solusi kredit fleksibel</p>
-        <ul class="product-features">
-          <li><i class="fas fa-check"></i> Bunga Rendah</li>
-          <li><i class="fas fa-check"></i> Kredit Modal Kerja</li>
-          <li><i class="fas fa-check"></i> Kredit Konsumtif</li>
-          <li><i class="fas fa-check"></i> Kredit Investasi</li>
-        </ul>
-        <a href="https://nowgodigital.github.io/bankdamara/pinjaman.html" class="product-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ABOUT -->
 <section class="about" id="tentang">
@@ -584,8 +566,10 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 0}
     <div class="tab-content active" id="profil">
       <div class="profile-grid">
         <div class="profile-text">
-          <h3>Mengenal BANK NUSANTARA Lebih Dekat</h3>
-          <p><strong>Sejak 1985 — Pendirian & Legalitas.</strong> PT. Bank Perekonomian Rakyat NUSANTARA didirikan dengan Akta Pendirian Nomor 72 tanggal 18 November 2021 oleh Notaris Didik Hijrianto, SH, MKn di Kabupaten Lombok Utara, dan telah mendapat pengesahan dari Kementerian Hukum dan HAM RI dengan SK Nomor AHU-0002865.AH.01.01.TAHUN 2022 tanggal 13 Januari 2022.</p>
+          <h3>Profil Perusahaan</h3>
+          <h4 style="font-family:'Plus Jakarta Sans',sans-serif;color:var(--primary);font-size:1.2rem;margin-bottom:18px">Mengenal BANK NUSANTARA Lebih Dekat</h4>
+          <p><strong>Sejak 1985</strong></p>
+          <p><strong>Pendirian & Legalitas.</strong> PT. Bank Perekonomian Rakyat NUSANTARA didirikan dengan Akta Pendirian Nomor 72 tanggal 18 November 2021 oleh Notaris Didik Hijrianto, SH, MKn di Kabupaten Lombok Utara, dan telah mendapat pengesahan dari Kementerian Hukum dan HAM RI dengan SK Nomor AHU-0002865.AH.01.01.TAHUN 2022 tanggal 13 Januari 2022.</p>
           <p><strong>Sejarah Peleburan.</strong> BPR NUSANTARA merupakan hasil peleburan dua BPR yang berdiri sejak tahun 1991, yaitu PT BPR Dana Master Surya (Lombok Barat) dan PT BPR Tanjung Abdi Swadaya (Lombok Utara). Peleburan ini didasari POJK Nomor 21/POJK.03/2019 tentang penggabungan BPR untuk memenuhi kebutuhan Modal Inti minimum.</p>
           <p><strong>Kantor & Operasional.</strong> BPR NUSANTARA beroperasi sejak 13 Januari 2022 dengan kantor pusat di Jl. Imam Bonjol No. 7X, Gerung, Lombok Barat dan kantor cabang di Tanjung, Lombok Utara serta Manggis, Karangasem, Bali. Modal dasar saat ini sebesar Rp 8 Miliar dengan modal disetor Rp 4,4 Miliar.</p>
           <div class="profile-highlights">
@@ -600,19 +584,34 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 0}
           <p style="color:var(--gray);margin-bottom:20px">Milestone penting BANK NUSANTARA</p>
           <div class="timeline">
             <div class="timeline-item"><div class="timeline-year">2024</div><div class="timeline-title">Transformasi Digital</div><div class="timeline-desc">Peluncuran BN Mobile v5.0 dengan fitur BI-FAST dan QRIS</div></div>
-            <div class="timeline-item"><div class="timeline-year">2022</div><div class="timeline-title">Peleburan Resmi</div><div class="timeline-desc">Berdirinya BPR NUSANTARA hasil peleburan dua BPR</div></div>
-            <div class="timeline-item"><div class="timeline-year">2019</div><div class="timeline-title">POJK Penggabungan</div><div class="timeline-desc">Dasar hukum peleburan BPR sesuai regulasi OJK</div></div>
-            <div class="timeline-item"><div class="timeline-year">1991</div><div class="timeline-title">Cikal Baku</div><div class="timeline-desc">Berdirinya BPR Dana Master Surya & BPR Tanjung Abdi Swadaya</div></div>
+            <div class="timeline-item"><div class="timeline-year">2018</div><div class="timeline-title">IPO & Go Public</div><div class="timeline-desc">Terdaftar di Bursa Efek Indonesia dengan kode BDMR</div></div>
+            <div class="timeline-item"><div class="timeline-year">2005</div><div class="timeline-title">Ekspansi Nasional</div><div class="timeline-desc">Pembukaan cabang ke-500 di seluruh Indonesia</div></div>
+            <div class="timeline-item"><div class="timeline-year">1995</div><div class="timeline-title">Bank Devisa</div><div class="timeline-desc">Mendapat izin operasional sebagai bank devisa</div></div>
+            <div class="timeline-item"><div class="timeline-year">1985</div><div class="timeline-title">Didirikan</div><div class="timeline-desc">Berdiri sebagai bank umum swasta nasional di Jakarta</div></div>
           </div>
         </div>
+      </div>
+
+      <div class="profile-full">
+        <p>PT. Bank Perekonomian Rakyat NUSANTARA didirikan dengan Akta Pendirian Nomor 72 tanggal 18 November 2021 yang dibuat di hadapan Notaris DIDIK HIJRIANTO, Sarjana Hukum Master Kenotarisan Notaris di Kabupaten Lombok Utara dan telah mendapat pengesahan dari Kementerian Hukum dan Hak Asasi Manusia Republik Indonesia dengan Surat Keputusan Nomor AHU-0002865.AH.01.01.TAHUN 2022 tanggal 13 Januari 2022. Dan telah mengalami perubahan dengan akta terakhir Nomor 01 tanggal 05 Juni 2023 yang dibuat di depan Notaris DIDIK HIJRIANTO, Sarjana Hukum Master Kenotarisan Notaris di Kabupaten Lombok Utara, dan telah mendapatkan pengesahan dari Menteri Hukum dan Hak Asasi Manusia Republik Indonesia berdasarkan Surat Keputusan Nomor AHU-0030802.AH.01.02.TAHUN 2023.</p>
+        <p>PT. Bank Perekonomian Rakyat NUSANTARA adalah Bank atau Lembaga Keuangan milik swasta yang berkedudukan di Nusa Tenggara Barat. Tepatnya di Kabupaten Lombok Barat sebagai kantor Pusat dan Kabupaten Lombok Utara sebagai kantor cabang. Dengan adanya PT. Bank Perekonomian Rakyat NUSANTARA ini dapat membantu masyarakat dan pemerintah dalam memajukan perekonomian di Nusa Tenggara Barat pada umumnya dan Kabupaten Lombok Barat dan Lombok Utara pada khususnya.</p>
+        <p>PT. Bank Perekonomian Rakyat NUSANTARA sebelumnya adalah hasil peleburan dua BPR yang berkedudukan di Lombok Barat dan Lombok Utara, yaitu PT BPR DANA MASTER SURYA yang didirikan pada tahun 1991 dan PT BPR TANJUNG ABDI SWADAYA yang didirikan tahun 1991 juga. Desakan OJK untuk pemenuhan Modal Inti Tahun 2019 sebesar Rp. 3 Milyar dan Tahun 2024 sebesar Rp. 6 Milyar adalah salah satu cikal bakal Peleburan BPR NUSANTARA. Namun sampai akhir tahun 2019 belum terealisasi, yang akhirnya Tahun 2019 sesuai dengan POJK NOMOR 21/POJK.03/2019 tentang PENGGABUNGAN, PELEBURAN, DAN PENGAMBILALIHAN BANK PERKREDITAN RAKYAT, kedua BPR tersebut dilebur menjadi BPR NUSANTARA yang mempunyai arti Bank Perekonomian Rakyat Dana Master Lotara.</p>
+        <p>Modal Dasar NUSANTARA pada saat ini yaitu sebesar Rp 8.000.000.000 dan telah disetor sebesar Rp 4.400.000.000,-</p>
+        <p>Bank Perekonomian Rakyat NUSANTARA beroperasi pertama kali pada tanggal 13 Januari 2022 dengan ABDURRA'UF selaku direktur utama dan LALU HAERUL selaku direktur yang berkedudukan di Jalan Imam Bonjol No. 7X Gerung Utara Kecamatan Gerung Kabupaten Lombok Barat, Nusa Tenggara Barat, di mana kantor tersebut juga merupakan Kantor Pusat PT. Bank Perekonomian Rakyat NUSANTARA sampai sekarang.</p>
+        <p>Bank Perekonomian Rakyat NUSANTARA saat ini memiliki 3 (tiga) kantor:</p>
+        <ul style="list-style:none;padding-left:20px">
+          <li style="padding:6px 0;color:var(--gray)">• Kantor Pusat Operasional — Gerung. Jl. Imam Bonjol No. 7X Gerung, Lombok Barat, NTB</li>
+          <li style="padding:6px 0;color:var(--gray)">• Kantor Cabang Operasional — Tanjung. Pusat Pertokoan Jambianom, Jalan Raya Tanjung Medana, Lombok Utara</li>
+          <li style="padding:6px 0;color:var(--gray)">• Kantor Cabang Manggis — Karangasem. Jl. Denpasar-Padangbai KM 53 Banjar Pangitebel, Desa Antiga Kelod, Kec. Manggis, Kab. Karangasem, Bali</li>
+        </ul>
       </div>
 
       <div class="office-card">
         <div>
           <h3><i class="fas fa-building"></i> Kantor Pusat</h3>
           <h4 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.2rem;margin-bottom:10px">BANK NUSANTARA Tower</h4>
-          <p>Jl. Imam Bonjol No. 7X Gerung, Lombok Barat, Nusa Tenggara Barat</p>
-          <a href="#" class="btn btn-primary" style="margin-top:10px"><i class="fas fa-map-marker-alt"></i> Lihat Lokasi</a>
+          <p>Jl. Jend. Sudirman Kav. 88, Jakarta Pusat 10220</p>
+          <a href="#" class="btn btn-primary" style="margin-top:10px"><i class="fas fa-map-marker-alt"></i> Lokasi Kantor Pusat</a>
         </div>
         <div>
           <h4 style="color:var(--secondary);margin-bottom:14px">Kantor Cabang</h4>
@@ -632,7 +631,9 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 0}
         <p style="color:var(--gray);margin-bottom:20px">Pengakuan resmi</p>
         <div class="legal-badges">
           <div class="legal-badge"><i class="fas fa-shield-halved"></i> Terdaftar OJK</div>
+          <div class="legal-badge"><i class="fas fa-eye"></i> Diawasi resmi</div>
           <div class="legal-badge"><i class="fas fa-lock"></i> Anggota LPS</div>
+          <div class="legal-badge"><i class="fas fa-coins"></i> Dijamin Rp 2M</div>
           <div class="legal-badge"><i class="fas fa-award"></i> Rating AAA</div>
           <div class="legal-badge"><i class="fas fa-certificate"></i> ISO 27001</div>
         </div>
@@ -686,12 +687,12 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 0}
         <p>Periode 2024-2028 · Berdasarkan RUPS</p>
       </div>
       <div class="mgmt-overview">
-        <div class="mgmt-stat"><i class="fas fa-user-tie"></i><h4>Dewan Komisaris</h4><p>2 Anggota — Pengawasan & Nasihat</p></div>
-        <div class="mgmt-stat"><i class="fas fa-briefcase"></i><h4>Dewan Direksi</h4><p>2 Anggota — Eksekutif Operasional</p></div>
+        <div class="mgmt-stat"><i class="fas fa-user-tie"></i><h4>Komisaris</h4><p>2 Anggota</p></div>
+        <div class="mgmt-stat"><i class="fas fa-briefcase"></i><h4>Direksi</h4><p>2 Anggota</p></div>
       </div>
 
       <div class="mgmt-group">
-        <div class="mgmt-group-title"><h3>Dewan Komisaris</h3><p>Melakukan pengawasan dan memberikan nasihat kepada Direksi</p></div>
+        <div class="mgmt-group-title"><h3>Dewan Komisaris</h3><p>Komisaris BANK NUSANTARA</p><p>Melakukan pengawasan dan memberikan nasihat kepada Direksi demi tata kelola yang baik</p></div>
         <div class="mgmt-grid">
           <div class="mgmt-card">
             <div class="mgmt-head"><div class="mgmt-avatar">AF</div><h4>Prof. Ahmad Fauzan, SE, MM</h4><p>Komisaris Utama</p></div>
@@ -713,12 +714,12 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 0}
       </div>
 
       <div class="mgmt-group">
-        <div class="mgmt-group-title"><h3>Dewan Direksi</h3><p>Pimpinan eksekutif yang mengelola operasional dan strategi</p></div>
+        <div class="mgmt-group-title"><h3>Dewan Direksi</h3><p>Direksi BANK NUSANTARA</p><p>Pimpinan eksekutif yang mengelola operasional dan strategi perusahaan</p></div>
         <div class="mgmt-grid">
           <div class="mgmt-card">
-            <div class="mgmt-head"><div class="mgmt-avatar">HW</div><h4>Dr. Hendra Wijaya, MBA</h4><p>Direktur Utama</p></div>
+            <div class="mgmt-head"><div class="mgmt-avatar">HW</div><h4>Dr. Hendra Wijaya, MBA</h4><p>Direktur Utama</p><p style="font-size:.75rem;opacity:.8;margin-top:4px">30+ Tahun Pengalaman · Perbankan Nasional & Internasional</p></div>
             <div class="mgmt-body">
-              <p class="mgmt-bio">Memulai karir di dunia perbankan sejak 1993. Meraih MBA dari National University of Singapore dan DBA dari Universitas Indonesia. Pernah menduduki posisi strategis di beberapa bank top nasional.</p>
+              <p class="mgmt-bio">Memulai karir di dunia perbankan sejak 1993. Meraih MBA dari National University of Singapore dan DBA dari Universitas Indonesia. Pernah menduduki posisi strategis di beberapa bank top nasional sebelum bergabung dengan BANK NUSANTARA.</p>
               <div class="mgmt-tags"><span>Perbankan Nasional</span><span>Internasional</span><span>30+ Tahun</span></div>
               <div class="mgmt-timeline">
                 <div class="mgmt-tl-item"><div class="mgmt-tl-year">2015 — Sekarang</div><div class="mgmt-tl-role">Direktur Utama — BANK NUSANTARA</div></div>
@@ -730,9 +731,9 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 0}
             </div>
           </div>
           <div class="mgmt-card">
-            <div class="mgmt-head"><div class="mgmt-avatar">RK</div><h4>Ratna Kusuma, SH, MH</h4><p>Direktur Kepatuhan</p></div>
+            <div class="mgmt-head"><div class="mgmt-avatar">RK</div><h4>Ratna Kusuma, SH, MH</h4><p>Direktur Kepatuhan</p><p style="font-size:.75rem;opacity:.8;margin-top:4px">20+ Tahun di Regulasi Perbankan · Spesialis Compliance & AML</p></div>
             <div class="mgmt-body">
-              <p class="mgmt-bio">Pakar hukum perbankan dengan spesialisasi di bidang kepatuhan regulasi dan anti pencucian uang. Pernah menjabat Kepala Divisi Kepatuhan di OJK. Aktif sebagai pembicara di forum perbankan nasional.</p>
+              <p class="mgmt-bio">Pakar hukum perbankan dengan spesialisasi di bidang kepatuhan regulasi dan anti pencucian uang. Pernah menjabat Kepala Divisi Kepatuhan di OJK sebelum bergabung dengan BANK NUSANTARA. Aktif sebagai pembicara di forum perbankan nasional.</p>
               <div class="mgmt-tags"><span>Regulasi Perbankan</span><span>Compliance</span><span>AML</span></div>
               <div class="mgmt-timeline">
                 <div class="mgmt-tl-item"><div class="mgmt-tl-year">2018 — Sekarang</div><div class="mgmt-tl-role">Direktur Kepatuhan — BANK NUSANTARA</div></div>
@@ -765,6 +766,55 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 0}
           <div class="career-stat"><div class="num">50+</div><div class="lbl">Posisi Terbuka</div></div>
           <div class="career-stat"><div class="num">12,000+</div><div class="lbl">Karyawan</div></div>
         </div>
+        <p style="margin-top:20px;font-size:.9rem;opacity:.85">Bergabunglah dengan 12.000+ karyawan kami</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUK CARDS -->
+<section class="products" id="produk">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Produk & Layanan</span>
+      <h2>Solusi Keuangan Lengkap</h2>
+      <p>Pilih produk perbankan yang tepat untuk kebutuhan Anda</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-icon"><i class="fas fa-piggy-bank"></i></div>
+        <h3>Tabungan</h3>
+        <p>Simpanan aman & menguntungkan</p>
+        <ul class="product-features">
+          <li><i class="fas fa-check"></i> Setoran awal Rp 100.000</li>
+          <li><i class="fas fa-check"></i> Setor Tarik di semua Cabang</li>
+          <li><i class="fas fa-check"></i> Bunga bersaing</li>
+        </ul>
+        <a href="https://nowgodigital.github.io/bankdamara/tabungan.html" class="product-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card">
+        <div class="product-icon"><i class="fas fa-coins"></i></div>
+        <h3>Deposito</h3>
+        <p>Investasi aman & terjamin</p>
+        <ul class="product-features">
+          <li><i class="fas fa-check"></i> Bunga hingga penjaminan LPS</li>
+          <li><i class="fas fa-check"></i> Tenor fleksibel 1-24 bulan</li>
+          <li><i class="fas fa-check"></i> ARO otomatis</li>
+          <li><i class="fas fa-check"></i> Dijamin LPS</li>
+        </ul>
+        <a href="https://nowgodigital.github.io/bankdamara/deposito.html" class="product-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="product-card">
+        <div class="product-icon"><i class="fas fa-hand-holding-usd"></i></div>
+        <h3>Pinjaman</h3>
+        <p>Solusi kredit fleksibel</p>
+        <ul class="product-features">
+          <li><i class="fas fa-check"></i> Bunga Rendah</li>
+          <li><i class="fas fa-check"></i> Kredit Modal Kerja</li>
+          <li><i class="fas fa-check"></i> Kredit Konsumtif</li>
+          <li><i class="fas fa-check"></i> Kredit Investasi</li>
+        </ul>
+        <a href="https://nowgodigital.github.io/bankdamara/pinjaman.html" class="product-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </div>
@@ -774,6 +824,7 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 0}
 <section class="lelang" id="lelang">
   <div class="container">
     <div class="section-head">
+      <div class="lelang-badge">Hot Deal</div>
       <span class="section-tag">Lelang Agunan</span>
       <h2>Agunan Pilihan Harga Terjangkau</h2>
       <p>Temukan properti, kendaraan, dan aset berharga dengan harga di bawah pasaran</p>
@@ -850,7 +901,7 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 0}
           <thead><tr><th>Mata Uang</th><th>Jual (IDR)</th><th>Beli (IDR)</th></tr></thead>
           <tbody><tr><td colspan="3" style="text-align:center;color:var(--gray)">Memuat...</td></tr></tbody>
         </table>
-        <div class="kurs-source"><i class="fas fa-info-circle"></i> Sumber: <a href="https://www.exchangerate-api.com" target="_blank" style="color:var(--primary)">ExchangeRate-API</a> · Auto 24 jam</div>
+        <div class="kurs-source"><i class="fas fa-info-circle"></i> JPY: kurs per 100 Yen Jepang<br>Sumber: <a href="https://www.exchangerate-api.com" target="_blank" style="color:var(--primary)">ExchangeRate-API</a> · Auto 24 jam</div>
       </div>
       <div class="galeri-box">
         <h4><i class="fab fa-instagram"></i> Instagram</h4>
@@ -886,6 +937,7 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 0}
         <div><div style="font-size:1.5rem;font-weight:800;color:var(--secondary)">4,00%</div><div style="font-size:.8rem;opacity:.85">Tabungan / tahun</div></div>
         <div><div style="font-size:1.5rem;font-weight:800;color:var(--secondary)">6,50%</div><div style="font-size:.8rem;opacity:.85">Deposito / tahun</div></div>
       </div>
+      <p style="margin-top:14px;font-size:.75rem;opacity:.7">Sewaktu-waktu dapat berubah</p>
     </div>
   </div>
 </section>
@@ -913,7 +965,7 @@ footer{background:var(--primary-dark);color:#fff;padding:60px 0 0}
         </div>
         <p>Bank nasional terpercaya sejak 1985 dengan layanan perbankan terbaik dan keamanan tinggi.</p>
         <ul class="footer-contact">
-          <li><i class="fas fa-map-marker-alt"></i> Jl. Imam Bonjol No. 7X Gerung, Lombok Barat, NTB</li>
+          <li><i class="fas fa-map-marker-alt"></i> Jl. Jend. Sudirman Kav. 88, Jakarta Pusat 10220</li>
           <li><i class="fas fa-phone"></i> 1500-888</li>
           <li><i class="fas fa-envelope"></i> info@banknusantara.co.id</li>
         </ul>
@@ -1030,6 +1082,7 @@ document.querySelectorAll('.nav-menu > li > a').forEach(a=>{
 </script>
 </body>
 </html>
+
 
 
 
