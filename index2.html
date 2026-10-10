@@ -149,17 +149,81 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .btn-outline:hover{background:var(--primary);color:#fff;transform:translateY(-3px)}
 .btn-dark{background:var(--primary);color:#fff}
 .btn-dark:hover{background:var(--primary-light);transform:translateY(-3px);box-shadow:0 8px 25px rgba(2,59,150,.3)}
-.quick-access{margin-top:-50px;position:relative;z-index:10;padding-bottom:60px}
-.quick-access-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.quick-access-card{background:#fff;border-radius:16px;padding:30px 25px;text-align:center;box-shadow:var(--shadow);transition:var(--transition);cursor:pointer;text-decoration:none;color:var(--text-dark)}
-.quick-access-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-hover)}
-.quick-access-card .icon{width:65px;height:65px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;font-size:28px}
-.quick-access-card:nth-child(1) .icon{background:linear-gradient(135deg,#e3f2fd,#bbdefb);color:#1565c0}
-.quick-access-card:nth-child(2) .icon{background:linear-gradient(135deg,#fff3e0,#ffe0b2);color:#e65100}
-.quick-access-card:nth-child(3) .icon{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);color:#2e7d32}
-.quick-access-card:nth-child(4) .icon{background:linear-gradient(135deg,#fce4ec,#f8bbd0);color:#c62828}
-.quick-access-card h4{font-size:15px;margin-bottom:5px}
-.quick-access-card p{font-size:12px;color:var(--text-light)}
+
+/* ══════════════════════════════════════════════════════════════
+   QUICK ACCESS CARDS — ELEGANT MINIMALIST REDESIGN
+   ══════════════════════════════════════════════════════════════ */
+.quick-access{margin-top:-40px;position:relative;z-index:10;padding-bottom:50px}
+.quick-access-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.quick-access-card{
+  background:#fff;
+  border-radius:18px;
+  padding:24px 18px 22px;
+  text-align:center;
+  cursor:pointer;
+  text-decoration:none;
+  color:var(--text-dark);
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(0,0,0,.03);
+  box-shadow:0 2px 12px rgba(0,0,0,.04);
+  transition:all .35s cubic-bezier(.25,.46,.45,.94);
+}
+.quick-access-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:50%;
+  transform:translateX(-50%);
+  width:0;height:3px;
+  border-radius:0 0 3px 3px;
+  transition:width .35s cubic-bezier(.25,.46,.45,.94);
+}
+.quick-access-card:hover::before{width:50%}
+.quick-access-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 32px rgba(0,0,0,.08);
+  border-color:rgba(0,0,0,.05);
+}
+.quick-access-card:nth-child(1)::before{background:linear-gradient(90deg,#1565c0,#42a5f5)}
+.quick-access-card:nth-child(2)::before{background:linear-gradient(90deg,#e65100,#ff9800)}
+.quick-access-card:nth-child(3)::before{background:linear-gradient(90deg,#2e7d32,#66bb6a)}
+.quick-access-card:nth-child(4)::before{background:linear-gradient(90deg,#c62828,#ef5350)}
+.quick-access-card .icon{
+  width:56px;height:56px;
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 14px;
+  font-size:24px;
+  transition:transform .35s cubic-bezier(.25,.46,.45,.94);
+}
+.quick-access-card:hover .icon{transform:scale(1.06)}
+.quick-access-card:nth-child(1) .icon{background:#e3f2fd;color:#1565c0}
+.quick-access-card:nth-child(2) .icon{background:#fff3e0;color:#e65100}
+.quick-access-card:nth-child(3) .icon{background:#e8f5e9;color:#2e7d32}
+.quick-access-card:nth-child(4) .icon{background:#fce4ec;color:#c62828}
+.quick-access-card h4{
+  font-size:15px;
+  font-weight:700;
+  margin-bottom:6px;
+  color:#1a1a2e;
+  letter-spacing:-.2px;
+  transition:color .3s ease;
+}
+.quick-access-card:nth-child(1):hover h4{color:#1565c0}
+.quick-access-card:nth-child(2):hover h4{color:#e65100}
+.quick-access-card:nth-child(3):hover h4{color:#2e7d32}
+.quick-access-card:nth-child(4):hover h4{color:#c62828}
+.quick-access-card p{
+  font-size:12px;
+  color:#6b7280;
+  line-height:1.4;
+  margin:0;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  font-weight:400;
+}
+
 .section-title{text-align:center;margin-bottom:50px}
 .section-title .st-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(200,169,81,.1);color:var(--secondary);padding:5px 16px;border-radius:60px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
 .section-title h2{font-size:36px;color:var(--primary);margin-bottom:12px;font-weight:700}
@@ -428,991 +492,248 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .tentang-photo-box,.tentang-maps-box{height:220px}
 .tentang-photo-overlay h4{font-size:17px}
 .tentang-photo-overlay p{font-size:11px}
-}
-@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.animate{animation:fadeInUp .6s ease forwards}
-.tentang-visual-area:hover ~ .profil-hero-frame,
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"]{
-transition:all .4s ease;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"]:hover{
-box-shadow:0 16px 50px rgba(0,0,0,.15) !important;
-transform:translateY(-2px);
-}
-@media(max-width:768px){
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child{
-padding:14px 18px !important;
-flex-wrap:wrap;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child h4{
-font-size:15px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:last-child{
-padding:20px !important;
-}
-}
-@media(max-width:768px){
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child{
-padding:14px 16px !important;
-flex-wrap:wrap;
-gap:10px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child h4{
-font-size:15px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child p{
-font-size:10px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child > div:first-child > div:first-child{
-width:34px !important;height:34px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child > div:last-child{
-padding:5px 10px !important;font-size:9px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:last-child{
-padding:18px 16px 20px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] p{
-font-size:13px !important;
-}
-.profil-content-grid > div:first-child{
-padding:20px 16px !important;
-}
-.profil-content-grid > div:first-child h4{
-font-size:14px !important;
-}
-.profil-content-grid .tentang-visual-area > div:last-child{
-padding:18px 14px !important;
-}
-.visi-hero{
-padding:28px 18px !important;
-border-radius:18px !important;
-}
-.visi-hero h3{
-font-size:18px !important;
-line-height:1.5 !important;
-}
-.visi-hero > div > div:last-child > div{
-padding:6px 12px !important;
-}
-.visi-hero > div > div:last-child > div span{
-font-size:11px !important;
-}
-.misi-cards-grid > div{
-padding:16px !important;
-gap:12px !important;
-}
-.misi-cards-grid > div > div:first-child{
-width:44px !important;height:44px !important;min-width:44px !important;
-}
-.misi-cards-grid > div > div:first-child i{
-font-size:16px !important;
-}
-.misi-cards-grid h4{
-font-size:14px !important;
-}
-.misi-cards-grid p{
-font-size:12px !important;
-}
-.budaya-grid-v2 > div{
-border-radius:16px !important;
-}
-.budaya-grid-v2 > div > div:last-child{
-padding:20px 16px !important;
-}
-.budaya-grid-v2 h4{
-font-size:16px !important;
-}
-.budaya-grid-v2 p{
-font-size:12px !important;
-}
-.budaya-grid-v2 > div > div:last-child > div:first-child > div:first-child{
-width:48px !important;height:48px !important;
-}
-.budaya-grid-v2 ~ div{
-padding:16px 18px !important;
-}
-.budaya-grid-v2 ~ div p{
-font-size:13px !important;
-}
-.komisaris-grid > div > div:last-child,
-.direksi-grid > div > div:last-child{
-padding:18px 14px 20px !important;
-}
-.komisaris-grid h3,
-.direksi-grid > div > div:last-child h3{
-font-size:16px !important;
-}
-.komisaris-grid p,
-.direksi-grid > div > div:last-child p{
-font-size:11px !important;
-}
-.direksi-grid > div > div:first-child{
-padding:22px 16px 35px !important;
-}
-.direksi-grid > div > div:first-child > div > div > div{
-width:90px !important;height:90px !important;
-}
-.komisaris-grid > div > div > div:first-child{
-width:65px !important;height:65px !important;
-}
-.section-title h2{
-font-size:22px !important;
-}
-.section-title p{
-font-size:14px !important;
-}
-.section-title .st-badge{
-font-size:10px !important;
-padding:4px 12px !important;
-}
-.stat-item h3{
-font-size:30px !important;
-}
-.stat-item p{
-font-size:12px !important;
-}
-.cta-content h2{
-font-size:24px !important;
-}
-.cta-content p{
-font-size:14px !important;
-}
-.lelang-intro-img{
-height:180px !important;
-}
-.lelang-intro-text h3{
-font-size:22px !important;
-}
-.lelang-intro-text p{
-font-size:13px !important;
-}
-.lelang-stat .ls-val{
-font-size:22px !important;
-}
-.product-card-header{
-padding:22px 20px !important;
-}
-.product-card-header h3{
-font-size:18px !important;
-}
-.product-card-body{
-padding:18px 20px !important;
-}
-.gallery-banner-wrapper img{
-height:180px !important;
-}
-.gallery-banner-overlay{
-padding:18px 20px !important;
-}
-.gallery-banner-overlay h3{
-font-size:1rem !important;
-}
-.gallery-section-header h2{
-font-size:1.8rem !important;
-}
-.gallery-section-header p{
-font-size:.85rem !important;
-}
-.footer{
-padding:40px 0 0 !important;
-}
-.footer-grid{
-gap:25px !important;
-}
-.footer-col h4{
-font-size:14px !important;
-}
-.footer-col p,
-.footer-col ul li a{
-font-size:12px !important;
-}
-.about-section{
-padding:50px 0 !important;
-}
-.about-tabs{
-gap:4px !important;
-margin-bottom:25px !important;
-}
-.about-tab{
-padding:7px 12px !important;
-font-size:10px !important;
-}
-.karir-text h3{
-font-size:22px !important;
-}
-.karir-text p{
-font-size:13px !important;
-}
-.karir-benefit{
-padding:10px !important;
-font-size:12px !important;
-}
-.karir-visual{
-height:250px !important;
-}
-.quick-access-card{
-padding:20px 15px !important;
-}
-.quick-access-card .icon{
-width:50px !important;height:50px !important;
-font-size:22px !important;
-}
-.quick-access-card h4{
-font-size:13px !important;
-}
-.quick-access-card p{
-font-size:11px !important;
-}
-.products{
-padding:50px 0 !important;
-}
-.lelang-section{
-padding:50px 0 !important;
-}
-.container{
-padding:0 15px !important;
-}
+.quick-access-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+.quick-access-card{padding:18px 14px 16px !important;border-radius:14px !important}
+.quick-access-card .icon{width:48px !important;height:48px !important;font-size:20px !important;border-radius:12px !important;margin-bottom:10px !important}
+.quick-access-card h4{font-size:13px !important;margin-bottom:4px !important}
+.quick-access-card p{font-size:11px !important}
 }
 @media(max-width:576px){
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child{
-padding:12px 14px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child h4{
-font-size:14px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:last-child{
-padding:16px 14px 18px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] p{
-font-size:12px !important;
-line-height:1.7 !important;
-}
-.tentang-photo-box{
-height:180px !important;
-}
-.tentang-maps-box{
-height:200px !important;
-}
-.tentang-photo-overlay{
-padding:16px !important;
-}
-.tentang-photo-overlay h4{
-font-size:15px !important;
-}
-.tentang-photo-overlay p{
-font-size:10px !important;
-}
-.tentang-photo-badge{
-top:12px !important;left:12px !important;
-padding:4px 10px !important;font-size:9px !important;
-}
-.tentang-maps-header{
-padding:10px 14px !important;
-font-size:12px !important;
-}
-.profil-cert-grid{
-grid-template-columns:1fr !important;
-}
-.section-title h2{
-font-size:20px !important;
-}
-.section-title p{
-font-size:13px !important;
-}
-.section-title{
-margin-bottom:30px !important;
-}
-.stats-grid{
-gap:15px !important;
-}
-.stat-item h3{
-font-size:26px !important;
-}
-.stat-item p{
-font-size:11px !important;
-}
-.stats{
-padding:40px 0 !important;
-}
-.cta{
-padding:50px 0 !important;
-}
-.cta-content h2{
-font-size:22px !important;
-}
-.cta-content p{
-font-size:13px !important;
-}
-.cta-buttons{
-gap:10px !important;
-}
-.cta-buttons .btn{
-padding:12px 20px !important;
-font-size:13px !important;
-width:100%;
-justify-content:center;
-}
-.visi-hero{
-padding:24px 14px !important;
-}
-.visi-hero h3{
-font-size:16px !important;
-}
-.visi-hero > div > div:last-child{
-gap:8px !important;
-}
-.visi-hero > div > div:last-child > div{
-padding:5px 10px !important;
-}
-.visi-hero > div > div:last-child > div span{
-font-size:10px !important;
-}
-.visi-hero > div > div:last-child > div svg{
-width:12px !important;height:12px !important;
-}
-.misi-cards-grid ~ div,
-#tab-visi > div:last-child > div:first-child{
-margin-bottom:16px !important;
-}
-.gallery-info-section{
-padding:35px 0 25px !important;
-}
-.gallery-section-header h2{
-font-size:1.5rem !important;
-}
-.gallery-section-header p{
-font-size:.8rem !important;
-}
-.gallery-banner-wrapper img{
-height:140px !important;
-}
-.gallery-banner-overlay{
-padding:14px 16px !important;
-}
-.gallery-banner-overlay h3{
-font-size:.9rem !important;
-}
-.gallery-banner-overlay p{
-font-size:.75rem !important;
-}
-.lelang-stats{
-gap:12px !important;
-}
-.lelang-stat .ls-val{
-font-size:20px !important;
-}
-.lelang-stat .ls-lbl{
-font-size:10px !important;
-}
-.footer-bottom{
-font-size:11px !important;
-gap:10px !important;
-}
-.footer-bottom-links{
-gap:12px !important;
-}
-.footer-bottom-links a{
-font-size:11px !important;
-}
-.wa-float-btn{
-width:46px !important;height:46px !important;
-font-size:20px !important;
-}
-.scroll-top{
-width:42px !important;height:42px !important;
-font-size:16px !important;
-bottom:20px !important;right:20px !important;
-}
-.container{
-padding:0 12px !important;
-}
-.quick-access{
-margin-top:-35px !important;
-padding-bottom:40px !important;
-}
-.product-card-header i{
-font-size:28px !important;
-}
+.tentang-photo-box{height:180px !important}
+.tentang-maps-box{height:200px !important}
+.tentang-photo-overlay{padding:16px !important}
+.tentang-photo-overlay h4{font-size:15px !important}
+.tentang-photo-overlay p{font-size:10px !important}
+.tentang-photo-badge{top:12px !important;left:12px !important;padding:4px 10px !important;font-size:9px !important}
+.tentang-maps-header{padding:10px 14px !important;font-size:12px !important}
+.profil-cert-grid{grid-template-columns:1fr !important}
+.section-title h2{font-size:20px !important}
+.section-title p{font-size:13px !important}
+.section-title{margin-bottom:30px !important}
+.stats-grid{gap:15px !important}
+.stat-item h3{font-size:26px !important}
+.stat-item p{font-size:11px !important}
+.stats{padding:40px 0 !important}
+.cta{padding:50px 0 !important}
+.cta-content h2{font-size:22px !important}
+.cta-content p{font-size:13px !important}
+.cta-buttons{gap:10px !important}
+.cta-buttons .btn{padding:12px 20px !important;font-size:13px !important;width:100%;justify-content:center}
+.visi-hero{padding:24px 14px !important}
+.visi-hero h3{font-size:16px !important}
+.visi-hero > div > div:last-child{gap:8px !important}
+.visi-hero > div > div:last-child > div{padding:5px 10px !important}
+.visi-hero > div > div:last-child > div span{font-size:10px !important}
+.visi-hero > div > div:last-child > div svg{width:12px !important;height:12px !important}
+.misi-cards-grid ~ div,#tab-visi > div:last-child > div:first-child{margin-bottom:16px !important}
+.gallery-info-section{padding:35px 0 25px !important}
+.gallery-section-header h2{font-size:1.8rem !important}
+.gallery-section-header p{font-size:.8rem !important}
+.gallery-banner-wrapper img{height:180px !important}
+.gallery-banner-overlay{padding:18px 20px !important}
+.gallery-banner-overlay h3{font-size:1rem !important}
+.gallery-banner-overlay p{font-size:.75rem !important}
+.lelang-stats{gap:12px !important}
+.lelang-stat .ls-val{font-size:20px !important}
+.lelang-stat .ls-lbl{font-size:10px !important}
+.footer-bottom{font-size:11px !important;gap:10px !important}
+.footer-bottom-links{gap:12px !important}
+.footer-bottom-links a{font-size:11px !important}
+.wa-float-btn{width:46px !important;height:46px !important;font-size:20px !important}
+.scroll-top{width:42px !important;height:42px !important;font-size:16px !important;bottom:20px !important;right:20px !important}
+.container{padding:0 12px !important}
+.quick-access{margin-top:-35px !important;padding-bottom:40px !important}
+.product-card-header{padding:22px 20px !important}
+.product-card-header h3{font-size:18px !important}
+.product-card-body{padding:18px 20px !important}
+.gallery-banner-wrapper img{height:140px !important}
+.gallery-banner-overlay{padding:14px 16px !important}
+.gallery-banner-overlay h3{font-size:.9rem !important}
+.gallery-banner-overlay p{font-size:.75rem !important}
+.footer{padding:40px 0 0 !important}
+.footer-grid{gap:25px !important}
+.footer-col h4{font-size:14px !important}
+.footer-col p,.footer-col ul li a{font-size:12px !important}
+.about-section{padding:50px 0 !important}
+.about-tabs{gap:4px !important;margin-bottom:25px !important}
+.about-tab{padding:7px 12px !important;font-size:10px !important}
+.karir-text h3{font-size:22px !important}
+.karir-text p{font-size:13px !important}
+.karir-benefit{padding:10px !important;font-size:12px !important}
+.karir-visual{height:250px !important}
+.quick-access-card{padding:20px 15px !important}
+.quick-access-card .icon{width:50px !important;height:50px !important;font-size:22px !important}
+.quick-access-card h4{font-size:13px !important}
+.quick-access-card p{font-size:11px !important}
+.products{padding:50px 0 !important}
+.lelang-section{padding:50px 0 !important}
+.container{padding:0 15px !important}
 }
 @media(max-width:480px){
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child{
-padding:10px 12px !important;
-gap:8px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child h4{
-font-size:13px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child p{
-font-size:9px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child > div:first-child > div:first-child{
-width:30px !important;height:30px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child > div:first-child > div:first-child i{
-font-size:12px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child > div:last-child{
-padding:4px 8px !important;font-size:8px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:last-child{
-padding:14px 12px 16px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] p{
-font-size:11.5px !important;
-}
-.tentang-photo-box{
-height:160px !important;
-}
-.tentang-maps-box{
-height:180px !important;
-}
-.about-tab{
-padding:6px 10px !important;
-font-size:9.5px !important;
-border-radius:20px !important;
-}
-.section-title h2{
-font-size:18px !important;
-}
-.section-title p{
-font-size:12px !important;
-}
-.stat-item h3{
-font-size:22px !important;
-}
-.cta-content h2{
-font-size:20px !important;
-}
-.visi-hero{
-padding:20px 12px !important;
-}
-.visi-hero h3{
-font-size:15px !important;
-}
-.visi-hero > div > div:last-child > div{
-padding:5px 8px !important;
-gap:4px !important;
-}
-.visi-hero > div > div:last-child > div span{
-font-size:9px !important;
-}
-.misi-cards-grid > div{
-padding:14px 12px !important;
-}
-.misi-cards-grid > div > div:first-child{
-width:38px !important;height:38px !important;min-width:38px !important;
-}
-.misi-cards-grid > div > div:first-child i{
-font-size:14px !important;
-}
-.misi-cards-grid h4{
-font-size:13px !important;
-}
-.misi-cards-grid p{
-font-size:11px !important;
-}
-.budaya-grid-v2 > div > div:last-child{
-padding:16px 14px !important;
-}
-.budaya-grid-v2 h4{
-font-size:15px !important;
-}
-.budaya-grid-v2 p{
-font-size:11px !important;
-}
-.budaya-grid-v2 > div > div:last-child > div:first-child > div:first-child{
-width:42px !important;height:42px !important;
-}
-.budaya-grid-v2 > div > div:last-child > div:first-child > div:first-child svg{
-width:22px !important;height:22px !important;
-}
-.komisaris-grid > div > div:last-child,
-.direksi-grid > div > div:last-child{
-padding:14px 12px 16px !important;
-}
-.komisaris-grid h3,
-.direksi-grid > div > div:last-child h3{
-font-size:14px !important;
-}
-.komisaris-grid > div > div > div:first-child{
-width:55px !important;height:55px !important;
-}
-.direksi-grid > div > div:first-child > div > div > div{
-width:75px !important;height:75px !important;
-}
-.gallery-section-header h2{
-font-size:1.3rem !important;
-}
-.container{
-padding:0 10px !important;
-}
+.tentang-photo-box{height:160px !important}
+.tentang-maps-box{height:180px !important}
+.about-tab{padding:6px 10px !important;font-size:9.5px !important;border-radius:20px !important}
+.section-title h2{font-size:18px !important}
+.section-title p{font-size:12px !important}
+.stat-item h3{font-size:22px !important}
+.cta-content h2{font-size:20px !important}
+.visi-hero{padding:20px 12px !important}
+.visi-hero h3{font-size:15px !important}
+.visi-hero > div > div:last-child > div{padding:5px 8px !important;gap:4px !important}
+.visi-hero > div > div:last-child > div span{font-size:9px !important}
+.misi-cards-grid > div{padding:14px 12px !important}
+.misi-cards-grid > div > div:first-child{width:38px !important;height:38px !important;min-width:38px !important}
+.misi-cards-grid > div > div:first-child i{font-size:14px !important}
+.misi-cards-grid h4{font-size:13px !important}
+.misi-cards-grid p{font-size:11px !important}
+.budaya-grid-v2 > div > div:last-child{padding:16px 14px !important}
+.budaya-grid-v2 h4{font-size:15px !important}
+.budaya-grid-v2 p{font-size:11px !important}
+.budaya-grid-v2 > div > div:last-child > div:first-child > div:first-child{width:42px !important;height:42px !important}
+.budaya-grid-v2 > div > div:last-child > div:first-child > div:first-child svg{width:22px !important;height:22px !important}
+.komisaris-grid > div > div:last-child,.direksi-grid > div > div:last-child{padding:14px 12px 16px !important}
+.komisaris-grid h3,.direksi-grid > div > div:last-child h3{font-size:14px !important}
+.komisaris-grid > div > div > div:first-child{width:55px !important;height:55px !important}
+.direksi-grid > div > div:first-child > div > div > div{width:75px !important;height:75px !important}
+.gallery-section-header h2{font-size:1.3rem !important}
+.container{padding:0 10px !important}
+.quick-access-grid{grid-template-columns:1fr 1fr !important;gap:10px !important}
+.quick-access-card{padding:16px 12px 14px !important}
+.quick-access-card .icon{width:44px !important;height:44px !important;font-size:18px !important}
+.quick-access-card h4{font-size:12px !important}
+.quick-access-card p{font-size:10px !important}
 }
 @media(max-width:380px){
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child{
-padding:8px 10px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:first-child h4{
-font-size:12px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] > div:last-child{
-padding:12px 10px 14px !important;
-}
-div[style*="border-radius:20px"][style*="box-shadow:0 8px 35px"] p{
-font-size:11px !important;
-}
-.about-tab{
-padding:5px 8px !important;
-font-size:9px !important;
-}
-.section-title h2{
-font-size:16px !important;
-}
-.tentang-photo-box{
-height:140px !important;
-}
-.tentang-maps-box{
-height:160px !important;
-}
-.stat-item h3{
-font-size:20px !important;
-}
-.cta-content h2{
-font-size:18px !important;
-}
-.container{
-padding:0 8px !important;
-}
+.tentang-photo-box{height:140px !important}
+.tentang-maps-box{height:160px !important}
+.about-tab{padding:5px 8px !important;font-size:9px !important}
+.section-title h2{font-size:16px !important}
+.stat-item h3{font-size:20px !important}
+.cta-content h2{font-size:18px !important}
+.container{padding:0 8px !important}
 }
 @media(max-width:768px){
-.hero{
-min-height:100vh !important;
-padding-top:0 !important;
-padding-bottom:60px !important;
-display:flex !important;
-align-items:center !important;
-}
-.hero-slide{
-padding-top:80px !important;
-padding-bottom:20px !important;
-align-items:center !important;
-}
-.hero-container{
-padding:0 15px !important;
-}
-.hero-grid-layout{
-grid-template-columns:1fr !important;
-gap:20px !important;
-text-align:center !important;
-}
-.visual-stage{
-max-width:280px !important;
-margin:0 auto !important;
-aspect-ratio:1 !important;
-}
-.card-3d-wrapper{
-width:260px !important;
-height:200px !important;
-}
-.buku-tabungan{
-width:180px !important;
-height:112px !important;
-}
-.bt-binding{
-width:14px !important;
-}
-.bt-binding::before{
-left:2px !important;
-width:8px !important;
-}
-.bt-inner{
-left:14px !important;
-padding:10px 10px 8px 8px !important;
-}
-.bt-logo{
-width:20px !important;
-height:20px !important;
-min-width:20px !important;
-font-size:7px !important;
-border-radius:4px !important;
-}
-.bt-bank-name{
-font-size:7px !important;
-letter-spacing:.5px !important;
-}
-.bt-bank-tagline{
-font-size:5px !important;
-}
-.bt-emblem{
-width:18px !important;
-height:18px !important;
-font-size:4.5px !important;
-}
-.bt-divider{
-margin:0 0 5px !important;
-}
-.bt-title{
-font-size:10px !important;
-letter-spacing:1px !important;
-}
-.bt-subtitle{
-font-size:5.5px !important;
-letter-spacing:1px !important;
-}
-.bt-account-label{
-font-size:4.5px !important;
-}
-.bt-account-num{
-font-size:7px !important;
-letter-spacing:1px !important;
-}
-.bt-account-name{
-font-size:6px !important;
-}
-.bt-lps{
-font-size:4.5px !important;
-}
-.bt-year{
-font-size:5.5px !important;
-}
-.bt-bookmark{
-width:8px !important;
-height:14px !important;
-right:25px !important;
-}
-.bt-pages{
-width:3px !important;
-right:-2px !important;
-top:3px !important;
-bottom:3px !important;
-}
-.bt-title-ornament{
-margin-bottom:2px !important;
-}
-.bt-title-ornament i{
-font-size:5px !important;
-}
-.loan-card{
-width:180px !important;
-height:112px !important;
-}
-.lc-inner{
-padding:10px 12px !important;
-}
-.lc-value{
-font-size:14px !important;
-}
-.lc-bank-name{
-font-size:8px !important;
-}
-.lc-bank-sub{
-font-size:5.5px !important;
-}
-.lc-label{
-font-size:5.5px !important;
-}
-.lc-sub{
-font-size:7px !important;
-margin-top:2px !important;
-}
-.lc-ft-label{
-font-size:5px !important;
-}
-.lc-ft-val{
-font-size:7px !important;
-}
-.lc-icon-grid .lc-ig{
-width:18px !important;
-height:18px !important;
-font-size:8px !important;
-}
-.lc-watermark{
-font-size:40px !important;
-}
-.lc-ribbon{
-padding:3px 10px 3px 14px !important;
-font-size:6px !important;
-}
-.ppob-phone{
-width:110px !important;
-height:185px !important;
-}
-.ppob-screen{
-inset:18px 8px 32px !important;
-padding:8px !important;
-}
-.ppob-header .ppob-logo{
-font-size:7px !important;
-}
-.ppob-header .ppob-sub{
-font-size:5px !important;
-}
-.ppob-balance-box{
-padding:5px !important;
-margin-bottom:5px !important;
-}
-.ppob-balance-box .pbb-label{
-font-size:5px !important;
-}
-.ppob-balance-box .pbb-amount{
-font-size:9px !important;
-}
-.ppob-grid{
-gap:4px !important;
-}
-.ppob-grid-item{
-padding:5px 2px !important;
-}
-.ppob-grid-item i{
-font-size:8px !important;
-margin-bottom:2px !important;
-}
-.ppob-grid-item span{
-font-size:4.5px !important;
-}
-.ppob-debit-mini{
-width:110px !important;
-height:70px !important;
-}
-.pdm-inner{
-padding:8px 10px !important;
-}
-.pdm-num{
-font-size:6.5px !important;
-}
-.pdm-bank{
-font-size:5.5px !important;
-}
-.pdm-type{
-font-size:5px !important;
-}
-.pdm-name{
-font-size:5.5px !important;
-}
-.pdm-badge{
-font-size:5px !important;
-}
-.ppob-float-card{
-padding:6px 8px !important;
-}
-.pfc-icon{
-width:22px !important;
-height:22px !important;
-font-size:9px !important;
-}
-.pfc-val{
-font-size:8px !important;
-}
-.pfc-lbl{
-font-size:5.5px !important;
-}
-.pfc-pulsa{
-left:-3% !important;
-}
-.pfc-listrik{
-right:-3% !important;
-}
-.pfc-transfer{
-left:-2% !important;
-}
-.glass-card{
-padding:7px 10px !important;
-}
-.gc-icon{
-width:24px !important;
-height:24px !important;
-font-size:10px !important;
-}
-.gc-val{
-font-size:9px !important;
-}
-.gc-lbl{
-font-size:7px !important;
-}
-.gc-1{
-left:-2% !important;
-bottom:0 !important;
-}
-.gc-2{
-right:-2% !important;
-}
-.gc-3{
-right:-3% !important;
-}
-.hero-title{
-font-size:clamp(1.5rem,6vw,2rem) !important;
-margin-bottom:10px !important;
-}
-.hero-desc{
-font-size:12px !important;
-margin-bottom:12px !important;
-}
-.hero-badge{
-padding:4px 12px !important;
-font-size:10px !important;
-margin-bottom:10px !important;
-}
-.hero-btns{
-margin-bottom:14px !important;
-flex-wrap:nowrap !important;
-gap:8px !important;
-justify-content:center !important;
-}
-.hero-btns .btn{
-padding:10px 8px !important;
-font-size:11px !important;
-flex:1 !important;
-width:50% !important;
-justify-content:center !important;
-text-align:center !important;
-white-space:nowrap !important;
-}
-.hero-metrics{
-gap:0 !important;
-}
-.metric{
-padding:0 10px !important;
-}
-.metric-val{
-font-size:18px !important;
-}
-.metric-lbl{
-font-size:9px !important;
-}
-.hero-controls{
-bottom:15px !important;
-}
-.slide-tab{
-width:50px !important;
-}
-.slide-tab.active{
-width:65px !important;
-}
-.orbit.o1,
-.orbit.o2,
-.orbit.o3{
-display:none !important;
-}
-.card-glow{
-width:50% !important;
-height:50% !important;
-}
+.hero{min-height:100vh !important;padding-top:0 !important;padding-bottom:60px !important;display:flex !important;align-items:center !important}
+.hero-slide{padding-top:80px !important;padding-bottom:20px !important;align-items:center !important}
+.hero-container{padding:0 15px !important}
+.hero-grid-layout{grid-template-columns:1fr !important;gap:20px !important;text-align:center !important}
+.visual-stage{max-width:280px !important;margin:0 auto !important;aspect-ratio:1 !important}
+.card-3d-wrapper{width:260px !important;height:200px !important}
+.buku-tabungan{width:180px !important;height:112px !important}
+.bt-binding{width:14px !important}
+.bt-binding::before{left:2px !important;width:8px !important}
+.bt-inner{left:14px !important;padding:10px 10px 8px 8px !important}
+.bt-logo{width:20px !important;height:20px !important;min-width:20px !important;font-size:7px !important;border-radius:4px !important}
+.bt-bank-name{font-size:7px !important;letter-spacing:.5px !important}
+.bt-bank-tagline{font-size:5px !important}
+.bt-emblem{width:18px !important;height:18px !important;font-size:4.5px !important}
+.bt-divider{margin:0 0 5px !important}
+.bt-title{font-size:10px !important;letter-spacing:1px !important}
+.bt-subtitle{font-size:5.5px !important;letter-spacing:1px !important}
+.bt-account-label{font-size:4.5px !important}
+.bt-account-num{font-size:7px !important;letter-spacing:1px !important}
+.bt-account-name{font-size:6px !important}
+.bt-lps{font-size:4.5px !important}
+.bt-year{font-size:5.5px !important}
+.bt-bookmark{width:8px !important;height:14px !important;right:25px !important}
+.bt-pages{width:3px !important;right:-2px !important;top:3px !important;bottom:3px !important}
+.bt-title-ornament{margin-bottom:2px !important}
+.bt-title-ornament i{font-size:5px !important}
+.loan-card{width:180px !important;height:112px !important}
+.lc-inner{padding:10px 12px !important}
+.lc-value{font-size:14px !important}
+.lc-bank-name{font-size:8px !important}
+.lc-bank-sub{font-size:5.5px !important}
+.lc-label{font-size:5.5px !important}
+.lc-sub{font-size:7px !important;margin-top:2px !important}
+.lc-ft-label{font-size:5px !important}
+.lc-ft-val{font-size:7px !important}
+.lc-icon-grid .lc-ig{width:18px !important;height:18px !important;font-size:8px !important}
+.lc-watermark{font-size:40px !important}
+.lc-ribbon{padding:3px 10px 3px 14px !important;font-size:6px !important}
+.ppob-phone{width:110px !important;height:185px !important}
+.ppob-screen{inset:18px 8px 32px !important;padding:8px !important}
+.ppob-header .ppob-logo{font-size:7px !important}
+.ppob-header .ppob-sub{font-size:5px !important}
+.ppob-balance-box{padding:5px !important;margin-bottom:5px !important}
+.ppob-balance-box .pbb-label{font-size:5px !important}
+.ppob-balance-box .pbb-amount{font-size:9px !important}
+.ppob-grid{gap:4px !important}
+.ppob-grid-item{padding:5px 2px !important}
+.ppob-grid-item i{font-size:8px !important;margin-bottom:2px !important}
+.ppob-grid-item span{font-size:4.5px !important}
+.ppob-debit-mini{width:110px !important;height:70px !important}
+.pdm-inner{padding:8px 10px !important}
+.pdm-num{font-size:6.5px !important}
+.pdm-bank{font-size:5.5px !important}
+.pdm-type{font-size:5px !important}
+.pdm-name{font-size:5.5px !important}
+.pdm-badge{font-size:5px !important}
+.ppob-float-card{padding:6px 8px !important}
+.pfc-icon{width:22px !important;height:22px !important;font-size:9px !important}
+.pfc-val{font-size:8px !important}
+.pfc-lbl{font-size:5.5px !important}
+.pfc-pulsa{left:-3% !important}
+.pfc-listrik{right:-3% !important}
+.pfc-transfer{left:-2% !important}
+.glass-card{padding:7px 10px !important}
+.gc-icon{width:24px !important;height:24px !important;font-size:10px !important}
+.gc-val{font-size:9px !important}
+.gc-lbl{font-size:7px !important}
+.gc-1{left:-2% !important;bottom:0 !important}
+.gc-2{right:-2% !important}
+.gc-3{right:-3% !important}
+.hero-title{font-size:clamp(1.5rem,6vw,2rem) !important;margin-bottom:10px !important}
+.hero-desc{font-size:12px !important;margin-bottom:12px !important}
+.hero-badge{padding:4px 12px !important;font-size:10px !important;margin-bottom:10px !important}
+.hero-btns{margin-bottom:14px !important;flex-wrap:nowrap !important;gap:8px !important;justify-content:center !important}
+.hero-btns .btn{padding:10px 8px !important;font-size:11px !important;flex:1 !important;width:50% !important;justify-content:center !important;text-align:center !important;white-space:nowrap !important}
+.hero-metrics{gap:0 !important}
+.metric{padding:0 10px !important}
+.metric-val{font-size:18px !important}
+.metric-lbl{font-size:9px !important}
+.hero-controls{bottom:15px !important}
+.slide-tab{width:50px !important}
+.slide-tab.active{width:65px !important}
+.orbit.o1,.orbit.o2,.orbit.o3{display:none !important}
+.card-glow{width:50% !important;height:50% !important}
 }
 @media(max-width:480px){
-.hero{
-min-height:100vh !important;
-}
-.hero-slide{
-padding-top:70px !important;
-}
-.visual-stage{
-max-width:240px !important;
-}
-.card-3d-wrapper{
-width:220px !important;
-height:170px !important;
-}
-.buku-tabungan,
-.loan-card{
-width:155px !important;
-height:97px !important;
-}
-.ppob-phone{
-width:95px !important;
-height:160px !important;
-}
-.ppob-debit-mini{
-width:95px !important;
-height:60px !important;
-}
-.hero-title{
-font-size:clamp(1.3rem,5.5vw,1.8rem) !important;
-}
-.hero-desc{
-font-size:11px !important;
-}
-.hero-btns{
-gap:6px !important;
-}
-.hero-btns .btn{
-padding:10px 6px !important;
-font-size:10px !important;
-letter-spacing:0 !important;
-gap:5px !important;
-}
-.hero-btns .btn i{
-font-size:12px !important;
-}
-.metric-val{
-font-size:16px !important;
-}
-.metric-lbl{
-font-size:8px !important;
-}
+.hero{min-height:100vh !important}
+.hero-slide{padding-top:70px !important}
+.visual-stage{max-width:240px !important}
+.card-3d-wrapper{width:220px !important;height:170px !important}
+.buku-tabungan,.loan-card{width:155px !important;height:97px !important}
+.ppob-phone{width:95px !important;height:160px !important}
+.ppob-debit-mini{width:95px !important;height:60px !important}
+.hero-title{font-size:clamp(1.3rem,5.5vw,1.8rem) !important}
+.hero-desc{font-size:11px !important}
+.hero-btns{gap:6px !important}
+.hero-btns .btn{padding:10px 6px !important;font-size:10px !important;letter-spacing:0 !important;gap:5px !important}
+.hero-btns .btn i{font-size:12px !important}
+.metric-val{font-size:16px !important}
+.metric-lbl{font-size:8px !important}
 }
 @media(max-width:768px){
-.hero-btns{
-flex-direction:row !important;
-flex-wrap:nowrap !important;
-gap:10px !important;
-justify-content:center !important;
-align-items:center !important;
-width:100% !important;
-}
-.hero-btns .btn{
-width:auto !important;
-flex:1 1 0 !important;
-min-width:0 !important;
-max-width:none !important;
-padding:12px 14px !important;
-font-size:12px !important;
-white-space:nowrap !important;
-justify-content:center !important;
-gap:6px !important;
-}
-.hero-btns .btn i{
-font-size:13px !important;
-flex-shrink:0 !important;
-}
+.hero-btns{flex-direction:row !important;flex-wrap:nowrap !important;gap:10px !important;justify-content:center !important;align-items:center !important;width:100% !important}
+.hero-btns .btn{width:auto !important;flex:1 1 0 !important;min-width:0 !important;max-width:none !important;padding:12px 14px !important;font-size:12px !important;white-space:nowrap !important;justify-content:center !important;gap:6px !important}
+.hero-btns .btn i{font-size:13px !important;flex-shrink:0 !important}
 }
 @media(max-width:480px){
-.hero-btns{
-gap:8px !important;
-}
-.hero-btns .btn{
-padding:10px 10px !important;
-font-size:11px !important;
-letter-spacing:0 !important;
-gap:5px !important;
-}
-.hero-btns .btn i{
-font-size:12px !important;
-}
+.hero-btns{gap:8px !important}
+.hero-btns .btn{padding:10px 10px !important;font-size:11px !important;letter-spacing:0 !important;gap:5px !important}
+.hero-btns .btn i{font-size:12px !important}
 }
 @media(max-width:380px){
-.hero-btns{
-gap:6px !important;
-}
-.hero-btns .btn{
-padding:9px 8px !important;
-font-size:10px !important;
-gap:4px !important;
-}
-.hero-btns .btn i{
-font-size:11px !important;
-}
+.hero-btns{gap:6px !important}
+.hero-btns .btn{padding:9px 8px !important;font-size:10px !important;gap:4px !important}
+.hero-btns .btn i{font-size:11px !important}
 }
 @media(max-width:768px){
-.hero-metrics{
-margin-top:30px !important;
-padding-top:20px !important;
-border-top:1px solid rgba(200,169,81,.2) !important;
-}
+.hero-metrics{margin-top:30px !important;padding-top:20px !important;border-top:1px solid rgba(200,169,81,.2) !important}
 }
 @media(max-width:480px){
-.hero-metrics{
-margin-top:25px !important;
-padding-top:16px !important;
-}
+.hero-metrics{margin-top:25px !important;padding-top:16px !important}
 }
 </style>
 </head>
@@ -1649,28 +970,28 @@ padding-top:16px !important;
 <!-- TAB KARIR -->
 <div class="about-content" id="tab-karir"><div class="karir-grid"><div class="karir-text"><h3>Bergabung Bersama Kami</h3><p>Kami mencari talenta terbaik yang bersemangat untuk tumbuh bersama.</p><div class="karir-benefits"><div class="karir-benefit"><i class="fas fa-heartbeat"></i> Asuransi Kesehatan</div><div class="karir-benefit"><i class="fas fa-graduation-cap"></i> Program Pelatihan</div><div class="karir-benefit"><i class="fas fa-chart-line"></i> Jenjang Karir Jelas</div><div class="karir-benefit"><i class="fas fa-coins"></i> Bonus Tahunan</div><div class="karir-benefit"><i class="fas fa-umbrella-beach"></i> Cuti 18 Hari/Tahun</div><div class="karir-benefit"><i class="fas fa-laptop"></i> Flexible Working</div></div><a href="#" class="btn btn-primary"><i class="fas fa-search"></i> Lihat Lowongan</a></div><div class="karir-visual"><i class="fas fa-people-group"></i><div class="kv-float"><h5>50+ Posisi Terbuka</h5><p>Bergabunglah dengan 12.000+ karyawan kami</p></div></div></div></div></div></section>
 
-<!-- ═══ PRODUK ══ -->
+<!-- ═══ PRODUK ═══ -->
 <section class="products" id="produk"><div class="container"><div class="section-title"><div class="st-badge"><i class="fas fa-box-open"></i> Produk & Layanan</div><h2>Solusi Keuangan Lengkap</h2><p>Pilih produk perbankan yang tepat untuk kebutuhan Anda</p><div class="underline"></div></div><div class="products-grid"><div class="product-card" id="prod-tabungan"><div class="product-card-header"><i class="fas fa-piggy-bank"></i><h3>Tabungan</h3><p>Simpanan aman & menguntungkan</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> Setoran awal Rp 100.000</li><li><i class="fas fa-check-circle"></i> Setor Tarik di semua Cabang</li><li><i class="fas fa-check-circle"></i> Bunga bersaing</li></ul><a href="https://nowgodigital.github.io/bankdamara/tabungan.html" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div></div><div class="product-card" id="prod-deposito"><div class="product-card-header"><i class="fas fa-chart-line"></i><h3>Deposito</h3><p>Investasi aman & terjamin</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> Bunga hingga penjaminan LPS</li><li><i class="fas fa-check-circle"></i> Tenor fleksibel 1-24 bulan</li><li><i class="fas fa-check-circle"></i> ARO otomatis</li><li><i class="fas fa-check-circle"></i> Dijamin LPS</li></ul><a href="https://nowgodigital.github.io/bankdamara/deposito.html" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div></div><div class="product-card" id="prod-pinjaman"><div class="product-card-header"><i class="fas fa-hand-holding-usd"></i><h3>Pinjaman</h3><p>Solusi kredit fleksibel</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> Bunga Rendah</li><li><i class="fas fa-check-circle"></i> Kredit Modal Kerja</li><li><i class="fas fa-check-circle"></i> Kredit Konsumtif</li><li><i class="fas fa-check-circle"></i> Kredit Investasi</li></ul><a href="https://nowgodigital.github.io/bankdamara/pinjaman.html" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div></div><div class="product-card" id="prod-layanan"><div class="product-card-header"><i class="fas fa-concierge-bell"></i><h3>Layanan Jasa</h3><p>Transfer dan PPOB</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> Layanan Jasa Transfer</li><li><i class="fas fa-check-circle"></i> Layanan PPOB</li><li><i class="fas fa-check-circle"></i> Virtual Account</li></ul><a href="layanan.html" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div></div></div></div></section>
 
 <!-- ═══ LELANG ═══ -->
 <section class="lelang-section" id="lelang"><div class="container"><div class="section-title"><div class="st-badge"><i class="fas fa-gavel"></i> Lelang Agunan</div><h2>Agunan Pilihan Harga Terjangkau</h2><p>Temukan properti, kendaraan, dan aset berharga dengan harga di bawah pasaran</p><div class="underline"></div></div><div class="lelang-intro"><div class="lelang-intro-img"><i class="fas fa-building-columns"></i><div class="li-badge"><i class="fas fa-fire"></i> Hot Deal</div></div><div class="lelang-intro-text"><h3>Mengapa Lelang Agunan Kami?</h3><p>Berbagai aset agunan yang telah melalui verifikasi legalitas dan appraisal profesional.</p><div class="lelang-stats"><div class="lelang-stat"><div class="ls-val">250+</div><div class="ls-lbl">Aset Tersedia</div></div><div class="lelang-stat"><div class="ls-val">34</div><div class="ls-lbl">Provinsi</div></div><div class="lelang-stat"><div class="ls-val">15%</div><div class="ls-lbl">Di Bawah NJOP</div></div><div class="lelang-stat"><div class="ls-val">100%</div><div class="ls-lbl">Legal & Aman</div></div></div><a href="https://nowgodigital.github.io/bankdamara/lelang.html" class="btn btn-primary"><i class="fas fa-search"></i> Lihat Semua Agunan</a></div></div></div></div></div></section>
 
 <!-- ═══ GALERI INFORMASI ═══ -->
-<section class="gallery-info-section" id="galeri-informasi"><div class="container"><div class="gallery-section-header"><div class="section-badge"><i class="fas fa-circle"></i> Update Terkini</div><h2>GALERI <span>INFORMASI</span></h2><p>Dapatkan informasi terbaru seputar kurs mata uang, aktivitas, dan video terkini dari BANK NUSANTARA</p><div class="title-divider"></div></div><div class="gallery-banner-wrapper"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1400&h=400&fit=crop" alt="BANK NUSANTARA - Promo & Informasi Terkini" loading="lazy" onerror="this.src='https://placehold.co/1400x300/1a365d/c6a456?text=BANK+NUSANTARA+%E2%80%94+Galeri+Informasi'"><div class="gallery-banner-overlay"><h3> Promo Spesial Bulan Ini</h3><p>Nikmati berbagai penawaran menarik dari BANK NUSANTARA untuk Anda</p></div></div><div class="gallery-grid"><div class="gallery-card"><div class="gallery-card-header"><div class="card-title-group"><div class="card-icon kurs-icon"><i class="fas fa-exchange-alt"></i></div><div><h4>Kurs Mata Uang</h4><p class="card-subtitle">Nilai tukar terhadap Rupiah</p></div></div><span class="kurs-update-time" id="kurs-update-time"><span class="live-dot"></span> Memuat...</span></div><div class="kurs-table-wrapper"><table class="kurs-table"><thead><tr><th>Mata Uang</th><th></th><th>Jual (IDR)</th><th>Beli (IDR)</th></tr></thead><tbody id="kurs-tbody"></tbody></table><p class="kurs-jpy-note">* JPY: kurs per 100 Yen Jepang</p></div><div class="kurs-source"><div class="kurs-source-info"><i class="fas fa-database"></i> Sumber: <strong>&nbsp;<a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer">ExchangeRate-API</a></strong></div><div class="kurs-update-time" style="font-size:.58rem"><i class="fas fa-sync-alt"></i> Auto 24 jam</div></div></div><div class="gallery-card ig-widget-card"><div class="gallery-card-header"><div class="card-title-group"><div class="card-icon ig-icon"><i class="fab fa-instagram"></i></div><div><h4>Instagram</h4><p class="card-subtitle">@bank_damara</p></div></div><a href="https://instagram.com/bank_damara" target="_blank" rel="noopener" style="color:#833AB4;font-size:.85rem" title="Buka Instagram"><i class="fas fa-external-link-alt"></i></a></div><div class="ig-live-widget" id="igLiveWidget"><div class="ig-post-skeleton"><i class="fab fa-instagram"></i><span>Memuat postingan...</span></div><div class="ig-post-skeleton"><i class="fab fa-instagram"></i><span>Memuat postingan...</span></div><div class="ig-post-skeleton"><i class="fab fa-instagram"></i><span>Memuat postingan...</span></div></div><div class="ig-widget-footer"><div class="ig-widget-info"><span class="ig-live-dot"></span><span id="igLastUpdate">Otomatis sync</span></div><button class="ig-refresh-btn" onclick="refreshIGWidget()" title="Refresh postingan"><i class="fas fa-sync-alt"></i> Refresh</button></div><a href="https://instagram.com/bank_damara" target="_blank" rel="noopener" class="ig-follow-btn"><i class="fab fa-instagram"></i> Follow @bank_damara</a></div><div class="gallery-card yt-widget-card"><div class="gallery-card-header"><div class="card-title-group"><div class="card-icon yt-icon"><i class="fab fa-youtube"></i></div><div><h4>YouTube</h4><p class="card-subtitle">@DAMARALOTARA</p></div></div><a href="https://www.youtube.com/@DAMARALOTARA" target="_blank" rel="noopener" style="color:#ff0000;font-size:.85rem" title="Buka YouTube"><i class="fas fa-external-link-alt"></i></a></div><div class="yt-main-player" id="ytMainPlayer"><div class="yt-video-frame"><iframe id="ytMainFrame" src="https://www.youtube.com/embed/?listType=user_uploads&list=DAMARALOTARA" title="NUSANTARA LOTARA - Video Terbaru" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div><div class="yt-playlist-section" id="ytPlaylistSection"><div class="yt-playlist-header"><i class="fas fa-list"></i> Video Terbaru</div><div class="yt-playlist-list" id="ytPlaylistList"><div class="yt-loading"><i class="fas fa-spinner fa-spin"></i> Memuat video...</div></div></div><div class="ig-widget-footer"><div class="ig-widget-info"><span class="ig-live-dot"></span><span id="ytLastUpdate">Channel @DAMARALOTARA</span></div><button class="ig-refresh-btn" onclick="refreshYTWidget()" title="Refresh video"><i class="fas fa-sync-alt"></i> Refresh</button></div><a href="https://www.youtube.com/@DAMARALOTARA?sub_confirmation=1" target="_blank" rel="noopener" class="yt-subscribe-btn"><i class="fab fa-youtube"></i> Subscribe @DAMARALOTARA</a></div></div></div></section>
+<section class="gallery-info-section" id="galeri-informasi"><div class="container"><div class="gallery-section-header"><div class="section-badge"><i class="fas fa-circle"></i> Update Terkini</div><h2>GALERI <span>INFORMASI</span></h2><p>Dapatkan informasi terbaru seputar kurs mata uang, aktivitas, dan video terkini dari BANK NUSANTARA</p><div class="title-divider"></div></div><div class="gallery-banner-wrapper"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1400&h=400&fit=crop" alt="BANK NUSANTARA - Promo & Informasi Terkini" loading="lazy" onerror="this.src='https://placehold.co/1400x300/1a365d/c6a456?text=BANK+NUSANTARA+%E2%80%94+Galeri+Informasi'"><div class="gallery-banner-overlay"><h3>🏦 Promo Spesial Bulan Ini</h3><p>Nikmati berbagai penawaran menarik dari BANK NUSANTARA untuk Anda</p></div></div><div class="gallery-grid"><div class="gallery-card"><div class="gallery-card-header"><div class="card-title-group"><div class="card-icon kurs-icon"><i class="fas fa-exchange-alt"></i></div><div><h4>Kurs Mata Uang</h4><p class="card-subtitle">Nilai tukar terhadap Rupiah</p></div></div><span class="kurs-update-time" id="kurs-update-time"><span class="live-dot"></span> Memuat...</span></div><div class="kurs-table-wrapper"><table class="kurs-table"><thead><tr><th>Mata Uang</th><th></th><th>Jual (IDR)</th><th>Beli (IDR)</th></tr></thead><tbody id="kurs-tbody"></tbody></table><p class="kurs-jpy-note">* JPY: kurs per 100 Yen Jepang</p></div><div class="kurs-source"><div class="kurs-source-info"><i class="fas fa-database"></i> Sumber: <strong>&nbsp;<a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer">ExchangeRate-API</a></strong></div><div class="kurs-update-time" style="font-size:.58rem"><i class="fas fa-sync-alt"></i> Auto 24 jam</div></div></div><div class="gallery-card ig-widget-card"><div class="gallery-card-header"><div class="card-title-group"><div class="card-icon ig-icon"><i class="fab fa-instagram"></i></div><div><h4>Instagram</h4><p class="card-subtitle">@bank_damara</p></div></div><a href="https://instagram.com/bank_damara" target="_blank" rel="noopener" style="color:#833AB4;font-size:.85rem" title="Buka Instagram"><i class="fas fa-external-link-alt"></i></a></div><div class="ig-live-widget" id="igLiveWidget"><div class="ig-post-skeleton"><i class="fab fa-instagram"></i><span>Memuat postingan...</span></div><div class="ig-post-skeleton"><i class="fab fa-instagram"></i><span>Memuat postingan...</span></div><div class="ig-post-skeleton"><i class="fab fa-instagram"></i><span>Memuat postingan...</span></div></div><div class="ig-widget-footer"><div class="ig-widget-info"><span class="ig-live-dot"></span><span id="igLastUpdate">Otomatis sync</span></div><button class="ig-refresh-btn" onclick="refreshIGWidget()" title="Refresh postingan"><i class="fas fa-sync-alt"></i> Refresh</button></div><a href="https://instagram.com/bank_damara" target="_blank" rel="noopener" class="ig-follow-btn"><i class="fab fa-instagram"></i> Follow @bank_damara</a></div><div class="gallery-card yt-widget-card"><div class="gallery-card-header"><div class="card-title-group"><div class="card-icon yt-icon"><i class="fab fa-youtube"></i></div><div><h4>YouTube</h4><p class="card-subtitle">@DAMARALOTARA</p></div></div><a href="https://www.youtube.com/@DAMARALOTARA" target="_blank" rel="noopener" style="color:#ff0000;font-size:.85rem" title="Buka YouTube"><i class="fas fa-external-link-alt"></i></a></div><div class="yt-main-player" id="ytMainPlayer"><div class="yt-video-frame"><iframe id="ytMainFrame" src="https://www.youtube.com/embed/?listType=user_uploads&list=DAMARALOTARA" title="NUSANTARA LOTARA - Video Terbaru" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div><div class="yt-playlist-section" id="ytPlaylistSection"><div class="yt-playlist-header"><i class="fas fa-list"></i> Video Terbaru</div><div class="yt-playlist-list" id="ytPlaylistList"><div class="yt-loading"><i class="fas fa-spinner fa-spin"></i> Memuat video...</div></div></div><div class="ig-widget-footer"><div class="ig-widget-info"><span class="ig-live-dot"></span><span id="ytLastUpdate">Channel @DAMARALOTARA</span></div><button class="ig-refresh-btn" onclick="refreshYTWidget()" title="Refresh video"><i class="fas fa-sync-alt"></i> Refresh</button></div><a href="https://www.youtube.com/@DAMARALOTARA?sub_confirmation=1" target="_blank" rel="noopener" class="yt-subscribe-btn"><i class="fab fa-youtube"></i> Subscribe @DAMARALOTARA</a></div></div></div></section>
 
 <!-- ═══ LPS & SUKU BUNGA ═══ -->
 <section style="padding:0 0 30px;background:linear-gradient(180deg,#f8fafc 0%,#fff 100%);margin-top:-10px"><div class="container"><div style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.06)"><div style="display:flex;border-bottom:1px solid #e8ecf2"><button id="lpsTabBtn1" onclick="switchLpsSbTab('lps')" style="flex:1;padding:11px 10px;background:linear-gradient(135deg,#023b96,#1a5bc7);color:#fff;font-size:12px;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;font-family:'Inter',sans-serif"><i class="fas fa-shield-alt" style="color:#c8a951;font-size:11px"></i><span>Penjaminan LPS</span></button><button id="lpsTabBtn2" onclick="switchLpsSbTab('bunga')" style="flex:1;padding:11px 10px;background:#f8fafc;color:#64748b;font-size:12px;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;font-family:'Inter',sans-serif;border-left:1px solid #e8ecf2"><i class="fas fa-percent" style="color:#94a3b8;font-size:11px"></i><span>Suku Bunga BPR</span></button></div><div style="padding:16px 20px 18px"><div id="lpsContent-lps" style="display:block;animation:lpsFadeIn .3s ease"><div style="display:flex;align-items:center;gap:14px" class="lps-lps-row"><div style="background:linear-gradient(135deg,rgba(2,59,150,.05),rgba(21,101,192,.03));border-radius:12px;padding:12px 16px;border:1px solid rgba(2,59,150,.08);text-align:center;min-width:90px"><div style="font-size:9px;color:#94a3b8;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:4px">Bunga LPS</div><div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:#023b96;line-height:1">6<span style="font-size:14px;opacity:.6">%</span></div></div><div style="flex:1"><div style="display:flex;align-items:center;gap:6px;margin-bottom:6px"><i class="fas fa-calendar-alt" style="color:#c8a951;font-size:10px"></i><span style="font-size:11px;color:#475569;font-weight:600">LPS BPR: 1 Juni 2025 — 30 September 2025</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:8px"><i class="fas fa-info-circle" style="color:#1a5bc7;font-size:10px;margin-top:2px;flex-shrink:0"></i><span style="font-size:11px;color:#475569;line-height:1.5">Maks. simpanan dijamin: <strong style="color:#023b96">Rp. 2 Miliar</strong> per Nasabah per Bank</span></div><a href="https://www.lps.go.id" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;padding:6px 14px;background:linear-gradient(135deg,#023b96,#1a5bc7);color:#fff;border-radius:20px;font-size:11px;font-weight:700;text-decoration:none;box-shadow:0 3px 10px rgba(2,59,150,.15);transition:all .3s ease" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 16px rgba(2,59,150,.25)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 3px 10px rgba(2,59,150,.15)'"><i class="fas fa-external-link-alt" style="font-size:8px"></i> Cek Bunga LPS</a></div></div></div><div id="lpsContent-bunga" style="display:none"><div style="display:flex;align-items:center;gap:12px" class="lps-bunga-row"><div style="flex:1;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);border-radius:12px;padding:14px 12px;text-align:center;border:1px solid rgba(46,125,50,.1)"><div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:4px"><i class="fas fa-piggy-bank" style="color:#2e7d32;font-size:14px"></i><span style="font-size:9px;color:#2e7d32;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:.7">Tabungan</span></div><div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:#2e7d32;line-height:1">4,00<span style="font-size:14px;opacity:.6">%</span></div><div style="font-size:9px;color:#2e7d32;opacity:.5;margin-top:2px">per tahun</div></div><div style="flex:1;background:linear-gradient(135deg,#e3f2fd,#bbdefb);border-radius:12px;padding:14px 12px;text-align:center;border:1px solid rgba(21,101,192,.1)"><div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:4px"><i class="fas fa-chart-line" style="color:#1565c0;font-size:14px"></i><span style="font-size:9px;color:#1565c0;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:.7">Deposito</span></div><div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:#1565c0;line-height:1">6,50<span style="font-size:14px;opacity:.6">%</span></div><div style="font-size:9px;color:#1565c0;opacity:.5;margin-top:2px">per tahun</div></div><div style="display:flex;align-items:center;gap:6px;padding:8px 10px;background:rgba(255,152,0,.06);border-radius:8px;border:1px solid rgba(255,152,0,.1);max-width:120px" class="lps-disclaimer-box"><i class="fas fa-exclamation-triangle" style="color:#ff9800;font-size:10px;flex-shrink:0"></i><span style="font-size:10px;color:#64748b;line-height:1.4">Sewaktu-waktu dapat berubah</span></div></div></div></div></div><style>@keyframes lpsFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}@media(max-width:768px){.lps-lps-row{flex-direction:column !important;gap:10px !important}.lps-lps-row > div:first-child{min-width:auto !important;width:100%}.lps-bunga-row{flex-direction:column !important;gap:10px !important}.lps-bunga-row > div{max-width:100% !important;width:100% !important}.lps-disclaimer-box{max-width:100% !important}}#lpsTabBtn1,#lpsTabBtn2{padding:15px 10px !important;justify-content:center !important;text-align:center !important}</style><script>function switchLpsSbTab(tab){document.querySelectorAll('[id^="lpsContent-"]').forEach(function(el){el.style.display='none'});document.getElementById('lpsTabBtn1').style.background='#f8fafc';document.getElementById('lpsTabBtn1').style.color='#64748b';document.getElementById('lpsTabBtn1').querySelector('i').style.color='#94a3b8';document.getElementById('lpsTabBtn2').style.background='#f8fafc';document.getElementById('lpsTabBtn2').style.color='#64748b';document.getElementById('lpsTabBtn2').querySelector('i').style.color='#94a3b8';var t=document.getElementById('lpsContent-'+tab);if(t){t.style.display='block';t.style.animation='none';t.offsetHeight;t.style.animation='lpsFadeIn .3s ease'}if(tab==='lps'){document.getElementById('lpsTabBtn1').style.background='linear-gradient(135deg,#023b96,#1a5bc7)';document.getElementById('lpsTabBtn1').style.color='#fff';document.getElementById('lpsTabBtn1').querySelector('i').style.color='#c8a951';}else{document.getElementById('lpsTabBtn2').style.background='linear-gradient(135deg,#023b96,#1a5bc7)';document.getElementById('lpsTabBtn2').style.color='#fff';document.getElementById('lpsTabBtn2').querySelector('i').style.color='#c8a951';}}</script></div></section>
 
-<!-- ══ CTA ═══ -->
+<!-- ═══ CTA ═══ -->
 <section class="cta" style="position:relative;background:url('cta-bg.jpg') center center / cover no-repeat;padding:35px 0;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg, rgba(2,59,150,.88) 0%, rgba(26,91,199,.85) 50%, rgba(1,26,61,.92) 100%);z-index:1"></div><div class="container" style="position:relative;z-index:2"><div class="cta-content" style="text-align:center;padding:0"><h2 style="color:#fff;font-family:'Playfair Display',serif;font-size:28px;font-weight:800;margin:0 0 8px;white-space:nowrap;line-height:1.2">Siap Memulai Perjalanan Finansial Anda?</h2><p style="color:rgba(255,255,255,.85);font-size:14px;font-weight:400;margin:0 0 20px;white-space:nowrap;line-height:1.4">Bergabunglah dengan jutaan nasabah yang telah mempercayakan keuangan mereka kepada BANK NUSANTARA</p><div class="cta-buttons" style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap"><a href="tabungan.html" style="display:inline-flex;align-items:center;gap:8px;padding:11px 24px;background:linear-gradient(135deg,#c8a951,#e0c76a);color:#023b96;border-radius:50px;font-size:13px;font-weight:700;text-decoration:none;box-shadow:0 6px 20px rgba(200,169,81,.4);transition:all .3s ease" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 30px rgba(200,169,81,.6)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 6px 20px rgba(200,169,81,.4)'"><i class="fas fa-piggy-bank"></i> Buka Tabungan</a><a href="https://wa.me/6281234567890" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:11px 24px;background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.4);border-radius:50px;font-size:13px;font-weight:700;text-decoration:none;backdrop-filter:blur(10px);transition:all .3s ease" onmouseover="this.style.background='rgba(255,255,255,.25)';this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(255,255,255,.12)';this.style.transform='translateY(0)'"><i class="fab fa-whatsapp"></i> Hubungi Kami</a></div></div></div></section>
 <style>@media(max-width:768px){.cta-content h2{white-space:normal !important;font-size:22px !important}.cta-content p{white-space:normal !important;font-size:13px !important}}</style>
 
-<!-- ══ FOOTER (PELAPORAN DIHAPUS) ═══ -->
-<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Tentang BANK NUSANTARA</h4><p>Bank nasional terpercaya sejak 1985 dengan layanan perbankan terbaik dan keamanan tinggi.</p><p><i class="fas fa-map-marker-alt" style="color:var(--secondary)"></i> Jl. Jend. Sudirman Kav. 88, Jakarta Pusat 10220</p><div class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="https://instagram.com/bank_damara" target="_blank"><i class="fab fa-instagram"></i></a><a href="#"><i class="fas fa-youtube"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div><div class="footer-col"><h4>Produk</h4><ul><li><a href="#produk" data-product="tabungan">Tabungan</a></li><li><a href="#produk" data-product="deposito">Deposito</a></li><li><a href="#produk" data-product="pinjaman">Pinjaman</a></li><li><a href="layanan.html">Layanan Digital</a></li><li><a href="#lelang">Lelang Agunan</a></li></ul></div><div class="footer-col"><h4>Perusahaan</h4><ul><li><a href="#tentang" data-tab="profil">Profil</a></li><li><a href="#tentang" data-tab="visi">Visi & Misi</a></li><li><a href="#tentang" data-tab="manajemen">Manajemen</a></li><li><a href="#tentang" data-tab="karir">Karir</a></li></ul></div><div class="footer-col"><h4>Bantuan</h4><ul><li><a href="#">FAQ</a></li><li><a href="https://wa.me/6281234567890" target="_blank">Hubungi Kami</a></li><li><a href="#">Kebijakan Privasi</a></li><li><a href="#">Syarat & Ketentuan</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BANK NUSANTARA. Seluruh hak cipta dilindungi. Terdaftar dan diawasi OJK.</p><div class="footer-bottom-links"><a href="#">Keamanan</a></div></div></div></footer>
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Tentang BANK NUSANTARA</h4><p>Bank nasional terpercaya sejak 1985 dengan layanan perbankan terbaik dan keamanan tinggi.</p><p><i class="fas fa-map-marker-alt" style="color:var(--secondary)"></i> Jl. Jend. Sudirman Kav. 88, Jakarta Pusat 10220</p><div class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="https://instagram.com/bank_damara" target="_blank"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div><div class="footer-col"><h4>Produk</h4><ul><li><a href="#produk" data-product="tabungan">Tabungan</a></li><li><a href="#produk" data-product="deposito">Deposito</a></li><li><a href="#produk" data-product="pinjaman">Pinjaman</a></li><li><a href="layanan.html">Layanan Digital</a></li><li><a href="#lelang">Lelang Agunan</a></li></ul></div><div class="footer-col"><h4>Perusahaan</h4><ul><li><a href="#tentang" data-tab="profil">Profil</a></li><li><a href="#tentang" data-tab="visi">Visi & Misi</a></li><li><a href="#tentang" data-tab="manajemen">Manajemen</a></li><li><a href="#tentang" data-tab="karir">Karir</a></li></ul></div><div class="footer-col"><h4>Bantuan</h4><ul><li><a href="#">FAQ</a></li><li><a href="https://wa.me/6281234567890" target="_blank">Hubungi Kami</a></li><li><a href="#">Kebijakan Privasi</a></li><li><a href="#">Syarat & Ketentuan</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BANK NUSANTARA. Seluruh hak cipta dilindungi. Terdaftar dan diawasi OJK.</p><div class="footer-bottom-links"><a href="#">Keamanan</a></div></div></div></footer>
 <button class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
 <div class="wa-float" id="waFloat"><a href="https://wa.me/6281234567890" target="_blank" class="wa-float-btn"><i class="fab fa-whatsapp"></i></a><div class="wa-float-label">Butuh bantuan? Chat kami!</div></div>
 
-<!-- ═══ HERO BACKGROUND SWITCHER ═══ -->
+<!-- ═══ HERO BACKGROUND SWITCHER ══ -->
 <script>
 (function(){
 'use strict';
@@ -1717,7 +1038,7 @@ slides.forEach(function(slide) { observer.observe(slide, { attributes: true }); 
 })();
 </script>
 
-<!-- ═══ JAVASCRIPT UTAMA ══ -->
+<!-- ══ JAVASCRIPT UTAMA ═══ -->
 <script>
 (function(){try{var c=document.getElementById('heroParticles');if(!c)return;for(var i=0;i<30;i++){var p=document.createElement('div');p.classList.add('h-particle');var s=Math.random()*3+1.5;var colors=['rgba(200,169,81,0.6)','rgba(30,136,229,0.4)','rgba(255,255,255,0.3)'];p.style.cssText='left:'+Math.random()*100+'%;width:'+s+'px;height:'+s+'px;background:'+colors[Math.floor(Math.random()*3)]+';animation-duration:'+(Math.random()*15+8)+'s;animation-delay:'+(Math.random()*10)+'s';c.appendChild(p)}}catch(e){}})();
 (function(){try{var hero=document.getElementById('beranda');var cards=document.querySelectorAll('.card-3d-wrapper');if(!hero)return;hero.addEventListener('mousemove',function(e){var r=hero.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-0.5;var y=(e.clientY-r.top)/r.height-0.5;cards.forEach(function(c){c.style.transform='rotateY('+x*12+'deg) rotateX('+(-y)*12+'deg)'})});hero.addEventListener('mouseleave',function(){cards.forEach(function(c){c.style.transform='rotateY(0) rotateX(0)'})})}catch(e){}})();
@@ -1743,7 +1064,7 @@ var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){i
 document.querySelectorAll('.product-card,.lelang-card,.quick-access-card,.budaya-card,.mgmt-card,.vm-card,.stat-item,.gallery-card').forEach(function(el){obs.observe(el)});
 </script>
 
-<!-- ═══ INSTAGRAM LIVE WIDGET ══ -->
+<!-- ═══ INSTAGRAM LIVE WIDGET ═══ -->
 <script>
 (function(){
 'use strict';
@@ -1876,12 +1197,12 @@ var CACHE_KEY='bankdamara_kurs_cache';
 var CACHE_DURATION=3600000;
 var SPREAD_PERCENT=0.45;
 var CURRENCIES=[
-{code:'USD',name:'US Dollar',flag:'🇸'},
+{code:'USD',name:'US Dollar',flag:'🇺'},
 {code:'EUR',name:'Euro',flag:'🇪🇺'},
 {code:'GBP',name:'Poundsterling',flag:'🇬🇧'},
-{code:'JPY',name:'Yen Jepang',flag:'🇯🇵'},
-{code:'SGD',name:'Dolar Singapura',flag:'🇸🇬'},
-{code:'AUD',name:'Dolar Australia',flag:'🇺'}
+{code:'JPY',name:'Yen Jepang',flag:'🇵'},
+{code:'SGD',name:'Dolar Singapura',flag:'🇸'},
+{code:'AUD',name:'Dolar Australia',flag:'🇦🇺'}
 ];
 function formatRupiah(n){return n.toLocaleString('id-ID',{minimumFractionDigits:2,maximumFractionDigits:2})}
 function formatDateTime(d){return new Date(d).toLocaleString('id-ID',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',timeZone:'Asia/Jakarta',hour12:false})+' WIB'}
