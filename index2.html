@@ -147,101 +147,41 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .btn-outline:hover{background:var(--primary);color:#fff;transform:translateY(-3px)}
 .btn-dark{background:var(--primary);color:#fff}
 .btn-dark:hover{background:var(--primary-light);transform:translateY(-3px);box-shadow:0 8px 25px rgba(2,59,150,.3)}
-
-/* ══════════════════════════════════════════════════════════════
-   QUICK ACCESS CARDS — ELEGANT MINIMALIST
-   ══════════════════════════════════════════════════════════════ */
 .quick-access{margin-top:-40px;position:relative;z-index:10;padding-bottom:50px}
 .quick-access-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.quick-access-card{
-  background:#fff;
-  border-radius:18px;
-  padding:24px 18px 22px;
-  text-align:center;
-  cursor:pointer;
-  text-decoration:none;
-  color:var(--text-dark);
-  position:relative;
-  overflow:hidden;
-  border:1px solid rgba(0,0,0,.03);
-  box-shadow:0 2px 12px rgba(0,0,0,.04);
-  transition:all .35s cubic-bezier(.25,.46,.45,.94);
-}
-.quick-access-card::before{
-  content:'';
-  position:absolute;
-  top:0;left:50%;
-  transform:translateX(-50%);
-  width:0;height:3px;
-  border-radius:0 0 3px 3px;
-  transition:width .35s cubic-bezier(.25,.46,.45,.94);
-}
+.quick-access-card{background:#fff;border-radius:18px;padding:24px 18px 22px;text-align:center;cursor:pointer;text-decoration:none;color:var(--text-dark);position:relative;overflow:hidden;border:1px solid rgba(0,0,0,.03);box-shadow:0 2px 12px rgba(0,0,0,.04);transition:all .35s cubic-bezier(.25,.46,.45,.94)}
+.quick-access-card::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:0;height:3px;border-radius:0 0 3px 3px;transition:width .35s cubic-bezier(.25,.46,.45,.94)}
 .quick-access-card:hover::before{width:50%}
-.quick-access-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 12px 32px rgba(0,0,0,.08);
-  border-color:rgba(0,0,0,.05);
-}
+.quick-access-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(0,0,0,.08);border-color:rgba(0,0,0,.05)}
 .quick-access-card:nth-child(1)::before{background:linear-gradient(90deg,#1565c0,#42a5f5)}
 .quick-access-card:nth-child(2)::before{background:linear-gradient(90deg,#e65100,#ff9800)}
 .quick-access-card:nth-child(3)::before{background:linear-gradient(90deg,#2e7d32,#66bb6a)}
 .quick-access-card:nth-child(4)::before{background:linear-gradient(90deg,#c62828,#ef5350)}
-.quick-access-card .icon{
-  width:56px;height:56px;
-  border-radius:14px;
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 14px;
-  font-size:24px;
-  transition:transform .35s cubic-bezier(.25,.46,.45,.94);
-}
+.quick-access-card .icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:24px;transition:transform .35s cubic-bezier(.25,.46,.45,.94)}
 .quick-access-card:hover .icon{transform:scale(1.06)}
 .quick-access-card:nth-child(1) .icon{background:#e3f2fd;color:#1565c0}
 .quick-access-card:nth-child(2) .icon{background:#fff3e0;color:#e65100}
 .quick-access-card:nth-child(3) .icon{background:#e8f5e9;color:#2e7d32}
 .quick-access-card:nth-child(4) .icon{background:#fce4ec;color:#c62828}
-.quick-access-card h4{
-  font-size:15px;
-  font-weight:700;
-  margin-bottom:6px;
-  color:#1a1a2e;
-  letter-spacing:-.2px;
-  transition:color .3s ease;
-}
+.quick-access-card h4{font-size:15px;font-weight:700;margin-bottom:6px;color:#1a1a2e;letter-spacing:-.2px;transition:color .3s ease}
 .quick-access-card:nth-child(1):hover h4{color:#1565c0}
 .quick-access-card:nth-child(2):hover h4{color:#e65100}
 .quick-access-card:nth-child(3):hover h4{color:#2e7d32}
 .quick-access-card:nth-child(4):hover h4{color:#c62828}
-.quick-access-card p{
-  font-size:12px;
-  color:#6b7280;
-  line-height:1.4;
-  margin:0;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  font-weight:400;
-}
-
+.quick-access-card p{font-size:12px;color:#6b7280;line-height:1.4;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:400}
 .section-title{text-align:center;margin-bottom:50px}
 .section-title .st-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(200,169,81,.1);color:var(--secondary);padding:5px 16px;border-radius:60px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
 .section-title h2{font-size:36px;color:var(--primary);margin-bottom:12px;font-weight:700}
 .section-title p{color:var(--text-light);font-size:16px;max-width:600px;margin:0 auto}
 .section-title .underline{width:60px;height:4px;background:linear-gradient(135deg,var(--secondary),var(--secondary-light));margin:15px auto 0;border-radius:2px}
-
-/* ══════════════════════════════════════════════════════════════
-   TENTANG KAMI — PERBAIKAN STRUKTUR TAB
-   ══════════════════════════════════════════════════════════════ */
 .about-section{padding:80px 0;background:#fff}
 .about-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:40px;flex-wrap:wrap}
 .about-tab{padding:10px 22px;border-radius:30px;font-size:13px;font-weight:600;cursor:pointer;transition:var(--transition);border:2px solid #e8e8e8;color:var(--text-light);background:#fff}
 .about-tab:hover{border-color:var(--secondary);color:var(--secondary)}
 .about-tab.active{background:var(--primary);color:#fff;border-color:var(--primary)}
-
-/* PENTING: display:block BUKAN grid */
 .about-content{display:none;animation:fadeTab .5s ease}
 .about-content.active{display:block}
 @keyframes fadeTab{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
-
 .about-grid{grid-template-columns:1fr 1fr;gap:50px;align-items:center}
 .about-image{position:relative;border-radius:20px;overflow:hidden;height:380px}
 .about-image .about-img-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:80px;color:rgba(255,255,255,.9)}
@@ -613,8 +553,11 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 </head>
 <body>
 <div class="preloader" id="preloader"><div class="preloader-logo"><div class="pl-ring"></div><div class="pl-ring"></div><div class="pl-ring"></div><div class="pl-text">BD</div></div><div class="preloader-bar"><div class="preloader-bar-fill"></div></div><div class="preloader-text">Bank Damara</div></div>
-<div class="top-bar"><div class="container"><div class="top-bar-left"><span><i class="fas fa-phone"></i> 1500-888</span><span><i class="fas fa-envelope"></i> info@banknusantara.co.id</span></div><div class="top-bar-right"><a href="#lelang"><i class="fas fa-map-marker-alt"></i> Temukan Kantor Kami</a><a href="#"><i class="fas fa-headset"></i> Bantuan</a><a href="#"><i class="fas fa-globe"></i> EN | ID</a></div></div></div>
-<header class="header" id="mainHeader"><div class="container"><a href="#beranda" class="logo"><div class="logo-icon">BD</div><div class="logo-text"><h1>Bank Damara</h1><span>Trusted Since 1985</span></div></a><nav class="nav"><ul class="nav-menu" id="navMenu"><li><a href="#beranda" class="nav-link active" data-section="beranda"><i class="fas fa-home"></i> Beranda</a></li><li><a href="#tentang" class="nav-link" data-section="tentang">Tentang Kami <i class="fas fa-chevron-down" style="font-size:9px"></i></a><div class="dropdown"><a href="#tentang" data-tab="profil"><i class="fas fa-building"></i> Profil</a><a href="#tentang" data-tab="visi"><i class="fas fa-bullseye"></i> Visi & Misi</a><a href="#tentang" data-tab="budaya"><i class="fas fa-heart"></i> Budaya</a><a href="#tentang" data-tab="manajemen"><i class="fas fa-user-tie"></i> Manajemen</a><a href="#tentang" data-tab="karir"><i class="fas fa-briefcase"></i> Karir</a></div></li><li><a href="#produk" class="nav-link" data-section="produk">Produk <i class="fas fa-chevron-down" style="font-size:9px"></i></a><div class="dropdown"><a href="#produk" data-product="tabungan"><i class="fas fa-piggy-bank"></i> Tabungan</a><a href="#produk" data-product="deposito"><i class="fas fa-chart-line"></i> Deposito</a><a href="#produk" data-product="pinjaman"><i class="fas fa-hand-holding-usd"></i> Pinjaman</a><a href="layanan.html"><i class="fas fa-concierge-bell"></i> Digital</a></div></li><li><a href="#lelang" class="nav-link" data-section="lelang"><i class="fas fa-gavel"></i> Lelang</a></li><li><a href="https://wa.me/6281234567890" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat CS <span class="wa-pulse"></span></a></li></ul><div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div></nav></div></header>
+<div class="top-bar"><div class="container"><div class="top-bar-left"><span><i class="fas fa-phone"></i> 1500-888</span><span><i class="fas fa-envelope"></i> info@bankdamara.co.id</span></div><div class="top-bar-right"><a href="#lelang"><i class="fas fa-map-marker-alt"></i> Temukan Kantor Kami</a><a href="#"><i class="fas fa-headset"></i> Bantuan</a><a href="#"><i class="fas fa-globe"></i> EN | ID</a></div></div></div>
+
+<!-- PERUBAHAN LOGO DI SINI -->
+<header class="header" id="mainHeader"><div class="container"><a href="#beranda" class="logo"><img src="logo.png" alt="Bank Damara" style="height:42px;width:auto;object-fit:contain;border-radius:8px;"><div class="logo-text"><h1>Bank Damara</h1><span>Trusted Since 1985</span></div></a><nav class="nav"><ul class="nav-menu" id="navMenu"><li><a href="#beranda" class="nav-link active" data-section="beranda"><i class="fas fa-home"></i> Beranda</a></li><li><a href="#tentang" class="nav-link" data-section="tentang">Tentang Kami <i class="fas fa-chevron-down" style="font-size:9px"></i></a><div class="dropdown"><a href="#tentang" data-tab="profil"><i class="fas fa-building"></i> Profil</a><a href="#tentang" data-tab="visi"><i class="fas fa-bullseye"></i> Visi & Misi</a><a href="#tentang" data-tab="budaya"><i class="fas fa-heart"></i> Budaya</a><a href="#tentang" data-tab="manajemen"><i class="fas fa-user-tie"></i> Manajemen</a><a href="#tentang" data-tab="karir"><i class="fas fa-briefcase"></i> Karir</a></div></li><li><a href="#produk" class="nav-link" data-section="produk">Produk <i class="fas fa-chevron-down" style="font-size:9px"></i></a><div class="dropdown"><a href="#produk" data-product="tabungan"><i class="fas fa-piggy-bank"></i> Tabungan</a><a href="#produk" data-product="deposito"><i class="fas fa-chart-line"></i> Deposito</a><a href="#produk" data-product="pinjaman"><i class="fas fa-hand-holding-usd"></i> Pinjaman</a><a href="layanan.html"><i class="fas fa-concierge-bell"></i> Digital</a></div></li><li><a href="#lelang" class="nav-link" data-section="lelang"><i class="fas fa-gavel"></i> Lelang</a></li><li><a href="https://wa.me/6281234567890" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat CS <span class="wa-pulse"></span></a></li></ul><div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div></nav></div></header>
+
 <section class="hero" id="beranda">
 <div class="hero-slide-bg" id="heroSlideBg"></div>
 <div class="hero-slide-overlay"></div>
@@ -663,9 +606,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 </section>
 <section class="quick-access"><div class="container"><div class="quick-access-grid"><a href="#produk" class="quick-access-card" data-product="tabungan"><div class="icon"><i class="fas fa-university"></i></div><h4>Tabungan</h4><p>Buka rekening baru dengan mudah</p></a><a href="#produk" class="quick-access-card" data-product="pinjaman"><div class="icon"><i class="fas fa-hand-holding-usd"></i></div><h4>Pinjaman</h4><p>Modal Kerja, Konsumtif dan Investasi</p></a><a href="#produk" class="quick-access-card" data-product="deposito"><div class="icon"><i class="fas fa-piggy-bank"></i></div><h4>Deposito</h4><p>Bunga kompetitif hingga penjaminan LPS</p></a><a href="#lelang" class="quick-access-card"><div class="icon"><i class="fas fa-gavel"></i></div><h4>Lelang Agunan</h4><p>Properti & kendaraan harga miring</p></a></div></div></section>
 
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!-- ═══ SECTION TENTANG KAMI — STRUKTUR BENAR (SEMUA TAB DI DALAMNYA) ═══ -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- ═══ TENTANG KAMI ═══ -->
 <section class="about-section" id="tentang">
 <div class="container">
 <div class="section-title"><div class="st-badge"><i class="fas fa-building"></i> Tentang Kami</div><h2>Mengenal Bank Damara</h2><p>Lebih dari 40 tahun melayani masyarakat Indonesia dengan integritas dan inovasi</p><div class="underline"></div></div>
@@ -677,7 +618,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 <div class="about-tab" data-tab-btn="karir" onclick="switchTab('karir')"><i class="fas fa-briefcase"></i> Karir</div>
 </div>
 
-<!-- ═══ TAB 1: PROFIL ═══ -->
+<!-- TAB PROFIL -->
 <div class="about-content active" id="tab-profil">
 <div style="border-radius:20px;overflow:hidden;box-shadow:0 8px 35px rgba(0,0,0,.1);margin-bottom:30px;background:#fff;border:1px solid rgba(0,0,0,.04);transition:all .4s ease">
 <div style="background:linear-gradient(135deg,#023b96 0%,#1a5bc7 100%);padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:2px solid rgba(200,169,81,.4)">
@@ -744,9 +685,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 </div>
 <style>@media(max-width:768px){.profil-content-grid{grid-template-columns:1fr !important}.profil-cert-grid{grid-template-columns:1fr !important}}</style>
 </div>
-<!-- ═══ AKHIR TAB PROFIL ═══ -->
 
-<!-- ══ TAB 2: VISI & MISI ══ -->
+<!-- TAB VISI & MISI -->
 <div class="about-content" id="tab-visi">
 <div style="position:relative;background:linear-gradient(135deg,#023b96 0%,#1a5bc7 40%,#2970d4 100%);border-radius:24px;padding:45px 40px;margin-bottom:30px;overflow:hidden;color:#fff;text-align:center" class="visi-hero">
 <div style="position:absolute;top:-80px;left:-80px;width:300px;height:300px;border:2px solid rgba(200,169,81,.06);border-radius:50%;pointer-events:none"></div>
@@ -780,9 +720,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 </div>
 <style>@media(max-width:768px){.visi-hero{padding:30px 20px !important}}</style>
 </div>
-<!-- ═══ AKHIR TAB VISI & MISI ═══ -->
 
-<!-- ═══ TAB 3: BUDAYA ═══ -->
+<!-- TAB BUDAYA -->
 <div class="about-content" id="tab-budaya">
 <div style="text-align:center;margin-bottom:30px"><div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(200,169,81,.1),rgba(2,59,150,.04));padding:6px 20px;border-radius:50px;font-size:10px;font-weight:700;color:#023b96;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(200,169,81,.2);margin-bottom:10px"><i class="fas fa-heart" style="color:#c8a951;font-size:9px"></i> Core Values</div><h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#023b96;margin:0 0 6px">Budaya Perusahaan</h3><p style="font-size:13px;color:#94a3b8;margin:0;line-height:1.6;max-width:500px;margin-left:auto;margin-right:auto">Empat nilai fundamental yang menjadi fondasi dalam setiap langkah dan keputusan Bank Damara</p></div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px" class="budaya-grid-v2">
@@ -794,9 +733,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 <div style="margin-top:24px;background:linear-gradient(135deg,rgba(2,59,150,.03),rgba(200,169,81,.05));border-radius:16px;padding:22px 28px;border:1px solid rgba(200,169,81,.12);text-align:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="opacity:.15;margin-bottom:8px"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="#c8a951"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="#c8a951"/></svg><p style="font-family:'Playfair Display',serif;font-size:15px;color:#023b96;font-style:italic;line-height:1.6;margin:0 0 6px;font-weight:600">"Budaya bukan sekadar slogan di dinding, melainkan DNA yang hidup dalam setiap napas organisasi."</p><p style="font-size:11px;color:#94a3b8;margin:0;font-weight:600;letter-spacing:.5px">— Filosofi Bank Damara</p></div>
 <style>@media(max-width:768px){.budaya-grid-v2{grid-template-columns:1fr !important}}</style>
 </div>
-<!-- ═══ AKHIR TAB BUDAYA ═══ -->
 
-<!-- ═══ TAB 4: MANAJEMEN (FIXED - DIREKSI BUTTON WORKING) ═══ -->
+<!-- TAB MANAJEMEN -->
 <div class="about-content" id="tab-manajemen">
 <div class="mgmt-layout" style="display:grid;grid-template-columns:20% 1fr;gap:24px;min-height:600px;align-items:start" id="mgmtLayout">
 <div class="mgmt-sidebar" style="position:sticky;top:100px;z-index:5">
@@ -870,94 +808,13 @@ if (window.innerWidth <= 768 && target) { target.scrollIntoView({ behavior: 'smo
 @media (max-width: 480px) {.mgmt-sidebar-item { padding: 10px 8px !important; font-size: 12px !important; }.mgmt-sidebar-item div:first-child { width: 30px !important; height: 30px !important; min-width: 30px !important; }.mgmt-sidebar-item div:first-child svg { width: 14px !important; height: 14px !important; }}
 </style>
 </div>
-<!-- ═══ AKHIR TAB MANAJEMEN ═══ -->
 
-<!-- ══ TAB 5: KARIR ═══ -->
-<div class="about-content" id="tab-karir"><div class="karir-grid"><div class="karir-text"><h3>Bergabung Bersama Kami</h3><p>Kami mencari talenta terbaik yang bersemangat untuk tumbuh bersama.</p><div class="karir-benefits"><div class="karir-benefit"><i class="fas fa-heartbeat"></i> Asuransi Kesehatan</div><div class="karir-benefit"><i class="fas fa-graduation-cap"></i> Program Pelatihan</div><div class="karir-benefit"><i class="fas fa-chart-line"></i> Jenjang Karir Jelas</div><div class="karir-benefit"><i class="fas fa-coins"></i> Bonus Tahunan</div><div class="karir-benefit"><i class="fas fa-umbrella-beach"></i> Cuti 18 Hari/Tahun</div><div class="karir-benefit"><i class="fas fa-laptop"></i> Flexible Working</div></div><a href="#" class="btn btn-primary"><i class="fas fa-search"></i> Lihat Lowongan</a></div><div class="karir-visual"><i class="fas fa-people-group"></i><div class="kv-float"><h5>50+ Posisi Terbuka</h5><p>Bergabunglah dengan 12.000+ karyawan kami</p></div></div></div></div></div>
-</div>
-</section>
-<!-- ═══ AKHIR SECTION TENTANG KAMI ═══ -->
-
-<!-- ═══ TAB 4: MANAJEMEN (FIXED - DIREKSI BUTTON WORKING) ══ -->
-<div class="about-content" id="tab-manajemen">
-<div class="mgmt-layout" style="display:grid;grid-template-columns:20% 1fr;gap:24px;min-height:600px;align-items:start" id="mgmtLayout">
-    <div class="mgmt-sidebar" style="position:sticky;top:100px;z-index:5">
-        <div style="background:linear-gradient(135deg,#023b96 0%,#1a5bc7 100%);border-radius:18px 18px 0 0;padding:22px 18px;text-align:center;position:relative;overflow:hidden">
-            <div style="position:absolute;top:-20px;right:-20px;width:80px;height:80px;border:2px solid rgba(200,169,81,.1);border-radius:50%;pointer-events:none"></div>
-            <div style="position:absolute;bottom:-15px;left:-15px;width:60px;height:60px;border:1px solid rgba(200,169,81,.08);border-radius:50%;pointer-events:none"></div>
-            <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,rgba(200,169,81,.2),rgba(200,169,81,.08));display:flex;align-items:center;justify-content:center;margin:0 auto 10px;border:2px solid rgba(200,169,81,.3);position:relative;z-index:2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a951" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-            <h4 style="font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#fff;margin:0 0 2px;position:relative;z-index:2">Manajemen</h4>
-            <p style="font-size:10px;color:rgba(255,255,255,.6);margin:0;letter-spacing:.5px;position:relative;z-index:2">Struktur Organisasi</p>
-        </div>
-        <div style="background:linear-gradient(180deg,#1a5bc7,#012460);padding:16px 12px;border-radius:0 0 18px 18px;box-shadow:0 8px 30px rgba(2,59,150,.2);position:relative;z-index:10">
-            <button id="mgmtBtnKomisaris" class="mgmt-sidebar-item active" data-target="mgmt-komisaris" onclick="switchMgmtSidebar('mgmt-komisaris', this)" style="width:100%;display:flex;align-items:center;gap:10px;padding:14px;border-radius:12px;font-size:13px;font-weight:700;cursor:pointer;transition:all .4s;border:1px solid rgba(200,169,81,.4);background:linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05));color:#e0c76a;margin-bottom:10px;font-family:'Inter',sans-serif;letter-spacing:.3px;text-align:left;box-shadow:0 4px 15px rgba(200,169,81,.1);position:relative;z-index:10;pointer-events:auto"><div style="width:36px;height:36px;min-width:36px;border-radius:10px;background:linear-gradient(135deg,rgba(200,169,81,.25),rgba(200,169,81,.1));display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e0c76a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><div style="flex:1"><div style="font-size:13px;font-weight:700">Komisaris</div><div style="font-size:10px;color:rgba(224,199,106,.7);font-weight:400;margin-top:1px">2 Anggota</div></div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.6"><path d="M9 18l6-6-6-6"/></svg></button>
-            <button id="mgmtBtnDireksi" class="mgmt-sidebar-item" data-target="mgmt-direksi" onclick="switchMgmtSidebar('mgmt-direksi', this)" style="width:100%;display:flex;align-items:center;gap:10px;padding:14px;border-radius:12px;font-size:13px;font-weight:700;cursor:pointer;transition:all .4s;border:1px solid rgba(255,255,255,.08);background:transparent;color:rgba(255,255,255,.7);margin-bottom:0;font-family:'Inter',sans-serif;letter-spacing:.3px;text-align:left;position:relative;z-index:10;pointer-events:auto"><div style="width:36px;height:36px;min-width:36px;border-radius:10px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div style="flex:1"><div style="font-size:13px;font-weight:700">Direksi</div><div style="font-size:10px;color:rgba(255,255,255,.4);font-weight:400;margin-top:1px">2 Anggota</div></div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.4"><path d="M9 18l6-6-6-6"/></svg></button>
-        </div>
-        <div style="margin-top:16px;padding:16px;background:linear-gradient(135deg,rgba(200,169,81,.06),rgba(2,59,150,.04));border-radius:14px;border:1px solid rgba(200,169,81,.12);text-align:center;position:relative;z-index:10"><div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05));display:flex;align-items:center;justify-content:center;margin:0 auto 8px"><i class="fas fa-info-circle" style="color:#c8a951;font-size:14px"></i></div><p style="font-size:10px;color:#64748b;line-height:1.5;margin:0">Periode 2024-2028<br/><span style="font-weight:600;color:#023b96">Berdasarkan RUPS</span></p></div>
-    </div>
-    <div class="mgmt-content-area" style="min-width:0">
-        <div class="mgmt-panel active" id="mgmt-komisaris" style="display:block;animation:fadeSlideIn .5s ease">
-            <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px;padding-bottom:18px;border-bottom:2px solid rgba(200,169,81,.15)"><div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#023b96,#1a5bc7);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(2,59,150,.2)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c8a951" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><div><div style="display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,rgba(200,169,81,.12),rgba(200,169,81,.04));padding:4px 14px;border-radius:20px;font-size:10px;font-weight:700;color:#023b96;letter-spacing:1.2px;text-transform:uppercase;border:1px solid rgba(200,169,81,.2);margin-bottom:4px"><i class="fas fa-shield-alt" style="color:#c8a951;font-size:9px"></i> Dewan Komisaris</div><h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#023b96;margin:0">Komisaris Bank Damara</h3><p style="font-size:12px;color:#64748b;margin:4px 0 0">Melakukan pengawasan dan memberikan nasihat kepada Direksi demi tata kelola yang baik</p></div></div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px" class="komisaris-grid">
-                <div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.04);transition:all .5s cubic-bezier(.25,.46,.45,.94)" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 50px rgba(2,59,150,.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 6px 30px rgba(0,0,0,.07)'"><div style="height:4px;background:linear-gradient(90deg,#023b96,#c8a951,#023b96)"></div><div style="padding:28px 20px;text-align:center"><div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,rgba(2,59,150,.06),rgba(200,169,81,.1));display:flex;align-items:center;justify-content:center;margin:0 auto 16px;border:2px dashed rgba(200,169,81,.3);position:relative"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#023b96" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><div style="position:absolute;top:-2px;right:-2px;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#c8a951,#e0c76a);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(200,169,81,.3);border:2px solid #fff"><svg width="10" height="10" viewBox="0 0 24 24" fill="#023b96" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div></div><h3 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#023b96;margin:0 0 6px">Prof. Ahmad Fauzan, SE, MM</h3><div style="display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,#023b96,#1a5bc7);padding:5px 16px;border-radius:20px;margin-bottom:16px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c8a951" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span style="font-size:10px;color:#e0c76a;font-weight:700;letter-spacing:1px;text-transform:uppercase">Komisaris Utama</span></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#e2e8f0)"></div><i class="fas fa-diamond" style="color:#c8a951;font-size:7px"></i><div style="flex:1;height:1px;background:linear-gradient(90deg,#e2e8f0,transparent)"></div></div><p style="font-size:12px;color:#475569;line-height:1.7;margin:0 0 16px;text-align:justify">Akademisi dan praktisi senior di bidang ekonomi perbankan dengan pengalaman lebih dari 35 tahun. Guru Besar Fakultas Ekonomi Universitas Indonesia yang aktif sebagai komisaris independen di beberapa perusahaan publik.</p><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px"><div style="text-align:center;padding:12px 6px;background:linear-gradient(135deg,rgba(2,59,150,.03),rgba(2,59,150,.01));border-radius:10px;border:1px solid rgba(2,59,150,.06)"><div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#e3f2fd,#bbdefb);display:flex;align-items:center;justify-content:center;margin:0 auto 5px"><i class="fas fa-university" style="color:#1565c0;font-size:12px"></i></div><div style="font-size:9px;color:#023b96;font-weight:700">Perbankan</div></div><div style="text-align:center;padding:12px 6px;background:linear-gradient(135deg,rgba(200,169,81,.05),rgba(200,169,81,.01));border-radius:10px;border:1px solid rgba(200,169,81,.1)"><div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#fff3e0,#ffe0b2);display:flex;align-items:center;justify-content:center;margin:0 auto 5px"><i class="fas fa-chart-line" style="color:#e65100;font-size:12px"></i></div><div style="font-size:9px;color:#023b96;font-weight:700">Ekonomi</div></div><div style="text-align:center;padding:12px 6px;background:linear-gradient(135deg,rgba(46,125,50,.04),rgba(46,125,50,.01));border-radius:10px;border:1px solid rgba(46,125,50,.08)"><div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);display:flex;align-items:center;justify-content:center;margin:0 auto 5px"><i class="fas fa-gavel" style="color:#2e7d32;font-size:12px"></i></div><div style="font-size:9px;color:#023b96;font-weight:700">Tata Kelola</div></div></div><div style="display:flex;flex-wrap:wrap;gap:5px;justify-content:center"><span style="display:inline-flex;align-items:center;gap:3px;padding:3px 10px;background:rgba(2,59,150,.05);color:#023b96;border-radius:20px;font-size:10px;font-weight:600"><i class="fas fa-award" style="font-size:8px;color:#c8a951"></i> 35+ Tahun</span><span style="display:inline-flex;align-items:center;gap:3px;padding:3px 10px;background:rgba(2,59,150,.05);color:#023b96;border-radius:20px;font-size:10px;font-weight:600"><i class="fas fa-graduation-cap" style="font-size:8px;color:#c8a951"></i> Guru Besar UI</span><span style="display:inline-flex;align-items:center;gap:3px;padding:3px 10px;background:rgba(2,59,150,.05);color:#023b96;border-radius:20px;font-size:10px;font-weight:600"><i class="fas fa-building" style="font-size:8px;color:#c8a951"></i> Komisaris Independen</span></div></div></div>
-                <div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.04);transition:all .5s cubic-bezier(.25,.46,.45,.94)" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 50px rgba(2,59,150,.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 6px 30px rgba(0,0,0,.07)'"><div style="height:4px;background:linear-gradient(90deg,#c8a951,#023b96,#c8a951)"></div><div style="padding:28px 20px;text-align:center"><div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,rgba(2,59,150,.06),rgba(200,169,81,.1));display:flex;align-items:center;justify-content:center;margin:0 auto 16px;border:2px dashed rgba(200,169,81,.3);position:relative"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#023b96" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><div style="position:absolute;top:-2px;right:-2px;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#c8a951,#e0c76a);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(200,169,81,.3);border:2px solid #fff"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#023b96" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div></div><h3 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#023b96;margin:0 0 6px">Ir. Bambang Prakoso, MBA</h3><div style="display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,#023b96,#1a5bc7);padding:5px 16px;border-radius:20px;margin-bottom:16px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c8a951" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span style="font-size:10px;color:#e0c76a;font-weight:700;letter-spacing:1px;text-transform:uppercase">Komisaris</span></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#e2e8f0)"></div><i class="fas fa-diamond" style="color:#c8a951;font-size:7px"></i><div style="flex:1;height:1px;background:linear-gradient(90deg,#e2e8f0,transparent)"></div></div><p style="font-size:12px;color:#475569;line-height:1.7;margin:0 0 16px;text-align:justify">Profesional berpengalaman di bidang manajemen strategis dan transformasi bisnis. Mantan eksekutif di perusahaan multinasional dengan rekam jejak kuat dalam pengembangan bisnis dan GCG di sektor jasa keuangan.</p><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px"><div style="text-align:center;padding:12px 6px;background:linear-gradient(135deg,rgba(156,39,176,.04),rgba(156,39,176,.01));border-radius:10px;border:1px solid rgba(156,39,176,.08)"><div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#f3e5f5,#e1bee7);display:flex;align-items:center;justify-content:center;margin:0 auto 5px"><i class="fas fa-cogs" style="color:#7b1fa2;font-size:12px"></i></div><div style="font-size:9px;color:#023b96;font-weight:700">Strategi</div></div><div style="text-align:center;padding:12px 6px;background:linear-gradient(135deg,rgba(21,101,192,.04),rgba(21,101,192,.01));border-radius:10px;border:1px solid rgba(21,101,192,.08)"><div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#e3f2fd,#bbdefb);display:flex;align-items:center;justify-content:center;margin:0 auto 5px"><i class="fas fa-globe" style="color:#1565c0;font-size:12px"></i></div><div style="font-size:9px;color:#023b96;font-weight:700">Bisnis Global</div></div><div style="text-align:center;padding:12px 6px;background:linear-gradient(135deg,rgba(200,169,81,.05),rgba(200,169,81,.01));border-radius:10px;border:1px solid rgba(200,169,81,.1)"><div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05));display:flex;align-items:center;justify-content:center;margin:0 auto 5px"><i class="fas fa-handshake" style="color:#c8a951;font-size:12px"></i></div><div style="font-size:9px;color:#023b96;font-weight:700">GCG</div></div></div><div style="display:flex;flex-wrap:wrap;gap:5px;justify-content:center"><span style="display:inline-flex;align-items:center;gap:3px;padding:3px 10px;background:rgba(2,59,150,.05);color:#023b96;border-radius:20px;font-size:10px;font-weight:600"><i class="fas fa-award" style="font-size:8px;color:#c8a951"></i> 25+ Tahun</span><span style="display:inline-flex;align-items:center;gap:3px;padding:3px 10px;background:rgba(2,59,150,.05);color:#023b96;border-radius:20px;font-size:10px;font-weight:600"><i class="fas fa-graduation-cap" style="font-size:8px;color:#c8a951"></i> MBA — INSEAD</span><span style="display:inline-flex;align-items:center;gap:3px;padding:3px 10px;background:rgba(2,59,150,.05);color:#023b96;border-radius:20px;font-size:10px;font-weight:600"><i class="fas fa-building" style="font-size:8px;color:#c8a951"></i> Ex-McKinsey & Co.</span></div></div></div>
-            </div>
-        </div>
-        <div class="mgmt-panel" id="mgmt-direksi" style="display:none;">
-            <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px;padding-bottom:18px;border-bottom:2px solid rgba(200,169,81,.15)"><div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#023b96,#1a5bc7);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(2,59,150,.2)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c8a951" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><div style="display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,rgba(200,169,81,.12),rgba(200,169,81,.04));padding:4px 14px;border-radius:20px;font-size:10px;font-weight:700;color:#023b96;letter-spacing:1.2px;text-transform:uppercase;border:1px solid rgba(200,169,81,.2);margin-bottom:4px"><i class="fas fa-crown" style="color:#c8a951;font-size:9px"></i> Dewan Direksi</div><h3 style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#023b96;margin:0">Direksi Bank Damara</h3><p style="font-size:12px;color:#64748b;margin:4px 0 0">Pimpinan eksekutif yang mengelola operasional dan strategi perusahaan</p></div></div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px" class="direksi-grid">
-                <div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.04);transition:all .5s cubic-bezier(.25,.46,.45,.94)" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 50px rgba(2,59,150,.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 6px 30px rgba(0,0,0,.07)'"><div style="background:linear-gradient(135deg,#023b96 0%,#1a5bc7 60%,#2970d4 100%);padding:28px 22px 45px;position:relative;overflow:hidden;text-align:center"><div style="position:absolute;top:-40px;right:-40px;width:120px;height:120px;border:2px solid rgba(200,169,81,.1);border-radius:50%;pointer-events:none"></div><div style="position:absolute;bottom:-25px;left:-25px;width:80px;height:80px;border:1px solid rgba(200,169,81,.08);border-radius:50%;pointer-events:none"></div><div style="position:relative;display:inline-block;margin-bottom:14px"><div style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#c8a951,#e0c76a,#f5e08a,#c8a951);padding:3px;box-shadow:0 8px 25px rgba(200,169,81,.3)"><div style="width:100%;height:100%;border-radius:50%;background:linear-gradient(180deg,#1a5bc7,#012460);display:flex;align-items:center;justify-content:center;overflow:hidden;border:3px solid #023b96;position:relative"><svg width="65" height="65" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,81,.7)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><div style="position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(200,169,81,.15) 0%,transparent 60%);pointer-events:none"></div></div></div><div style="position:absolute;bottom:2px;right:2px;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#c8a951,#e0c76a);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(200,169,81,.4);border:3px solid #023b96"><svg width="11" height="11" viewBox="0 0 24 24" fill="#023b96" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div></div><h3 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff;margin:0 0 6px;line-height:1.2">Dr. Hendra Wijaya, MBA</h3><div style="display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,rgba(200,169,81,.2),rgba(200,169,81,.08));padding:4px 14px;border-radius:20px;border:1px solid rgba(200,169,81,.25)"><i class="fas fa-crown" style="font-size:9px;color:#e0c76a"></i><span style="font-size:11px;color:#e0c76a;font-weight:700;letter-spacing:.8px;text-transform:uppercase">Direktur Utama</span></div></div><div style="padding:22px 20px 24px"><div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:linear-gradient(135deg,rgba(2,59,150,.03),rgba(200,169,81,.05));border-radius:10px;border:1px solid rgba(200,169,81,.1);margin-bottom:16px"><div style="width:32px;height:32px;min-width:32px;border-radius:8px;background:linear-gradient(135deg,#023b96,#1a5bc7);display:flex;align-items:center;justify-content:center"><i class="fas fa-briefcase" style="color:#c8a951;font-size:12px"></i></div><div><div style="font-size:11px;font-weight:700;color:#023b96">30+ Tahun Pengalaman</div><div style="font-size:10px;color:#64748b">Perbankan Nasional & Internasional</div></div></div><p style="font-size:12px;color:#475569;line-height:1.7;margin:0 0 16px;text-align:justify">Memulai karir di dunia perbankan sejak 1993. Meraih MBA dari National University of Singapore dan DBA dari Universitas Indonesia. Pernah menduduki posisi strategis di beberapa bank top nasional sebelum bergabung dengan Bank Damara.</p><div style="position:relative;padding-left:16px;border-left:2px solid #e8e8e8"><div style="margin-bottom:12px;position:relative"><div style="position:absolute;left:-23px;top:2px;width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#c8a951,#e0c76a);border:2px solid #fff;box-shadow:0 2px 6px rgba(200,169,81,.3)"></div><div style="font-size:9px;color:#c8a951;font-weight:700;letter-spacing:.5px;text-transform:uppercase">2015 — Sekarang</div><div style="font-size:12px;color:#023b96;font-weight:600">Direktur Utama — Bank Damara</div></div><div style="margin-bottom:12px;position:relative"><div style="position:absolute;left:-23px;top:2px;width:10px;height:10px;border-radius:50%;background:#e2e8f0;border:2px solid #fff"></div><div style="font-size:9px;color:#94a3b8;font-weight:600;letter-spacing:.5px">2008 — 2015</div><div style="font-size:12px;color:#023b96;font-weight:600">Wakil Direktur — PT Bank Nasional Tbk</div></div><div style="margin-bottom:12px;position:relative"><div style="position:absolute;left:-23px;top:2px;width:10px;height:10px;border-radius:50%;background:#e2e8f0;border:2px solid #fff"></div><div style="font-size:9px;color:#94a3b8;font-weight:600;letter-spacing:.5px">2000 — 2008</div><div style="font-size:12px;color:#023b96;font-weight:600">VP Corporate Banking — Bank Mandiri</div></div><div style="position:relative"><div style="position:absolute;left:-23px;top:2px;width:10px;height:10px;border-radius:50%;background:#e2e8f0;border:2px solid #fff"></div><div style="font-size:9px;color:#94a3b8;font-weight:600;letter-spacing:.5px">1993 — 2000</div><div style="font-size:12px;color:#023b96;font-weight:600">Senior Analyst — Citibank N.A.</div></div></div><div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:5px"><span style="display:inline-flex;align-items:center;gap:3px;padding:3px 10px;background:rgba(2,59,150,.05);color:#023b96;border-radius:20px;font-size:10px;font-weight:600"><i class="fas fa-graduation-cap" style="font-size:8px;color:#c8a951"></i> DBA — Univ. Indonesia</span><span style="display:inline-flex;align-items:center;gap:3px;padding:3px 10px;background:rgba(2,59,150,.05);color:#023b96;border-radius:20px;font-size:10px;font-weight:600"><i class="fas fa-graduation-cap" style="font-size:8px;color:#c8a951"></i> MBA — NUS Singapore</span><span style="display:inline-flex;align-items:center;gap:3px;padding:3px 10px;background:rgba(2,59,150,.05);color:#023b96;border-radius:20px;font-size:10px;font-weight:600"><i class="fas fa-graduation-cap" style="font-size:8px;color:#c8a951"></i> SE — Univ. Gadjah Mada</span></div></div></div>
-                <div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,.07);border:1px solid rgba(0,0,0,.04);transition:all .5s cubic-bezier(.25,.46,.45,.94)" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 50px rgba(2,59,150,.12)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 6px 30px rgba(0,0,0,.07)'"><div style="background:linear-gradient(135deg,#023b96 0%,#1a5bc7 60%,#2970d4 100%);padding:28px 22px 45px;position:relative;overflow:hidden;text-align:center"><div style="position:absolute;top:-40px;right:-40px;width:120px;height:120px;border:2px solid rgba(200,169,81,.1);border-radius:50%;pointer-events:none"></div><div style="position:absolute;bottom:-25px;left:-25px;width:80px;height:80px;border:1px solid rgba(200,169,81,.08);border-radius:50%;pointer-events:none"></div><div style="position:relative;display:inline-block;margin-bottom:14px"><div style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#c8a951,#e0c76a,#f5e08a,#c8a951);padding:3px;box-shadow:0 8px 25px rgba(200,169,81,.3)"><div style="width:100%;height:100%;border-radius:50%;background:linear-gradient(180deg,#1a5bc7,#1b3a6b);display:flex;align-items:center;justify-content:center;overflow:hidden;border:3px solid #023b96;position:relative"><svg width="65" height="65" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,81,.7)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><div style="position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(200,169,81,.15) 0%,transparent 60%);pointer-events:none"></div></div></div><div style="position:absolute;bottom:2px;right:2px;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#c8a951,#e0c76a);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(200,169,81,.4);border:3px solid #023b96"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#023b96" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div></div><h3 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff;margin:0 0 6px;line-height:1.2">Ratna Kusuma, SH, MH</h3><div style="display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,rgba(200,169,81,.2),rgba(200,169,81,.08));padding:4px 14px;border-radius:20px;border:1px solid rgba(200,169,81,.25)"><i class="fas fa-shield-alt" style="font-size:9px;color:#e0c76a"></i><span style="font-size:11px;color:#e0c76a;font-weight:700;letter-spacing:.8px;text-transform:uppercase">Direktur Kepatuhan</span></div></div><div style="padding:22px 20px 24px"><div style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:linear-gradient(135deg,rgba(2,59,150,.03),rgba(200,169,81,.05));border-radius:10px;border:1px solid rgba(200,169,81,.1);margin-bottom:16px"><div style="width:32px;height:32px;min-width:32px;border-radius:8px;background:linear-gradient(135deg,#023b96,#1a5bc7);display:flex;align-items:center;justify-content:center"><i class="fas fa-balance-scale" style="color:#c8a951;font-size:12px"></i></div><div><div style="font-size:11px;font-weight:700;color:#023b96">20+ Tahun di Regulasi Perbankan</div><div style="font-size:10px;color:#64748b">Spesialis Compliance & AML</div></div></div><p style="font-size:12px;color:#475569;line-height:1.7;margin:0 0 16px;text-align:justify">Pakar hukum perbankan dengan spesialisasi di bidang kepatuhan regulasi dan anti pencucian uang. Pernah menjabat Kepala Divisi Kepatuhan di OJK sebelum bergabung dengan Bank Damara. Aktif sebagai pembicara di forum perbankan nasional.</p><div style="position:relative;padding-left:16px;border-left:2px solid #e8e8e8"><div style="margin-bottom:12px;position:relative"><div style="position:absolute;left:-23px;top:2px;width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#c8a951,#e0c76a);border:2px solid #fff;box-shadow:0 2px 6px rgba(200,169,81,.3)"></div><div style="font-size:9px;color:#c8a951;font-weight:700;letter-spacing:.5px;text-transform:uppercase">2018 — Sekarang</div><div style="font-size:12px;color:#023b96;font-weight:600">Direktur Kepatuhan — Bank Damara</div></div><div style="margin-bottom:12px;position:relative"><div style="position:absolute;left:-23px;top:2px;width:10px;height:10px;border-radius:50%;background:#e2e8f0;border:2px solid #fff"></div><div style="font-size:9px;color:#94a3b8;font-weight:600;letter-spacing:.5px">2012 — 2018</div><div style="font-size:12px;color:#023b96;font-weight:600">Kepala Divisi Kepatuhan — OJK</div></div><div style="margin-bottom:12px;position:relative"><div style="position:absolute;left:-23px;top:2px;width:10px;height:10px;border-radius:50%;background:#e2e8f0;border:2px solid #fff"></div><div style="font-size:9px;color:#94a3b8;font-weight:600;letter-spacing:.5px">2005 — 2012</div><div style="font-size:12px;color:#023b96;font-weight:600">Legal & Compliance Mgr — Bank BNI</div></div><div style="position:relative"><div style="position:absolute;left:-23px;top:2px;width:10px;height:10px;border-radius:50%;background:#e2e8f0;border:2px solid #fff"></div><div style="font-size:9px;color:#94a3b8;font-weight:600;letter-spacing:.5px">2000 — 2005</div><div style="font-size:12px;color:#023b96;font-weight:600">Associate Lawyer — Makarim & Taira S.</div></div></div><div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:5px"><span style="display:inline-flex;align-items:center;gap:3px;padding:3px 10px;background:rgba(2,59,150,.05);color:#023b96;border-radius:20px;font-size:10px;font-weight:600"><i class="fas fa-graduation-cap" style="font-size:8px;color:#c8a951"></i> MH — Univ. Indonesia</span><span style="display:inline-flex;align-items:center;gap:3px;padding:3px 10px;background:rgba(2,59,150,.05);color:#023b96;border-radius:20px;font-size:10px;font-weight:600"><i class="fas fa-graduation-cap" style="font-size:8px;color:#c8a951"></i> SH — Univ. Padjadjaran</span><span style="display:inline-flex;align-items:center;gap:3px;padding:3px 10px;background:rgba(2,59,150,.05);color:#023b96;border-radius:20px;font-size:10px;font-weight:600"><i class="fas fa-certificate" style="font-size:8px;color:#c8a951"></i> Certified AML Specialist</span></div></div></div>
-            </div>
-        </div>
-    </div>
-    <script>
-    function switchMgmtSidebar(panelId, btn) {
-        document.querySelectorAll('.mgmt-panel').forEach(function(el) { el.style.display = 'none'; el.classList.remove('active'); });
-        document.querySelectorAll('.mgmt-sidebar-item').forEach(function(item) {
-            item.classList.remove('active');
-            item.style.background = 'transparent';
-            item.style.color = 'rgba(255,255,255,.7)';
-            item.style.borderColor = 'rgba(255,255,255,.08)';
-            item.style.boxShadow = 'none';
-            var iconDiv = item.querySelector('div'); if (iconDiv) { iconDiv.style.background = 'rgba(255,255,255,.06)'; }
-            var svgEl = item.querySelector('svg'); if (svgEl) { svgEl.setAttribute('stroke', 'rgba(255,255,255,.6)'); }
-            var subDiv = item.querySelectorAll('div > div'); if (subDiv && subDiv[1]) { subDiv[1].style.color = 'rgba(255,255,255,.4)'; }
-            var arrow = item.querySelectorAll('svg')[1]; if (arrow) { arrow.style.opacity = '.4'; }
-        });
-        var target = document.getElementById(panelId);
-        if (target) { target.style.display = 'block'; target.classList.add('active'); target.style.animation = 'none'; target.offsetHeight; target.style.animation = 'fadeSlideIn .5s ease'; }
-        if (btn) {
-            btn.classList.add('active');
-            btn.style.background = 'linear-gradient(135deg,rgba(200,169,81,.15),rgba(200,169,81,.05))';
-            btn.style.color = '#e0c76a';
-            btn.style.borderColor = 'rgba(200,169,81,.4)';
-            btn.style.boxShadow = '0 4px 15px rgba(200,169,81,.1)';
-            var iconDiv = btn.querySelector('div'); if (iconDiv) { iconDiv.style.background = 'linear-gradient(135deg,rgba(200,169,81,.25),rgba(200,169,81,.1))'; }
-            var svgEl = btn.querySelector('svg'); if (svgEl) { svgEl.setAttribute('stroke', '#e0c76a'); }
-            var subDiv = btn.querySelectorAll('div > div'); if (subDiv && subDiv[1]) { subDiv[1].style.color = 'rgba(224,199,106,.7)'; }
-            var arrow = btn.querySelectorAll('svg')[1]; if (arrow) { arrow.style.opacity = '.6'; }
-        }
-        if (window.innerWidth <= 768 && target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-    }
-    </script>
-    <style>
-    @keyframes fadeSlideIn {from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); }}
-    .mgmt-sidebar-item {position: relative !important; z-index: 10 !important; pointer-events: auto !important; -webkit-tap-highlight-color: transparent;}
-    .mgmt-sidebar-item:hover {filter: brightness(1.1);}
-    .mgmt-sidebar-item:active {transform: scale(0.98);}
-    @media (max-width: 992px) {#mgmtLayout { grid-template-columns: 28% 1fr !important; }}
-    @media (max-width: 768px) {#mgmtLayout { grid-template-columns: 1fr !important; }.mgmt-sidebar { position: relative !important; top: auto !important; z-index: 5 !important; }.mgmt-sidebar > div:first-child { border-radius: 18px 18px 0 0 !important; }.mgmt-sidebar > div:nth-child(2) { display: flex !important; gap: 10px !important; padding: 12px !important; border-radius: 0 0 18px 18px !important; flex-wrap: wrap; position: relative !important; z-index: 10 !important; }.mgmt-sidebar-item { flex: 1 !important; min-width: 120px; margin-bottom: 0 !important; justify-content: center !important; position: relative !important; z-index: 10 !important; }.mgmt-sidebar-item svg:last-child { display: none !important; }.mgmt-sidebar > div:last-child { display: none !important; }.direksi-grid, .komisaris-grid { grid-template-columns: 1fr !important; }}
-    @media (max-width: 480px) {.mgmt-sidebar-item { padding: 10px 8px !important; font-size: 12px !important; }.mgmt-sidebar-item div:first-child { width: 30px !important; height: 30px !important; min-width: 30px !important; }.mgmt-sidebar-item div:first-child svg { width: 14px !important; height: 14px !important; }}
-    </style>
-</div>
-
-<!-- TAB 5: KARIR -->
+<!-- TAB KARIR -->
 <div class="about-content" id="tab-karir"><div class="karir-grid"><div class="karir-text"><h3>Bergabung Bersama Kami</h3><p>Kami mencari talenta terbaik yang bersemangat untuk tumbuh bersama.</p><div class="karir-benefits"><div class="karir-benefit"><i class="fas fa-heartbeat"></i> Asuransi Kesehatan</div><div class="karir-benefit"><i class="fas fa-graduation-cap"></i> Program Pelatihan</div><div class="karir-benefit"><i class="fas fa-chart-line"></i> Jenjang Karir Jelas</div><div class="karir-benefit"><i class="fas fa-coins"></i> Bonus Tahunan</div><div class="karir-benefit"><i class="fas fa-umbrella-beach"></i> Cuti 18 Hari/Tahun</div><div class="karir-benefit"><i class="fas fa-laptop"></i> Flexible Working</div></div><a href="#" class="btn btn-primary"><i class="fas fa-search"></i> Lihat Lowongan</a></div><div class="karir-visual"><i class="fas fa-people-group"></i><div class="kv-float"><h5>50+ Posisi Terbuka</h5><p>Bergabunglah dengan 12.000+ karyawan kami</p></div></div></div></div></div>
 </div>
 </section>
 
-<!-- ═══ PRODUK ══ -->
+<!-- ═══ PRODUK ═══ -->
 <section class="products" id="produk"><div class="container"><div class="section-title"><div class="st-badge"><i class="fas fa-box-open"></i> Produk & Layanan</div><h2>Solusi Keuangan Lengkap</h2><p>Pilih produk perbankan yang tepat untuk kebutuhan Anda</p><div class="underline"></div></div><div class="products-grid"><div class="product-card" id="prod-tabungan"><div class="product-card-header"><i class="fas fa-piggy-bank"></i><h3>Tabungan</h3><p>Simpanan aman & menguntungkan</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> Setoran awal Rp 100.000</li><li><i class="fas fa-check-circle"></i> Setor Tarik di semua Cabang</li><li><i class="fas fa-check-circle"></i> Bunga bersaing</li></ul><a href="https://nowgodigital.github.io/bankdamara/tabungan.html" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div></div><div class="product-card" id="prod-deposito"><div class="product-card-header"><i class="fas fa-chart-line"></i><h3>Deposito</h3><p>Investasi aman & terjamin</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> Bunga hingga penjaminan LPS</li><li><i class="fas fa-check-circle"></i> Tenor fleksibel 1-24 bulan</li><li><i class="fas fa-check-circle"></i> ARO otomatis</li><li><i class="fas fa-check-circle"></i> Dijamin LPS</li></ul><a href="https://nowgodigital.github.io/bankdamara/deposito.html" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div></div><div class="product-card" id="prod-pinjaman"><div class="product-card-header"><i class="fas fa-hand-holding-usd"></i><h3>Pinjaman</h3><p>Solusi kredit fleksibel</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> Bunga Rendah</li><li><i class="fas fa-check-circle"></i> Kredit Modal Kerja</li><li><i class="fas fa-check-circle"></i> Kredit Konsumtif</li><li><i class="fas fa-check-circle"></i> Kredit Investasi</li></ul><a href="https://nowgodigital.github.io/bankdamara/pinjaman.html" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div></div><div class="product-card" id="prod-layanan"><div class="product-card-header"><i class="fas fa-concierge-bell"></i><h3>Layanan Jasa</h3><p>Transfer dan PPOB</p></div><div class="product-card-body"><ul><li><i class="fas fa-check-circle"></i> Layanan Jasa Transfer</li><li><i class="fas fa-check-circle"></i> Layanan PPOB</li><li><i class="fas fa-check-circle"></i> Virtual Account</li></ul><a href="layanan.html" class="btn">Selengkapnya <i class="fas fa-arrow-right"></i></a></div></div></div></div></section>
 
 <!-- ═══ LELANG ═══ -->
@@ -978,7 +835,7 @@ if (window.innerWidth <= 768 && target) { target.scrollIntoView({ behavior: 'smo
 <button class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
 <div class="wa-float" id="waFloat"><a href="https://wa.me/6281234567890" target="_blank" class="wa-float-btn"><i class="fab fa-whatsapp"></i></a><div class="wa-float-label">Butuh bantuan? Chat kami!</div></div>
 
-<!-- ═══ HERO BACKGROUND SWITCHER ══ -->
+<!-- ═══ HERO BACKGROUND SWITCHER ═══ -->
 <script>
 (function(){
 'use strict';
@@ -1175,7 +1032,7 @@ if (document.readyState === 'loading') { document.addEventListener('DOMContentLo
 })();
 </script>
 
-<!-- ═══ KURS API ═══ -->
+<!-- ═══ KURS API ══ -->
 <script>
 (function(){
 'use strict';
@@ -1186,7 +1043,7 @@ var SPREAD_PERCENT=0.45;
 var CURRENCIES=[
 {code:'USD',name:'US Dollar',flag:'🇺🇸'},
 {code:'EUR',name:'Euro',flag:'🇪🇺'},
-{code:'GBP',name:'Poundsterling',flag:'🇬🇧'},
+{code:'GBP',name:'Poundsterling',flag:'🇬'},
 {code:'JPY',name:'Yen Jepang',flag:'🇯🇵'},
 {code:'SGD',name:'Dolar Singapura',flag:'🇸🇬'},
 {code:'AUD',name:'Dolar Australia',flag:'🇦🇺'}
