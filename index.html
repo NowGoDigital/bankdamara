@@ -13,7 +13,6 @@
     <meta property="og:title" content="Bank Damara - Tangguh Dalam Melayani">
     <meta property="og:description" content="Bank nasional terpercaya sejak 1985 dengan layanan perbankan terbaik dan keamanan tinggi.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&h=630&fit=crop">
-    <meta property="og:url" content="https://bankdamara.co.id">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -29,12 +28,8 @@
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://api.exchangerate-api.com">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230052cc'/><text x='50' y='68' font-size='50' font-weight='bold' text-anchor='middle' fill='white' font-family='Arial'>BD</text></svg>">
-    
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -69,7 +64,6 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeSpeed;
         }
 
         .container {
@@ -916,40 +910,8 @@
         a, button {
             -webkit-tap-highlight-color: transparent;
         }
-
-        /* Back to top button */
-        .back-to-top {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 45px;
-            height: 45px;
-            background: var(--primary);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 998;
-            box-shadow: 0 5px 15px rgba(0, 82, 204, 0.3);
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background: var(--primary-dark);
-            transform: translateY(-3px);
-        }
     </style>
 </head>
-
 <body>
     <!-- Top Bar -->
     <div class="top-bar">
@@ -1248,13 +1210,9 @@
             <i class="fab fa-whatsapp"></i>
             <span class="tooltip">Butuh bantuan? Chat kami!</span>
         </a>
-        
-        <a href="#beranda" class="back-to-top" aria-label="Kembali ke atas">
-            <i class="fas fa-arrow-up"></i>
-        </a>
     </footer>
 
-      <script>
+    <script>
         // ============================================
         // UTILITY FUNCTIONS
         // ============================================
@@ -1276,27 +1234,6 @@
                 }
             };
         }
-
-        function formatRupiah(angka) {
-            return new Intl.NumberFormat('id-ID', {
-                style: 'currency',
-                currency: 'IDR',
-                minimumFractionDigits: 0
-            }).format(angka);
-        }
-
-        const storage = {
-            get(key) {
-                try { return JSON.parse(localStorage.getItem(key)); }
-                catch (e) { return null; }
-            },
-            set(key, value) {
-                try {
-                    localStorage.setItem(key, JSON.stringify(value));
-                    return true;
-                } catch (e) { return false; }
-            }
-        };
 
         // ============================================
         // MOBILE MENU
@@ -1412,12 +1349,10 @@
         // ============================================
         function initScrollHandlers() {
             const navbar = document.querySelector('.navbar');
-            const backToTop = document.querySelector('.back-to-top');
             
             const handleScroll = throttle(() => {
                 const scrollY = window.scrollY;
                 if (navbar) navbar.classList.toggle('scrolled', scrollY > 50);
-                if (backToTop) backToTop.classList.toggle('visible', scrollY > 500);
             }, 100);
             
             window.addEventListener('scroll', handleScroll, { passive: true });
@@ -1451,19 +1386,6 @@
         }
 
         // ============================================
-        // PREFETCH PAGES
-        // ============================================
-        function prefetchPages() {
-            const pages = ['tabungan.html', 'deposito.html', 'pinjaman.html', 'lelang.html'];
-            pages.forEach(page => {
-                const link = document.createElement('link');
-                link.rel = 'prefetch';
-                link.href = page;
-                document.head.appendChild(link);
-            });
-        }
-
-        // ============================================
         // MAIN INITIALIZATION
         // ============================================
         document.addEventListener('DOMContentLoaded', () => {
@@ -1472,9 +1394,6 @@
             initHeroSlider();
             initScrollHandlers();
             initSmoothScroll();
-            
-            // Prefetch setelah load
-            window.addEventListener('load', prefetchPages);
         });
     </script>
 </body>
