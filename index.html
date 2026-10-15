@@ -1504,6 +1504,59 @@ if (document.readyState === 'loading') { document.addEventListener('DOMContentLo
 })();
 </script>
 <!-- ═══ END PATCH 4 ═══ -->
+
+<!-- ═══ PATCH 7: LAZY LOAD YOUTUBE IFRAME ═══ -->
+<script>
+(function() {
+    'use strict';
+    
+    var iframe = document.getElementById('ytMainFrame');
+    if (!iframe) return;
+    
+    // Cek apakah IntersectionObserver didukung
+    if (!('IntersectionObserver' in window)) return;
+    
+    // Simpan src asli
+    var originalSrc = iframe.getAttribute('src');
+    if (!originalSrc) return;
+    
+    // Hapus src untuk menunda load
+    iframe.removeAttribute('src');
+    iframe.setAttribute('data-original-src', originalSrc);
+    
+    // Cari parent section YouTube
+    var ytCard = iframe.closest('.yt-widget-card') || 
+                 iframe.closest('.gallery-card') ||
+                 document.getElementById('galeri-informasi');
+    
+    if (!ytCard) {
+        // Fallback: load langsung jika tidak bisa menemukan parent
+        iframe.setAttribute('src', originalSrc);
+        return;
+    }
+    
+    var loaded = false;
+    
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting && !loaded) {
+                loaded = true;
+                iframe.setAttribute('src', originalSrc);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        rootMargin: '400px 0px', // Load 400px sebelum terlihat
+        threshold: 0
+    });
+    
+    observer.observe(ytCard);
+    
+    // Catatan: fungsi playYTVideo() yang sudah ada tetap bekerja normal
+    // karena fungsi tersebut langsung set src baru saat user klik playlist
+})();
+</script>
+<!-- ═══ END PATCH 7 ═══ -->
     
 </body>
 </html>
