@@ -603,18 +603,38 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .yt-playlist-list{max-height:160px !important}
 /* ═══ END PATCH ═══ */
 
-/* ═══ PATCH: WARNA TAB TIDAK AKTIF → GOLD ═══ */
-#lpsTabBtn1, #lpsTabBtn2 {
+/* ═══ PATCH TAB FIX: WARNA TAB LPS/BUNGA YANG BENAR ═══ */
+#lpsTabBtn1,
+#lpsTabBtn2 {
   background: linear-gradient(135deg, #c8a951, #e0c76a) !important;
-  color: #023b96 !important;
+  color: #ffffff !important;
+  border-left: 1px solid rgba(255,255,255,0.2) !important;
   transition: all 0.3s ease !important;
 }
 
-#lpsTabBtn1:hover, #lpsTabBtn2:hover {
-  background: linear-gradient(135deg, #b8943e, #c8a951) !important;
+#lpsTabBtn1 i,
+#lpsTabBtn2 i {
+  color: #ffffff !important;
+}
+
+#lpsTabBtn1:hover,
+#lpsTabBtn2:hover {
+  filter: brightness(1.08) !important;
   transform: translateY(-1px) !important;
 }
-/* ═══ END PATCH ═══ */
+
+/* Tab aktif: override jadi biru */
+#lpsTabBtn1.active-tab,
+#lpsTabBtn2.active-tab {
+  background: linear-gradient(135deg, #023b96, #1a5bc7) !important;
+  color: #ffffff !important;
+}
+
+#lpsTabBtn1.active-tab i,
+#lpsTabBtn2.active-tab i {
+  color: #ffffff !important;
+}
+/* ═══ END PATCH TAB FIX ═══ */
 
 @media(max-width:1024px){.tentang-photo-box,.tentang-maps-box{height:260px}}
 @media(max-width:768px){
@@ -1170,27 +1190,35 @@ if (window.innerWidth <= 768 && target) { target.scrollIntoView({ behavior: 'smo
 <section style="padding:0 0 30px;background:linear-gradient(180deg,#f8fafc 0%,#fff 100%);margin-top:-10px"><div class="container"><div style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.06)"><div style="display:flex;border-bottom:1px solid #e8ecf2"><button id="lpsTabBtn1" onclick="switchLpsSbTab('lps')" style="flex:1;padding:11px 10px;background:linear-gradient(135deg,#023b96,#1a5bc7);color:#fff;font-size:12px;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;font-family:'Inter',sans-serif"><i class="fas fa-shield-alt" style="color:#c8a951;font-size:11px"></i><span>Penjaminan LPS</span></button><button id="lpsTabBtn2" onclick="switchLpsSbTab('bunga')" style="flex:1;padding:11px 10px;background:#f8fafc;color:#64748b;font-size:12px;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;font-family:'Inter',sans-serif;border-left:1px solid #e8ecf2"><i class="fas fa-percent" style="color:#94a3b8;font-size:11px"></i><span>Suku Bunga BPR</span></button></div><div style="padding:16px 20px 18px"><div id="lpsContent-lps" style="display:block;animation:lpsFadeIn .3s ease"><div style="display:flex;align-items:center;gap:14px" class="lps-lps-row"><div style="background:linear-gradient(135deg,rgba(2,59,150,.05),rgba(21,101,192,.03));border-radius:12px;padding:12px 16px;border:1px solid rgba(2,59,150,.08);text-align:center;min-width:90px"><div style="font-size:9px;color:#94a3b8;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:4px">Bunga LPS</div><div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:#023b96;line-height:1">6<span style="font-size:14px;opacity:.6">%</span></div></div><div style="flex:1"><div style="display:flex;align-items:center;gap:6px;margin-bottom:6px"><i class="fas fa-calendar-alt" style="color:#c8a951;font-size:10px"></i><span style="font-size:11px;color:#475569;font-weight:600">LPS BPR: 1 Juni 2025 — 30 September 2025</span></div><div style="display:flex;align-items:flex-start;gap:6px;margin-bottom:8px"><i class="fas fa-info-circle" style="color:#1a5bc7;font-size:10px;margin-top:2px;flex-shrink:0"></i><span style="font-size:11px;color:#475569;line-height:1.5">Maks. simpanan dijamin: <strong style="color:#023b96">Rp. 2 Miliar</strong> per Nasabah per Bank</span></div><a href="https://www.lps.go.id" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;padding:6px 14px;background:linear-gradient(135deg,#023b96,#1a5bc7);color:#fff;border-radius:20px;font-size:11px;font-weight:700;text-decoration:none;box-shadow:0 3px 10px rgba(2,59,150,.15);transition:all .3s ease" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 16px rgba(2,59,150,.25)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 3px 10px rgba(2,59,150,.15)'"><i class="fas fa-external-link-alt" style="font-size:8px"></i> Cek Bunga LPS</a></div></div></div><div id="lpsContent-bunga" style="display:none"><div style="display:flex;align-items:center;gap:12px" class="lps-bunga-row"><div style="flex:1;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);border-radius:12px;padding:14px 12px;text-align:center;border:1px solid rgba(46,125,50,.1)"><div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:4px"><i class="fas fa-piggy-bank" style="color:#2e7d32;font-size:14px"></i><span style="font-size:9px;color:#2e7d32;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:.7">Tabungan</span></div><div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:#2e7d32;line-height:1">4,00<span style="font-size:14px;opacity:.6">%</span></div><div style="font-size:9px;color:#2e7d32;opacity:.5;margin-top:2px">per tahun</div></div><div style="flex:1;background:linear-gradient(135deg,#e3f2fd,#bbdefb);border-radius:12px;padding:14px 12px;text-align:center;border:1px solid rgba(21,101,192,.1)"><div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:4px"><i class="fas fa-chart-line" style="color:#1565c0;font-size:14px"></i><span style="font-size:9px;color:#1565c0;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:.7">Deposito</span></div><div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:#1565c0;line-height:1">6,50<span style="font-size:14px;opacity:.6">%</span></div><div style="font-size:9px;color:#1565c0;opacity:.5;margin-top:2px">per tahun</div></div><div style="display:flex;align-items:center;gap:6px;padding:8px 10px;background:rgba(255,152,0,.06);border-radius:8px;border:1px solid rgba(255,152,0,.1);max-width:120px" class="lps-disclaimer-box"><i class="fas fa-exclamation-triangle" style="color:#ff9800;font-size:10px;flex-shrink:0"></i><span style="font-size:10px;color:#64748b;line-height:1.4">Sewaktu-waktu dapat berubah</span></div></div></div></div></div><style>@keyframes lpsFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}@media(max-width:768px){.lps-lps-row{flex-direction:column !important;gap:10px !important}.lps-lps-row > div:first-child{min-width:auto !important;width:100%}.lps-bunga-row{flex-direction:column !important;gap:10px !important}.lps-bunga-row > div{max-width:100% !important;width:100% !important}.lps-disclaimer-box{max-width:100% !important}}#lpsTabBtn1,#lpsTabBtn2{padding:15px 10px !important;justify-content:center !important;text-align:center !important}</style><script>function switchLpsSbTab(tab){
   document.querySelectorAll('[id^="lpsContent-"]').forEach(function(el){el.style.display='none'});
   
-  // Reset kedua tab ke warna gold (tidak aktif)
-  document.getElementById('lpsTabBtn1').style.background='linear-gradient(135deg,#c8a951,#e0c76a)';
-  document.getElementById('lpsTabBtn1').style.color='#023b96';
-  document.getElementById('lpsTabBtn1').querySelector('i').style.color='#023b96';
+  // Reset kedua tab ke warna gold (tidak aktif) + teks/ikon putih
+  var btn1 = document.getElementById('lpsTabBtn1');
+  var btn2 = document.getElementById('lpsTabBtn2');
   
-  document.getElementById('lpsTabBtn2').style.background='linear-gradient(135deg,#c8a951,#e0c76a)';
-  document.getElementById('lpsTabBtn2').style.color='#023b96';
-  document.getElementById('lpsTabBtn2').querySelector('i').style.color='#023b96';
+  btn1.style.background = 'linear-gradient(135deg,#c8a951,#e0c76a)';
+  btn1.style.color = '#ffffff';
+  btn1.querySelector('i').style.color = '#ffffff';
+  btn1.classList.remove('active-tab');
   
-  var t=document.getElementById('lpsContent-'+tab);
+  btn2.style.background = 'linear-gradient(135deg,#c8a951,#e0c76a)';
+  btn2.style.color = '#ffffff';
+  btn2.querySelector('i').style.color = '#ffffff';
+  btn2.classList.remove('active-tab');
+  
+  // Tampilkan konten yang dipilih
+  var t = document.getElementById('lpsContent-'+tab);
   if(t){t.style.display='block';t.style.animation='none';t.offsetHeight;t.style.animation='lpsFadeIn .3s ease'}
   
-  // Set tab aktif ke warna biru
+  // Set tab aktif ke warna biru + teks/ikon putih
   if(tab==='lps'){
-    document.getElementById('lpsTabBtn1').style.background='linear-gradient(135deg,#023b96,#1a5bc7)';
-    document.getElementById('lpsTabBtn1').style.color='#fff';
-    document.getElementById('lpsTabBtn1').querySelector('i').style.color='#c8a951';
-  }else{
-    document.getElementById('lpsTabBtn2').style.background='linear-gradient(135deg,#023b96,#1a5bc7)';
-    document.getElementById('lpsTabBtn2').style.color='#fff';
-    document.getElementById('lpsTabBtn2').querySelector('i').style.color='#c8a951';
+    btn1.style.background = 'linear-gradient(135deg,#023b96,#1a5bc7)';
+    btn1.style.color = '#ffffff';
+    btn1.querySelector('i').style.color = '#ffffff';
+    btn1.classList.add('active-tab');
+  } else {
+    btn2.style.background = 'linear-gradient(135deg,#023b96,#1a5bc7)';
+    btn2.style.color = '#ffffff';
+    btn2.querySelector('i').style.color = '#ffffff';
+    btn2.classList.add('active-tab');
   }
 }</script></div></section>
 
