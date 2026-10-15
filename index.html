@@ -1418,11 +1418,85 @@ if (document.readyState === 'loading') { document.addEventListener('DOMContentLo
 })();
 </script>
 <!-- ═══ END PATCH 3 ═══ -->
-  
+
+<!-- ═══ PATCH 4: PAUSE ANIMASI INFINITE SAAT TIDAK TERLIHAT ═══ -->
+<script>
+(function() {
+    'use strict';
+
+    // Cek apakah user prefers reduced motion
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Jika user prefers reduced motion, pause semua animasi
+    if (prefersReducedMotion) {
+        var style = document.createElement('style');
+        style.textContent = '*, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }';
+        document.head.appendChild(style);
+        return; // Tidak perlu observer
+    }
+
+    // Daftar section yang punya animasi infinite
+    var sections = [
+        { selector: '.hero', class: 'hero-paused' },
+        { selector: '.gallery-info-section', class: 'gallery-paused' }
+    ];
+
+    // IntersectionObserver untuk pause/play animasi
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            var section = sections.find(function(s) {
+                return s.selector === '.' + entry.target.className.split(' ')[0];
+            });
+
+            if (!section) return;
+
+            if (entry.isIntersecting) {
+                // Section terlihat → resume animasi
+                entry.target.classList.remove(section.class);
+            } else {
+                // Section tidak terlihat → pause animasi
+                entry.target.classList.add(section.class);
+            }
+        });
+    }, {
+        rootMargin: '100px 0px', // Trigger 100px sebelum/after viewport
+        threshold: 0.1
+    });
+
+    // Observe semua section
+    sections.forEach(function(section) {
+        var el = document.querySelector(section.selector);
+        if (el) observer.observe(el);
+    });
+
+    // Tambahkan CSS untuk pause animasi
+    var pauseCSS = `
+        .hero-paused .h-particle,
+        .hero-paused .mesh-blob,
+        .hero-paused .gold-text,
+        .hero-paused .badge-dot,
+        .hero-paused .scroll-line::after {
+            animation-play-state: paused !important;
+        }
+
+        .gallery-paused .live-dot,
+        .gallery-paused .ig-live-dot,
+        .gallery-paused .ig-post-skeleton,
+        .gallery-paused .ig-post-skeleton i {
+            animation-play-state: paused !important;
+        }
+
+        .wa-float:not(.show) .wa-float-btn::before {
+            animation-play-state: paused !important;
+        }
+    `;
+
+    var style = document.createElement('style');
+    style.textContent = pauseCSS;
+    document.head.appendChild(style);
+})();
+</script>
+<!-- ═══ END PATCH 4 ═══ -->
+    
 </body>
 </html>
-
-
-
-
-
