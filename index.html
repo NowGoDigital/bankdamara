@@ -1324,6 +1324,101 @@ if (YT_VIDEOS && YT_VIDEOS.length > 0 && YT_VIDEOS[0].id) { setMainVideo(YT_VIDE
 if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }
 })();
 </script>
+
+<!-- ═══ PATCH 3: LAZY LOAD GAMBAR (non-visual) ═══ -->
+<script>
+(function () {
+    'use strict';
+
+    // Cek apakah gambar sudah punya ruang yang dicadangkan.
+    // Jika belum, JANGAN di-lazy-load agar tidak terjadi layout shift.
+    function hasReservedSpace(img) {
+        var w = img.getAttribute('width');
+        var h = img.getAttribute('height');
+
+        if (w && h) return true;
+
+        var cs = window.getComputedStyle(img);
+
+        if (cs.height && cs.height !== 'auto' && parseFloat(cs.height) > 0) {
+            return true;
+        }
+
+        if (cs.aspectRatio && cs.aspectRatio !== 'auto') {
+            return true;
+        }
+
+        return false;
+    }
+
+    function markLazy(img) {
+        if (!img || img.tagName !== 'IMG') return;
+
+        // Jangan sentuh gambar di hero
+        if (img.closest && img.closest('.hero')) return;
+
+        // Jangan timpa instruksi yang sudah ada
+        if (img.hasAttribute('loading')) return;
+        if (img.getAttribute('loading') === 'eager') return;
+
+        // Skip data URI (skeleton / placeholder)
+        if (img.src && img.src.indexOf('data:') === 0) return;
+
+        // Proteksi anti layout shift
+        if (!hasReservedSpace(img)) return;
+
+        img.setAttribute('loading', 'lazy');
+        img.setAttribute('decoding', 'async');
+    }
+
+    function applyLazy() {
+        var images = document.querySelectorAll('img');
+        for (var i = 0; i < images.length; i++) {
+            markLazy(images[i]);
+        }
+    }
+
+    // Jalankan saat DOM siap
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', applyLazy);
+    } else {
+        applyLazy();
+    }
+
+    // Tangani gambar yang disisipkan belakangan
+    // (widget Instagram, hasil render JS, konten CMS, dll)
+    if ('MutationObserver' in window && document.body) {
+        var observer = new MutationObserver(function (mutations) {
+            for (var m = 0; m < mutations.length; m++) {
+                var added = mutations[m].addedNodes;
+
+                for (var n = 0; n < added.length; n++) {
+                    var node = added[n];
+                    if (node.nodeType !== 1) continue;
+
+                    if (node.tagName === 'IMG') {
+                        markLazy(node);
+                    }
+
+                    if (node.querySelectorAll) {
+                        var nested = node.querySelectorAll('img');
+                        for (var k = 0; k < nested.length; k++) {
+                            markLazy(nested[k]);
+                        }
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    }
+})();
+</script>
+<!-- ═══ END PATCH 3 ═══ -->
+  
 </body>
 </html>
 
