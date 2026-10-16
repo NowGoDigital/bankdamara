@@ -1119,7 +1119,54 @@ display:none !important;
   }
 }
 /* ═══ END PATCH ═══ */
-     
+/* ═══ PATCH: HEADER STICKY + NAVBAR MOBILE FIXED ══ */
+@media(max-width:768px){
+  /* 1. Header sticky - pastikan selalu di atas */
+  .header{
+    position:sticky !important;
+    top:0 !important;
+    z-index:1000 !important;
+  }
+  
+  /* 2. Navbar mobile - fixed agar tidak ikut scroll */
+  .nav-menu{
+    position:fixed !important;
+    top:58px !important;  /* Sesuaikan dengan tinggi header */
+    left:0 !important;
+    right:0 !important;
+    background:#fff !important;
+    flex-direction:column !important;
+    padding:15px !important;
+    box-shadow:0 8px 30px rgba(0,0,0,.15) !important;
+    gap:2px !important;
+    max-height:calc(100vh - 58px) !important;
+    overflow-y:auto !important;
+    z-index:998 !important;
+    border-top:1px solid rgba(0,0,0,.08) !important;
+  }
+  
+  .nav-menu.active{
+    display:flex !important;
+  }
+  
+  /* 3. Dropdown submenu di mobile - tetap dalam menu */
+  .nav-menu li .dropdown{
+    position:static !important;
+    box-shadow:none !important;
+    border:none !important;
+    padding:0 0 0 15px !important;
+    display:none !important;
+    opacity:1 !important;
+    transform:none !important;
+    margin-top:2px !important;
+    min-width:100% !important;
+  }
+  
+  .nav-menu li.dropdown-open .dropdown{
+    display:block !important;
+  }
+}
+/* ═══ END PATCH ═══ */     
 </style>
 </head>
   
