@@ -950,6 +950,42 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 @keyframes profilDetailFade{from{opacity:0;max-height:0}to{opacity:1;max-height:2000px}}
 @media(max-width:768px){#btnSelengkapnya{padding:9px 22px !important;font-size:12px !important}}
 @media(max-width:768px){.cta-content h2{white-space:normal !important;font-size:22px !important}.cta-content p{white-space:normal !important;font-size:13px !important}}
+
+/* ═══ PATCH: HEADER FIXED MOBILE (GANTI STICKY YANG GAGAL) ══ */
+@media(max-width:768px){
+  /* 1. Header jadi fixed, bukan sticky */
+  .header{
+    position:fixed !important;
+    top:0 !important;
+    left:0 !important;
+    right:0 !important;
+    width:100% !important;
+    z-index:1000 !important;
+    background:#fff !important;
+  }
+  
+  /* 2. Kompensasi: geser hero ke bawah agar tidak tertutup header */
+  .hero{
+    padding-top:58px !important;
+  }
+  
+  /* 3. Nav menu dropdown: posisi di bawah header fixed */
+  .nav-menu{
+    top:56px !important;
+    max-height:calc(100vh - 56px) !important;
+  }
+  
+  /* 4. Quick access: geser ke bawah agar tidak overlap header */
+  .quick-access{
+    margin-top:0 !important;
+    padding-top:10px !important;
+  }
+}
+/* ══ END PATCH ═══ */
+
+
+
+
 </style>
 </head>
   
