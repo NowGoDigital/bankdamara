@@ -1033,7 +1033,50 @@ white-space:nowrap !important;
 }
 
 /* ═══ END PATCH ═══ */
-  
+/* ═══ PATCH: PERLEBAR SPACING HERO ═══ */
+
+/* Desktop: badge → judul lebih jauh */
+.hero-badge {
+  margin-bottom: 20px !important;
+}
+
+/* Desktop: judul turun lebih jauh dari badge */
+.hero-title {
+  margin-top: 36px !important;
+}
+
+/* Desktop: deskripsi → tombol diperlebar 2x (20px → 40px) */
+.hero-desc {
+  margin-bottom: 40px !important;
+}
+
+/* Mobile: penyesuaian spacing */
+@media(max-width:768px){
+  .hero-badge {
+    margin-bottom: 18px !important;
+  }
+  .hero-title {
+    margin-top: 28px !important;
+  }
+  .hero-desc {
+    margin-bottom: 24px !important;
+  }
+}
+
+/* Mobile kecil: penyesuaian spacing */
+@media(max-width:480px){
+  .hero-badge {
+    margin-bottom: 14px !important;
+  }
+  .hero-title {
+    margin-top: 22px !important;
+  }
+  .hero-desc {
+    margin-bottom: 20px !important;
+  }
+}
+/* ═══ END PATCH ═══ */  
+
 </style>
 </head>
 <body>
