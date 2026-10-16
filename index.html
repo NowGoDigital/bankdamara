@@ -122,8 +122,8 @@
 
 <style>
 /* ═══════════════════════════════════════════════════════════════
-1. RESET & BASE
-═══════════════════════════════════════════════════════════════ */
+   1. RESET & BASE
+   ═══════════════════════════════════════════════════════════════ */
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:70px}
 :root{
@@ -138,8 +138,8 @@ html{scroll-behavior:smooth;scroll-padding-top:70px}
 body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);line-height:1.6;overflow-x:hidden}
 
 /* ═══════════════════════════════════════════════════════════════
-2. PRELOADER
-═══════════════════════════════════════════════════════════════ */
+   2. PRELOADER
+   ═══════════════════════════════════════════════════════════════ */
 .preloader{position:fixed;inset:0;background:var(--primary);z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s}
 .preloader.hidden{opacity:0;visibility:hidden;pointer-events:none}
 .preloader-logo{position:relative;width:100px;height:100px;margin-bottom:30px}
@@ -154,8 +154,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .preloader-text{color:rgba(255,255,255,.5);font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:500}
 
 /* ═══════════════════════════════════════════════════════════════
-3. TOP BAR
-═══════════════════════════════════════════════════════════════ */
+   3. TOP BAR
+   ═══════════════════════════════════════════════════════════════ */
 .top-bar{background:var(--primary);color:#fff;padding:6px 0;font-size:12px}
 .top-bar .container{display:flex;justify-content:space-between;align-items:center}
 .top-bar a{color:#fff;text-decoration:none;margin-left:18px;transition:var(--transition)}
@@ -164,8 +164,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .top-bar-left i,.top-bar-right i{margin-right:4px;color:var(--secondary);font-size:11px}
 
 /* ═══════════════════════════════════════════════════════════════
-4. HEADER & NAVIGATION
-═══════════════════════════════════════════════════════════════ */
+   4. HEADER & NAVIGATION
+   ══════════════════════════════════════════════════════════════ */
 .container{max-width:1200px;margin:0 auto;padding:0 20px}
 .hero-container{width:100%;max-width:100%;padding:0 30px;margin:0 auto}
 .header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000;transition:var(--transition)}
@@ -195,8 +195,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .hamburger:hover{background:var(--bg-light)}
 
 /* ═══════════════════════════════════════════════════════════════
-5. HERO SECTION
-═══════════════════════════════════════════════════════════════ */
+   5. HERO SECTION
+   ═══════════════════════════════════════════════════════════════ */
 .hero{position:relative;height:100vh;min-height:600px;max-height:800px;overflow:hidden;display:flex;align-items:center;background:#010e24}
 .hero-slide-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;z-index:0;transform:scale(1.05);transition:transform 8s ease-out,opacity 1.2s ease-in-out}
 .hero-slide.active .hero-slide-bg{transform:scale(1)}
@@ -265,8 +265,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .scroll-hint span{font-size:9px;color:rgba(200,169,81,.5);letter-spacing:2px;text-transform:uppercase;font-weight:600;writing-mode:vertical-rl}
 
 /* ═══════════════════════════════════════════════════════════════
-6. BUTTONS
-═══════════════════════════════════════════════════════════════ */
+   6. BUTTONS
+   ═══════════════════════════════════════════════════════════════ */
 .btn{padding:14px 32px;border:none;border-radius:30px;font-size:15px;font-weight:600;cursor:pointer;transition:var(--transition);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
 .btn-primary{background:linear-gradient(135deg,var(--secondary),var(--secondary-light));color:var(--primary)}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(200,169,81,.4)}
@@ -276,8 +276,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .btn-dark:hover{background:var(--primary-light);transform:translateY(-3px);box-shadow:0 8px 25px rgba(2,59,150,.3)}
 
 /* ═══════════════════════════════════════════════════════════════
-7. QUICK ACCESS
-═══════════════════════════════════════════════════════════════ */
+   7. QUICK ACCESS
+   ═══════════════════════════════════════════════════════════════ */
 .quick-access{margin-top:-40px;position:relative;z-index:10;padding-bottom:50px}
 .quick-access-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .quick-access-card{background:#fff;border-radius:18px;padding:24px 18px 22px;text-align:center;cursor:pointer;text-decoration:none;color:var(--text-dark);position:relative;overflow:hidden;border:1px solid rgba(0,0,0,.03);box-shadow:0 2px 12px rgba(0,0,0,.04);transition:all .35s cubic-bezier(.25,.46,.45,.94)}
@@ -302,8 +302,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .quick-access-card p{font-size:12px;color:#6b7280;line-height:1.4;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:400}
 
 /* ═══════════════════════════════════════════════════════════════
-8. SECTION TITLE
-═══════════════════════════════════════════════════════════════ */
+   8. SECTION TITLE
+   ═══════════════════════════════════════════════════════════════ */
 .section-title{text-align:center;margin-bottom:50px}
 .section-title .st-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(200,169,81,.1);color:var(--secondary);padding:5px 16px;border-radius:60px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
 .section-title h2{font-size:36px;color:var(--primary);margin-bottom:12px;font-weight:700}
@@ -311,8 +311,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .section-title .underline{width:60px;height:4px;background:linear-gradient(135deg,var(--secondary),var(--secondary-light));margin:15px auto 0;border-radius:2px}
 
 /* ═══════════════════════════════════════════════════════════════
-9. ABOUT SECTION
-═══════════════════════════════════════════════════════════════ */
+   9. ABOUT SECTION
+   ═══════════════════════════════════════════════════════════════ */
 .about-section{padding:80px 0;background:#fff}
 .about-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:40px;flex-wrap:wrap}
 .about-tab{padding:10px 22px;border-radius:30px;font-size:13px;font-weight:600;cursor:pointer;transition:var(--transition);border:2px solid #e8e8e8;color:var(--text-light);background:#fff}
@@ -384,8 +384,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .karir-visual .kv-float p{font-size:12px;color:var(--text-light)}
 
 /* ═══════════════════════════════════════════════════════════════
-10. PRODUCTS
-═══════════════════════════════════════════════════════════════ */
+   10. PRODUCTS
+   ═══════════════════════════════════════════════════════════════ */
 .products{padding:80px 0;background:var(--bg-light)}
 .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .product-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);transition:var(--transition)}
@@ -406,8 +406,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .product-card-body .btn:hover{background:var(--primary-light)}
 
 /* ═══════════════════════════════════════════════════════════════
-11. LELANG
-═══════════════════════════════════════════════════════════════ */
+   11. LELANG
+   ═══════════════════════════════════════════════════════════════ */
 .lelang-section{padding:80px 0;background:#fff}
 .lelang-intro{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:center;margin-bottom:50px}
 .lelang-intro-img{height:300px;border-radius:20px;background:linear-gradient(135deg,#37474f,#546e7a);display:flex;align-items:center;justify-content:center;font-size:80px;color:rgba(255,255,255,.85);position:relative;overflow:hidden}
@@ -420,8 +420,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .lelang-stat .ls-lbl{font-size:11px;color:var(--text-light)}
 
 /* ═══════════════════════════════════════════════════════════════
-12. GALLERY INFO SECTION
-═══════════════════════════════════════════════════════════════ */
+   12. GALLERY INFO SECTION
+   ═══════════════════════════════════════════════════════════════ */
 .gallery-info-section{padding:60px 0 45px;background:linear-gradient(175deg,#f0f4f8 0%,#fff 40%,#f8fafc 100%);position:relative;overflow:hidden}
 .gallery-info-section::before{content:'';position:absolute;top:-200px;right:-200px;width:500px;height:500px;background:radial-gradient(circle,rgba(2,59,150,.03) 0%,transparent 70%);border-radius:50%;pointer-events:none}
 .gallery-info-section::after{content:'';position:absolute;bottom:-150px;left:-150px;width:400px;height:400px;background:radial-gradient(circle,rgba(198,164,86,.05) 0%,transparent 70%);border-radius:50%;pointer-events:none}
@@ -530,8 +530,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .yt-subscribe-btn:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 6px 16px rgba(255,0,0,.3);color:#fff;text-decoration:none}
 
 /* ═══════════════════════════════════════════════════════════════
-13. STATS & CTA
-═══════════════════════════════════════════════════════════════ */
+   13. STATS & CTA
+   ═══════════════════════════════════════════════════════════════ */
 .stats{padding:60px 0;background:linear-gradient(135deg,var(--primary),var(--primary-light))}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center;color:#fff}
 .stat-item h3{font-size:42px;font-weight:700;color:var(--secondary);margin-bottom:8px}
@@ -543,8 +543,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .cta-buttons{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
 
 /* ═══════════════════════════════════════════════════════════════
-14. FOOTER
-═══════════════════════════════════════════════════════════════ */
+   14. FOOTER
+   ═══════════════════════════════════════════════════════════════ */
 .footer{background:#011a3d;color:rgba(255,255,255,.8);padding:60px 0 0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
 .footer-col h4{color:#fff;font-size:16px;margin-bottom:20px;position:relative}
@@ -563,8 +563,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .footer-bottom-links a:hover{color:var(--secondary)}
 
 /* ═══════════════════════════════════════════════════════════════
-15. FLOATING ELEMENTS
-═══════════════════════════════════════════════════════════════ */
+   15. FLOATING ELEMENTS
+   ═══════════════════════════════════════════════════════════════ */
 .scroll-top{position:fixed;bottom:30px;right:30px;width:50px;height:50px;background:var(--primary);color:#fff;border:none;border-radius:50%;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:var(--shadow-hover);transition:var(--transition);z-index:999}
 .scroll-top:hover{background:var(--secondary);color:var(--primary);transform:translateY(-5px)}
 .scroll-top.show{display:flex}
@@ -578,8 +578,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .wa-float-label::before{content:'';position:absolute;left:-6px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-right-color:#fff}
 
 /* ═══════════════════════════════════════════════════════════════
-16. TENTANG VISUAL AREA
-═══════════════════════════════════════════════════════════════ */
+   16. TENTANG VISUAL AREA
+   ═══════════════════════════════════════════════════════════════ */
 .tentang-visual-area{display:flex;flex-direction:column;gap:20px}
 .tentang-photo-box{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 8px 35px rgba(0,0,0,.12);height:300px;transition:all .5s ease}
 .tentang-photo-box:hover{box-shadow:0 16px 50px rgba(0,0,0,.18);transform:translateY(-4px)}
@@ -598,34 +598,47 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .tentang-maps-header span{font-family:'Playfair Display',serif;letter-spacing:.3px}
 
 /* ═══════════════════════════════════════════════════════════════
-17. LPS TABS
-═══════════════════════════════════════════════════════════════ */
-#lpsTabBtn1,#lpsTabBtn2{border-radius:12px 12px 0 0 !important;flex:1 !important;transition:all 0.3s ease !important;padding:15px 10px !important;justify-content:center !important;text-align:center !important}
+   17. LPS TABS (Border Radius + Warna Biru/Gold)
+   ═══════════════════════════════════════════════════════════════ */
+#lpsTabBtn1,#lpsTabBtn2{
+  border-radius:12px 12px 0 0 !important;
+  flex:1 !important;
+  transition:all 0.3s ease !important;
+  padding:15px 10px !important;
+  justify-content:center !important;
+  text-align:center !important;
+}
 #lpsTabBtn1:hover,#lpsTabBtn2:hover{filter:brightness(1.08) !important}
-#lpsTabBtn1.active-tab,#lpsTabBtn2.active-tab{background:linear-gradient(135deg,#023b96,#1a5bc7) !important;color:#ffffff !important}
+#lpsTabBtn1.active-tab,#lpsTabBtn2.active-tab{
+  background:linear-gradient(135deg,#023b96,#1a5bc7) !important;
+  color:#ffffff !important;
+}
 #lpsTabBtn1.active-tab i,#lpsTabBtn2.active-tab i{color:#ffffff !important}
-#lpsTabBtn1:not(.active-tab),#lpsTabBtn2:not(.active-tab){background:linear-gradient(135deg,#c8a951,#e0c76a) !important;color:#ffffff !important}
+#lpsTabBtn1:not(.active-tab),#lpsTabBtn2:not(.active-tab){
+  background:linear-gradient(135deg,#c8a951,#e0c76a) !important;
+  color:#ffffff !important;
+}
 #lpsTabBtn1:not(.active-tab) i,#lpsTabBtn2:not(.active-tab) i{color:#ffffff !important}
 @keyframes lpsFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 
-/* ══════════════════════════════════════════════════════════════
-18. MANAGEMENT SIDEBAR
-═══════════════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════════
+   18. MANAGEMENT SIDEBAR
+   ═══════════════════════════════════════════════════════════════ */
 @keyframes fadeSlideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .mgmt-sidebar-item{position:relative !important;z-index:10 !important;pointer-events:auto !important;-webkit-tap-highlight-color:transparent}
 .mgmt-sidebar-item:hover{filter:brightness(1.1)}
 .mgmt-sidebar-item:active{transform:scale(0.98)}
 
 /* ═══════════════════════════════════════════════════════════════
-19. ACCESSIBILITY
-═══════════════════════════════════════════════════════════════ */
+   19. ACCESSIBILITY - Reduced Motion
+   ═══════════════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important}
 }
 
 /* ═══════════════════════════════════════════════════════════════
-20. RESPONSIVE - DESKTOP TABLET (1024px)
-═══════════════════════════════════════════════════════════════ */
+   20. RESPONSIVE - DESKTOP TABLET (1024px)
+   ═══════════════════════════════════════════════════════════════ */
 @media(max-width:1024px){
   .tentang-photo-box,.tentang-maps-box{height:260px}
   #mgmtLayout{grid-template-columns:28% 1fr !important}
@@ -633,13 +646,13 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 }
 
 /* ═══════════════════════════════════════════════════════════════
-21. RESPONSIVE - TABLET (768px)
-═══════════════════════════════════════════════════════════════ */
+   21. RESPONSIVE - TABLET (768px)
+   ═══════════════════════════════════════════════════════════════ */
 @media(max-width:768px){
-  /* Top Bar */
+  /* Top Bar hidden */
   .top-bar{display:none !important}
   
-  /* Tentang Visual */
+  /* Tentang visual */
   .tentang-photo-box,.tentang-maps-box{height:220px}
   .tentang-photo-overlay h4{font-size:17px}
   .tentang-photo-overlay p{font-size:11px}
@@ -651,7 +664,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
   .quick-access-card h4{font-size:13px !important;margin-bottom:4px !important}
   .quick-access-card p{font-size:11px !important}
   
-  /* Gallery Grid */
+  /* Gallery Grid - 1 kolom */
   .gallery-grid{grid-template-columns:1fr !important;gap:14px !important}
   .gallery-card{border-radius:12px !important}
   .ig-live-widget{max-height:350px !important}
@@ -678,7 +691,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
   .misi-cards-grid > div h4{font-size:14px !important}
   .misi-cards-grid > div p{font-size:12px !important}
   
-  /* About Tabs */
+  /* About Tabs - Scroll horizontal */
   .about-tabs{gap:5px;overflow-x:auto !important;-webkit-overflow-scrolling:touch !important;scrollbar-width:none !important;-ms-overflow-style:none !important;padding-bottom:5px !important;justify-content:flex-start !important;flex-wrap:nowrap !important}
   .about-tabs::-webkit-scrollbar{display:none !important}
   .about-tab{padding:8px 14px;font-size:11px;flex-shrink:0 !important;white-space:nowrap !important}
@@ -729,7 +742,23 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
   .wa-float-btn{width:50px;height:50px;font-size:22px}
   
   /* Navigation Mobile */
-  .nav-menu{display:none;position:fixed !important;top:60px !important;left:0 !important;right:0 !important;background:#fff;flex-direction:column;padding:15px;box-shadow:0 8px 30px rgba(0,0,0,.15);gap:2px;max-height:calc(100vh - 60px) !important;overflow-y:auto;z-index:998;border-top:1px solid rgba(0,0,0,.08)}
+  /* Navigation Mobile - FIXED agar tetap di atas saat scroll */
+  .nav-menu{
+   display:none;
+   position:fixed !important;
+   top:60px !important;
+   left:0 !important;
+   right:0 !important;
+   background:#fff;
+   flex-direction:column;
+   padding:15px;
+   box-shadow:0 8px 30px rgba(0,0,0,.15);
+   gap:2px;
+   max-height:calc(100vh - 60px) !important;
+   overflow-y:auto;
+   z-index:998;
+   border-top:1px solid rgba(0,0,0,.08);
+   }
   .nav-menu.active{display:flex}
   .nav-menu>li{width:100%}
   .nav-menu>li>a{display:flex;justify-content:space-between;width:100%;padding:10px 14px}
@@ -740,19 +769,19 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
   
   /* Hero Mobile */
   .hero{min-height:100vh !important;padding-top:0 !important;padding-bottom:60px !important;display:flex !important;align-items:flex-start !important}
-  .hero-slide{padding-top:-6px !important;padding-bottom:20px !important;align-items:flex-start !important}
+  .hero-slide{padding-top:50px !important;padding-bottom:20px !important;align-items:flex-start !important}
   .hero-container{padding:0 15px !important}
   .hero-grid-layout{grid-template-columns:1fr !important;gap:20px !important;text-align:center !important;justify-items:center !important;align-items:center !important}
   .hero-text{align-items:center !important;text-align:center !important}
-  .hero-title{font-size:clamp(2.2rem,7.5vw,2.8rem) !important;margin-bottom:14px !important;text-align:center !important;letter-spacing:-0.5px !important;line-height:1.15 !important}
-  .hero-desc{font-size:16px !important;margin-bottom:60px !important;text-align:center !important;max-width:90% !important;margin-left:auto !important;margin-right:auto !important;line-height:1.65 !important}
-  .hero-badge{padding:30px 14px !important;font-size:11px !important;margin-bottom:60px !important;margin-left:auto !important;margin-right:auto !important}
+  .hero-title{font-size:clamp(1.8rem,6.5vw,2.4rem) !important;margin-bottom:14px !important;text-align:center !important;letter-spacing:-0.5px !important}
+  .hero-desc{font-size:14px !important;margin-bottom:28px !important;text-align:center !important;max-width:90% !important;margin-left:auto !important;margin-right:auto !important;line-height:1.6 !important}
+  .hero-badge{padding:4px 12px !important;font-size:10px !important;margin-bottom:24px !important;margin-left:auto !important;margin-right:auto !important}
   .hero-btns{margin-bottom:14px !important;flex-wrap:nowrap !important;gap:8px !important;justify-content:center !important;flex-direction:row !important;align-items:center !important;width:100% !important}
   .hero-btns .btn{padding:10px 8px !important;font-size:11px !important;flex:1 !important;width:50% !important;justify-content:center !important;text-align:center !important;white-space:nowrap !important}
   .hero-metrics{gap:0 !important;margin-top:30px !important;padding-top:20px !important;border-top:1px solid rgba(200,169,81,.2) !important;justify-content:center !important}
   .metric{padding:0 10px !important}
-  .metric-val{font-size:20px !important}
-  .metric-lbl{font-size:10px !important}
+  .metric-val{font-size:18px !important}
+  .metric-lbl{font-size:9px !important}
   .hero-controls{bottom:15px !important}
   .slide-tab{width:50px !important}
   .slide-tab.active{width:65px !important}
@@ -781,10 +810,23 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
   .product-card-header i{font-size:28px !important}
 }
 
-/* ══════════════════════════════════════════════════════════════
-22. RESPONSIVE - MOBILE (576px)
-═══════════════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════════
+   22. RESPONSIVE - MOBILE (576px)
+   ══════════════════════════════════════════════════════════════ */
 @media(max-width:576px){
+
+/* ═══ PATCH: FOOTER MOBILE - PRODUK & PELAPORAN BERJAJAR, PERUSAHAAN HIDDEN ══ */
+.footer-grid{
+grid-template-columns:1fr 1fr !important;
+}
+.footer-col:nth-child(1){
+grid-column:1 / -1 !important;
+}
+.footer-col:nth-child(3){
+display:none !important;
+}
+/* ═══ END PATCH ═══ */
+     
   .tentang-photo-box{height:180px !important}
   .tentang-maps-box{height:200px !important}
   .tentang-photo-overlay{padding:16px !important}
@@ -793,7 +835,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
   .tentang-photo-badge{top:12px !important;left:12px !important;padding:4px 10px !important;font-size:9px !important}
   .tentang-maps-header{padding:10px 14px !important;font-size:12px !important}
   
-  /* Badge OJK & LPS */
+  /* Badge OJK & LPS - 1 kolom */
   .profil-content-grid > div:first-child > div:last-child > div > div{grid-template-columns:1fr !important}
   
   .section-title h2{font-size:20px !important}
@@ -803,13 +845,11 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
   .stat-item h3{font-size:26px !important}
   .stat-item p{font-size:11px !important}
   .stats{padding:40px 0 !important}
-  
   .cta{padding:40px 0 !important}
   .cta-content h2{font-size:20px !important;white-space:normal !important;line-height:1.3 !important}
   .cta-content p{font-size:13px !important;white-space:normal !important}
   .cta-buttons{flex-direction:column !important;gap:10px !important}
   .cta-buttons a{width:100% !important;justify-content:center !important}
-  
   .gallery-info-section{padding:35px 0 25px !important}
   .gallery-section-header h2{font-size:1.5rem !important}
   .gallery-section-header p{font-size:.8rem !important}
@@ -817,37 +857,28 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
   .gallery-banner-overlay{padding:14px 16px !important}
   .gallery-banner-overlay h3{font-size:.9rem !important}
   .gallery-banner-overlay p{font-size:.75rem !important}
-  
   .footer-bottom{flex-direction:column !important;text-align:center !important;gap:10px !important}
   .footer-bottom-links{justify-content:center !important}
   .footer-bottom{font-size:11px !important;gap:10px !important}
   .footer-bottom-links{gap:12px !important}
   .footer-bottom-links a{font-size:11px !important}
-  
   .wa-float{left:15px !important;bottom:15px !important}
   .wa-float-btn{width:48px !important;height:48px !important;font-size:22px !important}
   .scroll-top{width:42px !important;height:42px !important;font-size:16px !important;bottom:15px !important;right:15px !important}
-  
   .container{padding:0 12px !important}
   .quick-access{margin-top:-35px !important;padding-bottom:40px !important}
   .product-card-header i{font-size:28px !important}
-  
-  /* Footer Mobile - Produk & Pelaporan Berjajar */
-  .footer-grid{grid-template-columns:1fr 1fr !important;gap:12px !important}
-  .footer-col:nth-child(1){grid-column:1 / -1 !important;margin-bottom:8px !important}
-  .footer-col:nth-child(3){display:none !important}
-  .footer-col:nth-child(2),.footer-col:nth-child(4){background:#fff !important;border-radius:12px !important;border:1px solid rgba(0,0,0,.06) !important;overflow:hidden !important;box-shadow:0 2px 8px rgba(0,0,0,.04) !important;padding:0 !important;margin-bottom:0 !important}
-  .footer-col:nth-child(2) h4,.footer-col:nth-child(4) h4{background:linear-gradient(135deg,#023b96,#1a5bc7) !important;color:#fff !important;padding:10px 14px !important;margin:0 !important;font-size:12px !important;text-align:center !important;letter-spacing:.5px !important;font-weight:700 !important}
-  .footer-col:nth-child(2) h4::after,.footer-col:nth-child(4) h4::after{display:none !important}
-  .footer-col:nth-child(2) ul,.footer-col:nth-child(4) ul{list-style:none !important;padding:6px 0 !important;margin:0 !important;display:flex !important;flex-direction:column !important;align-items:center !important}
-  .footer-col:nth-child(2) ul li,.footer-col:nth-child(4) ul li{margin:0 !important;width:100% !important;text-align:center !important}
-  .footer-col:nth-child(2) ul li a,.footer-col:nth-child(4) ul li a{display:block !important;padding:8px 10px !important;color:#2c3e50 !important;font-size:12px !important;text-align:center !important;transition:all .2s ease !important}
-  .footer-col:nth-child(2) ul li a:hover,.footer-col:nth-child(4) ul li a:hover{color:#023b96 !important;background:rgba(2,59,150,.05) !important;border-radius:6px !important}
+  .footer-grid{grid-template-columns:1fr !important;gap:25px !important}
+  .footer-col h4{font-size:15px !important;margin-bottom:15px !important}
+  .footer-col p{font-size:13px !important}
+  .footer-col ul li a{font-size:13px !important}
+  .footer-social{gap:10px !important}
+  .footer-social a{width:38px !important;height:38px !important}
 }
 
 /* ═══════════════════════════════════════════════════════════════
-23. RESPONSIVE - MOBILE KECIL (480px)
-═══════════════════════════════════════════════════════════════ */
+   23. RESPONSIVE - MOBILE KECIL (480px)
+   ═══════════════════════════════════════════════════════════════ */
 @media(max-width:480px){
   .tentang-photo-box{height:160px !important}
   .tentang-maps-box{height:180px !important}
@@ -876,8 +907,8 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
   /* Hero Mobile Kecil */
   .hero{min-height:100vh !important}
   .hero-slide{padding-top:50px !important}
-  .hero-title{font-size:clamp(1.9rem,8vw,2.4rem) !important}
-  .hero-desc{font-size:15px !important;line-height:1.6 !important;margin-bottom:20px !important}
+  .hero-title{font-size:clamp(1.6rem,7vw,2rem) !important}
+  .hero-desc{font-size:13px !important;line-height:1.55 !important}
   .hero-btns{gap:6px !important}
   .hero-btns .btn{padding:10px 6px !important;font-size:10px !important;letter-spacing:0 !important;gap:5px !important}
   .hero-btns .btn i{font-size:12px !important}
@@ -886,6 +917,7 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
   .hero-metrics{margin-top:25px !important;padding-top:16px !important}
   .hero-badge{margin-bottom:14px !important}
   .hero-title{margin-top:22px !important}
+  .hero-desc{margin-bottom:20px !important}
   
   /* Management */
   .mgmt-sidebar-item{padding:10px 8px !important;font-size:12px !important}
@@ -898,15 +930,15 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
   .preloader-bar{width:160px !important}
   .preloader-text{font-size:10px !important}
   
-  /* Overflow Fix */
+  /* Overflow fix */
   .section-title h2,.gallery-section-header h2,.cta-content h2{word-wrap:break-word !important;overflow-wrap:break-word !important}
   img{max-width:100% !important;height:auto !important}
   iframe{max-width:100% !important}
 }
 
 /* ═══════════════════════════════════════════════════════════════
-24. RESPONSIVE - MOBILE SANGAT KECIL (380px)
-═══════════════════════════════════════════════════════════════ */
+   24. RESPONSIVE - MOBILE SANGAT KECIL (380px)
+   ═══════════════════════════════════════════════════════════════ */
 @media(max-width:380px){
   .tentang-photo-box{height:140px !important}
   .tentang-maps-box{height:160px !important}
@@ -915,16 +947,16 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
   .stat-item h3{font-size:20px !important}
   .cta-content h2{font-size:18px !important}
   .container{padding:0 8px !important}
-  .hero-title{font-size:clamp(1.7rem,9vw,2.1rem) !important}
-  .hero-desc{font-size:14px !important}
+  .hero-title{font-size:clamp(1.4rem,8vw,1.8rem) !important}
+  .hero-desc{font-size:12px !important}
   .hero-badge{margin-bottom:14px !important}
   .hero-title{margin-top:22px !important}
   .hero-desc{margin-bottom:20px !important}
 }
 
 /* ═══════════════════════════════════════════════════════════════
-25. OVERFLOW FIX MOBILE
-═══════════════════════════════════════════════════════════════ */
+   25. OVERFLOW FIX MOBILE (Cegah scroll horizontal)
+   ═══════════════════════════════════════════════════════════════ */
 @media(max-width:768px){
   .section-title p,.quick-access-card p,.cta-content h2,.cta-content p,
   .gallery-section-header p,.lelang-intro-text p,.about-text p,
@@ -943,15 +975,152 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
     white-space:normal !important;word-wrap:break-word !important;max-width:100% !important;
   }
 }
+/* ═══ PATCH FINAL: PERLEBAR SPACING HERO MOBILE (NUCLEAR OPTION) ═══ */
+@media (max-width: 768px) {
+    
+    /* 1. Jarak antara Badge dengan Judul Hero */
+    .hero .hero-text .hero-badge {
+        margin-bottom: 60px !important; /* Diperbesar dari 24px menjadi 60px */
+    }
+    .hero .hero-text .hero-title {
+        margin-top: 0 !important; /* Reset margin atas agar tidak double */
+    }
 
-/* ═══════════════════════════════════════════════════════════════
-26. INLINE STYLE OVERRIDES
-═══════════════════════════════════════════════════════════════ */
-@keyframes profilDetailFade{from{opacity:0;max-height:0}to{opacity:1;max-height:2000px}}
-@media(max-width:768px){#btnSelengkapnya{padding:9px 22px !important;font-size:12px !important}}
-@media(max-width:768px){.cta-content h2{white-space:normal !important;font-size:22px !important}.cta-content p{white-space:normal !important;font-size:13px !important}}
+    /* 2. Jarak antara Deskripsi dengan 2 Tombol */
+    .hero .hero-text .hero-desc {
+        margin-bottom: 60px !important; /* Diperbesar dari 28px menjadi 60px */
+    }
+    .hero .hero-text .hero-btns {
+        margin-top: 0 !important; /* Reset margin atas */
+    }
 
-/* ═══ PATCH: HEADER FIXED MOBILE (GANTI STICKY YANG GAGAL) ══ */
+}
+/* ═══ END PATCH FINAL ═══ */
+/* ═══ PATCH: PERBESAR FONT HERO MOBILE ═══ */
+
+/* Tablet & Mobile (≤768px) */
+@media(max-width:768px){
+  .hero .hero-title{
+    font-size:clamp(2.2rem, 7.5vw, 2.8rem) !important;
+    line-height:1.15 !important;
+  }
+  .hero .hero-desc{
+    font-size:16px !important;
+    line-height:1.65 !important;
+  }
+  .hero .hero-badge{
+    font-size:11px !important;
+    padding:6px 14px !important;
+    margin-top: 50px !important;
+  }
+  .hero .metric-val{
+    font-size:20px !important;
+  }
+  .hero .metric-lbl{
+    font-size:10px !important;
+  }
+}
+
+/* Mobile kecil (≤480px) */
+@media(max-width:480px){
+  .hero .hero-title{
+    font-size:clamp(1.9rem, 8vw, 2.4rem) !important;
+  }
+  .hero .hero-desc{
+    font-size:15px !important;
+    line-height:1.6 !important;
+  }
+}
+
+/* Mobile sangat kecil (≤380px) */
+@media(max-width:380px){
+  .hero .hero-title{
+    font-size:clamp(1.7rem, 9vw, 2.1rem) !important;
+  }
+  .hero .hero-desc{
+    font-size:14px !important;
+  }
+}
+/* ═══ END PATCH ═══ */
+/* ═══ PATCH: FOOTER MOBILE - PRODUK & PELAPORAN BERJAJAR ═══ */
+@media(max-width:576px){
+  /* Override: footer tetap 2 kolom */
+  .footer-grid{
+    grid-template-columns:1fr 1fr !important;
+    gap:12px !important;
+  }
+  /* Kolom 1 (Tentang) full width */
+  .footer-col:nth-child(1){
+    grid-column:1 / -1 !important;
+    margin-bottom:8px !important;
+  }
+  /* Kolom 3 (Perusahaan) hidden */
+  .footer-col:nth-child(3){
+    display:none !important;
+  }
+  /* Kolom 2 (Produk) & 4 (Pelaporan) - card style */
+  .footer-col:nth-child(2),
+  .footer-col:nth-child(4){
+    background:#fff !important;
+    border-radius:12px !important;
+    border:1px solid rgba(0,0,0,.06) !important;
+    overflow:hidden !important;
+    box-shadow:0 2px 8px rgba(0,0,0,.04) !important;
+    padding:0 !important;
+    margin-bottom:0 !important;
+  }
+  /* Header tab (judul) */
+  .footer-col:nth-child(2) h4,
+  .footer-col:nth-child(4) h4{
+    background:linear-gradient(135deg,#023b96,#1a5bc7) !important;
+    color:#fff !important;
+    padding:10px 14px !important;
+    margin:0 !important;
+    font-size:12px !important;
+    text-align:center !important;
+    letter-spacing:.5px !important;
+    font-weight:700 !important;
+  }
+  /* Hilangkan underline default */
+  .footer-col:nth-child(2) h4::after,
+  .footer-col:nth-child(4) h4::after{
+    display:none !important;
+  }
+  /* List container rata tengah */
+  .footer-col:nth-child(2) ul,
+  .footer-col:nth-child(4) ul{
+    list-style:none !important;
+    padding:6px 0 !important;
+    margin:0 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+  }
+  .footer-col:nth-child(2) ul li,
+  .footer-col:nth-child(4) ul li{
+    margin:0 !important;
+    width:100% !important;
+    text-align:center !important;
+  }
+  /* Item link */
+  .footer-col:nth-child(2) ul li a,
+  .footer-col:nth-child(4) ul li a{
+    display:block !important;
+    padding:8px 10px !important;
+    color:#2c3e50 !important;
+    font-size:12px !important;
+    text-align:center !important;
+    transition:all .2s ease !important;
+  }
+  .footer-col:nth-child(2) ul li a:hover,
+  .footer-col:nth-child(4) ul li a:hover{
+    color:#023b96 !important;
+    background:rgba(2,59,150,.05) !important;
+    border-radius:6px !important;
+  }
+}
+/* ═══ END PATCH ═══ */
+/* ═══ PATCH: HEADER FIXED DI MOBILE ═══ */
 @media(max-width:768px){
   /* 1. Header jadi fixed, bukan sticky */
   .header{
@@ -966,26 +1135,36 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
   
   /* 2. Kompensasi: geser hero ke bawah agar tidak tertutup header */
   .hero{
-    padding-top:58px !important;
+    padding-top:58px !important; /* Sesuaikan dengan tinggi header */
   }
   
-  /* 3. Nav menu dropdown: posisi di bawah header fixed */
+  /* 3. Pastikan logo & hamburger selalu terlihat */
+  .header .container{
+    padding:8px 12px !important;
+  }
+  
+  .logo img{
+    height:38px !important;
+  }
+  
+  .hamburger{
+    display:block !important;
+    padding:8px !important;
+  }
+  
+  /* 4. Nav menu dropdown: posisi di bawah header fixed */
   .nav-menu{
-    top:56px !important;
+    top:56px !important; /* Tinggi header */
     max-height:calc(100vh - 56px) !important;
   }
   
-  /* 4. Quick access: geser ke bawah agar tidak overlap header */
+  /* 5. Quick access: geser ke bawah agar tidak overlap header */
   .quick-access{
     margin-top:0 !important;
     padding-top:10px !important;
   }
 }
-/* ══ END PATCH ═══ */
-
-
-
-
+/* ═══ END PATCH ═══ */     
 </style>
 </head>
   
@@ -2019,3 +2198,4 @@ if (document.readyState === 'loading') { document.addEventListener('DOMContentLo
     
 </body>
 </html>
+
