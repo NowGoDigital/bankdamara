@@ -890,7 +890,84 @@ white-space:nowrap !important;
 .top-bar{display:none !important}
 }
 /* ═══ END PATCH ═══ */
+/* ═══ PATCH: PERBAIKI OVERFLOW TEKS DI MOBILE ═══ */
+@media(max-width:768px){
+  /* Reset white-space nowrap yang bikin overflow */
+  .section-title p,
+  .quick-access-card p,
+  .cta-content p,
+  .cta-content h2,
+  .gallery-section-header p,
+  .lelang-intro-text p,
+  .about-text p,
+  .hero-desc {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    -webkit-hyphens: auto !important;
+  }
+  
+  /* Cegah container overflow horizontal */
+  .container {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+  
+  /* Cegah body scroll horizontal */
+  body, html {
+    overflow-x: hidden !important;
+  }
+  
+  /* Perbaiki teks panjang di card */
+  .product-card-header p,
+  .product-card-body ul li,
+  .about-features li span,
+  .about-features li strong {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  /* Perbaiki badge & label yang kepanjangan */
+  .section-title .st-badge,
+  .gallery-section-header .section-badge,
+  .hero-badge {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    max-width: 100% !important;
+  }
+  
+  /* Perbaiki teks di footer */
+  .footer-col p,
+  .footer-col ul li a {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+}
 
+@media(max-width:480px){
+  /* Extra fix untuk layar sangat kecil */
+  .section-title h2,
+  .gallery-section-header h2,
+  .cta-content h2 {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  /* Cegah gambar overflow */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Cegah iframe overflow (maps, youtube) */
+  iframe {
+    max-width: 100% !important;
+  }
+}
+/* ═══ END PATCH ═══ */
+  
 </style>
 </head>
 <body>
