@@ -967,7 +967,51 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 
 }
 /* ═══ END PATCH FINAL ═══ */
+/* ═══ PATCH: PERBESAR FONT HERO MOBILE ═══ */
 
+/* Tablet & Mobile (≤768px) */
+@media(max-width:768px){
+  .hero .hero-title{
+    font-size:clamp(2.2rem, 7.5vw, 2.8rem) !important;
+    line-height:1.15 !important;
+  }
+  .hero .hero-desc{
+    font-size:16px !important;
+    line-height:1.65 !important;
+  }
+  .hero .hero-badge{
+    font-size:11px !important;
+    padding:6px 14px !important;
+  }
+  .hero .metric-val{
+    font-size:20px !important;
+  }
+  .hero .metric-lbl{
+    font-size:10px !important;
+  }
+}
+
+/* Mobile kecil (≤480px) */
+@media(max-width:480px){
+  .hero .hero-title{
+    font-size:clamp(1.9rem, 8vw, 2.4rem) !important;
+  }
+  .hero .hero-desc{
+    font-size:15px !important;
+    line-height:1.6 !important;
+  }
+}
+
+/* Mobile sangat kecil (≤380px) */
+@media(max-width:380px){
+  .hero .hero-title{
+    font-size:clamp(1.7rem, 9vw, 2.1rem) !important;
+  }
+  .hero .hero-desc{
+    font-size:14px !important;
+  }
+}
+/* ═══ END PATCH ═══ */
 </style>
 </head>
   
