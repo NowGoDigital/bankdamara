@@ -946,47 +946,27 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
     white-space:normal !important;word-wrap:break-word !important;max-width:100% !important;
   }
 }
-/* ═══ PATCH: PERLEBAR SPACING HERO MOBILE (FINAL) ═══ */
+/* ═══ PATCH FINAL: PERLEBAR SPACING HERO MOBILE (NUCLEAR OPTION) ═══ */
+@media (max-width: 768px) {
+    
+    /* 1. Jarak antara Badge dengan Judul Hero */
+    .hero .hero-text .hero-badge {
+        margin-bottom: 45px !important; /* Diperbesar dari 24px menjadi 45px */
+    }
+    .hero .hero-text .hero-title {
+        margin-top: 0 !important; /* Reset margin atas agar tidak double */
+    }
 
-/* Tablet & Mobile (≤768px) */
-@media(max-width:768px){
-  .hero-badge{
-    margin-bottom:40px !important;
-  }
-  .hero-title{
-    margin-top:40px !important;
-  }
-  .hero-desc{
-    margin-bottom:44px !important;
-  }
-}
+    /* 2. Jarak antara Deskripsi dengan 2 Tombol */
+    .hero .hero-text .hero-desc {
+        margin-bottom: 45px !important; /* Diperbesar dari 28px menjadi 45px */
+    }
+    .hero .hero-text .hero-btns {
+        margin-top: 0 !important; /* Reset margin atas */
+    }
 
-/* Mobile kecil (≤480px) */
-@media(max-width:480px){
-  .hero-badge{
-    margin-bottom:22px !important;
-  }
-  .hero-title{
-    margin-top:28px !important;
-  }
-  .hero-desc{
-    margin-bottom:28px !important;
-  }
 }
-
-/* Mobile sangat kecil (≤380px) */
-@media(max-width:380px){
-  .hero-badge{
-    margin-bottom:18px !important;
-  }
-  .hero-title{
-    margin-top:24px !important;
-  }
-  .hero-desc{
-    margin-bottom:24px !important;
-  }
-}
-/* ═══ END PATCH ═══ */
+/* ═══ END PATCH FINAL ═══ */
 
 </style>
 </head>
