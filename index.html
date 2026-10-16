@@ -798,6 +798,19 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
    22. RESPONSIVE - MOBILE (576px)
    ══════════════════════════════════════════════════════════════ */
 @media(max-width:576px){
+
+/* ═══ PATCH: FOOTER MOBILE - PRODUK & PELAPORAN BERJAJAR, PERUSAHAAN HIDDEN ══ */
+.footer-grid{
+grid-template-columns:1fr 1fr !important;
+}
+.footer-col:nth-child(1){
+grid-column:1 / -1 !important;
+}
+.footer-col:nth-child(3){
+display:none !important;
+}
+/* ═══ END PATCH ═══ */
+     
   .tentang-photo-box{height:180px !important}
   .tentang-maps-box{height:200px !important}
   .tentang-photo-overlay{padding:16px !important}
