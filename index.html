@@ -956,6 +956,83 @@ white-space:nowrap !important;
   }
 }
 /* ═══ END PATCH ═══ */
+/* ═══ PATCH: HERO MOBILE — JUDUL & DESKRIPSI BESAR + RATA TENGAH ═══ */
+
+/* Tablet & Mobile (≤768px) */
+@media(max-width:768px){
+  /* Grid hero rata tengah */
+  .hero-grid-layout{
+    justify-items:center !important;
+    text-align:center !important;
+    align-items:center !important;
+  }
+  
+  /* Teks hero rata tengah */
+  .hero-text{
+    align-items:center !important;
+    text-align:center !important;
+  }
+  
+  /* Judul hero diperbesar */
+  .hero-title{
+    font-size:clamp(1.8rem, 6.5vw, 2.4rem) !important;
+    text-align:center !important;
+    margin-bottom:14px !important;
+    letter-spacing:-0.5px !important;
+  }
+  
+  /* Deskripsi hero diperbesar */
+  .hero-desc{
+    font-size:14px !important;
+    text-align:center !important;
+    margin-bottom:16px !important;
+    max-width:90% !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    line-height:1.6 !important;
+  }
+  
+  /* Badge hero rata tengah */
+  .hero-badge{
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+  
+  /* Tombol hero rata tengah */
+  .hero-btns{
+    justify-content:center !important;
+  }
+  
+  /* Metrics hero rata tengah */
+  .hero-metrics{
+    justify-content:center !important;
+  }
+}
+
+/* Mobile kecil (≤480px) */
+@media(max-width:480px){
+  .hero-title{
+    font-size:clamp(1.6rem, 7vw, 2rem) !important;
+  }
+  
+  .hero-desc{
+    font-size:13px !important;
+    line-height:1.55 !important;
+  }
+}
+
+/* Mobile sangat kecil (≤380px) */
+@media(max-width:380px){
+  .hero-title{
+    font-size:clamp(1.4rem, 8vw, 1.8rem) !important;
+  }
+  
+  .hero-desc{
+    font-size:12px !important;
+  }
+}
+
+/* ═══ END PATCH ═══ */
   
 </style>
 </head>
