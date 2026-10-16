@@ -705,6 +705,129 @@ body{font-family:'Inter','Segoe UI',Tahoma,sans-serif;color:var(--text-dark);lin
 .quick-access-card h4{font-size:12px !important}
 .quick-access-card p{font-size:10px !important}
 }
+
+/* ═══ PATCH MOBILE OPTIMIZATION ═══ */
+/* 1. GALLERY GRID - 1 kolom di mobile */
+@media(max-width:768px){
+.gallery-grid{grid-template-columns:1fr !important;gap:14px !important}
+.gallery-card{border-radius:12px !important}
+.ig-live-widget{max-height:350px !important}
+.ig-post-skeleton{height:280px !important}
+.yt-playlist-list{max-height:140px !important}
+.gallery-banner-wrapper img{height:160px !important}
+.gallery-banner-overlay{padding:12px 14px !important}
+.gallery-banner-overlay h3{font-size:1rem !important}
+.gallery-banner-overlay p{font-size:.75rem !important}
+}
+
+/* 2. FOOTER GRID - 2 kolom di tablet, 1 kolom di mobile */
+@media(max-width:992px){
+.footer-grid{grid-template-columns:1fr 1fr !important;gap:30px !important}
+}
+@media(max-width:576px){
+.footer-grid{grid-template-columns:1fr !important;gap:25px !important}
+.footer-col h4{font-size:15px !important;margin-bottom:15px !important}
+.footer-col p{font-size:13px !important}
+.footer-col ul li a{font-size:13px !important}
+.footer-social{gap:10px !important}
+.footer-social a{width:38px !important;height:38px !important}
+.footer-bottom{flex-direction:column !important;text-align:center !important;gap:10px !important}
+.footer-bottom-links{justify-content:center !important}
+}
+
+/* 3. BADGE OJK & LPS - 1 kolom di mobile */
+@media(max-width:576px){
+.profil-content-grid > div:first-child > div:last-child > div > div{
+grid-template-columns:1fr !important;
+}
+}
+
+/* 4. HERO BUTTONS - Lebih besar di mobile */
+@media(max-width:480px){
+.hero-btns{flex-direction:column !important;gap:8px !important}
+.hero-btns .btn{width:100% !important;justify-content:center !important;padding:12px 16px !important;font-size:12px !important}
+}
+
+/* 5. MISI CARDS - Padding lebih kecil di mobile */
+@media(max-width:768px){
+.misi-cards-grid > div{padding:16px !important;gap:12px !important}
+.misi-cards-grid > div > div:first-child{width:44px !important;height:44px !important;min-width:44px !important}
+.misi-cards-grid > div > div:first-child i{font-size:16px !important}
+.misi-cards-grid > div h4{font-size:14px !important}
+.misi-cards-grid > div p{font-size:12px !important}
+}
+
+/* 6. ABOUT TABS - Scroll horizontal jika overflow */
+@media(max-width:576px){
+.about-tabs{
+overflow-x:auto !important;
+-webkit-overflow-scrolling:touch !important;
+scrollbar-width:none !important;
+-ms-overflow-style:none !important;
+padding-bottom:5px !important;
+justify-content:flex-start !important;
+flex-wrap:nowrap !important;
+}
+.about-tabs::-webkit-scrollbar{display:none !important}
+.about-tab{
+flex-shrink:0 !important;
+white-space:nowrap !important;
+}
+}
+
+/* 7. QUICK ACCESS - Spacing lebih rapat di mobile */
+@media(max-width:480px){
+.quick-access{margin-top:-25px !important;padding-bottom:30px !important}
+.quick-access-grid{gap:8px !important}
+.quick-access-card{padding:14px 10px 12px !important}
+.quick-access-card h4{font-size:11px !important}
+.quick-access-card p{font-size:9px !important}
+}
+
+/* 8. SECTION TITLE - Lebih kecil di mobile */
+@media(max-width:480px){
+.section-title{margin-bottom:30px !important}
+.section-title h2{font-size:20px !important}
+.section-title p{font-size:13px !important}
+.section-title .st-badge{font-size:10px !important;padding:4px 12px !important}
+}
+
+/* 9. PRODUK & LELANG - Spacing lebih rapat */
+@media(max-width:768px){
+.products{padding:50px 0 !important}
+.lelang-section{padding:50px 0 !important}
+.lelang-intro{grid-template-columns:1fr !important;gap:25px !important}
+.lelang-intro-img{height:200px !important}
+.lelang-intro-text h3{font-size:22px !important}
+.lelang-stats{justify-content:center !important}
+}
+
+/* 10. CTA SECTION - Lebih compact di mobile */
+@media(max-width:576px){
+.cta{padding:40px 0 !important}
+.cta-content h2{font-size:20px !important;white-space:normal !important;line-height:1.3 !important}
+.cta-content p{font-size:13px !important;white-space:normal !important}
+.cta-buttons{flex-direction:column !important;gap:10px !important}
+.cta-buttons a{width:100% !important;justify-content:center !important}
+}
+
+/* 11. WA FLOAT & SCROLL TOP - Posisi lebih aman di mobile */
+@media(max-width:576px){
+.wa-float{left:15px !important;bottom:15px !important}
+.wa-float-btn{width:48px !important;height:48px !important;font-size:22px !important}
+.scroll-top{width:42px !important;height:42px !important;bottom:15px !important;right:15px !important;font-size:16px !important}
+}
+
+/* 12. PRELOADER - Lebih kecil di mobile */
+@media(max-width:480px){
+.preloader-logo{width:80px !important;height:80px !important}
+.preloader-logo .pl-text{font-size:26px !important}
+.preloader-bar{width:160px !important}
+.preloader-text{font-size:10px !important}
+}
+
+/* ═══ END PATCH MOBILE OPTIMIZATION ═══ */
+
 @media(max-width:380px){
 .tentang-photo-box{height:140px !important}
 .tentang-maps-box{height:160px !important}
